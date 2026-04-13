@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría IA Médica — Cirujana Digital</title>
+<meta name="description" content="Auditoría en vivo de presencia en inteligencia artificial para profesionales de la salud. Descubrí cómo te ven ChatGPT, Google AI, Perplexity y Claude.">
+<style>
+/* ── Variables del sistema Cirujana Digital ── */
+:root {
+  --brand: #00a7a9;
+  --brand-dark: #03658c;
+  --brand-light: rgb(0 167 169 / 10%);
+  --brand-border: rgb(0 167 169 / 30%);
+  --text: #1a2332;
+  --text-light: #64748b;
+  --text-muted: #94a3b8;
+  --bg: #fff;
+  --surface: #f7f9fa;
+  --surface-2: #edf2f7;
+  --success: #059669;
+  --success-bg: rgb(5 150 105 / 8%);
+  --success-border: rgb(5 150 105 / 25%);
+  --danger: #dc2626;
+  --danger-bg: rgb(220 38 38 / 8%);
+  --danger-border: rgb(220 38 38 / 25%);
+  --warning: #d97706;
+  --warning-bg: rgb(217 119 6 / 8%);
+  --warning-border: rgb(217 119 6 / 25%);
+  --grad: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+  --grad-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+  --r-sm: 6px;
+  --r-md: 10px;
+  --r-lg: 14px;
+  --r-xl: 18px;
+  --r-pill: 50px;
+  --shadow: 0 4px 16px rgb(3 101 140 / 10%);
+  --shadow-lg: 0 8px 32px rgb(3 101 140 / 16%);
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Courier New', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Print base ── */
+@media print {
+  body { background: #fff; }
+  .no-print { display: none !important; }
+  .print-only { display: block !important; }
+  .audit-page { box-shadow: none !important; border: none !important; }
+  .step-nav, .audit-header-actions, .platform-btn, .back-btn { display: none !important; }
+  @page { margin: 1.5cm; size: A4; }
+  .section-card { break-inside: avoid; }
+  .platform-result { break-inside: avoid; }
+}
+
+.print-only { display: none; }
+
+/* ── Layout principal ── */
+.audit-shell {
+  min-height: 100vh;
+  background: var(--surface);
+}
+
+.audit-topbar {
+  background: linear-gradient(135deg, #0b1622 0%, #03658c 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.audit-logo {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.audit-logo span {
+  color: var(--brand);
+}
+
+.topbar-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgb(0 167 169 / 20%);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-pill);
+  padding: 0.3rem 0.9rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7fdbff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.audit-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ── Progreso ── */
+.progress-shell {
+  background: #fff;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--surface-2);
+  padding: 1.5rem 2rem;
+  margin-bottom: 2rem;
+  box-shadow: var(--shadow);
+}
+
+.progress-steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.progress-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  position: relative;
+}
+
+.progress-step::after {
+  content: '';
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  right: -50%;
+  height: 2px;
+  background: var(--surface-2);
+  z-index: 0;
+  transition: background 0.3s;
+}
+
+.progress-step:last-child::after { display: none; }
+
+.progress-step.done::after {
+  background: var(--brand);
+}
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-2);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  position: relative;
+  z-index: 1;
+  transition: all 0.3s;
+  flex-shrink: 0;
+}
+
+.progress-step.active .step-dot {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 167 169 / 15%);
+}
+
+.progress-step.done .step-dot {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.step-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.progress-step.active .step-label { color: var(--brand-dark); }
+.progress-step.done .step-label { color: var(--brand); }
+
+/* ── Secciones / Pantallas ── */
+.audit-screen { display: none; }
+.audit-screen.active { display: block; }
+
+/* ── Tarjetas sección ── */
+.section-card {
+  background: #fff;
+  border-radius: var(--r-xl);
+  border: 1px solid var(--surface-2);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+.section-card--dark {
+  background: linear-gradient(145deg, #061828 0%, #092035 100%);
+  border-color: var(--brand-border);
+  color: #fff;
+}
+
+.section-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--brand);
+  margin-bottom: 0.4rem;
+}
+
+.section-card--dark .section-eyebrow { color: #7fdbff; }
+
+.section-title {
+  font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  line-height: 1.25;
+  margin-bottom: 0.6rem;
+}
+
+.section-desc {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.section-card--dark .section-desc { color: rgb(255 255 255 / 65%); }
+
+/* ── Formulario datos del médico ── */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group.full { grid-column: 1 / -1; }
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-input, .form-select, .form-textarea {
+  padding: 0.7rem 0.9rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-md);
+  font-size: 0.92rem;
+  font-family: var(--font);
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.form-select option {
+  background-color: var(--text);
+  color: #fff;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgb(0 167 169 / 10%);
+}
+
+.form-textarea { resize: vertical; min-height: 80px; }
+
+/* ── Botones ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--r-pill);
+  font-weight: 700;
+  font-size: 0.92rem;
+  font-family: var(--font);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.25s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 4px 16px rgb(0 167 169 / 25%);
+}
+.btn-primary:hover { box-shadow: 0 8px 24px rgb(0 167 169 / 40%); transform: translateY(-1px); }
+
+.btn-outline {
+  background: transparent;
+  color: var(--brand-dark);
+  border-color: var(--brand);
+}
+.btn-outline:hover { background: var(--brand-light); }
+
+.btn-ghost {
+  background: rgb(255 255 255 / 10%);
+  color: rgba(255,255,255,0.85);
+  border-color: rgb(255 255 255 / 20%);
+}
+.btn-ghost:hover { background: rgb(255 255 255 / 18%); }
+
+.btn--sm { padding: 0.5rem 1rem; font-size: 0.82rem; }
+.btn--lg { padding: 1rem 2rem; font-size: 1rem; }
+.btn--full { width: 100%; }
+.btn:disabled { opacity: 0.5; cursor: default; pointer-events: none; }
+
+.btn-nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* ── Plataformas ── */
+.platform-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.platform-card {
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-xl);
+  padding: 1.5rem;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+
+.platform-card.evaluating {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 3px rgb(0 167 169 / 10%);
+}
+
+.platform-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.platform-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--r-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.platform-icon-gpt { background: #10a37f; color: #fff; }
+.platform-icon-google { background: #4285f4; color: #fff; }
+.platform-icon-perplexity { background: #20b2aa; color: #fff; }
+.platform-icon-claude { background: #cc785c; color: #fff; }
+
+.platform-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.1rem;
+}
+
+.platform-queries {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.presence-selector {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.presence-btn {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-md);
+  background: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  font-family: var(--font);
+  text-align: center;
+  color: var(--text-light);
+}
+
+.presence-btn:hover { border-color: var(--brand); background: var(--brand-light); }
+
+.presence-btn.sel-yes { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+.presence-btn.sel-partial { background: var(--warning-bg); border-color: var(--warning); color: var(--warning); }
+.presence-btn.sel-no { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+
+.platform-notes {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  font-family: var(--font);
+  color: var(--text);
+  resize: none;
+  min-height: 60px;
+  transition: border-color 0.2s;
+}
+.platform-notes:focus { outline: none; border-color: var(--brand); }
+
+.platform-queries-list {
+  list-style: none;
+  margin-bottom: 0.75rem;
+}
+
+.platform-queries-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  color: var(--text-light);
+  padding: 0.3rem 0;
+  border-bottom: 1px solid var(--surface-2);
+  line-height: 1.4;
+}
+
+.platform-queries-list li:last-child { border-bottom: none; }
+
+.query-num {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--brand);
+  min-width: 20px;
+  padding-top: 0.1rem;
+}
+
+/* ── Checklist acciones ── */
+.actions-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.action-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1rem 1.25rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-lg);
+  background: #fff;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.action-item:hover { border-color: var(--brand); box-shadow: var(--shadow); }
+.action-item.completed { background: var(--success-bg); border-color: var(--success-border); }
+
+.action-check {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-2);
+  background: #fff;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  margin-top: 2px;
+}
+
+.action-item.completed .action-check {
+  background: var(--success);
+  border-color: var(--success);
+  color: #fff;
+}
+
+.action-impact {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--r-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.3rem;
+}
+
+.impact-high { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-border); }
+.impact-med { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning-border); }
+.impact-low { background: var(--success-bg); color: var(--success); border: 1px solid var(--success-border); }
+
+.action-title { font-size: 0.9rem; font-weight: 700; color: var(--text); margin-bottom: 0.2rem; }
+.action-desc { font-size: 0.82rem; color: var(--text-light); line-height: 1.5; }
+
+/* ── Métricas de diagnóstico ── */
+.diag-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.diag-card {
+  background: var(--surface);
+  border: 1px solid var(--surface-2);
+  border-radius: var(--r-lg);
+  padding: 1.25rem 1rem;
+  text-align: center;
+}
+
+.diag-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  line-height: 1;
+}
+
+.diag-val {
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 0.3rem;
+  font-family: var(--mono);
+}
+
+.diag-val--ok { color: var(--success); }
+.diag-val--warn { color: var(--warning); }
+.diag-val--bad { color: var(--danger); }
+
+.diag-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Score general ── */
+.score-ring-wrap {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.score-ring-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.score-ring-canvas {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.score-ring-canvas svg {
+  width: 120px;
+  height: 120px;
+  transform: rotate(-90deg);
+}
+
+.score-ring-num {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  font-family: var(--mono);
+  color: var(--text);
+}
+
+.score-ring-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.score-summary { flex: 1; min-width: 220px; }
+
+.score-verdict {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.score-verdict-sub {
+  font-size: 0.92rem;
+  color: var(--text-light);
+  line-height: 1.65;
+}
+
+/* ── Platform result (informe) ── */
+.platform-result {
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+.platform-result-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--surface-2);
+}
+
+.platform-result-body { padding: 1.25rem 1.5rem; }
+
+.presence-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--r-pill);
+  margin-left: auto;
+}
+
+.presence-tag--yes { background: var(--success-bg); color: var(--success); border: 1px solid var(--success-border); }
+.presence-tag--partial { background: var(--warning-bg); color: var(--warning); border: 1px solid var(--warning-border); }
+.presence-tag--no { background: var(--danger-bg); color: var(--danger); border: 1px solid var(--danger-border); }
+.presence-tag--ns { background: var(--surface-2); color: var(--text-muted); }
+
+/* ── Oferta upgrade ── */
+.upgrade-card {
+  background: linear-gradient(145deg, #061828 0%, #092035 100%);
+  border: 1.5px solid rgb(0 167 169 / 40%);
+  border-radius: var(--r-xl);
+  padding: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.upgrade-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #00a7a9, #7fdbff, #03658c);
+}
+
+.upgrade-grid { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+
+.upgrade-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.upgrade-desc { font-size: 0.92rem; color: rgb(255 255 255 / 65%); line-height: 1.65; margin-bottom: 1.25rem; }
+
+.upgrade-features { list-style: none; margin-bottom: 1.5rem; }
+.upgrade-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+  color: rgb(255 255 255 / 80%);
+  padding: 0.3rem 0;
+}
+.upgrade-features li::before {
+  content: '→';
+  color: var(--brand);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.upgrade-price-block {
+  text-align: center;
+  flex-shrink: 0;
+  background: rgb(0 167 169 / 12%);
+  border: 1px solid rgb(0 167 169 / 30%);
+  border-radius: var(--r-xl);
+  padding: 1.5rem 2rem;
+  min-width: 180px;
+}
+
+.upgrade-price-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: rgb(255 255 255 / 45%);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.5rem;
+}
+
+.upgrade-price-amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #7fdbff;
+  font-family: var(--mono);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.upgrade-price-period { font-size: 0.78rem; color: rgb(255 255 255 / 45%); }
+
+/* ── Print / PDF header ── */
+.print-header {
+  display: none;
+  background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+  padding: 2rem;
+  color: #fff;
+  border-radius: var(--r-xl);
+  margin-bottom: 1.5rem;
+}
+
+.print-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media print {
+  .print-header { display: block; }
+  .audit-topbar { display: none; }
+  .upgrade-card { display: none; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .audit-container { padding: 1rem 1rem 3rem; }
+  .form-grid { grid-template-columns: 1fr; }
+  .platform-grid { grid-template-columns: 1fr; }
+  .diag-grid { grid-template-columns: repeat(2, 1fr); }
+  .upgrade-grid { grid-template-columns: 1fr; }
+  .upgrade-price-block { min-width: 0; }
+  .score-ring-wrap { justify-content: center; }
+  .section-card { padding: 1.25rem; }
+  .progress-step .step-label { display: none; }
+}
+
+/* ── Animación entrada ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.audit-screen.active { animation: fadeUp 0.35s ease; }
+
+/* ── Separador ── */
+.divider-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.divider-line { flex: 1; height: 1px; background: var(--surface-2); }
+.divider-text {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Tabla directorios ── */
+.dir-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.6rem;
+}
+
+.dir-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all 0.15s;
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text);
+  background: #fff;
+  user-select: none;
+}
+
+.dir-item:hover { border-color: var(--brand); background: var(--brand-light); }
+.dir-item.active { background: var(--success-bg); border-color: var(--success); color: var(--success); }
+.dir-item.missing { background: var(--danger-bg); border-color: var(--danger); color: var(--danger); }
+
+.dir-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--surface-2);
+  transition: background 0.15s;
+}
+
+.dir-item.active .dir-dot { background: var(--success); }
+.dir-item.missing .dir-dot { background: var(--danger); }
+
+/* ── Estimación timeline ── */
+.timeline-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--brand-light);
+  border: 1px solid var(--brand-border);
+  border-radius: var(--r-lg);
+  margin-top: 1rem;
+}
+
+.timeline-bar svg { flex-shrink: 0; }
+
+.timeline-text {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  line-height: 1.4;
+}
+
+/* ── Textarea notas generales ── */
+.notes-textarea {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 1.5px solid var(--surface-2);
+  border-radius: var(--r-lg);
+  font-size: 0.9rem;
+  font-family: var(--font);
+  color: var(--text);
+  resize: vertical;
+  min-height: 100px;
+  transition: border-color 0.2s;
+  background: var(--surface);
+}
+.notes-textarea:focus { outline: none; border-color: var(--brand); background: #fff; }
+
+/* ── Comparativo benchmark ── */
+.benchmark-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.benchmark-cell {
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--r-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid var(--surface-2);
+  background: var(--surface);
+}
+
+.benchmark-header .benchmark-cell {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  background: transparent;
+  border-color: transparent;
+  text-align: left;
+}
+
+.benchmark-header .benchmark-cell:first-child { color: var(--text); }
+
+.bcell-ok { background: var(--success-bg); color: var(--success); border-color: var(--success-border); }
+.bcell-warn { background: var(--warning-bg); color: var(--warning); border-color: var(--warning-border); }
+.bcell-bad { background: var(--danger-bg); color: var(--danger); border-color: var(--danger-border); }
+.bcell-self { font-weight: 800; background: var(--brand-light); color: var(--brand-dark); border-color: var(--brand-border); }
+
+/* ── Scrollbar suave ── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--brand-border); border-radius: 3px; }
+
+</style>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- TOPBAR                                     -->
+<!-- ══════════════════════════════════════════ -->
+<div class="audit-topbar no-print">
+  <a href="/" class="audit-logo">CIRUJANA<span>DIGITAL</span></a>
+  <span class="topbar-badge">
+    <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#7fdbff"/></svg>
+    Auditoría IA en vivo
+  </span>
+</div>
+
+<!-- ══════════════════════════════════════════ -->
+<!-- CONTENEDOR                                 -->
+<!-- ══════════════════════════════════════════ -->
+<div class="audit-shell">
+<div class="audit-container">
+
+  <!-- PROGRESO -->
+  <div class="progress-shell no-print" id="progressShell">
+    <div class="progress-steps">
+      <div class="progress-step active" id="pstep-1">
+        <div class="step-dot">1</div>
+        <span class="step-label">Datos</span>
+      </div>
+      <div class="progress-step" id="pstep-2">
+        <div class="step-dot">2</div>
+        <span class="step-label">Plataformas</span>
+      </div>
+      <div class="progress-step" id="pstep-3">
+        <div class="step-dot">3</div>
+        <span class="step-label">Directorios</span>
+      </div>
+      <div class="progress-step" id="pstep-4">
+        <div class="step-dot">4</div>
+        <span class="step-label">Plan</span>
+      </div>
+      <div class="progress-step" id="pstep-5">
+        <div class="step-dot">5</div>
+        <span class="step-label">Informe</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANTALLA 1: DATOS DEL PROFESIONAL ══ -->
+  <div class="audit-screen active" id="screen-1">
+    <div class="section-card section-card--dark">
+      <div class="section-eyebrow">Paso 1 de 5</div>
+      <div class="section-title">¿Con quién estamos trabajando?</div>
+      <div class="section-desc">Completá los datos del profesional. Esta información aparecerá en el informe final y personaliza el análisis.</div>
+
+      <div class="form-grid">
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">Nombre completo</label>
+          <input class="form-input" id="f-nombre" placeholder="Dr. / Dra. Apellido, Nombre" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">Especialidad</label>
+          <select class="form-select" id="f-especialidad" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+            <option value="">Seleccione especialidad</option>
+            <option>Cirugía plástica y estética</option>
+            <option>Dermatología</option>
+            <option>Traumatología y ortopedia</option>
+            <option>Ginecología y obstetricia</option>
+            <option>Cardiología</option>
+            <option>Neurología</option>
+            <option>Oncología</option>
+            <option>Pediatría</option>
+            <option>Psiquiatría y salud mental</option>
+            <option>Clínica médica</option>
+            <option>Oftalmología</option>
+            <option>Urología</option>
+            <option>Nutrición</option>
+            <option>Odontología</option>
+            <option>Otra especialidad</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">Ciudad / Localidad</label>
+          <input class="form-input" id="f-ciudad" placeholder="Ej: Buenos Aires, CABA" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">¿Tiene sitio web?</label>
+          <select class="form-select" id="f-web" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+            <option value="">Seleccioná</option>
+            <option value="yes">Sí, tiene web</option>
+            <option value="no">No tiene web</option>
+            <option value="otro">Tiene perfil en directorio solamente</option>
+          </select>
+        </div>
+        <div class="form-group full">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">URL del sitio web (si tiene)</label>
+          <input class="form-input" id="f-url" placeholder="https://www.tudominio.com.ar" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">Nombre de 3 competidores directos (opcional)</label>
+          <input class="form-input" id="f-comp1" placeholder="Competidor 1" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:rgba(255,255,255,0.8)">&nbsp;</label>
+          <input class="form-input" id="f-comp2" placeholder="Competidor 2" style="background:rgb(255 255 255/8%);border-color:rgb(255 255 255/15%);color:#fff;">
+        </div>
+      </div>
+
+      <div class="btn-nav-row">
+        <span></span>
+        <button class="btn btn-primary btn--lg" onclick="goToScreen(2)">Comenzar análisis →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ PANTALLA 2: PLATAFORMAS IA ══ -->
+  <div class="audit-screen" id="screen-2">
+
+    <div class="section-card" style="margin-bottom:1.25rem;">
+      <div class="section-eyebrow">Paso 2 de 5 — Diagnóstico de presencia</div>
+      <div class="section-title">Análisis en plataformas de IA</div>
+      <div class="section-desc">Testear cada plataforma con las consultas sugeridas. Seleccioná el resultado y anotá observaciones clave.</div>
+    </div>
+
+    <div class="platform-grid">
+
+      <!-- ChatGPT -->
+      <div class="platform-card" id="pc-gpt">
+        <div class="platform-header">
+          <div class="platform-icon platform-icon-gpt">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M22.28 9.94a5.77 5.77 0 0 0-.5-4.74A6 6 0 0 0 15.3 2.5a5.77 5.77 0 0 0-4.37-2 6 6 0 0 0-5.74 4.15 5.77 5.77 0 0 0-3.86 2.8 6 6 0 0 0 .74 7.04 5.77 5.77 0 0 0 .5 4.74A6 6 0 0 0 8.7 21.5a5.77 5.77 0 0 0 4.37 2 6 6 0 0 0 5.74-4.15 5.77 5.77 0 0 0 3.86-2.8 6 6 0 0 0-.74-7.61Z"/></svg>
+          </div>
+          <div>
+            <div class="platform-name">ChatGPT (GPT-4o)</div>
+            <div class="platform-queries">5 consultas de paciente real</div>
+          </div>
+        </div>
+        <ul class="platform-queries-list" id="qlist-gpt"></ul>
+        <div class="section-eyebrow" style="margin-bottom:0.5rem">Resultado</div>
+        <div class="presence-selector">
+          <button class="presence-btn" data-platform="gpt" data-val="yes" onclick="setPresence('gpt','yes',this)">✓ Aparece correcto</button>
+          <button class="presence-btn" data-platform="gpt" data-val="partial" onclick="setPresence('gpt','partial',this)">⚠ Parcial / incorrecto</button>
+          <button class="presence-btn" data-platform="gpt" data-val="no" onclick="setPresence('gpt','no',this)">✗ No aparece</button>
+        </div>
+        <textarea class="platform-notes" id="notes-gpt" placeholder="Observaciones: ¿qué dice exactamente? ¿fuentes citadas? ¿menciona a competidores?"></textarea>
+      </div>
+
+      <!-- Google AI -->
+      <div class="platform-card" id="pc-google">
+        <div class="platform-header">
+          <div class="platform-icon platform-icon-google">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M22 12a10 10 0 1 1-11.73-9.8V6.3h-2.7v3H12v-3h2a10 10 0 0 1 8 9.7Z"/></svg>
+          </div>
+          <div>
+            <div class="platform-name">Google AI Overviews</div>
+            <div class="platform-queries">5 búsquedas relevantes</div>
+          </div>
+        </div>
+        <ul class="platform-queries-list" id="qlist-google"></ul>
+        <div class="section-eyebrow" style="margin-bottom:0.5rem">Resultado</div>
+        <div class="presence-selector">
+          <button class="presence-btn" data-platform="google" data-val="yes" onclick="setPresence('google','yes',this)">✓ Aparece correcto</button>
+          <button class="presence-btn" data-platform="google" data-val="partial" onclick="setPresence('google','partial',this)">⚠ Parcial / incorrecto</button>
+          <button class="presence-btn" data-platform="google" data-val="no" onclick="setPresence('google','no',this)">✗ No aparece</button>
+        </div>
+        <textarea class="platform-notes" id="notes-google" placeholder="¿Aparece en el AI Overview? ¿Qué información muestra? ¿Competitors mencionados?"></textarea>
+      </div>
+
+      <!-- Perplexity -->
+      <div class="platform-card" id="pc-perplexity">
+        <div class="platform-header">
+          <div class="platform-icon platform-icon-perplexity">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2 2 7l10 5 10-5-10-5ZM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div>
+            <div class="platform-name">Perplexity</div>
+            <div class="platform-queries">5 consultas — analizar fuentes</div>
+          </div>
+        </div>
+        <ul class="platform-queries-list" id="qlist-perplexity"></ul>
+        <div class="section-eyebrow" style="margin-bottom:0.5rem">Resultado</div>
+        <div class="presence-selector">
+          <button class="presence-btn" data-platform="perplexity" data-val="yes" onclick="setPresence('perplexity','yes',this)">✓ Aparece correcto</button>
+          <button class="presence-btn" data-platform="perplexity" data-val="partial" onclick="setPresence('perplexity','partial',this)">⚠ Parcial / incorrecto</button>
+          <button class="presence-btn" data-platform="perplexity" data-val="no" onclick="setPresence('perplexity','no',this)">✗ No aparece</button>
+        </div>
+        <textarea class="platform-notes" id="notes-perplexity" placeholder="¿Qué fuentes cita Perplexity para tu especialidad y ciudad?"></textarea>
+      </div>
+
+      <!-- Claude -->
+      <div class="platform-card" id="pc-claude">
+        <div class="platform-header">
+          <div class="platform-icon platform-icon-claude">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/></svg>
+          </div>
+          <div>
+            <div class="platform-name">Claude (Anthropic)</div>
+            <div class="platform-queries">3 consultas — en crecimiento</div>
+          </div>
+        </div>
+        <ul class="platform-queries-list" id="qlist-claude"></ul>
+        <div class="section-eyebrow" style="margin-bottom:0.5rem">Resultado</div>
+        <div class="presence-selector">
+          <button class="presence-btn" data-platform="claude" data-val="yes" onclick="setPresence('claude','yes',this)">✓ Aparece correcto</button>
+          <button class="presence-btn" data-platform="claude" data-val="partial" onclick="setPresence('claude','partial',this)">⚠ Parcial / incorrecto</button>
+          <button class="presence-btn" data-platform="claude" data-val="no" onclick="setPresence('claude','no',this)">✗ No aparece</button>
+        </div>
+        <textarea class="platform-notes" id="notes-claude" placeholder="Observaciones generales. Menor impacto hoy, pero relevante para el futuro."></textarea>
+      </div>
+
+    </div>
+
+    <div class="btn-nav-row">
+      <button class="btn btn-outline" onclick="goToScreen(1)">← Volver</button>
+      <button class="btn btn-primary btn--lg" onclick="goToScreen(3)">Continuar con directorios →</button>
+    </div>
+  </div>
+
+  <!-- ══ PANTALLA 3: DIRECTORIOS MÉDICOS ══ -->
+  <div class="audit-screen" id="screen-3">
+
+    <div class="section-card" style="margin-bottom:1.25rem;">
+      <div class="section-eyebrow">Paso 3 de 5 — Señales de autoridad</div>
+      <div class="section-title">Presencia en directorios médicos</div>
+      <div class="section-desc">Los modelos de IA usan estos directorios como fuentes primarias. Marcá cuáles están activos, cuáles faltan.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="section-eyebrow" style="margin-bottom:0.75rem;">Directorios — clic para cambiar estado</div>
+      <div class="dir-grid" id="dirGrid"></div>
+
+      <div class="divider-row">
+        <div class="divider-line"></div>
+        <span class="divider-text">Google Business Profile</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.75rem;margin-bottom:1rem;">
+        <div class="form-group">
+          <label class="form-label">Estado del perfil de Google</label>
+          <select class="form-select" id="gbp-status">
+            <option value="">Seleccioná</option>
+            <option value="ok">Completo y verificado</option>
+            <option value="partial">Existe pero incompleto</option>
+            <option value="none">No tiene perfil</option>
+            <option value="dup">Hay duplicados</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Coherencia con el sitio web</label>
+          <select class="form-select" id="gbp-coherencia">
+            <option value="">Seleccioná</option>
+            <option value="ok">Datos coinciden exactamente</option>
+            <option value="partial">Algunas diferencias menores</option>
+            <option value="bad">Datos desactualizados o contradictorios</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Notas sobre directorios y GBP</label>
+        <textarea class="notes-textarea" id="notes-directorios" placeholder="Ej: Doctoralia tiene foto vieja, Medifé no tiene especialidad actualizada, GBP no tiene horarios..."></textarea>
+      </div>
+    </div>
+
+    <!-- Benchmark competidores -->
+    <div class="section-card">
+      <div class="section-eyebrow" style="margin-bottom:0.75rem;">Benchmark vs. competidores</div>
+      <div class="section-desc" style="margin-bottom:1rem;">Comparativo rápido de visibilidad en IA respecto a los competidores declarados.</div>
+      <div id="benchmarkGrid"></div>
+    </div>
+
+    <div class="btn-nav-row">
+      <button class="btn btn-outline" onclick="goToScreen(2)">← Volver</button>
+      <button class="btn btn-primary btn--lg" onclick="goToScreen(4)">Pasar al plan de acción →</button>
+    </div>
+  </div>
+
+  <!-- ══ PANTALLA 4: PLAN DE ACCIÓN ══ -->
+  <div class="audit-screen" id="screen-4">
+
+    <div class="section-card" style="margin-bottom:1.25rem;">
+      <div class="section-eyebrow">Paso 4 de 5 — Plan priorizado</div>
+      <div class="section-title">Acciones concretas con impacto estimado</div>
+      <div class="section-desc">Marcá las acciones recomendadas. El informe final incluirá solo las seleccionadas, ordenadas por prioridad.</div>
+    </div>
+
+    <div class="section-card">
+      <div class="actions-list" id="actionsList"></div>
+
+      <div class="timeline-bar" style="margin-top:1.5rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-dark)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <span class="timeline-text">Estimación realista: primeras mejoras visibles en <strong>3–4 semanas</strong>. Posicionamiento en IA estable en <strong>3–6 meses</strong>.</span>
+      </div>
+
+      <div class="divider-row" style="margin-top:1.5rem;">
+        <div class="divider-line"></div>
+        <span class="divider-text">Notas adicionales del plan</span>
+        <div class="divider-line"></div>
+      </div>
+
+      <textarea class="notes-textarea" id="notes-plan" placeholder="Observaciones sobre el plan: contexto específico del profesional, restricciones, oportunidades únicas..."></textarea>
+    </div>
+
+    <div class="btn-nav-row">
+      <button class="btn btn-outline" onclick="goToScreen(3)">← Volver</button>
+      <button class="btn btn-primary btn--lg" onclick="buildReport()">Generar informe final →</button>
+    </div>
+  </div>
+
+  <!-- ══ PANTALLA 5: INFORME FINAL ══ -->
+  <div class="audit-screen" id="screen-5">
+
+    <!-- Print header (solo visible al imprimir) -->
+    <div class="print-header">
+      <div class="print-header-inner">
+        <div>
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand);margin-bottom:0.4rem;">Cirujana Digital</div>
+          <div style="font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:0.2rem;">Auditoría de Presencia en IA</div>
+          <div style="font-size:0.9rem;color:rgb(255 255 255/65%);" id="print-fecha"></div>
+        </div>
+        <div style="text-align:right;color:rgb(255 255 255/50%);font-size:0.78rem;">
+          cirujanadigital.com<br>info@cirujanadigital.com
+        </div>
+      </div>
+    </div>
+
+    <!-- Acciones del informe -->
+    <div class="section-card no-print" style="margin-bottom:1.25rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div class="section-eyebrow">Paso 5 de 5</div>
+        <div style="font-size:1.1rem;font-weight:700;color:var(--text)">Informe completo listo</div>
+      </div>
+      <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+        <button class="btn btn-outline btn--sm" onclick="goToScreen(4)">← Editar</button>
+        <button class="btn btn-primary btn--sm" onclick="window.print()">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+          Imprimir / Guardar PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Score general -->
+    <div class="section-card" id="report-score"></div>
+
+    <!-- Estado por plataforma -->
+    <div class="section-card">
+      <div class="section-eyebrow" style="margin-bottom:1rem;">Sección 1 — Estado en cada plataforma</div>
+      <div id="report-platforms"></div>
+    </div>
+
+    <!-- Diagnóstico -->
+    <div class="section-card" id="report-diagnostico"></div>
+
+    <!-- Directorios -->
+    <div class="section-card" id="report-directorios"></div>
+
+    <!-- Plan de acción -->
+    <div class="section-card" id="report-plan"></div>
+
+    <!-- Oferta upgrade -->
+    <div class="upgrade-card no-print" id="report-upgrade"></div>
+
+    <div class="btn-nav-row no-print">
+      <button class="btn btn-outline" onclick="goToScreen(4)">← Volver a editar</button>
+      <button class="btn btn-primary btn--lg" onclick="window.print()">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M6 9V2h12v7M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v8H6z"/></svg>
+        Guardar como PDF / Imprimir
+      </button>
+    </div>
+
+  </div>
+
+</div><!-- /audit-container -->
+</div><!-- /audit-shell -->
+
+<script>
+(function() {
+  'use strict';
+
+  // ── Estado global ──
+  const state = {
+    nombre: '', especialidad: '', ciudad: '', web: '', url: '',
+    comp1: '', comp2: '',
+    platforms: { gpt: null, google: null, perplexity: null, claude: null },
+    platformNotes: { gpt: '', google: '', perplexity: '', claude: '' },
+    directorios: {},
+    gbpStatus: '', gbpCoherencia: '',
+    notasDirec: '',
+    selectedActions: new Set(),
+    notasPlan: '',
+    benchmarkData: {}
+  };
+
+  // ── Queries por especialidad genérica ──
+  const baseQueries = {
+    gpt: [
+      'Mejor {esp} en {ciudad}',
+      '¿Cuánto cuesta una consulta de {esp} en {ciudad}?',
+      '{esp} recomendado cerca de {ciudad}',
+      'Síntomas que tratan los especialistas en {esp}',
+      '¿Qué revisar antes de elegir un/a {esp}?'
+    ],
+    google: [
+      '{esp} {ciudad} precio',
+      '{esp} recomendado {ciudad}',
+      'Clínica {esp} {ciudad}',
+      'Turno {esp} {ciudad}',
+      '{esp} online Argentina'
+    ],
+    perplexity: [
+      '¿Quiénes son los mejores especialistas en {esp} en {ciudad}?',
+      '¿Cuánto cobra un/a {esp} en Argentina?',
+      '{esp} tratamiento más efectivo',
+      'Directorios médicos para encontrar {esp} en Argentina',
+      '¿Cómo elegir {esp} de confianza?'
+    ],
+    claude: [
+      '¿Cómo encontrar un/a {esp} de confianza en {ciudad}?',
+      '¿Qué preguntas hacerle a un/a {esp} en la primera consulta?',
+      '¿Cuándo debo consultar con un/a {esp}?'
+    ]
+  };
+
+  const DIRECTORIOS = [
+    'Doctoralia', 'HealNow', 'Medifé', 'OSDE Cartilla', 'Swiss Medical',
+    'Galeno', 'Hospital Italiano', 'TuSalud', 'Consulta Doctor',
+    'Zocdoc AR', 'iMedico', 'MedicinaArgentina.com',
+    'LinkedIn', 'Wikipedia'
+  ];
+
+  const ACTIONS = [
+    {
+      id: 'gbp', impact: 'high', effort: 'low',
+      title: 'Completar y verificar Google Business Profile',
+      desc: 'NAP consistente (nombre, dirección, teléfono) + horarios + especialidad exacta. Es la señal de autoridad local más usada por los modelos de IA.'
+    },
+    {
+      id: 'doctoralia', impact: 'high', effort: 'low',
+      title: 'Perfil completo en Doctoralia y HealNow',
+      desc: 'Estos directorios son fuentes primarias de ChatGPT y Perplexity para búsquedas médicas en Argentina. Bio completa, foto profesional y obras sociales actualizadas.'
+    },
+    {
+      id: 'faq', impact: 'high', effort: 'med',
+      title: 'Implementar FAQ estructurada (schema FAQPage)',
+      desc: 'Reescribir 8 preguntas frecuentes de pacientes en formato pregunta-respuesta con schema markup. Esto alimenta directamente los AI Overviews de Google.'
+    },
+    {
+      id: 'blog', impact: 'med', effort: 'med',
+      title: 'Artículo de blog mensual SEO + AI Ready',
+      desc: '600–800 palabras por tema de consulta frecuente. Formato optimizado para ser citado por LLMs: encabezados claros, definiciones, listas estructuradas.'
+    },
+    {
+      id: 'reviews', impact: 'high', effort: 'low',
+      title: 'Estrategia de respuesta a reseñas de Google',
+      desc: 'Las respuestas a reseñas son contenido indexable que los modelos procesan. Template personalizado para responder en menos de 48hs con palabras clave de especialidad y ciudad.'
+    },
+    {
+      id: 'schema', impact: 'med', effort: 'med',
+      title: 'Actualizar schema markup del sitio (MedicalBusiness + Physician)',
+      desc: 'Agregar los tipos correctos de Schema.org para profesionales de la salud: especialidad, área de cobertura, servicios y precio. Auditada con Google Rich Results Test.'
+    },
+    {
+      id: 'wikipedia', impact: 'med', effort: 'high',
+      title: 'Evaluar creación de página Wikipedia (caso por caso)',
+      desc: 'Para especialistas con trayectoria notable, publicaciones o cargos institucionales. Wikipedia es la fuente de mayor peso para los LLMs. Requiere criterios de notoriedad.'
+    },
+    {
+      id: 'monitor', impact: 'med', effort: 'low',
+      title: 'Monitoreo mensual de presencia en IA',
+      desc: 'Rastrear aparición en ChatGPT, Google AI y Perplexity con 10 consultas fijas. Informe trimestral con benchmark vs. competidores directos.'
+    }
+  ];
+
+  // ── Navegación entre pantallas ──
+  window.goToScreen = function(n) {
+    document.querySelectorAll('.audit-screen').forEach(s => s.classList.remove('active'));
+    document.getElementById('screen-' + n).classList.add('active');
+    document.querySelectorAll('.progress-step').forEach((s, i) => {
+      s.classList.remove('active', 'done');
+      if (i + 1 < n) s.classList.add('done');
+      if (i + 1 === n) s.classList.add('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // ── Helpers de queries ──
+  function fillQuery(tpl, esp, ciudad) {
+    return tpl.replace(/{esp}/g, esp || 'especialista').replace(/{ciudad}/g, ciudad || 'tu ciudad');
+  }
+
+  function renderQueries() {
+    const esp = document.getElementById('f-especialidad').value;
+    const ciudad = document.getElementById('f-ciudad').value;
+    ['gpt', 'google', 'perplexity', 'claude'].forEach(p => {
+      const ul = document.getElementById('qlist-' + p);
+      if (!ul) return;
+      ul.innerHTML = baseQueries[p].map((q, i) =>
+        '<li><span class="query-num">Q' + (i+1) + '</span><span>' + fillQuery(q, esp, ciudad) + '</span></li>'
+      ).join('');
+    });
+  }
+
+  // ── Presencia platforms ──
+  window.setPresence = function(platform, val, btn) {
+    state.platforms[platform] = val;
+    const parent = btn.closest('.presence-selector');
+    parent.querySelectorAll('.presence-btn').forEach(b => b.classList.remove('sel-yes','sel-partial','sel-no'));
+    btn.classList.add('sel-' + val);
+  };
+
+  // ── Directorios ──
+  function renderDirGrid() {
+    const grid = document.getElementById('dirGrid');
+    if (!grid) return;
+    grid.innerHTML = DIRECTORIOS.map(d =>
+      '<div class="dir-item" data-dir="' + d + '" onclick="toggleDir(this)">' +
+      '<div class="dir-dot"></div>' + d + '</div>'
+    ).join('');
+  }
+
+  window.toggleDir = function(el) {
+    const d = el.dataset.dir;
+    const cur = state.directorios[d] || 'unknown';
+    if (cur === 'unknown' || !state.directorios[d]) {
+      state.directorios[d] = 'active';
+      el.classList.remove('missing'); el.classList.add('active');
+    } else if (cur === 'active') {
+      state.directorios[d] = 'missing';
+      el.classList.remove('active'); el.classList.add('missing');
+    } else {
+      delete state.directorios[d];
+      el.classList.remove('active','missing');
+    }
+  };
+
+  // ── Benchmark grid ──
+  function renderBenchmark() {
+    const bg = document.getElementById('benchmarkGrid');
+    if (!bg) return;
+    const comp1 = document.getElementById('f-comp1').value || 'Competidor 1';
+    const comp2 = document.getElementById('f-comp2').value || 'Competidor 2';
+    const nombre = document.getElementById('f-nombre').value || 'Tu perfil';
+
+    const platforms = ['ChatGPT', 'Google AI', 'Perplexity'];
+    let html = '<div class="benchmark-row benchmark-header">';
+    html += '<div class="benchmark-cell">Perfil</div>';
+    platforms.forEach(p => html += '<div class="benchmark-cell" style="text-align:center">' + p + '</div>');
+    html += '</div>';
+
+    [
+      { name: nombre, key: 'self' },
+      { name: comp1, key: 'c1' },
+      { name: comp2, key: 'c2' }
+    ].forEach(row => {
+      html += '<div class="benchmark-row">';
+      html += '<div class="benchmark-cell" style="text-align:left;font-weight:700;' + (row.key==='self'?'color:var(--brand-dark)':'') + '">' + row.name + '</div>';
+      platforms.forEach((p, i) => {
+        const key = row.key + '_' + i;
+        const val = state.benchmarkData[key] || '';
+        const cls = val === 'ok' ? 'bcell-ok' : val === 'warn' ? 'bcell-warn' : val === 'bad' ? 'bcell-bad' : (row.key==='self'?'bcell-self':'');
+        const label = val === 'ok' ? '✓' : val === 'warn' ? '⚠' : val === 'bad' ? '✗' : '—';
+        html += '<div class="benchmark-cell ' + cls + '" style="cursor:pointer" onclick="cycleBenchmark(\'' + key + '\',this)">' + label + '</div>';
+      });
+      html += '</div>';
+    });
+
+    bg.innerHTML = html;
+  }
+
+  window.cycleBenchmark = function(key, el) {
+    const cycle = ['', 'ok', 'warn', 'bad'];
+    const cur = cycle.indexOf(state.benchmarkData[key] || '');
+    state.benchmarkData[key] = cycle[(cur + 1) % cycle.length];
+    renderBenchmark();
+  };
+
+  // ── Acciones ──
+ function renderActions() {
+    const list = document.getElementById('actionsList');
+    if (!list) return;
+
+    list.innerHTML = ACTIONS.map((a, i) => {
+      const checked = state.selectedActions.has(a.id);
+      const impactLabel = a.impact === 'high' ? 'Impacto alto' : a.impact === 'med' ? 'Impacto medio' : 'Complementario';
+      const impactCls = a.impact === 'high' ? 'impact-high' : a.impact === 'med' ? 'impact-med' : 'impact-low';
+
+      // Usamos comillas dobles para el atributo HTML y simples para el string de JS interno
+      return '<div class="action-item' + (checked ? ' completed' : '') + '" onclick="toggleAction(\'' + a.id + '\', this)" data-id="' + a.id + '">' +
+        '<div class="action-check">' + (checked ? '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' : '') + '</div>' +
+        '<div style="flex:1">' +
+        '<div class="action-impact ' + impactCls + '">' + impactLabel + ' · Esfuerzo ' + (a.effort === 'low' ? 'bajo' : a.effort === 'med' ? 'medio' : 'alto') + '</div>' +
+        '<div class="action-title">' + (i + 1) + '. ' + a.title + '</div>' +
+        '<div class="action-desc">' + a.desc + '</div>' +
+        '</div></div>';
+    }).join('');
+  }
+
+ window.toggleAction = function(id, el) {
+    if (state.selectedActions.has(id)) {
+      state.selectedActions.delete(id);
+      el.classList.remove('completed');
+      el.querySelector('.action-check').innerHTML = '';
+    } else {
+      state.selectedActions.add(id);
+      el.classList.add('completed');
+      el.querySelector('.action-check').innerHTML = '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }
+  };
+
+  // ── Score calculator ──
+  function calcScore() {
+    let pts = 0, max = 0;
+    const p = state.platforms;
+    ['gpt','google','perplexity','claude'].forEach(k => {
+      const w = k === 'claude' ? 1 : 2;
+      max += w * 2;
+      if (p[k] === 'yes') pts += w * 2;
+      else if (p[k] === 'partial') pts += w;
+    });
+
+    const active = Object.values(state.directorios).filter(v => v === 'active').length;
+    const dirScore = Math.min(active / 5, 1) * 20;
+    pts += dirScore; max += 20;
+
+    if (state.gbpStatus === 'ok') pts += 10; else if (state.gbpStatus === 'partial') pts += 5;
+    max += 10;
+
+    return Math.round((pts / max) * 100);
+  }
+
+  function getScoreColor(s) {
+    return s >= 70 ? 'var(--success)' : s >= 40 ? 'var(--warning)' : 'var(--danger)';
+  }
+
+  function getScoreVerdict(s) {
+    if (s >= 70) return { title: 'Buena presencia base', sub: 'Tu presencia en IA está por encima del promedio de tu especialidad. Las acciones del plan afinarán el posicionamiento y lo mantendrán competitivo.' };
+    if (s >= 40) return { title: 'Presencia parcial — oportunidad clara', sub: 'Aparecés en algunos canales pero no en todos. Hay acciones de alto impacto y bajo esfuerzo que pueden mejorar significativamente tu visibilidad en semanas.' };
+    return { title: 'Baja visibilidad en IA — acción urgente', sub: 'Los modelos de IA no te mencionan cuando los pacientes preguntan por tu especialidad en tu ciudad. Cada mes sin resolver son consultas que van a otro profesional.' };
+  }
+
+  // ── Construcción del informe ──
+  window.buildReport = function() {
+    // Leer notas finales
+    state.notasPlan = document.getElementById('notes-plan').value;
+    state.notasDirec = document.getElementById('notes-directorios').value;
+    state.gbpStatus = document.getElementById('gbp-status').value;
+    state.gbpCoherencia = document.getElementById('gbp-coherencia').value;
+    ['gpt','google','perplexity','claude'].forEach(p => {
+      state.platformNotes[p] = document.getElementById('notes-' + p).value;
+    });
+
+    const nombre = document.getElementById('f-nombre').value || 'Profesional';
+    const esp = document.getElementById('f-especialidad').value || 'especialista';
+    const ciudad = document.getElementById('f-ciudad').value || '';
+    const fecha = new Date().toLocaleDateString('es-AR', { day:'numeric', month:'long', year:'numeric' });
+
+    document.getElementById('print-fecha').textContent = fecha + ' · ' + nombre + ' · ' + esp;
+
+    const score = calcScore();
+    const color = getScoreColor(score);
+    const verdict = getScoreVerdict(score);
+
+    // Score ring
+    const circ = 2 * Math.PI * 52;
+    const dash = circ * (score / 100);
+    document.getElementById('report-score').innerHTML =
+      '<div class="section-eyebrow" style="margin-bottom:0.75rem;">Diagnóstico general — ' + nombre + '</div>' +
+      '<div class="score-ring-wrap">' +
+      '<div class="score-ring-block">' +
+      '<div class="score-ring-canvas">' +
+      '<svg viewBox="0 0 120 120"><circle cx="60" cy="60" r="52" fill="none" stroke="var(--surface-2)" stroke-width="8"/>' +
+      '<circle cx="60" cy="60" r="52" fill="none" stroke="' + color + '" stroke-width="8" stroke-linecap="round" stroke-dasharray="' + dash.toFixed(1) + ' ' + circ.toFixed(1) + '"/></svg>' +
+      '<div class="score-ring-num" style="color:' + color + '">' + score + '</div>' +
+      '</div>' +
+      '<span class="score-ring-label">Score IA</span>' +
+      '</div>' +
+      '<div class="score-summary">' +
+      '<div class="score-verdict">' + verdict.title + '</div>' +
+      '<div class="score-verdict-sub">' + verdict.sub + '</div>' +
+      '</div></div>' +
+      '<div class="diag-grid">' +
+      buildDiagCards() +
+      '</div>';
+
+    // Plataformas
+    const plats = [
+      { key: 'gpt', name: 'ChatGPT (GPT-4o)', queries: '5 consultas de paciente' },
+      { key: 'google', name: 'Google AI Overviews', queries: '5 búsquedas relevantes' },
+      { key: 'perplexity', name: 'Perplexity', queries: '5 consultas + análisis de fuentes' },
+      { key: 'claude', name: 'Claude (Anthropic)', queries: '3 consultas' }
+    ];
+    document.getElementById('report-platforms').innerHTML = plats.map(p => {
+      const pres = state.platforms[p.key];
+      const tagCls = pres === 'yes' ? 'yes' : pres === 'partial' ? 'partial' : pres === 'no' ? 'no' : 'ns';
+      const tagLabel = pres === 'yes' ? '✓ Aparece correctamente' : pres === 'partial' ? '⚠ Presencia parcial o incorrecta' : pres === 'no' ? '✗ No aparece' : 'Sin evaluar';
+      const notes = state.platformNotes[p.key];
+      return '<div class="platform-result">' +
+        '<div class="platform-result-header">' +
+        '<strong style="font-size:0.95rem">' + p.name + '</strong>' +
+        '<span style="font-size:0.78rem;color:var(--text-muted);margin-left:0.25rem">· ' + p.queries + '</span>' +
+        '<span class="presence-tag presence-tag--' + tagCls + '">' + tagLabel + '</span>' +
+        '</div>' +
+        '<div class="platform-result-body">' +
+        (notes ? '<p style="font-size:0.88rem;color:var(--text-light);margin:0">' + notes + '</p>' : '<p style="font-size:0.85rem;color:var(--text-muted);margin:0;font-style:italic">Sin observaciones registradas.</p>') +
+        '</div></div>';
+    }).join('');
+
+    // Diagnóstico
+    const activeDir = Object.entries(state.directorios).filter(([,v]) => v === 'active').map(([k]) => k);
+    const missingDir = Object.entries(state.directorios).filter(([,v]) => v === 'missing').map(([k]) => k);
+    const diagHtml = '<div class="section-eyebrow" style="margin-bottom:0.75rem;">Sección 2 — Diagnóstico</div>' +
+      '<p style="font-size:0.92rem;color:var(--text-light);margin-bottom:1rem;line-height:1.7">' +
+      'Con un score de <strong style="color:' + color + '">' + score + '/100</strong>, el profesional presenta ' +
+      (score >= 70 ? 'una base sólida de presencia' : score >= 40 ? 'presencia fragmentada con brechas identificables' : 'ausencia crítica de señales de autoridad') +
+      ' en los principales motores de IA.</p>' +
+      (state.notasDirec ? '<p style="font-size:0.88rem;color:var(--text-light);margin:0;line-height:1.6">' + state.notasDirec + '</p>' : '') +
+      '<div class="timeline-bar" style="margin-top:1rem;margin-bottom:0;">' +
+      '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-dark)" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>' +
+      '<span class="timeline-text">La invisibilidad en IA no es permanente — es técnica. Con las acciones correctas, los cambios son mensurables en 4–8 semanas.</span></div>';
+    document.getElementById('report-diagnostico').innerHTML = diagHtml;
+
+    // Directorios
+    const gbpMap = { ok: '✓ Completo y verificado', partial: '⚠ Existe pero incompleto', none: '✗ No tiene perfil', dup: '⚠ Duplicados detectados' };
+    const coheMap = { ok: 'Datos coherentes con el sitio', partial: 'Diferencias menores', bad: 'Datos desactualizados / contradictorios' };
+    let dirHtml = '<div class="section-eyebrow" style="margin-bottom:0.75rem;">Sección 2b — Directorios y GBP</div>';
+    if (activeDir.length) dirHtml += '<p style="font-size:0.88rem;color:var(--success);font-weight:600;margin-bottom:0.5rem;">Activos: ' + activeDir.join(', ') + '</p>';
+    if (missingDir.length) dirHtml += '<p style="font-size:0.88rem;color:var(--danger);font-weight:600;margin-bottom:0.5rem;">Faltantes o incompletos: ' + missingDir.join(', ') + '</p>';
+    if (state.gbpStatus) dirHtml += '<p style="font-size:0.88rem;color:var(--text);margin-bottom:0.3rem;"><strong>GBP:</strong> ' + (gbpMap[state.gbpStatus] || state.gbpStatus) + '</p>';
+    if (state.gbpCoherencia) dirHtml += '<p style="font-size:0.88rem;color:var(--text);margin-bottom:0;"><strong>Coherencia:</strong> ' + (coheMap[state.gbpCoherencia] || state.gbpCoherencia) + '</p>';
+    document.getElementById('report-directorios').innerHTML = dirHtml;
+
+    // Plan
+    const selected = ACTIONS.filter(a => state.selectedActions.has(a.id));
+    let planHtml = '<div class="section-eyebrow" style="margin-bottom:1rem;">Sección 3 — Plan de acción priorizado</div>';
+    if (selected.length === 0) {
+      planHtml += '<p style="color:var(--text-muted);font-style:italic;font-size:0.9rem">Ninguna acción seleccionada. Volvé al paso anterior para elegir.</p>';
+    } else {
+      planHtml += '<div class="actions-list">' + selected.map((a, i) => {
+        const impactLabel = a.impact === 'high' ? 'Impacto alto' : a.impact === 'med' ? 'Impacto medio' : 'Complementario';
+        const impactCls = a.impact === 'high' ? 'impact-high' : a.impact === 'med' ? 'impact-med' : 'impact-low';
+        return '<div class="action-item completed" style="cursor:default">' +
+          '<div class="action-check" style="background:var(--success);border-color:var(--success)">' +
+          '<svg width="12" height="12" viewBox="0 0 12 12" fill="none"><polyline points="2,6 5,9 10,3" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+          '</div>' +
+          '<div style="flex:1">' +
+          '<div class="action-impact ' + impactCls + '">' + impactLabel + '</div>' +
+          '<div class="action-title">' + (i+1) + '. ' + a.title + '</div>' +
+          '<div class="action-desc">' + a.desc + '</div>' +
+          '</div></div>';
+      }).join('') + '</div>';
+    }
+    if (state.notasPlan) planHtml += '<div class="timeline-bar" style="margin-top:1.25rem;margin-bottom:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-dark)" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg><span class="timeline-text">' + state.notasPlan + '</span></div>';
+    planHtml += '<div class="timeline-bar" style="margin-top:0.75rem;margin-bottom:0"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--brand-dark)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg><span class="timeline-text">Primeras mejoras visibles: <strong>3–4 semanas</strong>. Posicionamiento estable en IA: <strong>3–6 meses</strong>.</span></div>';
+    document.getElementById('report-plan').innerHTML = planHtml;
+
+    // Upgrade
+    document.getElementById('report-upgrade').innerHTML =
+      '<div class="upgrade-grid">' +
+      '<div>' +
+      '<div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--brand);margin-bottom:0.5rem;">Siguiente paso recomendado</div>' +
+      '<div class="upgrade-title">Plan Mantenimiento Pro + Optimización IA</div>' +
+      '<div class="upgrade-desc">Todo lo del análisis de hoy ejecutado, monitoreado y actualizado cada mes. Sin que tengas que preocuparte por el algoritmo.</div>' +
+      '<ul class="upgrade-features">' +
+      '<li>Implementación completa del plan de acción de esta auditoría</li>' +
+      '<li>1 artículo de blog mensual SEO + AI Overview ready</li>' +
+      '<li>Monitoreo mensual en ChatGPT, Google AI y Perplexity</li>' +
+      '<li>Actualización de FAQ para mantener snippets competitivos</li>' +
+      '<li>Informe trimestral con benchmark vs. tus competidores</li>' +
+      '<li>Prioridad en agenda para cambios urgentes</li>' +
+      '</ul>' +
+      '<a href="https://wa.me/5491176199680?text=' + encodeURIComponent('Hola, acabo de hacer la auditoría de IA con ' + nombre + ' y quiero avanzar con el plan Mantenimiento Pro + Optimización IA.') + '" class="btn btn-primary" target="_blank">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>' +
+      'Quiero implementar el plan — WhatsApp' +
+      '</a>' +
+      '</div>' +
+      '<div class="upgrade-price-block">' +
+      '<div class="upgrade-price-label">Plan mensual</div>' +
+      '<div class="upgrade-price-amount">$120</div>' +
+      '<div class="upgrade-price-period">USD / mes</div>' +
+      '<div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgb(255 255 255/10%);font-size:0.75rem;color:rgb(255 255 255/45%)">Incluye Mantenimiento<br>Pro + Optimización IA</div>' +
+      '</div></div>';
+
+    goToScreen(5);
+  };
+
+  function buildDiagCards() {
+    const presCount = Object.values(state.platforms).filter(v => v === 'yes').length;
+    const partialCount = Object.values(state.platforms).filter(v => v === 'partial').length;
+    const activeDir = Object.values(state.directorios).filter(v => v === 'active').length;
+    const missingDir = Object.values(state.directorios).filter(v => v === 'missing').length;
+
+    const pColor = presCount >= 3 ? 'diag-val--ok' : presCount >= 1 ? 'diag-val--warn' : 'diag-val--bad';
+    const dColor = activeDir >= 5 ? 'diag-val--ok' : activeDir >= 3 ? 'diag-val--warn' : 'diag-val--bad';
+
+    return [
+      { icon: '✓', val: presCount + '/4', label: 'Plataformas IA', cls: pColor },
+      { icon: '⚠', val: partialCount, label: 'Con info parcial', cls: partialCount > 0 ? 'diag-val--warn' : 'diag-val--ok' },
+      { icon: '◎', val: activeDir, label: 'Directorios activos', cls: dColor },
+      { icon: '✗', val: missingDir, label: 'Directorios faltantes', cls: missingDir > 2 ? 'diag-val--bad' : missingDir > 0 ? 'diag-val--warn' : 'diag-val--ok' }
+    ].map(c =>
+      '<div class="diag-card">' +
+      '<div class="diag-icon">' + c.icon + '</div>' +
+      '<div class="diag-val ' + c.cls + '">' + c.val + '</div>' +
+      '<div class="diag-label">' + c.label + '</div>' +
+      '</div>'
+    ).join('');
+  }
+
+  // ── Override goToScreen para preparar datos antes de ciertos pasos ──
+const _origGo = window.goToScreen;
+  window.goToScreen = function(n) {
+    if (n === 2) {
+      state.nombre = document.getElementById('f-nombre').value;
+      state.especialidad = document.getElementById('f-especialidad').value;
+      state.ciudad = document.getElementById('f-ciudad').value;
+      renderQueries();
+    }
+    if (n === 3) {
+      renderBenchmark();
+    }
+    if (n === 4) {
+      renderActions();
+    }
+    _origGo(n);
+  };
+
+ // ── Inicialización final ──
+  document.addEventListener('DOMContentLoaded', () => {
+    renderDirGrid();
+    // Pre-selección de acciones clave
+    ['gbp', 'doctoralia', 'faq', 'reviews'].forEach(id => state.selectedActions.add(id));
+  });
+
+})();
+</script>
+</body>
+</html>

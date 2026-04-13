@@ -1,0 +1,7 @@
+# robots.txt — Cirujana Digital
+# Actualizado: 2026-03-09
+
+User-agent: *
+Allow: /
+
+Sitemap: https://cirujanadigital.com/sitemap.xml

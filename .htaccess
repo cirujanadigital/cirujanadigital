@@ -1,0 +1,155 @@
+# ==========================================
+# CIRUJANA DIGITAL - HTACCESS OPTIMIZADO
+# ==========================================
+
+# ==========================================
+# FORZAR HTTPS + REDIRECT WWW → SIN WWW
+# ==========================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP_HOST} ^www\.cirujanadigital\.com [NC]
+  RewriteRule ^(.*)$ https://cirujanadigital.com/$1 [R=301,L]
+  RewriteRule ^landing-page-vs-sitio-web-completo-necesitas/?$ / [R=301,L]
+  RewriteRule ^aviso-legal/?$ /politicas.html [R=301,L]
+  RewriteRule ^terminos-y-condiciones/?$ /terminos.html [R=301,L]
+
+  # PROBLEMA REAL 2: Googlebot recibe 404 en /en/
+  RewriteRule ^en(/.*)?$ / [R=301,L]
+</IfModule>
+
+# ==========================================
+# BLOQUEO DE IPS ATACANTES CONOCIDAS
+# ==========================================
+<RequireAll>
+  Require all granted
+  Require not ip 54.92.168.77
+  Require not ip 195.3.220.88
+  Require not ip 136.107.227.252
+  Require not ip 109.234.233.249
+</RequireAll>
+
+# ==========================================
+# BLOQUEO DE RUTAS WORDPRESS INEXISTENTES
+# ==========================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteRule ^xmlrpc\.php$ - [F,L]
+  RewriteRule ^//xmlrpc\.php - [F,L]
+  RewriteRule wlwmanifest\.xml - [F,L]
+  RewriteRule ^wp-admin/?$ - [F,L]
+  RewriteRule ^wp-login\.php$ - [F,L]
+  RewriteRule ^wp-content/ - [F,L]
+  RewriteRule ^wp-includes/ - [F,L]
+  RewriteCond %{REQUEST_URI} \.(php|asp|aspx|jsp|cgi|pl)$ [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ==========================================
+# BLOQUEO DE BOTS Y TRÁFICO NO LEGÍTIMO
+# ==========================================
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_USER_AGENT} (AhrefsBot|SemrushBot|MJ12bot|DotBot|BLEXBot|PetalBot|DataForSeoBot|serpstatbot|MegaIndex|Bytespider|GPTBot|ClaudeBot|CCBot|crawler|scraper|scanner) [NC]
+  RewriteRule .* - [F,L]
+</IfModule>
+
+<RequireAll>
+  Require all granted
+  Require not ip 185.220.100.0/22
+  Require not ip 185.220.101.0/24
+  Require not ip 199.249.230.0/24
+  Require not ip 199.249.231.0/24
+  Require not ip 204.8.96.0/22
+  Require not ip 163.172.160.0/24
+  Require not ip 51.15.0.0/16
+</RequireAll>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTP_USER_AGENT} ^-?$
+  RewriteRule .* - [F,L]
+</IfModule>
+
+# ==========================================
+# ERRORES PERSONALIZADOS
+# ==========================================
+ErrorDocument 404 /error404.html
+
+# ==========================================
+# ENCODING UTF-8
+# ==========================================
+<IfModule mod_mime.c>
+  AddCharset UTF-8 .js .css .html
+</IfModule>
+
+# ==========================================
+# COMPRESIÓN GZIP
+# ==========================================
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE text/javascript application/javascript application/x-javascript
+  AddOutputFilterByType DEFLATE application/json application/xml application/rss+xml
+  AddOutputFilterByType DEFLATE image/svg+xml
+  AddOutputFilterByType DEFLATE font/woff2 font/woff
+</IfModule>
+
+# ==========================================
+# CACHE DE NAVEGADOR
+# ==========================================
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpg            "access plus 1 year"
+  ExpiresByType image/jpeg           "access plus 1 year"
+  ExpiresByType image/gif            "access plus 1 year"
+  ExpiresByType image/png            "access plus 1 year"
+  ExpiresByType image/webp           "access plus 1 year"
+  ExpiresByType image/svg+xml        "access plus 1 year"
+  ExpiresByType image/x-icon         "access plus 1 year"
+  ExpiresByType text/css             "access plus 1 month"
+  ExpiresByType text/javascript      "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType font/ttf             "access plus 1 year"
+  ExpiresByType font/woff            "access plus 1 year"
+  ExpiresByType font/woff2           "access plus 1 year"
+  ExpiresByType application/font-woff "access plus 1 year"
+  ExpiresByType text/html            "access plus 1 hour"
+</IfModule>
+
+# ==========================================
+# HEADERS DE CACHÉ Y SEGURIDAD
+# ==========================================
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|ico|woff|woff2|ttf)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  <FilesMatch "\.css$">
+    Header set Cache-Control "public, max-age=2592000"
+    Header set Content-Type "text/css; charset=UTF-8"
+  </FilesMatch>
+  <FilesMatch "\.js$">
+    Header set Cache-Control "public, max-age=2592000"
+    Header set Content-Type "text/javascript; charset=UTF-8"
+  </FilesMatch>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Content-Security-Policy "upgrade-insecure-requests; frame-ancestors 'self'"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ==========================================
+# PROTEGER ARCHIVOS OCULTOS
+# ==========================================
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# ==========================================
+# DESACTIVAR LISTADO DE DIRECTORIOS
+# ==========================================
+Options -Indexes
