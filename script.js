@@ -1,12 +1,16 @@
 /**
  * ==========================================
- * CIRUJANA DIGITAL — main.js
+ * CIRUJANA DIGITAL — script.js
  * Performance-optimized · TBT < 50ms
+ * 'use strict' una sola vez · IIFE cierra al final
  * ==========================================
  */
 (function () {
   'use strict';
 
+  /* ══════════════════════════════════════════════
+     UTILIDADES
+  ══════════════════════════════════════════════ */
   const debounce = (fn, ms) => {
     let t;
     return (...a) => {
@@ -15,9 +19,9 @@
     };
   };
 
-  // ==========================================
-  // PARTICLE CANVAS — NO MODIFICAR (400/400)
-  // ==========================================
+  /* ══════════════════════════════════════════════
+     PARTICLE CANVAS
+  ══════════════════════════════════════════════ */
   class ParticleCanvas {
     constructor(canvas) {
       this.canvas = canvas;
@@ -29,9 +33,11 @@
       this.logicalWidth = 0;
       this.logicalHeight = 0;
       this.boundAnimate = this.animate.bind(this);
+
       this.resize();
       this.init();
       this.startAnimation();
+
       window.addEventListener(
         'resize',
         debounce(() => {
@@ -40,15 +46,27 @@
         }, 250),
         { passive: true }
       );
-      canvas.addEventListener(
+
+      /* FIX responsive: throttle con rAF + coords relativas al canvas */
+      let mouseThrottle = false;
+      this.canvas.addEventListener(
         'mousemove',
-        debounce((e) => {
-          this.mouse.x = e.clientX;
-          this.mouse.y = e.clientY;
-        }, 16),
+        (e) => {
+          if (!mouseThrottle) {
+            mouseThrottle = true;
+            requestAnimationFrame(() => {
+              const rect = this.canvas.getBoundingClientRect();
+              this.mouse.x = e.clientX - rect.left;
+              this.mouse.y = e.clientY - rect.top;
+              mouseThrottle = false;
+            });
+          }
+        },
         { passive: true }
       );
-      canvas.addEventListener(
+
+      /* FIX: mouseleave resetea mouse para no quedar "congelado" */
+      this.canvas.addEventListener(
         'mouseleave',
         () => {
           this.mouse.x = null;
@@ -56,25 +74,37 @@
         },
         { passive: true }
       );
+
       document.addEventListener('visibilitychange', () => {
         document.hidden ? this.stopAnimation() : this.startAnimation();
       });
     }
+
+    /* FIX responsive: el canvas usa el tamaño del HERO, no window.innerWidth.
+       Esto evita que el canvas desborde cuando hay barras de scroll, zoom de DevTools
+       o viewports donde innerWidth != ancho real del contenedor. */
     resize() {
       const dpr = window.devicePixelRatio || 1;
-      const w = window.innerWidth;
-      const h = window.innerHeight;
+      const parent = this.canvas.parentElement;
+      const w = parent ? parent.offsetWidth : window.innerWidth;
+      const h = parent ? parent.offsetHeight : window.innerHeight;
+
       this.canvas.width = w * dpr;
       this.canvas.height = h * dpr;
       this.canvas.style.width = w + 'px';
       this.canvas.style.height = h + 'px';
+
+      /* FIX: resetear transformación antes de escalar para evitar acumulación */
+      this.ctx.setTransform(1, 0, 0, 1, 0, 0);
       this.ctx.scale(dpr, dpr);
+
       this.logicalWidth = w;
       this.logicalHeight = h;
     }
+
     init() {
       this.particles = [];
-      const isMobile = window.innerWidth < 768;
+      const isMobile = this.logicalWidth < 768;
       const maxParticles = isMobile ? 40 : 80;
       const n = Math.min(
         Math.floor((this.logicalWidth * this.logicalHeight) / 15000),
@@ -90,6 +120,7 @@
         });
       }
     }
+
     drawParticles() {
       this.ctx.fillStyle = 'rgba(0, 167, 169, 0.5)';
       this.particles.forEach((p) => {
@@ -98,30 +129,37 @@
         this.ctx.fill();
       });
     }
+
+    /* FIX: stroke solo si hay líneas — no gastar GPU en paths vacíos */
     connectParticles() {
-      const maxDistance = 120;
+      const maxDist2 = 120 * 120;
       this.ctx.lineWidth = 1;
+      this.ctx.beginPath();
+      let hasLines = false;
       for (let i = 0; i < this.particles.length; i++) {
         for (let j = i + 1; j < Math.min(i + 5, this.particles.length); j++) {
           const dx = this.particles[i].x - this.particles[j].x;
           const dy = this.particles[i].y - this.particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          if (distance < maxDistance) {
-            const opacity = (1 - distance / maxDistance) * 0.3;
-            this.ctx.strokeStyle = 'rgba(0, 167, 169, ' + opacity + ')';
-            this.ctx.beginPath();
+          const dist2 = dx * dx + dy * dy;
+          if (dist2 < maxDist2) {
             this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
             this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
-            this.ctx.stroke();
+            hasLines = true;
           }
         }
       }
+      if (hasLines) {
+        this.ctx.strokeStyle = 'rgba(0, 167, 169, 0.2)';
+        this.ctx.stroke();
+      }
     }
+
+    /* FIX: !== null en lugar de truthy — evita fallo cuando mouse está en x=0 o y=0 */
     updateParticles() {
       this.particles.forEach((p) => {
         p.x += p.speedX;
         p.y += p.speedY;
-        if (this.mouse.x && this.mouse.y) {
+        if (this.mouse.x !== null && this.mouse.y !== null) {
           const dx = this.mouse.x - p.x;
           const dy = this.mouse.y - p.y;
           const distance = Math.sqrt(dx * dx + dy * dy);
@@ -136,6 +174,7 @@
         if (p.y < 0 || p.y > this.logicalHeight) p.speedY *= -1;
       });
     }
+
     animate() {
       if (!this.isActive) return;
       this.ctx.clearRect(0, 0, this.logicalWidth, this.logicalHeight);
@@ -144,12 +183,14 @@
       this.updateParticles();
       this.animationId = requestAnimationFrame(this.boundAnimate);
     }
+
     startAnimation() {
       if (!this.isActive) {
         this.isActive = true;
         this.boundAnimate();
       }
     }
+
     stopAnimation() {
       this.isActive = false;
       if (this.animationId) {
@@ -157,14 +198,15 @@
         this.animationId = null;
       }
     }
+
     destroy() {
       this.stopAnimation();
     }
   }
 
   /* ══════════════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════════════ */
+     NAVBAR
+  ══════════════════════════════════════════════ */
   const navbar = document.getElementById('navbar');
   const hamburger = document.getElementById('hamburger');
   const navMenu = document.getElementById('navMenu');
@@ -177,6 +219,7 @@
     document.body.style.overflow = '';
     hamburger.setAttribute('aria-expanded', 'false');
   }
+
   function toggleMenu() {
     const open = hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
@@ -190,13 +233,21 @@
     navOverlay.addEventListener('click', closeMenu, { passive: true });
   }
 
+  /* ══════════════════════════════════════════════
+     SCROLL UNIFICADO — un solo listener, una sola
+     variable ticking para navbar + scroll-top btn
+  ══════════════════════════════════════════════ */
+  const scrollBtn = document.getElementById('scrollTopBtn');
   let ticking = false;
+
   window.addEventListener(
     'scroll',
     () => {
       if (!ticking) {
         requestAnimationFrame(() => {
-          navbar?.classList.toggle('scrolled', window.pageYOffset > 50);
+          const scrollY = window.scrollY;
+          navbar?.classList.toggle('scrolled', scrollY > 50);
+          scrollBtn?.classList.toggle('visible', scrollY > 400);
           ticking = false;
         });
         ticking = true;
@@ -205,9 +256,14 @@
     { passive: true }
   );
 
+  if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
   /* ══════════════════════════════════════════════
-     KEYDOWN GLOBAL UNIFICADO
-     Maneja: Escape navbar + Escape PDF modal
+     KEYDOWN GLOBAL — Escape cierra navbar y PDF modal
   ══════════════════════════════════════════════ */
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
@@ -218,8 +274,8 @@
   });
 
   /* ══════════════════════════════════════════════
-   SMOOTH SCROLL
-══════════════════════════════════════════════ */
+     SMOOTH SCROLL
+  ══════════════════════════════════════════════ */
   document.addEventListener(
     'click',
     (e) => {
@@ -243,8 +299,8 @@
   );
 
   /* ══════════════════════════════════════════════
-   PORTFOLIO SERVICE CONTENT — siempre visible
-══════════════════════════════════════════════ */
+     PORTFOLIO SERVICE CONTENT — siempre visible
+  ══════════════════════════════════════════════ */
   document.querySelectorAll('.portfolio-card .service-content').forEach((c) => {
     c.style.maxHeight = 'none';
     c.style.overflow = 'visible';
@@ -296,8 +352,8 @@
   };
 
   /* ══════════════════════════════════════════════
-   ANALYTICS
-══════════════════════════════════════════════ */
+     ANALYTICS
+  ══════════════════════════════════════════════ */
   const initAnalytics = () => {
     document
       .querySelectorAll(
@@ -338,20 +394,60 @@
   };
 
   /* ══════════════════════════════════════════════
-     PARTICLES — lazy, post-load, no bloquea LCP
+     PARTICLES — lazy, no bloquea TBT
+     particleInstance en scope del IIFE padre
+     para que beforeunload pueda destruirla
   ══════════════════════════════════════════════ */
   let particleInstance = null;
-  setTimeout(() => {
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      const canvas = document.getElementById('particleCanvas');
-      if (canvas) particleInstance = new ParticleCanvas(canvas);
+
+  (function () {
+    let particleLoaded = false;
+    function loadParticles() {
+      if (particleLoaded) return;
+      particleLoaded = true;
+      if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        const canvas = document.getElementById('particleCanvas');
+        if (canvas) particleInstance = new ParticleCanvas(canvas);
+      }
     }
-  }, 3000);
+    const hero = document.querySelector('.hero');
+    if (hero) {
+      hero.addEventListener('mousemove', loadParticles, { once: true, passive: true });
+      hero.addEventListener('touchstart', loadParticles, { once: true, passive: true });
+    }
+    setTimeout(loadParticles, 5000);
+  })();
+
+  /* ══════════════════════════════════════════════
+     UI HELPERS — Sticky CTA + scroll CSS
+     scrollBtn ya tiene su listener unificado arriba
+  ══════════════════════════════════════════════ */
+  const initUIHelpers = () => {
+    /* Smooth scroll vía CSS, post-carga para no penalizar LCP */
+    document.documentElement.style.scrollBehavior = 'smooth';
+
+    /* Sticky CTA: ocultar cuando el hero es visible */
+    const hero = document.querySelector('.hero');
+    const sticky = document.getElementById('stickyCta');
+    if (hero && sticky) {
+      new IntersectionObserver(
+        (entries) => {
+          const isVisible = entries[0].isIntersecting;
+          sticky.setAttribute('aria-hidden', isVisible);
+          sticky.style.display = isVisible ? 'none' : '';
+        },
+        { threshold: 0.05 }
+      ).observe(hero);
+    }
+  };
 
   /* ══════════════════════════════════════════════
      INIT
   ══════════════════════════════════════════════ */
   const initNonCritical = () => {
+    const yearEl = document.getElementById('current-year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
+    initUIHelpers();
     initScrollAnimations();
     initLazyImages();
     initAnalytics();
@@ -366,12 +462,15 @@
 
   document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', run) : run();
 
+  /* UN SOLO beforeunload — particleInstance vive en este scope */
   window.addEventListener('beforeunload', () => {
     if (particleInstance) particleInstance.destroy();
   });
-})();
+})(); /* ← CIERRE DEL IIFE EXTERNO — único 'use strict' del archivo */
 
-// ── ROI CALCULATOR ──────────────────────────────────────────
+/* ══════════════════════════════════════════════════════════════
+   ROI CALCULATOR
+══════════════════════════════════════════════════════════════ */
 (function () {
   'use strict';
 
@@ -392,25 +491,15 @@
     waBtn: document.getElementById('roiWaBtn'),
     servicePills: document.querySelectorAll('.service-pill'),
   };
+
   if (!els.currency) return;
 
-  // Estado inicial: USD, ticket $100, Pack Presencia $400
-  const state = {
-    symbol: '$',
-    name: 'USD',
-    tc: 1,
-    patients: 3,
-    ticket: 100,
-    service: 400,
-  };
-
-  let _canvasW = 0;
+  const state = { symbol: '$', name: 'USD', tc: 1, patients: 3, ticket: 100, service: 400 };
 
   function fmt(n, sym) {
     return sym + Math.round(n).toLocaleString('es-AR');
   }
 
-  // Lee los data-* del option seleccionado
   function getCurrencyMeta() {
     const opt = els.currency.options[els.currency.selectedIndex];
     return {
@@ -424,7 +513,6 @@
     };
   }
 
-  // Actualiza rango del slider de ticket y el label de moneda
   function syncSliderRange(meta) {
     els.ticket.min = meta.min;
     els.ticket.max = meta.max;
@@ -435,29 +523,30 @@
   }
 
   /* ── Canvas chart ── */
+  let _cachedCanvasW = 0;
+
   function drawChart(invLocal, monthly) {
     const canvas = els.canvas;
     if (!canvas) return;
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
-    const W = canvas.offsetWidth || 700;
+    const W = _cachedCanvasW || 700;
     const H = 200;
-    if (_canvasW !== W) {
-      canvas.width = W * dpr;
-      canvas.height = H * dpr;
-      ctx.scale(dpr, dpr);
-      _canvasW = W;
-    } else {
-      ctx.clearRect(0, 0, W, H);
-    }
+    canvas.width = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.scale(dpr, dpr);
+    ctx.clearRect(0, 0, W, H);
+
     const P = { t: 24, r: 20, b: 38, l: 14 };
-    const CW = W - P.l - P.r,
-      CH = H - P.t - P.b;
+    const CW = W - P.l - P.r;
+    const CH = H - P.t - P.b;
     const MONTHS = 12;
     const maxVal = Math.max(monthly * MONTHS, invLocal) * 1.12;
     const xOf = (m) => P.l + (m / MONTHS) * CW;
     const yOf = (v) => P.t + CH - Math.min(v / maxVal, 1) * CH;
-    // Grid
+
     ctx.strokeStyle = 'rgba(255,255,255,.06)';
     ctx.lineWidth = 1;
     [0.25, 0.5, 0.75].forEach((f) => {
@@ -467,7 +556,7 @@
       ctx.lineTo(P.l + CW, y);
       ctx.stroke();
     });
-    // Línea inversión
+
     const invY = yOf(invLocal);
     if (invY >= P.t && invY <= P.t + CH) {
       ctx.strokeStyle = 'rgba(248,81,73,.65)';
@@ -483,7 +572,7 @@
       ctx.textAlign = 'right';
       ctx.fillText('Inversión', P.l + CW - 2, invY - 5);
     }
-    // Área ingreso
+
     const grad = ctx.createLinearGradient(0, P.t, 0, P.t + CH);
     grad.addColorStop(0, 'rgba(0,167,169,.3)');
     grad.addColorStop(1, 'rgba(0,167,169,.02)');
@@ -495,7 +584,7 @@
     ctx.closePath();
     ctx.fillStyle = grad;
     ctx.fill();
-    // Línea ingreso
+
     ctx.strokeStyle = '#00a7a9';
     ctx.lineWidth = 2.5;
     ctx.lineJoin = 'round';
@@ -504,7 +593,7 @@
     ctx.moveTo(xOf(0), yOf(0));
     for (let m = 1; m <= MONTHS; m++) ctx.lineTo(xOf(m), yOf(monthly * m));
     ctx.stroke();
-    // Breakeven
+
     const breakMonth = monthly > 0 ? invLocal / monthly : Infinity;
     if (breakMonth <= MONTHS && breakMonth > 0) {
       const bx = xOf(breakMonth),
@@ -529,7 +618,7 @@
       ctx.textAlign = 'center';
       ctx.fillText('mes ' + Math.ceil(breakMonth), bx, P.t + CH + 16);
     }
-    // Eje X
+
     ctx.font = '400 10px -apple-system,sans-serif';
     ctx.fillStyle = 'rgba(255,255,255,.3)';
     ctx.textAlign = 'center';
@@ -539,14 +628,12 @@
   }
 
   /* ── CTA personalizado ── */
-  function updateCTA({ sym, name, patients, ticket, invLocal, breakEven, monthsToROI }) {
-    // 1. Mapeo de nombres de servicio
+  function updateCTA({ sym, patients, ticket, breakEven, monthsToROI }) {
     const serviceNames = {
       250: 'Landing Page ($250 USD)',
       400: 'Pack Presencia ($400 USD)',
       750: 'Sitio Corporativo ($750 USD)',
     };
-
     const serviceNameShort =
       state.service === 250
         ? 'Landing Page'
@@ -554,13 +641,11 @@
           ? 'Sitio Corporativo'
           : 'Pack Presencia';
 
-    // 2. Actualización de textos en el DOM
     if (els.ctaNumber) {
       els.ctaNumber.innerHTML =
         `Con <strong>${fmt(ticket, sym)}</strong> de ticket y <strong>${patients} paciente${patients !== 1 ? 's' : ''}</strong> nuevos por mes, ` +
         `el ${serviceNameShort} se amortiza en <strong>${breakEven} consulta${breakEven !== 1 ? 's' : ''}</strong>.`;
     }
-
     if (els.ctaSubtitle) {
       els.ctaSubtitle.textContent =
         monthsToROI <= 1
@@ -568,19 +653,13 @@
           : `Recuperás la inversión en ${monthsToROI} mes${monthsToROI !== 1 ? 'es' : ''}. Después es ganancia pura.`;
     }
 
-    // 3. Generación del mensaje de WhatsApp personalizado (Fix solicitado)
     const annualVal = fmt(patients * ticket * 12, sym);
     const monthsText = monthsToROI <= 1 ? '1 mes' : `${monthsToROI} meses`;
-
     const msg = encodeURIComponent(
       `Hola, calculé mi ROI con la calculadora: eligiendo ${serviceNames[state.service]}, ` +
-        `recupero la inversión en ${monthsText} y el ingreso anual desde la web sería de ${annualVal}. ` +
-        `Quiero avanzar.`
+        `recupero la inversión en ${monthsText} y el ingreso anual desde la web sería de ${annualVal}. Quiero avanzar.`
     );
-
-    if (els.waBtn) {
-      els.waBtn.href = `https://wa.me/5491176199680?text=${msg}`;
-    }
+    if (els.waBtn) els.waBtn.href = `https://wa.me/5491176199680?text=${msg}`;
   }
 
   /* ── gtag debounceado ── */
@@ -598,7 +677,6 @@
   /* ── Update principal ── */
   function updateROI(fromUser) {
     const { symbol: sym, name, tc, patients, ticket, service } = state;
-    // Con USD/EUR, tc es 1 o 1.08, así que invLocal ≈ service en la moneda del usuario
     const invLocal = service * tc;
     const monthly = patients * ticket;
     const annual = monthly * 12;
@@ -614,12 +692,10 @@
     if (els.annual) els.annual.textContent = fmt(annual, sym);
     if (els.net) els.net.textContent = fmt(netROI, sym);
 
-    // Nota simplificada — sin lógica de monedas locales
     if (els.note) {
       els.note.textContent =
         `${patients} paciente${patients !== 1 ? 's' : ''}/mes × ${fmt(ticket, sym)} = ` +
-        `${fmt(annual, sym)}/año. Inversión $${service} USD. ` +
-        `ROI neto: ${fmt(netROI, sym)} el primer año.`;
+        `${fmt(annual, sym)}/año. Inversión $${service} USD. ROI neto: ${fmt(netROI, sym)} el primer año.`;
     }
 
     requestAnimationFrame(() => drawChart(invLocal, monthly));
@@ -627,7 +703,7 @@
     if (fromUser) trackROI(`${name}_${patients}p_${service}usd`);
   }
 
-  /* ── PDF Generator ── */
+  /* ── PDF Generator (usado en página separada) ── */
   function generatePDF() {
     const { symbol: sym, name, tc, patients, ticket, service } = state;
     const invLocal = service * tc;
@@ -639,6 +715,25 @@
     const preview = document.getElementById('pdfPreview');
     if (!preview) return;
     const ctx = preview.getContext('2d');
+
+    /* Polyfill roundRect para Safari < 15.4 */
+    function roundRect(ctx, x, y, w, h, r) {
+      if (typeof ctx.roundRect === 'function') {
+        ctx.roundRect(x, y, w, h, r);
+      } else {
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h - r);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        ctx.lineTo(x + r, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+        ctx.closePath();
+      }
+    }
+
     const W = 480,
       H = 320;
     const dpr = window.devicePixelRatio || 1;
@@ -647,6 +742,7 @@
     preview.style.width = W + 'px';
     preview.style.height = H + 'px';
     ctx.scale(dpr, dpr);
+
     const bg = ctx.createLinearGradient(0, 0, W, H);
     bg.addColorStop(0, '#0d1b2a');
     bg.addColorStop(1, '#03658c');
@@ -686,6 +782,7 @@
       W / 2,
       108
     );
+
     [
       { label: 'Ingreso anual', val: fmt(annual, sym) },
       { label: 'ROI neto año 1', val: fmt(netROI, sym) },
@@ -694,7 +791,7 @@
       const cx = 60 + i * 130;
       ctx.fillStyle = 'rgba(255,255,255,.07)';
       ctx.beginPath();
-      ctx.roundRect(cx - 50, 124, 110, 72, 8);
+      roundRect(ctx, cx - 50, 124, 110, 72, 8);
       ctx.fill();
       ctx.fillStyle = '#7fdbff';
       ctx.font = '700 13px -apple-system,sans-serif';
@@ -704,9 +801,10 @@
       ctx.font = '400 9px -apple-system,sans-serif';
       ctx.fillText(c.label.toUpperCase(), cx + 5, 168);
     });
+
     ctx.fillStyle = 'rgba(0,167,169,.25)';
     ctx.beginPath();
-    ctx.roundRect(64, 214, W - 128, 44, 8);
+    roundRect(ctx, 64, 214, W - 128, 44, 8);
     ctx.fill();
     ctx.fillStyle = '#fff';
     ctx.font = '600 12px -apple-system,sans-serif';
@@ -721,6 +819,7 @@
     ctx.fillStyle = 'rgba(255,255,255,.25)';
     ctx.font = '400 9px -apple-system,sans-serif';
     ctx.fillText('cirujanadigital.com · info@cirujanadigital.com · @cirujanadigital', W / 2, 300);
+
     const link = document.createElement('a');
     link.download = 'ROI-CirujanaDigital.png';
     link.href = preview.toDataURL('image/png');
@@ -762,11 +861,12 @@
     });
   });
 
-  // PDF modal
+  /* PDF modal (elementos opcionales — solo en páginas que los tienen) */
   const pdfBtn = document.getElementById('roiPdfBtn');
   const pdfOverlay = document.getElementById('pdfOverlay');
   const pdfClose = document.getElementById('pdfModalClose');
   const pdfDl = document.getElementById('pdfDownloadBtn');
+
   if (pdfBtn && pdfOverlay) {
     pdfBtn.addEventListener('click', function () {
       pdfOverlay.classList.add('visible');
@@ -779,19 +879,20 @@
     if (pdfDl) pdfDl.addEventListener('click', generatePDF);
   }
 
-  // ResizeObserver con debounce
+  /* ResizeObserver — lee del entry, no del DOM */
   if (els.canvas && 'ResizeObserver' in window) {
     let resizeTimer;
-    new ResizeObserver(() => {
+    new ResizeObserver((entries) => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
-        _canvasW = 0;
+        const entry = entries[0];
+        _cachedCanvasW = Math.round(entry.contentRect.width) || 700;
         drawChart(state.service * state.tc, state.patients * state.ticket);
       }, 150);
     }).observe(els.canvas);
   }
 
-  // Tabs auditoría (si existen)
+  /* Tabs auditoría (si existen) */
   document.querySelectorAll('.audit-tab').forEach((tab) => {
     tab.addEventListener('click', function () {
       const target = this.dataset.tab;
@@ -807,13 +908,26 @@
     });
   });
 
-  // Inicializar label de moneda y calcular
-  const initMeta = getCurrencyMeta();
-  if (els.currencyLabel) els.currencyLabel.textContent = initMeta.name;
-  updateROI(); // sin tracking en init
+  /* FIX carga segura: rAF garantiza offsetWidth > 0 */
+  function initROIWhenReady() {
+    const meta = getCurrencyMeta();
+    if (els.currencyLabel) els.currencyLabel.textContent = meta.name;
+    requestAnimationFrame(() => {
+      _cachedCanvasW = (els.canvas && els.canvas.offsetWidth) || 700;
+      updateROI();
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initROIWhenReady);
+  } else {
+    initROIWhenReady();
+  }
 })();
 
-// ── LEAD MAGNET FORM ────────────────────────────────────────
+/* ══════════════════════════════════════════════════════════════
+   LEAD MAGNET FORM
+══════════════════════════════════════════════════════════════ */
 (function () {
   var form = document.getElementById('lmForm');
   var success = document.getElementById('lmSuccess');
@@ -826,6 +940,7 @@
       document.getElementById('lm-email').focus();
       return;
     }
+
     var btn = form.querySelector('button[type=submit]');
     btn.textContent = 'Enviando…';
     btn.disabled = true;
@@ -859,7 +974,9 @@
   });
 })();
 
-// ── CHECKLIST QUIZ ──────────────────────────────────────────
+/* ══════════════════════════════════════════════════════════════
+   CHECKLIST QUIZ
+══════════════════════════════════════════════════════════════ */
 (function () {
   const TOTAL = 9;
   let score = 0;
@@ -870,7 +987,6 @@
   const verdict = document.getElementById('checklistVerdict');
   const ctaEl = document.getElementById('checklistCTA');
   const restart = document.getElementById('checklistRestart');
-
   if (!bar) return;
 
   function updateProgress(n) {
@@ -882,6 +998,7 @@
     result.classList.add('active');
     scoreEl.textContent = score;
     let msg, urgency, ctaText;
+
     if (score <= 2) {
       msg =
         '🟢 Tu web médica está en buen estado. Algunos ajustes finos pueden mejorar la tasa de conversión.';
@@ -898,6 +1015,7 @@
       urgency = `${score} errores críticos de 9. Tu web está siendo invisible para los pacientes que te buscan.`;
       ctaText = 'Necesito solución urgente → WhatsApp';
     }
+
     verdict.innerHTML = `<p>${msg}</p><p style="margin-top:.75rem">${urgency}</p>`;
     if (ctaEl) {
       ctaEl.querySelector('span')
@@ -962,7 +1080,7 @@
 
   showQuestion(1);
 
-  // Keyboard Y/N — listener local al checklist
+  /* Keyboard Y/N */
   document.addEventListener('keydown', function (e) {
     const tag = document.activeElement?.tagName.toUpperCase();
     if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tag)) return;
@@ -980,19 +1098,40 @@
     }
   });
 })();
-/* ══════════════════════════════════════════════
+
+/* ══════════════════════════════════════════════════════════════
    CONTACT FORM
-══════════════════════════════════════════════ */
+══════════════════════════════════════════════════════════════ */
 (function () {
   var form = document.getElementById('contactForm');
   var success = document.getElementById('contactSuccess');
   if (!form) return;
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+
+    var phone = form.querySelector('#contact-phone');
+    var message = form.querySelector('#contact-message');
+
+    if (!phone || !phone.value.trim()) {
+      phone.focus();
+      phone.style.borderColor = '#dc2626';
+      return;
+    }
+    if (!message || !message.value.trim()) {
+      message.focus();
+      message.style.borderColor = '#dc2626';
+      return;
+    }
+    [phone, message].forEach(function (el) {
+      el.style.borderColor = '';
+    });
+
     var btn = form.querySelector('button[type=submit]');
     var originalText = btn.textContent;
     btn.textContent = 'Enviando…';
     btn.disabled = true;
+
     fetch(form.action, {
       method: 'POST',
       body: new FormData(form),

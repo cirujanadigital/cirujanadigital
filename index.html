@@ -75,49 +75,46 @@
     <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
     <link rel="dns-prefetch" href="https://formspree.io" />
     <link rel="preconnect" href="https://formspree.io" crossorigin />
+    <!--Ojo, en una oportunidad los habiamos eliminado a los preconnects de tagmanager-->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link
       rel="preload"
-      href="img/logo-horizontal-blanco.webp"
+      href="/img/logo-horizontal-blanco.webp"
       as="image"
       fetchpriority="high"
       type="image/webp"
     />
     <link
       rel="preload"
-      href="img/yulia-hero-2.webp"
+      href="/img/yulia-hero-2.webp"
       as="image"
       fetchpriority="high"
       type="image/webp"
+      media="(min-width: 969px)"
     />
     <link
       rel="preload"
-      href="style-v2.css"
+      href="/style-v2.css"
       as="style"
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
       "
     />
-    <noscript><link rel="stylesheet" href="style-v2.css" /></noscript>
+    <noscript><link rel="stylesheet" href="/style-v2.css" /></noscript>
     <style>
-      /*
-  ══════════════════════════════════════════════════════
-  CRITICAL CSS — Cirujana Digital
-  ══════════════════════════════════════════════════════
-  REGLA: Este bloque existe ÚNICAMENTE para evitar FOUC
-  durante la carga asíncrona de style-v2.css.
-
+      /* CRITICAL CSS
+      REGLA: Este bloque existe ÚNICAMENTE para evitar FOUC durante la carga asíncrona de style-v2.css.
   PROHIBIDO:
   - Duplicar variables que ya están en style-v2.css
   - Definir estilos de secciones below-the-fold
   - Crear tokens propios distintos a los del CSS externo
-
   PERMITIDO:
   - Reset mínimo
   - Variables que se usan en navbar + hero (above-the-fold)
   - Estilos de navbar, hero y accesibilidad básica
-  ══════════════════════════════════════════════════════
-  */
+    */
       :root {
         --color-brand: #00a7a9;
         --color-brand-dark: #03658c;
@@ -125,7 +122,6 @@
         --color-brand-border: rgb(0 167 169 / 35%);
         --color-brand-glow: rgb(0 167 169 / 25%);
         --color-text: #2d3748;
-        --color-text-muted: #64748b;
         --color-surface: #f7f9fa;
         --color-bg: #fff;
         --gradient-brand: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
@@ -155,7 +151,6 @@
         box-sizing: border-box;
       }
       html {
-        scroll-behavior: smooth;
         overflow-x: hidden;
       }
       body {
@@ -164,6 +159,7 @@
         background: var(--color-bg);
         line-height: 1.7;
         -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
       }
       main {
         padding-top: var(--navbar-h-desktop);
@@ -176,6 +172,16 @@
         max-width: 100%;
         height: auto;
         display: block;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
       }
       .skip-to-main {
         position: absolute;
@@ -205,7 +211,6 @@
         border: 0;
       }
       .container,
-      .container--narrow,
       .container--md {
         margin: 0 auto;
         padding: 0 var(--container-padding);
@@ -219,9 +224,12 @@
       }
       .container--narrow {
         max-width: 780px;
+        margin: 0 auto;
+        padding: 0 var(--container-padding);
+        width: 100%;
       }
       section {
-        scroll-margin-top: 90px;
+        scroll-margin-top: calc(var(--navbar-h-desktop) + 10px);
       }
       .navbar {
         position: fixed;
@@ -236,7 +244,6 @@
           backdrop-filter: blur(8px);
         }
       }
-
       .nav-container {
         max-width: 1280px;
         margin: 0 auto;
@@ -310,23 +317,24 @@
         background: #7fdbff;
       }
       .nav-cta {
-            display: inline-flex;
+        display: inline-flex;
         align-items: center;
         gap: 6px;
         padding: 0.6rem 1.4rem;
+        background: var(--gradient-brand);
         color: var(--color-bg);
         font-weight: 700;
         font-size: 0.88rem;
         border-radius: var(--radius-pill);
+        border: 1px solid transparent;
         white-space: nowrap;
-        box-shadow: 0 4px 16px var(--color-brand);
+        box-shadow: 0 6px 24px rgb(0 167 169 / 45%);
         transition:
           box-shadow 0.2s,
           transform 0.2s;
         text-decoration: none;
       }
       .nav-cta:hover {
-        box-shadow: 0 6px 24px rgb(0 167 169 / 45%);
         transform: translateY(-2px);
         color: #fff;
       }
@@ -353,7 +361,8 @@
         display: flex;
         align-items: center;
         background: var(--gradient-dark);
-        padding: clamp(80px, 10vw, 90px) clamp(16px, 3vw, 30px) clamp(48px, 6vw, 80px);
+        padding: clamp(16px, 10vw, 90px) clamp(16px, 3vw, 30px) clamp(24px, 6vw, 80px);
+        overflow: hidden;
       }
       #particleCanvas {
         position: absolute;
@@ -430,11 +439,11 @@
         width: fit-content;
       }
       .hero-title {
-        font-size: clamp(2rem, 4.5vw, 3rem);
-        line-height: 1.1;
+        font-size: clamp(1.6rem, 4.5vw, 3rem);
+        line-height: 1.15;
         font-weight: 700;
         color: #fff;
-        margin-bottom: 24px;
+        margin-bottom: 16px;
       }
       .title-highlight {
         background: linear-gradient(135deg, #00a7a9, #7fdbff);
@@ -507,22 +516,38 @@
         color: #fff !important;
         box-shadow: 0 6px 20px var(--color-brand-glow);
       }
+      .btn-primary:hover,
+      .btn-primary:focus-visible {
+        box-shadow: 0 10px 28px rgb(0 167 169 / 40%);
+        transform: translateY(-2px);
+        color: #fff !important;
+        outline: none;
+      }
+      .btn-primary svg {
+        fill: #fff;
+      }
       .btn-secondary {
         background: var(--color-brand-light);
         color: var(--color-brand-dark);
+        border-color: var(--color-brand-border);
       }
       .btn-secondary-dark {
-  background: transparent;
-  color: #fff !important;
-  border-color: var(--color-brand);
-  font-weight: 600;
-}
-.btn-secondary-dark:hover {
-  background: var(--color-brand-light);
-  color: #fff !important;
-}
-      .btn-outline {
+        background: transparent;
+        color: #fff !important;
         border-color: var(--color-brand);
+        font-weight: 600;
+      }
+      .btn-secondary-dark:hover {
+        background: var(--color-brand-light);
+        color: #fff !important;
+      }
+      .btn-outline {
+        background: transparent;
+        color: var(--color-brand-dark);
+        border-color: var(--color-brand);
+      }
+      .btn-outline:hover {
+        background: var(--color-brand-light);
         color: var(--color-brand-dark);
       }
       .btn-ghost {
@@ -553,18 +578,13 @@
       .text-accent {
         color: var(--color-brand-dark);
       }
-      .ia-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-      }
       @media (max-width: 968px) {
         :root {
           --navbar-h-mobile: 70px;
         }
         main {
-          padding-bottom: 80px;
+          padding-top: var(--navbar-h-mobile);
+          padding-bottom: 72px;
         }
         .hamburger {
           display: flex;
@@ -608,6 +628,7 @@
         .nav-cta {
           margin-top: 1rem;
           font-size: 1.1rem;
+          background-color: var(--color-brand-dark);
         }
         .nav-divider {
           width: 100%;
@@ -615,11 +636,47 @@
           margin: 0.5rem 0;
           background: rgb(0 0 0 / 10%);
         }
-        .hero-content--split {
-          grid-template-columns: 1fr;
+        .nav-overlay {
+          position: fixed;
+          inset: 0;
+          background: rgb(0 0 0 / 60%);
+          backdrop-filter: blur(2px);
+          opacity: 0;
+          visibility: hidden;
+          transition:
+            opacity 0.3s ease,
+            visibility 0.3s ease;
+          z-index: 999;
         }
-        .hero-visual {
-          display: none;
+        .nav-overlay.active {
+          opacity: 1;
+          visibility: visible;
+        }
+        .hamburger.active span:nth-child(1) {
+          transform: rotate(45deg) translate(9px, 9px);
+        }
+        .hamburger.active span:nth-child(2) {
+          opacity: 0;
+        }
+        .hamburger.active span:nth-child(3) {
+          transform: rotate(-45deg) translate(9px, -9px);
+        }
+        .hero {
+          padding-left: clamp(16px, 5vw, 24px);
+          padding-right: clamp(16px, 5vw, 24px);
+        }
+        .hero-content--split {
+          grid-template-columns: 1fr !important;
+        }
+        .hero-title {
+          word-break: break-word;
+          overflow-wrap: break-word;
+        }
+        .hero-subtitle {
+          max-width: 100%;
+        }
+        .hero-founder-img {
+          width: 50%;
         }
       }
       @media (max-width: 480px) {
@@ -637,9 +694,21 @@
         .hero-cta {
           flex-direction: column;
           width: 100%;
+          align-items: stretch;
         }
         .hero-cta .btn {
           width: 100%;
+          white-space: normal;
+        }
+        .hero-subtitle {
+          font-size: 1rem;
+          margin-bottom: 14px;
+          line-height: 1.6;
+        }
+        .hero-price-anchor {
+          font-size: 0.82rem;
+          padding: 6px 10px;
+          margin-bottom: 12px;
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -654,128 +723,126 @@
         }
       }
     </style>
-    <script src="blog/blog-nav-data.js" defer></script>
+    <script src="/blog/blog-nav-data.js" defer></script>
     <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://cirujanadigital.com/#organization",
-      "name": "Cirujana Digital",
-      "url": "https://cirujanadigital.com",
-      "logo": "https://cirujanadigital.com/img/logo.png",
-      "description": "Diseño web médico orientado a conversión para cirujanos y profesionales de la salud.",
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "availableLanguage": "Spanish"
-      },
-      "sameAs": [
-        "https://instagram.com/cirujanadigital"
-      ]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#landing-page",
-      "name": "Landing Page Médica",
-      "description": "Página de aterrizaje optimizada para conversión de pacientes, con SEO local y formulario de contacto integrado.",
-      "provider": { "@id": "https://cirujanadigital.com/#organization" },
-      "offers": {
-        "@type": "Offer",
-        "price": "250",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "serviceType": "Diseño web médico",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Argentina"
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://cirujanadigital.com/#organization",
+            "name": "Cirujana Digital",
+            "url": "https://cirujanadigital.com",
+            "logo": "https://cirujanadigital.com/img/logo.png",
+            "description": "Diseño web médico orientado a conversión para cirujanos y profesionales de la salud.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "customer support",
+              "availableLanguage": "Spanish"
+            },
+            "sameAs": ["https://instagram.com/cirujanadigital"]
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cirujanadigital.com/#landing-page",
+            "name": "Landing Page Médica",
+            "description": "Página de aterrizaje optimizada para conversión de pacientes, con SEO local y formulario de contacto integrado.",
+            "provider": { "@id": "https://cirujanadigital.com/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "price": "250",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Diseño web médico",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Argentina"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cirujanadigital.com/#pack-presencia",
+            "name": "Pack Presencia Digital",
+            "description": "Sitio web completo con hasta 5 páginas, SEO optimizado, blog, integración WhatsApp y panel de edición.",
+            "provider": { "@id": "https://cirujanadigital.com/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "price": "400",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Diseño web médico",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Argentina"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cirujanadigital.com/#sitio-corporativo",
+            "name": "Sitio Corporativo Médico",
+            "description": "Sitio institucional de alta gama con sistema de gestión de turnos, múltiples especialidades e integración con sistemas de historia clínica.",
+            "provider": { "@id": "https://cirujanadigital.com/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "price": "750",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Diseño web médico",
+            "areaServed": {
+              "@type": "Country",
+              "name": "Argentina"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cirujanadigital.com/#mantenimiento-basico",
+            "name": "Mantenimiento Web Básico",
+            "description": "Plan mensual con actualizaciones de contenido, backups semanales y soporte técnico.",
+            "provider": { "@id": "https://cirujanadigital.com/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "60",
+                "priceCurrency": "USD",
+                "unitCode": "MON"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Mantenimiento web"
+          },
+          {
+            "@type": "Service",
+            "@id": "https://cirujanadigital.com/#mantenimiento-pro",
+            "name": "Mantenimiento Web Pro",
+            "description": "Plan mensual premium con SEO continuo, reportes mensuales, A/B testing y optimización de conversión.",
+            "provider": { "@id": "https://cirujanadigital.com/#organization" },
+            "offers": {
+              "@type": "Offer",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "120",
+                "priceCurrency": "USD",
+                "unitCode": "MON"
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            "serviceType": "Mantenimiento web"
+          }
+        ]
       }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#pack-presencia",
-      "name": "Pack Presencia Digital",
-      "description": "Sitio web completo con hasta 5 páginas, SEO optimizado, blog, integración WhatsApp y panel de edición.",
-      "provider": { "@id": "https://cirujanadigital.com/#organization" },
-      "offers": {
-        "@type": "Offer",
-        "price": "400",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "serviceType": "Diseño web médico",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Argentina"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#sitio-corporativo",
-      "name": "Sitio Corporativo Médico",
-      "description": "Sitio institucional de alta gama con sistema de gestión de turnos, múltiples especialidades e integración con sistemas de historia clínica.",
-      "provider": { "@id": "https://cirujanadigital.com/#organization" },
-      "offers": {
-        "@type": "Offer",
-        "price": "750",
-        "priceCurrency": "USD",
-        "availability": "https://schema.org/InStock"
-      },
-      "serviceType": "Diseño web médico",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Argentina"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#mantenimiento-basico",
-      "name": "Mantenimiento Web Básico",
-      "description": "Plan mensual con actualizaciones de contenido, backups semanales y soporte técnico.",
-      "provider": { "@id": "https://cirujanadigital.com/#organization" },
-      "offers": {
-        "@type": "Offer",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "60",
-          "priceCurrency": "USD",
-          "unitCode": "MON"
-        },
-        "availability": "https://schema.org/InStock"
-      },
-      "serviceType": "Mantenimiento web"
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#mantenimiento-pro",
-      "name": "Mantenimiento Web Pro",
-      "description": "Plan mensual premium con SEO continuo, reportes mensuales, A/B testing y optimización de conversión.",
-      "provider": { "@id": "https://cirujanadigital.com/#organization" },
-      "offers": {
-        "@type": "Offer",
-        "priceSpecification": {
-          "@type": "UnitPriceSpecification",
-          "price": "120",
-          "priceCurrency": "USD",
-          "unitCode": "MON"
-        },
-        "availability": "https://schema.org/InStock"
-      },
-      "serviceType": "Mantenimiento web"
-    }
-  ]
-}
-</script>
+    </script>
   </head>
   <body>
-    <!-- GTM noscript: clase CSS oculta el iframe, sin style inline -->
     <noscript>
       <iframe
         src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
         height="0"
         width="0"
+        style="display: none; visibility: hidden"
         class="gtm-iframe"
       ></iframe>
     </noscript>
@@ -800,7 +867,7 @@
       <div class="nav-container">
         <a href="/" class="nav-logo" aria-label="Cirujana Digital — inicio">
           <img
-            src="img/logo-horizontal-blanco.webp"
+            src="/img/logo-horizontal-blanco.webp"
             alt="Cirujana Digital"
             width="200"
             height="60"
@@ -880,9 +947,9 @@
               </a>
             </div>
           </div>
-          <div class="hero-visual" aria-hidden="true">
+          <div class="hero-visual">
             <img
-              src="img/yulia-hero-2.webp"
+              src="/img/yulia-hero-2.webp"
               alt="Yulia Monti — instrumentadora quirúrgica reconvertida en desarrolladora web para médicos"
               width="400"
               height="500"
@@ -946,17 +1013,20 @@
             <div class="testimonial-card testimonial-card--featured">
               <div class="testimonial-stars" aria-label="5 de 5 estrellas">★★★★★</div>
               <p class="testimonial-text">
-                "Tenia una web en algún momento pero se había vencido. Fue muy a mano trabajar con
-                Yulia"
+                "Yulia no solo hizo una web, montó un
+                <strong>sistema de ventas automático</strong>
+                . Me dio independencia del algoritmo, profesionalizó mi agenda y en solo 7 días
+                convirtió mi visibilidad en facturación real. Es la mejor inversión que he hecho
+                para escalar mi negocio."
               </p>
               <div class="testimonial-author">
                 <img
-                  src="img/maria-jose-guerra.webp"
+                  src="/img/maria-jose-guerra.webp"
                   alt="María José Guerra Valdés — Método Doshas"
                   width="48"
                   height="48"
                   loading="lazy"
-                  class="avatar-round avatar-round--fallback"
+                  class="avatar-round"
                 />
                 <div>
                   <p class="testimonial-name">María José Guerra Valdés</p>
@@ -1712,15 +1782,20 @@
               />
             </div>
             <div class="roi-row">
-              <label class="roi-label">Servicio que te interesa</label>
-              <div class="service-pills" role="group" aria-label="Elegir servicio">
-                <button class="service-pill" data-val="250" aria-pressed="false">
+              <label class="roi-label" id="label-servicios">Servicio que te interesa</label>
+              <div class="service-pills" role="group" aria-labelledby="label-servicios">
+                <button type="button" class="service-pill" data-val="250" aria-pressed="false">
                   Landing — $250
                 </button>
-                <button class="service-pill active" data-val="400" aria-pressed="true">
+                <button
+                  type="button"
+                  class="service-pill active"
+                  data-val="400"
+                  aria-pressed="true"
+                >
                   Pack Presencia — $400
                 </button>
-                <button class="service-pill" data-val="750" aria-pressed="false">
+                <button type="button" class="service-pill" data-val="750" aria-pressed="false">
                   Sitio Corp — $750
                 </button>
               </div>
@@ -2071,7 +2146,7 @@
 
           <div class="method-author-inline">
             <img
-              src="img/yulia-monti.webp"
+              src="/img/yulia-monti.webp"
               alt="Yulia Monti - Especialista en desarrollo web médico y posicionamiento para clínicas"
               width="48"
               height="48"
@@ -3069,7 +3144,7 @@
                 <p>
                   Si no se abrió automáticamente →
                   <a
-                    href="recursos/los-5-errores.html"
+                    href="/recursos/los-5-errores.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="lm-success__link"
@@ -3131,11 +3206,13 @@
           <div
             class="calendly-inline-widget"
             data-url="https://calendly.com/cirujanadigital/30min"
-            style="min-width: 320px; height: 700px"
           ></div>
           <script>
             (function () {
               var loaded = false;
+              var target = document.querySelector('.calendly-inline-widget');
+              if (!target) return;
+
               var observer = new IntersectionObserver(
                 function (entries) {
                   if (entries[0].isIntersecting && !loaded) {
@@ -3147,9 +3224,9 @@
                     observer.disconnect();
                   }
                 },
-                { rootMargin: '200px' }
+                { rootMargin: '400px' }
               );
-              observer.observe(document.getElementById('calendario'));
+              observer.observe(target);
             })();
           </script>
         </div>
@@ -3479,13 +3556,19 @@
               <ul>
                 <li>
                   <a href="/recursos/google-index.html">
-                    Diágnostico Google
+                    Diagnóstico Google
                     <span class="link-arrow">›</span>
                   </a>
                 </li>
                 <li>
                   <a href="/recursos/auditoria-ia.html">
-                    Auditoria IA
+                    Auditoría IA
+                    <span class="link-arrow">›</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="/recursos/simulador-velocidad/">
+                    ⚡ Simulador de velocidad
                     <span class="link-arrow">›</span>
                   </a>
                 </li>
@@ -3495,7 +3578,7 @@
                     <span class="link-arrow">›</span>
                   </a>
                 </li>
-                </ul>
+              </ul>
             </nav>
             <nav class="footer-column" aria-label="Blog y contacto">
               <p class="footer-column-title">Blog</p>
@@ -3601,47 +3684,6 @@
       </svg>
     </button>
 
-    <script>
-      document.getElementById('current-year').textContent = new Date().getFullYear();
-    </script>
-    <script>
-      (function () {
-        var hero = document.querySelector('.hero');
-        var sticky = document.getElementById('stickyCta');
-        if (!hero || !sticky) return;
-        new IntersectionObserver(
-          function (entries) {
-            var v = entries[0].isIntersecting;
-            sticky.setAttribute('aria-hidden', v);
-            sticky.style.display = v ? 'none' : '';
-          },
-          { threshold: 0.05 }
-        ).observe(hero);
-      })();
-    </script>
-    <script>
-      (function () {
-        var btn = document.getElementById('scrollTopBtn');
-        if (!btn) return;
-        var t = false;
-        window.addEventListener(
-          'scroll',
-          function () {
-            if (!t) {
-              requestAnimationFrame(function () {
-                btn.classList.toggle('visible', window.scrollY > 400);
-                t = false;
-              });
-              t = true;
-            }
-          },
-          { passive: true }
-        );
-        btn.addEventListener('click', function () {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-      })();
-    </script>
-    <script src="script.js" defer></script>
+    <script src="/script.js" defer></script>
   </body>
 </html>
