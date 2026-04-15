@@ -433,6 +433,7 @@
       new IntersectionObserver(
         (entries) => {
           const isVisible = entries[0].isIntersecting;
+          stickyCta.toggleAttribute('inert', !isVisible);
           sticky.setAttribute('aria-hidden', isVisible);
           sticky.style.display = isVisible ? 'none' : '';
         },
