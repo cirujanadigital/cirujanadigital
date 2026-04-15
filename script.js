@@ -982,6 +982,7 @@
   const TOTAL = 9;
   let score = 0;
   let current = 1;
+  let userInteracted = false;
   const bar = document.getElementById('checklistBar');
   const result = document.getElementById('checklist-result');
   const scoreEl = document.getElementById('checklistScore');
@@ -1040,7 +1041,9 @@
     const el = document.getElementById('cq-' + n);
     if (el) {
       el.classList.add('active');
-      el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      if (userInteracted) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
     }
     updateProgress(n);
   }
@@ -1060,6 +1063,7 @@
       });
       btn.classList.add('selected');
     }
+    userInteracted = true;
     setTimeout(() => {
       current = btn.dataset.next === 'result' ? 'result' : parseInt(btn.dataset.next);
       showQuestion(current);
@@ -1070,6 +1074,7 @@
     restart.addEventListener('click', function () {
       score = 0;
       current = 1;
+      userInteracted = true;
       result.classList.remove('active');
       document.querySelectorAll('.checklist-opt').forEach((b) => {
         b.disabled = false;
@@ -1079,7 +1084,12 @@
     });
   }
 
-  showQuestion(1);
+  // Diferir para no interferir con scroll de carga inicial
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(() => showQuestion(1), { timeout: 500 });
+  } else {
+    setTimeout(() => showQuestion(1), 100);
+  }
 
   /* Keyboard Y/N */
   document.addEventListener('keydown', function (e) {

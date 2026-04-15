@@ -132,7 +132,7 @@ img {
   width: 100%;
 }
 section {
-  scroll-margin-top: calc(var(--navbar-h-desktop) + 10px);
+  scroll-margin-top: 70px;
 }
 
 /* 5. AVATAR */

@@ -75,7 +75,7 @@
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link
       rel="preload"
-      href="/img/logo-horizontal-blanco.webp"
+      href="/img/logo-CD-blancoSF.webp"
       as="image"
       fetchpriority="high"
       type="image/webp"
@@ -88,16 +88,7 @@
       type="image/webp"
       media="(min-width: 969px)"
     />
-    <link
-      rel="preload"
-      href="/style-v2.css"
-      as="style"
-      onload="
-        this.onload = null;
-        this.rel = 'stylesheet';
-      "
-    />
-    <noscript><link rel="stylesheet" href="/style-v2.css" /></noscript>
+    <link rel="stylesheet" href="/style-v2.css" />
     <style>
       :root {
         /* ── Colores de marca ── */
@@ -139,7 +130,6 @@
         /* ── Layout ── */
         --section-padding: clamp(4rem, 10vw, 8rem);
         --container-padding: clamp(1.5rem, 5vw, 3rem);
-        --navbar-h-desktop: 70px;
 
         /* ── Radios ── */
         --radius-sm: 6px;
@@ -179,7 +169,7 @@
         -moz-osx-font-smoothing: grayscale;
       }
       main {
-        padding-top: var(--navbar-h-desktop);
+        padding-top: 70p;
         contain: layout style;
       }
       ::selection {
@@ -233,7 +223,7 @@
       .navbar {
         position: fixed;
         inset: 0 0 auto 0;
-        height: 80px;
+        height: 70px;
         z-index: 1000;
         background: var(--gradient-dark);
         box-shadow: 0 2px 20px rgb(0 0 0 / 25%);
@@ -253,7 +243,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 80px;
+        height: 70px;
         gap: 2rem;
       }
       .nav-logo {
@@ -263,8 +253,8 @@
         z-index: 1001;
       }
       .nav-logo img {
-        width: 180px;
-        height: 54px;
+        width: 200px;
+        height: auto;
         object-fit: contain;
         display: block;
       }
@@ -416,8 +406,8 @@
           height: 70px;
         }
         .nav-logo img {
-          width: 150px;
-          height: 45px;
+          width: 160px;
+          height: auto;
         }
         .nav-menu {
           position: fixed;
@@ -472,8 +462,8 @@
       }
       @media (max-width: 480px) {
         .nav-logo img {
-          width: 130px;
-          height: 39px;
+          width: 120px;
+          height: auto;
         }
         .nav-container {
           padding: 0 1rem;
@@ -955,7 +945,7 @@
             "@id": "https://cirujanadigital.com/#organization",
             "name": "Cirujana Digital",
             "url": "https://cirujanadigital.com",
-            "logo": "https://cirujanadigital.com/img/logo.png",
+            "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF,
             "description": "Diseño web médico orientado a conversión para cirujanos y profesionales de la salud.",
             "contactPoint": {
               "@type": "ContactPoint",
@@ -1089,10 +1079,10 @@
       <div class="nav-container">
         <a href="/" class="nav-logo" aria-label="Cirujana Digital — inicio">
           <img
-            src="/img/logo-horizontal-blanco.webp"
+            src="/img/logo-CD-blancoSF.webp"
             alt="Cirujana Digital"
             width="200"
-            height="60"
+            height="75"
             loading="eager"
             fetchpriority="high"
             decoding="async"
@@ -2047,7 +2037,7 @@
                   Inversión
                 </span>
               </div>
-              <canvas id="roiChart"  width="700" height="200"></canvas>
+              <canvas id="roiChart" width="700" height="200"></canvas>
             </div>
             <p class="roi-note" id="roiNote">Ajustá los controles para ver el cálculo.</p>
             <div class="roi-cta-box" id="roiCtaBox">
