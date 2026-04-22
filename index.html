@@ -3,30 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <script>
-      window.addEventListener('load', function () {
-        (function (w, d, s, l, i) {
-          w[l] = w[l] || [];
-          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-          var f = d.getElementsByTagName(s)[0],
-            j = d.createElement(s),
-            dl = l != 'dataLayer' ? '&l=' + l : '';
-          j.async = true;
-          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-          f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-      });
-    </script>
+let gtmLoaded = false;
+function loadGTM() {
+  if (gtmLoaded) return;
+  gtmLoaded = true;
+  (function(w,d,s,l,i){
+    // tu código GTM
+  })(window,document,
+  'script','dataLayer',
+  'GTM-PW5H3VRM');
+}
+['click','scroll',
+ 'keydown','touchstart']
+.forEach(e =>
+  window.addEventListener(
+    e, loadGTM, {once:true}
+  )
+);
+setTimeout(loadGTM, 3500);
+</script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Páginas Web para Médicos que Consiguen Pacientes | SEO | Cirujana Digital</title>
-    <meta
-      name="description"
-      content="Páginas web para médicos que aparecen en Google, cargan en menos de 2 segundos y convierten visitas en turnos reales. Sin WordPress. Sin plantillas. Entrega en 7 días."
-    />
+<meta name="description" content="Páginas web para médicos que aparecen en Google, cargan en menos de 2 segundos y convierten visitas en turnos reales. Código a medida. Sin plantillas. Entrega en 7 días." />
     <meta name="author" content="Cirujana Digital" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <link rel="canonical" href="https://cirujanadigital.com/" />
     <link rel="alternate" hreflang="es" href="https://cirujanadigital.com/" />
     <link rel="alternate" hreflang="x-default" href="https://cirujanadigital.com/" />
+    <link rel="sitemap" href="/sitemap.xml" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://cirujanadigital.com/" />
     <meta
@@ -50,14 +55,8 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@cirujanadigital" />
     <meta name="twitter:creator" content="@cirujanadigital" />
-    <meta
-      name="twitter:title"
-      content="Páginas Web para Médicos que Consiguen Pacientes | SEO | Cirujana Digital"
-    />
-    <meta
-      name="twitter:description"
-      content="Páginas web para médicos que aparecen en menos de 2 segundos y convierten visitas en turnos reales. Sin WordPress. Sin plantillas. Entrega en 7 días."
-    />
+    <meta name="twitter:title" content="Páginas Web para Médicos que Convierten | Cirujana Digital" />
+<meta name="twitter:description" content="HTML estático, Lighthouse 90+, Schema médico y GA4 desde el día 1. Pack completo desde $400 USD. Sin WordPress." />
     <meta name="twitter:image" content="https://cirujanadigital.com/img/og-image.png" />
     <meta
       name="twitter:image:alt"
@@ -66,13 +65,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+    <!-- dns-prefetch solo (sin preconnect) para orígenes lazy -->
     <link rel="dns-prefetch" href="https://assets.calendly.com" />
-    <link rel="preconnect" href="https://assets.calendly.com" crossorigin />
     <link rel="dns-prefetch" href="https://formspree.io" />
-    <link rel="preconnect" href="https://formspree.io" crossorigin />
-    <!--Ojo, en una oportunidad los habiamos eliminado a los preconnects de tagmanager-->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
     <link
       rel="preload"
       href="/img/logo-CD-blancoSF.webp"
@@ -88,11 +84,11 @@
       type="image/webp"
       media="(min-width: 969px)"
     />
-    <link rel="stylesheet" href="/style-v2.css" />
-    <style>
+     <style>
       :root {
         /* ── Colores de marca ── */
         --color-brand: #00a7a9;
+        --color-brand-text: #007e80;
         --color-brand-dark: #03658c;
         --color-brand-light: rgb(0 167 169 / 12%);
         --color-brand-border: rgb(0 167 169 / 35%);
@@ -109,7 +105,7 @@
         --color-surface-2: #edf2f7;
 
         /* ── Semánticos ── */
-        --color-success: #059669;
+        --color-success: #065f46;
         --color-success-light: rgb(5 150 105 / 8%);
         --color-success-border: rgb(5 150 105 / 25%);
         --color-danger: #dc2626;
@@ -120,6 +116,7 @@
         --gradient-brand-rev: linear-gradient(135deg, #00a7a9 0%, #03658c 100%);
         --gradient-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
         --gradient-text: linear-gradient(135deg, #00a7a9, #7fdbff);
+        --gradient-text-fb: linear-gradient(135deg, #008688, #03658c);
 
         /* ── Tipografías ── */
         --font-ui:
@@ -169,7 +166,7 @@
         -moz-osx-font-smoothing: grayscale;
       }
       main {
-        padding-top: 70p;
+        padding-top: 70px;
         contain: layout style;
       }
       ::selection {
@@ -188,24 +185,7 @@
         padding: 0 var(--container-padding);
       }
 
-      /* ── Accesibilidad ── */
-      .skip-to-main {
-        position: absolute;
-        top: -100%;
-        left: 1rem;
-        z-index: 9999;
-        background: var(--color-brand-dark);
-        color: #fff;
-        padding: 0.5rem 1.2rem;
-        border-radius: 0 0 var(--radius-sm) var(--radius-sm);
-        font-weight: 600;
-        font-size: 0.9rem;
-        transition: top 0.2s;
-      }
-      .skip-to-main:focus {
-        top: 0;
-      }
-      .sr-only {
+       .sr-only {
         position: absolute;
         width: 1px;
         height: 1px;
@@ -216,259 +196,90 @@
         white-space: nowrap;
         border: 0;
       }
-
-      /* ══════════════════════════════════════════
-   NAVBAR
-══════════════════════════════════════════ */
-      .navbar {
-        position: fixed;
-        inset: 0 0 auto 0;
-        height: 70px;
-        z-index: 1000;
-        background: var(--gradient-dark);
-        box-shadow: 0 2px 20px rgb(0 0 0 / 25%);
-        transition: box-shadow 0.3s ease;
-        contain: layout style;
-      }
-      @supports (backdrop-filter: blur(8px)) {
-        .navbar {
-          backdrop-filter: blur(8px);
-        }
-      }
-
-      .nav-container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 var(--container-padding);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 70px;
-        gap: 2rem;
-      }
-      .nav-logo {
-        display: flex;
-        align-items: center;
-        flex-shrink: 0;
-        z-index: 1001;
-      }
-      .nav-logo img {
-        width: 200px;
-        height: auto;
-        object-fit: contain;
-        display: block;
-      }
-
-      .nav-menu {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-      }
-      .nav-menu li {
-        display: flex;
-        align-items: center;
-      }
-      .nav-divider {
-        width: 1px;
-        height: 20px;
-        background: rgb(255 255 255 / 15%);
-        margin: 0 0.25rem;
-      }
-
-      .nav-link {
-        color: #fff;
-        font-weight: 600;
-        font-size: 0.9rem;
-        padding: 0.4rem 0;
-        position: relative;
-        white-space: nowrap;
-        transition: color 0.2s ease;
-      }
-      .nav-link::after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background: var(--gradient-brand);
-        border-radius: 1px;
-        transition: var(--transition-smooth);
-      }
-      .nav-link:hover,
-      .nav-link:focus-visible {
-        color: #fff;
-        outline: none;
-      }
-      .nav-link:hover::after,
-      .nav-link:focus-visible::after {
-        width: 100%;
-      }
-      .nav-link--blog {
-        color: #7fdbff;
-      }
-      .nav-link--blog::after {
-        background: #7fdbff;
-      }
-
-      .nav-cta {
+       .btn {
         display: inline-flex;
         align-items: center;
-        gap: 6px;
-        padding: 0.6rem 1.4rem;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 28px;
+        font-weight: 700;
+        border-radius: var(--radius-xl);
+        border: 2px solid transparent;
+        cursor: pointer;
+        transition: var(--transition-smooth);
+        text-decoration: none;
+        font-size: 0.95rem;
+        white-space: nowrap;
+        font-family: var(--font-ui);
+      }
+.btn svg {
+  fill: currentColor;
+  width: 1.2em;
+  height: 1.2em;
+  flex-shrink: 0;
+}
+
+.btn-primary {
         background: var(--gradient-brand);
         color: #fff;
-        font-weight: 700;
-        font-size: 0.88rem;
-        border-radius: var(--radius-pill);
-        border: 1px solid transparent;
-        white-space: nowrap;
-        box-shadow: 0 6px 24px var(--color-brand-glow);
-        transition:
-          box-shadow 0.2s,
-          transform 0.2s;
-        text-decoration: none;
+        box-shadow: 0 6px 20px var(--color-brand-glow);
       }
-      .nav-cta:hover,
-      .nav-cta:focus-visible {
-        box-shadow: 0 6px 24px rgb(0 167 169 / 45%);
-        transform: translateY(-1px);
+  .btn-primary:hover,
+      .btn-primary:focus-visible {
+        box-shadow: 0 10px 28px rgb(0 167 169 / 40%);
+        transform: translateY(-2px);
         color: #fff;
         outline: none;
       }
+.btn-primary svg {
+  fill: #fff;
+}
 
-      .hamburger {
-        display: none;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        cursor: pointer;
-        z-index: 1001;
-        background: none;
-        border: none;
-        padding: 0.75rem;
-        border-radius: 8px;
-        transition: background 0.2s;
+ .btn-secondary {
+        background: transparent;
+        color: #fff;
+        border-color: rgb(255 255 255 / 30%);
       }
-      .hamburger:hover {
-        background: rgb(255 255 255 / 8%);
-      }
-      .hamburger span {
-        display: block;
-        width: 24px;
-        height: 2px;
-        background: #fff;
-        border-radius: 2px;
-        transition:
-          transform 0.3s ease,
-          opacity 0.3s ease;
-        transform-origin: center;
-      }
-      .hamburger.active span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-      }
-      .hamburger.active span:nth-child(2) {
-        opacity: 0;
-        transform: scaleX(0);
-      }
-      .hamburger.active span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+      .btn-secondary:hover,
+      .btn-secondary:focus-visible {
+        background: rgb(255 255 255 / 10%);
+        border-color: rgb(255 255 255 / 70%);
+        color: #fff;
       }
 
-      .nav-overlay {
-        position: fixed;
-        inset: 0;
-        background: rgb(0 0 0 / 60%);
-        backdrop-filter: blur(2px);
-        opacity: 0;
-        visibility: hidden;
-        transition:
-          opacity 0.3s ease,
-          visibility 0.3s ease;
-        z-index: 999;
-      }
-      .nav-overlay.active {
-        opacity: 1;
-        visibility: visible;
-      }
+.btn-outline {
+  background: transparent;
+  color: var(--color-brand-dark);
+  border-color: var(--color-brand);
+}
+.btn-outline:hover {
+  background: var(--color-brand-light);
+  color: var(--color-brand-dark);
+}
 
-      @media (max-width: 968px) {
-        .hamburger {
-          display: flex;
-        }
-        .navbar {
-          height: 70px;
-        }
-        .nav-container {
-          height: 70px;
-        }
-        .nav-logo img {
-          width: 160px;
-          height: auto;
-        }
-        .nav-menu {
-          position: fixed;
-          top: 70px;
-          right: -100%;
-          width: min(280px, 80vw);
-          height: auto;
-          flex-direction: column;
-          align-items: stretch;
-          gap: 0;
-          padding: 1rem;
-          background: #0d1b2a;
-          border: 1px solid rgb(255 255 255 / 8%);
-          border-radius: 16px 0 0 16px;
-          box-shadow: -8px 8px 40px rgb(0 0 0 / 40%);
-          transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-          z-index: 1000;
-        }
-        .nav-menu.active {
-          right: 0;
-        }
-        .nav-menu li {
-          width: 100%;
-        }
-        .nav-divider {
-          width: 100%;
-          height: 1px;
-          margin: 0.5rem 0;
-          background: rgb(255 255 255 / 8%);
-        }
-        .nav-link {
-          display: block;
-          padding: 0.85rem 1rem;
-          border-radius: 8px;
-          font-size: 0.95rem;
-          color: rgb(255 255 255 / 92%);
-        }
-        .nav-link::after {
-          display: none;
-        }
-        .nav-link:hover {
-          background: rgb(255 255 255 / 6%);
-          color: #fff;
-        }
-        .nav-cta {
-          display: block;
-          text-align: center;
-          margin-top: 0.5rem;
-          padding: 0.85rem 1rem;
-          border-radius: 10px;
-        }
-      }
-      @media (max-width: 480px) {
-        .nav-logo img {
-          width: 120px;
-          height: auto;
-        }
-        .nav-container {
-          padding: 0 1rem;
-        }
-      }
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+  box-shadow: var(--shadow-md);
+}
+.btn--center {
+  display: inline-flex;
+  margin: 0 auto;
+}
+.btn--flex {
+  display: flex;
+}
+.ver-detalle {
+  font-size: 0.82rem;
+  color: var(--color-brand-text);
+  font-weight: 500;
+  display:block;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+.ver-detalle:hover {
+  color: var(--color-brand-dark);
+}
 
       /* ══════════════════════════════════════════
    HERO
@@ -553,52 +364,6 @@
         flex-wrap: wrap;
         margin-bottom: 4rem;
       }
-
-      /* ── Botones ── */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 14px 28px;
-        font-weight: 700;
-        border-radius: var(--radius-xl);
-        border: 2px solid transparent;
-        cursor: pointer;
-        transition: var(--transition-smooth);
-        text-decoration: none;
-        font-size: 0.95rem;
-        white-space: nowrap;
-        font-family: var(--font-ui);
-      }
-      .btn-primary {
-        background: var(--gradient-brand);
-        color: #fff !important;
-        box-shadow: 0 6px 20px var(--color-brand-glow);
-      }
-      .btn-primary:hover,
-      .btn-primary:focus-visible {
-        box-shadow: 0 10px 28px rgb(0 167 169 / 40%);
-        transform: translateY(-2px);
-        color: #fff !important;
-        outline: none;
-      }
-      .btn-secondary {
-        background: transparent;
-        color: #fff;
-        border-color: rgb(255 255 255 / 30%);
-      }
-      .btn-secondary:hover,
-      .btn-secondary:focus-visible {
-        background: rgb(255 255 255 / 10%);
-        border-color: rgb(255 255 255 / 70%);
-        color: #fff;
-      }
-      .btn-full {
-        width: 100%;
-        justify-content: center;
-      }
-
       /* ── Stats ── */
       .hero-stats {
         display: flex;
@@ -792,9 +557,9 @@
         line-height: 1.5;
       }
       .situation-card__cta {
-        font-size: 0.82rem !important;
-        font-weight: 700 !important;
-        color: var(--color-brand) !important;
+        font-size: 0.82rem;
+        font-weight: 700;
+        color: var(--color-brand-text);
         margin-top: 0.5rem;
       }
 
@@ -935,118 +700,276 @@
         }
       }
     </style>
-    <script src="/blog/blog-nav-data.js" defer></script>
+  
+  <link rel="stylesheet" href="/style-v2.css" />
+<link rel="stylesheet" href="/components.css" />
+<script src="/components.js" defer></script>
+  
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@graph": [
-          {
-            "@type": "ProfessionalService",
-            "@id": "https://cirujanadigital.com/#organization",
-            "name": "Cirujana Digital",
-            "url": "https://cirujanadigital.com",
-            "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF,
-            "description": "Diseño web médico orientado a conversión para cirujanos y profesionales de la salud.",
-            "contactPoint": {
-              "@type": "ContactPoint",
-              "contactType": "customer support",
-              "availableLanguage": "Spanish"
-            },
-            "sameAs": ["https://instagram.com/cirujanadigital"]
-          },
-          {
-            "@type": "Service",
-            "@id": "https://cirujanadigital.com/#landing-page",
-            "name": "Landing Page Médica",
-            "description": "Página de aterrizaje optimizada para conversión de pacientes, con SEO local y formulario de contacto integrado.",
-            "provider": { "@id": "https://cirujanadigital.com/#organization" },
-            "offers": {
-              "@type": "Offer",
-              "price": "250",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Diseño web médico",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Argentina"
-            }
-          },
-          {
-            "@type": "Service",
-            "@id": "https://cirujanadigital.com/#pack-presencia",
-            "name": "Pack Presencia Digital",
-            "description": "Sitio web completo con hasta 5 páginas, SEO optimizado, blog, integración WhatsApp y panel de edición.",
-            "provider": { "@id": "https://cirujanadigital.com/#organization" },
-            "offers": {
-              "@type": "Offer",
-              "price": "400",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Diseño web médico",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Argentina"
-            }
-          },
-          {
-            "@type": "Service",
-            "@id": "https://cirujanadigital.com/#sitio-corporativo",
-            "name": "Sitio Corporativo Médico",
-            "description": "Sitio institucional de alta gama con sistema de gestión de turnos, múltiples especialidades e integración con sistemas de historia clínica.",
-            "provider": { "@id": "https://cirujanadigital.com/#organization" },
-            "offers": {
-              "@type": "Offer",
-              "price": "750",
-              "priceCurrency": "USD",
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Diseño web médico",
-            "areaServed": {
-              "@type": "Country",
-              "name": "Argentina"
-            }
-          },
-          {
-            "@type": "Service",
-            "@id": "https://cirujanadigital.com/#mantenimiento-basico",
-            "name": "Mantenimiento Web Básico",
-            "description": "Plan mensual con actualizaciones de contenido, backups semanales y soporte técnico.",
-            "provider": { "@id": "https://cirujanadigital.com/#organization" },
-            "offers": {
-              "@type": "Offer",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "60",
-                "priceCurrency": "USD",
-                "unitCode": "MON"
-              },
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Mantenimiento web"
-          },
-          {
-            "@type": "Service",
-            "@id": "https://cirujanadigital.com/#mantenimiento-pro",
-            "name": "Mantenimiento Web Pro",
-            "description": "Plan mensual premium con SEO continuo, reportes mensuales, A/B testing y optimización de conversión.",
-            "provider": { "@id": "https://cirujanadigital.com/#organization" },
-            "offers": {
-              "@type": "Offer",
-              "priceSpecification": {
-                "@type": "UnitPriceSpecification",
-                "price": "120",
-                "priceCurrency": "USD",
-                "unitCode": "MON"
-              },
-              "availability": "https://schema.org/InStock"
-            },
-            "serviceType": "Mantenimiento web"
-          }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://cirujanadigital.com/#organization",
+      "name": "Cirujana Digital",
+      "url": "https://cirujanadigital.com",
+      "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
+      "description": "Diseño web médico especializado en conversión de pacientes para cirujanos y profesionales de la salud en LATAM y España. HTML estático, Lighthouse 90+, Schema médico validado.",
+      "founder": {
+        "@type": "Person",
+  "@id": "https://cirujanadigital.com/#yulia-monti",
+  "name": "Yulia Monti",
+  "jobTitle": "Desarrolladora Web para el Sector Salud",
+  "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+  "description": "15 años como instrumentadora quirúrgica en Argentina. Especializada en páginas web para médicos, SEO médico local, Schema Physician y presencia en motores de IA generativa (ChatGPT, Perplexity, Google AI). Atiende médicos en Argentina, México, Chile, España y Colombia.",
+  "knowsAbout": [
+    "Desarrollo web médico",
+    "SEO para médicos en Argentina",
+    "SEO para médicos en México",
+    "SEO para médicos en España",
+    "Schema Physician",
+    "Web Performance Optimization",
+    "Presencia en inteligencia artificial",
+    "Google Business Profile para médicos",
+    "HTML estático para sitios médicos"
+  ],
+  "areaServed": [
+    { "@type": "Country", "name": "Argentina" },
+    { "@type": "Country", "name": "México" },
+    { "@type": "Country", "name": "Chile" },
+    { "@type": "Country", "name": "España" },
+    { "@type": "Country", "name": "Colombia" }
+  ],
+        "sameAs": [
+          "https://instagram.com/cirujanadigital",
+          "https://linkedin.com/in/yulia-monti"
         ]
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "telephone": "+54-9-11-7619-9680",
+        "availableLanguage": "Spanish",
+        "contactOption": "https://schema.org/TollFree"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "Argentina" },
+        { "@type": "Country", "name": "México" },
+        { "@type": "Country", "name": "Chile" },
+        { "@type": "Country", "name": "España" },
+        { "@type": "Country", "name": "Colombia" }
+      ],
+      "sameAs": [
+        "https://instagram.com/cirujanadigital",
+        "https://linkedin.com/in/yulia-monti"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cirujanadigital.com/#yulia-monti",
+      "name": "Yulia Monti",
+      "jobTitle": "Desarrolladora Web para el Sector Salud",
+      "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+      "description": "15 años como instrumentadora quirúrgica. Especializada en páginas web para médicos, SEO médico local, Schema Physician y presencia en motores de IA generativa (ChatGPT, Perplexity, Google AI).",
+      "knowsAbout": [
+        "Desarrollo web médico",
+        "SEO para médicos",
+        "Schema Physician",
+        "Web Performance Optimization",
+        "Presencia en inteligencia artificial",
+        "Google Business Profile para médicos"
+      ],
+      "sameAs": [
+        "https://instagram.com/cirujanadigital",
+        "https://linkedin.com/in/yulia-monti"
+      ]
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#pack-presencia",
+      "name": "Pack Presencia Digital Médica",
+      "description": "Google Business Profile optimizado + Landing page médica con Lighthouse 90+ + WhatsApp Business configurado. Los tres canales del recorrido del paciente, entregados en 7 días hábiles.",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "400",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "serviceType": "Presencia digital médica",
+      "url": "https://cirujanadigital.com/servicios/pack-presencia"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#landing-page",
+      "name": "Landing Page Médica",
+      "description": "Página web para médicos en HTML estático puro. Lighthouse 90+ garantizado, Schema Physician + MedicalBusiness, GA4 configurado. Entrega en 7–10 días hábiles.",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "250",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "serviceType": "Diseño web médico",
+      "url": "https://cirujanadigital.com/servicios/paginas-web"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#sitio-corporativo",
+      "name": "Sitio Web Corporativo para Médicos",
+      "description": "Sitio web completo para clínicas y grupos médicos. HTML estático, blog médico, Lighthouse 90+ en todas las páginas, Schema completo, Cloudflare CDN.",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "750",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "serviceType": "Diseño web médico",
+      "url": "https://cirujanadigital.com/servicios/paginas-web"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#wpo",
+      "name": "Optimización WPO para Sitios Médicos",
+      "description": "Intervención técnica que lleva el PageSpeed de cualquier sitio médico a 90+ garantizado. Sin tocar diseño ni contenido. Entrega en 3–5 días hábiles.",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "180",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "serviceType": "Optimización de velocidad web",
+      "url": "https://cirujanadigital.com/servicios/optimizacion-wpo"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#mantenimiento",
+      "name": "Mantenimiento Web Mensual para Médicos",
+      "description": "Protocolo mensual de monitoreo: Core Web Vitals, Schema Validator, PageSpeed, backup y reporte entregado el día 5. Plan Pro incluye artículo SEO y verificación en IA generativa.",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Mantenimiento Estándar",
+          "price": "85",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "85",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Mantenimiento Pro + IA",
+          "price": "150",
+          "priceCurrency": "USD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "150",
+            "priceCurrency": "USD",
+            "unitCode": "MON"
+          }
+        }
+      ],
+      "serviceType": "Mantenimiento web",
+      "url": "https://cirujanadigital.com/servicios/mantenimiento-web"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://cirujanadigital.com/#presencia-ia",
+      "name": "Presencia en Inteligencia Artificial para Médicos",
+      "description": "Auditoría y optimización de presencia en ChatGPT, Perplexity y Google AI. Tres servicios: Auditoría ($100), Auditoría + Plan ($220), Implementación activa ($250/mes × 3).",
+      "provider": { "@id": "https://cirujanadigital.com/#organization" },
+      "offers": {
+        "@type": "Offer",
+        "price": "100",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "serviceType": "Marketing digital médico",
+      "url": "https://cirujanadigital.com/servicios/auditoria-ia-plan-presencia"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Cuánto cuesta una página web para médico o clínica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Una landing page profesional para médicos cuesta desde $250 USD. El Pack Presencia Digital Médica (web + Google Business Profile + WhatsApp Business) cuesta $400 USD. Un sitio web corporativo completo va desde $750 USD. La optimización WPO para sitios existentes está desde $180 USD."
       }
-    </script>
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tiempo tarda en estar lista mi web médica?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Pack Presencia Digital Médica se entrega en 7 días hábiles garantizados o se emite reembolso completo. Una landing page individual tarda 7 a 10 días hábiles. Un sitio corporativo completo tarda 3 a 5 semanas. La optimización WPO se resuelve en 3 a 5 días hábiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué garantías ofrecen en el desarrollo web médico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Garantía de Lighthouse 90+ en mobile y desktop documentada con captura de PageSpeed Insights. Garantía de Schema Validator sin errores. Garantía de entrega en 7 días para el Pack Presencia o reembolso completo. 30 días de soporte post-entrega sin costo adicional en todos los servicios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué elegir Cirujana Digital y no otra agencia de diseño web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El diferencial es el contexto clínico: Yulia Monti tiene 15 años como instrumentadora quirúrgica. Eso significa entender el lenguaje médico, la lógica del paciente que busca especialista online y la importancia de la credibilidad en salud. Todos los sitios se construyen en HTML estático puro (sin WordPress), con Schema Physician validado y métricas GA4 configuradas desde el día uno."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué incluye exactamente el Pack Presencia Digital Médica de $400 USD?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El Pack incluye tres servicios integrados: (1) Google Business Profile reclamado, verificado y optimizado para aparecer en Google Maps con la especialidad y ciudad del médico; (2) Landing page médica en HTML estático con Lighthouse 90+ garantizado, Schema Physician, GA4 y formulario de contacto; (3) WhatsApp Business configurado con mensajes automáticos de bienvenida y ausencia, catálogo de servicios y QR imprimible. Todo entregado en 7 días hábiles."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿El servicio incluye hosting y dominio?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "El hosting y dominio son costos separados que el cliente paga directamente al proveedor (desde $5 a $20 USD por mes). Esto garantiza que el sitio sea propiedad del médico, no de la agencia. Se asesora en la elección del hosting sin costo adicional."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Por qué HTML estático y no WordPress para webs médicas?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "WordPress agrega capas de complejidad innecesarias para un médico: actualizaciones constantes, plugins que se rompen, vulnerabilidades de seguridad y puntajes de Lighthouse bajos por defecto (50-65 típicamente). El HTML estático puro alcanza Lighthouse 90+ sin trucos, es más seguro, más barato de mantener y no tiene dependencias que puedan romperse. Para la mayoría de los médicos es la decisión técnica correcta."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto vale la inversión en pesos argentinos?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los servicios se presupuestan en dólares estadounidenses (USD). Si se prefiere abonar en pesos argentinos, se toma la cotización del tipo de cambio vendedor del día al momento de realizar el pago. Se puede consultar por WhatsApp para recibir el presupuesto exacto en pesos."
+      }
+    }
+  ]
+}
+</script>
   </head>
   <body>
     <noscript>
@@ -1059,8 +982,9 @@
       ></iframe>
     </noscript>
 
+    <div id="site-nav"></div>
     <!-- SVG sprite: clase CSS lo oculta, sin style inline -->
-    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg">
+    <svg class="svg-sprite" xmlns="http://www.w3.org/2000/svg" style="display: none">
       <symbol id="icon-wa" viewBox="0 0 24 24" fill="currentColor">
         <path
           d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
@@ -1070,56 +994,6 @@
         />
       </symbol>
     </svg>
-
-    <a href="#main" class="skip-to-main">Saltar al contenido principal</a>
-    <div class="nav-overlay" id="navOverlay" aria-hidden="true"></div>
-
-    <!-- NAVBAR -->
-    <nav class="navbar" id="navbar" aria-label="Navegación principal">
-      <div class="nav-container">
-        <a href="/" class="nav-logo" aria-label="Cirujana Digital — inicio">
-          <img
-            src="/img/logo-CD-blancoSF.webp"
-            alt="Cirujana Digital"
-            width="200"
-            height="75"
-            loading="eager"
-            fetchpriority="high"
-            decoding="async"
-          />
-        </a>
-        <ul class="nav-menu" id="navMenu">
-          <li><a href="#servicios" class="nav-link">Servicios</a></li>
-          <li><a href="#metodo" class="nav-link">Método</a></li>
-          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-          <li><a href="blog/index.html" class="nav-link nav-link--blog">Blog</a></li>
-          <li><a href="#contacto" class="nav-link">Contacto</a></li>
-          <li>
-            <a
-              href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
-              class="nav-cta"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              WhatsApp →
-            </a>
-          </li>
-        </ul>
-        <button
-          class="hamburger"
-          id="hamburger"
-          type="button"
-          aria-label="Abrir menú"
-          aria-expanded="false"
-          aria-controls="navMenu"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
-      </div>
-    </nav>
-
     <main id="main">
       <!-- HERO -->
       <section class="hero" id="inicio" aria-labelledby="hero-title">
@@ -1131,33 +1005,40 @@
               Desarrollo web especializado en salud · LATAM & España
             </div>
             <h1 id="hero-title" class="hero-title">
-              Cada semana sin web médica son turnos que van al consultorio de al lado.
-              <span class="title-highlight">
-                Optimizado para aparecer. Diseñado para convertir.
-              </span>
-            </h1>
-            <p class="hero-subtitle">
-              Páginas web para médicos que
-              <strong>aparecen primero en Google y convierten visitas en turnos reales.</strong>
-              Sin que tengas que aprender nada técnico — tú atiendes, yo me encargo del resto.
-            </p>
-            <div class="hero-price-anchor" aria-label="Precio de entrada">
-              Desde
-              <strong>$250 USD</strong>
-              · Entrega en 7 días · Garantía de resultados o reembolso
-            </div>
-            <div class="hero-cta">
-              <a
-                href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
-                class="btn btn-secondary-dark"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Consultar por WhatsApp"
-              >
-                <svg width="20" height="20" aria-hidden="true"><use href="#icon-wa" /></svg>
-                <span>Escríbeme por WhatsApp → te digo qué está frenando tu web</span>
-              </a>
-            </div>
+  Páginas web para médicos que
+  <span class="title-highlight">aparecen en Google y convierten visitas en turnos.</span>
+</h1>
+<p class="hero-subtitle">
+  HTML estático puro · Lighthouse 90+ garantizado · Schema Physician validado.
+  <strong>Sin WordPress. Sin plugins. Sin que tengas que aprender nada técnico.</strong>
+  Entrega en 7 días o reembolso completo.
+</p>
+<div class="hero-price-anchor" aria-label="Precio de entrada">
+  Pack Presencia Digital desde <strong>$400 USD</strong>
+  · Landing page desde <strong>$250 USD</strong>
+  · <a href="/servicios/" class="hero-price-ver">Ver todos los servicios </a>
+</div>
+<div class="hero-cta">
+
+    <a href="https://calendly.com/cirujanadigital/30min"
+    class="btn btn-primary"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Agendar diagnóstico gratuito de 30 minutos"
+  >
+    Diagnóstico gratuito — 30 min →
+  </a>
+
+    <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
+    class="btn btn-secondary"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Consultar por WhatsApp"
+  >
+    <svg width="20" height="20" aria-hidden="true"><use href="#icon-wa" /></svg>
+    WhatsApp →
+  </a>
+</div>
           </div>
           <div class="hero-visual">
             <img
@@ -1177,7 +1058,6 @@
               <em>"Entiendo cómo piensan tus pacientes cuando buscan médico online"</em>
             </div>
           </div>
-        </div>
       </section>
 
       <!-- SITUATION FILTER -->
@@ -1197,7 +1077,7 @@
               <span>
                 El problema es técnico — velocidad, SEO o estructura. Tiene solución con garantía.
               </span>
-              <span class="situation-card__cta">Optimización desde $200 →</span>
+<span class="situation-card__cta">Optimización WPO desde $180 →</span>
             </a>
             <a href="#servicios" class="situation-card">
               <span class="situation-card__icon" aria-hidden="true">🏥</span>
@@ -1206,6 +1086,98 @@
                 Los tres canales que usa un paciente para encontrar médico, funcionando juntos.
               </span>
               <span class="situation-card__cta">Pack Presencia — $400 →</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMPARATIVA -->
+      <section class="compare-section" aria-labelledby="compare-title">
+        <div class="container container--md">
+          <div class="section-header">
+            <span class="section-label">¿Por qué importa la calidad técnica?</span>
+            <h2 id="compare-title" class="title-cd">
+              Una web que solo existe
+              <span class="text-gradient">vs. una web que trabaja para ti</span>
+            </h2>
+            <p class="section-subtitle">
+              Esta diferencia determina quién aparece primero en Google cuando un paciente busca tu
+              especialidad a las 11 de la noche desde su celular.
+            </p>
+          </div>
+          <div class="compare-grid">
+            <div class="compare-card compare-card--bad">
+              <p class="compare-card__label">❌ Web que solo "existe"</p>
+              <ul class="compare-list">
+                <li>
+                  <span class="icon">✕</span>
+                  Carga en +5 segundos — el paciente ya se fue
+                </li>
+                <li>
+                  <span class="icon">✕</span>
+                  Diseño genérico igual al de miles de webs médicas
+                </li>
+                <li>
+                  <span class="icon">✕</span>
+                  Sin Schema médico — Google no sabe que eres médico
+                </li>
+                <li>
+                  <span class="icon">✕</span>
+                  Sin tracking — no sabes si alguien llegó
+                </li>
+                <li>
+                  <span class="icon">✕</span>
+                  Plugins y actualizaciones que rompen todo
+                </li>
+                <li>
+                  <span class="icon">✕</span>
+                  Desarrollador que no entiende el lenguaje médico
+                </li>
+              </ul>
+            </div>
+            <div class="compare-card compare-card--good">
+              <p class="compare-card__label">✅ Web que trabaja para ti</p>
+              <ul class="compare-list">
+                <li>
+                  <span class="icon">✓</span>
+                  Sub-2 segundos garantizados o reembolso
+                </li>
+                <li>
+                  <span class="icon">✓</span>
+                  Diseño 100% a medida — única como tu especialidad
+                </li>
+                <li>
+                  <span class="icon">✓</span>
+                  Schema Physician + MedicalBusiness — Google te entiende
+                </li>
+                <li>
+                  <span class="icon">✓</span>
+                  GA4 configurado — métricas de conversión reales
+                </li>
+                <li>
+                  <span class="icon">✓</span>
+                  Sin plugins, sin actualizaciones que rompen
+                </li>
+                <li>
+                  <span class="icon">✓</span>
+                  15 años en salud — hablo el idioma de tus pacientes
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="compare-cta-box">
+            <p>
+              Cada semana que tu web no está optimizada son pacientes que van al consultorio de al
+              lado.
+            </p>
+            <a
+              href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20ver%20c%C3%B3mo%20mejorar%20mi%20web%20m%C3%A9dica"
+              class="btn btn-primary btn--center"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg width="18" height="18" aria-hidden="true"><use href="#icon-wa" /></svg>
+              Hablemos hoy por WhatsApp
             </a>
           </div>
         </div>
@@ -1293,8 +1265,7 @@
                 ⭐ Más elegido
               </span>
               <span class="pkg-urgency">
-                Entrega garantizada en 7 días o
-                <strong>reembolso completo</strong>
+                Entrega en 7 días
               </span>
             </div>
             <div class="pkg-featured__grid">
@@ -1399,37 +1370,42 @@
           </div>
 
           <!-- UPSELL PATH -->
-          <div class="upsell-path" aria-label="Tu camino de crecimiento digital">
-            <p class="upsell-path__label">El camino natural después del Pack</p>
-            <div class="upsell-path__steps">
-              <div class="upsell-path__step">
-                <span class="upsell-path__num">1</span>
-                <div>
-                  <strong>Pack Presencia — $400</strong>
-                  <span>Existes online. Google te encuentra. Empiezas a recibir consultas.</span>
-                </div>
-              </div>
-              <div class="upsell-path__arrow" aria-hidden="true">→</div>
-              <div class="upsell-path__step">
-                <span class="upsell-path__num">2</span>
-                <div>
-                  <strong>Sitio corporativo — desde $750</strong>
-                  <span>Muestra toda tu trayectoria, tu equipo y tus especialidades.</span>
-                </div>
-              </div>
-              <div class="upsell-path__arrow" aria-hidden="true">→</div>
-              <div class="upsell-path__step">
-                <span class="upsell-path__num">3</span>
-                <div>
-                  <strong>Mantenimiento mensual — desde $85/mes</strong>
-                  <span>
-                    Tu web siempre actualizada, segura y optimizada. Sin que tengas que pensar en
-                    ello.
-                  </span>
-                </div>
-              </div>
-            </div>
-          </div>
+<div class="upsell-path" aria-label="El camino digital del médico" style="margin-top: 2rem;">
+  <p class="upsell-path__label">El recorrido más habitual de nuestros clientes</p>
+  <div class="upsell-path__steps">
+    <div class="upsell-path__step">
+      <span class="upsell-path__num">1</span>
+      <div>
+        <strong>Pack Presencia — $400 USD</strong>
+        <span>Los tres canales del paciente en 7 días: Google Maps + web + WhatsApp.</span>
+        <a href="/servicios/pack-presencia" class="ver-detalle">Ver detalle →</a>
+      </div>
+    </div>
+    <div class="upsell-path__arrow" aria-hidden="true">→</div>
+    <div class="upsell-path__step">
+      <span class="upsell-path__num">2</span>
+      <div>
+        <strong>Mantenimiento mensual — desde $85/mes</strong>
+        <span>Protocolo mensual para proteger lo construido. Sin permanencia mínima.</span>
+        <a href="/servicios/mantenimiento-web" class="ver-detalle">Ver detalle →</a>
+      </div>
+    </div>
+    <div class="upsell-path__arrow" aria-hidden="true">→</div>
+    <div class="upsell-path__step">
+      <span class="upsell-path__num">3</span>
+      <div>
+        <strong>Presencia en IA — desde $100</strong>
+        <span>Que ChatGPT y Perplexity te mencionen cuando un paciente pregunta.</span>
+        <a href="/servicios/auditoria-ia-plan-presencia/" class="ver-detalle">Ver detalle →</a>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top: 1.5rem;">
+    <a href="/servicios/" class="price-ver">
+      Ver servicios completos con precios y garantías →
+    </a>
+  </p>
+</div>
 
           <!-- SEPARADOR -->
           <div class="svc-divider-row">
@@ -1445,7 +1421,7 @@
               <div class="pricing-card__header">
                 <span class="pricing-card__icon" aria-hidden="true">🚀</span>
                 <div class="pricing-card__price">
-                  <span class="pricing-card__amount">desde $250</span>
+<span class="pricing-card__amount">desde $250</span>
                   <span class="pricing-card__currency">USD</span>
                 </div>
               </div>
@@ -1465,6 +1441,9 @@
                 <li>Schema Physician + MedicalBusiness incluido</li>
                 <li>2 rondas de ajustes incluidas</li>
               </ul>
+              <a href="/servicios/paginas-web" class="btn btn-outline btn--full" style="margin-bottom: 0.75rem;">
+  Ver especificaciones completas →
+</a>
               <a
                 href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20p%C3%A1gina%20web%20m%C3%A9dica%20%28%24250%20USD%29"
                 class="btn btn-primary btn--full"
@@ -1501,6 +1480,9 @@
                 <li>Schema médico completo — Physician + MedicalBusiness</li>
                 <li>2 rondas de ajustes incluidas</li>
               </ul>
+              <a href="/servicios/paginas-web#corporativo-detail" class="btn btn-outline btn--full" style="margin-bottom: 0.75rem;">
+  Ver especificaciones completas →
+</a>
               <a
                 href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20sitio%20web%20completo%20para%20cl%C3%ADnica"
                 class="btn btn-primary btn--full"
@@ -1546,6 +1528,10 @@
               <div class="pricing-card__roi">
                 💰 Una web más rápida puede triplicar las consultas que recibes.
               </div>
+
+<a href="/servicios/optimizacion-wpo" class="btn btn-outline btn--full" style="margin-bottom: 0.75rem;">
+  Ver especificaciones completas →
+</a>
               <a
                 href="https://wa.me/5491176199680?text=Hola%2C%20mi%20web%20existe%20pero%20no%20consigo%20pacientes"
                 class="btn btn-primary btn--full"
@@ -1563,20 +1549,21 @@
       <!-- SERVICIOS IA -->
       <section class="ia-section" id="servicios-ia" aria-labelledby="ia-title">
         <div class="container">
-          <div class="section-header">
-            <span class="section-label section-label--ia">Nuevo · Presencia en IA</span>
-            <h2 id="ia-title" class="title-cd">
-              Tu paciente ya no solo busca en Google.
-              <br />
-              <em class="title-cd-color">Le pregunta a una IA.</em>
-            </h2>
-            <p class="section-subtitle">
-              Cuando alguien le pregunta a ChatGPT
-              <em>"¿cuál es un buen cardiólogo en Buenos Aires?,"</em>
-              el modelo responde con los médicos que tiene suficiente información pública. Si no sos
-              uno de ellos, no existís para esa respuesta.
-            </p>
-          </div>
+<div class="section-header">
+  <span class="section-label">Servicios</span>
+  <h2 id="services-title" class="title-cd">
+    Tres maneras de que tu consultorio
+    <span class="title-cd-color">empiece a conseguir pacientes online</span>
+  </h2>
+  <p class="section-subtitle">
+    Precios fijos en USD · Sin horas facturadas · 30 días de soporte incluidos
+  </p>
+  <p style="margin-top: 0.75rem; font-size: 0.9rem;">
+    <a href="/servicios/" class="price-ver">
+      Ver catálogo de servicios completo →
+    </a>
+  </p>
+</div>
           <div class="ia-intro-banner">
             <div>
               <span class="ia-intro-eyebrow">Por qué esto es urgente ahora</span>
@@ -1636,6 +1623,9 @@
                 </li>
               </ul>
               <p class="ia-card__footnote">📄 PDF de 8–12 páginas con capturas y análisis</p>
+              <a href="/servicios/presencia-ia#servicio-1" class="ver-detalle">
+  Ver detalle completo →
+</a>
               <a
                 href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Auditor%C3%ADa%20de%20IA%20M%C3%A9dica%20%28%24100%20USD%29"
                 class="btn btn-primary btn--full"
@@ -1771,6 +1761,11 @@
                   <li>Cambios menores (hasta 1h/mes)</li>
                   <li>Backup mensual del código</li>
                 </ul>
+                <p style="margin-bottom: 1rem; font-size: 0.9rem;">
+  <a href="/servicios/mantenimiento-web" class="price-ver">
+    Ver protocolo mensual completo y garantías →
+  </a>
+</p>
                 <a
                   href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Mantenimiento%20Est%C3%A1ndar%20%28%2485%20USD%2Fmes%29"
                   class="btn btn-primary btn--full"
@@ -1805,48 +1800,6 @@
             </div>
           </div>
 
-          <div class="ia-path">
-            <h3 class="ia-path__title">El camino natural del médico que quiere crecer</h3>
-            <div class="ia-path-steps">
-              <div class="ia-path-step">
-                <span class="ia-path-step__num">PASO 1</span>
-                <span class="ia-path-step__title">Auditoría IA</span>
-                <span class="ia-path-step__price">$100</span>
-              </div>
-              <div class="ia-path-step">
-                <span class="ia-path-step__num">PASO 2</span>
-                <span class="ia-path-step__title">Auditoría + Plan IA</span>
-                <span class="ia-path-step__price">$220</span>
-              </div>
-              <div class="ia-path-step">
-                <span class="ia-path-step__num">PASO 3</span>
-                <span class="ia-path-step__title">Implementación IA</span>
-                <span class="ia-path-step__price">$250/mes (3m)</span>
-              </div>
-              <div class="ia-path-step">
-                <span class="ia-path-step__num">PASO 4</span>
-                <span class="ia-path-step__title">Mant. Pro + IA</span>
-                <span class="ia-path-step__price">$150/mes</span>
-              </div>
-              <div class="ia-path-step">
-                <span class="ia-path-step__num">PASO 5</span>
-                <span class="ia-path-step__title">Sitio Corporativo</span>
-                <span class="ia-path-step__price">$750</span>
-              </div>
-            </div>
-            <div class="ia-path-total">
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M3 8l3.5 3.5L13 4"
-                  stroke="#00a7a9"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-              </svg>
-              Valor total proyectado (12 meses):
-              <strong>~$2.870 USD</strong>
-            </div>
-          </div>
 
           <div class="svc-micro-cta">
             <p>¿No sabés cuál necesitás?</p>
@@ -2060,259 +2013,55 @@
         </div>
       </section>
 
-      <!-- CHECKLIST -->
-      <section class="checklist-section" id="auditoria" aria-labelledby="checklist-title">
-        <div class="container container--narrow">
+      <!-- DIAGNOSTICO CTA -->
+      <section class="diag-section" id="auditoria" aria-labelledby="diag-cta-title">
+        <div class="container--narrow">
           <div class="section-header">
-            <span class="section-label">Diagnóstico exprés</span>
-            <h2 id="checklist-title" class="title-cd">
+            <span class="section-label">Diagnóstico gratuito</span>
+            <h2 id="diag-cta-title" class="title-cd">
               ¿Tu web médica está
               <span class="text-gradient">perdiendo pacientes hoy?</span>
             </h2>
             <p class="section-subtitle">
-              9 preguntas. 2 minutos. Resultado inmediato con recomendación concreta.
+              3 minutos · resultado personalizado por especialidad y ciudad · recomendación
+              concreta.
             </p>
           </div>
-          <div class="checklist-widget">
-            <div class="checklist-progress" aria-hidden="true">
-              <div class="checklist-progress__bar" id="checklistBar"></div>
-            </div>
-            <div class="checklist-question active" id="cq-1" data-q="1">
-              <p class="checklist-q-num">Pregunta 1 de 9</p>
-              <p class="checklist-q-text">¿Tu web carga en menos de 3 segundos en el celular?</p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="1"
-                  data-val="0"
-                  data-next="2"
-                >
-                  ✓ Sí, carga rápido
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="1"
-                  data-val="1"
-                  data-next="2"
-                >
-                  ✕ Carga lento o no sé
-                </button>
+
+          <!-- Preview de lo que encontrarán -->
+          <div class="diag-preview-card">
+            <div class="diag-preview-steps">
+              <div class="diag-preview-step">
+                <span class="diag-preview-num">1</span>
+                <div>
+                  <strong>Tu especialidad y ciudad</strong>
+                  <p>Simulamos cómo te buscan tus pacientes en Google ahora mismo.</p>
+                </div>
+              </div>
+              <div class="diag-preview-step">
+                <span class="diag-preview-num">2</span>
+                <div>
+                  <strong>15 puntos de control</strong>
+                  <p>Velocidad, SEO local, conversión y credibilidad profesional.</p>
+                </div>
+              </div>
+              <div class="diag-preview-step">
+                <span class="diag-preview-num">3</span>
+                <div>
+                  <strong>Resultado inmediato</strong>
+                  <p>Errores detectados + solución recomendada según tu situación.</p>
+                </div>
               </div>
             </div>
-            <div class="checklist-question" id="cq-2" data-q="2">
-              <p class="checklist-q-num">Pregunta 2 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tenés Google Business Profile (el perfil de Google Maps) verificado?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="2"
-                  data-val="0"
-                  data-next="3"
-                >
-                  ✓ Sí, está activo
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="2"
-                  data-val="1"
-                  data-next="3"
-                >
-                  ✕ No tengo o no está verificado
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-3" data-q="3">
-              <p class="checklist-q-num">Pregunta 3 de 9</p>
-              <p class="checklist-q-text">
-                Si alguien busca "[tu especialidad] + [tu ciudad]" en Google, ¿apareces en los
-                primeros resultados?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="3"
-                  data-val="0"
-                  data-next="4"
-                >
-                  ✓ Sí, aparezco
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="3"
-                  data-val="1"
-                  data-next="4"
-                >
-                  ✕ No aparezco o no sé
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-4" data-q="4">
-              <p class="checklist-q-num">Pregunta 4 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tu web tiene un botón de WhatsApp o formulario visible sin hacer scroll?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="4"
-                  data-val="0"
-                  data-next="5"
-                >
-                  ✓ Sí, está visible inmediatamente
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="4"
-                  data-val="1"
-                  data-next="5"
-                >
-                  ✕ No tiene o hay que buscarla
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-5" data-q="5">
-              <p class="checklist-q-num">Pregunta 5 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tu web está adaptada para celular (se ve bien sin hacer zoom)?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="5"
-                  data-val="0"
-                  data-next="6"
-                >
-                  ✓ Sí, se ve bien en celular
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="5"
-                  data-val="1"
-                  data-next="6"
-                >
-                  ✕ No o se ve raro en el celular
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-6" data-q="6">
-              <p class="checklist-q-num">Pregunta 6 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tu nombre, especialidad y zona de atención aparecen claros en el título de la
-                página?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="6"
-                  data-val="0"
-                  data-next="7"
-                >
-                  ✓ Sí, está claramente indicado
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="6"
-                  data-val="1"
-                  data-next="7"
-                >
-                  ✕ No o no estoy seguro/a
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-7" data-q="7">
-              <p class="checklist-q-num">Pregunta 7 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tenés al menos una reseña real en Google (con nombre y foto del paciente)?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="7"
-                  data-val="0"
-                  data-next="8"
-                >
-                  ✓ Sí, tengo reseñas reales
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="7"
-                  data-val="1"
-                  data-next="8"
-                >
-                  ✕ No tengo o tengo muy pocas
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-8" data-q="8">
-              <p class="checklist-q-num">Pregunta 8 de 9</p>
-              <p class="checklist-q-text">
-                ¿Sabés cuántas personas visitan tu web por mes y qué hacen ahí?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="8"
-                  data-val="0"
-                  data-next="9"
-                >
-                  ✓ Sí, tengo Google Analytics o similar
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="8"
-                  data-val="1"
-                  data-next="9"
-                >
-                  ✕ No tengo métricas instaladas
-                </button>
-              </div>
-            </div>
-            <div class="checklist-question" id="cq-9" data-q="9">
-              <p class="checklist-q-num">Pregunta 9 de 9</p>
-              <p class="checklist-q-text">
-                ¿Tu web muestra tu foto, credenciales y matrícula de forma visible?
-              </p>
-              <div class="checklist-options">
-                <button
-                  class="checklist-opt checklist-opt--yes"
-                  data-q="9"
-                  data-val="0"
-                  data-next="result"
-                >
-                  ✓ Sí, están visibles y actualizadas
-                </button>
-                <button
-                  class="checklist-opt checklist-opt--no"
-                  data-q="9"
-                  data-val="1"
-                  data-next="result"
-                >
-                  ✕ No las tengo o están incompletas
-                </button>
-              </div>
-            </div>
-            <div class="checklist-result" id="checklist-result">
-              <div class="checklist-result__score">
-                <div class="checklist-result__num" id="checklistScore">0</div>
-                <div class="checklist-result__label">errores críticos detectados de 9</div>
-              </div>
-              <div class="checklist-result__verdict" id="checklistVerdict"></div>
-              <a
-                href="https://wa.me/5491176199680?text=Hola%2C%20hice%20el%20diagn%C3%B3stico%20y%20tengo%20errores%20en%20mi%20web%20m%C3%A9dica"
-                class="btn btn-outline btn--flex"
-                target="_blank"
-                rel="noopener noreferrer"
-                id="checklistCTA"
-              >
-                <svg width="18" height="18" aria-hidden="true"><use href="#icon-wa" /></svg>
-                Hablemos — te digo cómo resolverlo
-              </a>
-              <button class="checklist-restart" id="checklistRestart" type="button">
-                Hacer el diagnóstico de nuevo
-              </button>
-            </div>
+
+            <a
+              href="/diagnostico/"
+              class="btn btn-primary btn--flex btn--diag-cta"
+            >
+              Empezar mi diagnóstico gratuito →
+            </a>
+
+            <p class="diag-preview-nota">Sin registro · Sin spam · 100% gratuito</p>
           </div>
         </div>
       </section>
@@ -2321,29 +2070,31 @@
       <section class="method-section" id="metodo" aria-labelledby="method-title">
         <div class="container">
           <div class="method-intro">
-            <div class="method-text">
-              <span class="section-label">El Método</span>
-              <h2 id="method-title" class="title-cd">
-                Desarrollo web con precisión quirúrgica:
-                <span class="text-gradient">metodología en 4 fases</span>
-              </h2>
-              <p>
-                15 años como instrumentadora quirúrgica dejaron una lección clara:
-                <strong>los detalles no son detalles — son decisiones que salvan resultados</strong>
-                .
-              </p>
-              <p>
-                Esa obsesión por la precisión se traslada hoy al desarrollo web. No se construyen
-                "sitios bonitos": se construye
-                <strong>infraestructura digital que genera resultados medibles</strong>
-                .
-              </p>
-              <p>
-                El método no es creativo, es
-                <strong>clínico</strong>
-                : se diagnostica, se interviene, se mide.
-              </p>
-            </div>
+           <div class="method-text">
+  <span class="section-label">El Método</span>
+  <h2 id="method-title" class="title-cd">
+    Desarrollo web con precisión quirúrgica:
+    <span class="text-gradient">metodología en 4 fases</span>
+  </h2>
+  <p>
+    15 años como instrumentadora quirúrgica en Argentina dejaron una lección clara:
+    <strong>los detalles no son detalles — son decisiones que salvan resultados</strong>.
+    La misma lógica clínica que opera en el quirófano es la que hoy define cada línea de código.
+  </p>
+  <p>
+    Trabajo con médicos y profesionales de la salud en
+    <strong>Argentina, México, Chile, España y Colombia</strong>:
+    mercados donde el paciente busca especialista desde el celular y decide en menos de 3 segundos.
+    Esa presión obliga a construir
+    <strong>infraestructura digital que genera resultados medibles</strong>,
+    no sitios que solo existen.
+  </p>
+  <p>
+    El método no es creativo, es
+    <strong>clínico</strong>: se diagnostica, se interviene, se mide.
+    Sin suposiciones. Sin promesas de posicionamiento que no se pueden verificar.
+  </p>
+</div>
             <div class="method-visual">
               <div class="method-stat-card">
                 <span class="method-stat-value">15 años</span>
@@ -2357,21 +2108,22 @@
           </div>
 
           <div class="method-author-inline">
-            <img
-              src="/img/yulia-monti.webp"
-              alt="Yulia Monti - Especialista en desarrollo web médico y posicionamiento para clínicas"
-              width="48"
-              height="48"
-              loading="lazy"
-              decoding="async"
-              class="avatar-round"
-            />
-            <p class="method-author-text">
-              <strong>Yulia Monti</strong>
-              — 15 años como instrumentadora quirúrgica. La misma obsesión por la precisión,
-              aplicada al código.
-            </p>
-          </div>
+  <img
+    src="/img/yulia-monti.webp"
+    alt="Yulia Monti — desarrolladora web para médicos en Argentina, México, Chile y España. Especializada en SEO médico, Schema Physician y presencia en IA generativa."
+    width="48"
+    height="48"
+    loading="lazy"
+    decoding="async"
+    class="avatar-round"
+  />
+  <p class="method-author-text">
+    <strong>Yulia Monti</strong> — Instrumentadora quirúrgica con 15 años de experiencia.
+    Desarrolladora web especializada en el sector salud para
+    Argentina, México, Chile, España y Colombia.
+    La misma obsesión por la precisión, aplicada al código.
+  </p>
+</div>
 
           <div class="method-process">
             <h3 class="process-title">Proceso de desarrollo web en 4 fases</h3>
@@ -2888,7 +2640,7 @@
                 href="https://lagondolaecuador.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="link-brand link-brand--ml"
+                class="price-ver"
               >
                 Ver sitio real →
               </a>
@@ -2964,98 +2716,6 @@
           </div>
         </div>
       </div>
-
-      <!-- COMPARATIVA -->
-      <section class="compare-section" aria-labelledby="compare-title">
-        <div class="container container--md">
-          <div class="section-header">
-            <span class="section-label">¿Por qué importa la calidad técnica?</span>
-            <h2 id="compare-title" class="title-cd">
-              Una web que solo existe
-              <span class="text-gradient">vs. una web que trabaja para ti</span>
-            </h2>
-            <p class="section-subtitle">
-              Esta diferencia determina quién aparece primero en Google cuando un paciente busca tu
-              especialidad a las 11 de la noche desde su celular.
-            </p>
-          </div>
-          <div class="compare-grid">
-            <div class="compare-card compare-card--bad">
-              <p class="compare-card__label">❌ Web que solo "existe"</p>
-              <ul class="compare-list">
-                <li>
-                  <span class="icon">✕</span>
-                  Carga en +5 segundos — el paciente ya se fue
-                </li>
-                <li>
-                  <span class="icon">✕</span>
-                  Diseño genérico igual al de miles de webs médicas
-                </li>
-                <li>
-                  <span class="icon">✕</span>
-                  Sin Schema médico — Google no sabe que eres médico
-                </li>
-                <li>
-                  <span class="icon">✕</span>
-                  Sin tracking — no sabes si alguien llegó
-                </li>
-                <li>
-                  <span class="icon">✕</span>
-                  Plugins y actualizaciones que rompen todo
-                </li>
-                <li>
-                  <span class="icon">✕</span>
-                  Desarrollador que no entiende el lenguaje médico
-                </li>
-              </ul>
-            </div>
-            <div class="compare-card compare-card--good">
-              <p class="compare-card__label">✅ Web que trabaja para ti</p>
-              <ul class="compare-list">
-                <li>
-                  <span class="icon">✓</span>
-                  Sub-2 segundos garantizados o reembolso
-                </li>
-                <li>
-                  <span class="icon">✓</span>
-                  Diseño 100% a medida — única como tu especialidad
-                </li>
-                <li>
-                  <span class="icon">✓</span>
-                  Schema Physician + MedicalBusiness — Google te entiende
-                </li>
-                <li>
-                  <span class="icon">✓</span>
-                  GA4 configurado — métricas de conversión reales
-                </li>
-                <li>
-                  <span class="icon">✓</span>
-                  Sin plugins, sin actualizaciones que rompen
-                </li>
-                <li>
-                  <span class="icon">✓</span>
-                  15 años en salud — hablo el idioma de tus pacientes
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="compare-cta-box">
-            <p>
-              Cada semana que tu web no está optimizada son pacientes que van al consultorio de al
-              lado.
-            </p>
-            <a
-              href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20ver%20c%C3%B3mo%20mejorar%20mi%20web%20m%C3%A9dica"
-              class="btn btn-primary btn--center"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg width="18" height="18" aria-hidden="true"><use href="#icon-wa" /></svg>
-              Hablemos hoy por WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
 
       <!-- FAQ -->
       <section class="faq-section" aria-labelledby="faq-title">
@@ -3358,7 +3018,7 @@
                 <p>
                   Si no se abrió automáticamente →
                   <a
-                    href="/recursos/los-5-errores.html"
+                    href="/recursos/guia-5-errores/index.html"
                     target="_blank"
                     rel="noopener noreferrer"
                     class="lm-success__link"
@@ -3588,302 +3248,7 @@
     </main>
 
     <!-- FOOTER -->
-    <footer class="footer" role="contentinfo">
-      <div class="footer-cta-bar">
-        <div class="container">
-          <div class="footer-cta-inner">
-            <div class="footer-cta-text">
-              <strong>¿Tus pacientes te encuentran en Google?</strong>
-              <span>Si no apareces, alguien más está tomando esos turnos. Hablemos hoy.</span>
-            </div>
-            <div class="footer-cta-actions">
-              <a
-                href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20pacientes%20desde%20Google%20%E2%80%94%20hablemos"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="footer-btn-wa"
-              >
-                <svg width="15" height="15" aria-hidden="true"><use href="#icon-wa" /></svg>
-                WhatsApp directo
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="footer-body">
-        <div class="container">
-          <div class="footer-grid">
-            <div class="footer-brand">
-              <a href="/" class="footer-logo-link" aria-label="Cirujana Digital">
-                <span class="logo-text-footer">CIRUJANA DIGITAL</span>
-              </a>
-              <p class="footer-tagline">
-                Desarrollo web con precisión quirúrgica. De la sala de operaciones al código que
-                posiciona y convierte.
-              </p>
-              <div
-                class="footer-badge"
-                role="img"
-                aria-label="Lighthouse Score perfecto: 100 en Performance, Accesibilidad y SEO"
-              >
-                <div class="footer-badge-scores">
-                  <div class="footer-badge-score">
-                    <span class="val">100</span>
-                    <span class="lbl">Perf</span>
-                  </div>
-                  <div class="footer-badge-divider" aria-hidden="true"></div>
-                  <div class="footer-badge-score">
-                    <span class="val">100</span>
-                    <span class="lbl">A11y</span>
-                  </div>
-                  <div class="footer-badge-divider" aria-hidden="true"></div>
-                  <div class="footer-badge-score">
-                    <span class="val">100</span>
-                    <span class="lbl">SEO</span>
-                  </div>
-                </div>
-                <span class="footer-badge-label">Lighthouse</span>
-              </div>
-              <nav class="footer-social" aria-label="Redes sociales">
-                <a
-                  href="https://www.instagram.com/cirujanadigital/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                >
-                  <svg
-                    width="18"
-                    height="18"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"
-                    />
-                  </svg>
-                </a>
-                <a
-                  href="https://wa.me/5491176199680"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="WhatsApp"
-                >
-                  <svg width="18" height="18" aria-hidden="true"><use href="#icon-wa" /></svg>
-                </a>
-              </nav>
-            </div>
-            <nav class="footer-column" aria-label="Servicios">
-              <p class="footer-column-title">Servicios</p>
-              <ul>
-                <li>
-                  <a href="/servicios/pack-presencia/">
-                    Pack Presencia — página completa
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#servicios">
-                    Landing Page Médica
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#servicios">
-                    Sitio Web Corporativo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#servicios">
-                    Optimización WPO
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#auditoria">
-                    Diagnóstico Exprés
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/#servicios-ia">
-                    Presencia en IA
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <nav class="footer-column" aria-label="Sitios web médicos">
-              <p class="footer-column-title">Sitios Web</p>
-              <ul>
-                <li>
-                  <a href="https://metododoshas.com" target="_blank" rel="noopener noreferrer">
-                    Nutricionista
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-medico-anestesiologo/">
-                    Anestesiólogo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-para-cardiologo/">
-                    Cardiólogo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-dermatologa/">
-                    Dermatóloga
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-para-doula/">
-                    Doula
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-para-obstetra/">
-                    Obstetra
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/pagina-web-para-odontologo/">
-                    Odontólogo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/diseno-web-para-oftalmologo/">
-                    Oftalmólogo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-              </ul>
-              <p class="footer-column-title footer-column-title--spaced">RECURSOS GRATUITOS</p>
-              <ul>
-                <li>
-                  <a href="/recursos/google-index.html">
-                    Diagnóstico Google
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/recursos/auditoria-ia.html">
-                    Auditoría IA
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/recursos/simulador-velocidad/">
-                    ⚡ Simulador de velocidad
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/recursos/los-5-errores.html">
-                    Los 5 errores
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <nav class="footer-column" aria-label="Blog y contacto">
-              <p class="footer-column-title">Blog</p>
-              <ul>
-                <li>
-                  <a href="/recursos/los-5-errores.html">
-                    Guía PDF gratuita
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog/">
-                    Todos los artículos
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog/cuanto-cuesta-pagina-web-argentina/">
-                    ¿Cuánto cuesta una web?
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog/core-web-vitals-2026/">
-                    Core Web Vitals 2026
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog/google-business-profile-medicos/">
-                    Google Business Profile
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/blog/resenas-google-consultorio/">
-                    Reseñas de Google
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-              </ul>
-              <p class="footer-column-title footer-column-title--spaced">Contacto</p>
-              <ul>
-                <li>
-                  <a href="mailto:info@cirujanadigital.com">
-                    info@cirujanadigital.com
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://wa.me/5491176199680" target="_blank" rel="noopener noreferrer">
-                    WhatsApp directo
-                    <span class="link-arrow">›</span>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-      </div>
-      <hr class="footer-divider" aria-hidden="true" />
-      <div class="footer-bottom">
-        <div class="container">
-          <div class="footer-bottom-inner">
-            <p>
-              &copy;
-              <span id="current-year">2026</span>
-              Cirujana Digital — Diseño Web Profesional para Médicos
-            </p>
-            <div class="footer-legal">
-              <a href="/terminos.html">Términos</a>
-              <a href="/politicas.html">Privacidad</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-    <!-- STICKY CTA MOBILE -->
-    <div class="sticky-cta-mobile" id="stickyCta" inert>
-      <a
-        href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
-        class="sticky-cta-link"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Contactar por WhatsApp"
-      >
-        <svg width="18" height="18" aria-hidden="true"><use href="#icon-wa" /></svg>
-        Hablemos por WhatsApp
-      </a>
-    </div>
+    <div id="site-footer"></div>
 
     <!-- SCROLL TO TOP -->
     <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Volver al inicio" type="button">

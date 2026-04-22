@@ -1,0 +1,1401 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+      }
+
+      // Retrasar GTM hasta primera interacción o 3.5s de idle
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+        window.addEventListener(e, loadGTM, { once: true })
+      );
+      setTimeout(loadGTM, 3500);
+    </script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO primario -->
+    <title>
+      ¿Tu web médica carga en menos de 2 segundos? Diagnóstico en 5 min | Cirujana Digital
+    </title>
+    <meta
+      name="description"
+      content="Diagnosticá la velocidad de tu sitio web médico en 5 minutos con herramientas gratuitas. Aprende qué son LCP, INP y CLS, cómo interpretarlos y qué errores están frenando tus consultas online."
+    />
+    <meta name="author" content="Yulia Monti — Cirujana Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link
+      rel="canonical"
+      href="https://cirujanadigital.com/blog/diagnostico-velocidad-web-medica/"
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://cirujanadigital.com/blog/diagnostico-velocidad-web-medica/"
+    />
+    <meta
+      property="og:title"
+      content="¿Tu web médica carga en menos de 2 segundos? Diagnóstico en 5 min"
+    />
+    <meta
+      property="og:description"
+      content="Diagnosticá la velocidad de tu sitio web médico en 5 minutos. LCP, INP, CLS: qué significan y cómo afectan tus consultas. Guía práctica de Cirujana Digital."
+    />
+    <meta
+      property="og:image"
+      content="https://cirujanadigital.com/img/og-diagnostico-velocidad-web-medica.webp"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_419" />
+    <meta property="og:site_name" content="Cirujana Digital" />
+    <meta property="article:published_time" content="2025-06-10T09:00:00-03:00" />
+    <meta property="article:modified_time" content="2025-06-10T09:00:00-03:00" />
+    <meta property="article:author" content="Yulia Monti" />
+    <meta property="article:section" content="Performance" />
+    <meta property="article:tag" content="velocidad web médica" />
+    <meta property="article:tag" content="Core Web Vitals" />
+    <meta property="article:tag" content="PageSpeed médicos" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="¿Tu web médica carga en menos de 2 segundos? Diagnóstico en 5 min"
+    />
+    <meta
+      name="twitter:description"
+      content="Google mide la velocidad de tu sitio con Core Web Vitals. Qué son LCP, INP y CLS y cómo mejorarlos en un sitio web médico."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cirujanadigital.com/img/og-diagnostico-velocidad-web-medica.webp"
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="/components.css" />
+    <script src="/components.js" defer></script>
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* ── Variables propias del artículo ── */
+      :root {
+        --primary: #03658c;
+        --secondary: #00a7a9;
+        --light: #f7f9fa;
+        --cd-text: #2d3748;
+        --cd-text-light: #64748b;
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+        --container-padding: 2rem;
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+        --gap: 2rem;
+      }
+
+      /* ── Base ── */
+      body {
+        font-family: var(--font-body);
+        color: var(--cd-text);
+        background: #fff;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        /* FIX 2 — evita scroll horizontal por cualquier elemento desbordado */
+        overflow-x: hidden;
+      }
+      #site-nav {
+        height: 70px;
+        contain: layout style;
+      }
+      #site-footer {
+        height: 678px;
+        contain: layout style;
+      }
+
+      @media (max-width: 768px) {
+        #site-footer {
+          height: 1780px;
+        }
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      a {
+        color: inherit;
+      }
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+      }
+
+      [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      /* ══════════════════════════════════════════
+   HERO DEL ARTÍCULO
+   ══════════════════════════════════════════ */
+      .article-hero {
+        padding: calc(80px + 4rem) 0 4rem;
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      }
+
+      .article-hero-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+      }
+
+      .article-breadcrumb {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.5rem;
+      }
+      .article-breadcrumb a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .article-breadcrumb a:hover {
+        color: #fff;
+      }
+      .article-breadcrumb span {
+        margin: 0 0.4rem;
+      }
+
+      .article-category {
+        display: inline-block;
+        background: rgba(0, 167, 169, 0.2);
+        color: #7fdbff;
+        border: 1px solid rgba(0, 167, 169, 0.3);
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+
+      .article-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+      }
+
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .article-meta strong {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* ══════════════════════════════════════════
+   LAYOUT PRINCIPAL (2 columnas)
+   ══════════════════════════════════════════ */
+      .article-body {
+        padding: 4rem 0 5rem;
+        background: #fff;
+      }
+
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 4rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+        align-items: start;
+      }
+
+      .article-content {
+        min-width: 0;
+      }
+
+      /* ══════════════════════════════════════════
+   TIPOGRAFÍA DEL CUERPO
+   ══════════════════════════════════════════ */
+      .article-content h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 3vw, 1.9rem);
+        color: var(--cd-text);
+        margin: 2.5rem 0 1rem;
+        scroll-margin-top: 100px;
+        border-bottom: 2px solid var(--light);
+        padding-bottom: 0.5rem;
+      }
+      .article-content h3 {
+        font-size: 1.2rem;
+        color: var(--cd-text);
+        margin: 1.75rem 0 0.6rem;
+        font-weight: 700;
+      }
+      .article-content p {
+        color: #4a5568;
+        line-height: 1.9;
+        margin-bottom: 1.4rem;
+        font-size: 1.05rem;
+      }
+      .article-content ul,
+      .article-content ol {
+        margin: 0 0 1.5rem 1.5rem;
+      }
+      .article-content li {
+        color: #4a5568;
+        line-height: 1.8;
+        margin-bottom: 0.5rem;
+        font-size: 1.05rem;
+      }
+      .article-content strong {
+        color: var(--cd-text);
+      }
+      .article-content a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .article-content a:hover {
+        color: var(--primary);
+      }
+
+      /* ══════════════════════════════════════════
+   MÉTRICAS / CARDS VISUALES
+   ══════════════════════════════════════════ */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      .metric-card {
+        background: var(--light);
+        border-radius: 12px;
+        padding: 1.25rem;
+        text-align: center;
+        border-top: 4px solid var(--secondary);
+      }
+      .metric-card .metric-name {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--cd-text-light);
+        margin-bottom: 0.5rem;
+      }
+      .metric-card .metric-value {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+      .metric-card .metric-desc {
+        font-size: 0.8rem;
+        color: var(--cd-text-light);
+        line-height: 1.4;
+      }
+      .metric-card.good {
+        border-color: #00c853;
+      }
+      .metric-card.good .metric-value {
+        color: #00a844;
+      }
+      .metric-card.medium {
+        border-color: #f59e0b;
+      }
+      .metric-card.medium .metric-value {
+        color: #d97706;
+      }
+      .metric-card.bad {
+        border-color: #e74c3c;
+      }
+      .metric-card.bad .metric-value {
+        color: #c0392b;
+      }
+
+      /* ══════════════════════════════════════════
+   CALLOUTS
+   ══════════════════════════════════════════ */
+      .callout {
+        padding: 1.25rem 1.5rem;
+        border-radius: 10px;
+        margin: 2rem 0;
+      }
+      .callout p {
+        margin-bottom: 0;
+        font-size: 1rem;
+      }
+      .callout-label {
+        font-weight: 800;
+        font-size: 0.75rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+      .callout-tip {
+        background: rgba(0, 167, 169, 0.08);
+        border-left: 4px solid var(--secondary);
+      }
+      .callout-tip .callout-label {
+        color: #006b6d;
+      }
+      .callout-warning {
+        background: rgba(245, 158, 11, 0.08);
+        border-left: 4px solid #f59e0b;
+      }
+      .callout-warning .callout-label {
+        color: #92400e;
+      }
+      .callout-danger {
+        background: rgba(231, 76, 60, 0.07);
+        border-left: 4px solid #e74c3c;
+      }
+      .callout-danger .callout-label {
+        color: #991b1b;
+      }
+
+      /* ══════════════════════════════════════════
+   TABLAS RESPONSIVE
+   ══════════════════════════════════════════ */
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 2rem 0;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+      }
+      .data-table {
+        width: 100%;
+        min-width: 520px;
+        border-collapse: collapse;
+        font-size: 0.93rem;
+      }
+      .data-table thead {
+        background: var(--gradient-primary);
+        color: #fff;
+      }
+      .data-table th {
+        padding: 0.9rem 1.2rem;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .data-table td {
+        padding: 0.9rem 1.2rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #4a5568;
+        vertical-align: top;
+      }
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table tr:nth-child(even) td {
+        background: #f8fafc;
+      }
+      .tag-good {
+        color: #00a844;
+        font-weight: 700;
+      }
+      .tag-medium {
+        color: #d97706;
+        font-weight: 700;
+      }
+      .tag-bad {
+        color: #c0392b;
+        font-weight: 700;
+      }
+
+      /* ══════════════════════════════════════════
+   AUTHOR BOX
+   ══════════════════════════════════════════ */
+      .author-box {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        padding: 1.75rem;
+        background: var(--light);
+        border-radius: 14px;
+        margin: 3rem 0;
+      }
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+      }
+      .author-info h3 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--cd-text);
+        margin-bottom: 0.2rem;
+      }
+      .author-info p {
+        font-size: 0.9rem;
+        color: var(--cd-text-light);
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      /* ══════════════════════════════════════════
+   CTA BOX DENTRO DEL ARTÍCULO
+   ══════════════════════════════════════════ */
+      .article-cta-box {
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+        border-radius: 16px;
+        padding: 2.5rem;
+        text-align: center;
+        margin: 3rem 0;
+      }
+      .article-cta-box h3 {
+        font-family: var(--font-display);
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 0.75rem;
+      }
+      .article-cta-box p {
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 1.5rem;
+        font-size: 0.95rem;
+      }
+      .btn-cta-white {
+        display: inline-flex;
+        gap: 0.75rem;
+        align-items: center;
+        background: #fff;
+        color: #024e6c;
+        font-weight: 800;
+        padding: 0.875rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+      .btn-cta-white:hover {
+        background: #e0f7f7;
+        transform: translateY(-2px);
+        color: var(--primary);
+      }
+
+      /* ══════════════════════════════════════════
+   SIDEBAR
+   ══════════════════════════════════════════ */
+      .article-sidebar {
+        position: sticky;
+        top: 100px;
+        min-width: 0;
+      }
+      .toc-box {
+        background: var(--light);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .toc-box h4 {
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #94a3b8;
+        margin-bottom: 1rem;
+      }
+      .toc-box ol {
+        list-style: none;
+        counter-reset: toc;
+        padding: 0;
+        margin: 0;
+      }
+      .toc-box li {
+        counter-increment: toc;
+        margin-bottom: 0.6rem;
+      }
+      .toc-box a {
+        font-size: 0.87rem;
+        color: var(--cd-text-light);
+        text-decoration: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        line-height: 1.4;
+        transition: color 0.2s;
+      }
+      .toc-box a::before {
+        content: counter(toc);
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+      }
+      .toc-box a:hover {
+        color: var(--primary);
+      }
+
+      .sidebar-cta {
+        background: var(--gradient-primary);
+        border-radius: 12px;
+        padding: 1.5rem;
+        text-align: center;
+        color: #fff;
+      }
+      .sidebar-cta p {
+        font-size: 0.88rem;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+        line-height: 1.5;
+      }
+      .sidebar-cta a {
+        display: block;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .sidebar-cta a:hover {
+        background: #e0f7f7;
+        transform: translateY(-2px);
+      }
+
+      /* ══════════════════════════════════════════
+   SIDEBAR DIAGNÓSTICO (sb-diag)
+   ══════════════════════════════════════════ */
+      .sb-diag {
+        background: #0d1b2a;
+        border: 1px solid rgba(0, 167, 169, 0.2);
+        border-radius: 12px;
+        padding: 1.5rem;
+        color: #fff;
+      }
+      .sb-diag__head {
+        margin-bottom: 1.25rem;
+      }
+      .sb-diag__label {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #7fdbff;
+        margin-bottom: 0.5rem;
+      }
+      .sb-diag__stat {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
+      }
+      .sb-diag__stat em {
+        font-style: normal;
+        font-weight: 700;
+        color: #fff;
+      }
+      .sb-diag__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .sb-diag__list li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+      .sb-diag__icon {
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+      .sb-diag__list strong {
+        display: block;
+        font-size: 0.85rem;
+        color: #fff;
+        margin-bottom: 0.1rem;
+      }
+      .sb-diag__list span {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .sb-diag__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.875rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        box-shadow: 0 4px 12px rgba(0, 167, 169, 0.28);
+        margin-bottom: 0.75rem;
+      }
+      .sb-diag__btn:hover {
+        box-shadow: 0 6px 20px rgba(0, 167, 169, 0.42);
+        transform: translateY(-1px);
+        color: #fff;
+      }
+      .sb-diag__nota {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        margin: 0;
+      }
+
+      /* ══════════════════════════════════════════
+   BLOG LAYOUT (página índice del blog)
+   ══════════════════════════════════════════ */
+      .blog-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+      }
+      @media (min-width: 900px) {
+        .blog-layout {
+          grid-template-columns: 1fr 300px;
+          align-items: start;
+        }
+      }
+      .blog-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: sticky;
+        top: 100px;
+      }
+
+      /* ══════════════════════════════════════════
+   WIDGET ARTÍCULOS RELACIONADOS
+   ══════════════════════════════════════════ */
+      .sb-section-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cd-text-light);
+        margin-bottom: 12px;
+      }
+      .sb-related-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .sb-related-list a {
+        color: var(--cd-text);
+        font-size: 0.88rem;
+        text-decoration: none;
+        line-height: 1.4;
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .sb-related-list a:hover {
+        border-color: rgba(0, 167, 169, 0.4);
+        color: #03658c;
+      }
+
+      /* ══════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════ */
+      @media (max-width: 1024px) {
+        .article-layout {
+          grid-template-columns: 1fr;
+          padding: 0 clamp(1.5rem, 5vw, 3rem);
+        }
+        .article-sidebar {
+          display: none;
+        }
+      }
+      @media (max-width: 768px) {
+        .article-hero {
+          padding: calc(70px + 3rem) 0 3rem;
+        }
+        .article-body {
+          padding: 2.5rem 0 3.5rem;
+        }
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+        .author-box {
+          flex-direction: column;
+        }
+      }
+      @media (max-width: 640px) {
+        .article-meta {
+          gap: 0.6rem;
+          font-size: 0.82rem;
+        }
+        .article-cta-box {
+          padding: 1.75rem 1.25rem;
+        }
+      }
+    </style>
+
+    <!-- Schema JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://cirujanadigital.com/blog/diagnostico-velocidad-web-medica/#article",
+            "headline": "¿Tu web médica carga en menos de 2 segundos? Diagnóstico en 5 min",
+            "description": "Diagnosticá la velocidad de tu sitio web médico en 5 minutos con herramientas gratuitas. Qué son LCP, INP y CLS, cómo interpretarlos y qué errores están frenando tus consultas online.",
+            "datePublished": "2026-04-21T09:00:00-03:00",
+            "dateModified": "2026-064-21T09:00:00-03:00",
+            "author": {
+              "@type": "Person",
+              "name": "Yulia Monti",
+              "url": "https://cirujanadigital.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Cirujana Digital",
+              "url": "https://cirujanadigital.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://cirujanadigital.com/img/logo-horizontal-blanco.webp",
+                "width": 200,
+                "height": 60
+              }
+            },
+            "mainEntityOfPage": "https://cirujanadigital.com/blog/diagnostico-velocidad-web-medica/",
+            "articleSection": "Performance",
+            "inLanguage": "es-AR",
+            "keywords": [
+              "velocidad web médica",
+              "Core Web Vitals",
+              "PageSpeed Insights",
+              "LCP",
+              "INP",
+              "CLS",
+              "sitio web para médicos",
+              "diagnóstico web médico"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Cuánto tarda en cargar un sitio web médico aceptable?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Google considera que un sitio carga bien si el LCP (Largest Contentful Paint) ocurre en menos de 2,5 segundos. Para sitios médicos, lo ideal es estar por debajo de 2 segundos en mobile, ya que la mayoría de los pacientes buscan desde el celular. Un sitio que supera los 3 segundos pierde hasta el 53% de los visitantes antes de que vean el contenido."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Qué son los Core Web Vitals y por qué importan para mi web médica?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Los Core Web Vitals son tres métricas de Google que miden la experiencia real de carga de tu sitio: LCP (cuánto tarda en aparecer el contenido principal), INP (qué tan rápido responde a los clics) y CLS (si los elementos se mueven mientras carga). Google los usa como factor de ranking desde 2021. Un sitio médico con Core Web Vitals deficientes pierde posiciones en los resultados de búsqueda y, con eso, pierde pacientes."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Por qué mi web médica en WordPress carga lento?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Las causas más frecuentes en sitios médicos sobre WordPress son: imágenes sin comprimir (especialmente fotos de equipamiento o galería de instalaciones), plugins acumulados que agregan scripts innecesarios en cada página, hosting compartido de bajo costo, y temas premium con demasiado CSS/JS cargado de forma global. Un diagnóstico con PageSpeed Insights muestra exactamente cuál de estos factores está penalizando más tu sitio."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Afecta la velocidad web a cuántos pacientes me contactan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Directamente. Cada segundo adicional de carga reduce la tasa de conversión entre un 4% y un 12% según el tipo de sitio. En sitios médicos, donde el paciente ya está en modo de búsqueda activa, una carga lenta genera desconfianza y deriva al visitante hacia el sitio del competidor. La velocidad no es un detalle técnico: es parte de la primera impresión."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo mejorar la velocidad de mi web médica sin cambiar todo el sitio?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. En la mayoría de los sitios médicos, el 80% de la ganancia de velocidad viene de tres acciones: convertir imágenes a WebP y comprimirlas, eliminar o diferir scripts de terceros innecesarios, y activar caché de navegador. Estas acciones no requieren rediseñar el sitio. Sin embargo, si el problema es el hosting o la estructura del tema de WordPress, las mejoras superficiales tienen un techo."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        class="gtm-iframe"
+      ></iframe>
+    </noscript>
+
+    <div id="site-nav"></div>
+
+    <main id="main">
+      <header class="article-hero">
+        <div class="article-hero-inner">
+          <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+            <a href="/">Inicio</a>
+            <span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Diagnóstico velocidad web médica</span>
+          </nav>
+          <span class="article-category">Performance</span>
+          <h1>¿Tu web médica carga en menos de 2 segundos? Diagnóstico en 5 min</h1>
+          <div class="article-meta">
+            <span>
+              Por
+              <strong>Yulia Monti</strong>
+            </span>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-04-21">21 de abril de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>8 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="article-body">
+        <div class="article-layout">
+          <article class="article-content">
+            <p>
+              <strong>
+                Si tu sitio web tarda más de 3 segundos en cargar, ya perdiste al paciente.
+              </strong>
+              No es una hipótesis: Google lo tiene medido. El 53% de los visitantes móviles abandona
+              una página que no cargó en menos de 3 segundos. Y en salud, donde el paciente ya tomó
+              la decisión de buscar ayuda, irse al siguiente resultado es trivial. Este artículo es
+              un diagnóstico guiado: en 5 minutos tenés datos reales sobre el rendimiento de tu
+              sitio, sin necesidad de conocimientos técnicos previos.
+            </p>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="que-mide-google">Qué mide Google cuando evalúa la velocidad de tu sitio</h2>
+            <p>
+              Google no mide solo "cuánto tarda en cargar". Mide la
+              <em>experiencia percibida</em>
+              del usuario a través de tres métricas específicas llamadas
+              <strong>Core Web Vitals</strong>
+              . Estas métricas son factores de ranking desde mayo de 2021 y se actualizan
+              periódicamente.
+            </p>
+            <p>
+              Conocerlas no es opcional si querés que tu sitio aparezca en los primeros resultados
+              cuando alguien busca tu especialidad.
+            </p>
+
+            <h3>Las tres métricas que definen el rendimiento de tu web</h3>
+            <ul>
+              <li>
+                <strong>LCP — Largest Contentful Paint:</strong>
+                cuánto tarda en aparecer el elemento principal de la página (generalmente tu foto,
+                título o imagen de portada). Umbral bueno: menos de 2,5 segundos.
+              </li>
+              <li>
+                <strong>INP — Interaction to Next Paint:</strong>
+                qué tan rápido responde tu sitio cuando alguien hace clic en un botón o menú.
+                Reemplazó al FID en 2024. Umbral bueno: menos de 200 ms.
+              </li>
+              <li>
+                <strong>CLS — Cumulative Layout Shift:</strong>
+                cuánto se mueven o saltan los elementos mientras carga la página. Si el botón "Pedir
+                turno" se desplaza antes de que el usuario pueda clicarlo, eso penaliza. Umbral
+                bueno: menos de 0,1.
+              </li>
+            </ul>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Dato clave</span>
+              <p>
+                Un sitio médico con los tres Core Web Vitals en verde tiene ventaja de
+                posicionamiento directa sobre competidores con los mismos contenidos y backlinks. Es
+                una palanca de SEO que la mayoría de los médicos ignora completamente.
+              </p>
+            </div>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="velocidad">Paso 1 — Medí la velocidad real con PageSpeed Insights</h2>
+            <p>
+              La herramienta oficial de Google para medir Core Web Vitals es
+              <strong>PageSpeed Insights</strong>
+              (pagespeed.web.dev). Es gratuita, no requiere registro y te da datos reales de
+              usuarios, no solo simulaciones de laboratorio.
+            </p>
+
+            <h3>Cómo usarla</h3>
+            <p>
+              Ingresá la URL de tu sitio, elegí la pestaña
+              <em>Móvil</em>
+              primero (es donde más pierden los sitios médicos) y ejecutá el análisis. En 30
+              segundos tenés un puntaje de 0 a 100 y el detalle de cada métrica.
+            </p>
+
+            <div class="table-wrapper">
+              <table
+                class="data-table"
+                aria-label="Interpretación del puntaje de PageSpeed Insights"
+              >
+                <thead>
+                  <tr>
+                    <th>Puntaje</th>
+                    <th>Estado</th>
+                    <th>Impacto en consultas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>90 – 100</strong></td>
+                    <td><span class="badge badge-green">Verde — Bueno</span></td>
+                    <td>Sin penalización. Ventaja competitiva activa.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>50 – 89</strong></td>
+                    <td><span class="badge badge-yellow">Naranja — Mejorable</span></td>
+                    <td>
+                      Penalización parcial. Estás perdiendo posiciones frente a sitios optimizados.
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>0 – 49</strong></td>
+                    <td><span class="badge badge-red">Rojo — Crítico</span></td>
+                    <td>
+                      Penalización severa. Alta tasa de rebote. Pacientes que se van antes de verte.
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Qué buscar en el reporte</h3>
+            <p>
+              Bajá hasta la sección
+              <em>Diagnóstico</em>
+              . Las oportunidades marcadas con mayor impacto (las que muestran el ahorro de tiempo
+              estimado más alto) son tu prioridad. En sitios médicos, las más frecuentes son
+              imágenes sin optimizar y scripts de terceros bloqueantes.
+            </p>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="mobile">Paso 2 — Verificá la experiencia mobile</h2>
+            <p>
+              Entre el 65% y el 75% de los pacientes que buscan un médico lo hacen desde el celular.
+              Si tu sitio no funciona perfectamente en mobile, estás descartando a la mayoría de tu
+              audiencia antes de que lea una sola línea.
+            </p>
+
+            <h3>Test Mobile-Friendly de Google</h3>
+            <p>
+              Usá la herramienta
+              <strong>search.google.com/test/mobile-friendly</strong>
+              . Ingresá tu URL y en segundos te dice si Google considera tu sitio apto para mobile.
+              También muestra cómo lo ve el crawler, lo que puede revelar problemas de renderizado
+              que no ves en tu teléfono personal.
+            </p>
+
+            <h3>Qué revisar manualmente</h3>
+            <ul>
+              <li>¿El menú de navegación funciona bien con el pulgar?</li>
+              <li>¿El botón de WhatsApp o "Pedir turno" está visible sin hacer scroll?</li>
+              <li>¿Las imágenes no desbordan la pantalla?</li>
+              <li>¿El texto es legible sin hacer zoom?</li>
+              <li>¿Los formularios se completan sin que el teclado tape los campos?</li>
+            </ul>
+
+            <div class="callout callout-warning">
+              <span class="callout-label">⚠️ Atención</span>
+              <p>
+                Un sitio que "se ve bien" en tu celular puede estar roto para otros dispositivos o
+                versiones de Android. El test de Google usa un agente real, no tu pantalla personal.
+                Siempre hacé el test con la herramienta oficial.
+              </p>
+            </div>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="seo-basico">Paso 3 — Revisá los errores de SEO técnico básico</h2>
+            <p>
+              La velocidad afecta el posicionamiento, pero hay errores técnicos más básicos que
+              directamente le impiden a Google entender de qué trata tu sitio. Muchos sitios médicos
+              los tienen sin saberlo.
+            </p>
+
+            <h3>Title y meta description</h3>
+            <p>
+              Abrí tu sitio, hacé clic derecho → "Ver código fuente" y buscá las etiquetas
+              <code>&lt;title&gt;</code>
+              y
+              <code>&lt;meta name="description"&gt;</code>
+              . Verificá:
+            </p>
+            <ul>
+              <li>El título tiene entre 50 y 60 caracteres e incluye tu especialidad y ciudad.</li>
+              <li>
+                La descripción tiene entre 140 y 160 caracteres y describe qué hacés y para quién.
+              </li>
+              <li>No hay dos páginas con el mismo título.</li>
+            </ul>
+
+            <h3>H1 único y correcto</h3>
+            <p>
+              Cada página debe tener exactamente un
+              <code>H1</code>
+              . En la página de inicio, ese H1 es tu presentación ante Google. No debe decir
+              "Bienvenidos" ni el nombre de tu consultorio solo: debe incluir tu especialidad, tu
+              propuesta de valor y, si aplica, tu ubicación.
+            </p>
+
+            <h3>Imágenes con alt text</h3>
+            <p>
+              Las imágenes sin texto alternativo son invisibles para Google y para usuarios con
+              lectores de pantalla. En sitios médicos, las fotos de instalaciones y del equipo son
+              las que más frecuentemente carecen de este atributo. En el código fuente, verificá que
+              cada
+              <code>&lt;img&gt;</code>
+              tenga un atributo
+              <code>alt</code>
+              descriptivo y específico.
+            </p>
+
+            <h3>HTTPS y sin errores 404</h3>
+            <p>
+              Tu sitio debe correr sobre HTTPS (el candado en la barra del navegador). Si aún está
+              en HTTP, Google lo marca como "no seguro" y afecta directamente la confianza del
+              visitante. Para detectar páginas rotas (404), podés usar la versión gratuita de
+              <a href="/diagnostico/" rel="noopener">nuestra herramienta de diagnóstico</a>
+              o conectar tu sitio a Google Search Console.
+            </p>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="conversion">Paso 4 — Analizá si tu sitio convierte o solo informa</h2>
+            <p>
+              Un sitio puede cargar rápido, verse bien en mobile y tener SEO técnico correcto… y aun
+              así no generar consultas. El problema entonces es de conversión: el visitante llega,
+              lee, y se va sin contactarte. Esto se diagnostica mirando la estructura de la página,
+              no solo las métricas técnicas.
+            </p>
+
+            <h3>¿Hay un CTA visible sin hacer scroll?</h3>
+            <p>
+              El llamado a la acción (botón de WhatsApp, formulario de contacto, enlace a turnos)
+              debe estar visible en el primer pantallazo, en mobile y en desktop. Si el visitante
+              tiene que bajar para encontrar cómo contactarte, ya perdiste una fracción de ellos.
+            </p>
+
+            <h3>¿La propuesta de valor está en el primer párrafo?</h3>
+            <p>
+              Los primeros 100 caracteres visibles de tu home son los más leídos. Si empezás con la
+              historia del consultorio o una bienvenida genérica, el paciente no sabe en 3 segundos
+              si estás en su ciudad, si atendés su problema y si podés ayudarlo. La propuesta de
+              valor debe ser inmediata y específica.
+            </p>
+
+            <h3>¿Tenés señales de confianza?</h3>
+            <p>
+              En salud, la confianza precede a la consulta. Señales que aumentan la conversión:
+              matrícula visible, fotos reales (no stock), especialidades acreditadas, nombre
+              completo y trayectoria breve, y reseñas de pacientes si las tenés.
+            </p>
+
+            <h3>¿Los formularios son cortos?</h3>
+            <p>
+              Cada campo extra en un formulario de contacto reduce la tasa de envío. Para un primer
+              contacto, nombre, email o teléfono y motivo de consulta es suficiente. Los formularios
+              de 8 campos son para trámites, no para conseguir una primera consulta.
+            </p>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="errores-frecuentes">
+              Los 5 errores de velocidad más comunes en sitios médicos
+            </h2>
+            <p>
+              Después de analizar decenas de sitios de profesionales de la salud, estos son los
+              problemas que aparecen con más frecuencia y más impacto:
+            </p>
+            <ul>
+              <li>
+                <strong>Imágenes en JPG sin comprimir:</strong>
+                una foto de tu consultorio en 4 MB cargada directamente desde la cámara es el
+                enemigo número uno de la velocidad. Convertir a WebP y comprimir puede reducir el
+                peso entre un 60% y un 80%.
+              </li>
+              <li>
+                <strong>Google Fonts cargado de forma bloqueante:</strong>
+                muchos temas de WordPress cargan 4 o 5 variantes de fuentes que el sitio nunca usa.
+                Cada una es una petición HTTP que retrasa el renderizado.
+              </li>
+              <li>
+                <strong>Slider o carrusel de imágenes en el hero:</strong>
+                tecnología que pesa, que los usuarios no interactúan y que agrava el LCP.
+                Reemplazarlo por una imagen estática optimizada mejora el puntaje de forma visible.
+              </li>
+              <li>
+                <strong>Plugins de redes sociales con scripts de terceros:</strong>
+                los botones de compartir de Facebook, los feeds de Instagram embebidos y los widgets
+                de WhatsApp mal implementados cargan scripts pesados que bloquean el renderizado
+                principal.
+              </li>
+              <li>
+                <strong>Hosting compartido de bajo costo:</strong>
+                el tiempo de respuesta del servidor (TTFB) es el primer factor que PageSpeed mide.
+                Un hosting de $2 USD al mes tiene tiempos de respuesta de 800 ms o más. Ninguna
+                optimización de frontend puede compensar un servidor lento.
+              </li>
+            </ul>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Regla del 80/20</span>
+              <p>
+                En la mayoría de los sitios médicos, optimizar las imágenes y cambiar el hosting
+                resuelve el 80% del problema de velocidad. No necesitás rehacer el sitio para pasar
+                de rojo a verde en PageSpeed.
+              </p>
+            </div>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="proximos-pasos">Qué hacer con los resultados del diagnóstico</h2>
+            <p>
+              Después de correr PageSpeed Insights y el test mobile, tenés tres escenarios posibles:
+            </p>
+
+            <h3>Puntaje en verde (90+): mantener y monitorear</h3>
+            <p>
+              Si tu sitio está en verde, el trabajo es mantenerlo. Cada vez que agregás un plugin,
+              un video de YouTube embebido o una imagen nueva sin comprimir, el puntaje puede bajar.
+              Revisá PageSpeed una vez al mes y después de cada actualización de contenido
+              significativa.
+            </p>
+
+            <h3>Puntaje en naranja (50–89): optimización dirigida</h3>
+            <p>
+              Mirá las tres oportunidades con mayor impacto en el reporte de PageSpeed. En la
+              mayoría de los casos, resolver esas tres acciones específicas es suficiente para pasar
+              a verde sin tocar la estructura del sitio.
+            </p>
+
+            <h3>Puntaje en rojo (0–49): evaluación estructural necesaria</h3>
+            <p>
+              Un puntaje rojo persistente, especialmente con tiempos de servidor altos (TTFB
+              superior a 600 ms), generalmente indica problemas que van más allá de la optimización
+              superficial: hosting inadecuado, tema de WordPress mal construido, o scripts de
+              terceros fuera de control. En estos casos, el diagnóstico técnico completo es el
+              primer paso antes de tomar cualquier decisión de inversión. Podés empezar con nuestra
+              <a href="/diagnostico/">herramienta de diagnóstico gratuita</a>
+              o ver la
+              <a href="/recursos/guia-5-errores/">
+                guía de los 5 errores que más cuestan en un sitio médico
+              </a>
+              .
+            </p>
+
+            <!-- ─────────────────────────────────────────────── -->
+            <h2 id="faq">Preguntas frecuentes</h2>
+
+            <div class="faq-list">
+              <details class="faq-item">
+                <summary>¿Cuánto tarda en cargar un sitio web médico aceptable?</summary>
+                <p>
+                  Google considera que un sitio carga bien si el LCP ocurre en menos de 2,5
+                  segundos. Para sitios médicos, lo ideal es estar por debajo de 2 segundos en
+                  mobile, ya que la mayoría de los pacientes busca desde el celular. Un sitio que
+                  supera los 3 segundos pierde hasta el 53% de los visitantes antes de que vean el
+                  contenido.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary>
+                  ¿Qué son los Core Web Vitals y por qué importan para mi web médica?
+                </summary>
+                <p>
+                  Son tres métricas de Google que miden la experiencia real de carga de tu sitio:
+                  LCP (cuánto tarda en aparecer el contenido principal), INP (qué tan rápido
+                  responde a los clics) y CLS (si los elementos se mueven mientras carga). Google
+                  los usa como factor de ranking desde 2021. Un sitio médico con Core Web Vitals
+                  deficientes pierde posiciones en los resultados de búsqueda y, con eso, pierde
+                  pacientes.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary>¿Por qué mi web médica en WordPress carga lento?</summary>
+                <p>
+                  Las causas más frecuentes son imágenes sin comprimir, plugins acumulados que
+                  agregan scripts innecesarios, hosting compartido de bajo costo, y temas premium
+                  con demasiado CSS/JS cargado de forma global. Un diagnóstico con PageSpeed
+                  Insights muestra exactamente cuál de estos factores está penalizando más tu sitio.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary>¿Afecta la velocidad web a cuántos pacientes me contactan?</summary>
+                <p>
+                  Directamente. Cada segundo adicional de carga reduce la tasa de conversión entre
+                  un 4% y un 12% según el tipo de sitio. En sitios médicos, donde el paciente ya
+                  está en modo de búsqueda activa, una carga lenta genera desconfianza y deriva el
+                  visitante al sitio del competidor. La velocidad no es un detalle técnico: es parte
+                  de la primera impresión.
+                </p>
+              </details>
+              <details class="faq-item">
+                <summary>
+                  ¿Puedo mejorar la velocidad de mi web médica sin cambiar todo el sitio?
+                </summary>
+                <p>
+                  Sí. En la mayoría de los sitios médicos, el 80% de la ganancia de velocidad viene
+                  de tres acciones: convertir imágenes a WebP y comprimirlas, eliminar o diferir
+                  scripts de terceros innecesarios, y activar caché de navegador. Estas acciones no
+                  requieren rediseñar el sitio. Sin embargo, si el problema es el hosting o la
+                  estructura del tema de WordPress, las mejoras superficiales tienen un techo.
+                </p>
+              </details>
+            </div>
+
+            <!-- ─── Autor ─────────────────────────────────── -->
+            <div class="author-box">
+              <img
+                src="/img/yulia-monti.webp"
+                alt="Yulia Monti — Cirujana Digital"
+                width="80"
+                height="80"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="author-info">
+                <h4>Yulia Monti — Cirujana Digital</h4>
+                <p>
+                  Instrumentadora quirúrgica reconvertida en desarrolladora web. 15 años en
+                  pabellón, ahora construyo sitios que cargan rápido, posicionan en Google y
+                  convierten visitantes en clientes. Especialidad: negocios de salud y profesionales
+                  independientes.
+                </p>
+              </div>
+            </div>
+
+            <!-- ─── CTA ──────────────────────────────────── -->
+            <div class="article-cta-box">
+              <h3>¿Tu sitio está en rojo o naranja en PageSpeed?</h3>
+              <p>
+                En 15 minutos te muestro los problemas concretos de tu sitio y cómo resolverlos.
+                Auditoría gratuita, sin compromiso.
+              </p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Quiero mi auditoría gratis</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 10h12m0 0l-4-4m4 4l-4 4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ SIDEBAR ════════════════════════════════════ -->
+          <aside class="article-sidebar" aria-label="Tabla de contenidos y contacto">
+            <nav class="toc-box" aria-label="Tabla de contenidos">
+              <h4>En este artículo</h4>
+              <ol>
+                <li><a href="#que-mide-google">Qué mide Google</a></li>
+                <li><a href="#velocidad">Paso 1 — Velocidad con PageSpeed</a></li>
+                <li><a href="#mobile">Paso 2 — Experiencia mobile</a></li>
+                <li><a href="#seo-basico">Paso 3 — SEO técnico básico</a></li>
+                <li><a href="#conversion">Paso 4 — Conversión</a></li>
+                <li><a href="#errores-frecuentes">5 errores frecuentes</a></li>
+                <li><a href="#proximos-pasos">Qué hacer con los resultados</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+              </ol>
+            </nav>
+            <div class="sidebar-cta">
+              <p>
+                ¿Preferís que lo revisemos juntos? Auditoría gratuita de 15 minutos, sin compromiso.
+              </p>
+              <a href="/diagnostico/">Quiero la auditoría →</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- ═══ FOOTER ════════════════════════════════════════════ -->
+    <div id="site-footer"></div>
+  </body>
+</html>

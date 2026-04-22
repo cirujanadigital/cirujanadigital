@@ -1,0 +1,1623 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+      }
+      // Retrasar GTM hasta primera interacción o 3.5s de idle
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+        window.addEventListener(e, loadGTM, { once: true })
+      );
+      setTimeout(loadGTM, 3500);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO primario -->
+    <title>¿Qué es WPO y por qué una web lenta destruye tu negocio? | Cirujana Digital</title>
+    <meta
+      name="description"
+      content="WPO (Web Performance Optimization) es el conjunto de técnicas que hace que tu sitio web cargue rápido. Una web lenta pierde clientes, baja en Google y destruye tu reputación digital. Aprende a medirla y solucionarla."
+    />
+    <meta name="author" content="Yulia Monti — Cirujana Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://cirujanadigital.com/blog/que-es-wpo-web-lenta/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://cirujanadigital.com/blog/que-es-wpo-web-lenta/" />
+    <meta property="og:title" content="¿Qué es WPO y por qué una web lenta destruye tu negocio?" />
+    <meta
+      property="og:description"
+      content="WPO es el conjunto de técnicas que hace que tu sitio web cargue rápido. Una web lenta pierde clientes, cae en Google y destruye tu conversión. Aprende a medirla y solucionarla."
+    />
+    <meta property="og:image" content="https://cirujanadigital.com/img/og-wpo-web-lenta.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="es_419" />
+    <meta property="og:site_name" content="Cirujana Digital" />
+    <meta property="article:published_time" content="2025-04-19T09:00:00-03:00" />
+    <meta property="article:modified_time" content="2025-04-19T09:00:00-03:00" />
+    <meta property="article:author" content="Yulia Monti" />
+    <meta property="article:section" content="Performance" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="¿Qué es WPO y por qué una web lenta destruye tu negocio?" />
+    <meta
+      name="twitter:description"
+      content="Google mide la velocidad de tu sitio con Core Web Vitals. Qué son LCP, INP y CLS y cómo mejorarlos."
+    />
+    <meta name="twitter:image" content="https://cirujanadigital.com/img/og-wpo-web-lenta.webp" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+    <!-- External CSS / Components -->
+    <link rel="stylesheet" href="/components.css" />
+    <script src="/components.js" defer></script>
+
+    <style>
+      /* ── Reset ──────────────────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+
+      /* ── Tokens ─────────────────────────────────────────────── */
+      :root {
+        --primary: #03658c;
+        --secondary: #00a7a9;
+        --light: #f7f9fa;
+        --cd-text: #2d3748;
+        --cd-text-light: #64748b;
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+        --radius: 12px;
+        --radius-lg: 16px;
+        --px: clamp(1rem, 5vw, 3rem); /* horizontal page padding */
+      }
+
+      /* ── Base ───────────────────────────────────────────────── */
+      body {
+        font-family: var(--font-body);
+        color: var(--cd-text);
+        background: #fff;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      /* ── Nav / Footer space holders ─────────────────────────── */
+      #site-nav {
+        height: 70px;
+        contain: layout style;
+      }
+      #site-footer {
+        height: 678px;
+        contain: layout style;
+      }
+      @media (max-width: 768px) {
+        #site-footer {
+          height: 1780px;
+        }
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      a {
+        color: inherit;
+      }
+
+      .container {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+      }
+
+      /* ── Animation kill-switch ──────────────────────────────── */
+      [data-animate] {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════════════ */
+      .article-hero {
+        padding: calc(80px + 4rem) 0 4rem;
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      }
+      .article-hero-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+      }
+
+      /* ── Breadcrumb ─────────────────────────────────────────── */
+      .article-breadcrumb {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-bottom: 1.5rem;
+      }
+      .article-breadcrumb a {
+        color: rgba(255, 255, 255, 0.55);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .article-breadcrumb a:hover {
+        color: #fff;
+      }
+      .article-breadcrumb span {
+        margin: 0 0.4rem;
+      }
+
+      /* ── Category badge ─────────────────────────────────────── */
+      .article-category {
+        display: inline-block;
+        background: rgba(0, 167, 169, 0.2);
+        color: #7fdbff;
+        border: 1px solid rgba(0, 167, 169, 0.3);
+        border-radius: 50px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        padding: 4px 14px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 1.25rem;
+      }
+
+      /* ── H1 ─────────────────────────────────────────────────── */
+      .article-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.2;
+        margin-bottom: 1.25rem;
+      }
+
+      /* ── Meta row ───────────────────────────────────────────── */
+      .article-meta {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .article-meta strong {
+        color: rgba(255, 255, 255, 0.85);
+      }
+
+      /* ════════════════════════════════════════════════════════
+   BODY WRAPPER
+═══════════════════════════════════════════════════════════ */
+      .article-body {
+        padding: 4rem 0 5rem;
+        background: #fff;
+      }
+
+      /* ── Two-column layout ──────────────────────────────────── */
+      .article-layout {
+        display: grid;
+        grid-template-columns: 1fr 280px;
+        gap: 4rem;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+        width: 100%;
+        align-items: start;
+      }
+
+      /* Collapse sidebar on tablet and below */
+      @media (max-width: 1024px) {
+        .article-layout {
+          grid-template-columns: 1fr;
+        }
+        .article-sidebar {
+          display: none;
+        }
+      }
+
+      /* ════════════════════════════════════════════════════════
+   ARTICLE CONTENT
+═══════════════════════════════════════════════════════════ */
+      .article-content {
+        min-width: 0;
+      }
+
+      .article-content > * + * {
+        margin-top: 1.4rem;
+      }
+
+      .article-content p {
+        color: #4a5568;
+        line-height: 1.9;
+        margin-bottom: 1.4rem;
+        font-size: 1.05rem;
+      }
+      .article-content p:first-child {
+        font-size: clamp(1rem, 2.2vw, 1.1rem);
+        color: var(--cd-text);
+      }
+      .article-content strong {
+        color: var(--cd-text);
+      }
+
+      /* Links inside content */
+      .article-content a {
+        color: var(--secondary);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .article-content a:hover {
+        color: var(--primary);
+      }
+
+      /* ── Headings ───────────────────────────────────────────── */
+      .article-content h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.3rem, 3vw, 1.9rem);
+        font-weight: 400;
+        color: var(--cd-text);
+        line-height: 1.25;
+        margin-top: clamp(2rem, 5vw, 3rem);
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid var(--light);
+        scroll-margin-top: 90px;
+      }
+      .article-content h2:first-of-type {
+        margin-top: 0;
+      }
+
+      .article-content h3 {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        font-weight: 700;
+        color: var(--cd-text);
+        line-height: 1.3;
+        margin-top: 1.75rem;
+      }
+
+      /* ── Lists ──────────────────────────────────────────────── */
+      .article-content ul,
+      .article-content ol {
+        padding-left: 1.5rem;
+        color: #4a5568;
+        font-size: 1.05rem;
+        line-height: 1.8;
+      }
+      .article-content li {
+        margin-bottom: 0.5rem;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   METRICS GRID
+═══════════════════════════════════════════════════════════ */
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin: 2rem 0;
+      }
+      @media (max-width: 600px) {
+        .metrics-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .metric-card {
+        background: var(--light);
+        border-radius: var(--radius);
+        padding: 1.25rem;
+        text-align: center;
+        border-top: 4px solid var(--secondary);
+      }
+      .metric-card.good {
+        border-color: #00c853;
+      }
+      .metric-card.medium {
+        border-color: #f59e0b;
+      }
+      .metric-card.bad {
+        border-color: #e74c3c;
+      }
+
+      .metric-card .metric-name {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--cd-text-light);
+        margin-bottom: 0.5rem;
+      }
+      .metric-card .metric-value {
+        font-size: 1.55rem;
+        font-weight: 800;
+        color: var(--primary);
+        line-height: 1;
+        margin-bottom: 0.4rem;
+      }
+      .metric-card.good .metric-value {
+        color: #00a844;
+      }
+      .metric-card.medium .metric-value {
+        color: #d97706;
+      }
+      .metric-card.bad .metric-value {
+        color: #c0392b;
+      }
+
+      .metric-card .metric-desc {
+        font-size: 0.82rem;
+        color: var(--cd-text-light);
+        line-height: 1.45;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   CALLOUTS
+═══════════════════════════════════════════════════════════ */
+      .callout {
+        padding: 1.2rem 1.4rem;
+        border-radius: 10px;
+        border-left: 4px solid;
+      }
+      .callout p {
+        margin: 0;
+        font-size: 1rem;
+      }
+      .callout-label {
+        font-weight: 800;
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.4rem;
+        display: block;
+      }
+
+      .callout-tip {
+        background: rgba(0, 167, 169, 0.07);
+        border-color: var(--secondary);
+      }
+      .callout-tip .callout-label {
+        color: #006b6d;
+      }
+      .callout-warning {
+        background: rgba(245, 158, 11, 0.07);
+        border-color: #f59e0b;
+      }
+      .callout-warning .callout-label {
+        color: #92400e;
+      }
+      .callout-danger {
+        background: rgba(231, 76, 60, 0.07);
+        border-color: #e74c3c;
+      }
+      .callout-danger .callout-label {
+        color: #991b1b;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   TABLE
+═══════════════════════════════════════════════════════════ */
+      .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 2rem 0;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow-md);
+      }
+      .data-table {
+        width: 100%;
+        min-width: 480px;
+        border-collapse: collapse;
+        font-size: 0.93rem;
+      }
+      .data-table thead {
+        background: var(--gradient-primary);
+        color: #fff;
+      }
+      .data-table th {
+        padding: 0.85rem 1.15rem;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.78rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        white-space: nowrap;
+      }
+      .data-table td {
+        padding: 0.85rem 1.15rem;
+        border-bottom: 1px solid #f1f5f9;
+        color: #4a5568;
+        vertical-align: top;
+        line-height: 1.55;
+      }
+      .data-table tr:last-child td {
+        border-bottom: none;
+      }
+      .data-table tr:nth-child(even) td {
+        background: #f8fafc;
+      }
+
+      .tag-good {
+        color: #00a844;
+        font-weight: 700;
+      }
+      .tag-medium {
+        color: #d97706;
+        font-weight: 700;
+      }
+      .tag-bad {
+        color: #c0392b;
+        font-weight: 700;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   AUTHOR BOX
+═══════════════════════════════════════════════════════════ */
+      .author-box {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        padding: 1.5rem;
+        background: var(--light);
+        border-radius: var(--radius-lg);
+        margin: 3rem 0 0;
+      }
+      @media (max-width: 540px) {
+        .author-box {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      .author-avatar {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.4rem;
+      }
+      .author-box img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        object-fit: cover;
+      }
+      .author-info h3,
+      .author-info h4 {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--cd-text);
+        margin-bottom: 0.25rem;
+      }
+      .author-info p {
+        font-size: 0.9rem !important;
+        color: var(--cd-text-light) !important;
+        margin: 0 !important;
+        line-height: 1.6 !important;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   ARTICLE CTA BOX
+═══════════════════════════════════════════════════════════ */
+      .article-cta-box {
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+        border-radius: var(--radius-lg);
+        padding: clamp(1.75rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2.5rem);
+        text-align: center;
+        margin: 2.5rem 0 0;
+      }
+      .article-cta-box h3 {
+        font-family: var(--font-display);
+        color: #fff;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        font-weight: 400;
+        margin-bottom: 0.75rem;
+      }
+      .article-cta-box p {
+        color: rgba(255, 255, 255, 0.7) !important;
+        margin-bottom: 1.5rem !important;
+        font-size: 0.95rem !important;
+      }
+      .btn-cta-white {
+        display: inline-flex;
+        gap: 0.75rem;
+        align-items: center;
+        background: #fff;
+        color: #024e6c;
+        font-weight: 800;
+        padding: 0.875rem 2rem;
+        border-radius: 10px;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+      .btn-cta-white:hover {
+        background: #e0f7f7;
+        transform: translateY(-2px);
+        color: var(--primary);
+      }
+
+      /* ════════════════════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════════════════════ */
+      .faq-list {
+        margin-top: 1.25rem;
+      }
+      .faq-item {
+        border: 1px solid #e8edf2;
+        border-radius: var(--radius);
+        margin-bottom: 0.6rem;
+        overflow: hidden;
+      }
+      .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 1.2rem;
+        cursor: pointer;
+        font-weight: 700;
+        font-size: 0.97rem;
+        color: var(--cd-text);
+        background: var(--light);
+        list-style: none;
+        user-select: none;
+      }
+      .faq-question::-webkit-details-marker {
+        display: none;
+      }
+      .faq-question svg {
+        flex-shrink: 0;
+        transition: transform 0.25s;
+      }
+      details[open] .faq-question svg {
+        transform: rotate(45deg);
+      }
+      .faq-answer {
+        padding: 1rem 1.2rem;
+        font-size: 0.95rem;
+        color: #4a5568;
+        line-height: 1.8;
+        border-top: 1px solid #e8edf2;
+        background: #fff;
+      }
+      .faq-answer p {
+        margin: 0;
+        color: #4a5568 !important;
+        font-size: 0.95rem !important;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   SIDEBAR
+═══════════════════════════════════════════════════════════ */
+      .article-sidebar {
+        position: sticky;
+        top: 90px;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      /* TOC */
+      .toc-box {
+        background: var(--light);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+      }
+      .toc-box h4 {
+        font-size: 0.72rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #94a3b8;
+        margin-bottom: 1rem;
+      }
+      .toc-box ol {
+        list-style: none;
+        counter-reset: toc;
+        padding: 0;
+        margin: 0;
+      }
+      .toc-box li {
+        counter-increment: toc;
+        margin-bottom: 0.55rem;
+      }
+      .toc-box a {
+        font-size: 0.86rem;
+        color: var(--cd-text-light);
+        text-decoration: none;
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+        line-height: 1.4;
+        transition: color 0.2s;
+      }
+      .toc-box a::before {
+        content: counter(toc);
+        color: var(--secondary);
+        font-weight: 700;
+        font-size: 0.72rem;
+        flex-shrink: 0;
+        margin-top: 0.15rem;
+      }
+      .toc-box a:hover {
+        color: var(--primary);
+      }
+
+      /* Sidebar CTA */
+      .sidebar-cta {
+        background: var(--gradient-primary);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        text-align: center;
+        color: #fff;
+      }
+      .sidebar-cta p {
+        font-size: 0.88rem;
+        opacity: 0.9;
+        margin-bottom: 1rem;
+        line-height: 1.55;
+      }
+      .sidebar-cta a {
+        display: block;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.88rem;
+        padding: 0.7rem 1rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .sidebar-cta a:hover {
+        background: #e0f7f7;
+        transform: translateY(-2px);
+      }
+
+      /* Sidebar diagnosis widget */
+      .sb-diag {
+        background: #0d1b2a;
+        border: 1px solid rgba(0, 167, 169, 0.2);
+        border-radius: var(--radius);
+        padding: 1.4rem 1.5rem;
+        color: #fff;
+      }
+      .sb-diag__head {
+        margin-bottom: 1.25rem;
+      }
+      .sb-diag__label {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #7fdbff;
+        margin-bottom: 0.5rem;
+      }
+      .sb-diag__stat {
+        font-size: 0.88rem;
+        line-height: 1.5;
+        color: rgba(255, 255, 255, 0.75);
+        margin: 0;
+      }
+      .sb-diag__stat em {
+        font-style: normal;
+        font-weight: 700;
+        color: #fff;
+      }
+      .sb-diag__list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 1.25rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .sb-diag__list li {
+        display: flex;
+        gap: 0.75rem;
+        align-items: flex-start;
+      }
+      .sb-diag__icon {
+        font-size: 1rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+      .sb-diag__list strong {
+        display: block;
+        font-size: 0.85rem;
+        color: #fff;
+        margin-bottom: 0.1rem;
+      }
+      .sb-diag__list span {
+        font-size: 0.78rem;
+        color: rgba(255, 255, 255, 0.55);
+      }
+      .sb-diag__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        padding: 0.75rem 1rem;
+        background: var(--gradient-primary);
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.875rem;
+        border-radius: 8px;
+        text-decoration: none;
+        transition:
+          box-shadow 0.2s,
+          transform 0.2s;
+        box-shadow: 0 4px 12px rgba(0, 167, 169, 0.28);
+        margin-bottom: 0.75rem;
+      }
+      .sb-diag__btn:hover {
+        box-shadow: 0 6px 20px rgba(0, 167, 169, 0.42);
+        transform: translateY(-1px);
+        color: #fff;
+      }
+      .sb-diag__nota {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        text-align: center;
+        margin: 0;
+      }
+
+      /* ════════════════════════════════════════════════════════
+   BLOG LISTING LAYOUT (si se reutiliza)
+═══════════════════════════════════════════════════════════ */
+      .blog-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 var(--px);
+        width: 100%;
+      }
+      @media (min-width: 900px) {
+        .blog-layout {
+          grid-template-columns: 1fr 300px;
+          align-items: start;
+        }
+      }
+      .blog-sidebar {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        position: sticky;
+        top: 100px;
+      }
+      .sb-section-title {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--cd-text-light);
+        margin-bottom: 12px;
+      }
+      .sb-related-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .sb-related-list a {
+        color: var(--cd-text);
+        font-size: 0.88rem;
+        text-decoration: none;
+        line-height: 1.45;
+        display: block;
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        transition:
+          border-color 0.2s,
+          color 0.2s;
+      }
+      .sb-related-list a:hover {
+        border-color: rgba(0, 167, 169, 0.4);
+        color: var(--primary);
+      }
+
+      /* ════════════════════════════════════════════════════════
+   STAT HIGHLIGHT (opcional, usado en artículo WPO)
+═══════════════════════════════════════════════════════════ */
+      .stat-highlight {
+        display: flex;
+        gap: 1.25rem;
+        align-items: center;
+        background: rgba(0, 167, 169, 0.07);
+        border-left: 4px solid var(--secondary);
+        border-radius: 0 var(--radius) var(--radius) 0;
+        padding: 1.4rem 1.6rem;
+      }
+      @media (max-width: 480px) {
+        .stat-highlight {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+
+      .stat-number {
+        font-family: var(--font-display);
+        font-size: clamp(2.2rem, 6vw, 3rem);
+        font-weight: 700;
+        color: var(--primary);
+        line-height: 1;
+        flex-shrink: 0;
+      }
+      .stat-text {
+        font-size: 0.97rem;
+        color: #4a5568;
+        line-height: 1.6;
+      }
+      .stat-text strong {
+        color: var(--cd-text);
+      }
+    </style>
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Article",
+            "@id": "https://cirujanadigital.com/blog/que-es-wpo-web-lenta/#article",
+            "headline": "¿Qué es WPO y por qué una web lenta destruye tu negocio?",
+            "description": "WPO (Web Performance Optimization) es el conjunto de técnicas que hace que tu sitio web cargue rápido. Una web lenta pierde clientes, baja en Google y destruye tu conversión. Aprende a medirla y solucionarla.",
+            "datePublished": "2026-04-21T09:00:00-03:00",
+            "dateModified": "2026-04-21T09:00:00-03:00",
+            "author": {
+              "@type": "Person",
+              "name": "Yulia Monti",
+              "url": "https://cirujanadigital.com"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Cirujana Digital",
+              "url": "https://cirujanadigital.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://cirujanadigital.com/img/logo-horizontal-blanco.webp",
+                "width": 200,
+                "height": 60
+              }
+            },
+            "mainEntityOfPage": "https://cirujanadigital.com/blog/que-es-wpo-web-lenta/",
+            "image": "https://cirujanadigital.com/img/og-wpo-web-lenta.webp",
+            "articleSection": "Performance",
+            "inLanguage": "es-AR",
+            "keywords": [
+              "WPO",
+              "web performance optimization",
+              "velocidad web",
+              "Core Web Vitals",
+              "LCP",
+              "INP",
+              "CLS",
+              "PageSpeed",
+              "sitio web lento"
+            ]
+          }
+        ]
+      }
+    </script>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        class="gtm-iframe"
+      ></iframe>
+    </noscript>
+
+    <div id="site-nav"></div>
+
+    <main id="main">
+      <!-- ═══ HERO ═══════════════════════════════════════════ -->
+      <header class="article-hero">
+        <div class="article-hero-inner">
+          <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+            <a href="/">Inicio</a>
+            <span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a>
+            <span aria-hidden="true">›</span>
+            <span aria-current="page">Qué es WPO</span>
+          </nav>
+          <span class="article-category">Performance</span>
+          <h1>¿Qué es WPO y por qué una web lenta destruye tu negocio?</h1>
+          <div class="article-meta">
+            <span>
+              Por
+              <strong>Yulia Monti</strong>
+            </span>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-04-21">21 de abril, 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>9 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- ═══ BODY ════════════════════════════════════════════ -->
+      <div class="article-body">
+        <div class="article-layout">
+          <!-- ─── ARTICLE CONTENT ─────────────────────────── -->
+          <article class="article-content">
+            <p>
+              Tu sitio web puede tener el mejor diseño del mundo, el copy más persuasivo y el
+              servicio más sólido de tu industria. Pero si tarda más de 3 segundos en cargar,
+              <strong>
+                el 53% de tus visitantes móviles ya se fue antes de ver una sola palabra.
+              </strong>
+              Eso no es una estadística genérica: es dinero que se evapora en silencio, todos los
+              días.
+            </p>
+
+            <!-- ── Qué es WPO ─────────────────────────────── -->
+            <h2 id="que-es-wpo">¿Qué es WPO? La definición técnica sin rodeos</h2>
+            <p>
+              <strong>WPO (Web Performance Optimization)</strong>
+              es el conjunto de técnicas, configuraciones y buenas prácticas orientadas a reducir el
+              tiempo de carga de un sitio web, mejorar su capacidad de respuesta y optimizar la
+              experiencia del usuario en cualquier dispositivo y conexión.
+            </p>
+            <p>
+              No es un plugin ni una configuración. Es una disciplina que abarca desde cómo está
+              escrito el código hasta dónde están alojados los servidores, pasando por cómo se
+              entregan las imágenes, los estilos y el JavaScript al navegador del usuario.
+            </p>
+            <p>
+              Dicho de forma más directa:
+              <strong>
+                WPO es la diferencia entre un sitio que convierte y uno que expulsa visitas.
+              </strong>
+            </p>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">Dato clave</span>
+              <p>
+                Google incorporó los
+                <strong>Core Web Vitals</strong>
+                como señales de ranking en 2021. Desde entonces, la velocidad de tu sitio afecta
+                directamente tu posición en los resultados de búsqueda. Un sitio lento no solo
+                pierde clientes: pierde visibilidad antes de que esos clientes lleguen.
+              </p>
+            </div>
+
+            <!-- ── Por qué importa ────────────────────────── -->
+            <h2 id="por-que-importa">
+              Por qué la velocidad web no es un detalle técnico, es un problema de negocio
+            </h2>
+            <p>
+              Cada segundo de demora en la carga de tu sitio tiene un costo concreto. No en
+              abstracto: en clientes que no reservan, en consultas que no llegan, en presupuestos
+              que no se solicitan.
+            </p>
+
+            <div class="stat-highlight">
+              <div class="stat-number">53%</div>
+              <div class="stat-text">
+                <strong>de los usuarios móviles abandona un sitio</strong>
+                si tarda más de 3 segundos en cargar. Fuente: Google / Think with Google.
+              </div>
+            </div>
+
+            <p>
+              El problema es que la lentitud es invisible para el dueño del sitio. Vos entrás desde
+              tu computadora con buena conexión, ves que carga rápido y asumís que todo está bien.
+              Pero tu cliente potencial está en el subte, con señal 4G inestable, y abandona sin que
+              te enteres nunca.
+            </p>
+
+            <h3>El doble castigo de Google</h3>
+            <p>Una web lenta recibe un castigo doble en el ecosistema digital actual:</p>
+            <ul>
+              <li>
+                <strong>Ranking inferior:</strong>
+                Google usa los Core Web Vitals como factor de posicionamiento. Si tus métricas son
+                malas, aparecer en las primeras posiciones se vuelve más difícil y costoso.
+              </li>
+              <li>
+                <strong>Mayor tasa de rebote:</strong>
+                Cuando los usuarios abandonan rápido, Google interpreta que tu página no es
+                relevante o no ofrece buena experiencia. Eso refuerza el castigo de posicionamiento.
+              </li>
+              <li>
+                <strong>Menor Quality Score en publicidad paga:</strong>
+                Si hacés Google Ads, la velocidad de tu landing page afecta el Quality Score, lo que
+                sube el costo por clic.
+              </li>
+            </ul>
+
+            <div class="callout callout-warning">
+              <span class="callout-label">⚠ Atención</span>
+              <p>
+                Si tu sitio web tarda más de 4 segundos en cargar en móvil, no estás en competencia
+                real. Estás regalando clientes a tus competidores cada vez que alguien te busca en
+                Google.
+              </p>
+            </div>
+
+            <!-- ── Core Web Vitals ────────────────────────── -->
+            <h2 id="core-web-vitals">
+              Core Web Vitals: las 3 métricas que Google usa para juzgar tu sitio
+            </h2>
+            <p>
+              Google no mide la velocidad con un solo número. Usa tres métricas específicas, cada
+              una orientada a un aspecto distinto de la experiencia de usuario. Son los llamados
+              <strong>Core Web Vitals</strong>
+              .
+            </p>
+
+            <div class="metric-grid">
+              <div class="metric-card">
+                <div class="metric-name">Velocidad de carga</div>
+                <div class="metric-abbr">LCP</div>
+                <p>
+                  Largest Contentful Paint. Mide cuánto tarda en aparecer el elemento visual más
+                  grande de la página (imagen hero, título, bloque de texto). Debe ser menor a 2.5
+                  s.
+                </p>
+              </div>
+              <div class="metric-card">
+                <div class="metric-name">Interactividad</div>
+                <div class="metric-abbr">INP</div>
+                <p>
+                  Interaction to Next Paint. Mide cuánto tarda la página en responder cuando el
+                  usuario hace clic, toca o presiona una tecla. Debe ser menor a 200 ms.
+                </p>
+              </div>
+              <div class="metric-card">
+                <div class="metric-name">Estabilidad visual</div>
+                <div class="metric-abbr">CLS</div>
+                <p>
+                  Cumulative Layout Shift. Mide cuánto se mueven los elementos de la página mientras
+                  carga. Cuando algo se corre y hacés clic en lo que no querías. Debe ser menor a
+                  0.1.
+                </p>
+              </div>
+            </div>
+
+            <h3>Cómo leer tu puntaje en PageSpeed Insights</h3>
+            <p>
+              <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer">
+                PageSpeed Insights
+              </a>
+              es la herramienta gratuita de Google para medir el rendimiento de tu sitio. Ingresás
+              tu URL y obtenés un puntaje de 0 a 100 y el detalle de cada Core Web Vital.
+            </p>
+
+            <div class="table-wrapper">
+              <table
+                class="data-table"
+                aria-label="Interpretación del puntaje de PageSpeed Insights"
+              >
+                <thead>
+                  <tr>
+                    <th>Puntaje</th>
+                    <th>Estado</th>
+                    <th>Qué significa para tu negocio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>90 – 100</strong></td>
+                    <td><span class="badge badge-green">Bueno</span></td>
+                    <td>Rendimiento óptimo. Google te favorece en rankings.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>50 – 89</strong></td>
+                    <td><span class="badge badge-yellow">Mejorable</span></td>
+                    <td>Estás perdiendo visitas y posiciones. Hay trabajo técnico urgente.</td>
+                  </tr>
+                  <tr>
+                    <td><strong>0 – 49</strong></td>
+                    <td><span class="badge badge-red">Deficiente</span></td>
+                    <td>Tu sitio está activamente destruyendo tu negocio. Prioridad máxima.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>
+              Un detalle importante: PageSpeed Insights muestra datos de dos fuentes. Los
+              <strong>datos de campo</strong>
+              (Field Data) vienen de usuarios reales de Chrome y son los que Google usa para el
+              ranking. Los
+              <strong>datos de laboratorio</strong>
+              (Lab Data) son simulaciones. Siempre priorizá los datos de campo.
+            </p>
+
+            <!-- ── Causas más comunes ─────────────────────── -->
+            <h2 id="causas-frecuentes">Las causas más comunes de una web lenta</h2>
+            <p>
+              En la mayoría de los sitios que audito, los problemas de velocidad se repiten. No son
+              errores exóticos: son los mismos patrones, una y otra vez, especialmente en sitios
+              hechos con constructores visuales o plantillas de WordPress.
+            </p>
+
+            <h3>Imágenes sin optimizar</h3>
+            <p>
+              El problema más frecuente y el más fácil de resolver. Imágenes de 3 MB subidas
+              directamente desde el celular, sin comprimir, sin redimensionar y en formato JPEG o
+              PNG cuando podrían estar en WebP o AVIF. Una sola imagen mal optimizada puede arruinar
+              tu LCP.
+            </p>
+
+            <h3>JavaScript excesivo y bloqueante</h3>
+            <p>
+              Los plugins, scripts de terceros, widgets de redes sociales, chatbots y herramientas
+              de analytics mal configurados pueden sumar cientos de kilobytes de JavaScript que el
+              navegador tiene que descargar, parsear y ejecutar antes de mostrar nada. Cada script
+              es un obstáculo.
+            </p>
+
+            <h3>Hosting lento o mal configurado</h3>
+            <p>
+              Un hosting compartido de bajo costo, un servidor en Miami cuando tus clientes están en
+              Buenos Aires, o la falta de HTTP/2 y compresión Brotli/Gzip pueden destruir los
+              tiempos de respuesta del servidor (TTFB), que es la base de todo lo demás.
+            </p>
+
+            <h3>Ausencia de caché y CDN</h3>
+            <p>
+              Si tu servidor genera la página desde cero en cada visita, sin cachear nada, cada clic
+              de usuario es costoso en tiempo. Un sistema de caché bien configurado más una CDN
+              (Content Delivery Network) pueden reducir dramáticamente los tiempos de entrega.
+            </p>
+
+            <div class="callout callout-insight">
+              <span class="callout-label">Perspectiva clínica</span>
+              <p>
+                Así como en quirófano una hemorragia no controlada es emergencia aunque el paciente
+                "se vea bien" por fuera, un sitio web lento es una hemorragia de conversiones que no
+                siempre se ve en el dashboard de analítica. Hay que medir con las herramientas
+                correctas para diagnosticar bien.
+              </p>
+            </div>
+
+            <!-- ── Impacto real ───────────────────────────── -->
+            <h2 id="impacto-conversion">
+              El impacto real de la velocidad en conversión e ingresos
+            </h2>
+            <p>
+              Los estudios de Google, Deloitte y Amazon convergen en el mismo mensaje:
+              <strong>la velocidad web tiene impacto directo y medible en los ingresos.</strong>
+            </p>
+            <ul>
+              <li>
+                <strong>0.1 segundos menos de carga</strong>
+                puede aumentar las conversiones hasta un 8% (Google/Deloitte).
+              </li>
+              <li>
+                <strong>Walmart</strong>
+                registró un aumento del 2% en conversiones por cada segundo de mejora.
+              </li>
+              <li>
+                <strong>Amazon</strong>
+                estimó que cada 100 ms de demora le costaba un 1% de ventas.
+              </li>
+              <li>
+                <strong>BBC</strong>
+                perdía el 10% de usuarios adicionales por cada segundo extra de carga.
+              </li>
+            </ul>
+            <p>
+              Para un profesional de salud, consultor o servicio independiente, estos porcentajes se
+              traducen en turnos, consultas y presupuestos que no llegan. La diferencia entre un
+              sitio en 1.8 s y uno en 4.5 s puede ser de 10 a 30 contactos menos por mes,
+              dependiendo del volumen de tráfico.
+            </p>
+
+            <div class="stat-highlight">
+              <div class="stat-number">8%</div>
+              <div class="stat-text">
+                <strong>de aumento en conversiones</strong>
+                por cada 0.1 segundos que mejora el tiempo de carga. No es lineal, pero la dirección
+                es siempre la misma.
+              </div>
+            </div>
+
+            <!-- ── Qué incluye WPO ────────────────────────── -->
+            <h2 id="que-incluye-wpo">¿Qué incluye una optimización WPO profesional?</h2>
+            <p>
+              La optimización de performance no es apretar un botón. Es un trabajo técnico
+              sistemático que abarca múltiples capas del sitio. Cuando trabajo en un proyecto WPO,
+              el proceso incluye:
+            </p>
+
+            <h3>Auditoría de diagnóstico</h3>
+            <p>
+              Antes de tocar una línea de código, hay que entender el estado actual con datos
+              reales. Se analizan los Core Web Vitals en campo y laboratorio, el TTFB del servidor,
+              el peso total de la página, el número de requests HTTP y el análisis de cascada de
+              carga (waterfall).
+            </p>
+
+            <h3>Optimización de imágenes y medios</h3>
+            <p>
+              Conversión a formatos modernos (WebP/AVIF), compresión sin pérdida visible,
+              redimensionamiento correcto, atributos
+              <code>width</code>
+              y
+              <code>height</code>
+              para evitar CLS, y lazy loading para imágenes fuera del viewport inicial.
+            </p>
+
+            <h3>Optimización del código</h3>
+            <p>
+              Minificación de CSS, JS y HTML. Eliminación de código muerto. Defer y async para
+              scripts no críticos. Priorización del CSS crítico above-the-fold para que la página
+              renderice rápido visualmente aunque el resto todavía esté cargando.
+            </p>
+
+            <h3>Optimización del servidor y entrega</h3>
+            <p>
+              Configuración de caché HTTP, compresión Brotli/Gzip, HTTP/2 o HTTP/3, headers de
+              seguridad, implementación de CDN y revisión del hosting. Si el servidor está en el
+              lugar equivocado o mal configurado, ninguna optimización front-end va a ser
+              suficiente.
+            </p>
+
+            <h3>Auditoría de scripts de terceros</h3>
+            <p>
+              Análisis de cada script externo (analytics, pixels, chatbots, mapas, redes sociales) y
+              decisión sobre cuáles son necesarios, cuáles se pueden cargar de forma diferida y
+              cuáles se pueden eliminar directamente. Los scripts de terceros son una de las
+              principales causas de INP deficiente.
+            </p>
+
+            <p>
+              Si querés entender el estado concreto de tu sitio, el primer paso es una
+              <a href="/servicios/optimizacion-wpo/">auditoría WPO profesional</a>
+              que te dé un diagnóstico real, no suposiciones.
+            </p>
+
+            <!-- ── WPO vs diseño ──────────────────────────── -->
+            <h2 id="wpo-vs-diseno">WPO vs. diseño bonito: el error más caro del mercado</h2>
+            <p>
+              Hay un malentendido muy extendido: que un sitio bonito con buenas fotos y animaciones
+              es necesariamente un sitio efectivo. No lo es. De hecho, muchos de los sitios más
+              "premium" visualmente son los más lentos.
+            </p>
+            <p>
+              El diseño premium y el rendimiento técnico no son opuestos: son complementarios. Pero
+              requieren que quien construye el sitio entienda ambas dimensiones. Un diseñador que no
+              sabe de performance puede crear algo espectacular que nadie espere a ver. Un
+              desarrollador que no piensa en conversión puede entregar algo rápido pero vacío.
+            </p>
+            <p>
+              La combinación correcta es un sitio que
+              <strong>carga rápido, se ve premium y convierte visitantes en clientes.</strong>
+              Las tres cosas juntas no son negociables si el objetivo es crecer.
+            </p>
+
+            <!-- ── FAQ ──────────────────────────────────────── -->
+            <h2 id="faq">Preguntas frecuentes sobre WPO</h2>
+
+            <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">¿Qué significa WPO?</span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    WPO significa
+                    <strong>Web Performance Optimization</strong>
+                    (Optimización del Rendimiento Web). Es el conjunto de técnicas y estrategias
+                    para hacer que un sitio web cargue más rápido, responda mejor a las
+                    interacciones del usuario y consuma menos recursos. Incluye compresión de
+                    imágenes, minificación de código, uso de caché, optimización del servidor y
+                    mejora de los Core Web Vitals.
+                  </p>
+                </div>
+              </details>
+
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">¿Qué velocidad de carga es aceptable para una web?</span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    Google considera que un LCP (Largest Contentful Paint) menor a
+                    <strong>2.5 segundos</strong>
+                    es bueno. Entre 2.5 y 4 segundos necesita mejoras, y por encima de 4 segundos es
+                    deficiente. En términos generales, una web que carga en menos de 2 segundos es
+                    competitiva; por encima de 3 segundos empieza a perder visitantes de forma
+                    significativa.
+                  </p>
+                </div>
+              </details>
+
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">¿La velocidad web afecta al SEO?</span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    Sí, directamente. Google incorporó los Core Web Vitals (LCP, INP, CLS) como
+                    señales de ranking desde 2021. Un sitio lento no solo pierde posiciones en los
+                    resultados de búsqueda, sino que también tiene mayor tasa de rebote, lo que
+                    Google interpreta como una señal negativa de experiencia de usuario.
+                  </p>
+                </div>
+              </details>
+
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">¿Cómo sé si mi web es lenta?</span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    La herramienta más confiable es
+                    <strong>PageSpeed Insights</strong>
+                    (pagespeed.web.dev), que usa datos reales de usuarios de Chrome y de
+                    laboratorio. También podés usar Google Search Console (sección "Experiencia de
+                    página") para ver el estado de los Core Web Vitals de tu sitio en producción.
+                  </p>
+                </div>
+              </details>
+
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">¿Qué son los Core Web Vitals?</span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    Los Core Web Vitals son tres métricas de experiencia de usuario que Google usa
+                    como señal de ranking:
+                    <strong>LCP</strong>
+                    (Largest Contentful Paint) mide velocidad de carga del contenido principal,
+                    <strong>INP</strong>
+                    (Interaction to Next Paint) mide la capacidad de respuesta a interacciones del
+                    usuario, y
+                    <strong>CLS</strong>
+                    (Cumulative Layout Shift) mide la estabilidad visual de la página mientras
+                    carga.
+                  </p>
+                </div>
+              </details>
+
+              <details
+                class="faq-item"
+                itemscope
+                itemprop="mainEntity"
+                itemtype="https://schema.org/Question"
+              >
+                <summary class="faq-question">
+                  <span itemprop="name">
+                    ¿Cuánto puede mejorar la conversión si optimizo la velocidad?
+                  </span>
+                  <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+                    <path
+                      d="M9 3v12M3 9h12"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                    />
+                  </svg>
+                </summary>
+                <div
+                  class="faq-answer"
+                  itemscope
+                  itemprop="acceptedAnswer"
+                  itemtype="https://schema.org/Answer"
+                >
+                  <p itemprop="text">
+                    Los estudios de Google y Deloitte muestran que reducir el tiempo de carga 0.1
+                    segundos puede aumentar las conversiones hasta un 8%. Para profesionales
+                    independientes o servicios de salud, la diferencia puede ser de decenas de
+                    consultas al mes, dependiendo del volumen de tráfico que ya tiene el sitio.
+                  </p>
+                </div>
+              </details>
+            </div>
+
+            <!-- ─── Author ────────────────────────────────── -->
+            <div class="author-box">
+              <img
+                src="/img/yulia-monti.webp"
+                alt="Yulia Monti — Cirujana Digital"
+                width="80"
+                height="80"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="author-info">
+                <h4>Yulia Monti — Cirujana Digital</h4>
+                <p>
+                  Instrumentadora quirúrgica reconvertida en desarrolladora web. 15 años en
+                  pabellón, ahora construyo sitios que cargan rápido, posicionan en Google y
+                  convierten visitantes en clientes. Especialidad: negocios de salud y profesionales
+                  independientes.
+                </p>
+              </div>
+            </div>
+
+            <!-- ─── CTA ───────────────────────────────────── -->
+            <div class="article-cta-box">
+              <h3>¿Tu sitio está frenando tu negocio?</h3>
+              <p>
+                En 15 minutos te muestro los problemas concretos de tu sitio y cómo resolverlos.
+                Auditoría gratuita, sin compromiso.
+              </p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Quiero mi auditoría gratis</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M4 10h12m0 0l-4-4m4 4l-4 4"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ═══ SIDEBAR ════════════════════════════════════ -->
+          <aside class="article-sidebar" aria-label="Tabla de contenidos y contacto">
+            <nav class="toc-box" aria-label="Tabla de contenidos">
+              <h4>En este artículo</h4>
+              <ol>
+                <li><a href="#que-es-wpo">Qué es WPO</a></li>
+                <li><a href="#por-que-importa">Por qué importa para tu negocio</a></li>
+                <li><a href="#core-web-vitals">Core Web Vitals</a></li>
+                <li><a href="#causas-frecuentes">Causas de una web lenta</a></li>
+                <li><a href="#impacto-conversion">Impacto en conversión e ingresos</a></li>
+                <li><a href="#que-incluye-wpo">Qué incluye una optimización WPO</a></li>
+                <li><a href="#wpo-vs-diseno">WPO vs. diseño bonito</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+              </ol>
+            </nav>
+            <div class="sidebar-cta">
+              <p>
+                ¿Querés saber si tu sitio tiene problemas de velocidad? Auditoría gratuita de 15
+                minutos, sin compromiso.
+              </p>
+              <a href="/diagnostico/">Quiero la auditoría →</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <!-- ═══ FOOTER ═══════════════════════════════════════════ -->
+    <div id="site-footer"></div>
+  </body>
+</html>

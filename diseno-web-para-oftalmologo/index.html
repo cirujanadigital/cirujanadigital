@@ -392,26 +392,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
     <!-- ===== HERO ===== -->
     <section class="hero" aria-labelledby="hero-heading">
       <div class="hero__bg">
-        <picture>
-              <source 
-                type="image/webp"
-                srcset="
-                  https://images.unsplash.com/photo-1559517717-c14af8f2e3ee?w=480&h=320&fit=crop&auto=format&q=75&fm=webp 480w,
-                  https://images.unsplash.com/photo-1559517717-c14af8f2e3ee?w=768&h=512&fit=crop&auto=format&q=75&fm=webp 768w,
-                  https://images.unsplash.com/photo-1559517717-c14af8f2e3ee?w=1024&h=683&fit=crop&auto=format&q=75&fm=webp 1024w,
-                  https://images.unsplash.com/photo-1559517717-c14af8f2e3ee?w=1440&h=960&fit=crop&auto=format&q=75&fm=webp 1440w"
-                sizes="100vw"
-              >
-              <img
-                src="https://images.unsplash.com/photo-1559517717-c14af8f2e3ee?w=1440&h=960&fit=crop&auto=format&q=75"
-                alt="Clínica oftalmológica de alta tecnología"
-                width="1024"
-                height="683"
-                fetchpriority="high"
-                loading="eager"
-                decoding="sync"
-              >
-      </picture>
+    
         <div class="hero__overlay" aria-hidden="true"></div>
       </div>
       <div class="container">
@@ -451,17 +432,21 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
       <div class="container">
         <div class="about__grid">
           <div class="about__img-wrap reveal">
-            <picture>
-              <source srcset="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&amph=875&ampfit=crop&ampauto=format&ampq=80&ampfm=webp" type="image/webp">
-              <img
-                src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&amph=875&ampfit=crop&ampauto=format&ampq=80"
-                alt="Médico oftalmólogo especialista, imagen de ejemplo"
-                class="about__img"
-                loading="lazy"
-                width="700"
-                height="875"
-              >
-            </picture>
+          <picture>
+  <source
+    type="image/webp"
+    srcset="/diseno-web-para-oftalmologo/alejandro-v-m.webp"
+  >
+  <img
+    src="/diseno-web-para-oftalmologo/alejandro-v-m.webp"
+    alt="Especialista oftalmólogo en consulta"
+    width="800"
+    height="1000"
+    fetchpriority="high"
+    loading="eager"
+    decoding="sync"
+  >
+</picture>
             <div class="about__badge" aria-label="20 años de experiencia">
               <span class="about__badge-num">20+</span>
               <span class="about__badge-text">Años de<br>Experiencia</span>
@@ -827,7 +812,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding
         </div>
       </div>
       <div class="footer__bottom">
-        <p class="footer__copy">© 2026 Dr. Alejandro Vega Montoya. Todos los derechos reservados. 
+        <p class="footer__copy">© 2026 Dr. Alejandro Vega Montoya. Todos los derechos reservados.
             <span style="color:rgba(255,255,255,.3)">(Personaje y datos ficticios — sitio de demostración)</span> </p>
         <nav class="footer__legal" aria-label="Aviso legal">
           <a href="#">Aviso de Privacidad</a>
@@ -890,7 +875,7 @@ function handleForm(btn) {
   }
   btn.textContent = '⚠ Sitio demostrativo. No se envían solicitudes reales.';
   btn.style.background = 'linear-gradient(135deg,#f59e0b,#d97706)';
-  btn.disabled = true; 
+  btn.disabled = true;
 }
   </script>
 </body>

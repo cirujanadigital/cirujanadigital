@@ -1,0 +1,30 @@
+{
+  "name": "cirujanadigital-vsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "components.js",
+  "scripts": {
+    "build:css:main": "lightningcss --minify --targets \">= 0.5%\" style-v2.css -o dist/style-v2.min.css",
+    "build:css:comp": "lightningcss --minify --targets \">= 0.5%\" components.css -o dist/components.min.css",
+    "build:js:main":  "terser script.js --compress --mangle --comments false -o dist/script.min.js",
+    "build:js:comp":  "terser components.js --compress --mangle --comments false -o dist/components.min.js",
+    "build": "npm run build:css:main && npm run build:css:comp && npm run build:js:main && npm run build:js:comp",
+    "update-refs": "node update-refs.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cirujanadigital/cirujanadigital.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/cirujanadigital/cirujanadigital/issues"
+  },
+  "homepage": "https://github.com/cirujanadigital/cirujanadigital#readme",
+  "devDependencies": {
+    "lightningcss-cli": "^1.32.0",
+    "terser": "^5.46.1"
+  }
+}

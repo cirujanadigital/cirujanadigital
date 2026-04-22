@@ -1,0 +1,2291 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO primario -->
+    <title>Servicios — Cirujana Digital | Presencia Digital para Médicos</title>
+    <meta
+      name="description"
+      content="Cinco servicios de presencia digital especializados en médicos y profesionales de la salud: páginas web, WPO, mantenimiento mensual, presencia en IA y pack completo. Desde $85 USD."
+    />
+    <link rel="canonical" href="https://cirujanadigital.com/servicios/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://cirujanadigital.com/servicios/" />
+    <meta property="og:title" content="Servicios — Cirujana Digital" />
+    <meta
+      property="og:description"
+      content="Presencia digital de precisión para médicos. Páginas web, WPO, mantenimiento, IA y pack completo. Sin WordPress. Sin letra chica."
+    />
+    <meta property="og:locale" content="es_AR" />
+
+    <!-- Schema: BreadcrumbList + WebPage + ItemList -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Inicio",
+                "item": "https://cirujanadigital.com/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Servicios",
+                "item": "https://cirujanadigital.com/servicios/"
+              }
+            ]
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://cirujanadigital.com/servicios/",
+            "url": "https://cirujanadigital.com/servicios/",
+            "name": "Servicios — Cirujana Digital",
+            "description": "Catálogo completo de servicios de presencia digital para médicos y profesionales de la salud.",
+            "isPartOf": { "@id": "https://cirujanadigital.com/#website" },
+            "provider": {
+              "@type": "Organization",
+              "name": "Cirujana Digital",
+              "url": "https://cirujanadigital.com"
+            }
+          },
+          {
+            "@type": "ItemList",
+            "name": "Servicios de Cirujana Digital",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Pack Presencia Digital Médica",
+                "url": "https://cirujanadigital.com/servicios/pack-presencia"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Páginas Web para Médicos",
+                "url": "https://cirujanadigital.com/servicios/paginas-web"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Optimización WPO",
+                "url": "https://cirujanadigital.com/servicios/optimizacion-wpo"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Mantenimiento Web Mensual",
+                "url": "https://cirujanadigital.com/servicios/mantenimiento-web"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Presencia en Inteligencia Artificial",
+                "url": "https://cirujanadigital.com/servicios/presencia-ia"
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+
+    <style>
+      /* ─── Reset & Tokens ─────────────────────────────────── */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --brand: #00a7a9;
+        --brand-dark: #03658c;
+        --brand-deeper: #024a67;
+        --ink: #0d1b2a;
+        --ink-2: #071524;
+        --text: #2d3748;
+        --text-light: #64748b;
+        --text-muted: #94a3b8;
+        --bg: #fff;
+        --surface: #f7f9fa;
+        --surface-2: #edf2f7;
+
+        --brand-light: rgb(0 167 169 / 10%);
+        --brand-border: rgb(0 167 169 / 30%);
+        --brand-glow: rgb(0 167 169 / 22%);
+
+        --success: #065f46;
+        --success-bg: rgb(5 150 105 / 8%);
+        --success-bd: rgb(5 150 105 / 25%);
+
+        --g-brand: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --g-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 80%);
+
+        /* Typography */
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        --font-mono: 'Courier New', Courier, monospace;
+
+        /* Spacing */
+        --sp: clamp(4rem, 9vw, 7.5rem);
+        --cp: clamp(1.25rem, 5vw, 3rem);
+        --r-sm: 6px;
+        --r-md: 10px;
+        --r-lg: 14px;
+        --r-xl: 18px;
+        --r-2xl: 24px;
+        --r-pill: 50px;
+
+        --sh-sm: 0 2px 8px rgb(3 101 140 / 10%);
+        --sh-md: 0 4px 20px rgb(3 101 140 / 12%);
+        --sh-lg: 0 8px 40px rgb(3 101 140 / 18%);
+
+        --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      body {
+        font-family: var(--font-ui);
+        font-size: 1rem;
+        line-height: 1.65;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: all 0.3s var(--ease);
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+
+      /* ─── Layout helpers ─────────────────────────────────── */
+      .wrap {
+        max-width: 1160px;
+        margin-inline: auto;
+        padding-inline: var(--cp);
+      }
+      .wrap--narrow {
+        max-width: 760px;
+        margin-inline: auto;
+        padding-inline: var(--cp);
+      }
+      .sec {
+        padding-block: var(--sp);
+      }
+
+      /* ─── Buttons ────────────────────────────────────────── */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-ui);
+        font-size: 0.9375rem;
+        font-weight: 500;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--r-pill);
+        border: 1.5px solid transparent;
+        cursor: pointer;
+        transition: all 0.3s var(--ease);
+        white-space: nowrap;
+        line-height: 1.2;
+      }
+      .btn:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: 3px;
+      }
+
+      .btn-primary {
+        background: var(--g-brand);
+        color: #fff;
+        box-shadow:
+          var(--sh-md),
+          0 0 0 0 var(--brand-glow);
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow:
+          var(--sh-lg),
+          0 0 0 6px var(--brand-glow);
+      }
+      .btn-ghost {
+        background: transparent;
+        color: rgb(255 255 255 / 72%);
+        border-color: rgb(255 255 255 / 22%);
+      }
+      .btn-ghost:hover {
+        background: rgb(255 255 255 / 8%);
+        color: #fff;
+        border-color: rgb(255 255 255 / 40%);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--brand);
+        border-color: var(--brand-border);
+      }
+      .btn-outline:hover {
+        background: var(--brand-light);
+      }
+
+      .btn-lg {
+        padding: 1rem 2.25rem;
+        font-size: 1.0625rem;
+      }
+      .btn-sm {
+        padding: 0.5rem 1.125rem;
+        font-size: 0.875rem;
+      }
+
+      /* ─── Eyebrow ────────────────────────────────────────── */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--brand);
+        padding: 0.35rem 0.875rem;
+        background: var(--brand-light);
+        border: 1px solid var(--brand-border);
+        border-radius: var(--r-pill);
+        margin-bottom: 1.25rem;
+      }
+      .eyebrow--dark {
+        background: rgb(0 167 169 / 14%);
+        border-color: rgb(0 167 169 / 28%);
+      }
+      .eyebrow-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+        animation: blink 2s ease-in-out infinite;
+        display: inline-block;
+      }
+      @keyframes blink {
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.35;
+          transform: scale(1.6);
+        }
+      }
+
+      /* ─── Section title ──────────────────────────────────── */
+      .h-sec {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(1.875rem, 3.5vw, 2.75rem);
+        line-height: 1.18;
+        letter-spacing: -0.025em;
+      }
+      .h-sec em {
+        font-style: italic;
+      }
+      .h-sec--light {
+        color: #fff;
+      }
+      .h-sec--light em {
+        color: var(--brand);
+      }
+      .h-sec--dark {
+        color: var(--text);
+      }
+      .h-sec--dark em {
+        color: var(--brand-dark);
+      }
+
+      .sub {
+        margin-top: 1.25rem;
+        font-size: 1.0625rem;
+        line-height: 1.8;
+      }
+      .sub--light {
+        color: rgb(255 255 255 / 56%);
+      }
+      .sub--dark {
+        color: var(--text-light);
+      }
+
+      /* ─── Nav ─────────────────────────────────────────────── */
+      #site-nav {
+  height: 70px;        
+  contain: layout style;
+}
+#site-footer {
+  min-height: 600px;
+  contain: layout style;
+}
+
+      /* ─── Breadcrumb ─────────────────────────────────────── */
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        color: rgb(255 255 255 / 32%);
+        margin-bottom: 2rem;
+      }
+      .breadcrumb a {
+        color: rgb(255 255 255 / 42%);
+      }
+      .breadcrumb a:hover {
+        color: var(--brand);
+      }
+      .breadcrumb span {
+        color: rgb(255 255 255 / 18%);
+      }
+
+      /* ══════════════════════════════════════════════════════
+         HERO
+      ══════════════════════════════════════════════════════ */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: var(--ink);
+        padding-top: calc(68px + clamp(4rem, 8vw, 6rem));
+        padding-bottom: clamp(4rem, 8vw, 6rem);
+        min-height: 600px;
+        contain: layout style;
+      }
+      .hero__bg {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+      .hero__grid {
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgb(0 167 169 / 5%) 1px, transparent 1px),
+          linear-gradient(90deg, rgb(0 167 169 / 5%) 1px, transparent 1px);
+        background-size: 52px 52px;
+        mask-image: radial-gradient(ellipse 80% 75% at 60% 30%, black, transparent 68%);
+        will-change: transform;
+        contain: strict;
+      }
+      .hero__g1 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        width: 560px;
+        height: 420px;
+        top: -90px;
+        right: -80px;
+        background: rgb(0 167 169 / 12%);
+      }
+      .hero__g2 {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        width: 380px;
+        height: 300px;
+        bottom: -60px;
+        left: -100px;
+        background: rgb(3 101 140 / 16%);
+      }
+
+      .hero__inner {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: center;
+      }
+
+      .hero__tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.625rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--brand);
+        margin-bottom: 1.5rem;
+      }
+
+      .hero__h1 {
+        font-family: var(--font-display);
+        font-weight: 400;
+        font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+        line-height: 1.12;
+        letter-spacing: -0.03em;
+        color: #fff;
+        margin-bottom: 1.5rem;
+      }
+      .hero__h1 em {
+        font-style: italic;
+        color: var(--brand);
+      }
+
+      .hero__lead {
+        font-size: clamp(1rem, 1.5vw, 1.125rem);
+        line-height: 1.8;
+        color: rgb(255 255 255 / 58%);
+        max-width: 480px;
+        margin-bottom: 2.5rem;
+      }
+      .hero__lead strong {
+        color: rgb(255 255 255 / 80%);
+        font-weight: 500;
+      }
+
+      .hero__actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      .hero__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      .chip {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 0.875rem;
+        background: rgb(255 255 255 / 4%);
+        border: 1px solid rgb(255 255 255 / 10%);
+        border-radius: var(--r-pill);
+      }
+      .chip-n {
+        font-family: var(--font-mono);
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--brand);
+      }
+      .chip-l {
+        font-size: 0.72rem;
+        color: rgb(255 255 255 / 40%);
+      }
+
+      /* Hero visual — journey card */
+      .hero__visual {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+      .journey-card {
+        width: 100%;
+        max-width: 400px;
+        background: #0a1929;
+        border: 1px solid rgb(0 167 169 / 18%);
+        border-radius: var(--r-2xl);
+        overflow: hidden;
+        box-shadow:
+          0 24px 64px rgb(0 0 0 / 45%),
+          0 0 0 1px rgb(0 167 169 / 8%);
+        animation: floatY 7s ease-in-out infinite;
+      }
+      @keyframes floatY {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-8px);
+        }
+      }
+      .jc-top {
+        padding: 1rem 1.375rem;
+        background: rgb(255 255 255 / 3%);
+        border-bottom: 1px solid rgb(255 255 255 / 6%);
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+      .jc-dots {
+        display: flex;
+        gap: 0.4rem;
+      }
+      .jc-dots span {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+      }
+      .jc-dots span:nth-child(1) {
+        background: #ff5f57;
+      }
+      .jc-dots span:nth-child(2) {
+        background: #febc2e;
+      }
+      .jc-dots span:nth-child(3) {
+        background: #28c840;
+      }
+      .jc-label {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        color: rgb(255 255 255 / 30%);
+      }
+      .jc-body {
+        padding: 1.5rem 1.375rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .jc-step {
+        display: flex;
+        align-items: center;
+        gap: 0.875rem;
+        padding: 0.75rem 0.875rem;
+        background: rgb(255 255 255 / 3%);
+        border: 1px solid rgb(255 255 255 / 6%);
+        border-radius: var(--r-md);
+        animation: slideIn 0.4s var(--ease) both;
+      }
+      .jc-step:nth-child(2) {
+        animation-delay: 0.1s;
+      }
+      .jc-step:nth-child(3) {
+        animation-delay: 0.2s;
+      }
+      .jc-step:nth-child(4) {
+        animation-delay: 0.3s;
+      }
+      .jc-step:nth-child(5) {
+        animation-delay: 0.4s;
+      }
+      @keyframes slideIn {
+        from {
+          opacity: 0;
+          transform: translateX(-8px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .jc-icon {
+        font-size: 1.1rem;
+        flex-shrink: 0;
+      }
+      .jc-text {
+        font-size: 0.8rem;
+        color: rgb(255 255 255 / 60%);
+        flex: 1;
+        line-height: 1.3;
+      }
+      .jc-badge {
+        font-family: var(--font-mono);
+        font-size: 0.62rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: var(--r-sm);
+        white-space: nowrap;
+      }
+      .jc-badge--teal {
+        background: var(--brand-light);
+        color: var(--brand);
+        border: 1px solid var(--brand-border);
+      }
+      .jc-badge--green {
+        background: var(--success-bg);
+        color: #0cce6b;
+        border: 1px solid var(--success-bd);
+      }
+
+      /* ══════════════════════════════════════════════════════
+         INTRO — claro
+      ══════════════════════════════════════════════════════ */
+      .intro {
+        background: var(--bg);
+      }
+      .intro__inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: center;
+      }
+      .intro__content p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--text-light);
+        margin-bottom: 1.125rem;
+      }
+      .intro__content p strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+      .intro__content h2 {
+        margin-bottom: 1.5rem;
+      }
+
+      .intro__pillars {
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+      }
+      .pillar {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.875rem;
+        padding: 1.125rem 1.375rem;
+        background: var(--surface);
+        border: 1px solid var(--surface-2);
+        border-left: 3px solid var(--brand);
+        border-radius: 0 var(--r-lg) var(--r-lg) 0;
+      }
+      .pillar__icon {
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        margin-top: 0.1rem;
+      }
+      .pillar__text h3 {
+        font-weight: 500;
+        font-size: 0.9375rem;
+        color: var(--text);
+        margin-bottom: 0.25rem;
+      }
+      .pillar__text p {
+        font-size: 0.875rem;
+        color: var(--text-light);
+        line-height: 1.6;
+      }
+
+      /* ══════════════════════════════════════════════════════
+         SERVICES GRID — surface
+      ══════════════════════════════════════════════════════ */
+      .services {
+        background: var(--surface);
+      }
+      .services__header {
+        text-align: center;
+        max-width: 620px;
+        margin-inline: auto;
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .svc-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin-bottom: 1.25rem;
+      }
+      /* Row 2: 2 cards centered */
+      .svc-grid-row2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        max-width: 780px;
+        margin-inline: auto;
+      }
+
+      .svc-card {
+        position: relative;
+        background: var(--bg);
+        border: 1px solid var(--surface-2);
+        border-radius: var(--r-2xl);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition:
+          box-shadow 0.3s var(--ease),
+          transform 0.3s var(--ease),
+          border-color 0.3s var(--ease);
+      }
+      .svc-card:hover {
+        box-shadow: var(--sh-lg);
+        transform: translateY(-4px);
+        border-color: var(--brand-border);
+      }
+      .svc-card--featured {
+        border-color: var(--brand-border);
+        box-shadow:
+          0 0 0 1px rgb(0 167 169 / 22%),
+          var(--sh-md);
+      }
+      .svc-card--featured:hover {
+        box-shadow:
+          0 0 0 1.5px var(--brand),
+          var(--sh-lg);
+        transform: translateY(-5px);
+      }
+
+      .svc-card__ribbon {
+        background: var(--g-brand);
+        color: #fff;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        text-align: center;
+        padding: 0.4rem 1rem;
+      }
+
+      .svc-card__head {
+        padding: 1.75rem 1.75rem 1.375rem;
+        border-bottom: 1px solid var(--surface-2);
+      }
+      .svc-card--featured .svc-card__head {
+        background: linear-gradient(135deg, rgb(3 101 140 / 3%) 0%, rgb(0 167 169 / 6%) 100%);
+      }
+
+      .svc-card__num {
+        font-family: var(--font-mono);
+        font-size: 0.68rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 0.625rem;
+      }
+      .svc-card--featured .svc-card__num {
+        color: var(--brand-dark);
+      }
+
+      .svc-card__icon-wrap {
+        width: 46px;
+        height: 46px;
+        border-radius: var(--r-md);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.375rem;
+        margin-bottom: 1rem;
+        background: var(--brand-light);
+        border: 1px solid var(--brand-border);
+      }
+
+      .svc-card__title {
+        font-family: var(--font-display);
+        font-size: 1.25rem;
+        font-weight: 400;
+        color: var(--text);
+        letter-spacing: -0.02em;
+        line-height: 1.25;
+        margin-bottom: 0.875rem;
+      }
+
+      .svc-card__price {
+        display: flex;
+        align-items: baseline;
+        gap: 0.375rem;
+        flex-wrap: wrap;
+      }
+      .svc-card__price-from {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+      .svc-card__price-num {
+        font-size: 1.875rem;
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: var(--brand-dark);
+      }
+      .svc-card__price-per {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+      }
+
+      .svc-card__body {
+        padding: 1.375rem 1.75rem 1.75rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .svc-card__desc {
+        font-size: 0.9375rem;
+        line-height: 1.75;
+        color: var(--text-light);
+        margin-bottom: 1.25rem;
+        flex: 1;
+      }
+
+      .svc-card__feat {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+      .svc-card__feat li {
+        font-size: 0.875rem;
+        color: var(--text-light);
+        padding-left: 1.375rem;
+        position: relative;
+        line-height: 1.55;
+      }
+      .svc-card__feat li::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0.45em;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+      }
+
+      .svc-card__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--brand-dark);
+        padding: 0.75rem 1.25rem;
+        border-radius: var(--r-pill);
+        border: 1.5px solid var(--brand-border);
+        background: transparent;
+        transition: all 0.3s var(--ease);
+      }
+      .svc-card__cta:hover {
+        background: var(--brand-light);
+        border-color: var(--brand);
+        transform: none;
+      }
+      .svc-card--featured .svc-card__cta {
+        background: var(--g-brand);
+        color: #fff;
+        border-color: transparent;
+        box-shadow: var(--sh-md);
+      }
+      .svc-card--featured .svc-card__cta:hover {
+        box-shadow:
+          var(--sh-lg),
+          0 0 0 5px var(--brand-glow);
+      }
+
+      .svc-card__cta-arrow {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 20px;
+        height: 20px;
+        background: rgb(0 167 169 / 12%);
+        border-radius: 50%;
+        transition: transform 0.3s var(--ease);
+        flex-shrink: 0;
+      }
+      .svc-card:hover .svc-card__cta-arrow {
+        transform: translateX(3px);
+      }
+      .svc-card--featured .svc-card__cta-arrow {
+        background: rgb(255 255 255 / 20%);
+      }
+
+      /* ══════════════════════════════════════════════════════
+         CAMINOS RECOMENDADOS
+      ══════════════════════════════════════════════════════ */
+      .paths {
+        background: var(--ink-2);
+        position: relative;
+        overflow: hidden;
+      }
+      .paths::before,
+      .paths::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgb(0 167 169 / 25%), transparent);
+      }
+      .paths::before {
+        top: 0;
+      }
+      .paths::after {
+        bottom: 0;
+      }
+      .paths__glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 450px;
+        border-radius: 50%;
+        filter: blur(110px);
+        background: radial-gradient(ellipse, rgb(0 167 169 / 9%) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .paths__header {
+        text-align: center;
+        max-width: 580px;
+        margin-inline: auto;
+        margin-bottom: clamp(3rem, 6vw, 5rem);
+      }
+
+      .paths-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: rgb(255 255 255 / 5%);
+        border-radius: var(--r-xl);
+        overflow: hidden;
+      }
+      .path-card {
+        background: rgb(255 255 255 / 2%);
+        padding: 2.25rem 1.875rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        transition: background 0.3s ease;
+      }
+      .path-card:hover {
+        background: rgb(255 255 255 / 4%);
+      }
+
+      .path-card__num {
+        font-family: var(--font-mono);
+        font-size: 2rem;
+        font-weight: 500;
+        color: rgb(0 167 169 / 22%);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .path-card__title {
+        font-family: var(--font-display);
+        font-size: 1.125rem;
+        font-weight: 400;
+        color: #fff;
+        line-height: 1.3;
+      }
+      .path-card__desc {
+        font-size: 0.9rem;
+        line-height: 1.75;
+        color: rgb(255 255 255 / 45%);
+        flex: 1;
+      }
+      .path-card__desc strong {
+        color: rgb(255 255 255 / 72%);
+        font-weight: 500;
+      }
+      .path-card__links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+        margin-top: auto;
+      }
+      .path-card__link {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        color: var(--brand);
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        transition: gap 0.25s var(--ease);
+      }
+      .path-card__link:hover {
+        gap: 0.625rem;
+      }
+      .path-card__link::before {
+        content: '→';
+      }
+
+      /* ══════════════════════════════════════════════════════
+         POR QUÉ — claro
+      ══════════════════════════════════════════════════════ */
+      .why {
+        background: var(--bg);
+      }
+      .why__inner {
+        display: grid;
+        grid-template-columns: 1.15fr 1fr;
+        gap: clamp(3rem, 6vw, 6rem);
+        align-items: start;
+      }
+      .why__content h2 {
+        margin-bottom: 1.5rem;
+      }
+      .why__content p {
+        font-size: 1rem;
+        line-height: 1.85;
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+      .why__content p strong {
+        color: var(--text);
+        font-weight: 500;
+      }
+
+      .why__stats {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .stat-card {
+        padding: 1.5rem;
+        background: var(--surface);
+        border: 1px solid var(--surface-2);
+        border-radius: var(--r-lg);
+        display: flex;
+        align-items: flex-start;
+        gap: 1.125rem;
+        transition:
+          border-color 0.3s var(--ease),
+          box-shadow 0.3s var(--ease);
+      }
+      .stat-card:hover {
+        border-color: var(--brand-border);
+        box-shadow: var(--sh-sm);
+      }
+      .stat-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: var(--r-md);
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        background: var(--brand-light);
+        border: 1px solid var(--brand-border);
+      }
+      .stat-body h3 {
+        font-weight: 500;
+        font-size: 0.9375rem;
+        color: var(--text);
+        margin-bottom: 0.25rem;
+      }
+      .stat-body p {
+        font-size: 0.875rem;
+        color: var(--text-light);
+        line-height: 1.55;
+      }
+
+      /* ══════════════════════════════════════════════════════
+         FAQ SECTION
+      ══════════════════════════════════════════════════════ */
+      .faq-sec {
+        background: var(--surface);
+      }
+      .faq-sec__header {
+        text-align: center;
+        max-width: 580px;
+        margin-inline: auto;
+        margin-bottom: 3rem;
+      }
+      .faq-list {
+        max-width: 720px;
+        margin-inline: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0.625rem;
+      }
+      .faq-item {
+        background: var(--bg);
+        border: 1px solid var(--surface-2);
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        transition: border-color 0.2s var(--ease);
+      }
+      .faq-item.open {
+        border-color: var(--brand-border);
+      }
+      .faq-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 100%;
+        padding: 1.25rem 1.5rem;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        text-align: left;
+        font-family: var(--font-ui);
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--text);
+        transition: background 0.2s var(--ease);
+      }
+      .faq-btn:hover {
+        background: var(--surface);
+      }
+      .faq-btn:focus-visible {
+        outline: 2px solid var(--brand);
+        outline-offset: -2px;
+      }
+      .faq-chev {
+        flex-shrink: 0;
+        color: var(--text-muted);
+        transition:
+          transform 0.3s var(--ease),
+          color 0.2s;
+      }
+      .faq-item.open .faq-chev {
+        transform: rotate(180deg);
+        color: var(--brand);
+      }
+      .faq-body {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s var(--ease);
+      }
+      .faq-body p {
+        padding: 0 1.5rem 1.5rem;
+        font-size: 0.9375rem;
+        line-height: 1.8;
+        color: var(--text-light);
+      }
+
+      /* ══════════════════════════════════════════════════════
+         CTA FINAL — oscuro
+      ══════════════════════════════════════════════════════ */
+      .cta-final {
+        background: var(--ink);
+        position: relative;
+        overflow: hidden;
+        text-align: center;
+      }
+      .cta-final__glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 700px;
+        height: 480px;
+        border-radius: 50%;
+        filter: blur(110px);
+        background: radial-gradient(ellipse, rgb(0 167 169 / 16%) 0%, transparent 70%);
+        pointer-events: none;
+      }
+      .cta-final__inner {
+        position: relative;
+        max-width: 640px;
+        margin-inline: auto;
+      }
+      .cta-final__label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--brand);
+        margin-bottom: 1.5rem;
+      }
+      .cta-final h2 {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: -0.025em;
+        color: #fff;
+        margin-bottom: 1.25rem;
+      }
+      .cta-final h2 em {
+        font-style: italic;
+        color: var(--brand);
+      }
+      .cta-final__sub {
+        font-size: 1.0625rem;
+        line-height: 1.75;
+        color: rgb(255 255 255 / 54%);
+        margin-bottom: 2.5rem;
+      }
+      .cta-final__btns {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-bottom: 2.25rem;
+      }
+      .cta-final__trust {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.25rem;
+      }
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 0.375rem;
+        font-size: 0.8125rem;
+        color: rgb(255 255 255 / 38%);
+      }
+      .trust-item svg {
+        color: var(--brand);
+        flex-shrink: 0;
+      }
+
+      /* ─── Reveal animations ──────────────────────────────── */
+      .rv {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+          opacity 0.65s var(--ease),
+          transform 0.65s var(--ease);
+      }
+      .rv.in {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .rv-d1 {
+        transition-delay: 0.1s;
+      }
+      .rv-d2 {
+        transition-delay: 0.2s;
+      }
+      .rv-d3 {
+        transition-delay: 0.3s;
+      }
+      .rv-d4 {
+        transition-delay: 0.4s;
+      }
+      .rv-d5 {
+        transition-delay: 0.5s;
+      }
+
+      /* WA icon */
+      .wa-icon {
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+
+      /* ─── Responsive ─────────────────────────────────────── */
+      @media (max-width: 1024px) {
+        .hero__inner,
+        .intro__inner,
+        .why__inner {
+          grid-template-columns: 1fr;
+        }
+        .hero__visual {
+          justify-content: flex-start;
+          order: -1;
+        }
+        .journey-card {
+          max-width: 360px;
+        }
+        .svc-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .svc-grid-row2 {
+          grid-template-columns: 1fr 1fr;
+          max-width: 100%;
+        }
+        .paths-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 768px) {
+        .svc-grid,
+        .svc-grid-row2 {
+          grid-template-columns: 1fr;
+        }
+        .hero__actions,
+        .cta-final__btns {
+          flex-direction: column;
+        }
+        .hero__actions .btn,
+        .cta-final__btns .btn {
+          justify-content: center;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          transition-duration: 0.01ms !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+      }
+    </style>
+<link rel="stylesheet" href="/components.css" />
+<script src="/components.js" defer></script>
+
+  </head>
+
+  <body>
+    <!-- NAV global -->
+    <div id="site-nav"></div>
+
+    <!-- SVG sprites -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none">
+      <symbol id="icon-wa" viewBox="0 0 24 24" fill="currentColor">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+        />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+        />
+      </symbol>
+      <symbol id="icon-arr" viewBox="0 0 16 16" fill="none">
+        <path
+          d="M3 8h10M9 4l4 4-4 4"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+      <symbol id="icon-chev" viewBox="0 0 20 20" fill="none">
+        <path
+          d="M5 7.5l5 5 5-5"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </symbol>
+    </svg>
+
+    <main id="main" role="main">
+      <!-- ════════════════════════════════════════
+           HERO
+      ════════════════════════════════════════ -->
+      <section class="hero" aria-labelledby="hero-h1">
+        <div class="hero__bg" aria-hidden="true">
+          <div class="hero__grid"></div>
+          <div class="hero__g1"></div>
+          <div class="hero__g2"></div>
+        </div>
+        <div class="wrap hero__inner">
+          <!-- Texto -->
+          <div class="hero__text">
+            <nav class="breadcrumb" aria-label="Ruta de navegación">
+              <a href="/">cirujanadigital.com</a>
+              <span aria-hidden="true">›</span>
+              <span aria-current="page">servicios</span>
+            </nav>
+
+            <p class="hero__tag rv">
+              <span class="eyebrow-dot" aria-hidden="true"></span>
+              Presencia digital · Especialidad médica
+            </p>
+
+            <h1 id="hero-h1" class="hero__h1 rv rv-d1">
+              Cinco servicios.
+              <br />
+              Un solo objetivo:
+              <br />
+              <em>más pacientes.</em>
+            </h1>
+
+            <p class="hero__lead rv rv-d2">
+              Cada servicio resuelve un problema específico del recorrido digital del paciente.
+              <strong>Podés contratar uno o construir el sistema completo.</strong>
+              Sin WordPress, sin letra chica, con garantía documentada en cada entrega.
+            </p>
+
+            <div class="hero__actions rv rv-d3">
+              <a
+                href="https://calendly.com/cirujanadigital/30min"
+                class="btn btn-primary btn-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Diagnóstico gratuito de 30 min
+                <svg width="16" height="16" aria-hidden="true"><use href="#icon-arr" /></svg>
+              </a>
+              <a href="#servicios" class="btn btn-ghost btn-lg">Ver todos los servicios</a>
+            </div>
+
+            <div class="hero__chips rv rv-d4" role="list" aria-label="Datos clave">
+              <div class="chip" role="listitem">
+                <span class="chip-n">5</span>
+                <span class="chip-l">servicios especializados</span>
+              </div>
+              <div class="chip" role="listitem">
+                <span class="chip-n">$85</span>
+                <span class="chip-l">USD/mes · entrada mensual</span>
+              </div>
+              <div class="chip" role="listitem">
+                <span class="chip-n">90+</span>
+                <span class="chip-l">Lighthouse garantizado</span>
+              </div>
+              <div class="chip" role="listitem">
+                <span class="chip-n">0</span>
+                <span class="chip-l">errores Schema en entrega</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Visual -->
+          <div class="hero__visual rv rv-d2" aria-hidden="true">
+            <div class="journey-card" role="img" aria-label="Servicios de Cirujana Digital">
+              <div class="jc-top">
+                <div class="jc-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="jc-label">cirujanadigital.com/servicios</span>
+              </div>
+              <div class="jc-body">
+                <div class="jc-step">
+                  <span class="jc-icon">📍</span>
+                  <span class="jc-text">Google Business Profile · Pack Presencia</span>
+                  <span class="jc-badge jc-badge--teal">$400</span>
+                </div>
+                <div class="jc-step">
+                  <span class="jc-icon">🌐</span>
+                  <span class="jc-text">Landing / Sitio corporativo médico</span>
+                  <span class="jc-badge jc-badge--teal">$250+</span>
+                </div>
+                <div class="jc-step">
+                  <span class="jc-icon">⚡</span>
+                  <span class="jc-text">Optimización WPO · PageSpeed 90+</span>
+                  <span class="jc-badge jc-badge--teal">$180+</span>
+                </div>
+                <div class="jc-step">
+                  <span class="jc-icon">🔄</span>
+                  <span class="jc-text">Mantenimiento mensual · reporte día 5</span>
+                  <span class="jc-badge jc-badge--green">$85/mes</span>
+                </div>
+                <div class="jc-step">
+                  <span class="jc-icon">🤖</span>
+                  <span class="jc-text">Presencia en IA · ChatGPT · Perplexity</span>
+                  <span class="jc-badge jc-badge--teal">$100+</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           INTRO — Por qué funciona distinto
+      ════════════════════════════════════════ -->
+      <section class="sec intro" aria-labelledby="intro-h2">
+        <div class="wrap intro__inner">
+          <div class="intro__content">
+            <p class="eyebrow rv">El enfoque</p>
+            <h2 class="h-sec h-sec--dark rv rv-d1" id="intro-h2">
+              La intersección entre
+              <br />
+              <em>el quirófano y el código.</em>
+            </h2>
+            <p class="rv rv-d2">
+              Las agencias generalistas hacen webs médicas sin entender que un médico no tiene
+              tiempo para gestionar plugins, actualizaciones o errores de Schema. El resultado:
+              sitios lentos, sin métricas y sin visibilidad real.
+            </p>
+            <p class="rv rv-d2">
+              <strong>Cirujana Digital existe para lo contrario.</strong>
+              Cada servicio está diseñado para el recorrido real del paciente, no para el catálogo
+              de la agencia. HTML estático puro, Schema médico validado, Lighthouse 90+ documentado
+              y métricas conectadas desde el día uno.
+            </p>
+            <p class="rv rv-d2">
+              No hay WordPress. No hay promesas verbales. Solo entregables precisos con captura de
+              evidencia antes de dar el proyecto por terminado.
+            </p>
+          </div>
+
+          <div class="intro__pillars rv rv-d1">
+            <div class="pillar">
+              <span class="pillar__icon" aria-hidden="true">🛡️</span>
+              <div class="pillar__text">
+                <h3>Garantía documentada</h3>
+                <p>
+                  Capturas de PageSpeed y Schema Validator son parte del entregable, no una promesa
+                  verbal.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar__icon" aria-hidden="true">📊</span>
+              <div class="pillar__text">
+                <h3>Métricas desde el día uno</h3>
+                <p>
+                  GA4, Search Console y Clarity configurados. Si no podés medirlo, no podés
+                  mejorarlo.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar__icon" aria-hidden="true">⚡</span>
+              <div class="pillar__text">
+                <h3>Sin dependencias que traben</h3>
+                <p>
+                  HTML/CSS/JS puro. Sin WordPress, sin plugins que se rompen, sin actualizaciones
+                  inesperadas.
+                </p>
+              </div>
+            </div>
+            <div class="pillar">
+              <span class="pillar__icon" aria-hidden="true">🤖</span>
+              <div class="pillar__text">
+                <h3>Pensado para la IA generativa</h3>
+                <p>
+                  Schema médico, FAQPage y NAP consistente para que ChatGPT y Perplexity te citen
+                  correctamente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           SERVICIOS GRID
+      ════════════════════════════════════════ -->
+      <section class="sec services" id="servicios" aria-labelledby="services-h2">
+        <div class="wrap">
+          <header class="services__header">
+            <p class="eyebrow rv">Catálogo completo</p>
+            <h2 class="h-sec h-sec--dark rv rv-d1" id="services-h2">
+              Los cinco servicios.
+              <br />
+              <em>Cada uno, un paso del sistema.</em>
+            </h2>
+            <p class="sub sub--dark rv rv-d2">
+              Podés contratar cualquiera de forma independiente o construir el sistema completo.
+              Están diseñados para funcionar juntos — pero cada uno tiene valor propio.
+            </p>
+          </header>
+
+          <!-- Fila 1: 3 tarjetas -->
+          <div class="svc-grid" role="list">
+            <!-- Pack Presencia — FEATURED -->
+            <article
+              class="svc-card svc-card--featured rv"
+              role="listitem"
+              aria-labelledby="svc1-title"
+            >
+              <div class="svc-card__ribbon">⭐ Más elegido — sistema completo</div>
+              <div class="svc-card__head">
+                <p class="svc-card__num">Servicio 01 · Pack</p>
+                <div class="svc-card__icon-wrap" aria-hidden="true">🚀</div>
+                <h3 class="svc-card__title" id="svc1-title">Pack Presencia Digital Médica</h3>
+                <div class="svc-card__price">
+                  <span class="svc-card__price-from">desde</span>
+                  <span class="svc-card__price-num">$400</span>
+                  <span class="svc-card__price-per">USD · todo incluido</span>
+                </div>
+              </div>
+              <div class="svc-card__body">
+                <p class="svc-card__desc">
+                  Google Business Profile + Landing Page médica + WhatsApp Business configurado. Los
+                  tres canales del recorrido del paciente, funcionando juntos, en 7 días hábiles.
+                </p>
+                <ul class="svc-card__feat" aria-label="Incluye">
+                  <li>GBP reclamado, verificado y optimizado</li>
+                  <li>Landing page con Lighthouse 90+ garantizado</li>
+                  <li>WhatsApp Business con mensajes automáticos</li>
+                  <li>QR imprimible para consultorio</li>
+                  <li>30 días de soporte + garantía de reembolso</li>
+                </ul>
+                <a
+                  href="/servicios/pack-presencia"
+                  class="svc-card__cta"
+                  aria-label="Ver detalle del Pack Presencia Digital"
+                >
+                  Ver detalle completo
+                  <span class="svc-card__cta-arrow" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <use href="#icon-arr" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Páginas web -->
+            <article class="svc-card rv rv-d1" role="listitem" aria-labelledby="svc2-title">
+              <div class="svc-card__head">
+                <p class="svc-card__num">Servicio 02 · Web</p>
+                <div class="svc-card__icon-wrap" aria-hidden="true">🌐</div>
+                <h3 class="svc-card__title" id="svc2-title">Páginas Web para Médicos</h3>
+                <div class="svc-card__price">
+                  <span class="svc-card__price-from">desde</span>
+                  <span class="svc-card__price-num">$250</span>
+                  <span class="svc-card__price-per">USD · pago único</span>
+                </div>
+              </div>
+              <div class="svc-card__body">
+                <p class="svc-card__desc">
+                  Landing page médica o sitio corporativo en HTML estático puro. Sin WordPress, sin
+                  plugins, sin riesgos. Schema validado, métricas conectadas.
+                </p>
+                <ul class="svc-card__feat" aria-label="Incluye">
+                  <li>Landing desde $250 · Corporativo desde $750</li>
+                  <li>Schema Physician + MedicalBusiness JSON-LD</li>
+                  <li>GA4 + Search Console desde el día 1</li>
+                  <li>Upgrade de landing a corporativo con descuento</li>
+                  <li>30 o 60 días de soporte post-entrega</li>
+                </ul>
+                <a
+                  href="/servicios/paginas-web"
+                  class="svc-card__cta"
+                  aria-label="Ver detalle de Páginas Web para Médicos"
+                >
+                  Ver detalle completo
+                  <span class="svc-card__cta-arrow" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <use href="#icon-arr" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+            <!-- WPO -->
+            <article class="svc-card rv rv-d2" role="listitem" aria-labelledby="svc3-title">
+              <div class="svc-card__head">
+                <p class="svc-card__num">Servicio 03 · Velocidad</p>
+                <div class="svc-card__icon-wrap" aria-hidden="true">⚡</div>
+                <h3 class="svc-card__title" id="svc3-title">Optimización WPO</h3>
+                <div class="svc-card__price">
+                  <span class="svc-card__price-from">desde</span>
+                  <span class="svc-card__price-num">$180</span>
+                  <span class="svc-card__price-per">USD · pago único</span>
+                </div>
+              </div>
+              <div class="svc-card__body">
+                <p class="svc-card__desc">
+                  Si tu sitio ya existe pero carga lento, este es el primer paso. Intervención
+                  técnica que lleva el PageSpeed a 90+ sin tocar diseño ni contenido.
+                </p>
+                <ul class="svc-card__feat" aria-label="Incluye">
+                  <li>Diagnóstico en 24 hs · entrega en 3–7 días</li>
+                  <li>WebP + lazy load + CSS crítico inline</li>
+                  <li>Cloudflare CDN (plan Completo)</li>
+                  <li>Captura antes/después como evidencia</li>
+                  <li>Garantía: si no llega a 90, seguimos sin costo</li>
+                </ul>
+                <a
+                  href="/servicios/optimizacion-wpo"
+                  class="svc-card__cta"
+                  aria-label="Ver detalle de Optimización WPO"
+                >
+                  Ver detalle completo
+                  <span class="svc-card__cta-arrow" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <use href="#icon-arr" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- /svc-grid -->
+
+          <!-- Fila 2: 2 tarjetas centradas -->
+          <div class="svc-grid-row2" role="list">
+            <!-- Mantenimiento -->
+            <article class="svc-card rv" role="listitem" aria-labelledby="svc4-title">
+              <div class="svc-card__head">
+                <p class="svc-card__num">Servicio 04 · Mensual</p>
+                <div class="svc-card__icon-wrap" aria-hidden="true">🔄</div>
+                <h3 class="svc-card__title" id="svc4-title">Mantenimiento Web Mensual</h3>
+                <div class="svc-card__price">
+                  <span class="svc-card__price-from">desde</span>
+                  <span class="svc-card__price-num">$85</span>
+                  <span class="svc-card__price-per">USD / mes</span>
+                </div>
+              </div>
+              <div class="svc-card__body">
+                <p class="svc-card__desc">
+                  El protocolo mensual que protege lo que construiste. Core Web Vitals, Schema,
+                  PageSpeed, backup y reporte entregado el día 5. El plan Pro incluye artículo SEO y
+                  verificación en IA.
+                </p>
+                <ul class="svc-card__feat" aria-label="Incluye">
+                  <li>Estándar $85/mes · Pro + IA $150/mes</li>
+                  <li>Reporte documentado antes del día 5</li>
+                  <li>Backup en GitHub o Google Drive</li>
+                  <li>Pro: 1 artículo SEO + verificación en ChatGPT</li>
+                  <li>Sin permanencia mínima · upgrade desde mes sig.</li>
+                </ul>
+                <a
+                  href="/servicios/mantenimiento-web"
+                  class="svc-card__cta"
+                  aria-label="Ver detalle de Mantenimiento Web Mensual"
+                >
+                  Ver detalle completo
+                  <span class="svc-card__cta-arrow" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <use href="#icon-arr" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Presencia IA -->
+            <article class="svc-card rv rv-d1" role="listitem" aria-labelledby="svc5-title">
+              <div class="svc-card__head">
+                <p class="svc-card__num">Servicio 05 · IA — Nuevo 2025</p>
+                <div class="svc-card__icon-wrap" aria-hidden="true">🤖</div>
+                <h3 class="svc-card__title" id="svc5-title">
+                  Presencia en Inteligencia Artificial
+                </h3>
+                <div class="svc-card__price">
+                  <span class="svc-card__price-from">desde</span>
+                  <span class="svc-card__price-num">$100</span>
+                  <span class="svc-card__price-per">USD · pago único</span>
+                </div>
+              </div>
+              <div class="svc-card__body">
+                <p class="svc-card__desc">
+                  ChatGPT, Perplexity y Google AI recomiendan médicos ahora mismo. Tres servicios
+                  para diagnosticar, planificar e implementar tu presencia en motores de IA
+                  generativa.
+                </p>
+                <ul class="svc-card__feat" aria-label="Incluye">
+                  <li>Auditoría IA Médica $100 · 3 días hábiles</li>
+                  <li>Auditoría + Plan de Presencia $220</li>
+                  <li>Implementación activa $250/mes × 3 meses</li>
+                  <li>4 plataformas · capturas documentadas</li>
+                  <li>Garantía: resultado medible o mes 3 sin costo</li>
+                </ul>
+                <a
+                  href="/servicios/presencia-ia"
+                  class="svc-card__cta"
+                  aria-label="Ver detalle de Presencia en Inteligencia Artificial"
+                >
+                  Ver detalle completo
+                  <span class="svc-card__cta-arrow" aria-hidden="true">
+                    <svg width="10" height="10" viewBox="0 0 16 16" fill="none">
+                      <use href="#icon-arr" />
+                    </svg>
+                  </span>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- /svc-grid-row2 -->
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           CAMINOS RECOMENDADOS — oscuro
+      ════════════════════════════════════════ -->
+      <section class="sec paths" aria-labelledby="paths-h2">
+        <div class="paths__glow" aria-hidden="true"></div>
+        <div class="wrap">
+          <header class="paths__header">
+            <p class="eyebrow eyebrow--dark rv">¿Por dónde empezar?</p>
+            <h2 class="h-sec h-sec--light rv rv-d1" id="paths-h2">
+              No todos los médicos
+              <br />
+              <em>llegan en la misma etapa.</em>
+            </h2>
+            <p class="sub sub--light rv rv-d2">
+              Tres recorridos según tu situación actual. Si no estás seguro, la consulta gratuita de
+              30 minutos define cuál tiene sentido para vos hoy.
+            </p>
+          </header>
+
+          <div class="paths-grid rv rv-d1">
+            <div class="path-card">
+              <div class="path-card__num" aria-hidden="true">01</div>
+              <h3 class="path-card__title">Empezar de cero</h3>
+              <p class="path-card__desc">
+                No tenés web, ni Google Maps, ni canal profesional de WhatsApp.
+                <strong>
+                  El Pack Presencia Digital ($400 USD) cierra el sistema completo en 7 días.
+                </strong>
+                Es el punto de entrada más eficiente: los tres canales integrados desde el
+                principio.
+              </p>
+              <nav
+                class="path-card__links"
+                aria-label="Servicios recomendados para empezar de cero"
+              >
+                <a href="/servicios/pack-presencia" class="path-card__link">
+                  Pack Presencia Digital — $400 USD
+                </a>
+              </nav>
+            </div>
+
+            <div class="path-card">
+              <div class="path-card__num" aria-hidden="true">02</div>
+              <h3 class="path-card__title">Mejorar lo que ya tenés</h3>
+              <p class="path-card__desc">
+                Ya tenés web pero carga lento, tiene errores de Schema o no aparecés bien en Google.
+                <strong>La secuencia correcta: WPO primero, Mantenimiento después.</strong>
+                Optimizás la base y luego mantenés el score mes a mes.
+              </p>
+              <nav class="path-card__links" aria-label="Servicios recomendados para mejorar">
+                <a href="/servicios/optimizacion-wpo" class="path-card__link">
+                  Optimización WPO — desde $180 USD
+                </a>
+                <a href="/servicios/mantenimiento-web" class="path-card__link">
+                  Mantenimiento Mensual — desde $85 USD/mes
+                </a>
+              </nav>
+            </div>
+
+            <div class="path-card">
+              <div class="path-card__num" aria-hidden="true">03</div>
+              <h3 class="path-card__title">Escalar la visibilidad</h3>
+              <p class="path-card__desc">
+                Tenés la base técnica funcionando y querés el siguiente nivel: posicionamiento en IA
+                generativa, artículos SEO y presencia en ChatGPT.
+                <strong>Mantenimiento Pro + IA y los servicios de Presencia en IA.</strong>
+              </p>
+              <nav class="path-card__links" aria-label="Servicios recomendados para escalar">
+                <a href="/servicios/mantenimiento-web" class="path-card__link">
+                  Mantenimiento Pro + IA — $150 USD/mes
+                </a>
+                <a href="/servicios/presencia-ia" class="path-card__link">
+                  Presencia en IA — desde $100 USD
+                </a>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           POR QUÉ — claro
+      ════════════════════════════════════════ -->
+      <section class="sec why" aria-labelledby="why-h2">
+        <div class="wrap why__inner">
+          <div class="why__content">
+            <p class="eyebrow rv">Por qué Cirujana Digital</p>
+            <h2 class="h-sec h-sec--dark rv rv-d1" id="why-h2">
+              Precisión técnica
+              <br />
+              <em>pensada para médicos.</em>
+            </h2>
+            <p class="rv rv-d2">
+              Hay cosas que nadie le cuenta al médico cuando contrata su primera web: está llena de
+              errores de Schema, tiene Lighthouse por debajo de 60, y no tiene ni un evento de GA4
+              configurado. El médico paga, espera, y nunca sabe si eso le trajo un solo paciente.
+            </p>
+            <p class="rv rv-d2">
+              <strong>Cirujana Digital existe para lo contrario.</strong>
+              Cada servicio que entrego tiene PageSpeed documentado, Schema validado y métricas
+              conectadas. No hay suposiciones. Solo precisión quirúrgica en el código.
+            </p>
+            <p class="rv rv-d2">
+              Y en 2025 el juego cambió: los pacientes preguntan a ChatGPT antes de buscar en
+              Google. Todos los servicios de Cirujana Digital están diseñados para que el médico
+              exista también en esa dimensión.
+            </p>
+            <div class="rv rv-d3" style="margin-top: 2rem">
+              <a
+                href="https://calendly.com/cirujanadigital/30min"
+                class="btn btn-outline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Hablar con la especialista →
+              </a>
+            </div>
+          </div>
+
+          <div class="why__stats">
+            <div class="stat-card rv">
+              <span class="stat-icon" aria-hidden="true">🎯</span>
+              <div class="stat-body">
+                <h3>Especialización exclusiva en salud</h3>
+                <p>
+                  Schema médico, Schema Physician, FAQPage para LLMs. No es un catálogo genérico
+                  adaptado — es un servicio construido para médicos.
+                </p>
+              </div>
+            </div>
+            <div class="stat-card rv rv-d1">
+              <span class="stat-icon" aria-hidden="true">📋</span>
+              <div class="stat-body">
+                <h3>Todo documentado antes de entregar</h3>
+                <p>
+                  Capturas de PageSpeed, Schema Validator y GA4 activo son parte del entregable. No
+                  prometido — verificado.
+                </p>
+              </div>
+            </div>
+            <div class="stat-card rv rv-d2">
+              <span class="stat-icon" aria-hidden="true">🔒</span>
+              <div class="stat-body">
+                <h3>Sin dependencias que te traben</h3>
+                <p>
+                  HTML/CSS/JS estático puro. El sitio es tuyo. Sin WordPress, sin plugins, sin
+                  renovaciones inesperadas de licencias.
+                </p>
+              </div>
+            </div>
+            <div class="stat-card rv rv-d3">
+              <span class="stat-icon" aria-hidden="true">🤖</span>
+              <div class="stat-body">
+                <h3>Preparado para la IA generativa</h3>
+                <p>
+                  Schema estructurado, NAP consistente y FAQPage implementado para que ChatGPT y
+                  Perplexity citen al médico correctamente.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           FAQ
+      ════════════════════════════════════════ -->
+      <section class="sec faq-sec" aria-labelledby="faq-h2">
+        <div class="wrap">
+          <header class="faq-sec__header">
+            <p class="eyebrow rv">Preguntas frecuentes</p>
+            <h2 class="h-sec h-sec--dark rv rv-d1" id="faq-h2">
+              Lo que preguntan
+              <br />
+              <em>antes de contratar.</em>
+            </h2>
+          </header>
+          <div class="faq-list" role="list" itemscope itemtype="https://schema.org/FAQPage">
+            <div
+              class="faq-item"
+              role="listitem"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Por dónde empiezo si no sé qué necesito?
+                <svg class="faq-chev" width="20" height="20" aria-hidden="true">
+                  <use href="#icon-chev" />
+                </svg>
+              </button>
+              <div
+                class="faq-body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  Lo más directo es agendar la consulta gratuita de 30 minutos. En esa llamada
+                  revisamos el estado actual de tu presencia digital (o la ausencia de ella) y
+                  definimos exactamente qué servicio tiene sentido para tu etapa. Sin compromiso,
+                  con diagnóstico concreto. Si preferís hacerlo solo, la página de cada servicio
+                  tiene un diagnóstico rápido de para quién está pensado.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              role="listitem"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Puedo contratar un servicio y después agregar otros?
+                <svg class="faq-chev" width="20" height="20" aria-hidden="true">
+                  <use href="#icon-chev" />
+                </svg>
+              </button>
+              <div
+                class="faq-body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  Sí, y es el recorrido más habitual. Podés empezar con la Auditoría IA ($100) para
+                  saber dónde estás, agregar el WPO si el sitio es lento, contratar el Mantenimiento
+                  mensual para proteger lo que construiste, y sumar el Pack Presencia si falta el
+                  GBP o el WhatsApp Business. El upgrade de landing a sitio corporativo descuenta lo
+                  ya pagado. Cada servicio tiene valor propio.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              role="listitem"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Por qué no usar WordPress?
+                <svg class="faq-chev" width="20" height="20" aria-hidden="true">
+                  <use href="#icon-chev" />
+                </svg>
+              </button>
+              <div
+                class="faq-body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  WordPress agrega capas de complejidad que para un médico son pura fricción:
+                  actualizaciones constantes, plugins que se rompen, vulnerabilidades de seguridad y
+                  puntajes de Lighthouse bajos por defecto. El HTML estático puro es más rápido, más
+                  seguro, más barato de mantener y alcanza Lighthouse 90+ sin trucos. Para el 90% de
+                  los médicos, es la decisión técnica correcta. Si ya tenés WordPress y querés
+                  mantenerlo, el servicio WPO Completo es la solución.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              role="listitem"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Qué garantías reales ofrecen?
+                <svg class="faq-chev" width="20" height="20" aria-hidden="true">
+                  <use href="#icon-chev" />
+                </svg>
+              </button>
+              <div
+                class="faq-body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  Cada servicio tiene su garantía específica documentada: el Pack Presencia tiene
+                  garantía de entrega en 7 días o reembolso completo; el WPO garantiza PageSpeed 90+
+                  o se sigue trabajando sin costo; el Mantenimiento entrega el reporte antes del día
+                  5 o se documenta el incumplimiento; la Implementación de IA garantiza resultado
+                  medible o el mes 3 no se cobra. Todas las garantías quedan por escrito antes de
+                  empezar — no son promesas verbales.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="faq-item"
+              role="listitem"
+              itemscope
+              itemprop="mainEntity"
+              itemtype="https://schema.org/Question"
+            >
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Necesito saber de tecnología para trabajar con Cirujana Digital?
+                <svg class="faq-chev" width="20" height="20" aria-hidden="true">
+                  <use href="#icon-chev" />
+                </svg>
+              </button>
+              <div
+                class="faq-body"
+                itemscope
+                itemprop="acceptedAnswer"
+                itemtype="https://schema.org/Answer"
+              >
+                <p itemprop="text">
+                  No. El proceso está pensado para profesionales de la salud, no para técnicos. Vas
+                  a necesitar tu foto profesional, los datos de tu especialidad y contacto. Del
+                  resto se ocupa Cirujana Digital: dominio, hosting, SSL, Schema, Analytics y todo
+                  el stack técnico. Al entregar, explicamos qué tenés y cómo podés verlo sin tocar
+                  código.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ════════════════════════════════════════
+           CTA FINAL — oscuro
+      ════════════════════════════════════════ -->
+      <section class="sec cta-final" aria-labelledby="cta-h2">
+        <div class="cta-final__glow" aria-hidden="true"></div>
+        <div class="wrap cta-final__inner">
+          <p class="cta-final__label rv">
+            <span aria-hidden="true">⊕</span>
+            El primer paso es gratis
+          </p>
+          <h2 id="cta-h2" class="rv rv-d1">
+            La consulta es gratuita
+            <br />
+            <em>y dura 30 minutos.</em>
+          </h2>
+          <p class="cta-final__sub rv rv-d2">
+            Contame en qué etapa está tu consultorio y te digo exactamente qué necesita. Sin
+            venderme, sin presión. Solo diagnóstico preciso con evidencia.
+          </p>
+          <div class="cta-final__btns rv rv-d3">
+            <a
+              href="https://calendly.com/cirujanadigital/30min"
+              class="btn btn-primary btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agendar consulta gratuita
+              <svg width="16" height="16" aria-hidden="true"><use href="#icon-arr" /></svg>
+            </a>
+            <a
+              href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20ver%20c%C3%B3mo%20mejorar%20mi%20presencia%20digital"
+              class="btn btn-ghost btn-lg"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="wa-icon" aria-hidden="true"><use href="#icon-wa" /></svg>
+              Hablemos por WhatsApp
+            </a>
+          </div>
+          <div class="cta-final__trust rv rv-d4">
+            <span class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8l3.5 3.5L13 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Consulta 100% gratuita
+            </span>
+            <span class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8l3.5 3.5L13 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Sin permanencia mínima
+            </span>
+            <span class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8l3.5 3.5L13 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Garantía documentada en cada servicio
+            </span>
+            <span class="trust-item">
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path
+                  d="M3 8l3.5 3.5L13 4"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+              Precios fijos en USD, sin sorpresas
+            </span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER global -->
+    <div id="site-footer"></div>
+
+    <script>
+      'use strict';
+
+      /* ── Scroll reveal ─────────────────────────── */
+      (function () {
+        const els = document.querySelectorAll('.rv');
+        if (!window.IntersectionObserver) {
+          els.forEach((el) => el.classList.add('in'));
+          return;
+        }
+        const obs = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                en.target.classList.add('in');
+                obs.unobserve(en.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        );
+        els.forEach((el) => obs.observe(el));
+      })();
+
+      /* ── FAQ accordion ─────────────────────────── */
+      document.querySelectorAll('.faq-btn').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('.faq-item');
+          const isOpen = item.classList.contains('open');
+          const body = item.querySelector('.faq-body');
+
+          // close all
+          document.querySelectorAll('.faq-item.open').forEach((i) => {
+            i.classList.remove('open');
+            i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+            i.querySelector('.faq-body').style.maxHeight = '0';
+          });
+
+          if (!isOpen) {
+            item.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            body.style.maxHeight = body.scrollHeight + 'px';
+          }
+        });
+      });
+
+      /* ── Smooth scroll for anchors ─────────────── */
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener('click', (e) => {
+          const id = a.getAttribute('href').slice(1);
+          const el = document.getElementById(id);
+          if (!el) return;
+          e.preventDefault();
+          window.scrollTo({
+            top: el.getBoundingClientRect().top + window.scrollY - 88,
+            behavior: 'smooth',
+          });
+        });
+      });
+
+      /* ── GA4 CTA tracking ──────────────────────── */
+      document.querySelectorAll('[href*="calendly"]').forEach((el) =>
+        el.addEventListener(
+          'click',
+          () =>
+            typeof gtag !== 'undefined' &&
+            gtag('event', 'click_calendly', {
+              event_category: 'cta',
+              event_label: 'servicios_hub',
+            })
+        )
+      );
+      document.querySelectorAll('[href*="wa.me"]').forEach((el) =>
+        el.addEventListener(
+          'click',
+          () =>
+            typeof gtag !== 'undefined' &&
+            gtag('event', 'click_whatsapp', {
+              event_category: 'cta',
+              event_label: 'servicios_hub',
+            })
+        )
+      );
+    </script>
+  </body>
+</html>
