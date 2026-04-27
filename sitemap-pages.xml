@@ -13,9 +13,23 @@
     <lastmod>2026-03-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://cirujanadigital.com/" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://cirujanadigital.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cirujanadigital.com/" />
   </url>
+
+    <url>
+  <loc>https://cirujanadigital.com/landing-page-medicos/</loc>
+  <lastmod>2026-04-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+<url>
+  <loc>https://cirujanadigital.com/seo-para-medicos-mexico/</loc>
+  <lastmod>2026-04-25</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.8</priority>
+</url>
 
   <!-- ═══════════════════════════════════════
        SERVICIOS
@@ -56,6 +70,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
 
   <!-- ═══════════════════════════════════════
        WEBS MÉDICAS
@@ -114,8 +129,14 @@
   </url>
 
   <!-- ═══════════════════════════════════════
-       RECURSOS 
+       RECURSOS
   ════════════════════════════════════════ -->
+  <url>
+    <loc>https://cirujanadigital.com/recursos/</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
   <url>
     <loc>https://cirujanadigital.com/recursos/simulador-velocidad/</loc>
     <lastmod>2026-04-19</lastmod>

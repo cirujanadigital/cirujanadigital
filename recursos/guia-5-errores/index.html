@@ -1,43 +1,35 @@
 <!doctype html>
 <html lang="es" dir="ltr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Los 5 Errores que Hacen que los Pacientes No Te Encuentren en Google | Cirujana Digital
-    </title>
-    <meta
-      name="description"
-      content="Guía gratuita: los 5 errores técnicos y de SEO que tiene el 80% de las webs médicas en LATAM y España. Checklist de 15 puntos. PDF descargable. Para médicos y profesionales de la salud."
-    />
-    <link rel="canonical" href="https://cirujanadigital.com/recursos/guia-5-errores/" />
-    <!-- Open Graph -->
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://cirujanadigital.com/recursos/guia-5-errores/" />
-    <meta
-      property="og:title"
-      content="Los 5 Errores que Hacen que los Pacientes No Te Encuentren en Google"
-    />
-    <meta
-      property="og:description"
-      content="Guía gratuita para médicos: 5 errores técnicos verificables + checklist de 15 puntos. Descarga el PDF o léelo online."
-    />
-    <meta property="og:image" content="https://cirujanadigital.com/img/og-guia-5-errores.png" />
-    <meta property="og:locale" content="es_419" />
-    <meta property="og:site_name" content="Cirujana Digital" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@cirujanadigital" />
-    <meta name="twitter:title" content="Los 5 Errores Web que Pierden Pacientes | Guía Gratuita" />
-    <meta
-      name="twitter:description"
-      content="80% de las webs médicas en LATAM tienen estos errores. Checklist de 15 puntos. Descarga gratuita."
-    />
-    <meta name="twitter:image" content="https://cirujanadigital.com/img/og-guia-5-errores.png" />
-    <!-- Robots -->
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
-    <!-- Breadcrumb + Article Schema -->
-    <script type="application/ld+json">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Los 5 Errores que Hacen que los Pacientes No Te Encuentren en Google | Cirujana Digital
+  </title>
+  <meta name="description"
+    content="Guía gratuita: los 5 errores técnicos y de SEO que tiene el 80% de las webs médicas en LATAM y España. Checklist de 15 puntos. PDF descargable. Para médicos y profesionales de la salud." />
+  <link rel="canonical" href="https://cirujanadigital.com/recursos/guia-5-errores/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/recursos/guia-5-errores/" />
+  <meta property="og:title" content="Los 5 Errores que Hacen que los Pacientes No Te Encuentren en Google" />
+  <meta property="og:description"
+    content="Guía gratuita para médicos: 5 errores técnicos verificables + checklist de 15 puntos. Descarga el PDF o léelo online." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-guia-5-errores.png" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@cirujanadigital" />
+  <meta name="twitter:title" content="Los 5 Errores Web que Pierden Pacientes | Guía Gratuita" />
+  <meta name="twitter:description"
+    content="80% de las webs médicas en LATAM tienen estos errores. Checklist de 15 puntos. Descarga gratuita." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-guia-5-errores.png" />
+  <!-- Robots -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <!-- Breadcrumb + Article Schema -->
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@graph": [
@@ -98,2065 +90,2099 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="/style-v2.css" fetchpriority="high" />
-    <style>
-      :root {
-        --brand: #00a7a9;
-        --brand-dark: #03658c;
-        --brand-light: rgb(0 167 169 / 10%);
-        --brand-bd: rgb(0 167 169 / 30%);
-        --ink: #0d1b2a;
-        --text: #0f2030; /* was #2d3748 — now passes 4.5:1 on white */
-        --text-light: #3d5166; /* was #64748b — now passes 4.5:1 on white */
-        --text-muted: #5c6f82; /* was #94a3b8 — now passes 4.5:1 on white (AA large) */
-        --bg: #ffffff;
-        --surface: #f7f9fa;
-        --surface-2: #e2e8f0; /* slightly darker for better border visibility */
-        --success: #065f46;
-        --success-bg: rgb(5 150 105 / 8%);
-        --success-bd: rgb(5 150 105 / 30%);
-        /* severity colours — darkened to pass 4.5:1 on their light bg */
-        --sev-critical-txt: #991b1b; /* was #b91c1c */
-        --sev-high-txt: #92400e; /* was #b45309 */
-        --g-brand: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
-        --g-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
-        --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        --font-display: Georgia, 'Times New Roman', serif;
-        --font-mono: 'Courier New', Courier, monospace;
-        --r-sm: 6px;
-        --r-md: 10px;
-        --r-lg: 14px;
-        --r-xl: 18px;
-        --r-2xl: 22px;
-        --r-pill: 50px;
-        --sh-sm: 0 2px 8px rgb(3 101 140 / 10%);
-        --sh-md: 0 4px 20px rgb(3 101 140 / 13%);
-        --sh-lg: 0 8px 40px rgb(3 101 140 / 18%);
-        --ease: cubic-bezier(0.4, 0, 0.2, 1);
-        --cp: clamp(1rem, 5vw, 3rem); /* tighter on very small screens */
-        --sp: clamp(2.5rem, 8vw, 6rem); /* slightly smaller min on mobile */
+  <style>
+    :root {
+      --brand: #00a7a9;
+      --brand-dark: #03658c;
+      --brand-light: rgb(0 167 169 / 10%);
+      --brand-bd: rgb(0 167 169 / 30%);
+      --ink: #0d1b2a;
+      --text: #0f2030;
+      /* was #2d3748 — now passes 4.5:1 on white */
+      --text-light: #3d5166;
+      /* was #64748b — now passes 4.5:1 on white */
+      --text-muted: #5c6f82;
+      /* was #94a3b8 — now passes 4.5:1 on white (AA large) */
+      --bg: #ffffff;
+      --surface: #f7f9fa;
+      --surface-2: #e2e8f0;
+      /* slightly darker for better border visibility */
+      --success: #065f46;
+      --success-bg: rgb(5 150 105 / 8%);
+      --success-bd: rgb(5 150 105 / 30%);
+      /* severity colours — darkened to pass 4.5:1 on their light bg */
+      --sev-critical-txt: #991b1b;
+      /* was #b91c1c */
+      --sev-high-txt: #92400e;
+      /* was #b45309 */
+      --g-brand: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --g-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-mono: 'Courier New', Courier, monospace;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 14px;
+      --r-xl: 18px;
+      --r-2xl: 22px;
+      --r-pill: 50px;
+      --sh-sm: 0 2px 8px rgb(3 101 140 / 10%);
+      --sh-md: 0 4px 20px rgb(3 101 140 / 13%);
+      --sh-lg: 0 8px 40px rgb(3 101 140 / 18%);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --cp: clamp(1rem, 5vw, 3rem);
+      /* tighter on very small screens */
+      --sp: clamp(2.5rem, 8vw, 6rem);
+      /* slightly smaller min on mobile */
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text);
+      background: var(--bg);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      contain: layout style;
+      min-height: 70px;
+    }
+
+    #site-footer {
+      height: 678px;
+      contain: layout style;
+      min-height: 678px;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
       }
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: var(--font-ui);
-        font-size: 1rem;
-        line-height: 1.7;
-        color: var(--text);
-        background: var(--bg);
-        -webkit-font-smoothing: antialiased;
-        overflow-x: hidden;
-      }
-      a {
-        color: inherit;
-        text-decoration: none;
-        transition: all 0.3s var(--ease);
-      }
-      ul {
-        list-style: none;
-      }
-      img {
-        display: block;
-        max-width: 100%;
-        height: auto;
-      }
-      .wrap {
-        max-width: 1080px;
-        margin-inline: auto;
-        padding-inline: var(--cp);
-      }
-      .wrap--narrow {
-        max-width: 720px;
-        margin-inline: auto;
-        padding-inline: var(--cp);
-      }
-      .sec {
-        padding-block: var(--sp);
+    }
+
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s var(--ease);
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin-inline: auto;
+      padding-inline: var(--cp);
+    }
+
+    .wrap--narrow {
+      max-width: 720px;
+      margin-inline: auto;
+      padding-inline: var(--cp);
+    }
+
+    .sec {
+      padding-block: var(--sp);
+    }
+
+    /* ── Breadcrumb ── */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      padding: 0.875rem var(--cp);
+      border-bottom: 1px solid var(--surface-2);
+      max-width: 1080px;
+      margin-inline: auto;
+      flex-wrap: wrap;
+      /* wraps on very small screens */
+    }
+
+    .breadcrumb a {
+      color: var(--brand-dark);
+    }
+
+    /* brand-dark passes 4.5:1 on white */
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .breadcrumb span {
+      color: var(--surface-2);
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--g-dark);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(2.5rem, 8vw, 5rem) var(--cp);
+      isolation: isolate;
+
+    }
+
+    .hero__grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgb(0 167 169 / 6%) 1px, transparent 1px),
+        linear-gradient(90deg, rgb(0 167 169 / 6%) 1px, transparent 1px);
+      background-size: 48px 48px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 20%, black, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero__inner {
+      position: relative;
+      max-width: 760px;
+      margin-inline: auto;
+      text-align: center;
+      contain: layout;
+
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7ee8ea;
+      /* lightened for dark bg → passes 4.5:1 */
+      padding: 0.35rem 0.875rem;
+      background: rgb(0 167 169 / 14%);
+      border: 1px solid rgb(0 167 169 / 28%);
+      border-radius: var(--r-pill);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero__badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #7ee8ea;
+      animation: blink 2s ease-in-out infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
       }
 
-      /* ── Breadcrumb ── */
-      .breadcrumb {
-        display: flex;
-        align-items: center;
-        gap: 0.375rem;
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        color: var(--text-muted);
-        padding: 0.875rem var(--cp);
-        border-bottom: 1px solid var(--surface-2);
-        max-width: 1080px;
-        margin-inline: auto;
-        flex-wrap: wrap; /* wraps on very small screens */
+      50% {
+        opacity: 0.35;
+        transform: scale(1.6);
       }
-      .breadcrumb a {
-        color: var(--brand-dark);
-      } /* brand-dark passes 4.5:1 on white */
-      .breadcrumb a:hover {
-        text-decoration: underline;
-      }
-      .breadcrumb span {
-        color: var(--surface-2);
-      }
+    }
 
-      /* ── Hero ── */
-      .hero {
-        background: var(--g-dark);
-        position: relative;
-        overflow: hidden;
-        padding: clamp(2.5rem, 8vw, 5rem) var(--cp);
-      }
-      .hero__grid {
-        position: absolute;
-        inset: 0;
-        background-image:
-          linear-gradient(rgb(0 167 169 / 6%) 1px, transparent 1px),
-          linear-gradient(90deg, rgb(0 167 169 / 6%) 1px, transparent 1px);
-        background-size: 48px 48px;
-        mask-image: radial-gradient(ellipse 80% 80% at 50% 20%, black, transparent 70%);
-        pointer-events: none;
-      }
-      .hero__inner {
-        position: relative;
-        max-width: 760px;
-        margin-inline: auto;
-        text-align: center;
-      }
-      .hero__badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #7ee8ea; /* lightened for dark bg → passes 4.5:1 */
-        padding: 0.35rem 0.875rem;
-        background: rgb(0 167 169 / 14%);
-        border: 1px solid rgb(0 167 169 / 28%);
-        border-radius: var(--r-pill);
-        margin-bottom: 1.25rem;
-      }
-      .hero__badge-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #7ee8ea;
-        animation: blink 2s ease-in-out infinite;
-        flex-shrink: 0;
-      }
-      @keyframes blink {
-        0%,
-        100% {
-          opacity: 1;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.35;
-          transform: scale(1.6);
-        }
-      }
-      .hero__h1 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.625rem, 4.5vw, 2.75rem);
-        line-height: 1.18;
-        letter-spacing: -0.025em;
-        color: #fff;
-        margin-bottom: 1.25rem;
-      }
-      .hero__h1 em {
-        font-style: italic;
-        color: #7ee8ea;
-      }
-      .hero__sub {
-        font-size: clamp(0.9375rem, 2vw, 1.125rem);
-        line-height: 1.8;
-        color: rgb(255 255 255 / 75%); /* was 62% — lifted to pass AA */
-        margin-bottom: 2.25rem;
-        max-width: 560px;
-        margin-inline: auto;
-      }
-      .hero__sub strong {
-        color: #fff;
-        font-weight: 500;
-      }
-      .hero__meta {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem 1.25rem;
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        color: rgb(255 255 255 / 62%);
-        margin-bottom: 2rem;
-      }
-      .hero__meta span {
-        display: flex;
-        align-items: center;
-        gap: 0.375rem;
-      }
-      .hero__meta svg {
-        color: #7ee8ea;
-      }
+    .hero__h1 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.625rem, 4.5vw, 2.75rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
 
-      /* ── Botones ── */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 0.5rem;
-        font-family: var(--font-ui);
-        font-size: 0.9375rem;
-        font-weight: 600;
-        padding: 0.875rem 1.75rem;
-        border-radius: var(--r-pill);
-        border: 1.5px solid transparent;
-        cursor: pointer;
-        transition: all 0.3s var(--ease);
-        white-space: nowrap;
-        /* prevent text from clipping on tiny screens */
-        min-width: 0;
-      }
-      .btn:focus-visible {
-        outline: 2px solid var(--brand);
-        outline-offset: 3px;
-      }
-      .btn-primary {
-        background: var(--g-brand);
-        color: #fff;
-        box-shadow:
-          var(--sh-md),
-          0 0 0 0 rgb(0 167 169 / 22%);
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow:
-          var(--sh-lg),
-          0 0 0 6px rgb(0 167 169 / 22%);
-      }
-      .btn-outline {
-        background: transparent;
-        color: var(--brand-dark);
-        border-color: var(--brand-bd);
-      }
-      .btn-outline:hover {
-        background: var(--brand-light);
-      }
-      .btn-ghost-dark {
-        background: transparent;
-        color: rgb(255 255 255 / 88%); /* was 72% */
-        border-color: rgb(255 255 255 / 35%);
-      }
-      .btn-ghost-dark:hover {
-        background: rgb(255 255 255 / 10%);
-        color: #fff;
-        border-color: rgb(255 255 255 / 55%);
-      }
-      .hero__ctas {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-      }
+    .hero__h1 em {
+      font-style: italic;
+      color: #7ee8ea;
+    }
 
-      /* ── Proof bar ── */
-      .proof-bar {
-        background: var(--surface);
-        border-top: 1px solid var(--surface-2);
-        border-bottom: 1px solid var(--surface-2);
-        padding: 1rem var(--cp);
-      }
-      .proof-bar__inner {
-        max-width: 900px;
-        margin-inline: auto;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.875rem 1.5rem;
-        align-items: center;
-      }
-      .proof-bar__item {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.5rem;
-        font-size: 0.82rem;
-        color: var(--text-light);
-        font-weight: 500;
-        max-width: 100%;
-      }
-      .proof-bar__item svg {
-        color: var(--brand-dark);
-        flex-shrink: 0;
-        margin-top: 0.15rem;
-      }
-      .proof-bar__divider {
-        width: 1px;
-        height: 20px;
-        background: var(--surface-2);
-      }
+    .hero__sub {
+      font-size: clamp(0.9375rem, 2vw, 1.125rem);
+      line-height: 1.8;
+      color: rgb(255 255 255 / 75%);
+      /* was 62% — lifted to pass AA */
+      margin-bottom: 2.25rem;
+      max-width: 560px;
+      margin-inline: auto;
+    }
 
-      /* ── Errors section ── */
-      .errors {
-        background: var(--bg);
-      }
-      .errors__header {
-        text-align: center;
-        margin-bottom: 2.5rem;
-      }
-      .errors__eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        font-weight: 500;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-        color: var(--brand-dark);
-        padding: 0.35rem 0.875rem;
-        background: var(--brand-light);
-        border: 1px solid var(--brand-bd);
-        border-radius: var(--r-pill);
-        margin-bottom: 1.125rem;
-      }
-      .errors__h2 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.5rem, 3.5vw, 2.375rem);
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        color: var(--text);
-        margin-bottom: 0.875rem;
-      }
-      .errors__h2 em {
-        font-style: italic;
-        color: var(--brand-dark);
-      }
-      .errors__sub {
-        font-size: 0.9375rem;
-        color: var(--text-light);
-        max-width: 560px;
-        margin-inline: auto;
-      }
-      .errors__grid {
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        border: 1px solid var(--surface-2);
-        border-radius: var(--r-2xl);
-        overflow: hidden;
-        box-shadow: var(--sh-sm);
-      }
-      .error-card {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0;
-        border-bottom: 1px solid var(--surface-2);
-        transition: background 0.25s var(--ease);
-      }
-      .error-card:last-child {
-        border-bottom: none;
-      }
-      .error-card:hover {
-        background: var(--surface);
-      }
-      .error-card__num-col {
-        padding: 1.75rem 1.25rem 1.75rem 1.75rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-        border-right: 1px solid var(--surface-2);
-        background: var(--surface);
-        min-width: 76px;
-        width: 76px;
-      }
-      .error-card__num {
-        font-family: var(--font-mono);
-        font-size: 1.875rem;
-        font-weight: 700;
-        color: var(--brand-dark);
-        line-height: 1;
-      }
-      .error-card__severity {
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 0.2rem 0.45rem;
-        border-radius: var(--r-sm);
-        font-weight: 700;
-        white-space: nowrap;
-      }
-      .severity--critical {
-        background: rgb(220 38 38 / 12%);
-        color: var(--sev-critical-txt);
-      }
-      .severity--high {
-        background: rgb(245 158 11 / 14%);
-        color: var(--sev-high-txt);
-      }
-      .error-card__body {
-        padding: 1.75rem;
-        min-width: 0;
-      } /* min-width:0 fixes flex overflow */
-      .error-card__title {
-        font-family: var(--font-display);
-        font-size: clamp(1.05rem, 2vw, 1.25rem);
-        font-weight: 400;
-        color: var(--text);
-        letter-spacing: -0.02em;
-        line-height: 1.3;
-        margin-bottom: 0.75rem;
-      }
-      .error-card__desc {
-        font-size: 0.9375rem;
-        line-height: 1.75;
-        color: var(--text-light);
-        margin-bottom: 1rem;
-      }
-      .error-card__desc strong {
-        color: var(--text);
-        font-weight: 500;
-      }
-      .error-card__stat {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: var(--font-mono);
-        font-size: 0.78rem;
-        color: var(--brand-dark);
-        font-weight: 600;
-        padding: 0.4rem 0.875rem;
-        background: var(--brand-light);
-        border: 1px solid var(--brand-bd);
-        border-radius: var(--r-pill);
-        margin-bottom: 1rem;
-        flex-wrap: wrap;
-      }
-      .error-card__fix {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.625rem;
-        padding: 1rem 1.125rem;
-        background: var(--success-bg);
-        border: 1px solid var(--success-bd);
-        border-radius: var(--r-md);
-        font-size: 0.875rem;
-        line-height: 1.65;
-        color: var(--text);
-      }
-      .error-card__fix::before {
-        content: '✓';
-        color: var(--success);
-        font-weight: 700;
-        flex-shrink: 0;
-      }
+    .hero__sub strong {
+      color: #fff;
+      font-weight: 500;
+    }
 
-      /* ── Checklist section ── */
-      .checklist {
-        background: var(--surface);
-      }
-      .checklist__inner {
-        max-width: 720px;
-        margin-inline: auto;
-      }
-      .checklist__header {
-        margin-bottom: 2rem;
-      }
-      .checklist__h2 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.375rem, 3vw, 2.25rem);
-        letter-spacing: -0.025em;
-        color: var(--text);
-        margin-bottom: 0.75rem;
-        line-height: 1.25;
-      }
-      .checklist__h2 em {
-        font-style: italic;
-        color: var(--brand-dark);
-      }
-      .checklist__sub {
-        font-size: 0.9375rem;
-        color: var(--text-light);
-      }
-      .checklist__groups {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-      }
-      .cl-group {
-        background: var(--bg);
-        border: 1px solid var(--surface-2);
-        border-radius: var(--r-xl);
-        overflow: hidden;
-      }
-      .cl-group__header {
-        padding: 0.875rem 1.25rem;
-        background: var(--surface);
-        border-bottom: 1px solid var(--surface-2);
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        flex-wrap: wrap;
-      }
-      .cl-group__icon {
-        font-size: 1.125rem;
-      }
-      .cl-group__title {
-        font-weight: 600;
-        font-size: 0.9375rem;
-        color: var(--text);
-      }
-      .cl-group__count {
-        margin-left: auto;
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        color: var(--text-muted);
-      }
-      .cl-items {
-        padding: 0.375rem 0;
-      }
-      .cl-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 0.75rem;
-        padding: 0.875rem 1.25rem;
-        border-bottom: 1px solid var(--surface-2);
-        cursor: pointer;
-        transition: background 0.2s var(--ease);
-      }
-      .cl-item:last-child {
-        border-bottom: none;
-      }
-      .cl-item:hover {
-        background: var(--surface);
-      }
-      .cl-checkbox {
-        width: 20px;
-        height: 20px;
-        border-radius: 5px;
-        flex-shrink: 0;
-        border: 2px solid var(--surface-2);
-        background: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: all 0.2s var(--ease);
-        margin-top: 0.1rem;
-        cursor: pointer;
-      }
-      .cl-item.checked .cl-checkbox {
-        background: var(--brand);
-        border-color: var(--brand);
-      }
-      .cl-item.checked .cl-checkbox::after {
-        content: '';
-        display: block;
-        width: 10px;
-        height: 6px;
-        border-left: 2px solid #fff;
-        border-bottom: 2px solid #fff;
-        transform: rotate(-45deg) translate(1px, -1px);
-      }
-      .cl-text {
-        flex: 1;
-        font-size: 0.875rem;
-        line-height: 1.55;
-        color: var(--text-light);
-        min-width: 0;
-      }
-      .cl-item.checked .cl-text {
-        text-decoration: line-through;
-        color: var(--text-muted);
-      }
-      .cl-text strong {
-        color: var(--text);
-        font-weight: 500;
-        display: block;
-        margin-bottom: 0.2rem;
-      }
-      .cl-priority {
-        font-family: var(--font-mono);
-        font-size: 0.6rem;
-        padding: 0.2rem 0.45rem;
-        border-radius: var(--r-sm);
-        white-space: nowrap;
-        align-self: flex-start;
-        margin-top: 0.15rem;
-        font-weight: 700;
-      }
-      .cl-priority--critical {
-        background: rgb(220 38 38 / 12%);
-        color: var(--sev-critical-txt);
-      }
-      .cl-priority--high {
-        background: rgb(245 158 11 / 14%);
-        color: var(--sev-high-txt);
-      }
-      .cl-priority--medium {
-        background: var(--brand-light);
-        color: var(--brand-dark);
-      }
-      .checklist__progress {
-        margin-top: 1.5rem;
-        padding: 1.25rem;
-        background: var(--bg);
-        border: 1px solid var(--surface-2);
-        border-radius: var(--r-xl);
-      }
-      .cl-progress-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 0.75rem;
-        font-size: 0.875rem;
-      }
-      .cl-progress-label {
-        color: var(--text-light);
-      }
-      .cl-progress-count {
-        font-family: var(--font-mono);
-        font-weight: 600;
-        color: var(--brand-dark);
-      }
-      .cl-progress-bar {
-        height: 8px;
-        background: var(--surface-2);
-        border-radius: 4px;
-        overflow: hidden;
-      }
-      .cl-progress-fill {
-        height: 100%;
-        background: var(--g-brand);
-        border-radius: 4px;
-        width: 0%;
-        transition: width 0.4s var(--ease);
-      }
-      .cl-progress-msg {
-        margin-top: 0.75rem;
-        font-size: 0.82rem;
-        color: var(--text-muted);
-        min-height: 1.2rem;
-      }
+    .hero__meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: rgb(255 255 255 / 62%);
+      margin-bottom: 2rem;
+    }
 
-      /* ── CTA medio ── */
-      .mid-cta {
-        background: var(--ink);
-        position: relative;
-        overflow: hidden;
-        text-align: center;
-      }
-      .mid-cta__glow {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 600px;
-        height: 400px;
-        border-radius: 50%;
-        filter: blur(100px);
-        background: radial-gradient(ellipse, rgb(0 167 169 / 14%) 0%, transparent 70%);
-        pointer-events: none;
-      }
-      .mid-cta__inner {
-        position: relative;
-        max-width: 580px;
-        margin-inline: auto;
-      }
-      .mid-cta__eyebrow {
-        font-family: var(--font-mono);
-        font-size: 0.72rem;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: #7ee8ea;
-        display: block;
-        margin-bottom: 1.25rem;
-      }
-      .mid-cta__h2 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.375rem, 3.5vw, 2.25rem);
-        line-height: 1.2;
-        letter-spacing: -0.025em;
-        color: #fff;
-        margin-bottom: 1rem;
-      }
-      .mid-cta__h2 em {
-        font-style: italic;
-        color: #7ee8ea;
-      }
-      .mid-cta__sub {
-        font-size: 0.9375rem;
-        line-height: 1.75;
-        color: rgb(255 255 255 / 75%); /* was 56% */
-        margin-bottom: 2rem;
-      }
-      .mid-cta__btns {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-      }
+    .hero__meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
 
-      /* ── Bonus: por qué importa ── */
-      .why {
-        background: var(--bg);
-      }
-      .why__inner {
-        max-width: 720px;
-        margin-inline: auto;
-      }
-      .why__h2 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.375rem, 3vw, 2.25rem);
-        letter-spacing: -0.025em;
-        color: var(--text);
-        margin-bottom: 1.5rem;
-        line-height: 1.25;
-      }
-      .why__h2 em {
-        font-style: italic;
-        color: var(--brand-dark);
-      }
-      .why__body p {
-        font-size: 0.9375rem;
-        line-height: 1.85;
-        color: var(--text-light);
-        margin-bottom: 1rem;
-      }
-      .why__body p strong {
-        color: var(--text);
-        font-weight: 500;
-      }
-      .why__body a {
-        color: var(--brand-dark);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
-      .why__body a:hover {
-        color: var(--brand);
-      }
-      .why__faq {
-        margin-top: 2.5rem;
-        display: flex;
-        flex-direction: column;
-        gap: 0.625rem;
-      }
-      .faq-item {
-        background: var(--surface);
-        border: 1px solid var(--surface-2);
-        border-radius: var(--r-lg);
-        overflow: hidden;
-      }
-      .faq-btn {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-        width: 100%;
-        padding: 1rem 1.25rem;
-        background: transparent;
-        border: none;
-        cursor: pointer;
-        text-align: left;
-        font-family: var(--font-ui);
-        font-size: 0.9375rem;
-        font-weight: 500;
-        color: var(--text);
-        transition: background 0.2s var(--ease);
-      }
-      .faq-btn:hover {
-        background: var(--surface-2);
-      }
-      .faq-chev {
-        flex-shrink: 0;
-        color: var(--text-muted);
-        transition: transform 0.3s var(--ease);
-      }
-      .faq-item.open .faq-chev {
-        transform: rotate(180deg);
-        color: var(--brand-dark);
-      }
-      .faq-body {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s var(--ease);
-      }
-      .faq-body p {
-        padding: 0 1.25rem 1.25rem;
-        font-size: 0.9375rem;
-        line-height: 1.8;
-        color: var(--text-light);
-      }
+    .hero__meta svg {
+      color: #7ee8ea;
+    }
 
-      /* ── Final CTA ── */
-      .final-cta {
-        background: var(--surface);
-        border-top: 1px solid var(--surface-2);
-        padding: clamp(2rem, 6vw, 3rem) var(--cp);
-        text-align: center;
-      }
-      .final-cta__inner {
-        max-width: 580px;
-        margin-inline: auto;
-      }
-      .final-cta__h2 {
-        font-family: var(--font-display);
-        font-weight: 400;
-        font-size: clamp(1.375rem, 2.8vw, 2rem);
-        letter-spacing: -0.025em;
-        color: var(--text);
-        margin-bottom: 1rem;
-        line-height: 1.25;
-      }
-      .final-cta__h2 em {
-        font-style: italic;
-        color: var(--brand-dark);
-      }
-      .final-cta__sub {
-        font-size: 0.9375rem;
-        color: var(--text-light);
-        margin-bottom: 2rem;
-      }
-      .final-cta__btns {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 0.75rem;
-      }
-      .final-cta__note {
-        margin-top: 1rem;
-        font-size: 0.8125rem;
-        color: var(--text-muted);
-      }
-      .final-cta__note a {
-        color: var(--brand-dark);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+    /* ── Botones ── */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-ui);
+      font-size: 0.9375rem;
+      font-weight: 600;
+      padding: 0.875rem 1.75rem;
+      border-radius: var(--r-pill);
+      border: 1.5px solid transparent;
+      cursor: pointer;
+      transition: all 0.3s var(--ease);
+      white-space: nowrap;
+      /* prevent text from clipping on tiny screens */
+      min-width: 0;
+    }
 
-      /* ── Author box ── */
-      .author-box {
-        display: flex;
-        align-items: flex-start;
-        gap: 1.125rem;
-        padding: 1.375rem;
-        background: var(--surface);
-        border: 1px solid var(--surface-2);
-        border-radius: var(--r-xl);
-        margin-top: 2.5rem;
-      }
-      .author-box img {
-        width: 52px;
-        height: 52px;
-        border-radius: 50%;
-        flex-shrink: 0;
-      }
-      .author-box__text {
-        font-size: 0.875rem;
-        line-height: 1.65;
-        color: var(--text-light);
-        min-width: 0;
-      }
-      .author-box__text strong {
-        color: var(--text);
-        font-weight: 600;
-        display: block;
-        margin-bottom: 0.25rem;
-      }
-      .author-box__text a {
-        color: var(--brand-dark);
-        text-decoration: underline;
-        text-underline-offset: 3px;
-      }
+    .btn:focus-visible {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px;
+    }
 
-      /* ── Print btn ── */
-      .print-btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-size: 0.875rem;
-        color: var(--text-light);
-        padding: 0.5rem 1rem;
-        border-radius: var(--r-md);
-        border: 1px solid var(--surface-2);
-        background: var(--bg);
-        cursor: pointer;
-        transition: all 0.25s var(--ease);
-      }
-      .print-btn:hover {
-        border-color: var(--brand-bd);
-        color: var(--brand-dark);
-      }
+    .btn-primary {
+      background: var(--g-brand);
+      color: #fff;
+      box-shadow:
+        var(--sh-md),
+        0 0 0 0 rgb(0 167 169 / 22%);
+    }
 
-      /* ══════════════════════════════════════════
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow:
+        var(--sh-lg),
+        0 0 0 6px rgb(0 167 169 / 22%);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--brand-dark);
+      border-color: var(--brand-bd);
+    }
+
+    .btn-outline:hover {
+      background: var(--brand-light);
+    }
+
+    .btn-ghost-dark {
+      background: transparent;
+      color: rgb(255 255 255 / 88%);
+      /* was 72% */
+      border-color: rgb(255 255 255 / 35%);
+    }
+
+    .btn-ghost-dark:hover {
+      background: rgb(255 255 255 / 10%);
+      color: #fff;
+      border-color: rgb(255 255 255 / 55%);
+    }
+
+    .hero__ctas {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* ── Proof bar ── */
+    .proof-bar {
+      background: var(--surface);
+      border-top: 1px solid var(--surface-2);
+      border-bottom: 1px solid var(--surface-2);
+      padding: 1rem var(--cp);
+    }
+
+    .proof-bar__inner {
+      max-width: 900px;
+      margin-inline: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.875rem 1.5rem;
+      align-items: center;
+    }
+
+    .proof-bar__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--text-light);
+      font-weight: 500;
+      max-width: 100%;
+    }
+
+    .proof-bar__item svg {
+      color: var(--brand-dark);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .proof-bar__divider {
+      width: 1px;
+      height: 20px;
+      background: var(--surface-2);
+    }
+
+    /* ── Errors section ── */
+    .errors {
+      background: var(--bg);
+    }
+
+    .errors__header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .errors__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--brand-dark);
+      padding: 0.35rem 0.875rem;
+      background: var(--brand-light);
+      border: 1px solid var(--brand-bd);
+      border-radius: var(--r-pill);
+      margin-bottom: 1.125rem;
+    }
+
+    .errors__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.5rem, 3.5vw, 2.375rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 0.875rem;
+    }
+
+    .errors__h2 em {
+      font-style: italic;
+      color: var(--brand-dark);
+    }
+
+    .errors__sub {
+      font-size: 0.9375rem;
+      color: var(--text-light);
+      max-width: 560px;
+      margin-inline: auto;
+    }
+
+    .errors__grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-2xl);
+      overflow: hidden;
+      box-shadow: var(--sh-sm);
+    }
+
+    .error-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--surface-2);
+      transition: background 0.25s var(--ease);
+    }
+
+    .error-card:last-child {
+      border-bottom: none;
+    }
+
+    .error-card:hover {
+      background: var(--surface);
+    }
+
+    .error-card__num-col {
+      padding: 1.75rem 1.25rem 1.75rem 1.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      border-right: 1px solid var(--surface-2);
+      background: var(--surface);
+      min-width: 76px;
+      width: 76px;
+    }
+
+    .error-card__num {
+      font-family: var(--font-mono);
+      font-size: 1.875rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1;
+    }
+
+    .error-card__severity {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.2rem 0.45rem;
+      border-radius: var(--r-sm);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .severity--critical {
+      background: rgb(220 38 38 / 12%);
+      color: var(--sev-critical-txt);
+    }
+
+    .severity--high {
+      background: rgb(245 158 11 / 14%);
+      color: var(--sev-high-txt);
+    }
+
+    .error-card__body {
+      padding: 1.75rem;
+      min-width: 0;
+    }
+
+    /* min-width:0 fixes flex overflow */
+    .error-card__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      font-weight: 400;
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .error-card__desc {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .error-card__desc strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .error-card__stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--brand-dark);
+      font-weight: 600;
+      padding: 0.4rem 0.875rem;
+      background: var(--brand-light);
+      border: 1px solid var(--brand-bd);
+      border-radius: var(--r-pill);
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .error-card__fix {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      padding: 1rem 1.125rem;
+      background: var(--success-bg);
+      border: 1px solid var(--success-bd);
+      border-radius: var(--r-md);
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+
+    .error-card__fix::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ── Checklist section ── */
+    .checklist {
+      background: var(--surface);
+    }
+
+    .checklist__inner {
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .checklist__header {
+      margin-bottom: 2rem;
+    }
+
+    .checklist__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.375rem, 3vw, 2.25rem);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+    }
+
+    .checklist__h2 em {
+      font-style: italic;
+      color: var(--brand-dark);
+    }
+
+    .checklist__sub {
+      font-size: 0.9375rem;
+      color: var(--text-light);
+    }
+
+    .checklist__groups {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cl-group {
+      background: var(--bg);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+    }
+
+    .cl-group__header {
+      padding: 0.875rem 1.25rem;
+      background: var(--surface);
+      border-bottom: 1px solid var(--surface-2);
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      flex-wrap: wrap;
+    }
+
+    .cl-group__icon {
+      font-size: 1.125rem;
+    }
+
+    .cl-group__title {
+      font-weight: 600;
+      font-size: 0.9375rem;
+      color: var(--text);
+    }
+
+    .cl-group__count {
+      margin-left: auto;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+
+    .cl-items {
+      padding: 0.375rem 0;
+    }
+
+    .cl-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid var(--surface-2);
+      cursor: pointer;
+      transition: background 0.2s var(--ease);
+    }
+
+    .cl-item:last-child {
+      border-bottom: none;
+    }
+
+    .cl-item:hover {
+      background: var(--surface);
+    }
+
+    .cl-checkbox {
+      width: 20px;
+      height: 20px;
+      border-radius: 5px;
+      flex-shrink: 0;
+      border: 2px solid var(--surface-2);
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s var(--ease);
+      margin-top: 0.1rem;
+      cursor: pointer;
+    }
+
+    .cl-item.checked .cl-checkbox {
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .cl-item.checked .cl-checkbox::after {
+      content: '';
+      display: block;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(-45deg) translate(1px, -1px);
+    }
+
+    .cl-text {
+      flex: 1;
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-light);
+      min-width: 0;
+    }
+
+    .cl-item.checked .cl-text {
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .cl-text strong {
+      color: var(--text);
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+
+    .cl-priority {
+      font-family: var(--font-mono);
+      font-size: 0.6rem;
+      padding: 0.2rem 0.45rem;
+      border-radius: var(--r-sm);
+      white-space: nowrap;
+      align-self: flex-start;
+      margin-top: 0.15rem;
+      font-weight: 700;
+    }
+
+    .cl-priority--critical {
+      background: rgb(220 38 38 / 12%);
+      color: var(--sev-critical-txt);
+    }
+
+    .cl-priority--high {
+      background: rgb(245 158 11 / 14%);
+      color: var(--sev-high-txt);
+    }
+
+    .cl-priority--medium {
+      background: var(--brand-light);
+      color: var(--brand-dark);
+    }
+
+    .checklist__progress {
+      margin-top: 1.5rem;
+      padding: 1.25rem;
+      background: var(--bg);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-xl);
+    }
+
+    .cl-progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+    }
+
+    .cl-progress-label {
+      color: var(--text-light);
+    }
+
+    .cl-progress-count {
+      font-family: var(--font-mono);
+      font-weight: 600;
+      color: var(--brand-dark);
+    }
+
+    .cl-progress-bar {
+      height: 8px;
+      background: var(--surface-2);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .cl-progress-fill {
+      height: 100%;
+      background: var(--g-brand);
+      border-radius: 4px;
+      width: 0%;
+      transition: width 0.4s var(--ease);
+    }
+
+    .cl-progress-msg {
+      margin-top: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      min-height: 1.2rem;
+    }
+
+    /* ── CTA medio ── */
+    .mid-cta {
+      background: var(--ink);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .mid-cta__glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(100px);
+      background: radial-gradient(ellipse, rgb(0 167 169 / 14%) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .mid-cta__inner {
+      position: relative;
+      max-width: 580px;
+      margin-inline: auto;
+    }
+
+    .mid-cta__eyebrow {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #7ee8ea;
+      display: block;
+      margin-bottom: 1.25rem;
+    }
+
+    .mid-cta__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.375rem, 3.5vw, 2.25rem);
+      line-height: 1.2;
+      letter-spacing: -0.025em;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .mid-cta__h2 em {
+      font-style: italic;
+      color: #7ee8ea;
+    }
+
+    .mid-cta__sub {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: rgb(255 255 255 / 75%);
+      /* was 56% */
+      margin-bottom: 2rem;
+    }
+
+    .mid-cta__btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    /* ── Bonus: por qué importa ── */
+    .why {
+      background: var(--bg);
+    }
+
+    .why__inner {
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .why__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.375rem, 3vw, 2.25rem);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+      line-height: 1.25;
+    }
+
+    .why__h2 em {
+      font-style: italic;
+      color: var(--brand-dark);
+    }
+
+    .why__body p {
+      font-size: 0.9375rem;
+      line-height: 1.85;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .why__body p strong {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .why__body a {
+      color: var(--brand-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .why__body a:hover {
+      color: var(--brand);
+    }
+
+    .why__faq {
+      margin-top: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+    }
+
+    .faq-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      width: 100%;
+      padding: 1rem 1.25rem;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+      font-family: var(--font-ui);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text);
+      transition: background 0.2s var(--ease);
+    }
+
+    .faq-btn:hover {
+      background: var(--surface-2);
+    }
+
+    .faq-chev {
+      flex-shrink: 0;
+      color: var(--text-muted);
+      transition: transform 0.3s var(--ease);
+    }
+
+    .faq-item.open .faq-chev {
+      transform: rotate(180deg);
+      color: var(--brand-dark);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease);
+    }
+
+    .faq-body p {
+      padding: 0 1.25rem 1.25rem;
+      font-size: 0.9375rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      background: var(--surface);
+      border-top: 1px solid var(--surface-2);
+      padding: clamp(2rem, 6vw, 3rem) var(--cp);
+      text-align: center;
+    }
+
+    .final-cta__inner {
+      max-width: 580px;
+      margin-inline: auto;
+    }
+
+    .final-cta__h2 {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(1.375rem, 2.8vw, 2rem);
+      letter-spacing: -0.025em;
+      color: var(--text);
+      margin-bottom: 1rem;
+      line-height: 1.25;
+    }
+
+    .final-cta__h2 em {
+      font-style: italic;
+      color: var(--brand-dark);
+    }
+
+    .final-cta__sub {
+      font-size: 0.9375rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    .final-cta__btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .final-cta__note {
+      margin-top: 1rem;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .final-cta__note a {
+      color: var(--brand-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Author box ── */
+    .author-box {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.125rem;
+      padding: 1.375rem;
+      background: var(--surface);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-xl);
+      margin-top: 2.5rem;
+    }
+
+    .author-box img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .author-box__text {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--text-light);
+      min-width: 0;
+    }
+
+    .author-box__text strong {
+      color: var(--text);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .author-box__text a {
+      color: var(--brand-dark);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* ── Print btn ── */
+    .print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.875rem;
+      color: var(--text-light);
+      padding: 0.5rem 1rem;
+      border-radius: var(--r-md);
+      border: 1px solid var(--surface-2);
+      background: var(--bg);
+      cursor: pointer;
+      transition: all 0.25s var(--ease);
+    }
+
+    .print-btn:hover {
+      border-color: var(--brand-bd);
+      color: var(--brand-dark);
+    }
+
+    /* ══════════════════════════════════════════
          RESPONSIVE — mobile-first improvements
          ══════════════════════════════════════════ */
 
-      /* Fluid hero: ensure the <br> tags don't force awkward wraps on small screens */
-      @media (max-width: 480px) {
-        .hero__h1 br {
-          display: none;
-        }
-        .errors__h2 br,
-        .checklist__h2 br,
-        .mid-cta__h2 br,
-        .why__h2 br,
-        .final-cta__h2 br {
-          display: none;
-        }
+    /* Fluid hero: ensure the <br> tags don't force awkward wraps on small screens */
+    @media (max-width: 480px) {
+      .hero__h1 br {
+        display: none;
       }
 
-      /* Error cards: stack on mobile */
-      @media (max-width: 640px) {
-        .error-card {
-          grid-template-columns: 1fr;
-        }
-        .error-card__num-col {
-          flex-direction: row;
-          padding: 0.875rem 1.25rem;
-          border-right: none;
-          border-bottom: 1px solid var(--surface-2);
-          width: auto;
-          min-width: unset;
-        }
-        .error-card__body {
-          padding: 1.25rem;
-        }
+      .errors__h2 br,
+      .checklist__h2 br,
+      .mid-cta__h2 br,
+      .why__h2 br,
+      .final-cta__h2 br {
+        display: none;
+      }
+    }
 
-        /* Buttons: stack to full-width on small screens */
-        .mid-cta__btns,
-        .hero__ctas,
-        .final-cta__btns {
-          flex-direction: column;
-          align-items: stretch;
-        }
-        .mid-cta__btns .btn,
-        .hero__ctas .btn,
-        .final-cta__btns .btn {
-          width: 100%;
-          justify-content: center;
-        }
-
-        /* Hide dividers in proof bar when stacked */
-        .proof-bar__divider {
-          display: none;
-        }
-
-        /* Proof bar items: full width stack */
-        .proof-bar__inner {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 0.625rem;
-        }
-        .proof-bar__item {
-          font-size: 0.8rem;
-        }
-
-        /* Checklist items: tighter on mobile */
-        .cl-item {
-          padding: 0.75rem 1rem;
-        }
-        .cl-group__header {
-          padding: 0.75rem 1rem;
-        }
-
-        /* FAQ button padding */
-        .faq-btn {
-          padding: 0.875rem 1rem;
-        }
-        .faq-body p {
-          padding: 0 1rem 1rem;
-        }
-
-        /* Author box: stack on very small screens */
-        .author-box {
-          flex-direction: column;
-        }
-        .author-box img {
-          align-self: flex-start;
-        }
+    /* Error cards: stack on mobile */
+    @media (max-width: 640px) {
+      .error-card {
+        grid-template-columns: 1fr;
       }
 
-      /* Ultra-small (< 380px) — extra tightening */
-      @media (max-width: 380px) {
-        .error-card__num {
-          font-size: 1.5rem;
-        }
-        .btn {
-          font-size: 0.875rem;
-          padding: 0.8125rem 1.375rem;
-        }
-        .cl-priority {
-          display: none;
-        } /* hide priority badge to prevent overflow */
+      .error-card__num-col {
+        flex-direction: row;
+        padding: 0.875rem 1.25rem;
+        border-right: none;
+        border-bottom: 1px solid var(--surface-2);
+        width: auto;
+        min-width: unset;
       }
 
-      /* Tablet adjustments */
-      @media (min-width: 641px) and (max-width: 900px) {
-        .error-card__num-col {
-          min-width: 70px;
-          width: 70px;
-          padding: 1.5rem 1rem 1.5rem 1.25rem;
-        }
-        .error-card__body {
-          padding: 1.5rem;
-        }
+      .error-card__body {
+        padding: 1.25rem;
       }
 
-      /* ── Print ── */
-      @media print {
-        .breadcrumb,
-        .hero__ctas,
-        .mid-cta,
-        .final-cta,
-        #site-nav,
-        #site-footer,
-        .print-btn,
-        .proof-bar {
-          display: none !important;
-        }
-        .errors,
-        .checklist,
-        .why {
-          padding-block: 2rem;
-        }
-        .error-card:hover,
-        .cl-item:hover {
-          background: transparent;
-        }
-        body {
-          font-size: 11pt;
-        }
-        .hero {
-          background: none !important;
-          color: #000 !important;
-          padding: 1.5rem 0;
-        }
-        .hero__h1,
-        .hero__sub {
-          color: #000 !important;
-        }
-        .hero__badge {
-          display: none;
-        }
+      /* Buttons: stack to full-width on small screens */
+      .mid-cta__btns,
+      .hero__ctas,
+      .final-cta__btns {
+        flex-direction: column;
+        align-items: stretch;
       }
 
-      /* ── Reduced motion ── */
-      @media (prefers-reduced-motion: reduce) {
-        *,
-        *::before,
-        *::after {
-          animation-duration: 0.01ms !important;
-          transition-duration: 0.01ms !important;
-        }
-        html {
-          scroll-behavior: auto;
-        }
+      .mid-cta__btns .btn,
+      .hero__ctas .btn,
+      .final-cta__btns .btn {
+        width: 100%;
+        justify-content: center;
       }
-    </style>
-    <link rel="stylesheet" href="/components.css" />
-    <script src="/components.js" defer></script>
-  </head>
-  <body>
-    <div id="site-nav"></div>
-    <!-- Breadcrumb -->
-    <nav
-      aria-label="Ruta de navegación"
-      class="breadcrumb"
-      itemscope
-      itemtype="https://schema.org/BreadcrumbList"
-    >
-      <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/"><span itemprop="name">Inicio</span></a>
-        <meta itemprop="position" content="1" />
-      </span>
-      <span aria-hidden="true">›</span>
-      <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="/recursos/"><span itemprop="name">Recursos</span></a>
-        <meta itemprop="position" content="2" />
-      </span>
-      <span aria-hidden="true">›</span>
-      <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
-        <span itemprop="name" aria-current="page">Los 5 errores web del médico</span>
-        <meta itemprop="position" content="3" />
-      </span>
-    </nav>
-    <main id="main" role="main">
-      <!-- ═══ HERO ═══ -->
-      <header class="hero" aria-labelledby="guide-h1">
-        <div class="hero__grid" aria-hidden="true"></div>
-        <div class="hero__inner">
-          <div class="hero__badge">
-            <span class="hero__badge-dot" aria-hidden="true"></span>
-            Recurso gratuito · PDF descargable · Actualizado 2025
-          </div>
-          <h1 id="guide-h1" class="hero__h1">
-            Los 5 errores que hacen que los pacientes
-            <br />
-            <em>no te encuentren en Google</em>
-          </h1>
-          <p class="hero__sub">
-            El 80% de las webs médicas en LATAM y España tiene al menos 3 de estos errores.
-            <strong>
-              Todos son verificables, todos tienen solución y ninguno requiere conocimiento técnico
-              para detectarlos.
-            </strong>
-          </p>
-          <div class="hero__meta" aria-label="Información del recurso">
-            <span>
-              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path
-                  d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6L8 1z"
-                  stroke="currentColor"
-                  stroke-width="1.3"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              Por Yulia Monti
-            </span>
-            <span>
-              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" />
-                <path
-                  d="M8 4.5v4l2.5 1.5"
-                  stroke="currentColor"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-              10 min de lectura
-            </span>
-            <span>
-              <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path
-                  d="M14 2H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V6l-2-4z"
-                  stroke="currentColor"
-                  stroke-width="1.3"
-                />
-              </svg>
-              Checklist de 15 puntos incluido
-            </span>
-          </div>
-          <div class="hero__ctas">
-            <button
-              class="btn btn-primary print-pdf-btn"
-              onclick="window.print()"
-              aria-label="Guardar o imprimir esta guía como PDF"
-            >
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path
-                  d="M12 11v2H4v-2M8 2v8M5 7l3 3 3-3"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
-              </svg>
-              Guardar como PDF
-            </button>
-            <a href="#errores" class="btn btn-ghost-dark">Leer los 5 errores ↓</a>
-          </div>
+
+      /* Hide dividers in proof bar when stacked */
+      .proof-bar__divider {
+        display: none;
+      }
+
+      /* Proof bar items: full width stack */
+      .proof-bar__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.625rem;
+      }
+
+      .proof-bar__item {
+        font-size: 0.8rem;
+      }
+
+      /* Checklist items: tighter on mobile */
+      .cl-item {
+        padding: 0.75rem 1rem;
+      }
+
+      .cl-group__header {
+        padding: 0.75rem 1rem;
+      }
+
+      /* FAQ button padding */
+      .faq-btn {
+        padding: 0.875rem 1rem;
+      }
+
+      .faq-body p {
+        padding: 0 1rem 1rem;
+      }
+
+      /* Author box: stack on very small screens */
+      .author-box {
+        flex-direction: column;
+      }
+
+      .author-box img {
+        align-self: flex-start;
+      }
+    }
+
+    /* Ultra-small (< 380px) — extra tightening */
+    @media (max-width: 380px) {
+      .error-card__num {
+        font-size: 1.5rem;
+      }
+
+      .btn {
+        font-size: 0.875rem;
+        padding: 0.8125rem 1.375rem;
+      }
+
+      .cl-priority {
+        display: none;
+      }
+
+      /* hide priority badge to prevent overflow */
+    }
+
+    /* Tablet adjustments */
+    @media (min-width: 641px) and (max-width: 900px) {
+      .error-card__num-col {
+        min-width: 70px;
+        width: 70px;
+        padding: 1.5rem 1rem 1.5rem 1.25rem;
+      }
+
+      .error-card__body {
+        padding: 1.5rem;
+      }
+    }
+
+    /* ── Print ── */
+    @media print {
+
+      .breadcrumb,
+      .hero__ctas,
+      .mid-cta,
+      .final-cta,
+      #site-nav,
+      #site-footer,
+      .print-btn,
+      .proof-bar {
+        display: none !important;
+      }
+
+      .errors,
+      .checklist,
+      .why {
+        padding-block: 2rem;
+      }
+
+      .error-card:hover,
+      .cl-item:hover {
+        background: transparent;
+      }
+
+      body {
+        font-size: 11pt;
+      }
+
+      .hero {
+        background: none !important;
+        color: #000 !important;
+        padding: 1.5rem 0;
+      }
+
+      .hero__h1,
+      .hero__sub {
+        color: #000 !important;
+      }
+
+      .hero__badge {
+        display: none;
+      }
+    }
+
+    /* ── Reduced motion ── */
+    @media (prefers-reduced-motion: reduce) {
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+  <link rel="preload" href="/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript>
+    <link rel="stylesheet" href="/components.css">
+  </noscript>
+  <script src="/components.js" defer fetchpriority="low"></script>
+
+</head>
+
+<body>
+  <div id="site-nav"></div>
+  <!-- Breadcrumb -->
+  <nav aria-label="Ruta de navegación" class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="/"><span itemprop="name">Inicio</span></a>
+      <meta itemprop="position" content="1" />
+    </span>
+    <span aria-hidden="true">›</span>
+    <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+      <a itemprop="item" href="/recursos/"><span itemprop="name">Recursos</span></a>
+      <meta itemprop="position" content="2" />
+    </span>
+    <span aria-hidden="true">›</span>
+    <span itemscope itemprop="itemListElement" itemtype="https://schema.org/ListItem">
+      <span itemprop="name" aria-current="page">Los 5 errores web del médico</span>
+      <meta itemprop="position" content="3" />
+    </span>
+  </nav>
+  <main id="main" role="main">
+    <!-- ═══ HERO ═══ -->
+    <header class="hero" aria-labelledby="guide-h1">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__badge">
+          <span class="hero__badge-dot" aria-hidden="true"></span>
+          Recurso gratuito · PDF descargable · Actualizado 2025
         </div>
-      </header>
-      <!-- ═══ PROOF BAR ═══ -->
-      <div class="proof-bar" role="note" aria-label="Datos de contexto">
-        <div class="proof-bar__inner">
-          <span class="proof-bar__item">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M3 8l3.5 3.5L13 4"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+        <h1 id="guide-h1" class="hero__h1">
+          Los 5 errores que hacen que los pacientes
+          <br />
+          <em>no te encuentren en Google</em>
+        </h1>
+        <p class="hero__sub">
+          El 80% de las webs médicas en LATAM y España tiene al menos 3 de estos errores.
+          <strong>
+            Todos son verificables, todos tienen solución y ninguno requiere conocimiento técnico
+            para detectarlos.
+          </strong>
+        </p>
+        <div class="hero__meta" aria-label="Información del recurso">
+          <span>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 1l1.8 3.6 4 .6-2.9 2.8.7 4L8 10l-3.6 1.9.7-4L2.2 5.2l4-.6L8 1z" stroke="currentColor"
+                stroke-width="1.3" stroke-linejoin="round" />
             </svg>
-            80% de webs médicas tiene al menos 3 de estos errores
+            Por Yulia Monti
           </span>
-          <span class="proof-bar__divider" aria-hidden="true"></span>
-          <span class="proof-bar__item">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M3 8l3.5 3.5L13 4"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+          <span>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5" />
+              <path d="M8 4.5v4l2.5 1.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
             </svg>
-            Verificable en 5 minutos con herramientas gratuitas
+            10 min de lectura
           </span>
-          <span class="proof-bar__divider" aria-hidden="true"></span>
-          <span class="proof-bar__item">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path
-                d="M3 8l3.5 3.5L13 4"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-              />
+          <span>
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M14 2H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V6l-2-4z" stroke="currentColor"
+                stroke-width="1.3" />
             </svg>
-            Escrito por Yulia Monti — 15 años en quirófano, especialista en webs médicas
+            Checklist de 15 puntos incluido
           </span>
+        </div>
+        <div class="hero__ctas">
+          <button class="btn btn-primary print-pdf-btn" onclick="window.print()"
+            aria-label="Guardar o imprimir esta guía como PDF">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M12 11v2H4v-2M8 2v8M5 7l3 3 3-3" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
+            </svg>
+            Guardar como PDF
+          </button>
+          <a href="#errores" class="btn btn-ghost-dark">Leer los 5 errores ↓</a>
         </div>
       </div>
-      <!-- ═══ LOS 5 ERRORES ═══ -->
-      <section class="sec errors" id="errores" aria-labelledby="errors-h2">
-        <div class="wrap">
-          <header class="errors__header">
-            <span class="errors__eyebrow">Los 5 errores</span>
-            <h2 class="errors__h2" id="errors-h2">
-              Por qué el 80% de las webs médicas
+    </header>
+    <!-- ═══ PROOF BAR ═══ -->
+    <div class="proof-bar" role="note" aria-label="Datos de contexto">
+      <div class="proof-bar__inner">
+        <span class="proof-bar__item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          80% de webs médicas tiene al menos 3 de estos errores
+        </span>
+        <span class="proof-bar__divider" aria-hidden="true"></span>
+        <span class="proof-bar__item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          Verificable en 5 minutos con herramientas gratuitas
+        </span>
+        <span class="proof-bar__divider" aria-hidden="true"></span>
+        <span class="proof-bar__item">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+          </svg>
+          Escrito por Yulia Monti — 15 años en quirófano, especialista en webs médicas
+        </span>
+      </div>
+    </div>
+    <!-- ═══ LOS 5 ERRORES ═══ -->
+    <section class="sec errors" id="errores" aria-labelledby="errors-h2">
+      <div class="wrap">
+        <header class="errors__header">
+          <span class="errors__eyebrow">Los 5 errores</span>
+          <h2 class="errors__h2" id="errors-h2">
+            Por qué el 80% de las webs médicas
+            <br />
+            <em>no consiguen pacientes de Google</em>
+          </h2>
+          <p class="errors__sub">
+            Cada error tiene una causa técnica concreta, un impacto medible y una solución clara.
+            No hay teoría — hay pasos verificables.
+          </p>
+        </header>
+        <div class="errors__grid" role="list">
+          <!-- Error 1 -->
+          <article class="error-card" role="listitem" aria-labelledby="err1-title">
+            <div class="error-card__num-col" aria-hidden="true">
+              <span class="error-card__num">01</span>
+              <span class="error-card__severity severity--critical">Crítico</span>
+            </div>
+            <div class="error-card__body">
+              <h2 class="error-card__title" id="err1-title">
+                No aparecer en Google Maps cuando buscan tu especialidad y ciudad
+              </h2>
+              <div class="error-card__stat" aria-label="Estadística de impacto">
+                46% de las búsquedas en Google tienen intención local
+              </div>
+              <p class="error-card__desc">
+                Cuando un paciente busca
+                <em>"cardiólogo Buenos Aires"</em>
+                o
+                <em>"dermatóloga cerca"</em>
+                , los primeros resultados que ve son el
+                <strong>mapa de Google con los tres perfiles más optimizados de la zona</strong>
+                — el llamado "Local Pack". Si tu Google Business Profile no está reclamado,
+                verificado y correctamente categorizado, no existís en esa búsqueda. No importa
+                cuánto hayas invertido en tu web: el paciente ve a tus competidores primero.
+              </p>
+              <p class="error-card__desc">
+                <strong>Cómo verificarlo ahora:</strong>
+                buscá en Google
+                <code>"tu especialidad tu ciudad"</code>
+                desde una ventana incógnita. ¿Aparece tu nombre en los tres primeros resultados
+                del mapa? Si no, este es tu error número uno.
+              </p>
+              <div class="error-card__fix" role="note">
+                <strong>Solución:</strong>
+                reclamar y verificar el Google Business Profile con la categoría correcta
+                (Physician + especialidad), descripción con keywords locales, fotos y horarios
+                completos.
+                <a href="/servicios/pack-presencia" style="color: var(--brand-dark); font-weight: 600">
+                  Ver cómo lo resolvemos en el Pack Presencia →
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Error 2 -->
+          <article class="error-card" role="listitem" aria-labelledby="err2-title">
+            <div class="error-card__num-col" aria-hidden="true">
+              <span class="error-card__num">02</span>
+              <span class="error-card__severity severity--critical">Crítico</span>
+            </div>
+            <div class="error-card__body">
+              <h2 class="error-card__title" id="err2-title">
+                Cargar en más de 3 segundos en el celular
+              </h2>
+              <div class="error-card__stat" aria-label="Estadística de impacto">
+                53% de los usuarios abandona si la web tarda más de 3 segundos — fuente: Google
+              </div>
+              <p class="error-card__desc">
+                El 60% de las búsquedas médicas ocurren desde celular, muchas en contextos de
+                urgencia o movilidad. Un sitio que tarda 5 segundos en cargar
+                <strong>ya perdió a más de la mitad de los visitantes</strong>
+                antes de que lean el nombre del médico. Además, desde 2021 Google usa los Core Web
+                Vitals como factor de posicionamiento: un sitio lento está literalmente más abajo
+                en los resultados.
+              </p>
+              <p class="error-card__desc">
+                <strong>Cómo verificarlo:</strong>
+                entrá a
+                <a href="https://pagespeed.web.dev" target="_blank" rel="noopener noreferrer"
+                  style="color: var(--brand-dark)">
+                  pagespeed.web.dev
+                </a>
+                , pegá la URL de tu sitio y mirá el score de Performance en mobile. Menos de 50:
+                crítico. 50–75: necesita WPO. Más de 90: bien.
+              </p>
+              <div class="error-card__fix" role="note">
+                <strong>Solución:</strong>
+                conversión de imágenes a WebP, CSS crítico inline, lazy load, configuración de
+                caché y (si aplica) Cloudflare CDN. El score objetivo es 90+ en mobile.
+                <a href="/servicios/optimizacion-wpo" style="color: var(--brand-dark); font-weight: 600">
+                  Ver el servicio WPO con garantía →
+                </a>
+              </div>
+            </div>
+          </article>
+          <!-- Error 3 -->
+          <article class="error-card" role="listitem" aria-labelledby="err3-title">
+            <div class="error-card__num-col" aria-hidden="true">
+              <span class="error-card__num">03</span>
+              <span class="error-card__severity severity--critical">Crítico</span>
+            </div>
+            <div class="error-card__body">
+              <h2 class="error-card__title" id="err3-title">
+                No tener Schema médico — Google no sabe que sos médico
+              </h2>
+              <div class="error-card__stat" aria-label="Estadística de impacto">
+                Schema correcto = rich snippets en Google + menciones en ChatGPT y Perplexity
+              </div>
+              <p class="error-card__desc">
+                El Schema markup en JSON-LD es el lenguaje que Google y los motores de IA usan
+                para entender
+                <em>qué tipo de sitio es este</em>
+                . Sin Schema
+                <code>Physician</code>
+                y
+                <code>MedicalBusiness</code>
+                , Google procesa tu web como un sitio genérico.
+                <strong>
+                  No puede mostrarte con rich snippets (especialidad, horarios, valoraciones), y
+                  ChatGPT o Perplexity no tienen datos estructurados para mencionarte
+                </strong>
+                cuando un paciente pregunta por especialistas.
+              </p>
+              <p class="error-card__desc">
+                <strong>Cómo verificarlo:</strong>
+                entrá a
+                <a href="https://validator.schema.org" target="_blank" rel="noopener noreferrer"
+                  style="color: var(--brand-dark)">
+                  validator.schema.org
+                </a>
+                , pegá la URL de tu sitio. Si no aparece ningún tipo de schema, o aparecen errores
+                en rojo, este problema existe en tu web.
+              </p>
+              <div class="error-card__fix" role="note">
+                <strong>Solución:</strong>
+                implementar Schema Physician + MedicalBusiness en JSON-LD con nombre completo,
+                especialidad, ciudad, teléfono, horarios y redes. Validar con 0 errores antes de
+                publicar. Todos los sitios de Cirujana Digital incluyen schema validado como parte
+                del entregable.
+              </div>
+            </div>
+          </article>
+          <!-- Error 4 -->
+          <article class="error-card" role="listitem" aria-labelledby="err4-title">
+            <div class="error-card__num-col" aria-hidden="true">
+              <span class="error-card__num">04</span>
+              <span class="error-card__severity severity--high">Alto</span>
+            </div>
+            <div class="error-card__body">
+              <h2 class="error-card__title" id="err4-title">
+                No tener un CTA claro en los primeros 3 segundos de la página
+              </h2>
+              <div class="error-card__stat" aria-label="Estadística de impacto">
+                El paciente decide si confía en 3 segundos — sin CTA visible, no hay conversión
+              </div>
+              <p class="error-card__desc">
+                Un visitante llega a tu web, ve quién sos y lo que hacés. Si en ese primer momento
+                no hay un botón o camino claro para contactarte,
+                <strong>la visita termina sin consulta</strong>
+                . Los errores más frecuentes: el WhatsApp está en el pie de página (invisible en
+                mobile), el formulario está enterrado al final del scroll, o el único contacto
+                visible es un email que nadie usa.
+              </p>
+              <p class="error-card__desc">
+                <strong>Cómo verificarlo:</strong>
+                abrí tu web en el celular sin hacer scroll. ¿Ves un botón de WhatsApp o un llamado
+                a la acción claro antes de bajar? Si tenés que buscar cómo contactar al médico, el
+                CTA no está en el lugar correcto.
+              </p>
+              <div class="error-card__fix" role="note">
+                <strong>Solución:</strong>
+                botón de WhatsApp con número pre-cargado visible above the fold en mobile. CTA
+                principal con texto de acción ("Reservar turno" o "Consultar disponibilidad"), no
+                genérico ("Contacto"). GA4 con evento de clic en WhatsApp como conversión
+                principal.
+              </div>
+            </div>
+          </article>
+          <!-- Error 5 -->
+          <article class="error-card" role="listitem" aria-labelledby="err5-title">
+            <div class="error-card__num-col" aria-hidden="true">
+              <span class="error-card__num">05</span>
+              <span class="error-card__severity severity--high">Alto</span>
+            </div>
+            <div class="error-card__body">
+              <h2 class="error-card__title" id="err5-title">
+                No aparecer en ChatGPT, Perplexity ni Google AI cuando un paciente pregunta
+              </h2>
+              <div class="error-card__stat" aria-label="Estadística de impacto">
+                Ventana de oportunidad: 12–18 meses antes de que la IA sea el canal dominante
+              </div>
+              <p class="error-card__desc">
+                Cuando alguien le pregunta a ChatGPT
+                <em>"¿cuál es un buen cardiólogo en Buenos Aires?"</em>
+                , el modelo responde con los médicos que tienen suficiente información pública y
+                estructurada. Los que no tienen Schema médico, perfiles completos en Doctoralia,
+                HealNow o Top Doctors, y contenido FAQ en su web,
+                <strong>directamente no existen para esa respuesta</strong>
+                .
+              </p>
+              <p class="error-card__desc">
+                Este no es un problema futuro: es un canal que ya está activo y creciendo.
+                <strong>Cómo verificarlo:</strong>
+                abrí ChatGPT o Perplexity en sesión limpia y preguntá
+                <em>"mejores [tu especialidad] en [tu ciudad]"</em>
+                . ¿Aparecés? Si no, este es el próximo frente que trabajar.
+              </p>
+              <div class="error-card__fix" role="note">
+                <strong>Solución:</strong>
+                completar perfiles en directorios médicos verificados, implementar Schema FAQPage
+                en la web y publicar contenido pregunta-respuesta sobre tu especialidad. El
+                servicio de Presencia en IA de Cirujana Digital diagnostica y ejecuta esto.
+                <a href="/servicios/auditoria-ia-plan-presencia/" style="color: var(--brand-dark); font-weight: 600">
+                  Ver el servicio →
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- /errors__grid -->
+        <!-- Botón print -->
+        <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem">
+          <button class="print-btn" onclick="window.print()" aria-label="Guardar esta guía como PDF">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M12 11v2H4v-2M8 2v8M5 7l3 3 3-3" stroke="currentColor" stroke-width="1.8"
+                stroke-linecap="round" />
+            </svg>
+            Guardar como PDF
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- ═══ CHECKLIST ═══ -->
+    <section class="sec checklist" id="checklist" aria-labelledby="checklist-h2">
+      <div class="wrap">
+        <div class="checklist__inner">
+          <header class="checklist__header">
+            <h2 class="checklist__h2" id="checklist-h2">
+              Checklist de 15 puntos:
               <br />
-              <em>no consiguen pacientes de Google</em>
+              <em>auditá tu web en 5 minutos</em>
             </h2>
-            <p class="errors__sub">
-              Cada error tiene una causa técnica concreta, un impacto medible y una solución clara.
-              No hay teoría — hay pasos verificables.
+            <p class="checklist__sub">
+              Marcá cada punto que ya tenés resuelto. Al final ves exactamente qué priorizar.
             </p>
           </header>
-          <div class="errors__grid" role="list">
-            <!-- Error 1 -->
-            <article class="error-card" role="listitem" aria-labelledby="err1-title">
-              <div class="error-card__num-col" aria-hidden="true">
-                <span class="error-card__num">01</span>
-                <span class="error-card__severity severity--critical">Crítico</span>
-              </div>
-              <div class="error-card__body">
-                <h2 class="error-card__title" id="err1-title">
-                  No aparecer en Google Maps cuando buscan tu especialidad y ciudad
-                </h2>
-                <div class="error-card__stat" aria-label="Estadística de impacto">
-                  46% de las búsquedas en Google tienen intención local
-                </div>
-                <p class="error-card__desc">
-                  Cuando un paciente busca
-                  <em>"cardiólogo Buenos Aires"</em>
-                  o
-                  <em>"dermatóloga cerca"</em>
-                  , los primeros resultados que ve son el
-                  <strong>mapa de Google con los tres perfiles más optimizados de la zona</strong>
-                  — el llamado "Local Pack". Si tu Google Business Profile no está reclamado,
-                  verificado y correctamente categorizado, no existís en esa búsqueda. No importa
-                  cuánto hayas invertido en tu web: el paciente ve a tus competidores primero.
-                </p>
-                <p class="error-card__desc">
-                  <strong>Cómo verificarlo ahora:</strong>
-                  buscá en Google
-                  <code>"tu especialidad tu ciudad"</code>
-                  desde una ventana incógnita. ¿Aparece tu nombre en los tres primeros resultados
-                  del mapa? Si no, este es tu error número uno.
-                </p>
-                <div class="error-card__fix" role="note">
-                  <strong>Solución:</strong>
-                  reclamar y verificar el Google Business Profile con la categoría correcta
-                  (Physician + especialidad), descripción con keywords locales, fotos y horarios
-                  completos.
-                  <a
-                    href="/servicios/pack-presencia"
-                    style="color: var(--brand-dark); font-weight: 600"
-                  >
-                    Ver cómo lo resolvemos en el Pack Presencia →
-                  </a>
-                </div>
-              </div>
-            </article>
-            <!-- Error 2 -->
-            <article class="error-card" role="listitem" aria-labelledby="err2-title">
-              <div class="error-card__num-col" aria-hidden="true">
-                <span class="error-card__num">02</span>
-                <span class="error-card__severity severity--critical">Crítico</span>
-              </div>
-              <div class="error-card__body">
-                <h2 class="error-card__title" id="err2-title">
-                  Cargar en más de 3 segundos en el celular
-                </h2>
-                <div class="error-card__stat" aria-label="Estadística de impacto">
-                  53% de los usuarios abandona si la web tarda más de 3 segundos — fuente: Google
-                </div>
-                <p class="error-card__desc">
-                  El 60% de las búsquedas médicas ocurren desde celular, muchas en contextos de
-                  urgencia o movilidad. Un sitio que tarda 5 segundos en cargar
-                  <strong>ya perdió a más de la mitad de los visitantes</strong>
-                  antes de que lean el nombre del médico. Además, desde 2021 Google usa los Core Web
-                  Vitals como factor de posicionamiento: un sitio lento está literalmente más abajo
-                  en los resultados.
-                </p>
-                <p class="error-card__desc">
-                  <strong>Cómo verificarlo:</strong>
-                  entrá a
-                  <a
-                    href="https://pagespeed.web.dev"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: var(--brand-dark)"
-                  >
-                    pagespeed.web.dev
-                  </a>
-                  , pegá la URL de tu sitio y mirá el score de Performance en mobile. Menos de 50:
-                  crítico. 50–75: necesita WPO. Más de 90: bien.
-                </p>
-                <div class="error-card__fix" role="note">
-                  <strong>Solución:</strong>
-                  conversión de imágenes a WebP, CSS crítico inline, lazy load, configuración de
-                  caché y (si aplica) Cloudflare CDN. El score objetivo es 90+ en mobile.
-                  <a
-                    href="/servicios/optimizacion-wpo"
-                    style="color: var(--brand-dark); font-weight: 600"
-                  >
-                    Ver el servicio WPO con garantía →
-                  </a>
-                </div>
-              </div>
-            </article>
-            <!-- Error 3 -->
-            <article class="error-card" role="listitem" aria-labelledby="err3-title">
-              <div class="error-card__num-col" aria-hidden="true">
-                <span class="error-card__num">03</span>
-                <span class="error-card__severity severity--critical">Crítico</span>
-              </div>
-              <div class="error-card__body">
-                <h2 class="error-card__title" id="err3-title">
-                  No tener Schema médico — Google no sabe que sos médico
-                </h2>
-                <div class="error-card__stat" aria-label="Estadística de impacto">
-                  Schema correcto = rich snippets en Google + menciones en ChatGPT y Perplexity
-                </div>
-                <p class="error-card__desc">
-                  El Schema markup en JSON-LD es el lenguaje que Google y los motores de IA usan
-                  para entender
-                  <em>qué tipo de sitio es este</em>
-                  . Sin Schema
-                  <code>Physician</code>
-                  y
-                  <code>MedicalBusiness</code>
-                  , Google procesa tu web como un sitio genérico.
-                  <strong>
-                    No puede mostrarte con rich snippets (especialidad, horarios, valoraciones), y
-                    ChatGPT o Perplexity no tienen datos estructurados para mencionarte
-                  </strong>
-                  cuando un paciente pregunta por especialistas.
-                </p>
-                <p class="error-card__desc">
-                  <strong>Cómo verificarlo:</strong>
-                  entrá a
-                  <a
-                    href="https://validator.schema.org"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style="color: var(--brand-dark)"
-                  >
-                    validator.schema.org
-                  </a>
-                  , pegá la URL de tu sitio. Si no aparece ningún tipo de schema, o aparecen errores
-                  en rojo, este problema existe en tu web.
-                </p>
-                <div class="error-card__fix" role="note">
-                  <strong>Solución:</strong>
-                  implementar Schema Physician + MedicalBusiness en JSON-LD con nombre completo,
-                  especialidad, ciudad, teléfono, horarios y redes. Validar con 0 errores antes de
-                  publicar. Todos los sitios de Cirujana Digital incluyen schema validado como parte
-                  del entregable.
-                </div>
-              </div>
-            </article>
-            <!-- Error 4 -->
-            <article class="error-card" role="listitem" aria-labelledby="err4-title">
-              <div class="error-card__num-col" aria-hidden="true">
-                <span class="error-card__num">04</span>
-                <span class="error-card__severity severity--high">Alto</span>
-              </div>
-              <div class="error-card__body">
-                <h2 class="error-card__title" id="err4-title">
-                  No tener un CTA claro en los primeros 3 segundos de la página
-                </h2>
-                <div class="error-card__stat" aria-label="Estadística de impacto">
-                  El paciente decide si confía en 3 segundos — sin CTA visible, no hay conversión
-                </div>
-                <p class="error-card__desc">
-                  Un visitante llega a tu web, ve quién sos y lo que hacés. Si en ese primer momento
-                  no hay un botón o camino claro para contactarte,
-                  <strong>la visita termina sin consulta</strong>
-                  . Los errores más frecuentes: el WhatsApp está en el pie de página (invisible en
-                  mobile), el formulario está enterrado al final del scroll, o el único contacto
-                  visible es un email que nadie usa.
-                </p>
-                <p class="error-card__desc">
-                  <strong>Cómo verificarlo:</strong>
-                  abrí tu web en el celular sin hacer scroll. ¿Ves un botón de WhatsApp o un llamado
-                  a la acción claro antes de bajar? Si tenés que buscar cómo contactar al médico, el
-                  CTA no está en el lugar correcto.
-                </p>
-                <div class="error-card__fix" role="note">
-                  <strong>Solución:</strong>
-                  botón de WhatsApp con número pre-cargado visible above the fold en mobile. CTA
-                  principal con texto de acción ("Reservar turno" o "Consultar disponibilidad"), no
-                  genérico ("Contacto"). GA4 con evento de clic en WhatsApp como conversión
-                  principal.
-                </div>
-              </div>
-            </article>
-            <!-- Error 5 -->
-            <article class="error-card" role="listitem" aria-labelledby="err5-title">
-              <div class="error-card__num-col" aria-hidden="true">
-                <span class="error-card__num">05</span>
-                <span class="error-card__severity severity--high">Alto</span>
-              </div>
-              <div class="error-card__body">
-                <h2 class="error-card__title" id="err5-title">
-                  No aparecer en ChatGPT, Perplexity ni Google AI cuando un paciente pregunta
-                </h2>
-                <div class="error-card__stat" aria-label="Estadística de impacto">
-                  Ventana de oportunidad: 12–18 meses antes de que la IA sea el canal dominante
-                </div>
-                <p class="error-card__desc">
-                  Cuando alguien le pregunta a ChatGPT
-                  <em>"¿cuál es un buen cardiólogo en Buenos Aires?"</em>
-                  , el modelo responde con los médicos que tienen suficiente información pública y
-                  estructurada. Los que no tienen Schema médico, perfiles completos en Doctoralia,
-                  HealNow o Top Doctors, y contenido FAQ en su web,
-                  <strong>directamente no existen para esa respuesta</strong>
-                  .
-                </p>
-                <p class="error-card__desc">
-                  Este no es un problema futuro: es un canal que ya está activo y creciendo.
-                  <strong>Cómo verificarlo:</strong>
-                  abrí ChatGPT o Perplexity en sesión limpia y preguntá
-                  <em>"mejores [tu especialidad] en [tu ciudad]"</em>
-                  . ¿Aparecés? Si no, este es el próximo frente que trabajar.
-                </p>
-                <div class="error-card__fix" role="note">
-                  <strong>Solución:</strong>
-                  completar perfiles en directorios médicos verificados, implementar Schema FAQPage
-                  en la web y publicar contenido pregunta-respuesta sobre tu especialidad. El
-                  servicio de Presencia en IA de Cirujana Digital diagnostica y ejecuta esto.
-                  <a
-                    href="/servicios/auditoria-ia-plan-presencia/"
-                    style="color: var(--brand-dark); font-weight: 600"
-                  >
-                    Ver el servicio →
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
-          <!-- /errors__grid -->
-          <!-- Botón print -->
-          <div style="display: flex; justify-content: flex-end; margin-top: 1.5rem">
-            <button
-              class="print-btn"
-              onclick="window.print()"
-              aria-label="Guardar esta guía como PDF"
-            >
-              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path
-                  d="M12 11v2H4v-2M8 2v8M5 7l3 3 3-3"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                />
-              </svg>
-              Guardar como PDF
-            </button>
-          </div>
-        </div>
-      </section>
-      <!-- ═══ CHECKLIST ═══ -->
-      <section class="sec checklist" id="checklist" aria-labelledby="checklist-h2">
-        <div class="wrap">
-          <div class="checklist__inner">
-            <header class="checklist__header">
-              <h2 class="checklist__h2" id="checklist-h2">
-                Checklist de 15 puntos:
-                <br />
-                <em>auditá tu web en 5 minutos</em>
-              </h2>
-              <p class="checklist__sub">
-                Marcá cada punto que ya tenés resuelto. Al final ves exactamente qué priorizar.
-              </p>
-            </header>
-            <!-- Progress -->
-            <div class="checklist__progress" aria-live="polite" aria-label="Progreso del checklist">
-              <div class="cl-progress-header">
-                <span class="cl-progress-label">Puntos completados</span>
-                <span class="cl-progress-count" id="cl-count">0 / 15</span>
-              </div>
-              <div
-                class="cl-progress-bar"
-                role="progressbar"
-                aria-valuemin="0"
-                aria-valuemax="15"
-                aria-valuenow="0"
-                aria-label="Puntos completados del checklist"
-                id="cl-bar-wrap"
-              >
-                <div class="cl-progress-fill" id="cl-fill"></div>
-              </div>
-              <p class="cl-progress-msg" id="cl-msg">
-                Empezá marcando los puntos que ya tenés resueltos.
-              </p>
+          <!-- Progress -->
+          <div class="checklist__progress" aria-live="polite" aria-label="Progreso del checklist">
+            <div class="cl-progress-header">
+              <span class="cl-progress-label">Puntos completados</span>
+              <span class="cl-progress-count" id="cl-count">0 / 15</span>
             </div>
-            <div class="checklist__groups">
-              <!-- Grupo 1: GBP -->
-              <div class="cl-group">
-                <div class="cl-group__header">
-                  <span class="cl-group__icon" aria-hidden="true">📍</span>
-                  <span class="cl-group__title">Google Business Profile</span>
-                  <span class="cl-group__count">3 puntos</span>
-                </div>
-                <ul class="cl-items" role="list">
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Perfil reclamado y verificado con Google</strong>
-                      Buscá tu nombre en Google Maps — ¿aparece el botón "Reclamar este negocio"?
-                    </div>
-                    <span class="cl-priority cl-priority--critical">Crítico</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Categoría correcta: Physician + especialidad</strong>
-                      La categoría determina para qué búsquedas aparecés en Maps.
-                    </div>
-                    <span class="cl-priority cl-priority--critical">Crítico</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Descripción con keywords locales (especialidad + ciudad)</strong>
-                      Ejemplo: "Cardiólogo en Buenos Aires especializado en arritmias y prevención
-                      cardiovascular."
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- Grupo 2: Velocidad -->
-              <div class="cl-group">
-                <div class="cl-group__header">
-                  <span class="cl-group__icon" aria-hidden="true">⚡</span>
-                  <span class="cl-group__title">Velocidad de carga</span>
-                  <span class="cl-group__count">3 puntos</span>
-                </div>
-                <ul class="cl-items" role="list">
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Lighthouse score 90+ en mobile (pagespeed.web.dev)</strong>
-                      Testear con la URL real, no localhost.
-                    </div>
-                    <span class="cl-priority cl-priority--critical">Crítico</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Imágenes en formato WebP (no JPEG/PNG)</strong>
-                      Verificable con DevTools → pestaña Network → filtrar por "img".
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Core Web Vitals en verde en Search Console</strong>
-                      Ir a Search Console → Experiencia de página → Métricas de campo.
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- Grupo 3: Schema -->
-              <div class="cl-group">
-                <div class="cl-group__header">
-                  <span class="cl-group__icon" aria-hidden="true">🏷️</span>
-                  <span class="cl-group__title">Schema médico</span>
-                  <span class="cl-group__count">3 puntos</span>
-                </div>
-                <ul class="cl-items" role="list">
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Schema Physician presente sin errores (validator.schema.org)</strong>
-                      Pegar la URL y verificar que aparece "Physician" sin warnings en rojo.
-                    </div>
-                    <span class="cl-priority cl-priority--critical">Crítico</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>MedicalBusiness con nombre, dirección, teléfono y horarios</strong>
-                      Los datos deben ser idénticos al GBP y al WhatsApp Business (NAP consistente).
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>FAQPage schema en al menos una página</strong>
-                      Permite rich snippets de preguntas frecuentes y mejora la citación en IA.
-                    </div>
-                    <span class="cl-priority cl-priority--medium">Medio</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- Grupo 4: Conversión -->
-              <div class="cl-group">
-                <div class="cl-group__header">
-                  <span class="cl-group__icon" aria-hidden="true">💬</span>
-                  <span class="cl-group__title">Conversión y contacto</span>
-                  <span class="cl-group__count">3 puntos</span>
-                </div>
-                <ul class="cl-items" role="list">
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Botón de WhatsApp visible above the fold en mobile</strong>
-                      Verificar abriendo el sitio en celular sin hacer scroll.
-                    </div>
-                    <span class="cl-priority cl-priority--critical">Crítico</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>GA4 configurado con evento de clic en WhatsApp</strong>
-                      Sin esto, no podés saber cuántas personas intentaron contactarte.
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Meta title con "especialidad + ciudad" en el H1 y el title</strong>
-                      Ejemplo: "Cardiólogo en Buenos Aires — Dr. Juan Pérez".
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                </ul>
-              </div>
-              <!-- Grupo 5: Presencia IA -->
-              <div class="cl-group">
-                <div class="cl-group__header">
-                  <span class="cl-group__icon" aria-hidden="true">🤖</span>
-                  <span class="cl-group__title">Presencia en IA generativa</span>
-                  <span class="cl-group__count">3 puntos</span>
-                </div>
-                <ul class="cl-items" role="list">
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>
-                        Perfil completo en Doctoralia (el directorio más citado por LLMs)
-                      </strong>
-                      Foto, especialidad, ciudad, obras sociales, descripción completa.
-                    </div>
-                    <span class="cl-priority cl-priority--high">Alto</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>
-                        Nombre consistente en todos los perfiles (GBP, Doctoralia, web)
-                      </strong>
-                      "Dr. Juan Pérez" ≠ "Juan Pérez" ≠ "Juan A. Pérez" — los LLMs necesitan
-                      consistencia.
-                    </div>
-                    <span class="cl-priority cl-priority--medium">Medio</span>
-                  </li>
-                  <li class="cl-item">
-                    <span class="cl-checkbox" aria-hidden="true"></span>
-                    <div class="cl-text">
-                      <strong>Verificar presencia en ChatGPT y Perplexity en sesión limpia</strong>
-                      Buscar "especialidad + ciudad" sin cuenta logueada y documentar el resultado.
-                    </div>
-                    <span class="cl-priority cl-priority--medium">Medio</span>
-                  </li>
-                </ul>
-              </div>
+            <div class="cl-progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0"
+              aria-label="Puntos completados del checklist" id="cl-bar-wrap">
+              <div class="cl-progress-fill" id="cl-fill"></div>
             </div>
-            <!-- /checklist__groups -->
-            <!-- Author -->
-            <div class="author-box">
-              <img
-                src="/img/yulia-monti.webp"
-                alt="Yulia Monti — Instrumentadora quirúrgica y desarrolladora web para médicos en LATAM y España"
-                width="52"
-                height="52"
-                loading="lazy"
-                decoding="async"
-              />
-              <div class="author-box__text">
-                <strong>Yulia Monti — Cirujana Digital</strong>
-                15 años como instrumentadora quirúrgica en Argentina. Hoy especializada en páginas
-                web para médicos en LATAM y España: HTML estático, Schema médico validado,
-                Lighthouse 90+ garantizado y presencia en IA generativa.
-                <br />
-                <a href="/servicios/">Ver todos los servicios →</a>
+            <p class="cl-progress-msg" id="cl-msg">
+              Empezá marcando los puntos que ya tenés resueltos.
+            </p>
+          </div>
+          <div class="checklist__groups">
+            <!-- Grupo 1: GBP -->
+            <div class="cl-group">
+              <div class="cl-group__header">
+                <span class="cl-group__icon" aria-hidden="true">📍</span>
+                <span class="cl-group__title">Google Business Profile</span>
+                <span class="cl-group__count">3 puntos</span>
               </div>
+              <ul class="cl-items" role="list">
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Perfil reclamado y verificado con Google</strong>
+                    Buscá tu nombre en Google Maps — ¿aparece el botón "Reclamar este negocio"?
+                  </div>
+                  <span class="cl-priority cl-priority--critical">Crítico</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Categoría correcta: Physician + especialidad</strong>
+                    La categoría determina para qué búsquedas aparecés en Maps.
+                  </div>
+                  <span class="cl-priority cl-priority--critical">Crítico</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Descripción con keywords locales (especialidad + ciudad)</strong>
+                    Ejemplo: "Cardiólogo en Buenos Aires especializado en arritmias y prevención
+                    cardiovascular."
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Grupo 2: Velocidad -->
+            <div class="cl-group">
+              <div class="cl-group__header">
+                <span class="cl-group__icon" aria-hidden="true">⚡</span>
+                <span class="cl-group__title">Velocidad de carga</span>
+                <span class="cl-group__count">3 puntos</span>
+              </div>
+              <ul class="cl-items" role="list">
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Lighthouse score 90+ en mobile (pagespeed.web.dev)</strong>
+                    Testear con la URL real, no localhost.
+                  </div>
+                  <span class="cl-priority cl-priority--critical">Crítico</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Imágenes en formato WebP (no JPEG/PNG)</strong>
+                    Verificable con DevTools → pestaña Network → filtrar por "img".
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Core Web Vitals en verde en Search Console</strong>
+                    Ir a Search Console → Experiencia de página → Métricas de campo.
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Grupo 3: Schema -->
+            <div class="cl-group">
+              <div class="cl-group__header">
+                <span class="cl-group__icon" aria-hidden="true">🏷️</span>
+                <span class="cl-group__title">Schema médico</span>
+                <span class="cl-group__count">3 puntos</span>
+              </div>
+              <ul class="cl-items" role="list">
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Schema Physician presente sin errores (validator.schema.org)</strong>
+                    Pegar la URL y verificar que aparece "Physician" sin warnings en rojo.
+                  </div>
+                  <span class="cl-priority cl-priority--critical">Crítico</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>MedicalBusiness con nombre, dirección, teléfono y horarios</strong>
+                    Los datos deben ser idénticos al GBP y al WhatsApp Business (NAP consistente).
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>FAQPage schema en al menos una página</strong>
+                    Permite rich snippets de preguntas frecuentes y mejora la citación en IA.
+                  </div>
+                  <span class="cl-priority cl-priority--medium">Medio</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Grupo 4: Conversión -->
+            <div class="cl-group">
+              <div class="cl-group__header">
+                <span class="cl-group__icon" aria-hidden="true">💬</span>
+                <span class="cl-group__title">Conversión y contacto</span>
+                <span class="cl-group__count">3 puntos</span>
+              </div>
+              <ul class="cl-items" role="list">
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Botón de WhatsApp visible above the fold en mobile</strong>
+                    Verificar abriendo el sitio en celular sin hacer scroll.
+                  </div>
+                  <span class="cl-priority cl-priority--critical">Crítico</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>GA4 configurado con evento de clic en WhatsApp</strong>
+                    Sin esto, no podés saber cuántas personas intentaron contactarte.
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Meta title con "especialidad + ciudad" en el H1 y el title</strong>
+                    Ejemplo: "Cardiólogo en Buenos Aires — Dr. Juan Pérez".
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Grupo 5: Presencia IA -->
+            <div class="cl-group">
+              <div class="cl-group__header">
+                <span class="cl-group__icon" aria-hidden="true">🤖</span>
+                <span class="cl-group__title">Presencia en IA generativa</span>
+                <span class="cl-group__count">3 puntos</span>
+              </div>
+              <ul class="cl-items" role="list">
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>
+                      Perfil completo en Doctoralia (el directorio más citado por LLMs)
+                    </strong>
+                    Foto, especialidad, ciudad, obras sociales, descripción completa.
+                  </div>
+                  <span class="cl-priority cl-priority--high">Alto</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>
+                      Nombre consistente en todos los perfiles (GBP, Doctoralia, web)
+                    </strong>
+                    "Dr. Juan Pérez" ≠ "Juan Pérez" ≠ "Juan A. Pérez" — los LLMs necesitan
+                    consistencia.
+                  </div>
+                  <span class="cl-priority cl-priority--medium">Medio</span>
+                </li>
+                <li class="cl-item">
+                  <span class="cl-checkbox" aria-hidden="true"></span>
+                  <div class="cl-text">
+                    <strong>Verificar presencia en ChatGPT y Perplexity en sesión limpia</strong>
+                    Buscar "especialidad + ciudad" sin cuenta logueada y documentar el resultado.
+                  </div>
+                  <span class="cl-priority cl-priority--medium">Medio</span>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </section>
-      <!-- ═══ MID CTA ═══ -->
-      <section class="sec mid-cta" aria-labelledby="mid-cta-h2">
-        <div class="mid-cta__glow" aria-hidden="true"></div>
-        <div class="wrap mid-cta__inner">
-          <span class="mid-cta__eyebrow">Siguiente paso</span>
-          <h2 class="mid-cta__h2" id="mid-cta-h2">
-            ¿Sabés cuáles de estos errores
-            <br />
-            <em>tiene tu web hoy?</em>
-          </h2>
-          <p class="mid-cta__sub">
-            Podés auditarla vos mismo con el checklist de arriba, o pedirme que lo haga yo en 30
-            minutos de diagnóstico gratuito. El resultado es el mismo: saber exactamente qué
-            arreglar primero.
-          </p>
-          <div class="mid-cta__btns">
-            <a
-              href="https://calendly.com/cirujanadigital/30min"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Diagnóstico gratuito de 30 min →
-            </a>
-            <a
-              href="https://wa.me/5491176199680?text=Hola%2C%20lei%20la%20guia%20de%20los%205%20errores%20y%20quiero%20revisar%20mi%20web"
-              class="btn btn-ghost-dark"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <svg
-                width="18"
-                height="18"
-                viewBox="0 0 24 24"
-                fill="currentColor"
-                aria-hidden="true"
-              >
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
-                />
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
-                />
-              </svg>
-              Hablar por WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- ═══ POR QUÉ IMPORTA + FAQ ═══ -->
-      <section class="sec why" aria-labelledby="why-h2">
-        <div class="wrap">
-          <div class="why__inner">
-            <h2 class="why__h2" id="why-h2">
-              Por qué estos errores importan
+          <!-- /checklist__groups -->
+          <!-- Author -->
+          <div class="author-box">
+            <img src="/img/yulia-monti.webp"
+              alt="Yulia Monti — Instrumentadora quirúrgica y desarrolladora web para médicos en LATAM y España"
+              width="52" height="52" loading="lazy" decoding="async" />
+            <div class="author-box__text">
+              <strong>Yulia Monti — Cirujana Digital</strong>
+              15 años como instrumentadora quirúrgica en Argentina. Hoy especializada en páginas
+              web para médicos en LATAM y España: HTML estático, Schema médico validado,
+              Lighthouse 90+ garantizado y presencia en IA generativa.
               <br />
-              <em>más que el diseño</em>
-            </h2>
-            <div class="why__body">
-              <p>
-                La conversación sobre webs médicas suele centrarse en el aspecto visual. El color,
-                las fotos, si tiene o no video en el hero. Eso es lo de menos.
-                <strong>
-                  Una web fea que carga en 1 segundo y aparece primera en Google convierte más que
-                  una web impecable que tarda 6 segundos y no aparece en Maps.
-                </strong>
-              </p>
-              <p>
-                La diferencia entre recibir consultas de Google o no recibirlas casi nunca es el
-                diseño. Es la velocidad, el Schema, el GBP y el CTA. Cuatro problemas técnicos con
-                soluciones concretas, verificables y medibles.
-              </p>
-              <p>
-                Y en 2025 se agrega un quinto: la presencia en IA generativa. ChatGPT y Perplexity
-                ya son canales de búsqueda activos para un segmento creciente de pacientes.
-                <strong>
-                  La ventana para ser el primero en tu especialidad y ciudad en esos motores es de
-                  12 a 18 meses.
-                </strong>
-                Después, los que llegaron primero tendrán la ventaja acumulada.
-              </p>
-              <p>
-                Para saber más sobre cómo funciona cada uno de estos servicios:
-                <a href="/servicios/">Ver catálogo completo de servicios →</a>
-              </p>
-            </div>
-            <!-- Mini FAQ -->
-            <div class="why__faq" role="list" itemscope itemtype="https://schema.org/FAQPage">
-              <div
-                class="faq-item"
-                role="listitem"
-                itemscope
-                itemprop="mainEntity"
-                itemtype="https://schema.org/Question"
-              >
-                <button class="faq-btn" aria-expanded="false" itemprop="name">
-                  ¿Por qué mi web médica no aparece en Google aunque la tengo hace años?
-                  <svg
-                    class="faq-chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 7.5l5 5 5-5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-                <div
-                  class="faq-body"
-                  itemscope
-                  itemprop="acceptedAnswer"
-                  itemtype="https://schema.org/Answer"
-                >
-                  <p itemprop="text">
-                    Las causas más frecuentes son: ausencia o mal estado del Google Business
-                    Profile, tiempo de carga superior a 3 segundos en mobile (que Google penaliza
-                    con lower ranking desde 2021), ausencia de Schema Physician, y falta de keywords
-                    locales en el meta title y H1. Una web puede existir hace años y nunca haber
-                    estado bien configurada para búsquedas locales médicas.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="faq-item"
-                role="listitem"
-                itemscope
-                itemprop="mainEntity"
-                itemtype="https://schema.org/Question"
-              >
-                <button class="faq-btn" aria-expanded="false" itemprop="name">
-                  ¿Qué es el Schema Physician y cómo sé si mi web lo tiene?
-                  <svg
-                    class="faq-chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 7.5l5 5 5-5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-                <div
-                  class="faq-body"
-                  itemscope
-                  itemprop="acceptedAnswer"
-                  itemtype="https://schema.org/Answer"
-                >
-                  <p itemprop="text">
-                    Schema Physician es un marcado de datos estructurados en JSON-LD que le indica a
-                    Google y a los LLMs que el sitio pertenece a un profesional médico. Para
-                    verificar si tu web lo tiene: entrá a validator.schema.org, pegá la URL de tu
-                    sitio, y fijate si aparece "Physician" en los tipos detectados. Si no aparece
-                    nada o aparecen errores en rojo, el schema está ausente o mal implementado.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="faq-item"
-                role="listitem"
-                itemscope
-                itemprop="mainEntity"
-                itemtype="https://schema.org/Question"
-              >
-                <button class="faq-btn" aria-expanded="false" itemprop="name">
-                  ¿Estos errores los puedo corregir yo o necesito un desarrollador?
-                  <svg
-                    class="faq-chev"
-                    width="18"
-                    height="18"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 7.5l5 5 5-5"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                    />
-                  </svg>
-                </button>
-                <div
-                  class="faq-body"
-                  itemscope
-                  itemprop="acceptedAnswer"
-                  itemtype="https://schema.org/Answer"
-                >
-                  <p itemprop="text">
-                    El GBP y la verificación de Doctoralia los podés hacer vos mismo siguiendo los
-                    pasos de la guía. El Schema, la velocidad de carga y la implementación de
-                    FAQPage requieren acceso al código del sitio — si tu web está en WordPress,
-                    puede ser más accesible; si es HTML puro, necesitás a alguien que edite el
-                    código. El diagnóstico gratuito de 30 minutos define exactamente qué es
-                    accionable por tu cuenta y qué requiere trabajo técnico.
-                  </p>
-                </div>
-              </div>
+              <a href="/servicios/">Ver todos los servicios →</a>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ═══ FINAL CTA ═══ -->
-      <footer class="final-cta">
-        <div class="final-cta__inner">
-          <h2 class="final-cta__h2">
-            ¿Cuántos de estos errores
+      </div>
+    </section>
+    <!-- ═══ MID CTA ═══ -->
+    <section class="sec mid-cta" aria-labelledby="mid-cta-h2">
+      <div class="mid-cta__glow" aria-hidden="true"></div>
+      <div class="wrap mid-cta__inner">
+        <span class="mid-cta__eyebrow">Siguiente paso</span>
+        <h2 class="mid-cta__h2" id="mid-cta-h2">
+          ¿Sabés cuáles de estos errores
+          <br />
+          <em>tiene tu web hoy?</em>
+        </h2>
+        <p class="mid-cta__sub">
+          Podés auditarla vos mismo con el checklist de arriba, o pedirme que lo haga yo en 30
+          minutos de diagnóstico gratuito. El resultado es el mismo: saber exactamente qué
+          arreglar primero.
+        </p>
+        <div class="mid-cta__btns">
+          <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-primary" target="_blank"
+            rel="noopener noreferrer">
+            Diagnóstico gratuito de 30 min →
+          </a>
+          <a href="https://wa.me/5491176199680?text=Hola%2C%20lei%20la%20guia%20de%20los%205%20errores%20y%20quiero%20revisar%20mi%20web"
+            class="btn btn-ghost-dark" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- ═══ POR QUÉ IMPORTA + FAQ ═══ -->
+    <section class="sec why" aria-labelledby="why-h2">
+      <div class="wrap">
+        <div class="why__inner">
+          <h2 class="why__h2" id="why-h2">
+            Por qué estos errores importan
             <br />
-            <em>tiene tu web hoy?</em>
+            <em>más que el diseño</em>
           </h2>
-          <p class="final-cta__sub">
-            En 30 minutos de diagnóstico gratuito revisamos tu web juntos y definimos qué arreglar
-            primero según el impacto real en pacientes nuevos.
-          </p>
-          <div class="final-cta__btns">
-            <a
-              href="https://calendly.com/cirujanadigital/30min"
-              class="btn btn-primary"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Agendar diagnóstico gratuito →
-            </a>
-            <a href="/servicios/" class="btn btn-outline">Ver todos los servicios →</a>
+          <div class="why__body">
+            <p>
+              La conversación sobre webs médicas suele centrarse en el aspecto visual. El color,
+              las fotos, si tiene o no video en el hero. Eso es lo de menos.
+              <strong>
+                Una web fea que carga en 1 segundo y aparece primera en Google convierte más que
+                una web impecable que tarda 6 segundos y no aparece en Maps.
+              </strong>
+            </p>
+            <p>
+              La diferencia entre recibir consultas de Google o no recibirlas casi nunca es el
+              diseño. Es la velocidad, el Schema, el GBP y el CTA. Cuatro problemas técnicos con
+              soluciones concretas, verificables y medibles.
+            </p>
+            <p>
+              Y en 2025 se agrega un quinto: la presencia en IA generativa. ChatGPT y Perplexity
+              ya son canales de búsqueda activos para un segmento creciente de pacientes.
+              <strong>
+                La ventana para ser el primero en tu especialidad y ciudad en esos motores es de
+                12 a 18 meses.
+              </strong>
+              Después, los que llegaron primero tendrán la ventaja acumulada.
+            </p>
+            <p>
+              Para saber más sobre cómo funciona cada uno de estos servicios:
+              <a href="/servicios/">Ver catálogo completo de servicios →</a>
+            </p>
           </div>
-          <p class="final-cta__note">
-            Sin compromiso · Sin spam · Respuesta en menos de 24 horas ·
-            <a href="/">Inicio</a>
-            ·
-            <a href="/servicios/">Servicios</a>
-            ·
-            <a href="/blog/">Blog</a>
-          </p>
+          <!-- Mini FAQ -->
+          <div class="why__faq" role="list" itemscope itemtype="https://schema.org/FAQPage">
+            <div class="faq-item" role="listitem" itemscope itemprop="mainEntity"
+              itemtype="https://schema.org/Question">
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Por qué mi web médica no aparece en Google aunque la tengo hace años?
+                <svg class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">
+                  Las causas más frecuentes son: ausencia o mal estado del Google Business
+                  Profile, tiempo de carga superior a 3 segundos en mobile (que Google penaliza
+                  con lower ranking desde 2021), ausencia de Schema Physician, y falta de keywords
+                  locales en el meta title y H1. Una web puede existir hace años y nunca haber
+                  estado bien configurada para búsquedas locales médicas.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" role="listitem" itemscope itemprop="mainEntity"
+              itemtype="https://schema.org/Question">
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Qué es el Schema Physician y cómo sé si mi web lo tiene?
+                <svg class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">
+                  Schema Physician es un marcado de datos estructurados en JSON-LD que le indica a
+                  Google y a los LLMs que el sitio pertenece a un profesional médico. Para
+                  verificar si tu web lo tiene: entrá a validator.schema.org, pegá la URL de tu
+                  sitio, y fijate si aparece "Physician" en los tipos detectados. Si no aparece
+                  nada o aparecen errores en rojo, el schema está ausente o mal implementado.
+                </p>
+              </div>
+            </div>
+            <div class="faq-item" role="listitem" itemscope itemprop="mainEntity"
+              itemtype="https://schema.org/Question">
+              <button class="faq-btn" aria-expanded="false" itemprop="name">
+                ¿Estos errores los puedo corregir yo o necesito un desarrollador?
+                <svg class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+              <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                <p itemprop="text">
+                  El GBP y la verificación de Doctoralia los podés hacer vos mismo siguiendo los
+                  pasos de la guía. El Schema, la velocidad de carga y la implementación de
+                  FAQPage requieren acceso al código del sitio — si tu web está en WordPress,
+                  puede ser más accesible; si es HTML puro, necesitás a alguien que edite el
+                  código. El diagnóstico gratuito de 30 minutos define exactamente qué es
+                  accionable por tu cuenta y qué requiere trabajo técnico.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-      </footer>
-    </main>
-    <div id="site-footer"></div>
-    <script>
-      'use strict';
-      /* ── Checklist interactivo ─────────────────────────── */
-      (function () {
-        const items = document.querySelectorAll('.cl-item');
-        const fill = document.getElementById('cl-fill');
-        const count = document.getElementById('cl-count');
-        const barWrap = document.getElementById('cl-bar-wrap');
-        const msg = document.getElementById('cl-msg');
-        const total = items.length;
-        const msgs = [
-          'Empezá marcando los puntos que ya tenés resueltos.',
-          'Bien. Seguí revisando — cada punto cuenta.',
-          'Ya vas por el camino correcto. ¿Cuántos más podés marcar?',
-          'Más de la mitad. Los que faltan son los de mayor impacto.',
-          'Casi completo. Los últimos puntos son los que más diferencian.',
-          '¡Checklist completo! Tu web está técnicamente preparada. Si querés un diagnóstico profesional, agendá la llamada gratuita.',
-        ];
-        function getMsgIndex(done) {
-          if (done === 0) return 0;
-          if (done <= 3) return 1;
-          if (done <= 7) return 2;
-          if (done <= 10) return 3;
-          if (done <= 14) return 4;
-          return 5;
+      </div>
+    </section>
+    <!-- ═══ FINAL CTA ═══ -->
+    <footer class="final-cta">
+      <div class="final-cta__inner">
+        <h2 class="final-cta__h2">
+          ¿Cuántos de estos errores
+          <br />
+          <em>tiene tu web hoy?</em>
+        </h2>
+        <p class="final-cta__sub">
+          En 30 minutos de diagnóstico gratuito revisamos tu web juntos y definimos qué arreglar
+          primero según el impacto real en pacientes nuevos.
+        </p>
+        <div class="final-cta__btns">
+          <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-primary" target="_blank"
+            rel="noopener noreferrer">
+            Agendar diagnóstico gratuito →
+          </a>
+          <a href="/servicios/" class="btn btn-outline">Ver todos los servicios →</a>
+        </div>
+        <p class="final-cta__note">
+          Sin compromiso · Sin spam · Respuesta en menos de 24 horas ·
+          <a href="/">Inicio</a>
+          ·
+          <a href="/servicios/">Servicios</a>
+          ·
+          <a href="/blog/">Blog</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+  <div id="site-footer"></div>
+  <script>
+    'use strict';
+    /* ── Checklist interactivo ─────────────────────────── */
+    (function () {
+      const items = document.querySelectorAll('.cl-item');
+      const fill = document.getElementById('cl-fill');
+      const count = document.getElementById('cl-count');
+      const barWrap = document.getElementById('cl-bar-wrap');
+      const msg = document.getElementById('cl-msg');
+      const total = items.length;
+      const msgs = [
+        'Empezá marcando los puntos que ya tenés resueltos.',
+        'Bien. Seguí revisando — cada punto cuenta.',
+        'Ya vas por el camino correcto. ¿Cuántos más podés marcar?',
+        'Más de la mitad. Los que faltan son los de mayor impacto.',
+        'Casi completo. Los últimos puntos son los que más diferencian.',
+        '¡Checklist completo! Tu web está técnicamente preparada. Si querés un diagnóstico profesional, agendá la llamada gratuita.',
+      ];
+      function getMsgIndex(done) {
+        if (done === 0) return 0;
+        if (done <= 3) return 1;
+        if (done <= 7) return 2;
+        if (done <= 10) return 3;
+        if (done <= 14) return 4;
+        return 5;
+      }
+      function update() {
+        const done = document.querySelectorAll('.cl-item.checked').length;
+        const pct = Math.round((done / total) * 100);
+        fill.style.width = pct + '%';
+        count.textContent = done + ' / ' + total;
+        barWrap.setAttribute('aria-valuenow', done);
+        msg.textContent = msgs[getMsgIndex(done)];
+      }
+      items.forEach((item) => {
+        function toggle() {
+          item.classList.toggle('checked');
+          const isChecked = item.classList.contains('checked');
+          item.setAttribute('aria-checked', isChecked ? 'true' : 'false');
+          update();
         }
-        function update() {
-          const done = document.querySelectorAll('.cl-item.checked').length;
-          const pct = Math.round((done / total) * 100);
-          fill.style.width = pct + '%';
-          count.textContent = done + ' / ' + total;
-          barWrap.setAttribute('aria-valuenow', done);
-          msg.textContent = msgs[getMsgIndex(done)];
-        }
-        items.forEach((item) => {
-          function toggle() {
-            item.classList.toggle('checked');
-            const isChecked = item.classList.contains('checked');
-            item.setAttribute('aria-checked', isChecked ? 'true' : 'false');
-            update();
-          }
-          item.addEventListener('click', toggle);
-          item.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              toggle();
-            }
-          });
-        });
-        update();
-      })();
-      /* ── FAQ accordion ─────────────────────────────────── */
-      document.querySelectorAll('.faq-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const item = btn.closest('.faq-item');
-          const isOpen = item.classList.contains('open');
-          const body = item.querySelector('.faq-body');
-          document.querySelectorAll('.faq-item.open').forEach((i) => {
-            i.classList.remove('open');
-            i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
-            i.querySelector('.faq-body').style.maxHeight = '0';
-          });
-          if (!isOpen) {
-            item.classList.add('open');
-            btn.setAttribute('aria-expanded', 'true');
-            body.style.maxHeight = body.scrollHeight + 'px';
+        item.addEventListener('click', toggle);
+        item.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
           }
         });
       });
-      /* ── GA4 events ────────────────────────────────────── */
-      document.querySelectorAll('[href*="calendly"]').forEach((el) =>
-        el.addEventListener(
-          'click',
-          () =>
-            typeof gtag !== 'undefined' &&
-            gtag('event', 'click_calendly', {
-              event_category: 'cta',
-              event_label: 'guia_5_errores',
-            })
-        )
-      );
-      document.querySelectorAll('[href*="wa.me"]').forEach((el) =>
-        el.addEventListener(
-          'click',
-          () =>
-            typeof gtag !== 'undefined' &&
-            gtag('event', 'click_whatsapp', {
-              event_category: 'cta',
-              event_label: 'guia_5_errores',
-            })
-        )
-      );
-      document.querySelectorAll('.print-pdf-btn, .print-btn').forEach((el) =>
-        el.addEventListener(
-          'click',
-          () =>
-            typeof gtag !== 'undefined' &&
-            gtag('event', 'click_save_pdf', {
-              event_category: 'engagement',
-              event_label: 'guia_5_errores',
-            })
-        )
-      );
-    </script>
-  </body>
+      update();
+    })();
+    /* ── FAQ accordion ─────────────────────────────────── */
+    document.querySelectorAll('.faq-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        const body = item.querySelector('.faq-body');
+        document.querySelectorAll('.faq-item.open').forEach((i) => {
+          i.classList.remove('open');
+          i.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+          i.querySelector('.faq-body').style.maxHeight = '0';
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+          body.style.maxHeight = body.scrollHeight + 'px';
+        }
+      });
+    });
+    /* ── GA4 events ────────────────────────────────────── */
+    document.querySelectorAll('[href*="calendly"]').forEach((el) =>
+      el.addEventListener(
+        'click',
+        () =>
+          typeof gtag !== 'undefined' &&
+          gtag('event', 'click_calendly', {
+            event_category: 'cta',
+            event_label: 'guia_5_errores',
+          })
+      )
+    );
+    document.querySelectorAll('[href*="wa.me"]').forEach((el) =>
+      el.addEventListener(
+        'click',
+        () =>
+          typeof gtag !== 'undefined' &&
+          gtag('event', 'click_whatsapp', {
+            event_category: 'cta',
+            event_label: 'guia_5_errores',
+          })
+      )
+    );
+    document.querySelectorAll('.print-pdf-btn, .print-btn').forEach((el) =>
+      el.addEventListener(
+        'click',
+        () =>
+          typeof gtag !== 'undefined' &&
+          gtag('event', 'click_save_pdf', {
+            event_category: 'engagement',
+            event_label: 'guia_5_errores',
+          })
+      )
+    );
+  </script>
+</body>
+
 </html>

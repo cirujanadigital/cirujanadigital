@@ -39,118 +39,144 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
 <noscript><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" /></noscript>
 
-  <!-- ═══ SCHEMA MARKUP ═══ -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Physician",
-        "@id": "https://dravalentinareyes.com/#physician",
-        "name": "Dra. Valentina Reyes",
-        "jobTitle": "Doula Certificada & Partera",
-        "description": "Doula certificada con más de 200 partos acompañados en Ciudad de México. Especializada en parto respetado, parto en agua y acompañamiento posparto.",
-        "url": "https://dravalentinareyes.com",
-        "telephone": "+5215512345678",
-        "email": "hola@dravalentinareyes.com",
-        "image": "https://dravalentinareyes.com/img/doctora.jpg",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Av. Presidente Masaryk 123, Piso 4",
-          "addressLocality": "Polanco",
-          "addressRegion": "Ciudad de México",
-          "postalCode": "11560",
-          "addressCountry": "MX"
-        },
-        "medicalSpecialty": "Obstetrics",
-        "availableService": [
-          {"@type": "MedicalTherapy", "name": "Acompañamiento Prenatal"},
-          {"@type": "MedicalTherapy", "name": "Doula de Parto Respetado"},
-          {"@type": "MedicalTherapy", "name": "Parto en Agua"},
-          {"@type": "MedicalTherapy", "name": "Acompañamiento Posparto"}
-        ],
-        "sameAs": [
-          "https://www.instagram.com/dravalentinareyes",
-          "https://www.linkedin.com/in/dravalentinareyes"
-        ]
+<!-- ═══ SCHEMA MARKUP ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person","Physician"],
+      "@id": "https://dravalentinareyes.com/#physician",
+      "name": "Dra. Valentina Reyes",
+      "jobTitle": "Doula Certificada & Partera",
+      "description": "Doula certificada con más de 200 partos acompañados en Ciudad de México. Especializada en parto respetado, parto en agua y acompañamiento posparto.",
+      "url": "https://dravalentinareyes.com",
+      "telephone": "+5215512345678",
+      "email": "hola@dravalentinareyes.com",
+      "image": "https://dravalentinareyes.com/img/doctora.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Presidente Masaryk 123, Piso 4",
+        "addressLocality": "Polanco",
+        "addressRegion": "Ciudad de México",
+        "postalCode": "11560",
+        "addressCountry": "MX"
       },
-      {
-        "@type": "MedicalBusiness",
-        "@id": "https://dravalentinareyes.com/#business",
-        "name": "Consultorio Dra. Valentina Reyes — Doula CDMX",
-        "url": "https://dravalentinareyes.com",
-        "telephone": "+5215512345678",
-        "priceRange": "$$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Av. Presidente Masaryk 123, Piso 4",
-          "addressLocality": "Polanco",
-          "addressRegion": "Ciudad de México",
-          "postalCode": "11560",
-          "addressCountry": "MX"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 19.4326,
-          "longitude": -99.1332
-        },
-        "openingHours": "Mo-Fr 09:00-18:00",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "47",
-          "bestRating": "5"
-        }
+      "medicalSpecialty": "http://schema.org/Midwifery",
+      "availableService": [
+        {"@type": "MedicalTherapy", "name": "Acompañamiento Prenatal"},
+        {"@type": "MedicalTherapy", "name": "Doula de Parto Respetado"},
+        {"@type": "MedicalTherapy", "name": "Parto en Agua"},
+        {"@type": "MedicalTherapy", "name": "Acompañamiento Posparto"}
+      ],
+      "sameAs": [
+        "https://www.instagram.com/dravalentinareyes",
+        "https://www.linkedin.com/in/dravalentinareyes"
+      ]
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://dravalentinareyes.com/#business",
+      "name": "Consultorio Dra. Valentina Reyes — Doula CDMX",
+      "url": "https://dravalentinareyes.com",
+      "telephone": "+5215512345678",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Presidente Masaryk 123, Piso 4",
+        "addressLocality": "Polanco",
+        "addressRegion": "Ciudad de México",
+        "postalCode": "11560",
+        "addressCountry": "MX"
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://dravalentinareyes.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Qué es una doula y en qué se diferencia de una partera?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Una doula es una profesional de apoyo emocional, físico e informativo durante el embarazo, parto y posparto. A diferencia de la partera o médico obstetra, la doula no realiza procedimientos clínicos, sino que acompaña, informa y apoya a la madre y su familia durante todo el proceso."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuándo se contrata una doula?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Lo ideal es contratar a tu doula entre la semana 20 y 30 del embarazo, para construir un vínculo de confianza antes del parto. Sin embargo, también ofrezco acompañamiento desde el primer trimestre o incluso solo posparto."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Trabajan con seguros médicos privados?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Los servicios de doula son servicios privados de acompañamiento y generalmente no están cubiertos por seguros médicos. Ofrezco planes de pago flexibles y opciones de facturación para personas morales."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "¿Ofrecen acompañamiento para pacientes internacionales?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Sí. Trabajo con pacientes de Estados Unidos, Canadá y Europa que eligen México para un parto respetado en ambiente premium. Incluyo coordinación con hospitales privados de Polanco y Santa Fe."
-            }
-          }
-        ]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 19.4326,
+        "longitude": -99.1332
+      },
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47",
+        "bestRating": "5"
+      },
+      "employee": { "@id": "https://dravalentinareyes.com/#physician" }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://cirujanadigital.com/diseno-web-para-doula/#demo",
+      "name": "Demo: Diseño web para doula — Cirujana Digital",
+      "description": "Ejemplo de página web médica para doula desarrollada por Cirujana Digital. HTML estático, Lighthouse 90+, Schema Physician validado, GA4 configurado.",
+      "creator": {
+        "@id": "https://cirujanadigital.com/#yulia-monti"
+      },
+      "provider": {
+        "@id": "https://cirujanadigital.com/#organization"
+      },
+      "about": {
+        "@type": "MedicalSpecialty",
+        "@id": "http://schema.org/Midwifery",
+        "name": "Midwifery"
+      },
+      "url": "https://cirujanadigital.com/diseno-web-para-doula/",
+      "isPartOf": {
+        "@id": "https://cirujanadigital.com/#organization"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cirujanadigital.com/diseno-web-para-doula/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es una doula y en qué se diferencia de una partera?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Una doula es una profesional de apoyo emocional, físico e informativo durante el embarazo, parto y posparto. A diferencia de la partera o médico obstetra, la doula no realiza procedimientos clínicos, sino que acompaña, informa y apoya a la madre y su familia durante todo el proceso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo se contrata una doula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo ideal es contratar a tu doula entre la semana 20 y 30 del embarazo, para construir un vínculo de confianza antes del parto. Sin embargo, también ofrezco acompañamiento desde el primer trimestre o incluso solo posparto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Trabajan con seguros médicos privados?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los servicios de doula son servicios privados de acompañamiento y generalmente no están cubiertos por seguros médicos. Ofrezco planes de pago flexibles y opciones de facturación para personas morales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Ofrecen acompañamiento para pacientes internacionales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Trabajo con pacientes de Estados Unidos, Canadá y Europa que eligen México para un parto respetado en ambiente premium. Incluyo coordinación con hospitales privados de Polanco y Santa Fe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién desarrolla páginas web para doulas en Latinoamérica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yulia Monti, fundadora de Cirujana Digital (cirujanadigital.com), desarrolla páginas web especializadas para doulas y otras especialidades médicas en Argentina, México, Chile, España y Colombia. Cada sitio incluye Schema Physician, Lighthouse 90+ garantizado y estrategia de posicionamiento en motores de búsqueda IA."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
 
   <style>
-    /* ═══════════════════════════════════════
-       DESIGN SYSTEM — DOULA CDMX PREMIUM
-       Identidad: spa médico · calidez · lujo natural
-       Paleta: blanco marfil, rosa palo, cobre, nude, verde eucalipto
-       Tipografía: Cormorant Garamond + DM Sans
-    ═══════════════════════════════════════ */
+
     :root {
       --cream:       #fdf8f4;
       --cream-deep:  #f5ede4;
@@ -271,7 +297,7 @@
       border-radius: 2px;
       transition: background 0.2s, transform 0.2s;
     }
-    .nav__cta:hover { background: var(--charcoal); transform: translateY(-1px); }
+    .nav__cta:hover { background: var(--charcoal); top: 0; left: 0;}
     .nav__cta::after { display: none; }
 
     .nav__ham {
@@ -431,8 +457,7 @@
     }
     .btn--primary:hover {
       background: #9e5037;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(181,101,74,0.35);
+            box-shadow: 0 8px 30px rgba(181,101,74,0.35);
     }
     .btn--ghost {
       background: transparent;
@@ -587,7 +612,6 @@
     }
     .problem__item:hover {
       border-left-color: var(--terracota);
-      transform: translateX(4px);
       box-shadow: 0 6px 24px rgba(193,127,94,0.14);
     }
     .problem__icon { font-size: 1.5rem; flex-shrink: 0; margin-top: 2px; }
@@ -713,7 +737,7 @@
       transform: scaleX(0);
       transition: transform 0.3s var(--ease-out);
     }
-    .service-card:hover { box-shadow: 0 12px 40px rgba(193,127,94,0.14); transform: translateY(-5px); }
+    .service-card:hover { box-shadow: 0 12px 40px rgba(193,127,94,0.14);  }
     .service-card:hover::before { transform: scaleX(1); }
     .service-card--featured {
       background: linear-gradient(145deg, var(--terracota) 0%, var(--rose) 100%);
@@ -1026,7 +1050,7 @@
       box-shadow: 0 4px 20px rgba(181,101,74,0.25);
       font-family: var(--font-body);
     }
-    .btn--form:hover { background: #9e5037; transform: translateY(-1px); }
+    .btn--form:hover { background: #9e5037;  }
     .form-note {
       font-size: 0.72rem; color: var(--sage);
       text-align: center; margin-top: 1rem;
@@ -1045,7 +1069,7 @@
       border: 1px solid rgba(107,127,110,0.1);
       transition: box-shadow 0.3s, transform 0.3s;
     }
-    .blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .blog-card:hover { box-shadow: var(--shadow-md);  }
     .blog-card__img {
       height: 140px;
       background: linear-gradient(135deg, var(--sage-dark), var(--sage-light));
@@ -1306,7 +1330,7 @@
       box-shadow: 0 4px 16px rgba(0,167,169,0.3);
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
-    .cd-demo__cta:hover { opacity: 0.88; transform: translateY(-1px); }
+    .cd-demo__cta:hover { opacity: 0.88;  }
     @media (max-width: 680px) {
       .cd-demo__inner { grid-template-columns: 1fr; gap: 2rem; }
       .cd-demo { padding: 3rem 1.25rem; }
@@ -2059,68 +2083,76 @@
   </main>
 
 
-  <!-- ═══════════════════════════════════════
-       CIRUJANA DIGITAL — SECCIÓN DEMO
-  ═══════════════════════════════════════ -->
-  <section class="cd-demo" aria-labelledby="cd-demo-title">
-    <div class="cd-demo__inner">
-      <div>
-        <div class="cd-demo__badge">
-          <span class="cd-demo__badge-dot" aria-hidden="true"></span>
-          Sitio de demostración
-        </div>
-        <h2 class="cd-demo__title" id="cd-demo-title">
-          Esta web es un demo.<br>
-          <em>La tuya puede ser igual</em><br>
-          — o mejor.
-        </h2>
-        <p class="cd-demo__disclaimer">
-          <strong>Datos ficticios.</strong> La Dra. Valentina Reyes, sus credenciales, estadísticas y testimonios son completamente ficticios, creados con fines ilustrativos.<br>
-          El diseño y desarrollo de este sitio es propiedad de <strong>Cirujana Digital</strong>.
-        </p>
+    
+   <!-- ═══════════════════════════════════════
+     CIRUJANA DIGITAL — SECCIÓN DEMO
+═══════════════════════════════════════ -->
+<section class="cd-demo" aria-labelledby="cd-demo-title">
+  <div class="cd-demo__inner">
+    <div>
+      <div class="cd-demo__badge">
+        <span class="cd-demo__badge-dot" aria-hidden="true"></span>
+        Sitio de demostración
       </div>
-
-      <div class="cd-demo__card">
-        <div class="cd-demo__brand">
-          <span class="cd-demo__brand-icon" aria-hidden="true">⚕</span>
-          <span class="cd-demo__brand-name">Cirujana Digital</span>
-        </div>
-        <div class="cd-demo__price-wrap">
-          <p class="cd-demo__price-original">Precio regular: USD 700</p>
-          <span class="cd-demo__price-promo">🔥 50% OFF — Promo activa</span>
-          <div class="cd-demo__price">$350 <span>USD</span></div>
-          <p class="cd-demo__price-note">Landing médica premium · pago único</p>
-        </div>
-        <div class="cd-demo__urgency">
-          <span aria-hidden="true">⏰</span>
-          Promoción válida hasta el 31 de marzo.
-        </div>
-        <ul class="cd-demo__features" role="list">
-          <li>Schema Physician + MedicalBusiness</li>
-          <li>SEO local por especialidad y ciudad</li>
-          <li>Lighthouse 400/400 · Carga &lt;1s</li>
-          <li>Código puro — sin WordPress ni plugins</li>
-          <li>Responsive real · 5 breakpoints</li>
-          <li>30 días de soporte post-entrega</li>
-          <li>Entrega en 7 días hábiles</li>
-        </ul>
-        <a
-          href="https://cirujanadigital.com/#contacto"
-          class="cd-demo__cta"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Contratar web médica con Cirujana Digital"
-        >
-          Quiero mi web médica
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
-            <polyline points="15 3 21 3 21 9"/>
-            <line x1="10" y1="14" x2="21" y2="3"/>
-          </svg>
-        </a>
-      </div>
+      <h2 class="cd-demo__title" id="cd-demo-title">
+        Esta web es un demo.<br>
+        <em>La tuya puede ser igual</em><br>
+        — o mejor.
+      </h2>
+      <p class="cd-demo__disclaimer">
+        <strong>Datos ficticios.</strong> El médico, sus credenciales, estadísticas
+        y testimonios son completamente ficticios, creados con fines ilustrativos.<br>
+        El diseño y desarrollo de este sitio es propiedad de <strong>Cirujana Digital</strong>,
+        fundada por Yulia Monti — especialista en presencia digital para médicos.
+      </p>
     </div>
-  </section>
+    <div class="cd-demo__card">
+      <div class="cd-demo__brand">
+        <span class="cd-demo__brand-icon" aria-hidden="true">⚕</span>
+        <span class="cd-demo__brand-name">Cirujana Digital</span>
+      </div>
+      <div class="cd-demo__price-wrap">
+        <div class="cd-demo__price">$250 <span>USD</span></div>
+        <p class="cd-demo__price-note">Landing médica · pago único · desde $250 USD</p>
+      </div>
+      <ul class="cd-demo__features" role="list">
+        <li>Schema Physician + MedicalBusiness validado</li>
+        <li>SEO local por especialidad y ciudad</li>
+        <li>Lighthouse 90+ garantizado · Carga &lt;2s</li>
+        <li>HTML puro — sin WordPress ni plugins</li>
+        <li>Responsive · GA4 + Search Console activos</li>
+        <li>30 días de soporte post-entrega</li>
+        <li>Entrega en 7 días hábiles</li>
+        <li>Presencia en ChatGPT y Perplexity incluida</li>
+      </ul>
+      <a
+        href="https://cirujanadigital.com/landing-page-medicos/"
+        class="cd-demo__cta"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Ver opciones de web médica con Cirujana Digital"
+      >
+        Quiero mi web médica
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+      <a
+        href="https://cirujanadigital.com/servicios/auditoria-ia-plan-presencia/"
+        style="display:block; margin-top:0.75rem; text-align:center; font-size:0.82rem;
+               color:var(--teal,#00a7a9); text-decoration:none; font-weight:500;"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Auditoría IA Médica para aparecer en ChatGPT"
+      >
+        ¿Querés aparecer en ChatGPT? → Auditoría IA $100 USD
+      </a>
+    </div>
+  </div>
+</section>
 
   <!-- ═══ FOOTER ═══ -->
   <footer class="footer" role="contentinfo">

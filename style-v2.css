@@ -333,11 +333,7 @@ section {
   margin-top: 1rem;
 }
 
-/*
-  .text-gradient — usar sobre fondos oscuros.
-  Sobre fondo blanco el #7fdbff tiene ratio bajo.
-  Para secciones claras usar color sólido (.title-cd-color).
-*/
+
 .text-gradient {
   background: linear-gradient(135deg, #00a7a9, #03658c);
   -webkit-background-clip: text;

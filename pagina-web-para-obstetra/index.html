@@ -23,85 +23,161 @@
   <meta name="twitter:title" content="Obstetra en Chile | Dra. Valentina Ruiz">
   <meta name="twitter:description" content="Parto respetado y parto en agua. Tu embarazo con evidencia y calidez.">
 
-  <!-- ===== SCHEMA MARKUP: MedicalBusiness + Physician ===== -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": ["MedicalBusiness", "Physician"],
-        "@id": "https://dravalentinaruiz.cl/#physician",
-        "name": "Dra. Valentina Ruiz – Obstetra",
-        "description": "Obstetra especializada en parto respetado, parto en agua y acompañamiento integral del embarazo en Chile.",
-        "url": "https://dravalentinaruiz.cl/",
-        "telephone": "+56912345678",
-        "email": "consulta@dravalentinaruiz.cl",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "Av. Providencia 1234, Of. 501",
-          "addressLocality": "Santiago",
-          "addressRegion": "Región Metropolitana",
-          "postalCode": "7500000",
-          "addressCountry": "CL"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -33.4280,
-          "longitude": -70.6100
-        },
-        "medicalSpecialty": "Obstetrics",
-        "availableService": [
-          {"@type": "MedicalProcedure", "name": "Parto Respetado"},
-          {"@type": "MedicalProcedure", "name": "Parto en Agua"},
-          {"@type": "MedicalProcedure", "name": "Control Prenatal"},
-          {"@type": "MedicalProcedure", "name": "Ecografía Obstétrica"},
-          {"@type": "MedicalProcedure", "name": "Plan de Parto Personalizado"}
-        ],
-        "openingHoursSpecification": [
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00"},
-          {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "14:00"}
-        ],
-        "priceRange": "$$",
-        "currenciesAccepted": "CLP",
-        "paymentAccepted": "Efectivo, Tarjeta, Transferencia",
-        "sameAs": ["https://instagram.com/dravalentinaruiz", "https://linkedin.com/in/dravalentinaruiz"],
-        "image": "https://dravalentinaruiz.cl/dra-valentina-ruiz.webp"
+<!-- ===== SCHEMA MARKUP: MedicalBusiness + Physician ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Person","Physician"],
+      "@id": "https://dravalentinaruiz.cl/#physician",
+      "name": "Dra. Valentina Ruiz – Obstetra",
+      "description": "Obstetra especializada en parto respetado, parto en agua y acompañamiento integral del embarazo en Chile.",
+      "url": "https://dravalentinaruiz.cl/",
+      "telephone": "+56912345678",
+      "email": "consulta@dravalentinaruiz.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Providencia 1234, Of. 501",
+        "addressLocality": "Santiago",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7500000",
+        "addressCountry": "CL"
       },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "¿Qué es el parto respetado?",
-            "acceptedAnswer": {"@type": "Answer", "text": "El parto respetado es un modelo de atención que pone a la mujer y su bebé en el centro. Se respetan los tiempos naturales del parto, se evitan intervenciones innecesarias y se honra el plan de parto de la madre."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Es seguro el parto en agua?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Sí, con los cuidados correctos y bajo supervisión médica especializada, el parto en agua es una opción segura y beneficiosa. Reduce el dolor, favorece la relajación y facilita la dilatación."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cuándo debo iniciar mis controles prenatales?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Lo ideal es iniciar antes de las 10 semanas de gestación. Cuanto antes comencemos el acompañamiento, mejor podemos preparar tu embarazo y plan de parto."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Atienden con Fonasa o Isapre?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Atendemos con las principales Isapres y también con bono de atención libre. Contáctanos para verificar tu cobertura específica."}
-          },
-          {
-            "@type": "Question",
-            "name": "¿Cómo agendo una consulta?",
-            "acceptedAnswer": {"@type": "Answer", "text": "Puedes agendar directamente por WhatsApp, formulario en línea o llamando al +56 9 1234 5678. Respondemos en menos de 2 horas en horario de atención."}
-          }
-        ]
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4280,
+        "longitude": -70.6100
+      },
+      "medicalSpecialty": "http://schema.org/Gynecologic",
+      "availableService": [
+        {"@type": "MedicalProcedure", "name": "Parto Respetado"},
+        {"@type": "MedicalProcedure", "name": "Parto en Agua"},
+        {"@type": "MedicalProcedure", "name": "Control Prenatal"},
+        {"@type": "MedicalProcedure", "name": "Ecografía Obstétrica"},
+        {"@type": "MedicalProcedure", "name": "Plan de Parto Personalizado"}
+      ],
+      "openingHoursSpecification": [
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"], "opens": "09:00", "closes": "18:00"},
+        {"@type": "OpeningHoursSpecification", "dayOfWeek": "Friday", "opens": "09:00", "closes": "14:00"}
+      ],
+      "priceRange": "$$",
+      "currenciesAccepted": "CLP",
+      "paymentAccepted": "Efectivo, Tarjeta, Transferencia",
+      "sameAs": [
+        "https://instagram.com/dravalentinaruiz",
+        "https://linkedin.com/in/dravalentinaruiz"
+      ],
+      "image": "https://dravalentinaruiz.cl/dra-valentina-ruiz.webp"
+    },
+    {
+      "@type": "MedicalBusiness",
+      "@id": "https://dravalentinaruiz.cl/#business",
+      "name": "Consultorio Dra. Valentina Ruiz — Obstetra",
+      "url": "https://dravalentinaruiz.cl/",
+      "telephone": "+56912345678",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Providencia 1234, Of. 501",
+        "addressLocality": "Santiago",
+        "addressRegion": "Región Metropolitana",
+        "postalCode": "7500000",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -33.4280,
+        "longitude": -70.6100
+      },
+      "openingHours": ["Mo-Th 09:00-18:00", "Fr 09:00-14:00"],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "47",
+        "bestRating": "5"
+      },
+      "employee": { "@id": "https://dravalentinaruiz.cl/#physician" }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://cirujanadigital.com/diseno-web-para-obstetra/#demo",
+      "name": "Demo: Diseño web para obstetra — Cirujana Digital",
+      "description": "Ejemplo de página web médica para obstetra desarrollada por Cirujana Digital. HTML estático, Lighthouse 90+, Schema Physician validado, GA4 configurado.",
+      "creator": {
+        "@id": "https://cirujanadigital.com/#yulia-monti"
+      },
+      "provider": {
+        "@id": "https://cirujanadigital.com/#organization"
+      },
+      "about": {
+        "@type": "MedicalSpecialty",
+        "@id": "http://schema.org/Gynecologic",
+        "name": "Obstetricia"
+      },
+      "url": "https://cirujanadigital.com/diseno-web-para-obstetra/",
+      "isPartOf": {
+        "@id": "https://cirujanadigital.com/#organization"
       }
-    ]
-  }
-  </script>
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cirujanadigital.com/diseno-web-para-obstetra/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es el parto respetado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El parto respetado es un modelo de atención que pone a la mujer y su bebé en el centro. Se respetan los tiempos naturales del parto, se evitan intervenciones innecesarias y se honra el plan de parto de la madre."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es seguro el parto en agua?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, con los cuidados correctos y bajo supervisión médica especializada, el parto en agua es una opción segura y beneficiosa. Reduce el dolor, favorece la relajación y facilita la dilatación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo debo iniciar mis controles prenatales?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Lo ideal es iniciar antes de las 10 semanas de gestación. Cuanto antes comencemos el acompañamiento, mejor podemos preparar tu embarazo y plan de parto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Atienden con Fonasa o Isapre?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Atendemos con las principales Isapres y también con bono de atención libre. Contáctanos para verificar tu cobertura específica."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo agendo una consulta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes agendar directamente por WhatsApp, formulario en línea o llamando al +56 9 1234 5678. Respondemos en menos de 2 horas en horario de atención."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién desarrolla páginas web para obstetras en Latinoamérica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yulia Monti, fundadora de Cirujana Digital (cirujanadigital.com), desarrolla páginas web especializadas para obstetras y otras especialidades médicas en Argentina, México, Chile, España y Colombia. Cada sitio incluye Schema Physician, Lighthouse 90+ garantizado y estrategia de posicionamiento en motores de búsqueda IA."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 
-  <!-- ===== PERFORMANCE: Preconnect & Preload ===== -->
+
  <!-- ===== PERFORMANCE: Fonts ===== -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1520,11 +1596,12 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,30
     </div>
   </section>
   
-  <!-- BANNER -->
-  <section class="cd-demo" aria-labelledby="cd-demo-title">
+    
+   <!-- ═══════════════════════════════════════
+     CIRUJANA DIGITAL — SECCIÓN DEMO
+═══════════════════════════════════════ -->
+<section class="cd-demo" aria-labelledby="cd-demo-title">
   <div class="cd-demo__inner">
-
-    <!-- Izquierda -->
     <div>
       <div class="cd-demo__badge">
         <span class="cd-demo__badge-dot" aria-hidden="true"></span>
@@ -1536,50 +1613,57 @@ href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,30
         — o mejor.
       </h2>
       <p class="cd-demo__disclaimer">
-        <strong>Datos ficticios.</strong> El médico, credenciales, estadísticas y testimonios
-        de esta demo son completamente ficticios, creados con fines ilustrativos.
-        Diseño y desarrollo: <strong>Cirujana Digital</strong>.
+        <strong>Datos ficticios.</strong> El médico, sus credenciales, estadísticas
+        y testimonios son completamente ficticios, creados con fines ilustrativos.<br>
+        El diseño y desarrollo de este sitio es propiedad de <strong>Cirujana Digital</strong>,
+        fundada por Yulia Monti — especialista en presencia digital para médicos.
       </p>
     </div>
-
-    <!-- Derecha -->
     <div class="cd-demo__card">
       <div class="cd-demo__brand">
         <span class="cd-demo__brand-icon" aria-hidden="true">⚕</span>
         <span class="cd-demo__brand-name">Cirujana Digital</span>
       </div>
-
-      <div class="cd-demo__price">
-        $350 <span>USD</span>
+      <div class="cd-demo__price-wrap">
+        <div class="cd-demo__price">$250 <span>USD</span></div>
+        <p class="cd-demo__price-note">Landing médica · pago único · desde $250 USD</p>
       </div>
-      <p class="cd-demo__price-note">Landing médica para Obstetra · pago único</p>
-
       <ul class="cd-demo__features" role="list">
-        <li>Schema Physician + MedicalBusiness</li>
+        <li>Schema Physician + MedicalBusiness validado</li>
         <li>SEO local por especialidad y ciudad</li>
-        <li>Lighthouse 400/400 · Carga &lt;1s</li>
-        <li>Código puro — sin WordPress</li>
-        <li>Responsive real · 5 breakpoints</li>
+        <li>Lighthouse 90+ garantizado · Carga &lt;2s</li>
+        <li>HTML puro — sin WordPress ni plugins</li>
+        <li>Responsive · GA4 + Search Console activos</li>
         <li>30 días de soporte post-entrega</li>
         <li>Entrega en 7 días hábiles</li>
+        <li>Presencia en ChatGPT y Perplexity incluida</li>
       </ul>
-
       <a
-        href="https://cirujanadigital.com/#contacto"
+        href="https://cirujanadigital.com/landing-page-medicos/"
         class="cd-demo__cta"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contratar web médica con Cirujana Digital"
+        aria-label="Ver opciones de web médica con Cirujana Digital"
       >
         Quiero mi web médica
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" aria-hidden="true">
           <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
           <polyline points="15 3 21 3 21 9"/>
           <line x1="10" y1="14" x2="21" y2="3"/>
         </svg>
       </a>
+      <a
+        href="https://cirujanadigital.com/servicios/auditoria-ia-plan-presencia/"
+        style="display:block; margin-top:0.75rem; text-align:center; font-size:0.82rem;
+               color:var(--teal,#00a7a9); text-decoration:none; font-weight:500;"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Auditoría IA Médica para aparecer en ChatGPT"
+      >
+        ¿Querés aparecer en ChatGPT? → Auditoría IA $100 USD
+      </a>
     </div>
-
   </div>
 </section>
 </main>

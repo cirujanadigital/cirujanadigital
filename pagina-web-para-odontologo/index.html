@@ -15,60 +15,156 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Dentist",
-  "@id": "https://cirujanadigital.com/pagina-web-para-odontologo/#dentist",
-  "name": "Dr. Ramiro Silva · Odontología de Precisión",
-  "description": "Especialista en implantología oral, ortodoncia invisible y estética dental en Palermo, Buenos Aires.",
-  "url": "https://cirujanadigital.com/pagina-web-para-odontologo/",
-  "telephone": "+5491123456789",
-  "priceRange": "$$",
-  "image": "https://cirujanadigital.com/img/og-odontologo.jpg",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "Av. Santa Fe 3450, Piso 4",
-    "addressLocality": "Palermo",
-    "addressRegion": "Buenos Aires",
-    "postalCode": "C1425",
-    "addressCountry": "AR"
-  },
-  "geo": { "@type": "GeoCoordinates", "latitude": -34.5875, "longitude": -58.4115 },
-  "openingHoursSpecification": [{"@type": "OpeningHoursSpecification","dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens": "09:00","closes": "19:00"}],
-  "medicalSpecialty": ["Dentistry", "Oral Implantology", "Orthodontics"],
-  "aggregateRating": {"@type": "AggregateRating","ratingValue": "4.9","reviewCount": "248","bestRating": "5"},
-  "founder": {
-    "@type": "Person","name": "Dr. Ramiro Silva","jobTitle": "Odontólogo Implantólogo",
-    "alumniOf": {"@type": "EducationalOrganization","name": "Universidad de Buenos Aires"},
-    "hasCredential": [
-      {"@type": "EducationalOccupationalCredential","name": "Fellowship ITI · International Team for Implantology"},
-      {"@type": "EducationalOccupationalCredential","name": "Posgrado en Estética Dental · Università di Bologna"}
-    ]
-  }
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "@id": "https://cirujanadigital.com/pagina-web-para-odontologo/#faq",
-  "mainEntity": [
-    {"@type": "Question","name": "¿Duele colocarse un implante dental?","acceptedAnswer": {"@type": "Answer","text": "No. La cirugía de implante se realiza bajo anestesia local. El postoperatorio puede generar molestias leves las primeras 48 horas, controladas con analgésicos comunes. La mayoría de los pacientes retoman su actividad normal al día siguiente."}},
-    {"@type": "Question","name": "¿Cuánto tiempo dura un implante dental?","acceptedAnswer": {"@type": "Answer","text": "Los implantes Nobel Biocare tienen una tasa de supervivencia del 97% a 5 años documentada clínicamente. Con controles periódicos e higiene adecuada, pueden durar toda la vida."}},
-    {"@type": "Question","name": "¿Cuánto tarda el tratamiento de ortodoncia invisible?","acceptedAnswer": {"@type": "Answer","text": "El plan estándar tiene duración de 12 meses con revisiones mensuales. Casos leves pueden resolverse en 6 a 8 meses. El tiempo exacto se determina en el diagnóstico digital inicial."}},
-    {"@type": "Question","name": "¿Qué es el diseño digital de sonrisa (DSD)?","acceptedAnswer": {"@type": "Answer","text": "El Diseño Digital de Sonrisa es una metodología que permite planificar el resultado estético dental de forma virtual antes de comenzar cualquier tratamiento."}},
-    {"@type": "Question","name": "¿Se pueden financiar los tratamientos?","acceptedAnswer": {"@type": "Answer","text": "Sí. El consultorio trabaja con planes de financiación propios y acepta las principales obras sociales: OSDE, Swiss Medical y Galeno."}}
+  "@graph": [
+    {
+      "@type": "Dentist",
+      "@id": "https://cirujanadigital.com/pagina-web-para-odontologo/#dentist",
+      "name": "Dr. Ramiro Silva · Odontología de Precisión",
+      "description": "Especialista en implantología oral, ortodoncia invisible y estética dental en Palermo, Buenos Aires.",
+      "url": "https://cirujanadigital.com/pagina-web-para-odontologo/",
+      "telephone": "+5491123456789",
+      "priceRange": "$$",
+      "image": "https://cirujanadigital.com/img/og-odontologo.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Santa Fe 3450, Piso 4",
+        "addressLocality": "Palermo",
+        "addressRegion": "Buenos Aires",
+        "postalCode": "C1425",
+        "addressCountry": "AR"
+      },
+      "geo": { "@type": "GeoCoordinates", "latitude": -34.5875, "longitude": -58.4115 },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "medicalSpecialty": "http://schema.org/Dentistry",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "248",
+        "bestRating": "5"
+      },
+      "founder": {
+        "@type": "Person",
+        "name": "Dr. Ramiro Silva",
+        "jobTitle": "Odontólogo Implantólogo",
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Universidad de Buenos Aires"
+        },
+        "hasCredential": [
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Fellowship ITI · International Team for Implantology"
+          },
+          {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Posgrado en Estética Dental · Università di Bologna"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://cirujanadigital.com/pagina-web-para-odontologo/#demo",
+      "name": "Demo: Diseño web para odontólogo — Cirujana Digital",
+      "description": "Ejemplo de página web médica para odontólogo desarrollada por Cirujana Digital. HTML estático, Lighthouse 90+, Schema Dentist validado, GA4 configurado.",
+      "creator": {
+        "@id": "https://cirujanadigital.com/#yulia-monti"
+      },
+      "provider": {
+        "@id": "https://cirujanadigital.com/#organization"
+      },
+      "about": {
+        "@type": "MedicalSpecialty",
+        "@id": "http://schema.org/Dentistry",
+        "name": "Odontología, Implantología Oral, Ortodoncia Invisible"
+      },
+      "url": "https://cirujanadigital.com/pagina-web-para-odontologo/",
+      "isPartOf": {
+        "@id": "https://cirujanadigital.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cirujanadigital.com/pagina-web-para-odontologo/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Duele colocarse un implante dental?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. La cirugía de implante se realiza bajo anestesia local. El postoperatorio puede generar molestias leves las primeras 48 horas, controladas con analgésicos comunes. La mayoría de los pacientes retoman su actividad normal al día siguiente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tiempo dura un implante dental?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Los implantes Nobel Biocare tienen una tasa de supervivencia del 97% a 5 años documentada clínicamente. Con controles periódicos e higiene adecuada, pueden durar toda la vida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto tarda el tratamiento de ortodoncia invisible?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El plan estándar tiene duración de 12 meses con revisiones mensuales. Casos leves pueden resolverse en 6 a 8 meses. El tiempo exacto se determina en el diagnóstico digital inicial."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué es el diseño digital de sonrisa (DSD)?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Diseño Digital de Sonrisa es una metodología que permite planificar el resultado estético dental de forma virtual antes de comenzar cualquier tratamiento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Se pueden financiar los tratamientos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El consultorio trabaja con planes de financiación propios y acepta las principales obras sociales: OSDE, Swiss Medical y Galeno."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Quién desarrolla páginas web para odontólogos en Latinoamérica?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yulia Monti, fundadora de Cirujana Digital (cirujanadigital.com), desarrolla páginas web especializadas para odontólogos y otras especialidades médicas en Argentina, México, Chile, España y Colombia. Cada sitio incluye Schema Dentist, Lighthouse 90+ garantizado y estrategia de posicionamiento en motores de búsqueda IA."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Inicio",
+          "item": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Diseño Web para Odontólogo",
+          "item": "https://cirujanadigital.com/pagina-web-para-odontologo/"
+        }
+      ]
+    }
   ]
 }
 </script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/"},
-    {"@type": "ListItem", "position": 2, "name": "Diseño Web para Odontólogo", "item": "https://cirujanadigital.com/pagina-web-para-odontologo/"}
-  ]
-}
-</script>
+
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -1008,11 +1104,12 @@
     <a href="https://wa.me/5491123456789" class="sticky-cta-wa" aria-label="Contactar por WhatsApp"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1C4.14 1 1 4.14 1 8C1 9.29 1.36 10.49 2 11.5L1 15L4.56 13.97C5.55 14.63 6.73 15 8 15C11.86 15 15 11.86 15 8C15 4.14 11.86 1 8 1Z" fill="white"/></svg>WhatsApp</a>
 </div>
 
-<!-- BANNER CD -->
+    
+   <!-- ═══════════════════════════════════════
+     CIRUJANA DIGITAL — SECCIÓN DEMO
+═══════════════════════════════════════ -->
 <section class="cd-demo" aria-labelledby="cd-demo-title">
   <div class="cd-demo__inner">
-
-    <!-- Izquierda -->
     <div>
       <div class="cd-demo__badge">
         <span class="cd-demo__badge-dot" aria-hidden="true"></span>
@@ -1024,50 +1121,57 @@
         — o mejor.
       </h2>
       <p class="cd-demo__disclaimer">
-        <strong>Datos ficticios.</strong> El médico, credenciales, estadísticas y testimonios
-        de esta demo son completamente ficticios, creados con fines ilustrativos.
-        Diseño y desarrollo: <strong>Cirujana Digital</strong>.
+        <strong>Datos ficticios.</strong> El médico, sus credenciales, estadísticas
+        y testimonios son completamente ficticios, creados con fines ilustrativos.<br>
+        El diseño y desarrollo de este sitio es propiedad de <strong>Cirujana Digital</strong>,
+        fundada por Yulia Monti — especialista en presencia digital para médicos.
       </p>
     </div>
-
-    <!-- Derecha -->
     <div class="cd-demo__card">
       <div class="cd-demo__brand">
         <span class="cd-demo__brand-icon" aria-hidden="true">⚕</span>
         <span class="cd-demo__brand-name">Cirujana Digital</span>
       </div>
-
-      <div class="cd-demo__price">
-        $350 <span>USD</span>
+      <div class="cd-demo__price-wrap">
+        <div class="cd-demo__price">$250 <span>USD</span></div>
+        <p class="cd-demo__price-note">Landing médica · pago único · desde $250 USD</p>
       </div>
-      <p class="cd-demo__price-note">Landing médica para Odontólogo · pago único</p>
-
       <ul class="cd-demo__features" role="list">
-        <li>Schema Physician + MedicalBusiness</li>
+        <li>Schema Physician + MedicalBusiness validado</li>
         <li>SEO local por especialidad y ciudad</li>
-        <li>Lighthouse 400/400 · Carga &lt;1s</li>
-        <li>Código puro — sin WordPress</li>
-        <li>Responsive real · 5 breakpoints</li>
+        <li>Lighthouse 90+ garantizado · Carga &lt;2s</li>
+        <li>HTML puro — sin WordPress ni plugins</li>
+        <li>Responsive · GA4 + Search Console activos</li>
         <li>30 días de soporte post-entrega</li>
         <li>Entrega en 7 días hábiles</li>
+        <li>Presencia en ChatGPT y Perplexity incluida</li>
       </ul>
-
       <a
-        href="https://cirujanadigital.com/#contacto"
+        href="https://cirujanadigital.com/landing-page-medicos/"
         class="cd-demo__cta"
         target="_blank"
         rel="noopener noreferrer"
-        aria-label="Contratar web médica con Cirujana Digital"
+        aria-label="Ver opciones de web médica con Cirujana Digital"
       >
         Quiero mi web médica
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" aria-hidden="true">
           <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
           <polyline points="15 3 21 3 21 9"/>
           <line x1="10" y1="14" x2="21" y2="3"/>
         </svg>
       </a>
+      <a
+        href="https://cirujanadigital.com/servicios/auditoria-ia-plan-presencia/"
+        style="display:block; margin-top:0.75rem; text-align:center; font-size:0.82rem;
+               color:var(--teal,#00a7a9); text-decoration:none; font-weight:500;"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Auditoría IA Médica para aparecer en ChatGPT"
+      >
+        ¿Querés aparecer en ChatGPT? → Auditoría IA $100 USD
+      </a>
     </div>
-
   </div>
 </section>
 

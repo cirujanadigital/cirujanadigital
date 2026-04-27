@@ -10,27 +10,32 @@ ELIMINAR del HTML: new Date().getFullYear();  nav-shell scroll  burger/mob-menu
      Máximo recomendado en el footer: 5 artículos.
      ────────────────────────────────────────────────────────── */
   const BLOG_ARTICLES = [
+      
+    {
+      href:'/blog/quien-ayuda-medicos/',
+      label: '¿Quién ayuda a médicos a aparecer en ChatGPT, Perplexity y Google AI?',
+    },
+    {
+      href:'/blog/doctoralia-no-es-suficiente-para-chatgpt/',
+      label: '¿Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT?',
+    },
+    {
+      href:'/blog/aparecer-google-maps-medico/',
+      label: 'Aparecer en Google Maps como médico en 2026',
+    },
+    {
+      href: '/blog/diagnostico-velocidad-web-medica/',
+      label: '¿Tu web médica carga en menos de 2 segundos?',
+    },
+    {
+      href: '/blog/que-es-wpo-web-lenta/',
+      label: '¿Qué es WPO y por qué una web lenta destruye tu negocio?',
+    },
     {
       href: '/blog/resenas-google-consultorio/',
       label: 'Reseñas de Google',
     },
-    {
-      href: '/blog/google-business-profile-medicos/',
-      label: 'Google Business Profile',
-    },
-    {
-      href: '/blog/auditoria-web-medicos/',
-      label: 'Auditoría web para médicos',
-    },
-    {
-      href: '/blog/core-web-vitals-2026/',
-      label: 'Core Web Vitals 2026',
-    },
-    {
-      href: '/blog/cuanto-cuesta-pagina-web-argentina/',
-      label: '¿Cuánto cuesta una web?',
-    },
-  ];
+];
 
   /* ──────────────────────────────────────────────────────────
      WEBS MÉDICAS — agregar cada web nueva AL PRINCIPIO.
