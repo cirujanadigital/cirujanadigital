@@ -205,7 +205,7 @@ section {
 }
 
 .btn-primary {
-  background: var(--gradient-brand);
+  background: var(--color-brand-dark);
   color: #fff;
   box-shadow: 0 6px 20px var(--color-brand-glow);
 }
@@ -332,7 +332,6 @@ section {
   font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   margin-top: 1rem;
 }
-
 
 .text-gradient {
   background: linear-gradient(135deg, #00a7a9, #03658c);
@@ -733,7 +732,7 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: var(--gradient-brand);
+  background: var(--color-brand-dark);
   color: #fff;
   font-size: 0.72rem;
   font-weight: 800;
@@ -1281,7 +1280,7 @@ section {
   position: absolute;
   top: -1px;
   right: 1.5rem;
-  background: var(--gradient-brand);
+  background: var(--color-brand-dark);
   color: #fff;
   font-size: 0.7rem;
   font-weight: 700;
@@ -1734,7 +1733,7 @@ input[type='range'].roi-slider::-moz-range-thumb {
 }
 #roiChart {
   display: block;
-  width: 100%;
+  width: 500px;
   height: 200px;
   border-radius: var(--radius-sm);
 }
