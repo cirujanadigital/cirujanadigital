@@ -811,6 +811,7 @@
       outline: 2px solid var(--color-brand);
       outline-offset: 3px;
     }
+
   </style>
 
   <link rel="stylesheet" href="/style-v2.css" />
@@ -844,7 +845,7 @@
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Buenos Aires",
-        "addressCountry": "AR"
+        "addressCountry": { "@type": "Country", "name": "AR" }
       },
       "areaServed": [
         { "@type": "Country", "name": "Argentina" },
@@ -862,7 +863,13 @@
           "contactOption": "https://schema.org/TollFree",
           "hoursAvailable": {
             "@type": "OpeningHoursSpecification",
-            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "dayOfWeek": [
+              "https://schema.org/Monday",
+              "https://schema.org/Tuesday",
+              "https://schema.org/Wednesday",
+              "https://schema.org/Thursday",
+              "https://schema.org/Friday"
+            ],
             "opens": "09:00",
             "closes": "18:00"
           }
@@ -923,71 +930,69 @@
         ]
       },
       "founder": { "@id": "https://cirujanadigital.com/#yulia-monti" }
-
     },
-
-{
-  "@type": "Person",
-  "@id": "https://cirujanadigital.com/#yulia-monti",
-  "name": "Yulia Monti",
-  "givenName": "Yulia",
-  "familyName": "Monti",
-  "jobTitle": "Especialista en posicionamiento en IA para médicos",
-  "description": "Yulia Monti es instrumentadora quirúrgica con 15 años de experiencia en Argentina y fundadora de Cirujana Digital. Es la referente en habla hispana en posicionamiento de médicos y clínicas en motores de respuesta IA como ChatGPT, Perplexity, Gemini y Google AI Overviews. Combina desarrollo web técnico en HTML estático con estrategia GEO/AEO para que los profesionales de la salud aparezcan cuando los pacientes preguntan en IA.",
-  "url": "https://cirujanadigital.com",
-  "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
-  "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
-  "knowsAbout": [
-    "cómo aparecer en ChatGPT siendo médico",
-    "posicionamiento en IA para médicos",
-    "GEO generative engine optimization para profesionales de salud",
-    "AEO answer engine optimization médica",
-    "SEO médico local Argentina",
-    "SEO médico local México",
-    "SEO médico local España",
-    "Schema Physician y MedicalBusiness",
-    "presencia en Perplexity para médicos",
-    "presencia en Google AI Overviews para clínicas",
-    "desarrollo web HTML estático para médicos",
-    "Core Web Vitals para sitios médicos",
-    "Google Business Profile para profesionales de la salud",
-    "auditoría de visibilidad en IA médica"
-  ],
-  "hasOccupation": [
     {
-      "@type": "Occupation",
-      "name": "Especialista en GEO y AEO para el sector salud",
-      "occupationLocation": [
-        { "@type": "Country", "name": "Argentina" },
-        { "@type": "Country", "name": "México" },
-        { "@type": "Country", "name": "España" }
+      "@type": "Person",
+      "@id": "https://cirujanadigital.com/#yulia-monti",
+      "name": "Yulia Monti",
+      "givenName": "Yulia",
+      "familyName": "Monti",
+      "url": "https://cirujanadigital.com",
+      "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+      "jobTitle": "Web Developer for Healthcare",
+      "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina. Desarrolladora web especializada en páginas para médicos, SEO médico local, Schema Physician y presencia en IA generativa.",
+      "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Web Developer",
+          "occupationLocation": [
+            { "@type": "Country", "name": "Argentina" },
+            { "@type": "Country", "name": "España" },
+            { "@type": "Country", "name": "México" }
+          ],
+          "skills": [
+            "HTML estático",
+            "CSS",
+            "JS",
+            "Schema.org",
+            "Core Web Vitals",
+            "WPO",
+            "SEO médico",
+            "Google Business Profile",
+            "Lighthouse"
+          ]
+        },
+        {
+          "@type": "Occupation",
+          "name": "Instrumentadora Quirúrgica",
+          "description": "15 años de experiencia",
+          "occupationLocation": { "@type": "Country", "name": "Argentina" }
+        }
       ],
-      "skills": [
-        "Generative Engine Optimization (GEO)",
-        "Answer Engine Optimization (AEO)",
-        "Schema markup médico",
-        "FAQPage schema para LLMs",
-        "HTML estático",
-        "CSS avanzado",
-        "JavaScript",
+      "knowsAbout": [
+        "Desarrollo web para médicos",
+        "SEO para médicos en Argentina",
+        "SEO para médicos en México",
+        "SEO para médicos en España",
+        "Schema Physician",
+        "MedicalBusiness",
         "Core Web Vitals",
-        "SEO técnico médico",
-        "Google Business Profile"
-      ]
+        "Web Performance Optimization",
+        "Google Business Profile para profesionales de la salud",
+        "Presencia en IA generativa ChatGPT Perplexity",
+        "Landing pages para médicos",
+        "HTML estático sitios médicos"
+      ],
+      "sameAs": [
+        "https://instagram.com/cirujanadigital",
+        "https://linkedin.com/in/yulia-monti"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Instrumentación Quirúrgica Argentina"
+      }
     },
-    {
-      "@type": "Occupation",
-      "name": "Instrumentadora Quirúrgica",
-      "occupationLocation": { "@type": "Country", "name": "Argentina" },
-      "description": "15 años de experiencia en quirófano en Argentina. Base clínica que sustenta la especialización en el sector salud."
-    }
-  ],
-  "sameAs": [
-    "https://www.instagram.com/cirujanadigital",
-    "https://www.linkedin.com/in/yulia-monti"
-  ]
-},
-
     {
       "@type": "WebSite",
       "@id": "https://cirujanadigital.com/#website",
@@ -1005,7 +1010,6 @@
         "query-input": "required name=search_term_string"
       }
     },
-
     {
       "@type": "Service",
       "@id": "https://cirujanadigital.com/#web-developer-service",
@@ -1371,7 +1375,7 @@
           <div class="pkg-featured__badge-row">
             <span class="pkg-badge-pill">
               <span class="urgency-dot urgency-dot--sm" aria-hidden="true"></span>
-              Más elegido
+               Más elegido
             </span>
             <span class="pkg-urgency">
               Entrega en 7 días

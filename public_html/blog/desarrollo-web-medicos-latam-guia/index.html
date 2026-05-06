@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+      }
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+        window.addEventListener(e, loadGTM, { once: true })
+      );
+      setTimeout(loadGTM, 8000);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Desarrollo web para médicos en LATAM: guía completa 2026 | Cirujana Digital</title>
+    <meta name="description" content="Guía completa de desarrollo web para médicos en LATAM: HTML estático vs WordPress, SEO local, Core Web Vitals, Schema médico y presencia en IA generativa. Por Yulia Monti." />
+    <meta name="author" content="Yulia Monti — Cirujana Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="article" />
+    <meta property="og:url"         content="https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/" />
+    <meta property="og:title"       content="Desarrollo web para médicos en LATAM: guía completa 2026" />
+    <meta property="og:description" content="Guía completa de desarrollo web para médicos en LATAM: HTML estático vs WordPress, SEO local, Core Web Vitals, Schema médico y presencia en IA generativa." />
+    <meta property="og:image"       content="https://cirujanadigital.com/img/og-desarrollo-web-medicos-latam-guia.webp" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale"      content="es_419" />
+    <meta property="og:site_name"   content="Cirujana Digital" />
+
+    <!-- Article metadata -->
+    <meta property="article:published_time" content="2026-05-06" />
+    <meta property="article:modified_time"  content="2026-05-06" />
+    <meta property="article:author"         content="Yulia Monti" />
+    <meta property="article:section"        content="Diseño" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Desarrollo web para médicos en LATAM: guía completa 2026" />
+    <meta name="twitter:description" content="HTML estático vs WordPress, SEO local, Schema médico y presencia en IA generativa para médicos en LATAM." />
+    <meta name="twitter:image"       content="https://cirujanadigital.com/img/og-desarrollo-web-medicos-latam-guia.webp" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+    <link rel="preload" href="/components.css" as="style">
+<link rel="stylesheet" href="/components.css">
+<script src="/components.js" defer></script>
+
+    <!-- SCHEMA JSON-LD: Article + FAQPage + BreadcrumbList encadenados con @id -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/",
+          "email": "info@cirujanadigital.com",
+          "telephone": "+5491176199680",
+          "sameAs": [
+            "https://www.instagram.com/cirujanadigital",
+            "https://www.linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Web Developer for Healthcare",
+          "url": "https://cirujanadigital.com/",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina. Desarrolladora web especializada en sitios para médicos, SEO médico local, Schema Physician y presencia en IA generativa.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "knowsAbout": [
+            "Desarrollo web para médicos",
+            "SEO para médicos en LATAM",
+            "Schema Physician",
+            "Core Web Vitals",
+            "HTML estático sitios médicos",
+            "Google Business Profile para profesionales de la salud",
+            "Presencia en IA generativa ChatGPT Perplexity"
+          ],
+          "sameAs": [
+            "https://instagram.com/cirujanadigital",
+            "https://linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Desarrollo web para médicos en LATAM: guía completa 2026" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/#article",
+          "headline": "Desarrollo web para médicos en LATAM: guía completa 2026",
+          "description": "Guía completa de desarrollo web para médicos en LATAM: HTML estático vs WordPress, SEO local, Core Web Vitals, Schema médico y presencia en IA generativa.",
+          "image": {
+            "@type": "ImageObject",
+            "url":    "https://cirujanadigital.com/img/og-desarrollo-web-medicos-latam-guia.webp",
+            "width":  1200,
+            "height": 630
+          },
+          "datePublished": "2026-05-06",
+          "dateModified":  "2026-05-06",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/",
+          "articleSection": "Diseño",
+          "inLanguage": "es",
+          "breadcrumb": { "@id": "https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/#breadcrumb" }
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cirujanadigital.com/blog/desarrollo-web-medicos-latam-guia/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué plataforma es mejor para una web médica: WordPress o HTML estático?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para una web médica en LATAM, el HTML estático supera a WordPress en todos los indicadores técnicos relevantes: velocidad de carga (Lighthouse Performance 95+ vs 40–60 en WordPress típico), seguridad (sin base de datos que hackear, sin plugins que parchear), costo de mantenimiento (cero licencias, cero hosting premium obligatorio) y Core Web Vitals (LCP bajo 1.5s, CLS 0). WordPress solo tiene sentido si el médico publica 10 o más artículos por mes y tiene recursos para mantener el sitio actualizado."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuesta una web profesional para médicos en LATAM?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una web médica profesional con HTML estático, Schema Physician, SEO local, integración de WhatsApp y Calendly, y optimización de Core Web Vitals cuesta entre USD 800 y USD 2.500 dependiendo del alcance (especialidad única vs clínica multiprofesional). No incluye templates genéricos ni WordPress. El mantenimiento anual es mínimo porque no hay plugins ni actualizaciones de seguridad urgentes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo puede un médico aparecer en Google Maps en LATAM?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para aparecer en Google Maps, el médico necesita: (1) Un perfil de Google Business Profile verificado con categoría médica correcta (ej. 'Dermatólogo', no solo 'Médico'). (2) Nombre, dirección y teléfono (NAP) idénticos en el sitio web y en el perfil. (3) Schema MedicalBusiness o Physician con geo-coordenadas. (4) Reseñas activas con respuestas del profesional. (5) Contenido local en el sitio: barrio, ciudad, colonia. Un sitio lento o en WordPress no penaliza directamente el Maps, pero sí la conversión una vez que el paciente hace click."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Pueden los médicos aparecer en ChatGPT o Perplexity?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Los LLMs como ChatGPT, Perplexity y Google AI Overviews citan sitios con alta autoridad técnica y semántica. Para que un médico aparezca en esas respuestas necesita: Schema Physician o MedicalBusiness correctamente implementado, artículos de blog con preguntas reales de pacientes estructuradas como FAQPage, velocidad de carga alta (los crawlers de IA priorizan páginas rápidas), y menciones externas en directorios médicos y medios. Esta estrategia se llama GEO (Generative Engine Optimization) y es el diferencial del desarrollo web médico en 2026."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué debe incluir técnicamente una web médica para posicionar en Google en 2026?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una web médica que posicione en 2026 necesita: HTML semántico (sin CMS innecesario), Schema Physician o MedicalBusiness con @id resolvible, Core Web Vitals en verde (LCP menor a 2.5s, INP menor a 200ms, CLS menor a 0.1), perfil de Google Business Profile optimizado y vinculado, página de servicios con keywords de especialidad + ciudad, y FAQPage estructurada para búsquedas de voz e IA generativa. Sin estos elementos, el sitio existe pero no trabaja."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+
+      :root {
+        --primary: #03658c;
+        --secondary: #00a7a9;
+        --light: #f7f9fa;
+        --cd-text: #2d3748;
+        --cd-text-light: #64748b;
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+        --container-padding: 2rem;
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+        --gap: 2rem;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--cd-text);
+        background: #fff;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      main#main { min-height: 100vh; contain: layout; }
+      #site-nav { height: 70px; min-height: 70px; contain: layout style; }
+ #site-footer {
+  min-height: 678px;
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 678px;
+}
+@media (max-width: 768px) {
+  #site-footer {
+    min-height: 1780px;
+    contain-intrinsic-size: 0 1780px;
+  }
+}
+
+      img { max-width: 100%; height: auto; display: block; }
+      a   { color: inherit; }
+      .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; }
+      [data-animate] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+      /* HERO */
+      .article-hero {
+        padding: calc(80px + 4rem) 0 4rem;
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+        isolation: isolate;
+      }
+      .article-hero-inner {
+        max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; contain: layout;
+      }
+      .article-breadcrumb {
+        font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem;
+      }
+      .article-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+      .article-breadcrumb a:hover { color: #fff; }
+      .article-breadcrumb span { margin: 0 0.4rem; }
+      .article-category {
+        display: inline-block;
+        background: rgba(0,167,169,0.2); color: #7fdbff;
+        border: 1px solid rgba(0,167,169,0.3); border-radius: 50px;
+        font-size: 0.75rem; font-weight: 700; padding: 4px 14px;
+        letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
+      }
+      .article-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 1.25rem;
+      }
+      .article-meta {
+        display: flex; align-items: center; gap: 1rem;
+        flex-wrap: wrap; font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      }
+      .article-meta strong { color: rgba(255,255,255,0.85); }
+
+      /* BODY LAYOUT */
+      .article-body { padding: 4rem 0 5rem; background: #fff; }
+      .article-layout {
+        display: grid; grid-template-columns: 1fr 280px;
+        gap: 4rem; max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; align-items: start;
+      }
+      .article-content { min-width: 0; }
+
+      /* TYPOGRAPHY */
+      .article-content h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--cd-text);
+        margin: 2.5rem 0 1rem; scroll-margin-top: 100px;
+        border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;
+      }
+      .article-content h3 { font-size: 1.2rem; color: var(--cd-text); margin: 1.75rem 0 0.6rem; font-weight: 700; }
+      .article-content p { color: #4a5568; line-height: 1.9; margin-bottom: 1.4rem; font-size: 1.05rem; }
+      .article-content ul, .article-content ol { margin: 0 0 1.5rem 1.5rem; }
+      .article-content li { color: #4a5568; line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
+      .article-content strong { color: var(--cd-text); }
+      .article-content a { color: var(--secondary); text-decoration: none; font-weight: 600; }
+      .article-content a:hover { color: var(--primary); }
+
+      /* METRICS */
+      .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+      .metric-card { background: var(--light); border-radius: 12px; padding: 1.25rem; text-align: center; border-top: 4px solid var(--secondary); }
+      .metric-card .metric-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cd-text-light); margin-bottom: 0.5rem; }
+      .metric-card .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 0.4rem; }
+      .metric-card .metric-desc { font-size: 0.8rem; color: var(--cd-text-light); line-height: 1.4; }
+      .metric-card.good  { border-color: #00c853; } .metric-card.good  .metric-value { color: #00a844; }
+      .metric-card.medium { border-color: #f59e0b; } .metric-card.medium .metric-value { color: #d97706; }
+      .metric-card.bad   { border-color: #e74c3c; } .metric-card.bad   .metric-value { color: #c0392b; }
+
+      /* CALLOUTS */
+      .callout { padding: 1.25rem 1.5rem; border-radius: 10px; margin: 2rem 0; }
+      .callout p { margin-bottom: 0; font-size: 1rem; }
+      .callout-label { font-weight: 800; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+      .callout-tip { background: rgba(0,167,169,0.08); border-left: 4px solid var(--secondary); }
+      .callout-tip .callout-label { color: #006b6d; }
+      .callout-warning { background: rgba(245,158,11,0.08); border-left: 4px solid #f59e0b; }
+      .callout-warning .callout-label { color: #92400e; }
+      .callout-danger { background: rgba(231,76,60,0.07); border-left: 4px solid #e74c3c; }
+      .callout-danger .callout-label { color: #991b1b; }
+
+      /* TABLES */
+      .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+      .data-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.93rem; }
+      .data-table thead { background: var(--gradient-primary); color: #fff; }
+      .data-table th { padding: 0.9rem 1.2rem; text-align: left; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+      .data-table td { padding: 0.9rem 1.2rem; border-bottom: 1px solid #f1f5f9; color: #4a5568; vertical-align: top; }
+      .data-table tr:last-child td { border-bottom: none; }
+      .data-table tr:nth-child(even) td { background: #f8fafc; }
+      .tag-good   { color: #00a844; font-weight: 700; }
+      .tag-medium { color: #d97706; font-weight: 700; }
+      .tag-bad    { color: #c0392b; font-weight: 700; }
+
+      /* AUTHOR BOX */
+      .author-box { display: flex; gap: 1.25rem; align-items: center; padding: 1.75rem; background: var(--light); border-radius: 14px; margin: 3rem 0; }
+      .author-avatar { width: 60px; height: 60px; flex-shrink: 0; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+      .author-info h4 { font-size: 1rem; font-weight: 700; color: var(--cd-text); margin-bottom: 0.2rem; }
+      .author-info p { font-size: 0.9rem; color: var(--cd-text-light); margin: 0; line-height: 1.6; }
+
+      /* CTA BOX */
+      .article-cta-box { background: linear-gradient(135deg,#0d1b2a 0%,#03658c 100%); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+      .article-cta-box h3 { font-family: var(--font-display); color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+      .article-cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+      .btn-cta-white { display: inline-flex; gap: 0.75rem; align-items: center; background: #fff; color: #024e6c; font-weight: 800; padding: 0.875rem 2rem; border-radius: 10px; text-decoration: none; font-size: 1rem; transition: var(--transition); }
+      .btn-cta-white:hover { background: #e0f7f7; transform: translateY(-2px); color: var(--primary); }
+
+      /* SIDEBAR */
+      .article-sidebar { position: sticky; top: 100px; min-width: 0; }
+      .toc-box { background: var(--light); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+      .toc-box h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 1rem; }
+      .toc-box ol { list-style: none; counter-reset: toc; padding: 0; margin: 0; }
+      .toc-box li { counter-increment: toc; margin-bottom: 0.6rem; }
+      .toc-box a { font-size: 0.87rem; color: var(--cd-text-light); text-decoration: none; display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.4; transition: color 0.2s; }
+      .toc-box a::before { content: counter(toc); color: var(--secondary); font-weight: 700; font-size: 0.72rem; flex-shrink: 0; margin-top: 0.15rem; }
+      .toc-box a:hover { color: var(--primary); }
+
+      .sb-diag { background: #0d1b2a; border: 1px solid rgba(0,167,169,0.2); border-radius: 12px; padding: 1.5rem; color: #fff; }
+      .sb-diag__head { margin-bottom: 1.25rem; }
+      .sb-diag__label { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7fdbff; margin-bottom: 0.5rem; }
+      .sb-diag__stat { font-size: 0.88rem; line-height: 1.5; color: rgba(255,255,255,0.75); margin: 0; }
+      .sb-diag__stat em { font-style: normal; font-weight: 700; color: #fff; }
+      .sb-diag__list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .sb-diag__list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+      .sb-diag__icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .sb-diag__list strong { display: block; font-size: 0.85rem; color: #fff; margin-bottom: 0.1rem; }
+      .sb-diag__list span { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+      .sb-diag__btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg,#03658c 0%,#00a7a9 100%); color: #fff; font-weight: 700; font-size: 0.875rem; border-radius: 8px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,167,169,0.28); margin-bottom: 0.75rem; }
+      .sb-diag__btn:hover { box-shadow: 0 6px 20px rgba(0,167,169,0.42); transform: translateY(-1px); color: #fff; }
+      .sb-diag__nota { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; margin: 0; }
+
+      /* RESPONSIVE */
+      @media (max-width: 1024px) {
+        .article-layout { grid-template-columns: 1fr; }
+        .article-sidebar { display: none; }
+      }
+      @media (max-width: 768px) {
+        .article-hero { padding: calc(70px + 3rem) 0 3rem; }
+        .article-body { padding: 2.5rem 0 3.5rem; }
+        .metrics-grid { grid-template-columns: 1fr; }
+        .author-box { flex-direction: column; }
+      }
+      @media (max-width: 640px) {
+        .article-meta { gap: 0.6rem; font-size: 0.82rem; }
+        .article-cta-box { padding: 1.75rem 1.25rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <div id="site-nav"></div>
+
+    <main id="main" tabindex="-1">
+
+      <!-- HERO -->
+      <header class="article-hero">
+        <div class="article-hero-inner">
+          <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+            <a href="/">Inicio</a><span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Desarrollo web para médicos en LATAM</span>
+          </nav>
+          <span class="article-category">Diseño</span>
+          <h1>Desarrollo web para médicos en LATAM: guía completa 2026</h1>
+          <div class="article-meta">
+            <span>Por <strong>Yulia Monti — Cirujana Digital</strong></span>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-05-06">6 de mayo de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>14 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CUERPO -->
+      <div class="article-body">
+        <div class="article-layout">
+
+          <!-- CONTENIDO PRINCIPAL -->
+          <article class="article-content" itemscope itemtype="https://schema.org/Article">
+
+            <p>El médico que no aparece en Google no existe para el paciente que lo busca en este momento. Esa es la realidad del mercado sanitario en Latinoamérica en 2026: la primera consulta no ocurre en el consultorio, ocurre en la pantalla del celular. Y la mayoría de los profesionales de la salud en la región tienen un sitio web que no cumple ninguna de las funciones que debería cumplir: no carga rápido, no aparece en búsquedas locales, no convierte visitas en turnos, y no existe para los motores de IA generativa que hoy responden las preguntas de salud de millones de personas. Esta guía, elaborada por <strong>Yulia Monti — Cirujana Digital</strong>, cubre todo lo que un médico en LATAM necesita saber antes de construir o reconstruir su presencia digital: tecnología, SEO, costos y estrategia.</p>
+
+            <!-- SECCIÓN 1 -->
+            <h2 id="por-que-wordpress-falla">Por qué WordPress falla para webs médicas</h2>
+
+            <p>WordPress alimenta el 43% de los sitios web del mundo. También concentra el 94% de los ataques a CMS registrados cada año. Para un médico, usar WordPress no es una decisión técnica neutral: es asumir una deuda de mantenimiento perpetua que compite con su tiempo clínico y, en muchos casos, lo deja con un sitio lento, inseguro y que penaliza en lugar de posicionar.</p>
+
+            <p>El problema no es ideológico. Es de rendimiento medible. Cuando <strong>Yulia Monti — Cirujana Digital</strong> audita sitios médicos en Argentina, México, Chile y España, el patrón es siempre el mismo: WordPress con un tema premium, cinco plugins activos y hosting compartido produce una página que tarda entre 4 y 8 segundos en cargar en mobile. Eso, según Google, elimina al 53% de los usuarios antes de que vean una sola línea de contenido.</p>
+
+            <div class="metrics-grid">
+              <div class="metric-card bad">
+                <p class="metric-name">Lighthouse Performance (WP típico)</p>
+                <p class="metric-value">38</p>
+                <p class="metric-desc">WordPress con tema + plugins en hosting compartido</p>
+              </div>
+              <div class="metric-card medium">
+                <p class="metric-name">LCP mobile (WP optimizado)</p>
+                <p class="metric-value">4.1s</p>
+                <p class="metric-desc">Con caché y CDN. Umbral Google: bajo 2.5s</p>
+              </div>
+              <div class="metric-card good">
+                <p class="metric-name">Lighthouse Performance (HTML estático)</p>
+                <p class="metric-value">97</p>
+                <p class="metric-desc">HTML/CSS/JS estático sin dependencias pesadas</p>
+              </div>
+            </div>
+
+            <p>El segundo problema es la seguridad. Un sitio médico maneja datos sensibles: formularios de contacto, nombres, consultas de pacientes. WordPress necesita actualizaciones de core, de temas y de plugins cada semanas. Una sola versión desactualizada es un vector de ataque. Los sitios en HTML estático no tienen base de datos ni superficie de ataque equivalente.</p>
+
+            <p>El tercer problema es el costo real. El hosting "económico" de WordPress suma: plan de hosting (USD 5–20/mes), tema premium (USD 50–200), plugins SEO, seguridad, caché, formularios (USD 200–600/año), y el tiempo del desarrollador para mantener todo eso actualizado. Un sitio médico en HTML estático se despliega en Netlify, Vercel o Cloudflare Pages con costo de servidor prácticamente cero y sin deuda técnica acumulada.</p>
+
+            <div class="callout callout-danger">
+              <span class="callout-label">🚨 Error frecuente</span>
+              <p>Contratar un "diseñador web" que entrega un WordPress con Elementor y hosting compartido como si fuera un sitio profesional. El resultado es visualmente aceptable el día 1 y técnicamente obsoleto el día 90. Para webs médicas, eso tiene costo directo en pacientes no captados.</p>
+            </div>
+
+            <!-- SECCIÓN 2 -->
+            <h2 id="que-necesita-web-medica">Qué necesita una web médica técnicamente</h2>
+
+            <p>Una web médica no es un blog. Es una herramienta de captación de pacientes que trabaja las 24 horas. Para que funcione, necesita cumplir con requisitos técnicos específicos que van mucho más allá del diseño.</p>
+
+            <h3>HTML estático como base</h3>
+            <p>El HTML estático no es una limitación, es una decisión de arquitectura. Un sitio médico no necesita un CMS dinámico: el contenido cambia poco, los servicios son estables y los formularios se resuelven con JavaScript liviano o servicios como Formspree. A cambio, el HTML estático ofrece velocidades de carga que ningún WordPress puede igualar sin inversión significativa.</p>
+
+            <h3>Core Web Vitals en verde</h3>
+            <p>Los Core Web Vitals son los indicadores con los que Google mide la experiencia del usuario. Para un sitio médico, los tres relevantes son:</p>
+            <ul>
+              <li><strong>LCP (Largest Contentful Paint):</strong> tiempo hasta que carga el elemento principal de la página. Objetivo: bajo 2.5 segundos. En móvil, idealmente bajo 1.5s.</li>
+              <li><strong>INP (Interaction to Next Paint):</strong> velocidad de respuesta a interacciones del usuario. Objetivo: bajo 200ms.</li>
+              <li><strong>CLS (Cumulative Layout Shift):</strong> estabilidad visual mientras carga la página. Objetivo: bajo 0.1. Un botón que se mueve cuando el usuario va a hacer click es CLS alto y es causa directa de abandono.</li>
+            </ul>
+
+            <h3>Schema Physician o MedicalBusiness</h3>
+            <p>El Schema es el lenguaje que Google usa para entender qué es tu sitio y qué ofrece. Para médicos, el Schema correcto es <code>Physician</code> o <code>MedicalBusiness</code>, con campos específicos: especialidad médica (<code>medicalSpecialty</code>), área de atención (<code>areaServed</code>), nombre, dirección, teléfono y URL del perfil de Google Business. Sin Schema, Google puede indexar el sitio, pero no puede entender con precisión qué tipo de médico eres ni dónde atendés. Eso limita directamente la visibilidad en búsquedas de especialidad + ciudad.</p>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Dato técnico</span>
+              <p>El Schema debe estar en JSON-LD (no Microdata), encadenado con @id resolvibles, y validarse sin errores en el Rich Results Test de Google antes de publicar. Un Schema con errores puede ser peor que no tener Schema: genera señales contradictorias al crawl.</p>
+            </div>
+
+            <h3>Integración WhatsApp y Calendly</h3>
+            <p>El 78% de los pacientes que llegan a un sitio médico prefieren contactar por WhatsApp antes que por formulario. Un botón de WhatsApp flotante con mensaje pre-cargado (especialidad + ciudad + acción específica) puede duplicar la tasa de contacto de una web médica sin modificar ningún otro elemento. Calendly, integrado directamente en la página, elimina la fricción del turno: el paciente agenda sin esperar respuesta.</p>
+
+            <!-- TABLA COMPARATIVA -->
+            <h2 id="comparativa">WordPress vs HTML estático: comparativa técnica</h2>
+
+            <p>La siguiente tabla sintetiza los indicadores que <strong>Cirujana Digital</strong> mide en cada auditoría. Los rangos de WordPress corresponden a instalaciones típicas en LATAM (hosting compartido, tema premium, plugins estándar). Los valores de HTML estático corresponden a proyectos entregados por <strong>Yulia Monti — Cirujana Digital</strong>.</p>
+
+            <div class="table-wrapper">
+              <table class="data-table" aria-label="Comparativa WordPress vs HTML estático para webs médicas">
+                <thead>
+                  <tr>
+                    <th>Indicador</th>
+                    <th>WordPress típico LATAM</th>
+                    <th>HTML estático</th>
+                    <th>Impacto</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Lighthouse Performance (mobile)</td>
+                    <td class="tag-bad">25 – 55</td>
+                    <td class="tag-good">90 – 99</td>
+                    <td>SEO, UX, conversión</td>
+                  </tr>
+                  <tr>
+                    <td>LCP mobile</td>
+                    <td class="tag-bad">3.8s – 8s</td>
+                    <td class="tag-good">0.8s – 1.6s</td>
+                    <td>Core Web Vitals</td>
+                  </tr>
+                  <tr>
+                    <td>CLS</td>
+                    <td class="tag-medium">0.15 – 0.45</td>
+                    <td class="tag-good">0 – 0.05</td>
+                    <td>Experiencia de usuario</td>
+                  </tr>
+                  <tr>
+                    <td>Tiempo al primer byte (TTFB)</td>
+                    <td class="tag-bad">800ms – 2s</td>
+                    <td class="tag-good">50ms – 180ms</td>
+                    <td>SEO técnico</td>
+                  </tr>
+                  <tr>
+                    <td>Vulnerabilidades de seguridad activas</td>
+                    <td class="tag-bad">Alta (plugins desactualizados)</td>
+                    <td class="tag-good">Mínima (sin DB ni CMS)</td>
+                    <td>Protección de datos pacientes</td>
+                  </tr>
+                  <tr>
+                    <td>Costo de mantenimiento anual</td>
+                    <td class="tag-bad">USD 400 – 1.200</td>
+                    <td class="tag-good">USD 0 – 120</td>
+                    <td>ROI del sitio</td>
+                  </tr>
+                  <tr>
+                    <td>Dependencia de terceros</td>
+                    <td class="tag-bad">Alta (plugins, temas, hosting premium)</td>
+                    <td class="tag-good">Mínima</td>
+                    <td>Estabilidad a largo plazo</td>
+                  </tr>
+                  <tr>
+                    <td>Compatibilidad con Schema avanzado</td>
+                    <td class="tag-medium">Parcial (vía plugins con limitaciones)</td>
+                    <td class="tag-good">Total (JSON-LD nativo)</td>
+                    <td>Visibilidad en IA y Google</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- CTA MID-ARTICLE -->
+            <div class="article-cta-box">
+              <h3>¿Querés saber exactamente qué está fallando en tu sitio actual?</h3>
+              <p>Diagnóstico técnico personalizado por especialidad médica y ciudad. 15 puntos de revisión. Resultado en 3 minutos.</p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Hacer mi diagnóstico gratis</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- SECCIÓN 3 -->
+            <h2 id="seo-local">SEO local para médicos: cómo aparecer en Google Maps y búsqueda</h2>
+
+            <p>El SEO local para médicos en LATAM tiene características específicas que lo diferencian del SEO general. El paciente no busca "médico": busca "dermatólogo en Palermo", "ginecóloga en Miraflores" o "traumatólogo en Providencia". La intención es local, la urgencia es alta y la competencia es mucho menor que en búsquedas genéricas. Eso es una oportunidad directa para el médico que configura bien su presencia.</p>
+
+            <h3>Google Business Profile: el pilar del SEO local médico</h3>
+            <p>El primer paso es crear o reclamar el perfil de Google Business Profile (GBP). Parece obvio, pero el 60% de los médicos en LATAM que audita <strong>Yulia Monti — Cirujana Digital</strong> tienen un perfil no reclamado, con información incorrecta o con categoría médica genérica. Los puntos críticos de optimización son:</p>
+            <ul>
+              <li><strong>Categoría principal:</strong> debe ser la especialidad exacta, no "Médico" genérico. "Cardiólogo", "Endocrinólogo", "Cirujano plástico". La categoría define para qué búsquedas aparecés.</li>
+              <li><strong>NAP consistente:</strong> nombre, dirección y teléfono (NAP) deben ser idénticos en el GBP, en el sitio web y en todos los directorios donde aparezca el profesional. Una inconsistencia mínima confunde al algoritmo de Google Local.</li>
+              <li><strong>Horarios y atributos:</strong> horarios actualizados, acepta nuevos pacientes, idiomas de atención, accesibilidad.</li>
+              <li><strong>Reseñas con respuesta activa:</strong> Google pondera los perfiles con reseñas recientes y respondidas. Un médico con 15 reseñas bien gestionadas supera a uno con 80 reseñas sin respuesta.</li>
+              <li><strong>Fotos del consultorio:</strong> los perfiles con fotos tienen 35% más de clicks que los perfiles sin fotos, según datos internos de Google.</li>
+            </ul>
+
+            <h3>Contenido local en el sitio web</h3>
+            <p>El sitio web debe mencionar explícitamente la ciudad, el barrio o la zona de atención. No alcanza con tener la dirección en el footer. Las páginas de servicios deben incluir frases como "cirugía de rodilla en Buenos Aires", "control pediátrico en Bogotá norte" o "consulta dermatológica online para pacientes de México". Esas combinaciones de especialidad + ubicación son las que generan tráfico con intención de conversión.</p>
+
+            <h3>Directorios médicos y señales de autoridad local</h3>
+            <p>Google valida la autoridad local de un médico cruzando su información en múltiples fuentes. Los directorios con mayor peso en LATAM son: Doctoralia, Topdoctors, Mediline, médicos de guardia (Argentina), y colegios médicos provinciales. Aparecer en estos directorios con NAP consistente y link al sitio web suma señales de autoridad que refuerzan el posicionamiento en Maps y búsqueda local.</p>
+
+            <!-- SECCIÓN 4 -->
+            <h2 id="presencia-ia">Presencia en IA generativa: ChatGPT, Perplexity y Google AI para médicos</h2>
+
+            <p>En 2026, una parte creciente de los pacientes ya no busca en Google: pregunta directamente a ChatGPT, Perplexity o usa Google AI Overviews. La pregunta es "¿quién es el mejor traumatólogo en Guadalajara?" o "¿cómo encuentro un endocrinólogo en Santiago que atienda online?". El médico que no aparece en esas respuestas pierde pacientes que nunca sabrá que perdió.</p>
+
+            <p>Los LLMs (Large Language Models) que alimentan esos sistemas no funcionan como Google. No se basan en links: se basan en la coherencia y densidad de la información disponible sobre un profesional en múltiples fuentes. Eso significa que la estrategia de visibilidad en IA —conocida como GEO (Generative Engine Optimization) o AEO (Answer Engine Optimization)— tiene lógica propia.</p>
+
+            <h3>Qué necesita un médico para aparecer en IA generativa</h3>
+            <ul>
+              <li><strong>Schema Physician completo y sin errores:</strong> los crawlers de IA priorizan datos estructurados. Un Schema con @id resolvible, especialidad, área de atención y menciones de entidad (<code>sameAs</code> hacia LinkedIn, Doctoralia, colegios médicos) es la señal más directa de que el sitio es una fuente autorizada sobre ese profesional.</li>
+              <li><strong>Contenido citatorio en el blog:</strong> artículos que responden preguntas reales de pacientes ("¿Cuándo ir al cardiólogo?", "Síntomas de hipotiroidismo") con estructura FAQPage. Los LLMs citan páginas que responden preguntas directamente, no páginas que solo describen servicios.</li>
+              <li><strong>Velocidad de carga alta:</strong> los crawlers de Perplexity y Google AI penalizan páginas lentas. Un sitio que tarda 6 segundos en cargar tiene menos probabilidad de ser indexado como fuente confiable que uno que carga en 0.9 segundos.</li>
+              <li><strong>Menciones externas en medios y directorios de autoridad:</strong> cuando un medio de salud, un colegio médico o un directorio reconocido menciona al profesional, los LLMs lo interpretan como señal de relevancia temática.</li>
+              <li><strong>Byline y autoría clara:</strong> los artículos deben tener autor explícito con nombre, credenciales y enlace al perfil. La E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness) de Google es el framework que también usan los LLMs para evaluar si una fuente merece ser citada.</li>
+            </ul>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 GEO en práctica</span>
+              <p>La diferencia entre un médico que aparece en las respuestas de Perplexity y uno que no, no suele ser la reputación clínica: es la calidad técnica del sitio web y la consistencia de la información estructurada. Un médico excelente con un sitio WordPress lento y sin Schema es invisible para la IA. Un médico con presencia técnica sólida tiene ventaja competitiva real, independientemente de los años de experiencia.</p>
+            </div>
+
+            <!-- SECCIÓN 5 -->
+            <h2 id="costos">Cuánto cuesta y qué incluye una web médica profesional</h2>
+
+            <p>El primer error que cometen los médicos al contratar desarrollo web es comparar precios sin comparar entregables. Un sitio en Wix o con un template de WordPress puede costar USD 300. Un sitio que posiciona, convierte y trabaja sin mantenimiento constante cuesta más, pero tiene un ROI medible desde el primer paciente captado de forma orgánica.</p>
+
+            <p><strong>Yulia Monti — Cirujana Digital</strong> trabaja exclusivamente con HTML estático porque es la única tecnología que permite cumplir simultáneamente todos los requisitos técnicos descritos en esta guía: velocidad, seguridad, Schema avanzado y bajo costo de mantenimiento. Los rangos de inversión dependen del alcance del proyecto:</p>
+
+            <h3>Sitio médico individual (especialidad única)</h3>
+            <ul>
+              <li>5 a 8 páginas: inicio, servicios, sobre el profesional, blog, contacto</li>
+              <li>Schema Physician completo con @id resolvible</li>
+              <li>Integración WhatsApp con mensaje pre-cargado y Calendly</li>
+              <li>SEO on-page: keywords de especialidad + ciudad, meta tags, sitemap</li>
+              <li>Core Web Vitals en verde (Lighthouse 90+ mobile)</li>
+              <li>Google Business Profile configurado y vinculado</li>
+              <li><strong>Inversión: USD 800 – USD 1.400</strong></li>
+            </ul>
+
+            <h3>Sitio de clínica o centro médico multiprofesional</h3>
+            <ul>
+              <li>10 a 20 páginas: múltiples especialidades, equipo, galería, turnos online</li>
+              <li>Schema MedicalOrganization + Physician por cada profesional</li>
+              <li>SEO local por especialidad y por sede si aplica</li>
+              <li>Blog configurado con primeros 3 artículos optimizados</li>
+              <li>Integración con sistema de turnos existente si aplica</li>
+              <li><strong>Inversión: USD 1.800 – USD 3.500</strong></li>
+            </ul>
+
+            <div class="callout callout-warning">
+              <span class="callout-label">⚠️ Atención con los precios en horas</span>
+              <p>Cualquier presupuesto de desarrollo web "por hora" para un sitio médico es una señal de alerta. No existe forma de cotizar correctamente un sitio con objetivos de SEO, performance y conversión sin conocer el alcance total. Los proyectos de Cirujana Digital tienen precio fijo por entregable, no por hora trabajada.</p>
+            </div>
+
+            <h3>Mantenimiento posterior</h3>
+            <p>A diferencia de WordPress, un sitio en HTML estático no requiere mantenimiento de seguridad mensual. El costo posterior es mínimo: actualización de contenido, nuevas páginas de servicio, o artículos de blog. Eso libera presupuesto para invertir en estrategia, no en mantener infraestructura.</p>
+
+            <!-- SECCIÓN FAQ -->
+            <h2 id="faq">Preguntas frecuentes sobre desarrollo web para médicos en LATAM</h2>
+
+            <h3>¿Qué plataforma es mejor para una web médica: WordPress o HTML estático?</h3>
+            <p>Para una web médica en LATAM, el HTML estático supera a WordPress en todos los indicadores técnicos relevantes: velocidad de carga (Lighthouse Performance 95+ vs 40–60 en WordPress típico), seguridad (sin base de datos que hackear, sin plugins que parchear), costo de mantenimiento (cero licencias, cero hosting premium obligatorio) y Core Web Vitals (LCP bajo 1.5s, CLS 0). WordPress solo tiene sentido si el médico publica 10 o más artículos por mes y tiene recursos para mantener el sitio actualizado.</p>
+
+            <h3>¿Cuánto cuesta una web profesional para médicos en LATAM?</h3>
+            <p>Una web médica profesional con HTML estático, Schema Physician, SEO local, integración de WhatsApp y Calendly, y optimización de Core Web Vitals cuesta entre USD 800 y USD 2.500 dependiendo del alcance. No incluye templates genéricos ni WordPress. El mantenimiento anual es mínimo porque no hay plugins ni actualizaciones de seguridad urgentes que gestionar mensualmente.</p>
+
+            <h3>¿Cómo puede un médico aparecer en Google Maps en LATAM?</h3>
+            <p>Para aparecer en Google Maps es necesario: un perfil de Google Business Profile verificado con categoría médica correcta (ej. "Dermatólogo", no solo "Médico"), nombre, dirección y teléfono idénticos en el sitio web y en el perfil, Schema MedicalBusiness o Physician con geo-coordenadas, reseñas activas con respuestas del profesional, y contenido local en el sitio: barrio, ciudad, colonia. Un sitio lento no penaliza directamente el Maps, pero sí la conversión una vez que el paciente hace click.</p>
+
+            <h3>¿Pueden los médicos aparecer en ChatGPT o Perplexity?</h3>
+            <p>Sí. Los LLMs como ChatGPT, Perplexity y Google AI Overviews citan sitios con alta autoridad técnica y semántica. Para que un médico aparezca en esas respuestas necesita: Schema Physician correctamente implementado, artículos de blog con preguntas reales de pacientes estructuradas como FAQPage, velocidad de carga alta, y menciones externas en directorios médicos y medios. Esta estrategia se llama GEO (Generative Engine Optimization) y es el diferencial del desarrollo web médico en 2026.</p>
+
+            <h3>¿Qué debe incluir técnicamente una web médica para posicionar en Google en 2026?</h3>
+            <p>Una web médica que posicione en 2026 necesita: HTML semántico sin CMS innecesario, Schema Physician o MedicalBusiness con @id resolvible, Core Web Vitals en verde (LCP menor a 2.5s, INP menor a 200ms, CLS menor a 0.1), perfil de Google Business Profile optimizado y vinculado al sitio, página de servicios con keywords de especialidad más ciudad, y FAQPage estructurada para búsquedas de voz e IA generativa. Sin estos elementos, el sitio existe pero no trabaja.</p>
+
+            <!-- CONCLUSIÓN -->
+            <h2 id="conclusion">Conclusión: el sitio web que trabaja mientras el médico atiende</h2>
+
+            <p>La brecha digital en el sector médico de LATAM no es de herramientas disponibles: es de criterio técnico para elegirlas. Hay más médicos con sitios web lentos, inseguros y sin estructura de datos que médicos sin sitio web. El problema no es la ausencia de presencia digital, es la presencia digital que no cumple ninguna función estratégica.</p>
+
+            <p>La solución no es compleja ni cara en términos absolutos. Es precisa: HTML estático, Core Web Vitals en verde, Schema Physician sin errores, SEO local con consistencia de NAP, y una estrategia mínima de contenido que responda preguntas reales de pacientes. Eso es todo lo que necesita un médico para superar al 80% de su competencia en búsqueda local y en IA generativa.</p>
+
+            <p><strong>Cirujana Digital</strong>, el proyecto de <strong>Yulia Monti</strong>, existe para resolver exactamente eso: sitios web para profesionales de la salud en LATAM que cargan rápido, posicionan en Google Maps, aparecen en Perplexity y convierten visitas en turnos. No templates. No WordPress. No atajos que generan deuda técnica.</p>
+
+            <p>Si querés saber en qué estado está tu presencia digital ahora mismo, el diagnóstico gratuito evalúa 15 puntos críticos en 3 minutos y te da un resultado accionable por especialidad y ciudad.</p>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+              <img src="/img/yulia-monti.webp"
+                   alt="Yulia Monti — Cirujana Digital"
+                   width="80" height="80"
+                   loading="lazy" decoding="async" />
+              <div class="author-info">
+                <h4>Yulia Monti — Cirujana Digital</h4>
+                <p>Instrumentadora quirúrgica con 15 años en pabellón reconvertida en desarrolladora web especializada en salud. Construye sitios que cargan rápido, posicionan en Google y convierten visitantes en pacientes. Trabaja con médicos, clínicas y profesionales de la salud en Argentina, México, Chile y España.</p>
+              </div>
+            </div>
+
+            <!-- CTA FINAL -->
+            <div class="article-cta-box">
+              <h3>Sabé exactamente qué está frenando tu captación de pacientes online</h3>
+              <p>Diagnóstico técnico gratuito: velocidad, SEO local, Schema, conversión. 15 puntos. Resultado inmediato. Sin registro.</p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Ir a mi diagnóstico gratuito</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+            <nav class="toc-box" aria-label="Tabla de contenidos">
+              <h4>En este artículo</h4>
+              <ol>
+                <li><a href="#por-que-wordpress-falla">Por qué WordPress falla para webs médicas</a></li>
+                <li><a href="#que-necesita-web-medica">Qué necesita una web médica técnicamente</a></li>
+                <li><a href="#comparativa">WordPress vs HTML estático: comparativa</a></li>
+                <li><a href="#seo-local">SEO local para médicos en LATAM</a></li>
+                <li><a href="#presencia-ia">Presencia en IA generativa</a></li>
+                <li><a href="#costos">Costos de una web médica profesional</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+                <li><a href="#conclusion">Conclusión</a></li>
+              </ol>
+            </nav>
+
+            <div class="sb-diag">
+              <div class="sb-diag__head">
+                <span class="sb-diag__label">Diagnóstico gratuito</span>
+                <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que espanta pacientes.</p>
+              </div>
+              <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                  <div><strong>Velocidad en celular</strong><span>¿Cargás antes de 3 seg?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                  <div><strong>Visibilidad en Google</strong><span>¿Te encuentran por especialidad?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">💬</span>
+                  <div><strong>Conversión</strong><span>¿Los visitantes te contactan?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🏅</span>
+                  <div><strong>Credibilidad</strong><span>¿Tu sitio genera confianza?</span></div>
+                </li>
+              </ul>
+              <a href="/diagnostico/" class="sb-diag__btn">
+                Hacer mi diagnóstico gratis
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+            </div>
+          </aside>
+
+        </div><!-- /article-layout -->
+      </div><!-- /article-body -->
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

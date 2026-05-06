@@ -2,15 +2,30 @@
 <html lang="es" dir="ltr">
 <head>
   <meta charset="UTF-8" />
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return; gtmLoaded = true;
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-PW5H3VRM');
-    }
-    ['click','scroll','keydown','touchstart'].forEach(e=>window.addEventListener(e,loadGTM,{once:true}));
-    setTimeout(loadGTM,3500);
-  </script>
+   <script>
+  let gtmLoaded = false;
+  function loadGTM() {
+    if (gtmLoaded) return;
+    gtmLoaded = true;
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+  }
+
+  // Retrasar GTM hasta primera interacción o 3.5s de idle
+  ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
+    window.addEventListener(e, loadGTM, { once: true })
+  );
+  setTimeout(loadGTM, 8000);
+</script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Diagnóstico Express: ¿Google te encuentra? — Cirujana Digital</title>
   <meta name="description" content="Quiz gratuito de 7 preguntas que evalúa la visibilidad de tu consultorio en Google y en IAs. Resultado inmediato con recomendación personalizada. Sin registro." />
@@ -594,7 +609,16 @@
   </style>
 </head>
 <body>
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+        class="gtm-iframe"
+      ></iframe>
+    </noscript>
+
   <div id="site-nav"></div>
 
   <main id="main" tabindex="-1">

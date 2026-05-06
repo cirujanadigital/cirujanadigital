@@ -1,0 +1,831 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+      }
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+        window.addEventListener(e, loadGTM, { once: true })
+      );
+      setTimeout(loadGTM, 8000);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>SEO local para médicos en Argentina: aparecer primero o no existir | Cirujana Digital</title>
+    <meta name="description" content="SEO local para médicos en Argentina: cómo aparecer en Google Maps, optimizar Google Business Profile y posicionar por especialidad y ciudad. Guía práctica con datos reales." />
+    <meta name="author" content="Yulia Monti — Cirujana Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://cirujanadigital.com/blog/seo-local-medicos-argentina/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="article" />
+    <meta property="og:url"         content="https://cirujanadigital.com/blog/seo-local-medicos-argentina/" />
+    <meta property="og:title"       content="SEO local para médicos en Argentina: aparecer primero o no existir" />
+    <meta property="og:description" content="SEO local para médicos en Argentina: cómo aparecer en Google Maps, optimizar Google Business Profile y posicionar por especialidad y ciudad." />
+    <meta property="og:image"       content="https://cirujanadigital.com/img/og-seo-local-medicos-argentina.webp" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale"      content="es_AR" />
+    <meta property="og:site_name"   content="Cirujana Digital" />
+
+    <!-- Article metadata -->
+    <meta property="article:published_time" content="2026-04-30" />
+    <meta property="article:modified_time"  content="2026-04-30" />
+    <meta property="article:author"         content="Yulia Monti" />
+    <meta property="article:section"        content="SEO" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="SEO local para médicos en Argentina: aparecer primero o no existir" />
+    <meta name="twitter:description" content="Cómo posicionar un consultorio médico en Google Maps y búsqueda local en Argentina. Guía práctica de Cirujana Digital." />
+    <meta name="twitter:image"       content="https://cirujanadigital.com/img/og-seo-local-medicos-argentina.webp" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+   <link rel="preload" href="/components.css" as="style">
+<link rel="stylesheet" href="/components.css">
+<script src="/components.js" defer></script>
+
+    <!-- SCHEMA JSON-LD: Article + FAQPage + BreadcrumbList -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/",
+          "email": "info@cirujanadigital.com",
+          "telephone": "+5491176199680",
+          "sameAs": [
+            "https://www.instagram.com/cirujanadigital",
+            "https://www.linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Web Developer for Healthcare",
+          "url": "https://cirujanadigital.com/",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina. Desarrolladora web especializada en sitios para médicos, SEO médico local y presencia en IA generativa.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "sameAs": [
+            "https://instagram.com/cirujanadigital",
+            "https://linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/seo-local-medicos-argentina/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "SEO local para médicos en Argentina" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/seo-local-medicos-argentina/#article",
+          "headline": "SEO local para médicos en Argentina: la diferencia entre aparecer primero y no existir",
+          "description": "SEO local para médicos en Argentina: cómo aparecer en Google Maps, optimizar Google Business Profile y posicionar por especialidad y ciudad. Guía práctica con datos reales.",
+          "image": {
+            "@type": "ImageObject",
+            "url":    "https://cirujanadigital.com/img/og-seo-local-medicos-argentina.webp",
+            "width":  1200,
+            "height": 630
+          },
+          "datePublished": "2026-04-30",
+          "dateModified":  "2026-04-30",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/seo-local-medicos-argentina/",
+          "articleSection": "SEO",
+          "inLanguage": "es",
+          "breadcrumb": { "@id": "https://cirujanadigital.com/blog/seo-local-medicos-argentina/#breadcrumb" },
+          "about": [
+            { "@type": "Thing", "name": "SEO local para médicos" },
+            { "@type": "Thing", "name": "Google Business Profile médicos Argentina" },
+            { "@type": "Thing", "name": "posicionamiento Google Maps médicos" }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://cirujanadigital.com/blog/seo-local-medicos-argentina/#faqpage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cómo aparece un médico en Google Maps en Argentina?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Para aparecer en Google Maps, el médico necesita: (1) crear y verificar su perfil de Google Business Profile con la categoría de especialidad correcta (ej. 'Cardiólogo', no solo 'Médico'); (2) completar nombre, dirección y teléfono (NAP) de forma idéntica en el perfil y en el sitio web; (3) agregar horarios reales, fotos del consultorio y responder reseñas activamente; (4) implementar Schema MedicalBusiness o Physician con geo-coordenadas en el sitio web. Sin verificación del perfil, el consultorio no aparece en el Local Pack de Google (los tres resultados con mapa que monopolizan los clicks en búsquedas locales)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tiempo tarda el SEO local en dar resultados para un médico en Argentina?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Los resultados del SEO local médico en Argentina tienen dos velocidades: Google Business Profile optimizado puede mejorar la visibilidad en Maps en 4 a 8 semanas, especialmente si hay poca competencia en la especialidad y zona. El posicionamiento orgánico en búsquedas con las keywords de especialidad + ciudad tarda entre 3 y 6 meses para alcanzar las primeras posiciones, dependiendo de la autoridad del dominio y la calidad técnica del sitio. Un sitio en HTML estático con Core Web Vitals en verde llega antes que un WordPress lento con los mismos contenidos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Sirve tener solo Google Business Profile sin sitio web para el SEO local médico?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google Business Profile sin sitio web posiciona en Maps pero tiene un techo bajo: no hay páginas de servicio para rankear en búsqueda orgánica, no hay Schema Physician para los crawlers de IA, y la tasa de conversión es menor porque el paciente no encuentra información suficiente para decidir. El perfil solo funciona bien como punto de entrada, pero el sitio web es el que convierte esa visibilidad en turnos reales. Para médicos en Argentina que quieren resultados concretos, ambos son necesarios y deben estar vinculados y consistentes."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+
+      :root {
+        --primary: #03658c;
+        --secondary: #00a7a9;
+        --light: #f7f9fa;
+        --cd-text: #2d3748;
+        --cd-text-light: #64748b;
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --shadow-lg: 0 16px 48px rgba(0,0,0,0.12);
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--cd-text);
+        background: #fff;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      main#main { min-height: 100vh; contain: layout; }
+      #site-nav { height: 70px; min-height: 70px; contain: layout style; }
+      #site-footer {
+  min-height: 678px;
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 678px;
+}
+@media (max-width: 768px) {
+  #site-footer {
+    min-height: 1780px;
+    contain-intrinsic-size: 0 1780px;
+  }
+}
+
+      img { max-width: 100%; height: auto; display: block; }
+      a   { color: inherit; }
+      .container { max-width: 1280px; margin: 0 auto; padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; }
+      [data-animate] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+      /* ── HERO ── */
+      .article-hero {
+        padding: calc(80px + 4rem) 0 4rem;
+        background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+        isolation: isolate;
+      }
+      .article-hero-inner {
+        max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; contain: layout;
+      }
+      .article-breadcrumb { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+      .article-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+      .article-breadcrumb a:hover { color: #fff; }
+      .article-breadcrumb span { margin: 0 0.4rem; }
+      .article-category {
+        display: inline-block;
+        background: rgba(0,167,169,0.2); color: #7fdbff;
+        border: 1px solid rgba(0,167,169,0.3); border-radius: 50px;
+        font-size: 0.75rem; font-weight: 700; padding: 4px 14px;
+        letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
+      }
+      .article-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 1.25rem;
+      }
+      .article-meta {
+        display: flex; align-items: center; gap: 1rem;
+        flex-wrap: wrap; font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      }
+      .article-meta strong { color: rgba(255,255,255,0.85); }
+
+      /* ── LAYOUT ── */
+      .article-body { padding: 4rem 0 5rem; background: #fff; }
+      .article-layout {
+        display: grid; grid-template-columns: 1fr 280px;
+        gap: 4rem; max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; align-items: start;
+      }
+      .article-content { min-width: 0; }
+
+      /* ── TYPOGRAPHY ── */
+      .article-content h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.4rem, 3vw, 1.9rem); color: var(--cd-text);
+        margin: 2.5rem 0 1rem; scroll-margin-top: 100px;
+        border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;
+      }
+      .article-content h3 { font-size: 1.2rem; color: var(--cd-text); margin: 1.75rem 0 0.6rem; font-weight: 700; }
+      .article-content p { color: #4a5568; line-height: 1.9; margin-bottom: 1.4rem; font-size: 1.05rem; }
+      .article-content ul, .article-content ol { margin: 0 0 1.5rem 1.5rem; }
+      .article-content li { color: #4a5568; line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
+      .article-content strong { color: var(--cd-text); }
+      .article-content a { color: var(--secondary); text-decoration: none; font-weight: 600; }
+      .article-content a:hover { color: var(--primary); }
+
+      /* ── METRICS ── */
+      .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+      .metric-card { background: var(--light); border-radius: 12px; padding: 1.25rem; text-align: center; border-top: 4px solid var(--secondary); }
+      .metric-card .metric-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cd-text-light); margin-bottom: 0.5rem; }
+      .metric-card .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 0.4rem; }
+      .metric-card .metric-desc { font-size: 0.8rem; color: var(--cd-text-light); line-height: 1.4; }
+      .metric-card.good  { border-color: #00c853; } .metric-card.good  .metric-value { color: #00a844; }
+      .metric-card.medium { border-color: #f59e0b; } .metric-card.medium .metric-value { color: #d97706; }
+      .metric-card.bad   { border-color: #e74c3c; } .metric-card.bad   .metric-value { color: #c0392b; }
+
+      /* ── CALLOUTS ── */
+      .callout { padding: 1.25rem 1.5rem; border-radius: 10px; margin: 2rem 0; }
+      .callout p { margin-bottom: 0; font-size: 1rem; }
+      .callout-label { font-weight: 800; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+      .callout-tip { background: rgba(0,167,169,0.08); border-left: 4px solid var(--secondary); }
+      .callout-tip .callout-label { color: #006b6d; }
+      .callout-warning { background: rgba(245,158,11,0.08); border-left: 4px solid #f59e0b; }
+      .callout-warning .callout-label { color: #92400e; }
+      .callout-danger { background: rgba(231,76,60,0.07); border-left: 4px solid #e74c3c; }
+      .callout-danger .callout-label { color: #991b1b; }
+
+      /* ── TABLES ── */
+      .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+      .data-table { width: 100%; min-width: 520px; border-collapse: collapse; font-size: 0.93rem; }
+      .data-table thead { background: var(--gradient-primary); color: #fff; }
+      .data-table th { padding: 0.9rem 1.2rem; text-align: left; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+      .data-table td { padding: 0.9rem 1.2rem; border-bottom: 1px solid #f1f5f9; color: #4a5568; vertical-align: top; }
+      .data-table tr:last-child td { border-bottom: none; }
+      .data-table tr:nth-child(even) td { background: #f8fafc; }
+      .tag-good   { color: #00a844; font-weight: 700; }
+      .tag-medium { color: #d97706; font-weight: 700; }
+      .tag-bad    { color: #c0392b; font-weight: 700; }
+
+      /* ── CHECKLIST ── */
+      .checklist { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+      .checklist li {
+        display: flex; gap: 0.75rem; align-items: flex-start;
+        padding: 0.6rem 0; border-bottom: 1px solid #f1f5f9;
+        color: #4a5568; font-size: 1.05rem; line-height: 1.6;
+      }
+      .checklist li:last-child { border-bottom: none; }
+      .checklist li::before {
+        content: "✓"; color: #00a844; font-weight: 800;
+        font-size: 0.9rem; flex-shrink: 0; margin-top: 0.15rem;
+      }
+
+      /* ── STEPS ── */
+      .steps { counter-reset: steps; margin: 1.5rem 0 2rem; }
+      .step {
+        counter-increment: steps;
+        display: grid; grid-template-columns: 2.5rem 1fr;
+        gap: 1rem; align-items: start; margin-bottom: 1.5rem;
+      }
+      .step-num {
+        width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+        background: var(--gradient-primary); border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        color: #fff; font-weight: 800; font-size: 0.95rem;
+      }
+      .step-body h4 { font-size: 1rem; font-weight: 700; color: var(--cd-text); margin-bottom: 0.3rem; }
+      .step-body p  { font-size: 0.97rem; color: #4a5568; margin: 0; line-height: 1.7; }
+
+      /* ── AUTHOR BOX ── */
+      .author-box { display: flex; gap: 1.25rem; align-items: center; padding: 1.75rem; background: var(--light); border-radius: 14px; margin: 3rem 0; }
+      .author-info h4 { font-size: 1rem; font-weight: 700; color: var(--cd-text); margin-bottom: 0.2rem; }
+      .author-info p { font-size: 0.9rem; color: var(--cd-text-light); margin: 0; line-height: 1.6; }
+
+      /* ── CTA BOX ── */
+      .article-cta-box { background: linear-gradient(135deg,#0d1b2a 0%,#03658c 100%); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+      .article-cta-box h3 { font-family: var(--font-display); color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+      .article-cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+      .btn-cta-white { display: inline-flex; gap: 0.75rem; align-items: center; background: #fff; color: #024e6c; font-weight: 800; padding: 0.875rem 2rem; border-radius: 10px; text-decoration: none; font-size: 1rem; transition: var(--transition); }
+      .btn-cta-white:hover { background: #e0f7f7; transform: translateY(-2px); color: var(--primary); }
+
+      /* ── LINKS INTERNOS ── */
+      .internal-links {
+        background: var(--light); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0;
+        border-left: 4px solid var(--primary);
+      }
+      .internal-links p { margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--cd-text); }
+      .internal-links ul { margin: 0; padding: 0; list-style: none; }
+      .internal-links li { margin-bottom: 0.4rem; }
+      .internal-links a { font-size: 0.9rem; color: var(--secondary); font-weight: 600; }
+      .internal-links a:hover { color: var(--primary); }
+
+      /* ── SIDEBAR ── */
+      .article-sidebar { position: sticky; top: 100px; min-width: 0; }
+      .toc-box { background: var(--light); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+      .toc-box h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 1rem; }
+      .toc-box ol { list-style: none; counter-reset: toc; padding: 0; margin: 0; }
+      .toc-box li { counter-increment: toc; margin-bottom: 0.6rem; }
+      .toc-box a { font-size: 0.87rem; color: var(--cd-text-light); text-decoration: none; display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.4; transition: color 0.2s; }
+      .toc-box a::before { content: counter(toc); color: var(--secondary); font-weight: 700; font-size: 0.72rem; flex-shrink: 0; margin-top: 0.15rem; }
+      .toc-box a:hover { color: var(--primary); }
+
+      .sb-diag { background: #0d1b2a; border: 1px solid rgba(0,167,169,0.2); border-radius: 12px; padding: 1.5rem; color: #fff; }
+      .sb-diag__head { margin-bottom: 1.25rem; }
+      .sb-diag__label { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7fdbff; margin-bottom: 0.5rem; }
+      .sb-diag__stat { font-size: 0.88rem; line-height: 1.5; color: rgba(255,255,255,0.75); margin: 0; }
+      .sb-diag__stat em { font-style: normal; font-weight: 700; color: #fff; }
+      .sb-diag__list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .sb-diag__list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+      .sb-diag__icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .sb-diag__list strong { display: block; font-size: 0.85rem; color: #fff; margin-bottom: 0.1rem; }
+      .sb-diag__list span { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+      .sb-diag__btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg,#03658c 0%,#00a7a9 100%); color: #fff; font-weight: 700; font-size: 0.875rem; border-radius: 8px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,167,169,0.28); margin-bottom: 0.75rem; }
+      .sb-diag__btn:hover { box-shadow: 0 6px 20px rgba(0,167,169,0.42); transform: translateY(-1px); color: #fff; }
+      .sb-diag__nota { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; margin: 0; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .article-layout { grid-template-columns: 1fr; }
+        .article-sidebar { display: none; }
+      }
+      @media (max-width: 768px) {
+        .article-hero { padding: calc(70px + 3rem) 0 3rem; }
+        .article-body { padding: 2.5rem 0 3.5rem; }
+        .metrics-grid { grid-template-columns: 1fr; }
+        .author-box { flex-direction: column; }
+        .step { grid-template-columns: 2rem 1fr; gap: 0.75rem; }
+        .step-num { width: 2rem; height: 2rem; font-size: 0.85rem; }
+      }
+      @media (max-width: 640px) {
+        .article-meta { gap: 0.6rem; font-size: 0.82rem; }
+        .article-cta-box { padding: 1.75rem 1.25rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <div id="site-nav"></div>
+
+    <main id="main" tabindex="-1">
+
+      <!-- HERO -->
+      <header class="article-hero">
+        <div class="article-hero-inner">
+          <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+            <a href="/">Inicio</a><span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+            <span aria-current="page">SEO local para médicos en Argentina</span>
+          </nav>
+          <span class="article-category">SEO</span>
+          <h1>SEO local para médicos: la diferencia entre aparecer primero y no existir</h1>
+          <div class="article-meta">
+            <span>Por <strong>Yulia Monti — Cirujana Digital</strong></span>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-04-30">30 de abril de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>11 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CUERPO -->
+      <div class="article-body">
+        <div class="article-layout">
+
+          <!-- CONTENIDO PRINCIPAL -->
+          <article class="article-content">
+
+            <p>Cuando un paciente en Argentina necesita un cardiólogo, un traumatólogo o una dermatóloga, no le pregunta a un amigo ni abre la guía telefónica. Busca en Google. Y lo que ve en los primeros tres resultados con mapa —el llamado Local Pack— es lo que existe para él. Lo que está debajo, en la página 2, o lo que directamente no aparece, no existe. Esa es la lógica brutal del SEO local para médicos en Argentina: no alcanza con ser bueno en lo que hacés. Tenés que aparecer donde el paciente busca, con la información correcta, antes que tu competencia.</p>
+
+            <p>Esta guía, elaborada por <strong>Yulia Monti — Cirujana Digital</strong>, explica exactamente qué determina quién aparece primero en Google Maps y búsqueda local, qué errores cometen la mayoría de los médicos argentinos, y qué pasos concretos tomás para corregirlos. Sin teoría genérica. Con datos del mercado local.</p>
+
+            <!-- SECCIÓN 1 -->
+            <h2 id="como-funciona-seo-local">Cómo funciona el SEO local médico en Argentina</h2>
+
+            <p>Google decide qué consultorios y médicos mostrar en el Local Pack usando tres variables principales: <strong>relevancia</strong> (¿es este médico lo que el usuario busca?), <strong>distancia</strong> (¿qué tan cerca está del usuario?) y <strong>prominencia</strong> (¿cuánta autoridad tiene este profesional en la web?). Las tres son optimizables. La mayoría de los médicos trabaja solo la segunda —asumiendo que la cercanía geográfica alcanza— e ignora las otras dos.</p>
+
+            <p>La relevancia se controla con la categoría del perfil de Google Business Profile y el contenido del sitio web. Si tu perfil dice "Médico" en lugar de "Reumatólogo", Google no sabe para qué búsquedas mostrarte. Si tu sitio web no menciona explícitamente "reumatólogo en Rosario" o "tratamiento de lupus en Palermo", no hay señal de relevancia para esas keywords.</p>
+
+            <p>La prominencia se construye con reseñas, menciones externas en directorios médicos, Schema estructurado y la velocidad técnica del sitio. Un médico con 40 reseñas bien gestionadas y un sitio con Lighthouse 95+ supera en prominencia a otro con mejor ubicación pero sin señales de autoridad digital.</p>
+
+            <div class="metrics-grid">
+              <div class="metric-card bad">
+                <p class="metric-name">Click-through rate página 2</p>
+                <p class="metric-value">&lt;1%</p>
+                <p class="metric-desc">Los resultados fuera del Local Pack y primera página son invisibles en la práctica</p>
+              </div>
+              <div class="metric-card good">
+                <p class="metric-name">Clicks que va el Local Pack</p>
+                <p class="metric-value">44%</p>
+                <p class="metric-desc">Porcentaje de clicks totales que capturan los 3 resultados de Google Maps</p>
+              </div>
+              <div class="metric-card medium">
+                <p class="metric-name">Médicos con GBP verificado en LATAM</p>
+                <p class="metric-value">38%</p>
+                <p class="metric-desc">El resto deja el campo libre a quien sí lo tiene configurado</p>
+              </div>
+            </div>
+
+            <!-- SECCIÓN 2 -->
+            <h2 id="google-business-profile">Google Business Profile: el centro del SEO local médico</h2>
+
+            <p>El perfil de Google Business Profile (GBP) es el activo digital más subestimado del médico argentino. No es "la ficha de Google": es el mecanismo que determina si aparecés o no en el Local Pack, en Google Maps y en los knowledge panels cuando alguien busca tu nombre. Optimizarlo mal o no optimizarlo es regalar visibilidad a la competencia.</p>
+
+            <h3>Categoría: el error más común y más costoso</h3>
+            <p>La categoría principal del GBP define para qué búsquedas Google te considera relevante. La categoría "Médico" o "Doctor en medicina" es tan genérica que no rankea para nada específico. La categoría correcta es la especialidad exacta: "Cardiólogo", "Ginecólogo", "Cirujano ortopédico", "Médico pediatra". Si tu especialidad no existe como categoría exacta en GBP, elegís la más cercana y la complementás con categorías secundarias.</p>
+
+            <div class="callout callout-danger">
+              <span class="callout-label">🚨 Error frecuente</span>
+              <p>Tener el perfil creado pero no verificado. Un perfil sin verificar no aparece en Maps. El proceso de verificación en Argentina puede tardar entre 5 y 14 días si se hace por correo postal. Empezalo hoy.</p>
+            </div>
+
+            <h3>NAP: consistencia que Google penaliza si falta</h3>
+            <p>NAP es el acrónimo de Name, Address, Phone (Nombre, Dirección, Teléfono). Google cruza esa información entre tu GBP, tu sitio web y todos los directorios donde aparecés. Una inconsistencia mínima —"Av. Corrientes 1234" en el sitio y "Corrientes 1234" en el GBP— es suficiente para generar señales contradictorias que bajan tu ranking local. El NAP debe ser idéntico, carácter por carácter, en todas las fuentes.</p>
+
+            <h3>Checklist de optimización de GBP para médicos en Argentina</h3>
+            <ul class="checklist">
+              <li>Perfil verificado (no solo creado)</li>
+              <li>Categoría principal = especialidad médica exacta</li>
+              <li>Nombre del perfil = nombre real del profesional o clínica (sin keywords stuffing)</li>
+              <li>Dirección idéntica a la del sitio web y directorios externos</li>
+              <li>Teléfono de contacto directo con código de área</li>
+              <li>Horarios de atención actualizados y con excepciones para feriados</li>
+              <li>Enlace al sitio web (no a una red social)</li>
+              <li>Mínimo 10 fotos: consultorio, acceso, fachada</li>
+              <li>Descripción del negocio con especialidad + zona + propuesta de valor (máx 750 caracteres)</li>
+              <li>Atributos activados: "Acepta nuevos pacientes", idiomas, accesibilidad</li>
+              <li>Al menos 1 publicación en los últimos 30 días</li>
+              <li>Reseñas con respuesta activa del profesional</li>
+            </ul>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Dato de campo</span>
+              <p>En los perfiles médicos auditados por <strong>Cirujana Digital</strong> en Argentina, el 71% tiene el nombre correcto pero la categoría incorrecta. Ese solo error puede estar costando visibilidad en cientos de búsquedas mensuales por especialidad.</p>
+            </div>
+
+            <!-- CTA MID -->
+            <div class="article-cta-box">
+              <h3>¿Querés saber si tu perfil de Google y tu sitio están trabajando o durmiendo?</h3>
+              <p>Diagnóstico gratuito: 15 puntos de revisión por especialidad y ciudad. Velocidad, SEO local, Schema, conversión. Resultado en 3 minutos.</p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Hacer mi diagnóstico gratis</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- SECCIÓN 3 -->
+            <h2 id="keywords-locales">Keywords locales: cómo el médico argentino piensa como su paciente</h2>
+
+            <p>El paciente no busca "servicio de atención médica especializada en el área cardiológica". Busca "cardiólogo Belgrano turno urgente" o "médica clínica Caballito que atienda obra social". La diferencia entre aparecer y no aparecer en esas búsquedas está en si tu sitio web usa ese lenguaje real o el lenguaje técnico del médico.</p>
+
+            <h3>Estructura de keywords para médicos en Argentina</h3>
+            <p>Las combinaciones con mayor volumen e intención de conversión para médicos en Argentina siguen este patrón:</p>
+
+            <div class="table-wrapper">
+              <table class="data-table" aria-label="Estructura de keywords SEO local médico Argentina">
+                <thead>
+                  <tr>
+                    <th>Tipo de búsqueda</th>
+                    <th>Ejemplo real</th>
+                    <th>Intención</th>
+                    <th>Prioridad</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Especialidad + ciudad</td>
+                    <td>"traumatólogo Córdoba"</td>
+                    <td>Encontrar especialista</td>
+                    <td class="tag-good">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Especialidad + barrio</td>
+                    <td>"dermatóloga Palermo"</td>
+                    <td>Cercanía geográfica</td>
+                    <td class="tag-good">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Especialidad + obra social</td>
+                    <td>"ginecóloga OSDE Rosario"</td>
+                    <td>Filtro de cobertura</td>
+                    <td class="tag-good">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Síntoma + ciudad</td>
+                    <td>"dolor de rodilla médico Buenos Aires"</td>
+                    <td>Diagnóstico + turno</td>
+                    <td class="tag-medium">Media</td>
+                  </tr>
+                  <tr>
+                    <td>Nombre del médico</td>
+                    <td>"Dr. García cardiólogo Mendoza"</td>
+                    <td>Búsqueda de marca</td>
+                    <td class="tag-medium">Media</td>
+                  </tr>
+                  <tr>
+                    <td>Especialidad + "cerca"</td>
+                    <td>"médico clínico cerca de mi"</td>
+                    <td>Intención inmediata</td>
+                    <td class="tag-good">Alta</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Esas keywords deben aparecer en: el título de la página de inicio (<code>&lt;title&gt;</code>), el H1, el texto de la página de servicios, la descripción de Google Business Profile y el Schema del sitio. No alcanza con mencionarlas una vez: Google necesita coherencia semántica en múltiples lugares para darle relevancia a esas combinaciones.</p>
+
+            <h3>Páginas de servicio por especialidad: el activo más subestimado</h3>
+            <p>La mayoría de los médicos tiene una sola página de "Servicios" que lista todo. El SEO local exige páginas individuales por cada servicio o condición tratada. Un traumatólogo en Mendoza necesita páginas separadas para: "cirugía de rodilla Mendoza", "lesiones de menisco Mendoza", "reemplazo de cadera Mendoza". Cada página ataca una búsqueda específica con intención de turno. Esa estructura multiplica la superficie de captación orgánica sin aumentar el costo de la infraestructura digital.</p>
+
+            <!-- SECCIÓN 4 -->
+            <h2 id="schema-medico">Schema médico: la señal que Google y los LLMs necesitan</h2>
+
+            <p>El Schema es el lenguaje estructurado que le dice a Google —y a los motores de IA como Perplexity— exactamente qué sos, qué hacés y dónde estás. Sin Schema, Google indexa tu sitio pero lo entiende con mucho menos precisión. Con Schema correcto, el sitio tiene ventaja directa en búsquedas por especialidad y en las respuestas generadas por IA que cada vez más pacientes usan como primer paso de búsqueda.</p>
+
+            <p>Para médicos en Argentina, el Schema mínimo viable incluye:</p>
+
+            <ul>
+              <li><strong><code>Physician</code> o <code>MedicalBusiness</code>:</strong> tipo de entidad. Physician para profesional individual, MedicalBusiness para clínica o centro médico.</li>
+              <li><strong><code>medicalSpecialty</code>:</strong> especialidad según el vocabulario de Schema.org (ej. <code>Cardiology</code>, <code>Dermatology</code>, <code>Orthopedic</code>).</li>
+              <li><strong><code>areaServed</code>:</strong> ciudad o barrio de atención. Puede ser múltiple si el médico atiende en varias sedes.</li>
+              <li><strong><code>address</code> con <code>addressLocality</code> y <code>addressCountry</code>:</strong> dirección completa con código postal argentino.</li>
+              <li><strong><code>geo</code> con coordenadas:</strong> latitud y longitud exactas del consultorio. Esta propiedad refuerza la señal geográfica para Google Maps.</li>
+              <li><strong><code>sameAs</code>:</strong> links a Doctoralia, LinkedIn, colegio médico provincial, y cualquier directorio donde el profesional esté listado. Construye la red de menciones que los LLMs usan para validar la entidad.</li>
+            </ul>
+
+            <div class="callout callout-warning">
+              <span class="callout-label">⚠️ Atención</span>
+              <p>El Schema debe estar en JSON-LD, validado sin errores en el <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Rich Results Test de Google</a> antes de publicar. Un Schema con errores de sintaxis no se procesa. Un Schema con datos inconsistentes respecto al GBP genera señales contradictorias. Los dos escenarios son peores que no tener Schema.</p>
+            </div>
+
+            <!-- SECCIÓN 5 -->
+            <h2 id="resenas-autoridad">Reseñas y autoridad: el factor que no se puede forzar pero sí gestionar</h2>
+
+            <p>Las reseñas de Google son el equivalente digital del boca en boca, con una diferencia crítica: son públicas, permanentes y tienen peso algorítmico directo en el Local Pack. Google pondera cantidad, recencia y diversidad de reseñas. Un médico con 8 reseñas de hace 3 años está en peor posición que uno con 15 reseñas en los últimos 6 meses, aunque el primero tenga mejor puntuación.</p>
+
+            <h3>Cómo generar reseñas de forma consistente</h3>
+            <p>El error es esperar que los pacientes satisfechos dejen reseñas por iniciativa propia. La tasa espontánea es baja. Lo que funciona es un proceso sistemático: en la salida del turno (o por WhatsApp post-consulta), el médico o su secretaria comparte el link directo al perfil de Google con un mensaje corto. No pedir "una reseña de 5 estrellas": pedir que compartan su experiencia. Eso cumple las políticas de Google y genera reseñas auténticas.</p>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Consejo práctico</span>
+              <p>El link directo para dejar reseñas en tu GBP se genera desde el panel de Google Business Profile en "Compartir perfil". Guardarlo en el teléfono y mandarlo por WhatsApp después de cada consulta es la forma más simple de construir autoridad local consistente sin herramientas externas.</p>
+            </div>
+
+            <h3>Responder reseñas: señal de actividad que Google mide</h3>
+            <p>Responder reseñas —positivas y negativas— no es solo cortesía profesional. Es una señal de actividad del perfil que Google incluye en su evaluación de prominencia. Un perfil con reseñas respondidas activamente supera en ranking local a uno con mejores puntuaciones pero sin respuestas. Las respuestas también permiten incluir naturalmente keywords de especialidad y ciudad, lo que refuerza la relevancia semántica del perfil.</p>
+
+            <!-- SECCIÓN 6 -->
+            <h2 id="sitio-web-seo-local">El sitio web como motor del SEO local: por qué el GBP solo no alcanza</h2>
+
+            <p>Google Business Profile posiciona en Maps. El sitio web posiciona en búsqueda orgánica. Son dos canales distintos que se refuerzan mutuamente cuando están bien vinculados. Un médico con GBP optimizado pero sin sitio web capta una fracción de la demanda disponible. El paciente que busca información antes de decidir —que es la mayoría— necesita una página donde leer, evaluar y contactar.</p>
+
+            <p>El sitio web que potencia el SEO local médico en Argentina tiene estas características técnicas no negociables:</p>
+
+            <div class="steps">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div class="step-body">
+                  <h4>Carga en menos de 2.5 segundos en mobile</h4>
+                  <p>El 70% del tráfico médico local en Argentina llega desde celular. Un sitio que tarda más de 3 segundos en cargar pierde más de la mitad de esos visitantes antes de que vean el contenido. Esto no es opcional: es el umbral mínimo para competir en SEO local.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div class="step-body">
+                  <h4>NAP idéntico al del GBP en el footer y en la página de contacto</h4>
+                  <p>Nombre, dirección y teléfono exactamente iguales. Incluir el barrio o zona además de la ciudad refuerza la relevancia geográfica para búsquedas de especialidad + barrio.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div class="step-body">
+                  <h4>Schema Physician o MedicalBusiness en JSON-LD</h4>
+                  <p>Implementado en el <code>&lt;head&gt;</code> de la página de inicio y de cada página de servicio. Sin errores de validación. Con <code>geo</code> y <code>sameAs</code> completos.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div class="step-body">
+                  <h4>Páginas de servicio con keywords de especialidad + ciudad</h4>
+                  <p>Una página por cada servicio o condición tratada. Título H1 con la keyword principal. Contenido que responde la pregunta que tiene el paciente antes de pedir turno.</p>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-num">5</div>
+                <div class="step-body">
+                  <h4>Enlace directo desde el GBP al sitio web</h4>
+                  <p>El link en el perfil de Google debe apuntar al sitio web real, no a una red social. Google lo usa para cruzar la información del perfil con el contenido del sitio. Si no están vinculados, se pierden señales de relevancia.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="internal-links" aria-label="Artículos relacionados">
+              <p>📎 Relacionado en Cirujana Digital</p>
+              <ul>
+                <li><a href="/servicios/landing-medica-vs-sitio-corporativo/">Landing médica vs sitio corporativo: qué necesita cada tipo de práctica</a></li>
+                <li><a href="/blog/google-business-profile-medicos/">Google Business Profile para médicos: configuración paso a paso</a></li>
+                <li><a href="/blog/desarrollo-web-medicos-latam-guia/">Desarrollo web para médicos en LATAM: guía completa 2026</a></li>
+              </ul>
+            </div>
+
+            <!-- SECCIÓN 7 -->
+            <h2 id="errores-comunes">Los errores de SEO local más frecuentes en médicos argentinos</h2>
+
+            <p>Después de auditar decenas de sitios y perfiles de profesionales de la salud en Argentina, <strong>Yulia Monti — Cirujana Digital</strong> identifica los mismos errores una y otra vez. Enumerarlos sirve para que el médico que lee esto pueda hacer el checklist antes de contratarme o antes de contratar a cualquier otro:</p>
+
+            <div class="table-wrapper">
+              <table class="data-table" aria-label="Errores SEO local más frecuentes en médicos argentinos">
+                <thead>
+                  <tr>
+                    <th>Error</th>
+                    <th>Consecuencia directa</th>
+                    <th>Frecuencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>GBP con categoría genérica ("Médico")</td>
+                    <td>No rankea para búsquedas por especialidad</td>
+                    <td class="tag-bad">Muy alta</td>
+                  </tr>
+                  <tr>
+                    <td>GBP sin verificar</td>
+                    <td>No aparece en Google Maps</td>
+                    <td class="tag-bad">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>NAP inconsistente entre sitio y GBP</td>
+                    <td>Señales contradictorias, ranking local más bajo</td>
+                    <td class="tag-bad">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Sitio web en WordPress lento (LCP &gt; 4s)</td>
+                    <td>Tasa de rebote alta, penalidad en Core Web Vitals</td>
+                    <td class="tag-bad">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Sin Schema Physician en el sitio</td>
+                    <td>Google no identifica la especialidad correctamente</td>
+                    <td class="tag-bad">Muy alta</td>
+                  </tr>
+                  <tr>
+                    <td>Una sola página de "Servicios" genérica</td>
+                    <td>Sin superficie para keywords de especialidad + ciudad</td>
+                    <td class="tag-medium">Alta</td>
+                  </tr>
+                  <tr>
+                    <td>Reseñas sin responder</td>
+                    <td>Señal de inactividad, menor prominencia algorítmica</td>
+                    <td class="tag-medium">Media</td>
+                  </tr>
+                  <tr>
+                    <td>Sin link al sitio web desde el GBP</td>
+                    <td>Google no puede cruzar datos entre perfil y sitio</td>
+                    <td class="tag-medium">Media</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- SECCIÓN FAQ -->
+            <h2 id="faq">Preguntas frecuentes sobre SEO local para médicos en Argentina</h2>
+
+            <h3>¿Cómo aparece un médico en Google Maps en Argentina?</h3>
+            <p>Para aparecer en Google Maps, el médico necesita: crear y verificar su perfil de Google Business Profile con la categoría de especialidad correcta (ej. "Cardiólogo", no solo "Médico"), completar nombre, dirección y teléfono de forma idéntica en el perfil y en el sitio web, agregar horarios reales y fotos del consultorio, responder reseñas activamente, e implementar Schema MedicalBusiness o Physician con geo-coordenadas en el sitio. Sin verificación del perfil, el consultorio directamente no aparece en el Local Pack —los tres resultados con mapa que concentran el 44% de los clicks en búsquedas locales.</p>
+
+            <h3>¿Cuánto tiempo tarda el SEO local en dar resultados para un médico en Argentina?</h3>
+            <p>Los resultados tienen dos velocidades. Google Business Profile optimizado puede mejorar la visibilidad en Maps en 4 a 8 semanas, especialmente si hay poca competencia en la especialidad y zona. El posicionamiento orgánico por keywords de especialidad + ciudad tarda entre 3 y 6 meses para alcanzar primeras posiciones, dependiendo de la autoridad del dominio y la calidad técnica del sitio. Un sitio en HTML estático con Core Web Vitals en verde llega antes que un WordPress lento con el mismo contenido.</p>
+
+            <h3>¿Sirve tener solo Google Business Profile sin sitio web para el SEO local médico?</h3>
+            <p>Google Business Profile sin sitio web posiciona en Maps pero tiene un techo bajo: no hay páginas de servicio para rankear en búsqueda orgánica, no hay Schema Physician para los crawlers de IA, y la tasa de conversión es menor porque el paciente no encuentra información suficiente para decidir. El perfil solo funciona bien como punto de entrada, pero el sitio web es el que convierte esa visibilidad en turnos reales. Para médicos en Argentina que quieren resultados concretos, ambos son necesarios y deben estar vinculados con NAP consistente.</p>
+
+            <!-- CONCLUSIÓN -->
+            <h2 id="conclusion">Conclusión: el SEO local médico no es opcional, es infraestructura</h2>
+
+            <p>En un mercado donde el paciente decide en los primeros tres resultados que ve en su celular, el SEO local no es marketing adicional. Es infraestructura básica del consultorio. Un médico sin presencia local optimizada no está compitiendo con desventaja: directamente no está en la competencia.</p>
+
+            <p>La buena noticia es que la mayoría de los médicos argentinos no tienen esto resuelto. Eso significa que quien lo resuelve hoy tiene ventaja real, sostenida en el tiempo y difícil de revertir una vez construida. Las reseñas, la autoridad de dominio y el historial de señales locales son activos que se acumulan.</p>
+
+            <p>El punto de partida es saber exactamente dónde estás ahora. <strong>Cirujana Digital</strong> ofrece un diagnóstico gratuito que revisa los 15 puntos críticos de tu presencia digital —incluyendo GBP, Schema, velocidad y keywords locales— y te da un resultado accionable en 3 minutos.</p>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+              <img src="/img/yulia-monti.webp"
+                   alt="Yulia Monti — Cirujana Digital"
+                   width="80" height="80"
+                   loading="lazy" decoding="async" />
+              <div class="author-info">
+                <h4>Yulia Monti — Cirujana Digital</h4>
+                <p>Instrumentadora quirúrgica con 15 años en pabellón reconvertida en desarrolladora web para profesionales de la salud. Construye sitios que posicionan en Google, aparecen en Google Maps y convierten visitantes en pacientes. Especialización en SEO médico local en Argentina, México y España.</p>
+              </div>
+            </div>
+
+            <!-- CTA FINAL -->
+            <div class="article-cta-box">
+              <h3>Descubrí qué está frenando tu visibilidad local en Google ahora mismo</h3>
+              <p>Diagnóstico gratuito de SEO local por especialidad y ciudad. GBP, Schema, velocidad, keywords. 15 puntos. Resultado inmediato.</p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Hacer mi diagnóstico gratis</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+            <nav class="toc-box" aria-label="Tabla de contenidos">
+              <h4>En este artículo</h4>
+              <ol>
+                <li><a href="#como-funciona-seo-local">Cómo funciona el SEO local médico</a></li>
+                <li><a href="#google-business-profile">Google Business Profile optimizado</a></li>
+                <li><a href="#keywords-locales">Keywords locales para médicos</a></li>
+                <li><a href="#schema-medico">Schema médico: Physician y MedicalBusiness</a></li>
+                <li><a href="#resenas-autoridad">Reseñas y autoridad local</a></li>
+                <li><a href="#sitio-web-seo-local">El sitio web como motor local</a></li>
+                <li><a href="#errores-comunes">Errores más frecuentes</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+              </ol>
+            </nav>
+
+            <div class="sb-diag">
+              <div class="sb-diag__head">
+                <span class="sb-diag__label">Diagnóstico gratuito</span>
+                <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que espanta pacientes.</p>
+              </div>
+              <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">📍</span>
+                  <div><strong>Visibilidad en Google Maps</strong><span>¿Aparecés en el Local Pack?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                  <div><strong>Keywords locales</strong><span>¿Rankeas por especialidad + ciudad?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                  <div><strong>Velocidad en mobile</strong><span>¿Cargás antes de 3 segundos?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🏗️</span>
+                  <div><strong>Schema médico</strong><span>¿Google entiende tu especialidad?</span></div>
+                </li>
+              </ul>
+              <a href="/diagnostico/" class="sb-diag__btn">
+                Hacer mi diagnóstico gratis
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+            </div>
+          </aside>
+
+        </div><!-- /article-layout -->
+      </div><!-- /article-body -->
+    </main>
+
+    <div id="site-footer"></div>
+  </body>
+</html>

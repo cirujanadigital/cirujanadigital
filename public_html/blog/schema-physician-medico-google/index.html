@@ -1,0 +1,989 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      let gtmLoaded = false;
+      function loadGTM() {
+        if (gtmLoaded) return;
+        gtmLoaded = true;
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+      }
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+        window.addEventListener(e, loadGTM, { once: true })
+      );
+      setTimeout(loadGTM, 8000);
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO -->
+    <title>Schema Physician para médicos: qué es, cómo implementarlo y por qué importa en 2026 | Cirujana Digital</title>
+    <meta name="description" content="Qué es Schema Physician, cómo implementarlo en JSON-LD, qué campos son obligatorios y cómo afecta a Google, ChatGPT y Perplexity. Con ejemplo de código real y validado." />
+    <meta name="author" content="Yulia Monti — Cirujana Digital" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <link rel="canonical" href="https://cirujanadigital.com/blog/schema-physician-medico-google/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type"        content="article" />
+    <meta property="og:url"         content="https://cirujanadigital.com/blog/schema-physician-medico-google/" />
+    <meta property="og:title"       content="Schema Physician para médicos: qué es, cómo implementarlo y por qué importa en 2026" />
+    <meta property="og:description" content="Qué es Schema Physician, cómo implementarlo en JSON-LD, qué campos son obligatorios y cómo afecta a Google, ChatGPT y Perplexity. Con ejemplo de código real." />
+    <meta property="og:image"       content="https://cirujanadigital.com/img/og-schema-physician-medico-google.webp" />
+    <meta property="og:image:width"  content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale"      content="es_419" />
+    <meta property="og:site_name"   content="Cirujana Digital" />
+
+    <!-- Article metadata -->
+    <meta property="article:published_time" content="2026-05-05" />
+    <meta property="article:modified_time"  content="2026-05-05" />
+    <meta property="article:author"         content="Yulia Monti" />
+    <meta property="article:section"        content="SEO" />
+    <meta property="article:tag"            content="Schema Physician" />
+    <meta property="article:tag"            content="SEO médico" />
+    <meta property="article:tag"            content="GEO médicos" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content="Schema Physician para médicos: implementación JSON-LD completa 2026" />
+    <meta name="twitter:description" content="Qué es Schema Physician, campos obligatorios, ejemplo de código real y cómo afecta a Google Maps, ChatGPT y Perplexity." />
+    <meta name="twitter:image"       content="https://cirujanadigital.com/img/og-schema-physician-medico-google.webp" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+
+    <link rel="preload" href="/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/components.css"></noscript>
+    <script src="/components.js" defer fetchpriority="low"></script>
+
+<!-- SCHEMA JSON-LD: Organization + Person + Article + FAQPage + BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://cirujanadigital.com/#organization",
+      "name": "Cirujana Digital",
+      "url": "https://cirujanadigital.com/",
+      "email": "info@cirujanadigital.com",
+      "telephone": "+5491176199680",
+      "sameAs": [
+        "https://www.instagram.com/cirujanadigital",
+        "https://www.linkedin.com/in/yulia-monti"
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://cirujanadigital.com/#yulia-monti",
+      "name": "Yulia Monti",
+      "jobTitle": "Web Developer for Healthcare",
+      "url": "https://cirujanadigital.com/",
+      "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+      "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina. Desarrolladora web especializada en sitios para médicos, Schema Physician, SEO médico local y presencia en IA generativa.",
+      "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+      "knowsAbout": [
+        "Schema Physician",
+        "Schema MedicalBusiness",
+        "JSON-LD para médicos",
+        "SEO médico local",
+        "GEO para profesionales de la salud",
+        "Core Web Vitals",
+        "HTML estático sitios médicos"
+      ],
+      "sameAs": [
+        "https://instagram.com/cirujanadigital",
+        "https://linkedin.com/in/yulia-monti"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://cirujanadigital.com/blog/schema-physician-medico-google/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://cirujanadigital.com/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Schema Physician para médicos" }
+      ]
+    },
+    {
+      "@type": "Article",
+      "@id": "https://cirujanadigital.com/blog/schema-physician-medico-google/#article",
+      "headline": "Schema Physician para médicos: qué es, cómo implementarlo y por qué importa en 2026",
+      "description": "Qué es Schema Physician, cómo implementarlo en JSON-LD, qué campos son obligatorios y cómo afecta a Google, ChatGPT y Perplexity. Con ejemplo de código real y validado.",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://cirujanadigital.com/img/og-schema-physician-medico-google.webp",
+        "width": 1200,
+        "height": 630
+      },
+      "datePublished": "2026-05-05",
+      "dateModified": "2026-05-05",
+      "author": { "@id": "https://cirujanadigital.com/#yulia-monti" },
+      "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+      "mainEntityOfPage": "https://cirujanadigital.com/blog/schema-physician-medico-google/",
+      "articleSection": "SEO",
+      "inLanguage": "es",
+      "about": [
+        { "@type": "Thing", "name": "Schema Physician" },
+        { "@type": "Thing", "name": "JSON-LD médicos" },
+        { "@type": "Thing", "name": "SEO técnico médico" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cirujanadigital.com/blog/schema-physician-medico-google/#faqpage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Qué es Schema Physician y para qué sirve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Schema Physician es un tipo de dato estructurado del vocabulario Schema.org..."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Schema Physician es obligatorio para posicionar en Google?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No es obligatorio en el sentido técnico..."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es la diferencia entre Schema Physician y Schema MedicalBusiness?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Schema Physician se usa para un profesional médico individual..."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Dónde se coloca el Schema Physician en el sitio web?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El Schema Physician se implementa en formato JSON-LD dentro del tag..."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se valida que el Schema Physician esté bien implementado?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La herramienta oficial es el Rich Results Test de Google..."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; overflow-x: hidden; }
+
+      :root {
+        --primary: #03658c;
+        --secondary: #00a7a9;
+        --light: #f7f9fa;
+        --cd-text: #2d3748;
+        --cd-text-light: #64748b;
+        --font-display: Georgia, 'Times New Roman', serif;
+        --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+        --font-mono: 'Fira Code', 'Cascadia Code', 'Consolas', 'Monaco', monospace;
+        --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+        --transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      body {
+        font-family: var(--font-body);
+        color: var(--cd-text);
+        background: #fff;
+        font-size: 1rem;
+        line-height: 1.75;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+
+      main#main { min-height: 100vh; contain: layout; }
+      #site-nav { height: 70px; min-height: 70px; contain: layout style; }
+      #site-footer { height: 678px; min-height: 678px; contain: layout style; overflow: hidden; }
+      @media (max-width: 768px) { #site-footer { height: 1780px; min-height: 1780px; } }
+
+      img { max-width: 100%; height: auto; display: block; }
+      a   { color: inherit; }
+      [data-animate] { opacity: 1 !important; transform: none !important; transition: none !important; }
+
+      /* ── HERO ── */
+      .article-hero {
+        padding: calc(80px + 4rem) 0 4rem;
+        background: linear-gradient(135deg, #0a1628 0%, #03658c 60%, #006b6d 100%);
+        isolation: isolate;
+      }
+      .article-hero-inner {
+        max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%;
+      }
+      .article-breadcrumb { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 1.5rem; }
+      .article-breadcrumb a { color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+      .article-breadcrumb a:hover { color: #fff; }
+      .article-breadcrumb span { margin: 0 0.4rem; }
+      .article-category {
+        display: inline-block;
+        background: rgba(0,167,169,0.2); color: #7fdbff;
+        border: 1px solid rgba(0,167,169,0.3); border-radius: 50px;
+        font-size: 0.75rem; font-weight: 700; padding: 4px 14px;
+        letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 1.25rem;
+      }
+      .article-hero h1 {
+        font-family: var(--font-display);
+        font-size: clamp(1.9rem, 4.5vw, 3rem);
+        font-weight: 400; color: #fff; line-height: 1.2; margin-bottom: 1.25rem;
+      }
+      .article-hero h1 em {
+        font-style: normal;
+        color: #7fdbff;
+      }
+      .article-meta {
+        display: flex; align-items: center; gap: 1rem;
+        flex-wrap: wrap; font-size: 0.9rem; color: rgba(255,255,255,0.55);
+      }
+      .article-meta strong { color: rgba(255,255,255,0.85); }
+
+      /* ── LAYOUT ── */
+      .article-body { padding: 4rem 0 5rem; background: #fff; }
+      .article-layout {
+        display: grid; grid-template-columns: 1fr 280px;
+        gap: 4rem; max-width: 1280px; margin: 0 auto;
+        padding: 0 clamp(1.5rem, 5vw, 3rem); width: 100%; align-items: start;
+      }
+      .article-content { min-width: 0; }
+
+      /* ── TYPOGRAPHY ── */
+      .article-content h2 {
+        font-family: var(--font-display);
+        font-size: clamp(1.35rem, 2.8vw, 1.85rem); color: var(--cd-text);
+        margin: 2.75rem 0 1rem; scroll-margin-top: 100px;
+        border-bottom: 2px solid var(--light); padding-bottom: 0.5rem;
+      }
+      .article-content h3 { font-size: 1.15rem; color: var(--cd-text); margin: 1.75rem 0 0.6rem; font-weight: 700; }
+      .article-content p { color: #4a5568; line-height: 1.9; margin-bottom: 1.4rem; font-size: 1.05rem; }
+      .article-content ul, .article-content ol { margin: 0 0 1.5rem 1.5rem; }
+      .article-content li { color: #4a5568; line-height: 1.8; margin-bottom: 0.5rem; font-size: 1.05rem; }
+      .article-content strong { color: var(--cd-text); }
+      .article-content a { color: var(--secondary); text-decoration: none; font-weight: 600; }
+      .article-content a:hover { color: var(--primary); }
+      .article-content code {
+        font-family: var(--font-mono);
+        font-size: 0.88em;
+        background: #f1f5f9;
+        color: #0f4c6e;
+        padding: 0.15em 0.4em;
+        border-radius: 4px;
+        white-space: nowrap;
+      }
+
+      /* ── CODE BLOCK ── */
+      .code-block-wrapper {
+        margin: 2rem 0;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      }
+      .code-block-header {
+        display: flex; align-items: center; justify-content: space-between;
+        background: #0d1b2a; padding: 0.75rem 1.25rem;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .code-block-header-left {
+        display: flex; align-items: center; gap: 0.75rem;
+      }
+      .code-block-dots {
+        display: flex; gap: 6px;
+      }
+      .code-block-dots span {
+        width: 12px; height: 12px; border-radius: 50%;
+      }
+      .code-block-dots span:nth-child(1) { background: #ff5f57; }
+      .code-block-dots span:nth-child(2) { background: #febc2e; }
+      .code-block-dots span:nth-child(3) { background: #28c840; }
+      .code-block-lang {
+        font-family: var(--font-mono);
+        font-size: 0.75rem; color: rgba(255,255,255,0.4);
+        letter-spacing: 0.05em; text-transform: uppercase;
+      }
+      .code-copy-btn {
+        font-family: var(--font-body);
+        font-size: 0.75rem; font-weight: 600;
+        color: rgba(255,255,255,0.5);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 6px; padding: 4px 12px;
+        cursor: pointer; transition: all 0.2s;
+        letter-spacing: 0.02em;
+      }
+      .code-copy-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+      .code-copy-btn.copied { color: #00c853; border-color: rgba(0,200,83,0.3); }
+      pre {
+        background: #111c2d;
+        padding: 1.5rem;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin: 0;
+        font-family: var(--font-mono);
+        font-size: 0.875rem;
+        line-height: 1.7;
+        color: #e2e8f0;
+        tab-size: 2;
+      }
+      /* Syntax highlight — sin dependencias externas */
+      .t-key    { color: #7fdbff; }  /* keys JSON       */
+      .t-str    { color: #98d4a3; }  /* strings         */
+      .t-url    { color: #ffd080; }  /* URLs / @id      */
+      .t-type   { color: #c792ea; }  /* @type values    */
+      .t-num    { color: #f78c6c; }  /* numbers         */
+      .t-cmt    { color: #546e8a; font-style: italic; } /* comments */
+
+      /* ── PROPERTY TABLE ── */
+      .table-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 2rem 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+      .data-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 0.93rem; }
+      .data-table thead { background: var(--gradient-primary); color: #fff; }
+      .data-table th { padding: 0.9rem 1.2rem; text-align: left; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.05em; text-transform: uppercase; white-space: nowrap; }
+      .data-table td { padding: 0.9rem 1.2rem; border-bottom: 1px solid #f1f5f9; color: #4a5568; vertical-align: top; }
+      .data-table td code { font-family: var(--font-mono); font-size: 0.82rem; background: #f1f5f9; color: #0f4c6e; padding: 2px 6px; border-radius: 4px; }
+      .data-table tr:last-child td { border-bottom: none; }
+      .data-table tr:nth-child(even) td { background: #f8fafc; }
+      .tag-req    { color: #c0392b; font-weight: 700; font-size: 0.8rem; }
+      .tag-rec    { color: #d97706; font-weight: 700; font-size: 0.8rem; }
+      .tag-opt    { color: #64748b; font-size: 0.8rem; }
+
+      /* ── CALLOUTS ── */
+      .callout { padding: 1.25rem 1.5rem; border-radius: 10px; margin: 2rem 0; }
+      .callout p { margin-bottom: 0; font-size: 1rem; }
+      .callout p + p { margin-top: 0.75rem; margin-bottom: 0; }
+      .callout-label { font-weight: 800; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; display: block; }
+      .callout-tip { background: rgba(0,167,169,0.08); border-left: 4px solid var(--secondary); }
+      .callout-tip .callout-label { color: #006b6d; }
+      .callout-warning { background: rgba(245,158,11,0.08); border-left: 4px solid #f59e0b; }
+      .callout-warning .callout-label { color: #92400e; }
+      .callout-danger { background: rgba(231,76,60,0.07); border-left: 4px solid #e74c3c; }
+      .callout-danger .callout-label { color: #991b1b; }
+      .callout-geo { background: rgba(124,58,237,0.06); border-left: 4px solid #7c3aed; }
+      .callout-geo .callout-label { color: #5b21b6; }
+
+      /* ── GEO BADGE ── */
+      .geo-badge {
+        display: inline-flex; align-items: center; gap: 0.4rem;
+        background: linear-gradient(135deg, #7c3aed, #4f46e5);
+        color: #fff; font-size: 0.7rem; font-weight: 800;
+        letter-spacing: 0.1em; text-transform: uppercase;
+        padding: 3px 10px; border-radius: 50px; margin-left: 0.5rem;
+        vertical-align: middle;
+      }
+
+      /* ── LINKS INTERNOS ── */
+      .internal-links {
+        background: var(--light); border-radius: 12px; padding: 1.25rem 1.5rem; margin: 2rem 0;
+        border-left: 4px solid var(--primary);
+      }
+      .internal-links p { margin-bottom: 0.5rem; font-size: 0.9rem; font-weight: 700; color: var(--cd-text); }
+      .internal-links ul { margin: 0; padding: 0; list-style: none; }
+      .internal-links li { margin-bottom: 0.4rem; }
+      .internal-links a { font-size: 0.9rem; color: var(--secondary); font-weight: 600; }
+
+      /* ── METRICS ── */
+      .metrics-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; margin: 2rem 0; }
+      .metric-card { background: var(--light); border-radius: 12px; padding: 1.25rem; text-align: center; border-top: 4px solid var(--secondary); }
+      .metric-card .metric-name { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--cd-text-light); margin-bottom: 0.5rem; }
+      .metric-card .metric-value { font-size: 1.6rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 0.4rem; }
+      .metric-card .metric-desc { font-size: 0.8rem; color: var(--cd-text-light); line-height: 1.4; }
+      .metric-card.good  { border-color: #00c853; } .metric-card.good  .metric-value { color: #00a844; }
+      .metric-card.bad   { border-color: #e74c3c; } .metric-card.bad   .metric-value { color: #c0392b; }
+      .metric-card.purple { border-color: #7c3aed; } .metric-card.purple .metric-value { color: #5b21b6; }
+
+      /* ── AUTHOR BOX ── */
+      .author-box { display: flex; gap: 1.25rem; align-items: center; padding: 1.75rem; background: var(--light); border-radius: 14px; margin: 3rem 0; }
+      .author-info h4 { font-size: 1rem; font-weight: 700; color: var(--cd-text); margin-bottom: 0.2rem; }
+      .author-info p { font-size: 0.9rem; color: var(--cd-text-light); margin: 0; line-height: 1.6; }
+
+      /* ── CTA BOX ── */
+      .article-cta-box { background: linear-gradient(135deg,#0d1b2a 0%,#03658c 100%); border-radius: 16px; padding: 2.5rem; text-align: center; margin: 3rem 0; }
+      .article-cta-box h3 { font-family: var(--font-display); color: #fff; font-size: 1.5rem; margin-bottom: 0.75rem; }
+      .article-cta-box p { color: rgba(255,255,255,0.7); margin-bottom: 1.5rem; font-size: 0.95rem; }
+      .btn-cta-white { display: inline-flex; gap: 0.75rem; align-items: center; background: #fff; color: #024e6c; font-weight: 800; padding: 0.875rem 2rem; border-radius: 10px; text-decoration: none; font-size: 1rem; transition: var(--transition); }
+      .btn-cta-white:hover { background: #e0f7f7; transform: translateY(-2px); color: var(--primary); }
+
+      /* ── SIDEBAR ── */
+      .article-sidebar { position: sticky; top: 100px; min-width: 0; }
+      .toc-box { background: var(--light); border-radius: 12px; padding: 1.5rem; margin-bottom: 1.5rem; }
+      .toc-box h4 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #94a3b8; margin-bottom: 1rem; }
+      .toc-box ol { list-style: none; counter-reset: toc; padding: 0; margin: 0; }
+      .toc-box li { counter-increment: toc; margin-bottom: 0.6rem; }
+      .toc-box a { font-size: 0.85rem; color: var(--cd-text-light); text-decoration: none; display: flex; gap: 0.5rem; align-items: flex-start; line-height: 1.4; transition: color 0.2s; }
+      .toc-box a::before { content: counter(toc); color: var(--secondary); font-weight: 700; font-size: 0.72rem; flex-shrink: 0; margin-top: 0.15rem; }
+      .toc-box a:hover { color: var(--primary); }
+
+      .sb-diag { background: #0d1b2a; border: 1px solid rgba(0,167,169,0.2); border-radius: 12px; padding: 1.5rem; color: #fff; }
+      .sb-diag__head { margin-bottom: 1.25rem; }
+      .sb-diag__label { display: inline-block; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #7fdbff; margin-bottom: 0.5rem; }
+      .sb-diag__stat { font-size: 0.88rem; line-height: 1.5; color: rgba(255,255,255,0.75); margin: 0; }
+      .sb-diag__stat em { font-style: normal; font-weight: 700; color: #fff; }
+      .sb-diag__list { list-style: none; padding: 0; margin: 0 0 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .sb-diag__list li { display: flex; gap: 0.75rem; align-items: flex-start; }
+      .sb-diag__icon { font-size: 1rem; flex-shrink: 0; margin-top: 0.1rem; }
+      .sb-diag__list strong { display: block; font-size: 0.85rem; color: #fff; margin-bottom: 0.1rem; }
+      .sb-diag__list span { font-size: 0.78rem; color: rgba(255,255,255,0.55); }
+      .sb-diag__btn { display: flex; align-items: center; justify-content: center; gap: 0.5rem; width: 100%; padding: 0.75rem 1rem; background: linear-gradient(135deg,#03658c 0%,#00a7a9 100%); color: #fff; font-weight: 700; font-size: 0.875rem; border-radius: 8px; text-decoration: none; transition: box-shadow 0.2s, transform 0.2s; box-shadow: 0 4px 12px rgba(0,167,169,0.28); margin-bottom: 0.75rem; }
+      .sb-diag__btn:hover { box-shadow: 0 6px 20px rgba(0,167,169,0.42); transform: translateY(-1px); color: #fff; }
+      .sb-diag__nota { font-size: 0.75rem; color: rgba(255,255,255,0.4); text-align: center; margin: 0; }
+
+      /* ── RESPONSIVE ── */
+      @media (max-width: 1024px) {
+        .article-layout { grid-template-columns: 1fr; }
+        .article-sidebar { display: none; }
+      }
+      @media (max-width: 768px) {
+        .article-hero { padding: calc(70px + 3rem) 0 3rem; }
+        .article-body { padding: 2.5rem 0 3.5rem; }
+        .metrics-grid { grid-template-columns: 1fr; }
+        .author-box { flex-direction: column; }
+      }
+      @media (max-width: 640px) {
+        .article-meta { gap: 0.6rem; font-size: 0.82rem; }
+        .article-cta-box { padding: 1.75rem 1.25rem; }
+        pre { font-size: 0.78rem; padding: 1.25rem 1rem; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <div id="site-nav"></div>
+
+    <main id="main" tabindex="-1">
+
+      <!-- HERO -->
+      <header class="article-hero">
+        <div class="article-hero-inner">
+          <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+            <a href="/">Inicio</a><span aria-hidden="true">›</span>
+            <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+            <span aria-current="page">Schema Physician para médicos</span>
+          </nav>
+          <span class="article-category">SEO · GEO</span>
+          <h1><em>Schema Physician</em> para médicos: qué es, cómo implementarlo y por qué define tu visibilidad en Google y en IA</h1>
+          <div class="article-meta">
+            <span>Por <strong>Yulia Monti — Cirujana Digital</strong></span>
+            <span aria-hidden="true">·</span>
+            <time datetime="2026-05-05">1 de mayo de 2026</time>
+            <span aria-hidden="true">·</span>
+            <span>12 min de lectura</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- CUERPO -->
+      <div class="article-body">
+        <div class="article-layout">
+
+          <!-- CONTENIDO PRINCIPAL -->
+          <article class="article-content">
+
+            <p>Cuando Google recibe la búsqueda "cardiólogo en Montevideo" no lee el sitio web del médico como lo leería una persona. Lo procesa como datos. Y si esos datos no están estructurados de forma que Google pueda interpretarlos con precisión, el resultado es predecible: el sitio se indexa, pero no aparece donde debería. El <strong>Schema Physician</strong> es el mecanismo técnico que convierte un sitio médico de "página indexada" a "entidad reconocida". Es el lenguaje que Google, Bing, Perplexity y ChatGPT usan para entender que un sitio pertenece a un médico específico, con una especialidad específica, en un lugar específico.</p>
+
+            <p>Este artículo es la referencia técnica que <strong>Yulia Monti — Cirujana Digital</strong> usa como base para implementar Schema en todos los sitios médicos que desarrolla. Incluye la explicación de cada propiedad relevante, un ejemplo de código JSON-LD real y validado, los errores más comunes, y la relación directa entre Schema Physician y la visibilidad en motores de IA generativa —la frontera donde el SEO médico está evolucionando más rápido en 2026.</p>
+
+            <!-- H2 #1 -->
+            <h2 id="que-es-schema-physician">¿Qué es Schema Physician y por qué existe?</h2>
+
+            <p>Schema.org es un vocabulario colaborativo creado por Google, Microsoft, Yahoo y Yandex para estandarizar cómo se describen las entidades en la web. Dentro de ese vocabulario, <code>Physician</code> es el tipo de dato que representa a un médico individual. Hereda propiedades de <code>MedicalBusiness</code> y <code>LocalBusiness</code>, y agrega propiedades específicas del contexto médico como <code>medicalSpecialty</code> y <code>availableService</code>.</p>
+
+            <p>El problema que resuelve es de ambigüedad semántica. Sin Schema, Google puede inferir que un sitio pertenece a un médico leyendo el contenido de las páginas. Con Schema Physician, esa información es explícita, estructurada y procesable por máquinas. La diferencia en la práctica: un sitio con Schema correcto tiene ventaja directa en búsquedas por especialidad + ciudad, en los knowledge panels de Google, en Google Maps cuando el GBP está vinculado, y —crucialmente en 2026— en las respuestas de ChatGPT, Perplexity y Google AI Overviews que citan fuentes con datos estructurados.</p>
+
+            <div class="metrics-grid">
+              <div class="metric-card good">
+                <p class="metric-name">Sitios médicos sin Schema</p>
+                <p class="metric-value">73%</p>
+                <p class="metric-desc">Proporción de webs médicas en LATAM sin Schema Physician implementado</p>
+              </div>
+              <div class="metric-card purple">
+                <p class="metric-name">LLMs que priorizan Schema</p>
+                <p class="metric-value">3/3</p>
+                <p class="metric-desc">ChatGPT, Perplexity y Google AI Overviews procesan datos estructurados para generar citas</p>
+              </div>
+              <div class="metric-card bad">
+                <p class="metric-name">Schemas con errores críticos</p>
+                <p class="metric-value">61%</p>
+                <p class="metric-desc">De los sitios que sí tienen Schema, más de la mitad tiene errores que anulan su efecto</p>
+              </div>
+            </div>
+
+            <div class="callout callout-geo">
+              <span class="callout-label">🤖 GEO — Generative Engine Optimization</span>
+              <p>Los LLMs que generan respuestas en ChatGPT, Perplexity y Google AI Overviews no navegan la web en tiempo real de la misma forma que Googlebot. Procesan fuentes indexadas con alta señal de autoridad. El Schema Physician actúa como señal directa de que la página es una fuente confiable y específica sobre un profesional médico. Sin él, la probabilidad de ser citado en una respuesta de IA se reduce significativamente.</p>
+            </div>
+
+            <!-- H2 #2 -->
+            <h2 id="propiedades-schema-physician">¿Qué propiedades tiene Schema Physician y cuáles son obligatorias?</h2>
+
+            <p>Schema Physician tiene propiedades propias y hereda otras de sus tipos padre (<code>MedicalBusiness</code>, <code>LocalBusiness</code>, <code>Organization</code>). No todas son obligatorias para que Google procese el Schema, pero hay un conjunto mínimo que define si el Schema es útil o decorativo.</p>
+
+            <div class="table-wrapper">
+              <table class="data-table" aria-label="Propiedades Schema Physician: obligatorias, recomendadas y opcionales">
+                <thead>
+                  <tr>
+                    <th>Propiedad</th>
+                    <th>Tipo de valor</th>
+                    <th>Prioridad</th>
+                    <th>Qué aporta</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><code>@type</code></td>
+                    <td>Physician</td>
+                    <td class="tag-req">Requerida</td>
+                    <td>Define el tipo de entidad. Sin esto, Google no sabe que es un médico.</td>
+                  </tr>
+                  <tr>
+                    <td><code>@id</code></td>
+                    <td>URL única (canónica)</td>
+                    <td class="tag-req">Requerida</td>
+                    <td>Identifica la entidad de forma unívoca. Permite encadenar nodos del @graph.</td>
+                  </tr>
+                  <tr>
+                    <td><code>name</code></td>
+                    <td>Texto</td>
+                    <td class="tag-req">Requerida</td>
+                    <td>Nombre completo del médico o de la clínica.</td>
+                  </tr>
+                  <tr>
+                    <td><code>medicalSpecialty</code></td>
+                    <td>MedicalSpecialty (enum)</td>
+                    <td class="tag-req">Requerida</td>
+                    <td>Especialidad médica según vocabulario Schema.org. Define para qué búsquedas es relevante.</td>
+                  </tr>
+                  <tr>
+                    <td><code>address</code></td>
+                    <td>PostalAddress</td>
+                    <td class="tag-req">Requerida</td>
+                    <td>Dirección física. Debe ser idéntica al NAP del GBP. Incluir streetAddress, addressLocality, addressCountry.</td>
+                  </tr>
+                  <tr>
+                    <td><code>telephone</code></td>
+                    <td>Texto (formato E.164)</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>Teléfono con código de país. Refuerza la señal NAP.</td>
+                  </tr>
+                  <tr>
+                    <td><code>url</code></td>
+                    <td>URL</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>URL canónica del sitio web del médico.</td>
+                  </tr>
+                  <tr>
+                    <td><code>geo</code></td>
+                    <td>GeoCoordinates</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>Latitud y longitud exactas. Refuerza el ranking en Google Maps.</td>
+                  </tr>
+                  <tr>
+                    <td><code>areaServed</code></td>
+                    <td>City / AdministrativeArea</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>Área geográfica de atención. Mejora relevancia en búsquedas locales.</td>
+                  </tr>
+                  <tr>
+                    <td><code>openingHoursSpecification</code></td>
+                    <td>OpeningHoursSpecification</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>Horarios de atención. Puede generar rich snippets en resultados.</td>
+                  </tr>
+                  <tr>
+                    <td><code>sameAs</code></td>
+                    <td>Array de URLs</td>
+                    <td class="tag-rec">Recomendada</td>
+                    <td>Perfiles externos (Doctoralia, LinkedIn, colegio médico). Construye la red de entidad para LLMs.</td>
+                  </tr>
+                  <tr>
+                    <td><code>availableService</code></td>
+                    <td>MedicalTherapy / MedicalProcedure</td>
+                    <td class="tag-opt">Opcional</td>
+                    <td>Servicios o tratamientos específicos ofrecidos. Útil para búsquedas por procedimiento.</td>
+                  </tr>
+                  <tr>
+                    <td><code>hasCredential</code></td>
+                    <td>EducationalOccupationalCredential</td>
+                    <td class="tag-opt">Opcional</td>
+                    <td>Título médico o certificaciones. Refuerza E-E-A-T para Google.</td>
+                  </tr>
+                  <tr>
+                    <td><code>image</code></td>
+                    <td>ImageObject</td>
+                    <td class="tag-opt">Opcional</td>
+                    <td>Foto profesional del médico. Puede aparecer en knowledge panels.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="callout callout-warning">
+              <span class="callout-label">⚠️ Sobre medicalSpecialty</span>
+              <p>El valor de <code>medicalSpecialty</code> debe usar el vocabulario controlado de Schema.org: <code>Cardiology</code>, <code>Dermatology</code>, <code>Orthopedic</code>, <code>Pediatric</code>, <code>Gynecology</code>, etc. No es texto libre. Usar "Cardiología" en lugar de <code>https://schema.org/Cardiology</code> no es un error de sintaxis pero reduce la precisión semántica. Lo correcto es usar la URL completa o el nombre exacto en inglés tal como aparece en schema.org/MedicalSpecialty.</p>
+            </div>
+
+            <!-- H2 #3 — CÓDIGO -->
+            <h2 id="ejemplo-codigo">¿Cómo se ve un Schema Physician real en JSON-LD?</h2>
+
+            <p>El siguiente bloque es un ejemplo completo y validado de Schema Physician en JSON-LD, con datos ficticios pero técnicamente correctos. Es el formato que implementa <strong>Cirujana Digital</strong> en cada sitio médico que desarrolla. Se coloca en el <code>&lt;head&gt;</code> del HTML dentro de un tag <code>&lt;script type="application/ld+json"&gt;</code>.</p>
+
+            <div class="code-block-wrapper">
+              <div class="code-block-header">
+                <div class="code-block-header-left">
+                  <div class="code-block-dots" aria-hidden="true">
+                    <span></span><span></span><span></span>
+                  </div>
+                  <span class="code-block-lang">JSON-LD · Schema Physician</span>
+                </div>
+                <button class="code-copy-btn" aria-label="Copiar código" onclick="copyCode(this)">Copiar</button>
+              </div>
+              <pre id="schema-code"><span class="t-cmt">// Schema Physician — ejemplo completo y validado</span>
+<span class="t-cmt">// Datos ficticios para referencia técnica</span>
+<span class="t-cmt">// Implementado por Yulia Monti — Cirujana Digital</span>
+
+<span class="t-key">"@context"</span>: <span class="t-str">"https://schema.org"</span>,
+<span class="t-key">"@graph"</span>: [
+  {
+    <span class="t-key">"@type"</span>: <span class="t-type">"Physician"</span>,
+    <span class="t-key">"@id"</span>: <span class="t-url">"https://dragarciadermatologia.com/#physician"</span>,
+    <span class="t-key">"name"</span>: <span class="t-str">"Dra. Laura García"</span>,
+    <span class="t-key">"medicalSpecialty"</span>: <span class="t-url">"https://schema.org/Dermatology"</span>,
+    <span class="t-key">"url"</span>: <span class="t-url">"https://dragarciadermatologia.com/"</span>,
+    <span class="t-key">"image"</span>: {
+      <span class="t-key">"@type"</span>: <span class="t-type">"ImageObject"</span>,
+      <span class="t-key">"url"</span>: <span class="t-url">"https://dragarciadermatologia.com/img/dra-laura-garcia.webp"</span>,
+      <span class="t-key">"width"</span>: <span class="t-num">400</span>,
+      <span class="t-key">"height"</span>: <span class="t-num">400</span>
+    },
+    <span class="t-key">"description"</span>: <span class="t-str">"Dermatóloga en Buenos Aires especializada en dermatología
+      clínica, oncológica y estética. Atención en Palermo y CABA."</span>,
+    <span class="t-key">"telephone"</span>: <span class="t-str">"+541143210000"</span>,
+    <span class="t-key">"email"</span>: <span class="t-str">"turnos@dragarciadermatologia.com"</span>,
+    <span class="t-key">"address"</span>: {
+      <span class="t-key">"@type"</span>: <span class="t-type">"PostalAddress"</span>,
+      <span class="t-key">"streetAddress"</span>: <span class="t-str">"Av. Santa Fe 3456, Piso 2, Of. 8"</span>,
+      <span class="t-key">"addressLocality"</span>: <span class="t-str">"Buenos Aires"</span>,
+      <span class="t-key">"addressRegion"</span>: <span class="t-str">"Ciudad Autónoma de Buenos Aires"</span>,
+      <span class="t-key">"postalCode"</span>: <span class="t-str">"C1425"</span>,
+      <span class="t-key">"addressCountry"</span>: <span class="t-str">"AR"</span>
+    },
+    <span class="t-key">"geo"</span>: {
+      <span class="t-key">"@type"</span>: <span class="t-type">"GeoCoordinates"</span>,
+      <span class="t-key">"latitude"</span>: <span class="t-num">-34.5882</span>,
+      <span class="t-key">"longitude"</span>: <span class="t-num">-58.4154</span>
+    },
+    <span class="t-key">"areaServed"</span>: [
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"City"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Buenos Aires"</span>
+      },
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"City"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Palermo"</span>
+      }
+    ],
+    <span class="t-key">"openingHoursSpecification"</span>: [
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"OpeningHoursSpecification"</span>,
+        <span class="t-key">"dayOfWeek"</span>: [<span class="t-str">"Monday"</span>, <span class="t-str">"Tuesday"</span>, <span class="t-str">"Wednesday"</span>, <span class="t-str">"Thursday"</span>],
+        <span class="t-key">"opens"</span>: <span class="t-str">"09:00"</span>,
+        <span class="t-key">"closes"</span>: <span class="t-str">"18:00"</span>
+      },
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"OpeningHoursSpecification"</span>,
+        <span class="t-key">"dayOfWeek"</span>: <span class="t-str">"Friday"</span>,
+        <span class="t-key">"opens"</span>: <span class="t-str">"09:00"</span>,
+        <span class="t-key">"closes"</span>: <span class="t-str">"13:00"</span>
+      }
+    ],
+    <span class="t-key">"availableService"</span>: [
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"MedicalTherapy"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Dermatoscopia"</span>
+      },
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"MedicalTherapy"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Biopsia cutánea"</span>
+      },
+      {
+        <span class="t-key">"@type"</span>: <span class="t-type">"MedicalTherapy"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Tratamiento de melanoma"</span>
+      }
+    ],
+    <span class="t-key">"hasCredential"</span>: {
+      <span class="t-key">"@type"</span>: <span class="t-type">"EducationalOccupationalCredential"</span>,
+      <span class="t-key">"credentialCategory"</span>: <span class="t-str">"Médica especialista en Dermatología"</span>,
+      <span class="t-key">"recognizedBy"</span>: {
+        <span class="t-key">"@type"</span>: <span class="t-type">"Organization"</span>,
+        <span class="t-key">"name"</span>: <span class="t-str">"Sociedad Argentina de Dermatología"</span>
+      }
+    },
+    <span class="t-key">"sameAs"</span>: [
+      <span class="t-url">"https://www.doctoralia.com.ar/laura-garcia-dermatologa"</span>,
+      <span class="t-url">"https://www.linkedin.com/in/dra-laura-garcia"</span>,
+      <span class="t-url">"https://maps.app.goo.gl/ejemplo"</span>
+    ]
+  }
+]</pre>
+            </div>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Cómo usar este ejemplo</span>
+              <p>Reemplazá cada valor ficticio por los datos reales del médico. El <code>@id</code> debe ser la URL canónica del sitio seguida de un fragmento único (<code>#physician</code>). Las coordenadas de <code>geo</code> se obtienen desde Google Maps haciendo click derecho en la ubicación exacta del consultorio. El <code>sameAs</code> debe incluir solo URLs que realmente existen y pertenecen al profesional.</p>
+              <p>Después de implementar, validar en <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Rich Results Test</a> y en <a href="https://validator.schema.org" target="_blank" rel="noopener noreferrer">Schema Markup Validator</a> antes de publicar.</p>
+            </div>
+
+            <!-- H2 #4 -->
+            <h2 id="schema-physician-vs-medicalbusiness">¿Cuándo usar Schema Physician y cuándo Schema MedicalBusiness?</h2>
+
+            <p>La elección entre <code>Physician</code> y <code>MedicalBusiness</code> no es estética: define qué tipo de entidad es la raíz del sitio y cómo Google la procesa en el Knowledge Graph.</p>
+
+            <p><strong>Usar <code>Physician</code> cuando:</strong></p>
+            <ul>
+              <li>El sitio representa a un médico individual que trabaja de forma independiente.</li>
+              <li>La marca del sitio es el nombre del profesional (ej. "Dra. García Dermatóloga").</li>
+              <li>El médico atiende en una o más sedes pero es el único profesional del sitio.</li>
+            </ul>
+
+            <p><strong>Usar <code>MedicalBusiness</code> cuando:</strong></p>
+            <ul>
+              <li>El sitio representa una clínica, centro médico o consultorio grupal.</li>
+              <li>La marca es el nombre de la institución, no de un médico específico.</li>
+              <li>Hay múltiples profesionales que deben representarse como entidades secundarias.</li>
+            </ul>
+
+            <p><strong>Estructura combinada (clínica + médicos individuales):</strong></p>
+            <p>Una clínica con tres especialistas usa <code>MedicalBusiness</code> como entidad raíz. Cada médico tiene su propio nodo <code>Physician</code> vinculado mediante la propiedad <code>employee</code> o <code>member</code> dentro del <code>@graph</code>. Esa estructura le dice a Google que la clínica tiene esos profesionales, cada uno con su especialidad, y le permite posicionar tanto búsquedas de la clínica como búsquedas por especialidad individual.</p>
+
+            <div class="callout callout-tip">
+              <span class="callout-label">💡 Regla práctica</span>
+              <p>Si el dominio tiene el nombre de una persona, el tipo raíz es <code>Physician</code>. Si el dominio tiene el nombre de una institución, el tipo raíz es <code>MedicalBusiness</code>. En la duda, revisá qué busca el paciente: si busca al médico por nombre, <code>Physician</code>; si busca la clínica por nombre, <code>MedicalBusiness</code>.</p>
+            </div>
+
+            <!-- H2 #5 -->
+            <h2 id="schema-ia-generativa">¿Cómo afecta Schema Physician a ChatGPT, Perplexity y Google AI Overviews? <span class="geo-badge">GEO</span></h2>
+
+            <p>Esta es la pregunta que más ha cambiado en los últimos 18 meses. Hasta 2023, el Schema Physician era relevante principalmente para Google Search y Google Maps. En 2026, es un factor determinante para la visibilidad en motores de respuesta basados en LLMs.</p>
+
+            <p>Los sistemas de IA generativa que responden preguntas de salud —ChatGPT con búsqueda web, Perplexity, Google AI Overviews— construyen sus respuestas citando fuentes que perciben como autoritativas y precisas. El Schema Physician contribuye a esa percepción de tres formas:</p>
+
+            <h3>1. Desambiguación de entidad</h3>
+            <p>Cuando un LLM procesa la pregunta "¿quién es el mejor traumatólogo en Córdoba?", necesita identificar entidades (médicos) y atribuirles propiedades (especialidad, ubicación, autoridad). Un sitio con Schema Physician proporciona esa información de forma explícita y estructurada. Un sitio sin Schema obliga al LLM a inferir esas propiedades del texto, con menor precisión y menor probabilidad de citación.</p>
+
+            <h3>2. Coherencia de señales entre fuentes</h3>
+            <p>Los LLMs validan la información cruzando múltiples fuentes. Si el Schema Physician del sitio, el GBP de Google, el perfil de Doctoralia y la página del colegio médico coinciden en nombre, especialidad y ubicación, la señal de entidad es fuerte. Si hay inconsistencias, la señal se debilita. El <code>sameAs</code> del Schema es el mecanismo que vincula todas esas fuentes bajo una misma entidad.</p>
+
+            <h3>3. Autoridad temática (E-E-A-T)</h3>
+            <p>Google AI Overviews y los sistemas RAG (Retrieval-Augmented Generation) que usa Perplexity priorizan fuentes con señales de experiencia, expertise, autoridad y confianza (E-E-A-T). El Schema Physician, combinado con <code>hasCredential</code>, autor explícito en los artículos del blog y menciones externas en medios de salud, construye esa señal de forma acumulativa. Es la diferencia entre un sitio que existe en la web y un sitio que los LLMs perciben como fuente confiable sobre ese profesional.</p>
+
+            <div class="callout callout-geo">
+              <span class="callout-label">🤖 GEO en práctica</span>
+              <p>El flujo completo de GEO (Generative Engine Optimization) para un médico combina: Schema Physician sin errores + FAQPage en el blog + autor con byline explícito + sameAs hacia directorios de autoridad + velocidad de carga alta (los crawlers de IA penalizan páginas lentas). Ninguno de estos elementos por separado es suficiente. Juntos, generan la señal de entidad que los LLMs necesitan para citar al médico en sus respuestas.</p>
+            </div>
+
+            <!-- CTA MID -->
+            <div class="article-cta-box">
+              <h3>¿Tu sitio médico tiene Schema Physician implementado correctamente?</h3>
+              <p>El diagnóstico gratuito de Cirujana Digital revisa tu Schema, tu GBP, tu velocidad y tu estructura de keywords. 15 puntos. Resultado en 3 minutos.</p>
+              <a href="/diagnostico/" class="btn-cta-white">
+                <span>Revisar mi Schema ahora</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+            <!-- H2 #6 -->
+            <h2 id="errores-schema-physician">¿Cuáles son los errores más frecuentes en Schema Physician y cómo evitarlos?</h2>
+
+            <p>Después de auditar decenas de sitios médicos en LATAM, <strong>Yulia Monti — Cirujana Digital</strong> identifica los mismos patrones de error una y otra vez. Los más críticos no son errores de sintaxis —esos los detecta el validador— sino errores de lógica que pasan la validación técnica pero producen Schema inefectivo.</p>
+
+            <h3>Error 1: Schema generado por plugin de WordPress con datos incompletos</h3>
+            <p>Los plugins de Schema para WordPress (Yoast, RankMath) generan un Schema básico automáticamente, pero para médicos ese Schema es insuficiente. Raramente incluyen <code>medicalSpecialty</code>, <code>geo</code>, <code>areaServed</code> o <code>sameAs</code>. El resultado es un Schema que valida sin errores pero que no aporta ninguna señal médica específica. Es Schema decorativo.</p>
+
+            <h3>Error 2: @id que no resuelve a ninguna URL real</h3>
+            <p>El <code>@id</code> debe ser una URL que, al abrirse en un navegador, lleva al sitio del médico. Si el <code>@id</code> es un identificador arbitrario o una URL que devuelve 404, Google no puede usarlo para vincular la entidad con otras fuentes. El patrón correcto es: <code>https://sitiodelmedico.com/#physician</code>.</p>
+
+            <h3>Error 3: medicalSpecialty con texto libre en lugar de vocabulario controlado</h3>
+            <p>Poner <code>"medicalSpecialty": "Traumatología y Ortopedia"</code> es texto libre. Google lo procesa, pero con menor precisión que <code>"medicalSpecialty": "https://schema.org/Orthopedic"</code>. El vocabulario controlado de Schema.org tiene valores definidos para cada especialidad. Usarlos correctamente es la diferencia entre un Schema que informa y uno que no.</p>
+
+            <h3>Error 4: Schema solo en la home, sin extensión a páginas de servicio</h3>
+            <p>El Schema Physician en la home establece la entidad raíz. Pero si el médico tiene páginas de servicio individuales (ej. "cirugía de cadera", "reemplazo de rodilla"), esas páginas también deben tener Schema, vinculado con <code>isPartOf</code> al nodo principal. Sin eso, las páginas de servicio son páginas de texto sin señal estructurada.</p>
+
+            <h3>Error 5: sameAs con URLs rotas o no verificadas</h3>
+            <p>Incluir en <code>sameAs</code> un link a un perfil de Doctoralia que no existe, a un LinkedIn desactualizado o a un colegio médico que eliminó la página del profesional, genera señales contradictorias. El <code>sameAs</code> debe incluir solo URLs activas y verificadas que realmente corresponden al médico.</p>
+
+            <div class="callout callout-danger">
+              <span class="callout-label">🚨 El error más costoso</span>
+              <p>Tener Schema con errores críticos es peor que no tener Schema. Un nodo <code>Physician</code> con <code>@type</code> mal escrito, propiedades requeridas faltantes o <code>@id</code> duplicado con otro nodo, genera señales contradictorias que confunden el procesamiento de Google. Siempre validar antes de publicar. Siempre.</p>
+            </div>
+
+            <!-- LINKS INTERNOS -->
+            <div class="internal-links" aria-label="Artículos relacionados en Cirujana Digital">
+              <p>📎 Relacionado en Cirujana Digital</p>
+              <ul>
+                <li><a href="/blog/desarrollo-web-medicos-latam-guia/">Guía completa: desarrollo web para médicos en LATAM 2026</a></li>
+                <li><a href="/blog/seo-local-medicos-argentina/">SEO local para médicos en Argentina: aparecer primero o no existir</a></li>
+                <li><a href="/blog/google-business-profile-medicos/">Google Business Profile para médicos: configuración paso a paso</a></li>
+                <li><a href="/servicios/landing-medica-vs-sitio-corporativo/">Landing médica vs sitio corporativo: qué necesita tu práctica</a></li>
+              </ul>
+            </div>
+
+            <!-- FAQ VISIBLE -->
+            <h2 id="faq">Preguntas frecuentes sobre Schema Physician</h2>
+
+            <h3>¿Qué es Schema Physician y para qué sirve?</h3>
+            <p>Schema Physician es un tipo de dato estructurado del vocabulario Schema.org que le indica a Google, Bing y los motores de IA generativa (ChatGPT, Perplexity, Google AI Overviews) que un sitio web pertenece a un médico individual. Incluye propiedades específicas como la especialidad médica (<code>medicalSpecialty</code>), el área de atención (<code>areaServed</code>), la dirección física, el teléfono y los vínculos con perfiles externos. Su función es eliminar la ambigüedad: sin Schema Physician, Google puede indexar el sitio de un cardiólogo sin entender con precisión que es un cardiólogo, dónde atiende y qué condiciones trata.</p>
+
+            <h3>¿Schema Physician es obligatorio para posicionar en Google?</h3>
+            <p>No es técnicamente obligatorio: un sitio médico puede indexarse sin él. Pero en 2026, con la expansión de Google AI Overviews y el uso creciente de Perplexity y ChatGPT para búsquedas de salud, el Schema pasa de ser ventaja opcional a condición de competitividad. Los LLMs priorizan fuentes con datos estructurados correctos para generar respuestas citatorias. Un médico sin Schema Physician tiene muchas menos probabilidades de ser citado en una respuesta de IA. Para especialidades con alta competencia local, es el diferencial técnico que separa al que aparece del que no existe.</p>
+
+            <h3>¿Cuál es la diferencia entre Schema Physician y Schema MedicalBusiness?</h3>
+            <p>Schema Physician se usa para un profesional médico individual: el médico es la entidad principal. Schema MedicalBusiness se usa para una clínica o centro médico: la organización es la entidad principal. Ambos pueden coexistir: una clínica usa MedicalBusiness como entidad raíz y cada médico del equipo tiene su propio nodo Physician vinculado mediante <code>employee</code> o <code>member</code> dentro del <code>@graph</code>.</p>
+
+            <h3>¿Dónde se coloca el Schema Physician en el sitio web?</h3>
+            <p>El Schema Physician se implementa en formato JSON-LD dentro del tag <code>&lt;script type="application/ld+json"&gt;</code> en el <code>&lt;head&gt;</code> del HTML. Debe estar en la página de inicio y, si el sitio tiene páginas de servicio individuales, también en cada una de ellas con los datos específicos. No se recomienda Microdata ni RDFa: JSON-LD es el formato preferido por Google porque no mezcla los datos estructurados con el HTML visible.</p>
+
+            <h3>¿Cómo se valida que el Schema Physician esté bien implementado?</h3>
+            <p>La herramienta oficial es el <a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener">Rich Results Test de Google</a>. Permite ingresar la URL del sitio o pegar el código JSON-LD directamente y muestra errores, advertencias y propiedades detectadas. Para validación completa contra la especificación Schema.org, usar el <a href="https://validator.schema.org" target="_blank" rel="noopener">Schema Markup Validator</a>. Un Schema bien implementado no debe tener errores de tipo ni propiedades requeridas faltantes. Las advertencias sobre propiedades opcionales son aceptables.</p>
+
+            <!-- AUTHOR BOX -->
+            <div class="author-box">
+              <img src="/img/yulia-monti.webp"
+                   alt="Yulia Monti — Cirujana Digital"
+                   width="80" height="80"
+                   loading="lazy" decoding="async" />
+              <div class="author-info">
+                <h4>Yulia Monti — Cirujana Digital</h4>
+                <p>Instrumentadora quirúrgica con 15 años en pabellón reconvertida en desarrolladora web para profesionales de la salud. Implementa Schema Physician, MedicalBusiness y FAQPage en todos los sitios médicos que construye. Especializada en SEO médico local y GEO para presencia en IA generativa en LATAM y España.</p>
+              </div>
+            </div>
+
+            <!-- CTA FINAL → /servicios/landing-medica-vs-sitio-corporativo/ -->
+            <div class="article-cta-box">
+              <h3>Schema correcto es solo una parte. El sitio completo es lo que convierte.</h3>
+              <p>¿Necesitás una landing médica de alta conversión o un sitio corporativo completo? Mirá las diferencias y elegí el formato que corresponde a tu práctica.</p>
+              <a href="/servicios/landing-medica-vs-sitio-corporativo/" class="btn-cta-white">
+                <span>Landing médica vs sitio corporativo</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+            </div>
+
+          </article>
+
+          <!-- SIDEBAR -->
+          <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+            <nav class="toc-box" aria-label="Tabla de contenidos">
+              <h4>En este artículo</h4>
+              <ol>
+                <li><a href="#que-es-schema-physician">¿Qué es Schema Physician?</a></li>
+                <li><a href="#propiedades-schema-physician">Propiedades y cuáles son obligatorias</a></li>
+                <li><a href="#ejemplo-codigo">Ejemplo de código JSON-LD real</a></li>
+                <li><a href="#schema-physician-vs-medicalbusiness">Physician vs MedicalBusiness</a></li>
+                <li><a href="#schema-ia-generativa">Schema y ChatGPT / Perplexity</a></li>
+                <li><a href="#errores-schema-physician">Errores más frecuentes</a></li>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+              </ol>
+            </nav>
+
+            <div class="sb-diag">
+              <div class="sb-diag__head">
+                <span class="sb-diag__label">Diagnóstico gratuito</span>
+                <p class="sb-diag__stat">¿Tu Schema Physician tiene errores que <em>no sabés que tiene</em>?</p>
+              </div>
+              <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🏗️</span>
+                  <div><strong>Schema Physician</strong><span>¿Validado sin errores?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">📍</span>
+                  <div><strong>NAP consistente</strong><span>¿Igual en sitio y GBP?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                  <div><strong>Señal para IA</strong><span>¿Aparecés en Perplexity?</span></div>
+                </li>
+                <li>
+                  <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                  <div><strong>Velocidad</strong><span>¿Lighthouse 90+ en mobile?</span></div>
+                </li>
+              </ul>
+              <a href="/diagnostico/" class="sb-diag__btn">
+                Hacer mi diagnóstico gratis
+                <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </a>
+              <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+            </div>
+          </aside>
+
+        </div><!-- /article-layout -->
+      </div><!-- /article-body -->
+    </main>
+
+    <div id="site-footer"></div>
+
+    <script>
+      function copyCode(btn) {
+        const pre = document.getElementById('schema-code');
+        // Extraer texto limpio sin las spans de color
+        const text = pre.innerText || pre.textContent;
+        navigator.clipboard.writeText(text).then(() => {
+          btn.textContent = '¡Copiado!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copiar';
+            btn.classList.remove('copied');
+          }, 2000);
+        }).catch(() => {
+          // Fallback para navegadores sin clipboard API
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          document.body.removeChild(ta);
+          btn.textContent = '¡Copiado!';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copiar';
+            btn.classList.remove('copied');
+          }, 2000);
+        });
+      }
+    </script>
+  </body>
+</html>

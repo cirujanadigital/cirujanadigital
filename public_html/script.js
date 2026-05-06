@@ -413,10 +413,9 @@
       hero.addEventListener('mousemove', loadParticles, { once: true, passive: true });
       hero.addEventListener('touchstart', loadParticles, { once: true, passive: true });
     }
-    'requestIdleCallback' in window
-      ? requestIdleCallback(loadParticles, { timeout: 8000 })
-      : setTimeout(loadParticles, 8000);
-  })();
+'requestIdleCallback' in window
+  ? requestIdleCallback(loadParticles, { timeout: 8000 })
+  : setTimeout(loadParticles, 8000);  })();
 
   /* ══════════════════════════════════════════════
      UI HELPERS — Sticky CTA + scroll CSS
@@ -934,30 +933,25 @@
     });
   });
 
-  function initROIWhenReady() {
-    const meta = getCurrencyMeta();
-    if (els.currencyLabel) els.currencyLabel.textContent = meta.name;
-    _cachedCanvasW = 700;
-    updateROI();
-  }
+ function initROIWhenReady() {
+  const meta = getCurrencyMeta();
+  if (els.currencyLabel) els.currencyLabel.textContent = meta.name;
+  _cachedCanvasW = 700;
+  updateROI();
+}
 
-  (function () {
-    const roiSection = document.getElementById('roi');
-    if (!roiSection) {
+ (function () {
+  const roiSection = document.getElementById('roi');
+  if (!roiSection) { initROIWhenReady(); return; }
+  const obs = new IntersectionObserver(function (entries) {
+    if (entries[0].isIntersecting) {
       initROIWhenReady();
-      return;
+      obs.disconnect();
     }
-    const obs = new IntersectionObserver(
-      function (entries) {
-        if (entries[0].isIntersecting) {
-          initROIWhenReady();
-          obs.disconnect();
-        }
-      },
-      { rootMargin: '300px' }
-    );
-    obs.observe(roiSection);
-  })();
+  }, { rootMargin: '300px' });
+  obs.observe(roiSection);
+})();
+
 })();
 /* ══════════════════════════════════════════════════════════════
    LEAD MAGNET FORM
@@ -1202,3 +1196,4 @@
       });
   });
 })();
+

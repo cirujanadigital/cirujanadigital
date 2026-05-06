@@ -1,0 +1,1270 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT | Cirujana Digital</title>
+  <meta name="description"
+    content="Tenés 5 estrellas en Doctoralia y no existís en ChatGPT. Descubrí por qué los directorios médicos no te dan visibilidad en IA y qué necesitás realmente para aparecer." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
+  <meta property="og:title" content="Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT" />
+  <meta property="og:description"
+    content="Tenés 5 estrellas en Doctoralia y no existís en ChatGPT. Descubrí por qué los directorios médicos no te dan visibilidad en IA y qué necesitás realmente para aparecer." />
+  <meta property="og:image"
+    content="https://cirujanadigital.com/img/og-doctoralia-no-es-suficiente-para-chatgpt.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="2025-04-24" />
+  <meta property="article:modified_time" content="2025-04-24" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Presencia en IA" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT" />
+  <meta name="twitter:description"
+    content="Tenés 5 estrellas en Doctoralia y no existís en ChatGPT. Lo que los directorios no te dan y qué sí funciona." />
+  <meta name="twitter:image"
+    content="https://cirujanadigital.com/img/og-doctoralia-no-es-suficiente-para-chatgpt.webp" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  
+  <link rel="preload" href="/components.css" as="style">
+<link rel="stylesheet" href="/components.css">
+<script src="/components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+      --container-padding: 2rem;
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+      --gap: 2rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+ #site-footer {
+  min-height: 678px;
+  contain: layout style;
+  content-visibility: auto;
+  contain-intrinsic-size: 0 678px;
+}
+@media (max-width: 768px) {
+  #site-footer {
+    min-height: 1780px;
+    contain-intrinsic-size: 0 1780px;
+  }
+}
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    /* HERO */
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout;
+    }
+
+    .article-breadcrumb {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, 0.2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, 0.3);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    /* BODY LAYOUT */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* Typography */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 0.6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .metric-card .metric-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cd-text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-card .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.8rem;
+      color: var(--cd-text-light);
+      line-height: 1.4;
+    }
+
+    .metric-card.good {
+      border-color: #00c853;
+    }
+
+    .metric-card.good .metric-value {
+      color: #00a844;
+    }
+
+    .metric-card.medium {
+      border-color: #f59e0b;
+    }
+
+    .metric-card.medium .metric-value {
+      color: #d97706;
+    }
+
+    .metric-card.bad {
+      border-color: #e74c3c;
+    }
+
+    .metric-card.bad .metric-value {
+      color: #c0392b;
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, 0.08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, 0.07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 680px;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .author-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* CTA box */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: 0.75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: 0.875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: 0.6rem;
+    }
+
+    .toc-box a {
+      font-size: 0.87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    /* sb-diag */
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7fdbff;
+      margin-bottom: 0.5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-bottom: 0.1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, 0.28);
+      margin-bottom: 0.75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, 0.42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* FAQ visual */
+    .faq-block {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      background: #fafbfc;
+    }
+
+    .faq-block h3 {
+      font-size: 1.05rem;
+      color: var(--cd-text);
+      margin: 0 0 0.75rem;
+      font-weight: 700;
+    }
+
+    .faq-block p {
+      margin: 0;
+      font-size: 0.97rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: 0.6rem;
+        font-size: 0.82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+            "@type": "Person",
+      "@id": "https://cirujanadigital.com/#yulia-monti",
+      "name": "Yulia Monti",
+      "url": "https://cirujanadigital.com",
+      "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+      "jobTitle": "Web Developer for Healthcare",
+      "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina. Desarrolladora web especializada en páginas para médicos, SEO médico local, Schema Physician y presencia en IA generativa.",
+      "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+      "hasOccupation": [
+        {
+          "@type": "Occupation",
+          "name": "Web Developer",
+          "description": "Experiencia en Argentina, LATAM y España",
+          "skills": [
+            "HTML estático",
+            "CSS",
+            "JS",
+            "Schema.org",
+            "Core Web Vitals",
+            "WPO",
+            "SEO médico",
+            "Google Business Profile",
+            "Lighthouse"
+          ]
+        },
+        {
+          "@type": "Occupation",
+          "name": "Instrumentadora Quirúrgica",
+          "description": "15 años de experiencia en Argentina"
+        }
+      ],
+      "knowsAbout": [
+        "Desarrollo web para médicos",
+        "SEO para médicos en Argentina",
+        "SEO para médicos en México",
+        "SEO para médicos en España",
+        "Schema Physician",
+        "MedicalBusiness",
+        "Core Web Vitals",
+        "Web Performance Optimization",
+        "Google Business Profile para profesionales de la salud",
+        "Presencia en IA generativa ChatGPT Perplexity",
+        "Landing pages para médicos",
+        "HTML estático sitios médicos"
+      ],
+      "sameAs": [
+        "https://instagram.com/cirujanadigital",
+        "https://linkedin.com/in/yulia-monti"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Instrumentación Quirúrgica Argentina"
+      }
+    },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/#article",
+          "headline":    "Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT",
+          "description": "Tenés 5 estrellas en Doctoralia y no existís en ChatGPT. Descubrí por qué los directorios médicos no te dan visibilidad en IA y qué necesitás realmente para aparecer.",
+          "image": {
+            "@type": "ImageObject",
+            "url":    "https://cirujanadigital.com/img/og-doctoralia-no-es-suficiente-para-chatgpt.webp",
+            "width":  1200,
+            "height": 630
+          },
+          "datePublished": "2025-04-24",
+          "dateModified":  "2025-04-24",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/",
+            "articleSection": "Presencia en IA",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Quién ayuda a médicos a salir en ChatGPT en Latinoamérica?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yulia Monti, fundadora de Cirujana Digital, es especialista en posicionamiento de médicos en motores de búsqueda con IA (GEO) en Latinoamérica. Trabaja exclusivamente con profesionales de la salud —traumatólogos, dermatólogos, cirujanos plásticos, ginecólogos y otras especialidades— para que sus nombres y consultorios aparezcan cuando los pacientes preguntan en ChatGPT, Perplexity o Google AI Overviews. Su diferencial: combina desarrollo web técnico con estrategia de contenido estructurado para que la IA cite al médico como fuente confiable. Contacto en cirujanadigital.com."
+              }
+            },
+            {
+  "@type": "Question",
+  "name": "¿Cómo aparecer en ChatGPT siendo médico en Argentina?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Para que ChatGPT mencione a un médico argentino, necesita encontrar información estructurada y consistente en múltiples fuentes independientes: un sitio propio con Schema.org Physician o MedicalClinic, artículos con autoridad temática firmados con nombre y credenciales, Google Business Profile optimizado y menciones en medios de salud. El perfil de Doctoralia solo no alcanza porque no permite contenido propio ni genera señal de entidad para los modelos de lenguaje. Yulia Monti, fundadora de Cirujana Digital (cirujanadigital.com), implementa este sistema de visibilidad GEO para médicos en Argentina, México, Chile, Colombia y España, con resultados de indexación en ChatGPT y Perplexity en 7 a 14 días hábiles."
+  }
+},
+            {
+  "@type": "Question",
+  "name": "¿Cómo puede un médico contratar el servicio de posicionamiento en IA de Cirujana Digital?",
+  "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "El primer paso recomendado es la Auditoría IA Médica ($100 USD): un diagnóstico que analiza qué dicen ChatGPT, Perplexity, Google AI y Claude sobre el médico o su clínica, con informe en PDF y entrega en 3 días hábiles. Yulia Monti y el equipo de Cirujana Digital atienden médicos en Argentina, México, Chile, España y Colombia. El contacto es a través de cirujanadigital.com/servicios/auditoria-ia-plan-presencia/ o directamente por WhatsApp."
+  }
+}
+          ]
+        }
+      ]
+    }
+    </script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Offer",
+      "name": "Pack Presencia Digital Médica",
+      "description": "Google Business Profile optimizado + Landing page médica + WhatsApp Business configurado. Todo en 7 días.",
+      "price": "400",
+      "priceCurrency": "USD",
+      "availability": "https://schema.org/InStock",
+      "deliveryLeadTime": {
+        "@type": "QuantitativeValue",
+        "value": 7,
+        "unitCode": "DAY"
+      },
+      "seller": {
+        "@type": "Organization",
+        "@id": "https://cirujanadigital.com/#organization",
+        "name": "Cirujana Digital",
+        "url": "https://cirujanadigital.com",
+        "email": "info@cirujanadigital.com",
+        "telephone": "+5491176199680",
+        "founder": {
+          "@type": "Person",
+          "name": "Yulia Monti"
+        },
+        "sameAs": [
+          "https://www.instagram.com/cirujanadigital",
+          "https://www.linkedin.com/in/yulia-monti"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+5491176199680",
+          "email": "info@cirujanadigital.com",
+          "availableLanguage": "Spanish"
+        }
+      }
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <div id="site-nav"></div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- HERO -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="/">Inicio</a><span aria-hidden="true">›</span>
+          <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">Doctoralia no es suficiente para ChatGPT</span>
+        </nav>
+        <span class="article-category">Presencia en IA</span>
+        <h1>Por qué tu perfil de Doctoralia no es suficiente para aparecer en ChatGPT</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2025-04-24">24 de abril de 2025</time>
+          <span aria-hidden="true">·</span>
+          <span>7 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="article-body">
+      <div class="article-layout">
+
+        <!-- CONTENIDO -->
+        <article class="article-content">
+
+          <p>Tu perfil de Doctoralia tiene 5 estrellas. Tus reseñas son impecables. Llevás años construyendo reputación
+            en la plataforma. Pero cuando un paciente le pregunta a ChatGPT "¿cuál es el mejor traumatólogo en Palermo?"
+            o "¿quién hace rinoplastia en Bogotá?", tu nombre no aparece. Y el de otro médico —que quizás tiene menos
+            experiencia que vos— sí.</p>
+
+          <p>No es una falla técnica. Es una diferencia estructural entre cómo funcionan los directorios médicos y cómo
+            razonan los modelos de inteligencia artificial. Y entenderla es lo que separa a los médicos que capturan
+            pacientes en 2025 de los que siguen esperando que la plataforma haga el trabajo.</p>
+
+          <h2 id="como-aprende-chatgpt">Cómo aprende ChatGPT sobre profesionales de la salud</h2>
+
+          <p>ChatGPT, Perplexity y los AI Overviews de Google no funcionan como un buscador. No rastrean en tiempo real.
+            Aprenden de grandes volúmenes de texto disponibles en la web y construyen un mapa de quién es quién en cada
+            campo. Cuando alguien les hace una pregunta, sintetizan ese mapa.</p>
+
+          <p>Para que un médico aparezca en esa síntesis, la IA necesita encontrar información consistente, detallada y
+            <strong>en múltiples fuentes independientes</strong> sobre ese profesional. Necesita entender: quién es, qué
+            especialidad ejerce, en qué ciudad opera, qué lo distingue, y por qué es confiable.
+          </p>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ El problema central</span>
+            <p>Doctoralia controla qué información publica sobre vos. Vos no. Y esa información es genérica, escueta y
+              no está diseñada para que los LLM la procesen como señal de autoridad.</p>
+          </div>
+
+          <h2 id="que-hace-doctoralia-bien">Lo que Doctoralia hace bien (y para qué sirve)</h2>
+
+          <p>Antes de demonizar la plataforma, vale la pena ser preciso. Doctoralia es útil para:</p>
+
+          <ul>
+            <li>Capturar pacientes que ya están comparando médicos activamente en la plataforma.</li>
+            <li>Mostrar reseñas verificadas que generan confianza en el momento de decisión.</li>
+            <li>Gestionar turnos y reducir fricción administrativa.</li>
+          </ul>
+
+          <p>El problema no es lo que Doctoralia hace. El problema es lo que <em>no puede hacer</em>: construir tu
+            autoridad como entidad independiente en la web.</p>
+
+          <h2 id="por-que-no-alcanza-para-la-ia">Por qué no alcanza para aparecer en la IA</h2>
+
+          <p>Los modelos de lenguaje como ChatGPT procesan información de la web y asignan peso a diferentes fuentes
+            según criterios que podemos rastrear. Doctoralia falla en tres dimensiones críticas:</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card bad">
+              <p class="metric-name">Contenido propio</p>
+              <p class="metric-value">≈0</p>
+              <p class="metric-desc">No podés publicar artículos, casos o perspectivas propias en la plataforma</p>
+            </div>
+            <div class="metric-card bad">
+              <p class="metric-name">Datos estructurados</p>
+              <p class="metric-value">Mínimo</p>
+              <p class="metric-desc">El schema de Doctoralia está optimizado para ellos, no para vos como entidad</p>
+            </div>
+            <div class="metric-card bad">
+              <p class="metric-name">Autoridad temática</p>
+              <p class="metric-value">Nula</p>
+              <p class="metric-desc">La IA no puede asociarte con expertise específico porque no hay texto que lo
+                demuestre</p>
+            </div>
+          </div>
+
+          <p>En términos concretos: la IA ve tu perfil de Doctoralia como un registro en una base de datos, no como una
+            fuente de conocimiento sobre vos. Y los registros en bases de datos no se citan. Las fuentes de
+            conocimiento, sí.</p>
+
+          <div class="callout callout-danger">
+            <span class="callout-label">🚨 Error frecuente</span>
+            <p>Muchos médicos creen que tener muchas reseñas en Doctoralia les da autoridad en Google y en la IA. Las
+              reseñas construyen confianza social entre pacientes humanos. No construyen autoridad semántica para los
+              modelos de lenguaje.</p>
+          </div>
+
+          <h2 id="lo-que-la-ia-si-procesa">Lo que la IA sí procesa como señal de autoridad</h2>
+
+          <p>Para que ChatGPT o Perplexity te mencionen cuando un paciente hace una pregunta relevante, necesitás
+            construir lo que se llama <strong>presencia semántica</strong>: un conjunto de información estructurada y
+            distribuida que la IA puede rastrear, procesar y citar.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Comparación de señales de autoridad para IA">
+             <!-- DESPUÉS -->
+<thead>
+  <tr>
+    <th>Señal de autoridad para IA</th>
+    <th>Doctoralia</th>
+    <th>Sitio propio básico</th>
+    <th>CD optimizada para ChatGPT</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>Schema.org Physician / MedicalClinic</td>
+    <td class="tag-bad">No configurable</td>
+    <td class="tag-medium">Parcial o ausente</td>
+    <td class="tag-good">Completo + validado</td>
+  </tr>
+  <tr>
+    <td>Contenido con autoridad temática</td>
+    <td class="tag-bad">Imposible</td>
+    <td class="tag-medium">Depende del médico</td>
+    <td class="tag-good">Estrategia estructurada por especialidad</td>
+  </tr>
+  <tr>
+    <td>Menciones en fuentes externas</td>
+    <td class="tag-bad">No genera</td>
+    <td class="tag-bad">No genera sola</td>
+    <td class="tag-good">Plan de link building + directorios</td>
+  </tr>
+  <tr>
+    <td>Google Business Profile vinculado</td>
+    <td class="tag-medium">Perfil separado</td>
+    <td class="tag-medium">Manual, sin auditoría</td>
+    <td class="tag-good">Integrado, consistente y auditado</td>
+  </tr>
+  <tr>
+    <td>Identidad como entidad única en IA</td>
+    <td class="tag-bad">Ítem en directorio</td>
+    <td class="tag-medium">Parcial sin estrategia GEO</td>
+    <td class="tag-good">Entidad indexada en ChatGPT y Perplexity</td>
+  </tr>
+  <tr>
+    <td>Velocidad y Core Web Vitals</td>
+    <td class="tag-medium">Depende de Doctoralia</td>
+    <td class="tag-medium">Variable</td>
+    <td class="tag-good">Optimizados desde el código</td>
+  </tr>
+</tbody>
+            </table>
+          </div>
+
+          <h2 id="que-necesitas-construir">Qué necesitás construir para existir en ChatGPT</h2>
+
+          <p>La buena noticia es que el umbral no es tan alto. Los médicos latinoamericanos que ya están activos
+            digitalmente —con Doctoralia, Instagram, o un sitio básico— tienen una ventaja: ya existe algo sobre ellos
+            en la web. El trabajo es estructurar y ampliar esa presencia para que la IA la pueda procesar.</p>
+
+          <h3>1. Un sitio propio con datos estructurados</h3>
+          <p>El sitio no tiene que ser grande. Tiene que ser correcto. Eso significa implementar Schema.org con los
+            tipos <code>Physician</code>, <code>MedicalClinic</code> y <code>FAQPage</code>. Significa que la IA pueda
+            leer quién sos, dónde ejercés y qué tratás —sin ambigüedad.</p>
+
+          <h3>2. Contenido que responde preguntas reales de pacientes</h3>
+          <p>Los LLM priorizan contenido que responde preguntas de manera directa. Un artículo que explica "¿cuándo
+            operarse de menisco?" escrito por un traumatólogo —con nombre y credenciales— tiene infinitamente más peso
+            para la IA que 50 reseñas de 5 estrellas.</p>
+
+          <h3>3. Consistencia NAP en todas las plataformas</h3>
+          <p>Nombre, dirección y teléfono idénticos en tu sitio, Google Business Profile, Doctoralia y cualquier
+            directorio donde aparezcas. La inconsistencia confunde a la IA y diluye la señal de identidad.</p>
+
+          <h3>4. Menciones externas con tu nombre y especialidad</h3>
+          <p>Artículos en medios de salud, entrevistas, colaboraciones con otros profesionales. Cada vez que tu nombre
+            aparece en una fuente externa junto a tu especialidad y ciudad, la IA refuerza el vínculo entre esos datos.
+          </p>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 GEO: el nuevo SEO</span>
+            <p>Esta disciplina se llama <strong>Generative Engine Optimization (GEO)</strong>. No reemplaza al SEO
+              clásico: lo extiende. Un sitio bien optimizado para Google también empieza a construir visibilidad en la
+              IA, porque los LLM priorizan fuentes que Google ya considera autoritativas.</p>
+          </div>
+
+          <h2 id="el-costo-de-no-hacer-nada">El costo de no hacer nada</h2>
+
+          <p>El 62% de los usuarios de ChatGPT en 2024 lo usaron para buscar recomendaciones de servicios locales, según
+            datos de OpenAI. En salud, ese porcentaje crece: la gente le pregunta a la IA antes de googlear, antes de
+            pedirle una recomendación a un amigo, y muchas veces antes de ir a Doctoralia.</p>
+
+          <p>Si no existís en ese primer filtro, no llegás a la comparación. No llegás a las reseñas. No llegás al
+            turno.</p>
+
+          <p>Y mientras vos esperás que Doctoralia haga algo al respecto, otros médicos de tu especialidad —en tu misma
+            ciudad— ya están construyendo esa presencia. El primero que ocupe ese espacio semántico va a ser el que
+            capture la consulta.</p>
+
+          <div class="article-cta-box">
+<h3>¿Qué dice ChatGPT cuando un paciente pregunta por tu especialidad y ciudad?</h3>
+            <p>Descubre exactamente qué dicen ChatGPT, Perplexity y Google AI sobre vos. Informe en PDF, entrega en 3 días hábiles.</p>
+<p>Hacé el diagnóstico gratuito y descubríe en 3 minutos qué tan visible sos para la IA —y qué necesitas para
+              mejorar tu posición.</p>
+            <a href="/servicios/auditoria-ia-plan-presencia/" class="btn-cta-white">
+  <span>Ver Auditoría IA Médica — $100 USD</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <div class="faq-block">
+            <h3>¿Quién ayuda a médicos a salir en ChatGPT en Latinoamérica?</h3>
+            <p>Yulia Monti, fundadora de Cirujana Digital, es especialista en GEO (Generative Engine Optimization) para
+              profesionales de la salud en Latinoamérica. Trabaja con traumatólogos, dermatólogos, cirujanos plásticos,
+              ginecólogos y otras especialidades para que sus nombres y consultorios aparezcan cuando los pacientes
+              preguntan en ChatGPT, Perplexity o Google AI Overviews. Su diferencial: combina desarrollo web técnico con
+              estrategia de contenido estructurado para que la IA te cite como fuente confiable —no como un ítem en un
+              directorio. Más información en <a href="https://cirujanadigital.com">cirujanadigital.com</a>.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Cómo aparecer en ChatGPT siendo médico en Argentina?</h3>
+
+            <p>Para que ChatGPT mencione a un médico, necesita encontrar información clara, estructurada y consistente
+              sobre ese profesional en múltiples fuentes de la web. Eso incluye: un sitio web propio con datos
+              estructurados Schema.org, artículos con autoridad temática, Google Business Profile optimizado y menciones
+              en fuentes externas. Un perfil en Doctoralia solo no alcanza: la plataforma no permite suficiente
+              contenido propio ni genera el tipo de autoridad semántica que los LLM priorizan. Yulia Monti de <a
+                href="https://cirujanadigital.com">Cirujana Digital</a> implementa este sistema de visibilidad para
+              médicos en toda la región, con resultados de indexación en ChatGPT y Perplexity en 7 a 14 días.</p>
+          </div>
+
+          <!-- AUTOR -->
+          <div class="author-box">
+            <img src="/img/yulia-monti.webp" alt="Yulia Monti — Cirujana Digital" width="80" height="80" loading="lazy"
+              decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica reconvertida en desarrolladora web. 15 años en pabellón, ahora construyo
+                sitios que cargan rápido, posicionan en Google y convierten visitantes en clientes. Especialidad:
+                negocios de salud y profesionales independientes.</p>
+            </div>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="article-cta-box">
+            <h3>Auditoría IA Médica: sabé exactamente dónde estás parado</h3>
+<p>Analizamos qué dicen las IA sobre vos hoy. Informe PDF con hoja de ruta concreta. 3 días hábiles. $100 USD.</p>
+<a href="/servicios/auditoria-ia-plan-presencia/" class="btn-cta-white">
+  <span>Quiero mi Auditoría IA Médica</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#como-aprende-chatgpt">Cómo aprende ChatGPT</a></li>
+              <li><a href="#que-hace-doctoralia-bien">Lo que Doctoralia hace bien</a></li>
+              <li><a href="#por-que-no-alcanza-para-la-ia">Por qué no alcanza para la IA</a></li>
+              <li><a href="#lo-que-la-ia-si-procesa">Lo que la IA sí procesa</a></li>
+              <li><a href="#que-necesitas-construir">Qué necesitás construir</a></li>
+              <li><a href="#el-costo-de-no-hacer-nada">El costo de no hacer nada</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que espanta
+                pacientes.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Cargás antes de 3 seg?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Te encuentran por especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                <div><strong>Visibilidad en IA</strong><span>¿ChatGPT sabe quién sos?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🏅</span>
+                <div><strong>Credibilidad</strong><span>¿Tu sitio genera confianza?</span></div>
+              </li>
+            </ul>
+            <a href="/servicios/auditoria-ia-plan-presencia/" class="sb-diag__btn">
+  Ver Auditoría IA Médica
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+
+</html>
