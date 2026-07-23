@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://capsule-render.vercel.app/api?type=soft&color=00a7a9&height=200&section=header&text=Yulia%20Monti&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Precision%20quirurgica%20aplicada%20al%20codigo&descAlignY=58&descColor=7fdbff&descSize=16" />
+<img src="https://capsule-render.vercel.app/api?type=soft&color=03658C&height=200&section=header&text=Yulia%20Monti&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Precision%20quirurgica%20aplicada%20al%20codigo&descAlignY=58&descColor=7fdbff&descSize=16" />
 </div>
 
 ---
