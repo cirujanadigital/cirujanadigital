@@ -1,0 +1,2148 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return; gtmLoaded = true;
+      (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e => window.addEventListener(e, loadGTM, { once: true }));
+    setTimeout(loadGTM, 3500);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aurora — Recepción Médica para WhatsApp | Cirujana Digital</title>
+  <meta name="description"
+    content="Mientras usted está en consulta, sus pacientes reciben respuesta. Aurora responde preguntas frecuentes, registra datos, identifica turnos y deriva casos que requieren atención humana. Para médicos especialistas y clínicas privadas." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cirujanadigital.com/servicios/recepcionista-virtual-medica/" />
+  <meta property="og:title" content="Aurora — Recepción Médica para WhatsApp | Cirujana Digital" />
+  <meta property="og:description"
+    content="Mientras usted está en consulta, sus pacientes reciben respuesta. Para médicos especialistas y clínicas privadas." />
+  <meta property="og:url" content="https://cirujanadigital.com/servicios/recepcionista-virtual-medica/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_AR" />
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://cirujanadigital.com/#organization","name":"Cirujana Digital","url":"https://cirujanadigital.com","email":"info@cirujanadigital.com","telephone":"+5491176199680","founder":{"@type":"Person","name":"Yulia Monti"}},{"@type":"Service","name":"Aurora — Recepción Médica para WhatsApp","description":"Sistema de recepción médica para WhatsApp que responde consultas frecuentes, registra datos de pacientes, identifica mensajes potencialmente prioritarios y deriva cuando corresponde. Personalizado para cada especialidad.","provider":{"@id":"https://cirujanadigital.com/#organization"},"offers":[{"@type":"Offer","name":"Implementación Aurora","price":"250","priceCurrency":"USD"},{"@type":"Offer","name":"Mantenimiento mensual Aurora","price":"50","priceCurrency":"USD","priceSpecification":{"@type":"UnitPriceSpecification","unitText":"MONTH"}}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Aurora reemplaza a la secretaria?","acceptedAnswer":{"@type":"Answer","text":"No. Aurora se encarga de las consultas repetitivas y la captura de datos. Cuando una situación requiere atención humana, deriva con el contexto organizado para que el equipo actúe sin empezar desde cero."}},{"@type":"Question","name":"¿Cuánto demora la implementación?","acceptedAnswer":{"@type":"Answer","text":"Entre 3 y 7 días hábiles desde la contratación. El consultorio no necesita cambiar ningún proceso existente."}},{"@type":"Question","name":"¿Funciona para cualquier especialidad médica?","acceptedAnswer":{"@type":"Answer","text":"Sí. Cada implementación se configura para la especialidad y el modo de trabajo del profesional. Los flujos, respuestas y protocolos son específicos para cada consultorio."}},{"@type":"Question","name":"¿Qué sucede si un paciente escribe sobre un problema de salud urgente?","acceptedAnswer":{"@type":"Answer","text":"Aurora identifica mensajes potencialmente prioritarios y notifica al equipo según el protocolo configurado. Para situaciones graves, indica al paciente que contacte al servicio de emergencias de forma inmediata. Aurora no reemplaza servicios de emergencia ni criterios clínicos profesionales."}}]}]}
+  </script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    :root {
+      --brand: #00a7a9;
+      --brand-dark: #03658c;
+      --brand-light: rgb(0 167 169/10%);
+      --brand-border: rgb(0 167 169/30%);
+      --text: #2d3748;
+      --text-light: #64748b;
+      --text-muted: #94a3b8;
+      --bg: #fff;
+      --surface: #f7f9fa;
+      --surface-2: #edf2f7;
+      --wsp: #25d366;
+      --wsp-dark: #128c4e;
+      --g-brand: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --g-dark: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      --g-text: linear-gradient(135deg, #00a7a9, #7fdbff);
+      --g-wsp: #1e7e43;
+      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --font-d: Georgia, 'Times New Roman', serif;
+      --sp: clamp(4rem, 10vw, 7rem);
+      --cp: clamp(1.5rem, 5vw, 3rem);
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 12px;
+      --r-xl: 16px;
+      --r-2xl: 20px;
+      --r-pill: 50px;
+      --sh-md: 0 4px 16px rgb(3 101 140/10%);
+      --sh-lg: 0 8px 32px rgb(3 101 140/16%);
+      --ease: transform .35s cubic-bezier(.4, 0, .2, 1), box-shadow .35s cubic-bezier(.4, 0, .2, 1), opacity .35s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    body {
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+    }
+
+    #site-nav:empty {
+      height: 70px;
+      background: linear-gradient(135deg, #0d1b2a 0%, #071524 100%);
+    }
+
+    #site-nav,
+    #site-footer {
+      contain: layout style;
+    }
+
+    #site-nav {
+      height: 70px;
+    }
+
+    #site-footer {
+      min-height: 600px;
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 var(--cp);
+    }
+
+    .wrap--n {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 var(--cp);
+    }
+
+    section {
+      padding: var(--sp) 0;
+    }
+
+    .s-dark {
+      background: var(--g-dark);
+    }
+
+    .s-light {
+      background: var(--surface);
+    }
+
+    .s-white {
+      background: var(--bg);
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: .75rem;
+    }
+
+    .h2 {
+      font-family: var(--font-d);
+      font-size: clamp(1.65rem, 3.5vw, 2.5rem);
+      font-weight: 400;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 1.25rem;
+    }
+
+    .h2-w {
+      color: #fff;
+    }
+
+    .h2-d {
+      color: var(--text);
+    }
+
+    .h2 em {
+      font-style: normal;
+      background: var(--g-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      font-size: 1.05rem;
+      line-height: 1.75;
+      max-width: 620px;
+    }
+
+    .lead-d {
+      color: var(--text-light);
+    }
+
+    .lead-w {
+      color: rgb(255 255 255/.65);
+    }
+
+    /* BOTONES */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .9rem;
+      padding: .875rem 1.875rem;
+      border-radius: var(--r-pill);
+      border: none;
+      cursor: pointer;
+      letter-spacing: .01em;
+      transition: var(--ease);
+      font-family: var(--font-ui);
+    }
+
+    .btn-wsp {
+      background: var(--g-wsp);
+      color: #fff;
+      box-shadow: 0 6px 24px rgb(37 211 102/.3);
+    }
+
+    .btn-wsp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgb(37 211 102/.5);
+      background: #176334;
+    }
+
+    .btn-g {
+      background: transparent;
+      color: rgb(255 255 255/.7);
+      border: 1px solid rgb(255 255 255/.18);
+    }
+
+    .btn-g:hover {
+      border-color: var(--brand-border);
+      color: var(--brand);
+    }
+
+    .btn-o {
+      background: transparent;
+      color: var(--brand-dark);
+      border: 2px solid var(--brand-border);
+    }
+
+    .btn-o:hover {
+      background: var(--brand-light);
+      border-color: var(--brand);
+    }
+
+    .btn-wsp-o {
+      background: transparent;
+      color: var(--wsp-dark);
+      border: 2px solid rgb(37 211 102/.4);
+    }
+
+    .btn-wsp-o:hover {
+      background: rgb(37 211 102/.08);
+      border-color: var(--wsp);
+    }
+
+    /* HERO */
+    /* HERO */
+    .hero {
+      position: relative;
+      background: #0a1628;
+      padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 3rem);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 90% 15%, rgba(0, 167, 169, .18) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 65% at 5% 85%, rgba(3, 101, 140, .20) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 167, 169, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 167, 169, .04) 1px, transparent 1px);
+      background-size: 52px 52px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--brand-light);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--r-pill);
+      padding: .3rem .85rem;
+      font-size: .7rem;
+      font-weight: 700;
+      color: var(--brand);
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(.8)
+      }
+    }
+
+    .hero-title {
+      font-family: var(--font-d);
+      font-size: clamp(1.9rem, 4.2vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      color: #fff;
+      margin-bottom: 1.25rem;
+    }
+
+    .hero-title em {
+      font-style: normal;
+      background: var(--g-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 1.5vw, 1.08rem);
+      color: rgb(255 255 255/.65);
+      line-height: 1.75;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .875rem;
+      align-items: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .htag {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      background: rgb(255 255 255/.06);
+      border: 1px solid rgb(255 255 255/.1);
+      border-radius: var(--r-pill);
+      padding: .3rem .75rem;
+      font-size: .7rem;
+      color: rgb(255 255 255/.55);
+      letter-spacing: .04em;
+    }
+
+    .htag::before {
+      content: '✓';
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    /* BC */
+    /* BC */
+    .bc {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      color: rgb(255 255 255/.35);
+      margin-bottom: 1.5rem;
+    }
+
+    .bc a {
+      color: rgb(255 255 255/.35);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .bc a:hover {
+      color: var(--brand);
+    }
+
+    .bc-sep {
+      color: rgb(255 255 255/.18);
+    }
+
+    /* CHAT PREVIEW */
+    .chat-card {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgb(255 255 255/.1);
+      border-radius: var(--r-2xl);
+      padding: 1.25rem;
+    }
+
+    .cc-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      margin-bottom: 1rem;
+      padding-bottom: .875rem;
+      border-bottom: 1px solid rgb(255 255 255/.08);
+    }
+
+    .cc-av {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--g-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .75rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    .cc-name {
+      font-size: .82rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .cc-status {
+      font-size: .67rem;
+      color: rgb(255 255 255/.4);
+    }
+
+    .cc-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #25d366;
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+
+    .msg {
+      border-radius: var(--r-lg);
+      padding: .6rem .85rem;
+      font-size: .76rem;
+      line-height: 1.55;
+      margin-bottom: .4rem;
+      max-width: 88%;
+    }
+
+    .msg-in {
+      background: rgb(255 255 255/.08);
+      color: rgb(255 255 255/.7);
+      margin-right: auto;
+    }
+
+    .msg-out {
+      background: rgb(0 167 169/.22);
+      border: 1px solid rgb(0 167 169/.25);
+      color: #fff;
+      margin-left: auto;
+    }
+
+    .msg-label {
+      font-size: .58rem;
+      color: rgb(255 255 255/.3);
+      margin-bottom: .2rem;
+    }
+
+    .msg-label.r {
+      text-align: right;
+    }
+
+    .typing {
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      padding: .4rem 0;
+    }
+
+    .typing span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brand);
+      animation: ty .8s infinite;
+    }
+
+    .typing span:nth-child(2) {
+      animation-delay: .15s;
+    }
+
+    .typing span:nth-child(3) {
+      animation-delay: .3s;
+    }
+
+    @keyframes ty {
+
+      0%,
+      80%,
+      100% {
+        opacity: .3;
+        transform: scale(.8)
+      }
+
+      40% {
+        opacity: 1;
+        transform: scale(1)
+      }
+    }
+
+    /* DEMO EN VIVO */
+    .demo-vivo {
+      background: linear-gradient(135deg, #0a1628, #071e3d);
+      border-top: 1px solid rgb(0 167 169/.2);
+      border-bottom: 1px solid rgb(0 167 169/.2);
+      padding: clamp(3rem, 7vw, 5rem) 0;
+    }
+
+    .demo-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+    }
+
+    .demo-preguntas {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin: 1.5rem 0 2rem;
+    }
+
+    .demo-q {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .6rem .875rem;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgb(255 255 255/.08);
+      border-radius: var(--r-pill);
+      font-size: .82rem;
+      color: rgb(255 255 255/.65);
+    }
+
+    .demo-q::before {
+      content: '💬';
+      font-size: .85rem;
+      flex-shrink: 0;
+    }
+
+    .demo-card {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--r-2xl);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .demo-card-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--g-wsp);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1.25rem;
+      box-shadow: 0 0 0 12px rgb(37 211 102/.1);
+    }
+
+    .demo-card-title {
+      font-family: var(--font-d);
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: .5rem;
+    }
+
+    .demo-card-sub {
+      font-size: .82rem;
+      color: rgb(255 255 255/.5);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .demo-nota {
+      font-size: .72rem;
+      color: rgb(255 255 255/.3);
+      margin-top: .875rem;
+      line-height: 1.5;
+    }
+
+    /* PROBLEMA */
+    .prob-intro {
+      background: var(--surface-2);
+      border-radius: var(--r-2xl);
+      padding: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .prob-msgs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.25rem;
+    }
+
+    .prob-msg {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: var(--bg);
+      border: 1.5px solid var(--surface-2);
+      border-radius: var(--r-pill);
+      padding: .4rem 1rem;
+      font-size: .8rem;
+      color: var(--text-light);
+    }
+
+    .prob-msg::before {
+      content: '💬';
+      font-size: .85rem;
+    }
+
+    .prob-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 2.5rem;
+    }
+
+    .prob-card {
+      background: var(--bg);
+      border: 1.5px solid var(--surface-2);
+      border-radius: var(--r-xl);
+      padding: 1.5rem;
+      transition: var(--ease);
+    }
+
+    .prob-card:hover {
+      border-color: var(--brand-border);
+      box-shadow: var(--sh-lg);
+      transform: translateY(-2px);
+    }
+
+    .prob-icon {
+      font-size: 1.5rem;
+      margin-bottom: .875rem;
+    }
+
+    .prob-title {
+      font-family: var(--font-d);
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+      line-height: 1.3;
+    }
+
+    .prob-desc {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* FLUJO */
+    .flow-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .flow-step {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 1.25rem;
+      padding: 1.35rem 0;
+      border-bottom: 1px solid rgb(255 255 255/.06);
+      align-items: start;
+    }
+
+    .flow-step:last-child {
+      border-bottom: none;
+    }
+
+    .flow-n {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--g-brand);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-d);
+      font-size: .9rem;
+      font-weight: 700;
+      color: #fff;
+      box-shadow: 0 0 0 5px rgb(0 167 169/.1);
+      flex-shrink: 0;
+    }
+
+    .flow-t {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .2rem;
+      line-height: 1.3;
+    }
+
+    .flow-d {
+      font-size: .78rem;
+      color: rgb(255 255 255/.5);
+      line-height: 1.6;
+    }
+
+    .flow-aside {
+      position: sticky;
+      top: 90px;
+    }
+
+    .flow-aside-label {
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 1rem;
+    }
+
+    .urgencia-demo {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgb(255 255 255/.08);
+      border-radius: var(--r-2xl);
+      padding: 1.5rem;
+    }
+
+    .urg-in {
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgb(255 255 255/.1);
+      border-radius: var(--r-lg);
+      padding: .65rem .9rem;
+      font-size: .76rem;
+      color: rgb(255 255 255/.7);
+      margin-bottom: .875rem;
+      line-height: 1.5;
+    }
+
+    .urg-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgb(245 158 11/.12);
+      border: 1px solid rgb(245 158 11/.25);
+      border-radius: var(--r-pill);
+      padding: .25rem .7rem;
+      font-size: .65rem;
+      font-weight: 700;
+      color: rgb(252 211 77/.9);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      margin-bottom: .875rem;
+    }
+
+    .urg-reply {
+      background: rgb(0 167 169/.2);
+      border: 1px solid rgb(0 167 169/.25);
+      border-radius: var(--r-lg);
+      padding: .65rem .9rem;
+      font-size: .76rem;
+      color: #fff;
+      line-height: 1.55;
+      margin-bottom: .875rem;
+    }
+
+    .urg-alert {
+      background: rgb(245 158 11/.08);
+      border: 1px solid rgb(245 158 11/.2);
+      border-radius: var(--r-lg);
+      padding: .65rem .9rem;
+      font-size: .72rem;
+      color: rgb(252 211 77/.85);
+      line-height: 1.55;
+    }
+
+    .urg-legal {
+      font-size: .67rem;
+      color: rgb(255 255 255/.3);
+      margin-top: 1rem;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    /* MÓDULOS */
+    .mods-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-top: 3rem;
+    }
+
+    .mod {
+      background: var(--bg);
+      border: 1.5px solid var(--surface-2);
+      border-radius: var(--r-xl);
+      padding: 1.5rem;
+      transition: var(--ease);
+    }
+
+    .mod:hover {
+      border-color: var(--brand-border);
+      box-shadow: var(--sh-lg);
+      transform: translateY(-2px);
+    }
+
+    .mod-ic {
+      font-size: 1.4rem;
+      margin-bottom: .875rem;
+    }
+
+    .mod-t {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+
+    .mod-d {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    /* DIFERENCIAL */
+    .esp-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin: 1.5rem 0;
+    }
+
+    .esp {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgb(255 255 255/.06);
+      border: 1px solid rgb(255 255 255/.1);
+      border-radius: var(--r-pill);
+      padding: .3rem .8rem;
+      font-size: .73rem;
+      color: rgb(255 255 255/.6);
+    }
+
+    .esp::before {
+      content: '';
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--brand);
+      flex-shrink: 0;
+    }
+
+    .dif-box {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--r-2xl);
+      padding: 1.75rem;
+      margin-top: 2rem;
+    }
+
+    .dif-box p {
+      font-family: var(--font-d);
+      font-size: 1rem;
+      color: #fff;
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .dif-box cite {
+      display: block;
+      font-size: .75rem;
+      color: var(--brand);
+      margin-top: .75rem;
+      font-style: normal;
+    }
+
+    /* AUTOMATIZACIONES */
+    .auto-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .875rem;
+      margin-top: 2.5rem;
+    }
+
+    .auto-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .875rem;
+      padding: 1rem;
+      background: rgb(255 255 255/.04);
+      border: 1px solid rgb(255 255 255/.08);
+      border-radius: var(--r-lg);
+      transition: var(--ease);
+    }
+
+    .auto-item:hover {
+      background: rgb(0 167 169/.06);
+      border-color: var(--brand-border);
+    }
+
+    .auto-ic {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .auto-t strong {
+      display: block;
+      font-size: .84rem;
+      color: #fff;
+      margin-bottom: .15rem;
+    }
+
+    .auto-t span {
+      font-size: .76rem;
+      color: rgb(255 255 255/.45);
+      line-height: 1.5;
+    }
+
+    .auto-msg {
+      margin-top: 2rem;
+      padding: 1.25rem 1.5rem;
+      background: rgb(0 167 169/.08);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--r-xl);
+      text-align: center;
+    }
+
+    .auto-msg p {
+      font-family: var(--font-d);
+      font-size: .95rem;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* YULIA */
+    .yulia-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2.5rem, 6vw, 5rem);
+      align-items: center;
+      margin-top: 3rem;
+    }
+
+    .yulia-body p {
+      font-size: .9rem;
+      color: var(--text-light);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+
+    .yulia-card {
+      background: var(--surface);
+      border: 1.5px solid var(--surface-2);
+      border-radius: var(--r-2xl);
+      padding: 2rem;
+    }
+
+    .yc-title {
+      font-family: var(--font-d);
+      font-size: 1.05rem;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    .yc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+      padding: .75rem 0;
+      border-bottom: 1px solid var(--surface-2);
+    }
+
+    .yc-item:last-child {
+      border-bottom: none;
+    }
+
+    .yc-ic {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      border-radius: var(--r-md);
+      background: var(--brand-light);
+      border: 1px solid var(--brand-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .9rem;
+      flex-shrink: 0;
+    }
+
+    .yc-text strong {
+      display: block;
+      font-size: .84rem;
+      color: var(--text);
+      margin-bottom: .1rem;
+    }
+
+    .yc-text span {
+      font-size: .78rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ROI */
+    .roi-section {
+      background: var(--surface);
+    }
+
+    .roi-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .roi-card {
+      background: var(--bg);
+      border: 2px solid var(--surface-2);
+      border-radius: var(--r-2xl);
+      padding: 2rem;
+      transition: var(--ease);
+    }
+
+    .roi-card:hover {
+      border-color: var(--brand-border);
+      box-shadow: var(--sh-lg);
+    }
+
+    .roi-label {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 1rem;
+    }
+
+    .roi-rows {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .roi-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .84rem;
+      color: var(--text-light);
+      padding: .4rem 0;
+      border-bottom: 1px solid var(--surface-2);
+    }
+
+    .roi-row:last-child {
+      border-bottom: none;
+    }
+
+    .roi-row strong {
+      color: var(--text);
+    }
+
+    .roi-result {
+      padding: .875rem 1rem;
+      background: var(--brand-light);
+      border: 1px solid var(--brand-border);
+      border-radius: var(--r-lg);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .roi-result-label {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+    }
+
+    .roi-result-val {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1;
+    }
+
+    .roi-disclaimer {
+      font-size: .72rem;
+      color: var(--text-muted);
+      margin-top: 2rem;
+      line-height: 1.6;
+      font-style: italic;
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* PRECIO */
+    .precio-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 3rem;
+      max-width: 680px;
+    }
+
+    .precio-card {
+      background: var(--bg);
+      border: 2px solid var(--surface-2);
+      border-radius: var(--r-2xl);
+      padding: 2rem;
+      transition: var(--ease);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .precio-card:hover {
+      border-color: var(--brand-border);
+      box-shadow: var(--sh-lg);
+    }
+
+    .precio-card.feat {
+      border-color: var(--brand);
+      box-shadow: 0 0 0 1px var(--brand), var(--sh-lg);
+    }
+
+    .pc-name {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: .5rem;
+    }
+
+    .pc-price {
+      display: flex;
+      align-items: baseline;
+      gap: .2rem;
+      margin: .75rem 0 .25rem;
+    }
+
+    .pc-cur {
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      align-self: flex-start;
+      margin-top: .3rem;
+    }
+
+    .pc-num {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .pc-per {
+      font-size: .8rem;
+      color: var(--text-muted);
+      align-self: flex-end;
+      margin-bottom: .1rem;
+    }
+
+    .pc-note {
+      font-size: .75rem;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .pc-feats {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .55rem;
+      margin-bottom: 1.5rem;
+      flex: 1;
+    }
+
+    .pc-feats li {
+      font-size: .82rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: flex-start;
+      gap: .55rem;
+      line-height: 1.45;
+    }
+
+    .pc-ck {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      border-radius: 50%;
+      background: rgb(5 150 105/.1);
+      border: 1px solid rgb(5 150 105/.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .55rem;
+      font-weight: 700;
+      color: #065f46;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .pc-ck::after {
+      content: '✓';
+    }
+
+    .pc-nota {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem .875rem;
+      background: var(--surface);
+      border: 1px solid var(--surface-2);
+      border-radius: var(--r-lg);
+      font-size: .75rem;
+      color: var(--text-light);
+      margin-top: 1rem;
+    }
+
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      margin-top: 3rem;
+    }
+
+    .faq-item {
+      background: rgb(255 255 255/.04);
+      border: 1px solid rgb(255 255 255/.08);
+      border-radius: var(--r-lg);
+      overflow: hidden;
+      transition: var(--ease);
+    }
+
+    .faq-item.open {
+      background: rgb(0 167 169/.07);
+      border-color: var(--brand-border);
+    }
+
+    .faq-q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.1rem 1.5rem;
+      cursor: pointer;
+      font-size: .88rem;
+      font-weight: 600;
+      color: #fff;
+      user-select: none;
+    }
+
+    .faq-arr {
+      width: 20px;
+      height: 20px;
+      min-width: 20px;
+      border-radius: 50%;
+      background: var(--brand-light);
+      border: 1px solid var(--brand-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .7rem;
+      color: var(--brand);
+      transition: transform .3s;
+    }
+
+    .faq-item.open .faq-arr {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      padding: 0 1.5rem 1.1rem;
+      font-size: .85rem;
+      color: rgb(255 255 255/.6);
+      line-height: 1.75;
+    }
+
+    /* CTA FINAL */
+    .cta-s {
+      padding: var(--sp) 0;
+      background: var(--g-dark);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-s::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgb(0 167 169/.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-title {
+      font-family: var(--font-d);
+      font-size: clamp(1.75rem, 4vw, 2.75rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .cta-title em {
+      font-style: normal;
+      background: var(--g-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-sub {
+      font-size: 1.05rem;
+      color: rgb(255 255 255/.62);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-cal {
+      font-size: .78rem;
+      color: rgb(255 255 255/.35);
+      margin-bottom: 2rem;
+    }
+
+    .cta-cal a {
+      color: rgb(255 255 255/.45);
+      text-decoration: underline;
+    }
+
+    .cta-cal a:hover {
+      color: var(--brand);
+    }
+
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+
+    .ti {
+      font-size: .78rem;
+      color: rgb(255 255 255/.45);
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+    }
+
+    .ti::before {
+      content: '✓';
+      color: var(--brand);
+      font-weight: 700;
+    }
+
+    /* REVEAL */
+    .rv {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .6s cubic-bezier(.4, 0, .2, 1), transform .6s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .rv.vis {
+      opacity: 1;
+      transform: none;
+    }
+
+    .d1 {
+      transition-delay: .1s
+    }
+
+    .d2 {
+      transition-delay: .2s
+    }
+
+    .d3 {
+      transition-delay: .3s
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:960px) {
+
+      .hero-inner,
+      .demo-inner,
+      .flow-section,
+      .yulia-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .prob-grid,
+      .mods-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .flow-aside {
+        display: none;
+      }
+
+      .roi-grid,
+      .precio-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+      }
+
+      .auto-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media(max-width:620px) {
+
+      .prob-grid,
+      .mods-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .cta-actions .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+  <link rel="stylesheet" href="components.css" />
+  <script src="components.js" defer></script>
+</head>
+
+<body>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <div id="site-nav"></div>
+
+  <!-- HERO -->
+  <header class="hero" role="banner">
+    <div class="wrap">
+      <nav class="bc" aria-label="Ruta de navegación">
+        <a href="">Inicio</a><span class="bc-sep">/</span>
+        <a href="servicios/">Servicios</a><span class="bc-sep">/</span>
+        <span style="color:rgb(255 255 255/.55)">Recepcionista Virtual</span>
+      </nav>
+      <div class="hero-inner">
+        <div>
+          <div class="hero-badge">Recepción médica · WhatsApp</div>
+          <h1 class="hero-title rv">
+            Mientras usted está en consulta,<br>
+            sus pacientes <em>reciben respuesta.</em>
+          </h1>
+          <p class="hero-sub rv d1">La mayoría de las consultas llegan por WhatsApp. Aurora responde preguntas
+            frecuentes, registra información relevante, identifica solicitudes de turno y deriva los casos que requieren
+            atención humana. Sin interrumpir su trabajo clínico.</p>
+          <div class="hero-actions rv d2">
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20implementar%20Aurora%20en%20mi%20consultorio.%20%C2%BFPodemos%20conversar%3F"
+              class="btn btn-wsp" target="_blank" rel="noopener"
+              onclick="gtag('event','hero_wsp_impl',{event_category:'conversion'})">💬 Solicitar implementación</a>
+            <a href="https://wa.me/5491178292702?text=Hola%20Aurora%2C%20quiero%20ver%20c%C3%B3mo%20funcionas."
+              class="btn btn-g" target="_blank" rel="noopener"
+              onclick="gtag('event','hero_demo',{event_category:'engagement'})">🤖 Probar Aurora ahora</a>
+          </div>
+          <div class="hero-tags rv d3">
+            <span class="htag">WhatsApp Business</span>
+            <span class="htag">Respuesta inmediata</span>
+            <span class="htag">Recepción médica</span>
+            <span class="htag">Escalado a humano</span>
+            <span class="htag">Configuración personalizada</span>
+          </div>
+        </div>
+        <div class="rv d1">
+          <div class="chat-card">
+            <div class="cc-header">
+              <div class="cc-av">A</div>
+              <div>
+                <div class="cc-name">Aurora — Consultorio</div>
+                <div class="cc-status">En línea</div>
+              </div>
+              <div class="cc-dot"></div>
+            </div>
+            <div class="msg-label">Paciente</div>
+            <div class="msg msg-in">Hola, quería saber si atienden OSDE y cuánto sale una consulta</div>
+            <div class="msg-label r" style="margin-top:.6rem;">Aurora</div>
+            <div class="msg msg-out">Sí, atendemos OSDE, Swiss Medical y Galeno. La consulta particular es $60.000
+              ARS.<br><br>¿Le gustaría sacar un turno?</div>
+            <div style="margin-top:.75rem;">
+              <div class="msg-label">Paciente</div>
+              <div class="msg msg-in" style="margin-top:.3rem;">Sí, ¿cómo hago?</div>
+            </div>
+            <div style="margin-top:.6rem;">
+              <div class="msg-label r">Aurora</div>
+              <div class="msg msg-out" style="margin-top:.3rem;">Para agendar necesito su nombre completo y el motivo de
+                consulta en pocas palabras.</div>
+            </div>
+            <div class="typing" style="margin-top:.3rem;"><span></span><span></span><span></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PRUEBE AURORA EN VIVO -->
+  <section class="demo-vivo" id="demo-vivo" aria-labelledby="demo-h">
+    <div class="wrap">
+      <div class="demo-inner">
+        <div>
+          <span class="eyebrow rv" style="color:var(--wsp);">Demo en vivo</span>
+          <h2 class="h2 h2-w rv d1" id="demo-h">Vea Aurora<br><em>funcionando ahora mismo.</em></h2>
+          <p class="lead lead-w rv d2">No necesita imaginar cómo funciona. Escriba al número de demostración y haga las
+            mismas preguntas que recibe un consultorio todos los días.</p>
+          <div class="demo-preguntas rv d2">
+            <div class="demo-q">¿Atienden OSDE?</div>
+            <div class="demo-q">¿Cuánto cuesta una consulta?</div>
+            <div class="demo-q">¿Cómo saco un turno?</div>
+            <div class="demo-q">¿Realizan teleconsultas?</div>
+            <div class="demo-q">¿Dónde están ubicados?</div>
+          </div>
+          <p class="rv d3" style="font-size:.82rem;color:rgb(255 255 255/.45);line-height:1.6;">Aurora responderá
+            automáticamente para mostrar cómo funciona una recepción médica digital configurada para un consultorio
+            real.</p>
+        </div>
+        <div class="rv d1">
+          <div class="demo-card">
+            <div class="demo-card-icon">🤖</div>
+            <div class="demo-card-title">Aurora está disponible ahora</div>
+            <div class="demo-card-sub">Escriba cualquier consulta médica típica. Aurora responde en tiempo real, igual
+              que lo haría con los pacientes de su consultorio.</div>
+            <a href="https://wa.me/5491178292702?text=Hola%20Aurora%2C%20quiero%20ver%20c%C3%B3mo%20func%C3%A1s."
+              class="btn btn-wsp" style="width:100%;justify-content:center;font-size:.9rem;" target="_blank"
+              rel="noopener" onclick="gtag('event','demo_wsp',{event_category:'engagement'})">💬 Probar Aurora en
+              WhatsApp</a>
+            <div class="demo-nota">Número de demostración. Las respuestas están configuradas para un consultorio
+              ficticio de ejemplo. Su implementación se personaliza para su especialidad y modo de trabajo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main" tabindex="-1">
+
+    <!-- PROBLEMA -->
+    <section class="s-light" id="problema" aria-labelledby="prob-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">El problema</span>
+          <h2 class="h2 h2-d rv d1" id="prob-h">Su recepción no debería depender<br><em>de que alguien tenga tiempo para
+              responder.</em></h2>
+          <p class="lead lead-d rv d2">Cuando un paciente escribe y no recibe respuesta durante minutos u horas, muchas
+            veces continúa buscando otro profesional. Los mensajes fuera de horario, las consultas repetitivas y las
+            interrupciones constantes generan carga administrativa innecesaria.</p>
+        </div>
+        <div class="prob-intro rv d1">
+          <p style="font-size:.875rem;font-weight:600;color:var(--text);margin-bottom:.75rem;">Consultas que llegan
+            todos los días al WhatsApp de un consultorio:</p>
+          <div class="prob-msgs">
+            <span class="prob-msg">¿Atienden OSDE?</span>
+            <span class="prob-msg">¿Cómo saco un turno?</span>
+            <span class="prob-msg">¿Dónde están ubicados?</span>
+            <span class="prob-msg">¿Realizan teleconsultas?</span>
+            <span class="prob-msg">¿Qué estudios debo llevar?</span>
+            <span class="prob-msg">¿Cuánto sale la consulta?</span>
+            <span class="prob-msg">¿Atienden sábados?</span>
+            <span class="prob-msg">¿Aceptan particulares?</span>
+          </div>
+          <p style="font-size:.84rem;color:var(--text-light);margin-top:1rem;font-style:italic;">Cada una de esas
+            consultas consume tiempo operativo que no requiere intervención médica.</p>
+        </div>
+        <div class="prob-grid rv d1">
+          <div class="prob-card">
+            <div class="prob-icon">🌙</div>
+            <div class="prob-title">Mensajes fuera de horario sin respuesta</div>
+            <div class="prob-desc">Los pacientes escriben a cualquier hora. Sin respuesta, la consulta queda pendiente
+              hasta el día siguiente — y el paciente puede haber encontrado otro profesional para ese entonces.</div>
+          </div>
+          <div class="prob-card">
+            <div class="prob-icon">🔁</div>
+            <div class="prob-title">Las mismas preguntas, todos los días</div>
+            <div class="prob-desc">Horarios, ubicación, precios, coberturas, qué traer. Responderlas manualmente una por
+              una es tiempo que podría dedicarse a tareas que sí requieren atención humana.</div>
+          </div>
+          <div class="prob-card">
+            <div class="prob-icon">🔀</div>
+            <div class="prob-title">Sin forma de filtrar y priorizar mensajes</div>
+            <div class="prob-desc">Sin clasificación, todos los mensajes llegan con la misma urgencia aparente. No hay
+              forma de saber qué atender primero sin leer cada uno individualmente.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CÓMO FUNCIONA -->
+    <section class="s-dark" id="como-funciona" aria-labelledby="flow-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Cómo funciona</span>
+          <h2 class="h2 h2-w rv d1" id="flow-h">Cada consulta recibe<br><em>una respuesta inmediata.</em></h2>
+          <p class="lead lead-w rv d2">El flujo completo desde que el paciente escribe hasta que el equipo recibe
+            información útil y ordenada.</p>
+        </div>
+        <div class="flow-section rv d1">
+          <div class="flow-steps">
+            <div class="flow-step">
+              <div class="flow-n">1</div>
+              <div>
+                <div class="flow-t">El paciente escribe por WhatsApp</div>
+                <div class="flow-d">En lenguaje natural, sin comandos ni menús. Aurora interpreta el mensaje tal como
+                  llega.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">2</div>
+              <div>
+                <div class="flow-t">Aurora interpreta la consulta</div>
+                <div class="flow-d">Identifica si el paciente busca turno, tiene una pregunta frecuente, consulta
+                  coberturas, o necesita hablar con una persona.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">3</div>
+              <div>
+                <div class="flow-t">Responde información frecuente</div>
+                <div class="flow-d">Horarios, ubicación, precios, coberturas, preparación para estudios. Respuesta
+                  inmediata sin intervención del equipo.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">4</div>
+              <div>
+                <div class="flow-t">Solicita datos relevantes</div>
+                <div class="flow-d">Nombre, cobertura, motivo de consulta. Aurora recolecta la información antes de que
+                  intervenga el equipo. Nada llega sin contexto.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">5</div>
+              <div>
+                <div class="flow-t">Identifica mensajes potencialmente prioritarios</div>
+                <div class="flow-d">Cuando un mensaje puede requerir atención prioritaria, Aurora lo identifica y
+                  notifica al equipo según el protocolo configurado.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">6</div>
+              <div>
+                <div class="flow-t">Deriva cuando corresponde</div>
+                <div class="flow-d">Cuando la situación requiere intervención humana, el equipo recibe nombre,
+                  cobertura, motivo y contexto completo.</div>
+              </div>
+            </div>
+            <div class="flow-step">
+              <div class="flow-n">7</div>
+              <div>
+                <div class="flow-t">El equipo recibe información organizada</div>
+                <div class="flow-d">Solo llegan las consultas que realmente necesitan atención humana. Con toda la
+                  información ya capturada.</div>
+              </div>
+            </div>
+          </div>
+          <div class="flow-aside">
+            <div class="flow-aside-label">Ejemplo de clasificación de mensajes</div>
+            <div class="urgencia-demo">
+              <div class="msg-label">Paciente escribe</div>
+              <div class="urg-in" style="margin-top:.4rem;">"Tengo dolor en el pecho desde hace una hora y me cuesta
+                respirar"</div>
+              <div class="urg-badge">⚡ Mensaje potencialmente prioritario</div>
+              <div class="msg-label r">Aurora responde</div>
+              <div class="urg-reply" style="margin-top:.4rem;">Entiendo que puede ser urgente. Si presenta dificultad
+                respiratoria o dolor intenso en el pecho, le recomendamos llamar al SAME: 107<br><br>Estoy notificando
+                al consultorio ahora mismo.</div>
+              <div class="urg-alert">
+                <strong>Notificación al equipo</strong><br>
+                Paciente +54 911 ···<br>
+                "dolor en el pecho + dificultad respiratoria"<br>
+                <span style="opacity:.6;">Notificado según protocolo configurado</span>
+              </div>
+              <div class="urg-legal">Aurora no reemplaza servicios de emergencia ni criterios clínicos profesionales.
+                Los protocolos de derivación son definidos por cada profesional.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUNCIONALIDADES -->
+    <section class="s-white" id="funcionalidades" aria-labelledby="mods-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Módulos</span>
+          <h2 class="h2 h2-d rv d1" id="mods-h">Cada tipo de consulta<br><em>tiene su propio flujo.</em></h2>
+          <p class="lead lead-d rv d2">Aurora no da respuestas genéricas. Cada módulo está configurado para el
+            funcionamiento real de un consultorio médico.</p>
+        </div>
+        <div class="mods-grid rv d1">
+          <div class="mod">
+            <div class="mod-ic">📅</div>
+            <div class="mod-t">Solicitud de turnos</div>
+            <div class="mod-d">Captura nombre, cobertura y motivo de consulta. Envía el enlace de agenda definido por el
+              consultorio. Notifica al equipo con la información organizada.</div>
+          </div>
+          <div class="mod">
+            <div class="mod-ic">💬</div>
+            <div class="mod-t">Información frecuente</div>
+            <div class="mod-d">Horarios, ubicación, teleconsultas, preparación para estudios y cualquier información
+              específica del consultorio. Respuesta inmediata, sin intervención del equipo.</div>
+          </div>
+          <div class="mod">
+            <div class="mod-ic">🏥</div>
+            <div class="mod-t">Coberturas y obras sociales</div>
+            <div class="mod-d">Respuestas adaptadas a las condiciones de cada profesional. Si el paciente no tiene
+              cobertura aceptada, Aurora informa las alternativas y deriva si corresponde.</div>
+          </div>
+          <div class="mod">
+            <div class="mod-ic">🔔</div>
+            <div class="mod-t">Mensajes potencialmente prioritarios</div>
+            <div class="mod-d">Identifica mensajes que pueden requerir atención prioritaria y notifica al equipo según
+              el protocolo definido por el profesional. Aurora no reemplaza criterios clínicos.</div>
+          </div>
+          <div class="mod">
+            <div class="mod-ic">👤</div>
+            <div class="mod-t">Escalado a humano</div>
+            <div class="mod-d">Cuando la consulta necesita intervención real, el contexto se entrega organizado. El
+              equipo no empieza desde cero: recibe nombre, cobertura y motivo ya capturados.</div>
+          </div>
+          <div class="mod">
+            <div class="mod-ic">📊</div>
+            <div class="mod-t">Reportes operativos</div>
+            <div class="mod-d">Consultas recibidas, solicitudes de turno y métricas de actividad. Accesibles desde un
+              panel o por comando directo al sistema.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIAL -->
+    <section class="s-dark" id="diferencial" aria-labelledby="dif-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Diferencial</span>
+          <h2 class="h2 h2-w rv d1" id="dif-h">No instalamos<br><em>un bot estándar.</em></h2>
+          <p class="lead lead-w rv d2">Aurora se configura según el funcionamiento real de cada consultorio. Las
+            respuestas, protocolos, coberturas, derivaciones y procesos se adaptan a la especialidad médica. El sistema
+            se adapta al profesional — no al revés.</p>
+          <div class="esp-tags rv d2">
+            <span class="esp">Cirugía general</span><span class="esp">Cirugía plástica</span><span
+              class="esp">Traumatología</span><span class="esp">Dermatología</span><span
+              class="esp">Ginecología</span><span class="esp">Odontología</span><span
+              class="esp">Cardiología</span><span class="esp">Clínicas multidisciplinarias</span><span
+              class="esp">Centros médicos</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- META VS AURORA -->
+    <section class="s-white" id="meta-vs-aurora" aria-labelledby="meta-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Una pregunta frecuente</span>
+          <h2 class="h2 h2-d rv d1" id="meta-h">¿No es esto lo que WhatsApp<br><em>ya ofrece gratis?</em></h2>
+          <p class="lead lead-d rv d2">En 2026, Meta lanzó un asistente de IA gratuito dentro de la app de WhatsApp
+            Business. Es una pregunta válida — y la respuesta tiene un matiz importante.</p>
+        </div>
+        <div class="prob-grid rv d1">
+          <div class="prob-card">
+            <div class="prob-icon">📱</div>
+            <div class="prob-title">Lo que ofrece WhatsApp gratis</div>
+            <div class="prob-desc">Responde preguntas de catálogo: precios, horarios, ubicación. Cuando la consulta
+              sale de ese guion — una objeción, una urgencia, un caso particular — deriva a una persona y su trabajo
+              termina ahí.</div>
+          </div>
+          <div class="prob-card">
+            <div class="prob-icon">🏥</div>
+            <div class="prob-title">Lo que requiere un consultorio</div>
+            <div class="prob-desc">Clasificación de urgencia médica real. Derivación con protocolo clínico. Captura
+              estructurada de cobertura y motivo. Seguimiento automático a 24 horas. Eso no es un catálogo — es
+              criterio operativo.</div>
+          </div>
+          <div class="prob-card">
+            <div class="prob-icon">⚙️</div>
+            <div class="prob-title">Por qué se complementan, no compiten</div>
+            <div class="prob-desc">Aurora funciona sobre infraestructura propia (API oficial de WhatsApp Business), no
+              dentro de la app gratuita. Se integra a la forma de trabajar del consultorio — no a un catálogo genérico
+              de productos.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AUTOMATIZACIONES -->
+    <section class="s-dark" id="automatizaciones" aria-labelledby="auto-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Más allá de la recepción</span>
+          <h2 class="h2 h2-w rv d1" id="auto-h">Aurora puede ser<br><em>el inicio de algo más grande.</em></h2>
+          <p class="lead lead-w rv d2">Además de la recepción médica, Cirujana Digital desarrolla procesos específicos
+            para consultorios y clínicas sobre la misma infraestructura.</p>
+        </div>
+        <div class="auto-grid rv d1">
+          <div class="auto-item">
+            <div class="auto-ic">🔔</div>
+            <div class="auto-t"><strong>Confirmación y recordatorios de turnos</strong><span>Reducción de ausencias
+                con
+                recordatorios y confirmación antes de cada consulta.</span></div>
+          </div>
+          <div class="auto-item">
+            <div class="auto-ic">🩺</div>
+            <div class="auto-t"><strong>Seguimiento postoperatorio</strong><span>Monitoreo de la evolución del
+                paciente
+                después de una intervención.</span></div>
+          </div>
+          <div class="auto-item">
+            <div class="auto-ic">📝</div>
+            <div class="auto-t"><strong>Formularios preconsulta</strong><span>Recolección de antecedentes y síntomas
+                antes de que el paciente llegue al consultorio.</span></div>
+          </div>
+          <div class="auto-item">
+            <div class="auto-ic">🔄</div>
+            <div class="auto-t"><strong>Reactivación de pacientes</strong><span>Seguimiento de pacientes que no
+                regresaron después de una consulta previa.</span></div>
+          </div>
+          <div class="auto-item">
+            <div class="auto-ic">✅</div>
+            <div class="auto-t"><strong>Consentimientos informados</strong><span>Envío y registro de consentimientos
+                antes de procedimientos.</span></div>
+          </div>
+          <div class="auto-item">
+            <div class="auto-ic">⚙️</div>
+            <div class="auto-t"><strong>Procesos internos a medida</strong><span>Derivaciones internas, flujos entre
+                profesionales, coordinación entre sedes.</span></div>
+          </div>
+        </div>
+        <div class="auto-msg rv d2">
+          <p>Si existe un proceso repetitivo dentro de un consultorio, <em
+              style="background:var(--g-text);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;">probablemente
+              pueda resolverse.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOBRE YULIA -->
+    <section class="s-white" id="sobre" aria-labelledby="yulia-h">
+      <div class="wrap">
+        <div class="yulia-grid">
+          <div class="yulia-body">
+            <span class="eyebrow rv">Cirujana Digital</span>
+            <h2 class="h2 h2-d rv d1" id="yulia-h">Diseñado por alguien que conoce<br><em>el consultorio desde
+                adentro.</em></h2>
+            <p class="rv d2">Yulia Monti trabajó durante 15 años dentro del sistema de salud como instrumentadora
+              quirúrgica. Conoce el recorrido real del paciente, las interrupciones operativas y la carga
+              administrativa
+              que enfrentan los consultorios privados.</p>
+            <p class="rv d2">Aurora no surge de una empresa de software tradicional. Surge de la experiencia directa
+              dentro del entorno clínico y de entender que la tecnología es útil cuando resuelve problemas reales, no
+              cuando los complica.</p>
+            <p class="rv d2">Cirujana Digital trabaja exclusivamente en el sector salud, con implementaciones en
+              Argentina, España y Ecuador.</p>
+          </div>
+          <div class="rv d1">
+            <div class="yulia-card">
+              <div class="yc-title">Aurora es parte de un ecosistema completo</div>
+              <div class="yc-item">
+                <div class="yc-ic">🔍</div>
+                <div class="yc-text"><strong>Presencia en Google y en buscadores de IA</strong><span>Para que los
+                    pacientes encuentren al profesional antes de llegar al WhatsApp.</span></div>
+              </div>
+              <div class="yc-item">
+                <div class="yc-ic">🌐</div>
+                <div class="yc-text"><strong>Sitio web médico y velocidad de carga</strong><span>Infraestructura
+                    técnica
+                    que convierte visitas en consultas.</span></div>
+              </div>
+              <div class="yc-item">
+                <div class="yc-ic">💬</div>
+                <div class="yc-text"><strong>Aurora — Recepción médica en WhatsApp</strong><span>El sistema que
+                    atiende
+                    al paciente desde el primer mensaje.</span></div>
+              </div>
+              <div class="yc-item">
+                <div class="yc-ic">📅</div>
+                <div class="yc-text"><strong>Anti-NoShows — Reducción de ausencias</strong><span>Confirmación de
+                    turnos
+                    para recuperar tiempo perdido por ausencias.</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ROI -->
+    <section class="roi-section" id="roi" aria-labelledby="roi-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Retorno sobre la inversión</span>
+          <h2 class="h2 h2-d rv d1" id="roi-h">Cada consulta sin respuesta<br><em>tiene un costo.</em></h2>
+          <p class="lead lead-d rv d2">Cuando un paciente escribe por WhatsApp y no recibe respuesta, muchas veces
+            continúa buscando otro profesional. Aurora ayuda a responder de forma inmediata consultas administrativas
+            que normalmente quedan pendientes durante horas.</p>
+        </div>
+        <div class="roi-grid rv d1">
+          <div class="roi-card">
+            <div class="roi-label">Ejemplo A — Consultas adicionales</div>
+            <div class="roi-rows">
+              <div class="roi-row"><span>Consultas adicionales por mes</span><strong>2</strong></div>
+              <div class="roi-row"><span>Valor estimado por consulta</span><strong>USD 50</strong></div>
+            </div>
+            <div class="roi-result">
+              <span class="roi-result-label">Ingreso potencial adicional</span>
+              <span class="roi-result-val">USD 100/mes</span>
+            </div>
+          </div>
+          <div class="roi-card">
+            <div class="roi-label">Ejemplo B — Procedimientos o cirugías</div>
+            <div class="roi-rows">
+              <div class="roi-row"><span>Una consulta que derivó en procedimiento</span><strong>1</strong></div>
+              <div class="roi-row"><span>Que no se perdió por falta de respuesta</span><strong>—</strong></div>
+            </div>
+            <div class="roi-result">
+              <span class="roi-result-label">Aurora puede pagarse</span>
+              <span class="roi-result-val">con una sola oportunidad</span>
+            </div>
+          </div>
+        </div>
+        <p class="roi-disclaimer rv d2">Estos ejemplos son ilustrativos. Los resultados varían según el tipo de
+          consultorio, la especialidad, el volumen de consultas y otros factores. No se garantizan resultados
+          específicos.</p>
+      </div>
+    </section>
+
+    <!-- PRECIO -->
+    <section class="s-white" id="inversion" aria-labelledby="precio-h">
+      <div class="wrap">
+        <div class="wrap--n">
+          <span class="eyebrow rv">Inversión</span>
+          <h2 class="h2 h2-d rv d1" id="precio-h">Dos componentes.<br><em>Sin contratos de permanencia.</em></h2>
+          <p class="lead lead-d rv d2">El costo de implementación cubre la configuración completa y personalizada. El
+            mantenimiento mensual cubre el funcionamiento continuo.</p>
+        </div>
+        <div class="precio-grid rv d1">
+          <div class="precio-card feat">
+            <div class="pc-name">Implementación inicial</div>
+            <div class="pc-price"><span class="pc-cur">USD</span><span class="pc-num">250</span></div>
+            <div class="pc-note">Pago único · Por consultorio</div>
+            <ul class="pc-feats">
+              <li><span class="pc-ck"></span>Reunión de relevamiento</li>
+              <li><span class="pc-ck"></span>Configuración completa de flujos</li>
+              <li><span class="pc-ck"></span>Personalización de respuestas</li>
+              <li><span class="pc-ck"></span>Carga de coberturas y contenidos</li>
+              <li><span class="pc-ck"></span>Integración con agenda</li>
+              <li><span class="pc-ck"></span>Pruebas y validación</li>
+              <li><span class="pc-ck"></span>Puesta en marcha</li>
+            </ul>
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20implementar%20Aurora%20en%20mi%20consultorio.%20%C2%BFPodemos%20conversar%3F"
+              class="btn btn-wsp" style="width:100%;justify-content:center;" target="_blank" rel="noopener"
+              onclick="gtag('event','precio_wsp',{event_category:'conversion'})">💬 Solicitar implementación</a>
+          </div>
+          <div class="precio-card">
+            <div class="pc-name">Mantenimiento mensual</div>
+            <div class="pc-price"><span class="pc-cur">USD</span><span class="pc-num">50</span><span
+                class="pc-per">/mes</span></div>
+            <div class="pc-note">Sin permanencia mínima</div>
+            <ul class="pc-feats">
+              <li><span class="pc-ck"></span>Soporte técnico</li>
+              <li><span class="pc-ck"></span>Ajustes menores en respuestas</li>
+              <li><span class="pc-ck"></span>Monitoreo del sistema</li>
+              <li><span class="pc-ck"></span>Actualización de coberturas y precios</li>
+              <li><span class="pc-ck"></span>Mantenimiento operativo</li>
+            </ul>
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20Aurora"
+              class="btn btn-wsp-o" style="width:100%;justify-content:center;" target="_blank" rel="noopener">💬
+              Consultar por WhatsApp</a>
+            <div class="pc-nota"><span>📋</span><span>Sin contratos de permanencia. Puede cancelarse con 30 días de
+                aviso.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="s-dark" id="faq" aria-labelledby="faq-h">
+      <div class="wrap--n">
+        <span class="eyebrow rv">Preguntas frecuentes</span>
+        <h2 class="h2 h2-w rv d1" id="faq-h">Lo que los médicos preguntan<br>antes de implementar Aurora</h2>
+        <div class="faq-list rv d1">
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f1">¿Aurora reemplaza a
+              la secretaria o recepcionista?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f1" hidden>No. Aurora se encarga de las consultas repetitivas y la captura de
+              datos.
+              Cuando una situación requiere atención humana, el sistema deriva con el contexto organizado para que el
+              equipo actúe sin empezar desde cero.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f2">¿Necesito cambiar
+              cómo gestiono los turnos actualmente?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f2" hidden>No. Aurora se integra con el sistema de agenda que ya usa el
+              consultorio:
+              Calendly, Google Calendar, agenda papel o cualquier otro. El paciente recibe el enlace o las
+              instrucciones
+              para agendar según el flujo que el consultorio defina.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f3">¿Cuánto demora la
+              implementación?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f3" hidden>Entre 3 y 7 días hábiles desde la contratación. Ese plazo incluye la
+              reunión de relevamiento, configuración de flujos, personalización de respuestas, pruebas con el número
+              real del consultorio y puesta en marcha.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f4">¿Qué sucede si un
+              paciente escribe sobre un problema de salud urgente?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f4" hidden>Aurora identifica mensajes potencialmente prioritarios y notifica al
+              equipo según el protocolo definido por el profesional. Para situaciones graves, indica al paciente que
+              contacte al servicio de emergencias de forma inmediata. Aurora no reemplaza servicios de emergencia ni
+              criterios clínicos profesionales.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f5">¿El número de
+              WhatsApp es del consultorio o de Cirujana Digital?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f5" hidden>Es un número exclusivo para el consultorio. Los mensajes salen
+              identificados con el nombre del consultorio y ese número no se comparte con otros clientes.</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" tabindex="0" role="button" aria-expanded="false" aria-controls="f6">¿Puedo ver qué
+              consultas recibió Aurora?<div class="faq-arr">▾</div>
+            </div>
+            <div class="faq-a" id="f6" hidden>Sí. Aurora incluye un panel de reportes con las métricas operativas del
+              sistema: consultas recibidas, solicitudes de turno y actividad general. El médico también puede
+              solicitar
+              el reporte directamente por WhatsApp enviando un comando al sistema.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-s" aria-labelledby="cta-h">
+      <div class="wrap cta-inner">
+        <span class="eyebrow rv" style="display:block;text-align:center;">El primer paso</span>
+        <h2 class="cta-title rv d1" id="cta-h">¿Quiere ver cómo funcionaría<br><em>en su consultorio?</em></h2>
+        <p class="cta-sub rv d2">Solicite una demostración y revisaremos juntos qué consultas recibe, qué tareas
+          pueden
+          resolverse de forma automática y cómo adaptar Aurora a su especialidad.</p>
+        <div class="cta-actions rv d2">
+          <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20implementar%20Aurora%20en%20mi%20consultorio.%20%C2%BFPodemos%20conversar%3F"
+            class="btn btn-wsp" target="_blank" rel="noopener"
+            onclick="gtag('event','cta_final_impl',{event_category:'conversion'})">💬 Quiero implementar Aurora</a>
+          <a href="https://wa.me/5491178292702?text=Hola%20Aurora%2C%20quiero%20ver%20c%C3%B3mo%20func%C3%A1s."
+            class="btn btn-g" target="_blank" rel="noopener"
+            onclick="gtag('event','cta_final_demo',{event_category:'engagement'})">🤖 Probar Aurora</a>
+        </div>
+        <div class="cta-cal rv d3">o si prefiere, <a href="https://calendly.com/cirujanadigital/30min" target="_blank"
+            rel="noopener" onclick="gtag('event','cta_calendly',{event_category:'conversion'})">agendar una llamada
+            por
+            Calendly →</a></div>
+        <div class="trust-row rv d3">
+          <div class="ti">Implementación en 5 días</div>
+          <div class="ti">Sin permanencia mínima</div>
+          <div class="ti">Prueba antes de activar</div>
+          <div class="ti">Personalizado por especialidad</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+  <script>
+    const obs = new IntersectionObserver((es) => { es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('vis'); obs.unobserve(e.target); } }); }, { threshold: .08, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+    document.querySelectorAll('.faq-q').forEach(q => {
+      const toggle = () => {
+        const item = q.closest('.faq-item'), a = item.querySelector('.faq-a'), isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-a').hidden = true; i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); a.hidden = false; q.setAttribute('aria-expanded', 'true'); }
+      };
+      q.addEventListener('click', toggle);
+      q.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    });
+    const m = { 25: false, 50: false, 75: false, 90: false };
+    window.addEventListener('scroll', () => { const p = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100); Object.keys(m).forEach(k => { if (!m[k] && p >= k) { m[k] = true; gtag('event', 'scroll_depth', { event_category: 'engagement', event_label: k + '%' }); } }); }, { passive: true });
+  </script>
+</body>
+
+</html>

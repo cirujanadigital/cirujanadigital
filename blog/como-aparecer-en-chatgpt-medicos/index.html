@@ -1,0 +1,1360 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Cómo lograr que ChatGPT recomiende tu consultorio médico | Cirujana Digital</title>
+  <meta name="description"
+    content="Guía práctica de GEO y AEO para médicos: optimizá tu presencia digital para que ChatGPT, Perplexity y Gemini recomienden tu consultorio cuando los pacientes preguntan." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/como-aparecer-en-chatgpt-medicos/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/como-aparecer-en-chatgpt-medicos/" />
+  <meta property="og:title" content="Cómo lograr que ChatGPT recomiende tu consultorio médico" />
+  <meta property="og:description"
+    content="Guía práctica para médicos: optimizá tu presencia digital para que ChatGPT recomiende tu consultorio cuando los pacientes preguntan." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-como-aparecer-en-chatgpt-medicos.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="2026-06-08" />
+  <meta property="article:modified_time" content="2026-06-08" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="SEO" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cómo lograr que ChatGPT recomiende tu consultorio médico" />
+  <meta name="twitter:description"
+    content="Guía práctica para médicos: optimizá tu presencia para que ChatGPT recomiende tu consultorio." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-como-aparecer-en-chatgpt-medicos.webp" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+    #site-footer {
+      height: 678px;
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* ── BODY ── */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* ── Tipografía ── */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* ── Métricas ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .metric-card .metric-name {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cd-text-light);
+      margin-bottom: .5rem;
+    }
+
+    .metric-card .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: .8rem;
+      color: var(--cd-text-light);
+      line-height: 1.4;
+    }
+
+    .metric-card.good {
+      border-color: #00c853;
+    }
+
+    .metric-card.good .metric-value {
+      color: #00a844;
+    }
+
+    .metric-card.medium {
+      border-color: #f59e0b;
+    }
+
+    .metric-card.medium .metric-value {
+      color: #d97706;
+    }
+
+    .metric-card.bad {
+      border-color: #e74c3c;
+    }
+
+    .metric-card.bad .metric-value {
+      color: #c0392b;
+    }
+
+    /* ── Callouts ── */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, .07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* ── Tablas ── */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* ── Author box ── */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── CTA box ── */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    /* ── Sidebar ── */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    /* sb-diag */
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+
+    /* ── Paso a paso numerado ── */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+      counter-reset: steps;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .steps-list li {
+      counter-increment: steps;
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .steps-list li::before {
+      content: counter(steps);
+      background: var(--gradient-primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: .85rem;
+      min-width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .steps-list li div strong {
+      display: block;
+      color: var(--cd-text);
+      font-size: 1rem;
+      margin-bottom: .3rem;
+    }
+
+    .steps-list li div p {
+      color: #4a5568;
+      font-size: .95rem;
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* ── Checklist visual ── */
+    .checklist {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: #00a844;
+      font-weight: 800;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+  </style>
+
+  <!-- Schema Estructurado -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Desarrolladora web para profesionales de la salud",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/como-aparecer-en-chatgpt-medicos/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cómo lograr que ChatGPT recomiende tu consultorio" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/como-aparecer-en-chatgpt-medicos/#article",
+          "headline": "Cómo lograr que ChatGPT recomiende tu consultorio médico",
+          "description": "Guía práctica de GEO y AEO para médicos: optimizá tu presencia digital para que ChatGPT, Perplexity y Gemini recomienden tu consultorio cuando los pacientes preguntan.",
+          "image": {
+            "@type": "ImageObject",
+            "url":    "https://cirujanadigital.com/img/og-como-aparecer-en-chatgpt-medicos.webp",
+            "width":  1200,
+            "height": 630
+          },
+          "datePublished": "2026-06-08",
+          "dateModified":  "2026-06-08",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/como-aparecer-en-chatgpt-medicos/",
+          "articleSection": "SEO",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿ChatGPT puede recomendar médicos específicos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí. Cuando un paciente pregunta '¿quién es el mejor traumatólogo en [ciudad]?', ChatGPT responde basándose en la información disponible en la web: artículos, directorios, reseñas y datos estructurados de los sitios. Si tu consultorio tiene una presencia digital sólida y bien optimizada, tenés probabilidades reales de aparecer en esas respuestas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué es GEO y cómo se aplica a médicos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "GEO (Generative Engine Optimization) es la práctica de optimizar tu contenido para que los motores de respuesta basados en IA —como ChatGPT, Perplexity o Gemini— te citen o recomienden. Para médicos implica: Schema Physician correctamente implementado, reseñas auténticas en Google, contenido que responda preguntas concretas de pacientes, y presencia en directorios de salud de autoridad."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tarda en aparecer un consultorio en ChatGPT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No existe un tiempo fijo: depende de la autoridad de tu dominio, la calidad del contenido y la frecuencia con que los modelos actualizan su conocimiento. En general, con una estrategia consistente de GEO los primeros resultados empiezan a verse entre 3 y 6 meses después de implementar las mejoras."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Es necesario tener un sitio web propio para aparecer en ChatGPT?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es muy recomendable. Un sitio propio con Schema médico, velocidad optimizada y contenido de valor es la base más sólida. Sin embargo, la presencia en directorios de autoridad (Doctoralia, Zocdoc, LinkedIn, Google Business Profile) también contribuye a que los modelos de IA te reconozcan como referente en tu especialidad."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+
+  <div id="site-nav"></div>
+
+  <main id="main" tabindex="-1" style="min-height:100vh;">
+
+    <!-- ══════════ HERO ══════════ -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a><span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">Aparecer en ChatGPT: guía para médicos</span>
+        </nav>
+        <span class="article-category">SEO</span>
+        <h1>Cómo lograr que ChatGPT recomiende tu consultorio médico</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-06-08">Junio 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>10 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ══════════ CUERPO ══════════ -->
+    <div class="article-body">
+      <div class="article-layout">
+
+        <!-- ─── CONTENIDO PRINCIPAL ─── -->
+        <article class="article-content">
+
+          <p>Cuando un paciente escribe <em>"¿cuál es el mejor cardiólogo en Rosario?"</em> en ChatGPT, alguien va a
+            aparecer en esa respuesta. La pregunta es si ese alguien sos vos o tu competencia. Los motores de respuesta
+            IA ya no son una novedad futurista: el 40 % de los usuarios de ChatGPT los usa para buscar profesionales y
+            servicios locales. Si tu consultorio no está en el radar de estos modelos, estás perdiendo pacientes todos
+            los días sin saberlo.</p>
+
+          <p>Esta guía te explica exactamente qué hacen las IAs para elegir a quién recomendar, y los pasos concretos
+            que podés implementar para que tu nombre aparezca cuando tus pacientes preguntan.</p>
+
+          <!-- ─── SECCIÓN 1 ─── -->
+          <h2 id="como-funciona">Cómo decide ChatGPT a quién recomendar</h2>
+
+          <p>ChatGPT, Perplexity, Gemini y los demás modelos de lenguaje no tienen acceso a un directorio mágico de
+            médicos. Lo que hacen es sintetizar información que ya existe en la web: artículos, perfiles, reseñas, datos
+            estructurados y menciones en sitios de autoridad. Si esa información es clara, consistente y abundante, el
+            modelo la incorpora. Si no existe o está fragmentada, el modelo simplemente recomienda a quien sí tiene esa
+            información.</p>
+
+          <p>Hay tres grandes fuentes que priorizan estos modelos al recomendar profesionales de la salud:</p>
+
+          <ul>
+            <li><strong>Sitios web propios con Schema médico</strong> — especialmente <code>schema.org/Physician</code>
+              y <code>schema.org/MedicalClinic</code>.</li>
+            <li><strong>Directorios de alta autoridad</strong> — Doctoralia, Zocdoc, Healthgrades, LinkedIn Health,
+              Google Business Profile.</li>
+            <li><strong>Contenido citatorio</strong> — artículos de blog que responden preguntas de pacientes y que
+              otros sitios referencian.</li>
+          </ul>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Concepto clave: GEO vs. SEO</span>
+            <p><strong>SEO</strong> (Search Engine Optimization) posiciona tu sitio en Google. <strong>GEO</strong>
+              (Generative Engine Optimization) hace que los modelos de IA te elijan como respuesta. Comparten bases,
+              pero GEO requiere que tu contenido sea <em>citable</em>: estructurado, con autoridad y sin ambigüedades.
+            </p>
+          </div>
+
+          <div class="metrics-grid">
+            <div class="metric-card good">
+              <p class="metric-name">Pacientes que usan IA para buscar médicos</p>
+              <p class="metric-value">40%</p>
+              <p class="metric-desc">y la cifra crece mes a mes</p>
+            </div>
+            <div class="metric-card medium">
+              <p class="metric-name">Médicos con Schema Physician correcto</p>
+              <p class="metric-value">8%</p>
+              <p class="metric-desc">la gran oportunidad está en el 92% restante</p>
+            </div>
+            <div class="metric-card bad">
+              <p class="metric-name">Sitios médicos sin perfil GBP completo</p>
+              <p class="metric-value">67%</p>
+              <p class="metric-desc">primera señal que leen las IAs</p>
+            </div>
+          </div>
+
+          <!-- ─── SECCIÓN 2 ─── -->
+          <h2 id="señales-de-autoridad">Las señales que leen los modelos de IA</h2>
+
+          <p>No existe un botón de "aparecer en ChatGPT". Lo que existe es un conjunto de señales de autoridad que,
+            sumadas, hacen que un modelo te elija a vos y no a otro. Entender cuáles son te permite priorizarlas.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Señales de autoridad para IA médica">
+              <thead>
+                <tr>
+                  <th>Señal</th>
+                  <th>Qué busca la IA</th>
+                  <th>Impacto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Schema Physician / MedicalClinic</strong></td>
+                  <td>Datos estructurados: especialidad, matrícula, dirección, horarios</td>
+                  <td class="tag-good">Muy alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Google Business Profile</strong></td>
+                  <td>Nombre, categoría médica, reseñas, fotos actualizadas</td>
+                  <td class="tag-good">Muy alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Reseñas con keywords clínicas</strong></td>
+                  <td>Menciones a especialidad y ciudad en texto de reseñas</td>
+                  <td class="tag-good">Alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Presencia en Doctoralia / directorios</strong></td>
+                  <td>Perfil completo y coherente con el sitio propio</td>
+                  <td class="tag-good">Alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Contenido FAQ en el sitio</strong></td>
+                  <td>Preguntas reales de pacientes respondidas con claridad</td>
+                  <td class="tag-medium">Medio-alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Menciones en medios y blogs</strong></td>
+                  <td>Links entrantes de sitios de salud o noticias</td>
+                  <td class="tag-medium">Medio</td>
+                </tr>
+                <tr>
+                  <td><strong>Velocidad del sitio</strong></td>
+                  <td>Core Web Vitals — los crawlers no esperan</td>
+                  <td class="tag-medium">Medio</td>
+                </tr>
+                <tr>
+                  <td><strong>Solo Instagram sin sitio web</strong></td>
+                  <td>Señal muy débil para los modelos de IA</td>
+                  <td class="tag-bad">Bajo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ─── SECCIÓN 3 ─── -->
+          <h2 id="pasos-concretos">Pasos concretos para aparecer en ChatGPT</h2>
+
+          <p>Estas son las acciones ordenadas por impacto. No necesitás hacer todo a la vez: empezá por el paso 1 y
+            avanzá de manera consistente.</p>
+
+          <ol class="steps-list">
+            <li>
+              <div>
+                <strong>Implementá Schema Physician en tu sitio web</strong>
+                <p>Es el paso de mayor impacto y el menos frecuente. El marcado estructurado le dice a los modelos
+                  exactamente quién sos, qué especialidad ejercés, en qué ciudad y cómo contactarte. Sin Schema, la IA
+                  adivina. Con Schema, la IA cita.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Completá tu Google Business Profile al 100%</strong>
+                <p>Nombre exacto, categoría principal (médico + especialidad), dirección completa, horarios
+                  actualizados, fotos propias y descripción con keyword de ciudad y especialidad. GBP es una de las
+                  fuentes más confiables para los modelos de IA.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Conseguí reseñas que mencionen tu especialidad y ciudad</strong>
+                <p>Las reseñas genéricas ("muy buen médico") aportan poco. Las específicas ("el mejor traumatólogo en
+                  Mendoza, me operó el menisco…") son oro puro para GEO. Pedile a tus pacientes que escriban cómo te
+                  encontraron y qué les solucionaste.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Creá una página de FAQ respondiendo preguntas reales</strong>
+                <p>¿Qué preguntan los pacientes antes de llamar? ¿Cuánto dura la consulta? ¿Atendés obra social? ¿Qué
+                  estudios pedir antes de venir? Cada respuesta es una oportunidad de que ChatGPT te cite. Implementá
+                  FAQPage schema en esa sección.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Completá tu perfil en directorios médicos de autoridad</strong>
+                <p>Doctoralia, Zocdoc (si aplica a tu país), LinkedIn con sección de salud. Asegurate de que el nombre,
+                  especialidad y ciudad sean idénticos en todos lados. La consistencia multi-fuente es una señal de
+                  veracidad para los modelos.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <strong>Publicá contenido que responda búsquedas de pacientes</strong>
+                <p>Artículos de blog que expliquen síntomas, procedimientos o dudas frecuentes de tu especialidad. No
+                  hace falta publicar todos los días: 2 artículos sólidos por mes con estructura HTML semántica hacen
+                  más que 20 posts de Instagram.</p>
+              </div>
+            </li>
+          </ol>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ Error frecuente</span>
+            <p>Muchos médicos creen que tener Instagram activo es suficiente para que la IA los recomiende. Las redes
+              sociales tienen muy bajo peso en los modelos de respuesta. El contenido de Instagram no está indexado de
+              manera estructurada y raramente es citado por ChatGPT o Perplexity.</p>
+          </div>
+
+          <!-- ─── SECCIÓN 4 ─── -->
+          <h2 id="schema-physician">Schema Physician: el corazón de tu estrategia GEO</h2>
+
+          <p>Si tuvieras que elegir <em>una sola acción</em> para aparecer en ChatGPT, sería implementar
+            <code>schema.org/Physician</code> en tu sitio. Este marcado le dice a cualquier crawler —de Google, de
+            OpenAI, de Anthropic— exactamente quién sos y qué hacés.
+          </p>
+
+          <p>Un Schema Physician completo debe incluir:</p>
+
+          <ul class="checklist">
+            <li>Nombre completo del médico (igual al que aparece en GBP y Doctoralia)</li>
+            <li>Especialidad médica (<code>medicalSpecialty</code>)</li>
+            <li>Dirección completa con <code>addressLocality</code>, <code>addressRegion</code> y
+              <code>addressCountry</code>
+            </li>
+            <li>Número de matrícula profesional (<code>hasCredential</code>)</li>
+            <li>Horarios de atención (<code>openingHoursSpecification</code>)</li>
+            <li>Teléfono y email de contacto</li>
+            <li>URL de la página del perfil del médico</li>
+            <li>Foto del profesional (<code>image</code>)</li>
+            <li>Idioma de atención (<code>availableLanguage</code>)</li>
+            <li>Obra social o seguros aceptados (<code>availableService</code>)</li>
+          </ul>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Validá tu Schema</span>
+            <p>Después de implementar el Schema, validalo en <a href="https://search.google.com/test/rich-results"
+                target="_blank" rel="noopener">Rich Results Test de Google</a> y en <a
+                href="https://validator.schema.org" target="_blank" rel="noopener">Schema.org Validator</a>. Si hay
+              errores, la IA no puede leer los datos correctamente.</p>
+          </div>
+
+          <!-- ─── SECCIÓN 5 ─── -->
+          <h2 id="contenido-citatorio">Cómo escribir contenido que las IAs quieran citar</h2>
+
+          <p>Los modelos de lenguaje no copian texto al azar: priorizan contenido que sea <strong>claro, concreto y
+              estructurado</strong>. Cuando escribas para tu sitio, pensá como si le estuvieras respondiendo a un
+            periodista que va a citarte en un artículo.</p>
+
+          <h3>Fórmula para un artículo citable</h3>
+          <ul>
+            <li><strong>Pregunta específica como título</strong> — "¿Cuándo se opera una hernia de disco?" convierte
+              mejor que "Hernias de disco".</li>
+            <li><strong>Respuesta directa en el primer párrafo</strong> — sin rodeos, sin introducción genérica.</li>
+            <li><strong>Datos o criterios concretos</strong> — "se opera cuando el dolor persiste más de 6 semanas con
+              tratamiento conservador" es citable; "depende de cada caso" no lo es.</li>
+            <li><strong>Estructura con subtítulos H2 y H3</strong> — los modelos parsean la jerarquía HTML para entender
+              el tema.</li>
+            <li><strong>FAQ al final</strong> — con Schema FAQPage implementado.</li>
+          </ul>
+
+          <div class="callout callout-danger">
+            <span class="callout-label">🚨 Contenido que la IA ignora</span>
+            <p>Las frases vagas, los textos sin estructura, los PDF sin versión web y el contenido detrás de login son
+              invisibles para los modelos. Si tu historia clínica tiene información valiosa encerrada en un sistema
+              cerrado, eso no ayuda a tu posicionamiento.</p>
+          </div>
+
+          <!-- ─── SECCIÓN 6 ─── -->
+          <h2 id="consistencia-nap">NAP consistency: el principio que une todo</h2>
+
+          <p>NAP son las siglas de <em>Name, Address, Phone</em> (Nombre, Dirección, Teléfono). Que estos datos sean
+            idénticos en <strong>todos los lugares donde aparecés</strong> — tu sitio, GBP, Doctoralia, LinkedIn, redes
+            sociales — es una señal de veracidad que los modelos de IA ponderan con mucho peso.</p>
+
+          <p>Un solo carácter diferente ("Dr. Juan García" vs. "Juan García, MD") es suficiente para que el modelo los
+            trate como entidades diferentes y reduzca la confianza en tu perfil.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Checklist de consistencia NAP">
+              <thead>
+                <tr>
+                  <th>Plataforma</th>
+                  <th>Nombre médico</th>
+                  <th>Dirección</th>
+                  <th>Teléfono</th>
+                  <th>Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sitio web propio</td>
+                  <td>Dr. [Nombre Apellido]</td>
+                  <td>Calle 123, Ciudad</td>
+                  <td>+54 11 XXXX-XXXX</td>
+                  <td class="tag-good">Referencia</td>
+                </tr>
+                <tr>
+                  <td>Google Business Profile</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td class="tag-good">Verificar</td>
+                </tr>
+                <tr>
+                  <td>Doctoralia</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td class="tag-medium">Verificar</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn</td>
+                  <td>Debe ser idéntico ↑</td>
+                  <td>Ciudad + País</td>
+                  <td>Opcional</td>
+                  <td class="tag-medium">Verificar</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Coherente, no idéntico obligatorio</td>
+                  <td>Mínimo ciudad</td>
+                  <td>En bio</td>
+                  <td class="tag-bad">Peso bajo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ─── CTA MID ─── -->
+          <div class="article-cta-box">
+            <h3>¿Cuántas señales de autoridad tiene tu consultorio hoy?</h3>
+            <p>Hacé el diagnóstico gratuito y descubrí exactamente qué le falta a tu sitio para aparecer en ChatGPT,
+              Perplexity y Google AI.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Hacer mi diagnóstico gratis</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- ─── SECCIÓN 7 ─── -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <h3>¿ChatGPT puede recomendar médicos específicos?</h3>
+          <p>Sí. Cuando un paciente pregunta "¿quién es el mejor traumatólogo en [ciudad]?", ChatGPT responde basándose
+            en la información disponible en la web: artículos, directorios, reseñas y datos estructurados. Si tu
+            consultorio tiene una presencia bien optimizada, tenés probabilidades reales de aparecer.</p>
+
+          <h3>¿Tengo que pagar para aparecer en ChatGPT?</h3>
+          <p>No. Los modelos de IA generativa no tienen un sistema de anuncios como Google Ads. Las recomendaciones son
+            orgánicas y se basan en la calidad y autoridad de la información disponible sobre vos. La inversión es en
+            optimización, no en publicidad.</p>
+
+          <h3>¿Cuánto tarda en verse el resultado?</h3>
+          <p>No existe un tiempo fijo. Depende de la autoridad de tu dominio, la calidad del contenido y la frecuencia
+            con que los modelos actualizan su conocimiento (algunos con browsing en tiempo real, otros con datos de
+            entrenamiento periódicos). Con una estrategia consistente, los primeros cambios suelen verse entre 3 y 6
+            meses.</p>
+
+          <h3>¿Es necesario tener un sitio web propio?</h3>
+          <p>Es muy recomendable. Un sitio propio con Schema médico, velocidad optimizada y contenido de valor es la
+            base más sólida. Sin embargo, la presencia en directorios de autoridad también contribuye. Lo ideal es tener
+            ambos: sitio propio como ancla + directorios como refuerzo.</p>
+
+          <h3>¿Qué pasa si tengo mala reputación online?</h3>
+          <p>Las reseñas negativas sin responder son una señal de alerta para los modelos. La estrategia correcta es
+            responder todas las reseñas (positivas y negativas) de manera profesional, y generar volumen de reseñas
+            positivas nuevas. La IA pondera el patrón general, no una sola reseña.</p>
+
+          <!-- ─── AUTOR ─── -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp" alt="Yulia Monti — Cirujana Digital" width="80" height="80" loading="lazy"
+              decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica reconvertida en desarrolladora web. 15 años en pabellón, ahora construyo
+                sitios que cargan rápido, posicionan en Google y convierten visitantes en clientes. Especialidad:
+                negocios de salud y profesionales independientes en Argentina, México y España.</p>
+            </div>
+          </div>
+
+          <!-- ─── CTA FINAL ─── -->
+          <div class="article-cta-box">
+            <h3>¿Querés que ChatGPT recomiende tu consultorio?</h3>
+            <p>Diagnóstico personalizado: 15 puntos de revisión, resultado en 3 minutos. Descubrí exactamente qué está
+              faltando en tu presencia digital.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Hacer mi diagnóstico gratis</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- ─── SIDEBAR ─── -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#como-funciona">Cómo decide ChatGPT a quién recomendar</a></li>
+              <li><a href="#señales-de-autoridad">Las señales que leen los modelos de IA</a></li>
+              <li><a href="#pasos-concretos">Pasos concretos para aparecer en ChatGPT</a></li>
+              <li><a href="#schema-physician">Schema Physician: el corazón de la estrategia</a></li>
+              <li><a href="#contenido-citatorio">Cómo escribir contenido que las IAs citen</a></li>
+              <li><a href="#consistencia-nap">NAP consistency: el principio que une todo</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que los
+                hace invisibles para las IAs.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Cargás antes de 3 seg?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google y ChatGPT</strong><span>¿Te encuentran por especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🏷️</span>
+                <div><strong>Schema Physician</strong><span>¿Tiene datos estructurados correctos?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">💬</span>
+                <div><strong>Conversión</strong><span>¿Los visitantes te contactan?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Hacer mi diagnóstico gratis
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+
+      </div><!-- /article-layout -->
+    </div><!-- /article-body -->
+  </main>
+
+  <div id="site-footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,1322 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 3500);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Por qué una página médica lenta hace perder pacientes | Cirujana Digital</title>
+  <meta name="description"
+    content="Cuando la página de un consultorio tarda más de 3 segundos en cargar, los pacientes se van. Qué mide Google, cómo afecta a la agenda y qué se puede mejorar sin complicaciones técnicas." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/core-web-vitals-2026/" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/core-web-vitals-2026/" />
+  <meta property="og:title" content="Por qué una página médica lenta hace perder pacientes" />
+  <meta property="og:description"
+    content="Google mide la velocidad de carga de cada sitio y la usa para decidir qué páginas aparecen primero. Cómo impacta esto en un consultorio y qué se puede hacer." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-core-web-vitals.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <meta property="article:published_time" content="2026-03-07" />
+  <meta property="article:modified_time" content="2026-05-24" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Presencia digital médica" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Por qué una página médica lenta hace perder pacientes" />
+  <meta name="twitter:description"
+    content="Google mide la velocidad de cada página y decide qué consultorios aparecen primero. Qué significa eso para la agenda." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-core-web-vitals.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-top: 70px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      padding: 4rem 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* Typography */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* Metrics */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .metric-card .metric-name {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cd-text-light);
+      margin-bottom: .5rem;
+    }
+
+    .metric-card .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: .8rem;
+      color: var(--cd-text-light);
+      line-height: 1.4;
+    }
+
+    .metric-card.good {
+      border-color: #00c853;
+    }
+
+    .metric-card.good .metric-value {
+      color: #008033;
+    }
+
+    .metric-card.medium {
+      border-color: #f59e0b;
+    }
+
+    .metric-card.medium .metric-value {
+      color: #d97706;
+    }
+
+    .metric-card.bad {
+      border-color: #e74c3c;
+    }
+
+    .metric-card.bad .metric-value {
+      color: #c0392b;
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, .07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-box img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* CTA box */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    /* Related block */
+    .related-block {
+      background: var(--light);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .related-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .related-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+    }
+
+    .related-list .related-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .related-list a {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: .97rem;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .related-list a:hover {
+      color: var(--secondary);
+    }
+
+    /* Problems block */
+    .problems-block {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2.5rem 0;
+      background: #fafbfc;
+    }
+
+    .problems-block h3 {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--cd-text-light);
+      margin-bottom: 1rem;
+    }
+
+    .problems-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .problems-list li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .97rem;
+      color: #4a5568;
+    }
+
+    .problems-list li::before {
+      content: "→";
+      color: #e74c3c;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* FAQ */
+    .faq-block {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      background: #fafbfc;
+    }
+
+    .faq-block h3 {
+      font-size: 1.05rem;
+      color: var(--cd-text);
+      margin: 0 0 .75rem;
+      font-weight: 700;
+    }
+
+    .faq-block p {
+      margin: 0;
+      font-size: .97rem;
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "url": "https://cirujanadigital.com",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "jobTitle": "Especialista en infraestructura digital médica para captación de pacientes",
+          "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina, fundadora de Cirujana Digital. Especializada en infraestructura digital para consultorios médicos en LATAM y España: posicionamiento en Google, presencia en IA y sitios que convierten visitas en consultas.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "knowsAbout": [
+            "Infraestructura digital médica","SEO para médicos en Argentina","SEO para médicos en México",
+            "SEO para médicos en España","Posicionamiento de consultorios en Google",
+            "Google Business Profile para profesionales de la salud",
+            "Presencia en IA generativa ChatGPT Perplexity Gemini","Páginas web médicas que convierten",
+            "Velocidad web para consultorios","Reputación digital médica"
+          ],
+          "sameAs": ["https://instagram.com/cirujanadigital","https://linkedin.com/in/yulia-monti"]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/core-web-vitals-2026/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Por qué una página médica lenta hace perder pacientes" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/core-web-vitals-2026/#article",
+          "headline": "Por qué una página médica lenta hace perder pacientes",
+          "description": "Cuando la página de un consultorio tarda más de 3 segundos en cargar, los pacientes se van. Qué mide Google, cómo afecta a la agenda y qué se puede mejorar.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://cirujanadigital.com/img/og-core-web-vitals.png",
+            "width": 1200, "height": 630
+          },
+          "datePublished": "2026-03-07",
+          "dateModified":  "2026-05-24",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/core-web-vitals-2026/",
+          "articleSection": "Presencia digital médica",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Qué mide Google para decidir si una página médica es rápida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Google evalúa tres aspectos del comportamiento real del sitio: cuánto tarda en aparecer el contenido principal cuando un paciente entra (velocidad de carga), con qué rapidez responde el sitio cuando hace clic en algo (respuesta a interacciones), y si los elementos de la página se mueven solos mientras carga (estabilidad visual). Los tres forman parte del algoritmo de posicionamiento de Google desde 2021 y se miden con datos de usuarios reales, no con pruebas de laboratorio."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo afecta la velocidad de la página web al número de consultas de un médico?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un sitio lento tiene dos consecuencias directas sobre la agenda: primero, Google lo posiciona por debajo de consultorios más rápidos, lo que reduce el tráfico de pacientes nuevos. Segundo, los pacientes que sí llegan al sitio abandonan antes de encontrar el teléfono, la dirección o el botón para agendar. Según datos de Google, una mejora de 0.1 segundos en tiempo de carga puede aumentar las consultas agendadas vía web hasta un 8%."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cómo saber si la página de un consultorio es lo suficientemente rápida?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La herramienta más accesible es PageSpeed Insights (pagespeed.web.dev). Basta ingresar la URL del consultorio para obtener un diagnóstico gratuito en segundos, con datos de usuarios reales y una lista de los problemas concretos que frenan la carga. Google Search Console también muestra el historial de velocidad del sitio completo en la sección de experiencia de página."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Quién ayuda a médicos a mejorar la velocidad y visibilidad de su sitio web en Latinoamérica y España?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yulia Monti, instrumentadora quirúrgica y fundadora de Cirujana Digital, especializada en infraestructura digital para consultorios médicos en Argentina, México, Chile, Colombia y España. Trabaja exclusivamente con profesionales de la salud para mejorar la velocidad de carga, el posicionamiento en Google y la visibilidad en ChatGPT, Gemini y Perplexity. Más información en cirujanadigital.com."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main">
+    <!-- ── HERO ── -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Por qué una página médica lenta hace perder pacientes</span>
+        </nav>
+        <span class="article-category">Presencia digital médica</span>
+        <h1>Por qué una página médica lenta hace perder pacientes</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-03-07">7 de marzo de 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>Actualizado: 23 de mayo de 2026</span>
+          <span aria-hidden="true">·</span>
+          <span>7 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── BODY ── -->
+    <div class="article-body">
+      <div class="article-layout">
+        <article class="article-content">
+
+          <!-- ① PROBLEMA -->
+          <p>Un paciente busca en Google "traumatólogo en Palermo" o "ginecóloga en Miraflores". Hace clic en el primer
+            resultado. La página tarda 5 segundos en cargar. El paciente vuelve atrás y elige al siguiente médico de la
+            lista.</p>
+          <p>Eso no es una situación hipotética. Es el comportamiento estándar documentado por Google en miles de
+            millones de visitas. Y ocurre todos los días en sitios de consultorios que tienen buena reputación clínica
+            pero una presencia digital que no acompaña.</p>
+
+          <!-- ② CONSECUENCIA ECONÓMICA -->
+          <p>El problema tiene dos caras. La primera: Google mide esa velocidad de carga y la usa para decidir qué
+            páginas aparecen primero. Un consultorio con años de trayectoria puede estar perdiendo posiciones frente a
+            un colega con menos experiencia pero con una página más rápida. La segunda: los pacientes que sí llegan al
+            sitio se van antes de encontrar el teléfono, la dirección o el botón de agenda. Esa combinación —menos
+            visibilidad y menos conversión— reduce las consultas nuevas de forma silenciosa y acumulada.</p>
+
+          <!-- ③ QUÉ CAMBIÓ CON GOOGLE -->
+          <h2 id="como-mide-google">Cómo evalúa Google la velocidad de una página médica</h2>
+          <p>Desde 2021, Google incorporó tres indicadores de velocidad y estabilidad como parte de su criterio de
+            posicionamiento. No son parámetros abstractos: cada uno representa algo que el paciente experimenta en los
+            primeros segundos de visita al sitio del consultorio.</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card good">
+              <div class="metric-name">Velocidad de carga</div>
+              <div class="metric-value">&lt; 2.5 s</div>
+              <div class="metric-desc">Tiempo hasta que el paciente puede leer el contenido principal de la página</div>
+            </div>
+            <div class="metric-card good">
+              <div class="metric-name">Respuesta al toque</div>
+              <div class="metric-value">&lt; 200 ms</div>
+              <div class="metric-desc">Tiempo que tarda el sitio en reaccionar cuando el paciente toca un botón o un
+                enlace</div>
+            </div>
+            <div class="metric-card good">
+              <div class="metric-name">Estabilidad visual</div>
+              <div class="metric-value">&lt; 0.1</div>
+              <div class="metric-desc">Medida de cuánto se mueven los elementos de la página mientras termina de cargar
+              </div>
+            </div>
+          </div>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">Para tener en cuenta</span>
+            <p>Google evalúa estos tres indicadores con datos de pacientes reales que visitaron el sitio, no con pruebas
+              de escritorio. Un sitio que "sale bien" en un test pero que funciona lento en el celular de un paciente:
+              Google lo sabe. Para el posicionamiento, los datos reales son los que cuentan.</p>
+          </div>
+
+          <!-- ② CONSECUENCIA -->
+          <h2 id="impacto-en-consultas">El impacto concreto en la agenda del consultorio</h2>
+          <p>Cuando un sitio médico es lento, hay dos consecuencias que se acumulan en silencio. La primera es de
+            visibilidad: Google posiciona por debajo de consultorios más rápidos, aunque el médico tenga mejor
+            reputación o más años de experiencia. La segunda es de conversión: los pacientes que sí llegan al sitio se
+            van antes de encontrar el número de teléfono, la dirección o el formulario de turnos.</p>
+          <p>Según datos de Google, mejorar el tiempo de carga en 0.1 segundos puede aumentar las consultas agendadas
+            vía web hasta un 8%. Para un consultorio con 500 visitas mensuales al sitio, eso representa turnos concretos
+            que se están perdiendo cada mes sin que el médico lo note.</p>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">Importante</span>
+            <p>Google diferencia entre lo que registra en usuarios reales y lo que produce una prueba de velocidad en un
+              computador de escritorio. Para el posicionamiento, solo importan los datos de usuarios reales. Al revisar
+              la velocidad del sitio, hay que mirar primero la sección de "Datos de campo", no el puntaje de la
+              simulación.</p>
+          </div>
+
+          <!-- ④ CÓMO RESOLVERLO -->
+          <h2 id="como-diagnosticar">Cómo saber si la página del consultorio tiene problemas</h2>
+          <p>La herramienta más accesible es <a href="https://pagespeed.web.dev/" target="_blank"
+              rel="noopener noreferrer">PageSpeed Insights</a>, desarrollada por Google. Basta con ingresar la URL del
+            sitio del consultorio para obtener un diagnóstico gratuito en segundos, con datos de pacientes reales que lo
+            visitaron y una lista de los problemas concretos que frenan la carga. No requiere registro ni conocimientos
+            técnicos para leer el resultado.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Herramientas para revisar la velocidad de un sitio médico">
+              <thead>
+                <tr>
+                  <th>Herramienta</th>
+                  <th>Qué muestra</th>
+                  <th>Más útil para</th>
+                  <th>Costo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>PageSpeed Insights</strong></td>
+                  <td>Datos reales de pacientes + análisis de la página</td>
+                  <td>Diagnóstico inicial rápido</td>
+                  <td class="tag-good">Gratis</td>
+                </tr>
+                <tr>
+                  <td><strong>Google Search Console</strong></td>
+                  <td>Historial de velocidad de los últimos 28 días</td>
+                  <td>Monitoreo continuo del sitio completo</td>
+                  <td class="tag-good">Gratis</td>
+                </tr>
+                <tr>
+                  <td><strong>Lighthouse (Chrome)</strong></td>
+                  <td>Diagnóstico detallado con lista de mejoras</td>
+                  <td>Quien gestiona o edita el sitio</td>
+                  <td class="tag-good">Gratis</td>
+                </tr>
+                <tr>
+                  <td><strong>GTmetrix</strong></td>
+                  <td>Análisis recurso por recurso de la carga</td>
+                  <td>Identificar qué elemento específico frena la página</td>
+                  <td class="tag-medium">Freemium</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2 id="que-causa-lentitud">Qué hace lenta a una página médica</h2>
+          <p>Los problemas de velocidad en sitios de salud suelen concentrarse en tres áreas. Identificarlas permite
+            priorizar dónde actuar primero, especialmente cuando el sitio fue construido con un gestor de contenidos
+            genérico o un constructor visual que no estaba pensado para consultorios.</p>
+
+          <h3>Fotos sin optimizar</h3>
+          <p>Es la causa más frecuente de lentitud en sitios médicos. Las fotos del consultorio, del médico y de los
+            procedimientos suelen subirse en el formato original de la cámara o del smartphone, con pesos de entre 2 y 8
+            MB por imagen. Convertirlas a un formato más eficiente y ajustar sus dimensiones puede reducir el tiempo de
+            carga a la mitad, sin ningún cambio visible para el paciente. Para entender cómo influye esto en la
+            experiencia completa de quien visita el sitio, ver la guía de <a href="web-medica-que-convierte/">páginas
+              médicas que convierten</a>.</p>
+
+          <h3>Herramientas y funciones que el sitio carga pero no usa</h3>
+          <p>Cada complemento activo en un sitio —widgets de redes sociales, herramientas de seguimiento de marketing,
+            elementos decorativos— agrega código que el celular del paciente tiene que descargar antes de poder mostrar
+            la página. Un sitio médico con muchos complementos activos puede tardar cuatro veces más que uno con solo
+            los esenciales. Esto también afecta la posición en Google: los sitios más livianos tienen ventaja directa en
+            los resultados de búsqueda local, como se desarrolla en la guía de <a href="seo-para-clinicas/">SEO para
+              clínicas y consultorios</a>.</p>
+
+          <h3>Elementos que se mueven solos mientras carga</h3>
+          <p>Cuando el paciente empieza a leer la información del médico y los textos o botones se desplazan porque las
+            imágenes o los bloques del menú todavía están cargando, Google registra ese movimiento como un problema de
+            estabilidad. El efecto práctico: el paciente pierde el lugar donde estaba leyendo, la experiencia se siente
+            poco profesional y Google penaliza el sitio en los resultados. La solución técnica consiste en definir el
+            espacio que ocupa cada elemento antes de que cargue, para que la página no se "reacomode" después de
+            aparecer.</p>
+
+          <div class="callout callout-danger">
+            <span class="callout-label">Problema frecuente en sitios médicos</span>
+            <p>Muchos sitios construidos con constructores visuales populares presentan problemas de estabilidad por
+              diseño, porque cargan los estilos y los bloques en el orden incorrecto. Si el diagnóstico muestra
+              inestabilidad visual alta, el problema casi siempre requiere intervención en el código, no solo ajustes de
+              contenido o de imágenes.</p>
+          </div>
+
+          <h2 id="umbrales">Cuándo un sitio médico está bien y cuándo hay que actuar</h2>
+          <p>Google tiene umbrales definidos para los tres indicadores. Para que un sitio "apruebe", el 75% de las
+            visitas reales debe cumplir los tres criterios al mismo tiempo. No alcanza con que el promedio sea bueno ni
+            con que solo dos de los tres estén en verde.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Rangos de velocidad de Google: bueno, necesita mejorar, malo">
+              <thead>
+                <tr>
+                  <th>Indicador</th>
+                  <th>Bien ✅</th>
+                  <th>Necesita mejorar ⚠️</th>
+                  <th>Problema ❌</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Velocidad de carga</strong></td>
+                  <td class="tag-good">≤ 2.5 s</td>
+                  <td class="tag-medium">2.5 – 4 s</td>
+                  <td class="tag-bad">&gt; 4 s</td>
+                </tr>
+                <tr>
+                  <td><strong>Respuesta al toque</strong></td>
+                  <td class="tag-good">≤ 200 ms</td>
+                  <td class="tag-medium">200 – 500 ms</td>
+                  <td class="tag-bad">&gt; 500 ms</td>
+                </tr>
+                <tr>
+                  <td><strong>Estabilidad visual</strong></td>
+                  <td class="tag-good">≤ 0.1</td>
+                  <td class="tag-medium">0.1 – 0.25</td>
+                  <td class="tag-bad">&gt; 0.25</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>La velocidad del sitio es uno de los factores que determina cuántos pacientes nuevos llega a ver el
+            consultorio. Pero no es el único. La visibilidad en la IA, el perfil de Google Maps y la reputación online
+            trabajan en conjunto. La guía de <a href="ia-para-clinicas/">IA aplicada a clínicas</a> explica cómo se
+            articulan estos factores y qué puede hacer un consultorio para aparecer también en ChatGPT y Gemini.</p>
+
+          <!-- CTA INTERMEDIO -->
+          <div class="article-cta-box">
+            <h3>Diagnóstico de presencia digital médica</h3>
+            <p>Revisión de velocidad del sitio, visibilidad en Google Maps, posición en ChatGPT y reputación online.
+              Informe en PDF con pasos concretos ordenados por impacto. Entrega en 3 días hábiles.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Solicitar diagnóstico del consultorio</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+          <h2 id="conclusion">La velocidad es parte de la reputación digital del consultorio</h2>
+          <p>Un sitio médico lento no es solo un problema técnico. Es la primera impresión que recibe el paciente antes
+            de leer una sola línea sobre el médico. Un sitio que tarda 5 segundos en aparecer transmite descuido, aunque
+            el profesional tenga años de trayectoria, excelentes reseñas en Google Maps y un consultorio impecable.</p>
+          <p>La velocidad de carga, la visibilidad en Google y la presencia en ChatGPT se refuerzan mutuamente. Un sitio
+            rápido posiciona mejor en Google. Posicionar mejor en Google construye la autoridad que la IA necesita para
+            recomendar al médico cuando un paciente pregunta por una especialidad. Los tres factores trabajan juntos.
+            Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y España,
+            fundadora de Cirujana Digital, trabaja estos tres frentes de forma integrada para consultorios y clínicas
+            privadas.</p>
+
+          <!-- PROBLEMAS FRECUENTES -->
+          <div class="problems-block">
+            <h3>Señales de alerta en páginas médicas</h3>
+            <ul class="problems-list">
+              <li>El sitio tarda más de 3 segundos en cargar en el celular del paciente</li>
+              <li>Las fotos del consultorio y del médico pesan varios megabytes cada una</li>
+              <li>El sitio carga recursos y funciones que no se usan</li>
+              <li>Los elementos de la página se desplazan mientras carga, generando desconfianza</li>
+              <li>Google posiciona el consultorio por debajo de colegas con menos experiencia</li>
+              <li>El paciente llega al sitio pero no encuentra fácilmente el WhatsApp ni el formulario de turnos</li>
+            </ul>
+          </div>
+
+          <!-- FAQ -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <div class="faq-block">
+            <h3>¿Un sitio médico lento baja posiciones en Google?</h3>
+            <p>Sí. Google usa la velocidad de carga y la estabilidad visual como factores de posicionamiento desde 2021.
+              Un sitio lento puede quedar por debajo de consultorios con contenido similar pero con una página más
+              rápida. El impacto es más visible en búsquedas locales competitivas — "cardiólogo en Providencia",
+              "dermatóloga en Belgrano" — que es exactamente donde los consultorios necesitan aparecer para captar
+              pacientes nuevos.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Un sitio en WordPress puede ser suficientemente rápido para un consultorio?</h3>
+            <p>Sí, pero requiere configuración técnica específica: sistema de caché, red de distribución de contenido,
+              optimización de imágenes y reducción de complementos activos. No ocurre de forma automática con la
+              instalación estándar. En muchos casos, un sitio médico construido en código estático tiene ventaja directa
+              de velocidad sobre uno en WordPress con constructor visual, porque tiene menos capas de procesamiento
+              entre el servidor y el celular del paciente.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Con qué frecuencia conviene revisar la velocidad del sitio?</h3>
+            <p>Google Search Console muestra los datos de los últimos 28 días de forma continua, lo que alcanza para el
+              monitoreo regular. Conviene hacer un diagnóstico puntual con PageSpeed Insights cada vez que se hacen
+              cambios importantes en el sitio: nuevas páginas, cambio de proveedor de alojamiento, actualización de la
+              plantilla visual o instalación de nuevos complementos.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿La velocidad del sitio afecta también cómo aparece el consultorio en ChatGPT?</h3>
+            <p>De forma indirecta, sí. Un sitio rápido posiciona mejor en Google. Google con buena posición genera más
+              menciones externas y más autoridad percibida. Esa autoridad es parte de lo que la IA usa para decidir si
+              recomienda o no a un médico cuando un paciente pregunta por una especialidad. La guía de <a
+                href="ia-para-clinicas/">IA para clínicas</a> explica este mecanismo en detalle.</p>
+          </div>
+
+          <!-- AUTOR -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp"
+              alt="Yulia Monti, instrumentadora quirúrgica y fundadora de Cirujana Digital, especialista en infraestructura digital médica para LATAM y España"
+              width="80" height="80" loading="lazy" decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica con 15 años en pabellón. Fundadora de Cirujana Digital. Construye la
+                infraestructura digital que hace que los pacientes encuentren a su médico: sitios rápidos,
+                posicionamiento en Google Maps e IA, y sistemas de seguimiento de pacientes para consultorios privados
+                en LATAM y España.</p>
+            </div>
+          </div>
+
+          <!-- ARTÍCULOS RELACIONADOS -->
+          <div class="related-block">
+            <h3>Más sobre presencia digital médica</h3>
+            <ul class="related-list">
+              <li>
+                <span class="related-icon">🌐</span>
+                <a href="web-medica-que-convierte/">Página web médica que convierte: qué necesita y qué sobra</a>
+              </li>
+              <li>
+                <span class="related-icon">🔍</span>
+                <a href="seo-para-clinicas/">SEO para clínicas y consultorios: guía completa</a>
+              </li>
+              <li>
+                <span class="related-icon">🤖</span>
+                <a href="ia-para-clinicas/">IA para clínicas: cómo aparece un consultorio en ChatGPT y Gemini</a>
+              </li>
+              <li>
+                <span class="related-icon">📍</span>
+                <a href="blog/como-aparecer-en-chatgpt-medicos/">Cómo lograr que ChatGPT recomiende un consultorio
+                  médico</a>
+              </li>
+              <li>
+                <span class="related-icon">🏥</span>
+                <a href="blog/doctoralia-no-es-suficiente-para-chatgpt/">5 estrellas en Doctoralia y ChatGPT no sabe que
+                  ese médico existe</a>
+              </li>
+              <li>
+                <span class="related-icon">📋</span>
+                <a href="diagnostico/">Diagnóstico de presencia digital médica — $100 USD</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="article-cta-box">
+            <h3>Evaluar la visibilidad digital del consultorio</h3>
+            <p>Diagnóstico de velocidad, posicionamiento en Google y presencia en ChatGPT y Gemini. Informe PDF con
+              pasos concretos ordenados por impacto. $100 USD · entrega en 3 días hábiles.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Solicitar diagnóstico de presencia digital médica</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#como-mide-google">Cómo evalúa Google la velocidad</a></li>
+              <li><a href="#impacto-en-consultas">Impacto en la agenda</a></li>
+              <li><a href="#como-diagnosticar">Cómo revisar el sitio</a></li>
+              <li><a href="#que-causa-lentitud">Qué causa lentitud</a></li>
+              <li><a href="#umbrales">Cuándo está bien y cuándo actuar</a></li>
+              <li><a href="#conclusion">Velocidad y reputación digital</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico digital</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un problema de velocidad que
+                Google penaliza — y los pacientes abandonan antes de agendar.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Carga antes de 3 segundos?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿El consultorio aparece por especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                <div><strong>Presencia en la IA</strong><span>¿ChatGPT y Gemini reconocen el consultorio?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🏅</span>
+                <div><strong>Reputación online</strong><span>¿La presencia digital genera confianza?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Solicitar diagnóstico digital
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">Informe PDF · 3 días hábiles · $100 USD</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>

@@ -1,0 +1,1419 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO -->
+  <title>Turnos sin confirmar: cuánto pierde su consultorio cada mes y cómo evitarlo | Cirujana Digital</title>
+  <meta name="description"
+    content="Un consultorio con 20 turnos semanales puede perder hasta $1.440 USD al mes por ausencias sin aviso. Esto no es un problema de conducta del paciente. Es un problema de sistema." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
+  <meta property="og:title" content="Turnos sin confirmar: cuánto pierde su consultorio cada mes y cómo evitarlo" />
+  <meta property="og:description"
+    content="Un consultorio con 20 turnos semanales puede perder hasta $1.440 USD al mes por ausencias sin aviso. Esto no es un problema de conducta del paciente. Es un problema de sistema." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-turnos-sin-confirmar-consultorio.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="2026-06-13" />
+  <meta property="article:modified_time" content="2026-06-13" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Herramientas" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Turnos sin confirmar: cuánto pierde su consultorio cada mes" />
+  <meta name="twitter:description"
+    content="Entre $480 y $1.440 USD por mes en turnos que nadie ocupa. Cómo un sistema de confirmación automática por WhatsApp lo evita sin secretaria adicional." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-turnos-sin-confirmar-consultorio.webp" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+      --transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+    #site-footer {
+      height: 678px;
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* ── TYPOGRAPHY ── */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.15rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* ── METRICS ── */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .metric-card .metric-name {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cd-text-light);
+      margin-bottom: .5rem;
+    }
+
+    .metric-card .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: .4rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: .8rem;
+      color: var(--cd-text-light);
+      line-height: 1.4;
+    }
+
+    .metric-card.bad {
+      border-color: #e74c3c;
+    }
+
+    .metric-card.bad .metric-value {
+      color: #c0392b;
+    }
+
+    .metric-card.medium {
+      border-color: #f59e0b;
+    }
+
+    .metric-card.medium .metric-value {
+      color: #d97706;
+    }
+
+    .metric-card.good {
+      border-color: #00c853;
+    }
+
+    .metric-card.good .metric-value {
+      color: #00a844;
+    }
+
+    /* ── CALLOUTS ── */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, .07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* ── CALCULADORA ── */
+    .calc-box {
+      background: var(--light);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2rem 0;
+      border: 1px solid #e2e8f0;
+    }
+
+    .calc-box__title {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--cd-text-light);
+      margin-bottom: 1.25rem;
+    }
+
+    .calc-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .calc-field label {
+      display: block;
+      font-size: .82rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .35rem;
+    }
+
+    .calc-field input {
+      width: 100%;
+      padding: .6rem .85rem;
+      border: 1.5px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+    }
+
+    .calc-field input:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .calc-result {
+      background: #0d1b2a;
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+      margin-top: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .calc-result__label {
+      font-size: .82rem;
+      color: rgba(255, 255, 255, .55);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .calc-result__value {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #e74c3c;
+    }
+
+    .calc-result__note {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .4);
+      margin-top: .25rem;
+    }
+
+    /* ── FLOW DIAGRAM ── */
+    .flow-diagram {
+      margin: 2rem 0;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .flow-diagram__title {
+      background: var(--light);
+      padding: .75rem 1.25rem;
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--cd-text-light);
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    .flow-steps {
+      display: flex;
+      flex-direction: column;
+      padding: 1.25rem;
+      gap: 0;
+    }
+
+    .flow-step {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: .9rem 0;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+
+    .flow-step:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .flow-step__num {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .1rem;
+    }
+
+    .flow-step__body strong {
+      display: block;
+      font-size: .95rem;
+      color: var(--cd-text);
+      margin-bottom: .15rem;
+    }
+
+    .flow-step__body span {
+      font-size: .88rem;
+      color: var(--cd-text-light);
+      line-height: 1.5;
+    }
+
+    .flow-step__tag {
+      margin-left: auto;
+      flex-shrink: 0;
+      font-size: .72rem;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 50px;
+      align-self: center;
+    }
+
+    .flow-step__tag--auto {
+      background: rgba(0, 200, 83, .12);
+      color: #00a844;
+    }
+
+    .flow-step__tag--human {
+      background: rgba(245, 158, 11, .12);
+      color: #b45309;
+    }
+
+    /* ── DEMO BOX ── */
+    .demo-box {
+      border: 2px solid var(--secondary);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .demo-box__eyebrow {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--secondary);
+      margin-bottom: .75rem;
+    }
+
+    .demo-box h3 {
+      font-size: 1.25rem;
+      color: var(--cd-text);
+      margin-bottom: .5rem;
+    }
+
+    .demo-box p {
+      color: var(--cd-text-light);
+      font-size: .95rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .demo-form {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+      max-width: 380px;
+      margin: 0 auto;
+    }
+
+    .demo-form input {
+      padding: .75rem 1rem;
+      border: 1.5px solid #cbd5e0;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      transition: border-color .2s;
+      -webkit-appearance: none;
+      width: 100%;
+    }
+
+    .demo-form input:focus {
+      outline: none;
+      border-color: var(--secondary);
+    }
+
+    .demo-form .btn-demo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      padding: .875rem 1.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+
+    .demo-form .btn-demo:hover {
+      background: #024e6c;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .demo-nota {
+      font-size: .75rem;
+      color: var(--cd-text-light);
+      margin-top: .5rem;
+    }
+
+    /* ── AUTHOR BOX ── */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* ── CTA BOX ── */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    .btn-cta-ghost {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: transparent;
+      color: rgba(255, 255, 255, .8);
+      font-weight: 700;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, .25);
+      transition: var(--transition);
+    }
+
+    .btn-cta-ghost:hover {
+      background: rgba(255, 255, 255, .08);
+      color: #fff;
+      transform: translateY(-1px);
+    }
+
+    /* ── SIDEBAR ── */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+
+      .flow-step__tag {
+        display: none;
+      }
+
+      .calc-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <!-- SCHEMA ESTRUCTURADO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Especialista en infraestructura digital médica",
+          "url": "https://cirujanadigital.com/sobre-yulia/"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Turnos sin confirmar: cuánto pierde su consultorio cada mes" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/#article",
+          "headline": "Turnos sin confirmar: cuánto pierde su consultorio cada mes y cómo evitarlo",
+          "description": "Un consultorio con 20 turnos semanales puede perder hasta $1.440 USD al mes por ausencias sin aviso. Esto no es un problema de conducta del paciente. Es un problema de sistema.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://cirujanadigital.com/img/og-turnos-sin-confirmar-consultorio.webp",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "2026-06-13",
+          "dateModified":  "2026-06-13",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/",
+          "articleSection": "Herramientas",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuánto pierde un consultorio médico por no-shows al mes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Un consultorio con 20 turnos semanales y un índice de ausentismo del 20–30% pierde entre 4 y 6 consultas por semana. A un valor promedio de $40–60 USD por consulta, la pérdida mensual oscila entre $640 y $1.440 USD. Estos valores no aparecen en ningún reporte porque técnicamente son ingresos que nunca se concretaron."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué son los recordatorios automáticos de turnos por WhatsApp?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Es un sistema que envía un mensaje automático al paciente el día anterior al turno confirmado, solicitando confirmación. El paciente responde S para confirmar o N para cancelar. Si cancela, el médico recibe una alerta inmediata para reasignar el espacio. Si no responde, el sistema envía un segundo aviso 2 horas antes. Todo ocurre sin intervención de la secretaria."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Los recordatorios automáticos de turnos requieren cambiar el sistema de gestión del consultorio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. El sistema de recordatorios automáticos se integra sobre el flujo de turnos existente sin reemplazarlo. No requiere cambiar el software de gestión del consultorio ni migrar datos. La implementación toma menos de una semana y el médico no necesita hacer nada diferente de lo que hace hoy para agendar turnos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Cuánto cuesta un sistema anti no-shows para consultorios médicos?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "El costo mensual de un sistema de recordatorios automáticos es menor que el valor de un solo turno perdido. En Cirujana Digital, el servicio de automatización médica para reducción de no-shows forma parte de la infraestructura digital médica disponible para consultorios privados en LATAM y España. Para conocer el precio exacto según el tipo de consultorio, puede agendar una llamada en calendly.com/cirujanadigital/30min."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden" class="gtm-iframe"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main" tabindex="-1" style="min-height: 100vh;">
+
+    <!-- HERO -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a><span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">Turnos sin confirmar</span>
+        </nav>
+        <span class="article-category">Herramientas</span>
+        <h1>Turnos sin confirmar: cuánto pierde su consultorio cada mes y cómo evitarlo</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-06-13">13 de junio de 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>6 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- BODY -->
+    <div class="article-body">
+      <div class="article-layout">
+
+        <!-- CONTENIDO PRINCIPAL -->
+        <article class="article-content">
+
+          <p>Un consultorio con 20 turnos semanales pierde entre 3 y 6 por ausencias sin aviso. A $40–60 USD por
+            consulta, son entre $480 y $1.440 USD mensuales que no se recuperan. No porque el médico sea menos
+            competente. Porque nadie le preguntó al paciente a tiempo.</p>
+
+          <!-- SECCIÓN 1 -->
+          <h2 id="el-problema-en-numeros">El problema en números</h2>
+
+          <p>El ausentismo en consultorios médicos privados no es un fenómeno marginal. Es estructural. Los índices de
+            no-shows en especialidades ambulatorias oscilan entre el 20 y el 30% cuando no existe un sistema activo de
+            confirmación.</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card bad">
+              <p class="metric-name">No-shows sin sistema</p>
+              <p class="metric-value">20–30%</p>
+              <p class="metric-desc">De los turnos agendados en consultorios sin recordatorio activo</p>
+            </div>
+            <div class="metric-card bad">
+              <p class="metric-name">Pérdida mensual estimada</p>
+              <p class="metric-value">$960 USD</p>
+              <p class="metric-desc">Promedio para 20 turnos semanales a $60 USD</p>
+            </div>
+            <div class="metric-card good">
+              <p class="metric-name">Reducción con recordatorio</p>
+              <p class="metric-value">–40%</p>
+              <p class="metric-desc">Promedio de mejora con sistema de confirmación automática</p>
+            </div>
+          </div>
+
+          <p>Calcule su propia pérdida:</p>
+
+          <div class="calc-box">
+            <p class="calc-box__title">Calculadora de pérdida mensual por no-shows</p>
+            <div class="calc-row">
+              <div class="calc-field">
+                <label for="turnos-semana">Turnos por semana</label>
+                <input type="number" id="turnos-semana" value="20" min="1" max="200" inputmode="numeric" />
+              </div>
+              <div class="calc-field">
+                <label for="valor-consulta">Valor de consulta (USD)</label>
+                <input type="number" id="valor-consulta" value="60" min="1" max="1000" inputmode="numeric" />
+              </div>
+            </div>
+            <div class="calc-result" id="calc-result" aria-live="polite">
+              <div>
+                <p class="calc-result__label">Pérdida mensual estimada</p>
+                <p class="calc-result__note">Asume 25% de ausentismo · 4 semanas</p>
+              </div>
+              <p class="calc-result__value" id="calc-valor">$1.200 USD</p>
+            </div>
+          </div>
+
+          <!-- SECCIÓN 2 -->
+          <h2 id="por-que-pasa">Por qué pasa — sin culpar al paciente</h2>
+
+          <p>El paciente no falta por mala voluntad. Agendó el turno con semanas de anticipación. La vida siguió.
+            Olvidó.</p>
+
+          <p>Entre la fecha de reserva y la fecha del turno puede pasar de todo: cambios de trabajo, viajes, problemas
+            familiares, o simplemente que el día en el calendario pasó desapercibido. Sin un recordatorio activo en el
+            momento correcto, la probabilidad de ausencia sube de forma sostenida.</p>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ El problema de fondo</span>
+            <p>El no-show no es un problema de conducta. Es un problema de sistema. El médico agenda el turno, el
+              paciente lo acepta, y después nadie vuelve a comunicarse hasta el día de la consulta. En ese silencio se
+              acumula el ausentismo.</p>
+          </div>
+
+          <p>La intervención correcta no es llamar a cada paciente el día anterior. Eso consume tiempo de secretaria que
+            podría usarse en otra cosa. La intervención correcta es automatizar ese contacto para que ocurra siempre,
+            sin depender de que alguien lo recuerde.</p>
+
+          <!-- SECCIÓN 3 -->
+          <h2 id="el-costo-real">El costo real — más allá del dinero</h2>
+
+          <p>El turno vacío no es solo ingreso perdido. Es un conjunto de costos que el consultorio absorbe sin
+            registrarlos:</p>
+
+          <ul>
+            <li><strong>Tiempo del médico que no se recupera.</strong> El profesional estuvo disponible. El tiempo es el
+              único recurso que no se repone.</li>
+            <li><strong>Un espacio que otro paciente podría haber ocupado.</strong> Hay pacientes esperando turno. El
+              que faltó ocupó ese espacio semanas atrás y lo dejó vacío sin aviso.</li>
+            <li><strong>Carga administrativa invisible.</strong> La secretaria detecta la ausencia al inicio del día,
+              reorganiza la agenda, anota el evento. Eso tiene un costo operativo que nadie mide.</li>
+            <li><strong>Señal de desorganización.</strong> Un consultorio con alta tasa de no-shows no tiene un problema
+              de pacientes. Tiene un problema de infraestructura.</li>
+          </ul>
+
+          <!-- SECCIÓN 4 -->
+          <h2 id="la-solucion">La solución — sin tecnicismos</h2>
+
+          <p>Un sistema de confirmación automática por WhatsApp funciona así: el paciente recibe un mensaje el día
+            anterior a su turno. El mensaje pregunta si confirma o cancela. El paciente responde <strong>S</strong> o
+            <strong>N</strong>. El sistema actúa solo.
+          </p>
+
+          <div class="flow-diagram">
+            <p class="flow-diagram__title">Flujo de recordatorios automáticos de turnos médicos</p>
+            <div class="flow-steps">
+              <div class="flow-step">
+                <span class="flow-step__num">1</span>
+                <div class="flow-step__body">
+                  <strong>El turno queda agendado en el sistema</strong>
+                  <span>Sin cambios en el proceso actual de reserva.</span>
+                </div>
+                <span class="flow-step__tag flow-step__tag--human">Como hoy</span>
+              </div>
+              <div class="flow-step">
+                <span class="flow-step__num">2</span>
+                <div class="flow-step__body">
+                  <strong>Recordatorio automático 24 h antes</strong>
+                  <span>El paciente recibe un WhatsApp con fecha, hora y opción de confirmar o cancelar.</span>
+                </div>
+                <span class="flow-step__tag flow-step__tag--auto">Automático</span>
+              </div>
+              <div class="flow-step">
+                <span class="flow-step__num">3</span>
+                <div class="flow-step__body">
+                  <strong>El paciente responde S o N</strong>
+                  <span>Confirmación o cancelación en segundos, sin llamadas, sin esperas.</span>
+                </div>
+                <span class="flow-step__tag flow-step__tag--auto">Automático</span>
+              </div>
+              <div class="flow-step">
+                <span class="flow-step__num">4</span>
+                <div class="flow-step__body">
+                  <strong>Si cancela: alerta inmediata al consultorio</strong>
+                  <span>El médico o secretaria recibe notificación y puede reasignar el espacio.</span>
+                </div>
+                <span class="flow-step__tag flow-step__tag--auto">Automático</span>
+              </div>
+              <div class="flow-step">
+                <span class="flow-step__num">5</span>
+                <div class="flow-step__body">
+                  <strong>Si no responde: segundo aviso 2 h antes</strong>
+                  <span>Una segunda oportunidad de confirmación para los pacientes que no vieron el primer
+                    mensaje.</span>
+                </div>
+                <span class="flow-step__tag flow-step__tag--auto">Automático</span>
+              </div>
+            </div>
+          </div>
+
+          <p>Sin secretaria adicional. Sin llamadas manuales. Sin seguimiento uno a uno. El sistema corre solo y el
+            consultorio solo interviene cuando hay una cancelación real que gestionar.</p>
+
+          <!-- SECCIÓN 5 -->
+          <h2 id="demo-en-vivo">Pruébelo antes de decidir</h2>
+
+          <p>El sistema de recordatorios automáticos para reducir no-shows en consultorios médicos forma parte del
+            servicio de automatización médica de Cirujana Digital. Antes de cualquier decisión, puede experimentar el
+            flujo completo: ingrese su nombre y número, y recibe el recordatorio en su propio celular en segundos.</p>
+
+          <div class="demo-box">
+            <p class="demo-box__eyebrow">Demo en vivo</p>
+            <h3>Reciba el recordatorio en su celular ahora</h3>
+            <p>Ingrese sus datos y vea exactamente lo que recibirán sus pacientes.</p>
+            <div class="demo-form">
+              <input type="text" placeholder="Su nombre" aria-label="Su nombre" />
+              <input type="tel" placeholder="Número de WhatsApp (ej: +54 9 11 1234-5678)"
+                aria-label="Número de WhatsApp" inputmode="tel" />
+              <a href="servicios/sistema-anti-no-shows-clinicas/" class="btn-demo">
+                Recibir demo en mi celular
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+            </div>
+            <p class="demo-nota">Sin registro. Sin compromiso. Solo el flujo real.</p>
+          </div>
+
+          <!-- SECCIÓN 6 -->
+          <h2 id="implementacion">Lo que implica implementarlo</h2>
+
+          <p>Tres puntos que los médicos preguntan siempre:</p>
+
+          <ul>
+            <li><strong>No requiere cambiar el sistema de turnos actual.</strong> El sistema de recordatorios se integra
+              sobre el flujo existente. El médico sigue agendando como hoy.</li>
+            <li><strong>La implementación toma menos de una semana.</strong> Configuración, pruebas y puesta en marcha
+              en menos de 5 días hábiles.</li>
+            <li><strong>El costo mensual es menor que el valor de un solo turno perdido.</strong> La ecuación es
+              directa: si el sistema evita una sola ausencia al mes, ya se paga solo.</li>
+          </ul>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Dato clave</span>
+            <p>Los recordatorios automáticos de turnos médicos por WhatsApp reducen el ausentismo entre un 30 y un 40%
+              en los primeros 30 días de implementación. En un consultorio de 20 turnos semanales, eso equivale a
+              recuperar entre 6 y 10 consultas adicionales por mes.</p>
+          </div>
+
+          <!-- FAQ -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <h3>¿Funciona si no tengo secretaria?</h3>
+          <p>Es donde más impacto tiene. El médico que gestiona solo su agenda no puede llamar a cada paciente el día
+            anterior. El sistema lo hace en su lugar, sin intervención.</p>
+
+          <h3>¿Qué pasa si el paciente cancela por WhatsApp?</h3>
+          <p>El consultorio recibe una alerta inmediata. Puede reasignar ese espacio a otro paciente o simplemente
+            reorganizar el día con tiempo suficiente. Eso es exactamente lo que no ocurre con el no-show tradicional.
+          </p>
+
+          <h3>¿Se puede adaptar el mensaje al estilo del consultorio?</h3>
+          <p>Sí. El texto, el tono y el contenido del recordatorio se configuran según la especialidad y el tipo de
+            pacientes de cada consultorio.</p>
+
+          <h3>¿Aplica también para confirmación de recordatorios automáticos de turnos médicos por otras vías?</h3>
+          <p>El sistema funciona sobre WhatsApp, que es el canal de mayor apertura y respuesta en LATAM y España. La
+            integración con otros canales se evalúa caso por caso.</p>
+
+          <!-- AUTHOR -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp"
+              alt="Yulia Monti — Fundadora de Cirujana Digital, especialista en infraestructura digital médica para captación de pacientes en LATAM y España"
+              width="80" height="80" loading="lazy" decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y
+                España, fundadora de Cirujana Digital. 15 años en instrumentación quirúrgica. Construye los sistemas que
+                hacen que un médico aparezca, genere confianza y convierta visitas en turnos.</p>
+            </div>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="article-cta-box">
+            <h3>¿Cuántos turnos perdió este mes?</h3>
+            <p>El sistema de recordatorios automáticos de Cirujana Digital se implementa en menos de una semana. Sin
+              cambios en su agenda actual.</p>
+            <div class="cta-buttons">
+              <a href="servicios/sistema-anti-no-shows-clinicas/" class="btn-cta-white">
+                <span>Ver el sistema en vivo</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="https://calendly.com/cirujanadigital/30min" class="btn-cta-ghost" target="_blank"
+                rel="noopener noreferrer">
+                Agendar llamada de 30 min
+              </a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- SIDEBAR -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#el-problema-en-numeros">El problema en números</a></li>
+              <li><a href="#por-que-pasa">Por qué pasa</a></li>
+              <li><a href="#el-costo-real">El costo real</a></li>
+              <li><a href="#la-solucion">La solución</a></li>
+              <li><a href="#demo-en-vivo">Pruébelo antes de decidir</a></li>
+              <li><a href="#implementacion">Lo que implica implementarlo</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que espanta
+                pacientes.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Cargás antes de 3 seg?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Te encuentran por especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">💬</span>
+                <div><strong>Conversión</strong><span>¿Los visitantes te contactan?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🏅</span>
+                <div><strong>Credibilidad</strong><span>¿Tu sitio genera confianza?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Hacer mi diagnóstico gratis
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+
+      </div><!-- /article-layout -->
+    </div><!-- /article-body -->
+  </main>
+  <div id="site-footer"></div>
+
+  <script>
+    // Calculadora de pérdida mensual
+    (function () {
+      var inputTurnos = document.getElementById('turnos-semana');
+      var inputValor = document.getElementById('valor-consulta');
+      var display = document.getElementById('calc-valor');
+      if (!inputTurnos || !inputValor || !display) return;
+
+      function calcular() {
+        var turnos = parseFloat(inputTurnos.value) || 0;
+        var valor = parseFloat(inputValor.value) || 0;
+        var perdida = turnos * 4 * 0.25 * valor;
+        display.textContent = '$' + perdida.toLocaleString('es-AR', { minimumFractionDigits: 0, maximumFractionDigits: 0 }) + ' USD';
+      }
+
+      inputTurnos.addEventListener('input', calcular);
+      inputValor.addEventListener('input', calcular);
+      calcular();
+    })();
+  </script>
+</body>
+
+</html>

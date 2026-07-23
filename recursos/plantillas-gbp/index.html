@@ -1,0 +1,1446 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+
+    // Retrasar GTM hasta primera interacción o 3.5s de idle
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>5 Plantillas para tu Perfil de Google — Médicos | Cirujana Digital</title>
+  <meta name="description"
+    content="Cinco textos listos para copiar en tu Google Business Profile: descripción, servicios y respuestas a reseñas. Gratis, sin registro. Para médicos en LATAM y España." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cirujanadigital.com/recursos/plantillas-gbp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cirujanadigital.com/recursos/plantillas-gbp/" />
+  <meta property="og:title" content="5 Plantillas para tu Google Business Profile — Médicos" />
+  <meta property="og:description"
+    content="Textos listos para copiar en tu GBP: descripción, servicios y respuestas a reseñas. Sin registro. Para médicos." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-image.png" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[
+    {"@type":"BreadcrumbList","itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Cirujana Digital","item":"https://cirujanadigital.com/"},
+      {"@type":"ListItem","position":2,"name":"Recursos","item":"https://cirujanadigital.com/recursos/"},
+      {"@type":"ListItem","position":3,"name":"Plantillas GBP para Médicos","item":"https://cirujanadigital.com/recursos/plantillas-gbp/"}
+    ]},
+    {"@type":"WebPage","name":"5 Plantillas para tu Perfil de Google — Médicos","url":"https://cirujanadigital.com/recursos/plantillas-gbp/","description":"Plantillas de texto editables para Google Business Profile de médicos. Sin registro.","author":{"@type":"Person","name":"Yulia Monti","url":"https://cirujanadigital.com/sobre-yulia/"},"publisher":{"@type":"Organization","name":"Cirujana Digital","url":"https://cirujanadigital.com"}},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"¿Por qué necesito texto específico en mi Google Business Profile?","acceptedAnswer":{"@type":"Answer","text":"Google usa el texto del GBP para decidir a quién mostrar cuando un paciente busca tu especialidad. Un perfil completo tiene hasta 7 veces más probabilidad de aparecer en el panel de 3 resultados del mapa local."}},
+      {"@type":"Question","name":"¿Cuánto tarda en verse el efecto de actualizar el GBP?","acceptedAnswer":{"@type":"Answer","text":"Google indexa los cambios en 24-72 horas. El impacto en visibilidad local puede verse en 2 a 4 semanas según el nivel de competencia en tu ciudad."}}
+    ]}
+  ]}
+  </script>
+
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --brand: #00a7a9;
+      --brand-dark: #03658c;
+      --text: #2d3748;
+      --text-light: #64748b;
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --radius: 10px;
+      --radius-lg: 18px;
+      --shadow: 0 2px 16px rgba(3, 101, 140, .09);
+      --shadow-lg: 0 8px 40px rgba(3, 101, 140, .16);
+      --grad-brand: linear-gradient(135deg, #03658c, #00a7a9);
+      --grad-dark: linear-gradient(135deg, #0d1b2a, #03658c);
+      --grad-text: linear-gradient(135deg, #00a7a9, #7fdbff);
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem
+    }
+
+    .wrap-narrow {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 1.5rem
+    }
+
+    /* HERO */
+    .hero {
+      background: var(--grad-dark);
+      padding: 4rem 0 3.5rem;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(0, 167, 169, .06) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 167, 169, .06) 1px, transparent 1px);
+      background-size: 44px 44px
+    }
+
+    .hero-glow {
+      position: absolute;
+      width: 480px;
+      height: 480px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 167, 169, .17) 0%, transparent 68%);
+      top: -120px;
+      right: -80px;
+      pointer-events: none
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .48);
+      margin-bottom: 1.5rem
+    }
+
+    .breadcrumb a {
+      color: inherit;
+      text-decoration: none
+    }
+
+    .breadcrumb a:hover {
+      color: var(--brand)
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      background: rgba(0, 167, 169, .15);
+      border: 1px solid rgba(0, 167, 169, .3);
+      color: var(--brand);
+      padding: .28rem .72rem;
+      border-radius: 100px;
+      margin-bottom: 1.2rem
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      animation: pulse 2s infinite
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1)
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.3)
+      }
+    }
+
+    .hero-h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.9rem, 4.5vw, 2.8rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: .9rem
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, .72);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 1.5rem
+    }
+
+    .hero-lead strong {
+      color: #fff
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .65rem;
+      margin-bottom: 1.75rem
+    }
+
+    .chip {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .12);
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .68)
+    }
+
+    .chip-check {
+      color: var(--brand)
+    }
+
+    /* ÍNDICE RÁPIDO */
+    .index-sec {
+      background: var(--surface);
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border)
+    }
+
+    .index-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: .75rem;
+      margin-top: 1.25rem
+    }
+
+    .index-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: .9rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      text-decoration: none;
+      color: var(--text);
+      transition: border-color .15s, transform .15s, box-shadow .15s
+    }
+
+    .index-card:hover {
+      border-color: var(--brand);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow)
+    }
+
+    .index-num {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--grad-brand);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .index-label {
+      font-size: .85rem;
+      font-weight: 600;
+      flex: 1
+    }
+
+    .index-tag {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      color: var(--brand);
+      background: rgba(0, 167, 169, .1);
+      padding: .18rem .5rem;
+      border-radius: 100px;
+      white-space: nowrap
+    }
+
+    .index-arrow {
+      color: var(--text-light);
+      font-size: .9rem;
+      flex-shrink: 0
+    }
+
+    /* SECCIÓN EYEBROW */
+    .sec-eyebrow {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: .6rem
+    }
+
+    .sec-h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: .5rem
+    }
+
+    .sec-sub {
+      font-size: .9rem;
+      color: var(--text-light)
+    }
+
+    /* PLANTILLAS */
+    .plantillas-sec {
+      padding: 3.5rem 0 4.5rem;
+      background: #fff
+    }
+
+    .plantillas-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem
+    }
+
+    .pl-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .pl-card:target {
+      outline: 2px solid var(--brand);
+      outline-offset: 3px
+    }
+
+    .pl-head {
+      padding: 1.1rem 1.5rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      background: var(--surface)
+    }
+
+    .pl-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--grad-brand);
+      color: #fff;
+      font-size: .8rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0
+    }
+
+    .pl-meta {
+      flex: 1
+    }
+
+    .pl-title {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--text)
+    }
+
+    .pl-subtitle {
+      font-size: .78rem;
+      color: var(--text-light);
+      margin-top: .1rem
+    }
+
+    .pl-badge {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .22rem .6rem;
+      border-radius: 100px;
+      background: rgba(0, 167, 169, .1);
+      color: var(--brand);
+      white-space: nowrap;
+      flex-shrink: 0
+    }
+
+    .pl-body {
+      padding: 1.5rem
+    }
+
+    .pl-why {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.6;
+      margin-bottom: 1rem
+    }
+
+    .pl-why strong {
+      color: var(--text)
+    }
+
+    .pl-tabs {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem
+    }
+
+    .pl-tab {
+      padding: .3rem .8rem;
+      border-radius: 100px;
+      font-size: .78rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text-light);
+      cursor: pointer;
+      transition: all .15s;
+      font-family: inherit
+    }
+
+    .pl-tab.active {
+      background: var(--brand-dark);
+      color: #fff;
+      border-color: var(--brand-dark)
+    }
+
+    .pl-wrap {
+      position: relative
+    }
+
+    .pl-text {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 1.1rem 3.5rem 1.1rem 1.25rem;
+      font-size: .88rem;
+      line-height: 1.72;
+      color: var(--text);
+      white-space: pre-wrap;
+      font-family: system-ui, -apple-system, sans-serif;
+      min-height: 72px
+    }
+
+    .btn-copy {
+      position: absolute;
+      top: .65rem;
+      right: .65rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: .35rem .6rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--text-light);
+      transition: all .15s;
+      font-family: inherit
+    }
+
+    .btn-copy:hover {
+      border-color: var(--brand);
+      color: var(--brand)
+    }
+
+    .btn-copy.copied {
+      background: var(--brand);
+      border-color: var(--brand);
+      color: #fff
+    }
+
+    .pl-chars {
+      margin-top: .55rem;
+      font-size: .74rem;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      gap: .35rem
+    }
+
+    .pl-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0
+    }
+
+    .pl-dot.ok {
+      background: #22c55e
+    }
+
+    .pl-dot.warn {
+      background: #f59e0b
+    }
+
+    .pl-note {
+      margin-top: .85rem;
+      display: flex;
+      gap: .6rem;
+      align-items: flex-start;
+      font-size: .8rem;
+      color: var(--text-light);
+      line-height: 1.55
+    }
+
+    .pl-note-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 1px
+    }
+
+    .pl-note strong {
+      color: var(--text)
+    }
+
+    /* BOTÓN PDF */
+    .dl-bar {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin-bottom: 2rem
+    }
+
+    .dl-msg {
+      font-size: .85rem;
+      color: var(--text-light)
+    }
+
+    .dl-msg strong {
+      color: var(--text)
+    }
+
+    .btn-dl {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .6rem 1.2rem;
+      background: var(--grad-brand);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: .88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity .18s, box-shadow .18s
+    }
+
+    .btn-dl:hover {
+      opacity: .9;
+      box-shadow: 0 3px 14px rgba(0, 167, 169, .35)
+    }
+
+    /* FAQ */
+    .faq-sec {
+      padding: 3.5rem 0;
+      background: var(--surface);
+      border-top: 1px solid var(--border)
+    }
+
+    .faq-h {
+      font-family: Georgia, serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.5rem
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem
+    }
+
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff
+    }
+
+    .faq-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .95rem 1.25rem;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      gap: .75rem
+    }
+
+    .faq-chev {
+      flex-shrink: 0;
+      color: var(--text-light);
+      transition: transform .2s
+    }
+
+    .faq-btn[aria-expanded="true"] .faq-chev {
+      transform: rotate(180deg)
+    }
+
+    .faq-body {
+      display: none;
+      padding: 0 1.25rem .95rem;
+      font-size: .86rem;
+      color: var(--text-light);
+      line-height: 1.65
+    }
+
+    .faq-btn[aria-expanded="true"]+.faq-body {
+      display: block
+    }
+
+    /* CTA */
+    .cta-sec {
+      background: var(--grad-dark);
+      padding: 3.5rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 167, 169, .14) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none
+    }
+
+    .cta-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .cta-h {
+      font-family: Georgia, serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: .75rem
+    }
+
+    .cta-h em {
+      font-style: normal;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text
+    }
+
+    .cta-sub {
+      font-size: .95rem;
+      color: rgba(255, 255, 255, .62);
+      margin-bottom: 1.75rem
+    }
+
+    .cta-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: all .18s;
+      font-family: inherit
+    }
+
+    .btn-primary {
+      background: var(--grad-brand);
+      color: #fff
+    }
+
+    .btn-primary:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 167, 169, .35)
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: rgba(255, 255, 255, .75);
+      border: 1px solid rgba(255, 255, 255, .25)
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brand);
+      color: var(--brand)
+    }
+
+    .cta-trust {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.25rem
+    }
+
+    .trust-item {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .44);
+      display: flex;
+      align-items: center;
+      gap: .3rem
+    }
+
+    .trust-check {
+      color: var(--brand)
+    }
+
+    @media(max-width:600px) {
+      .hero {
+        padding: 3rem 0 2.5rem
+      }
+
+      .dl-bar {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .pl-head {
+        flex-wrap: wrap
+      }
+    }
+
+    /* PRINT */
+    @media print {
+      * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact
+      }
+
+      #site-nav,
+      #site-footer,
+      .hero,
+      .index-sec,
+      .dl-bar,
+      .faq-sec,
+      .cta-sec,
+      .btn-copy,
+      .pl-tabs {
+        display: none !important
+      }
+
+      body {
+        font-family: Georgia, 'Times New Roman', serif;
+        font-size: 10pt;
+        color: #1a202c
+      }
+
+      .plantillas-sec {
+        padding: 0
+      }
+
+      .wrap {
+        max-width: 100%;
+        padding: 0
+      }
+
+      .print-cover {
+        page-break-after: always;
+        text-align: center;
+        padding: 4cm 2cm;
+        background: #0d1b2a;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center
+      }
+
+      .print-logo {
+        font-size: 10pt;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        color: #00a7a9;
+        font-family: system-ui, sans-serif;
+        font-weight: 700;
+        margin-bottom: 1.5cm
+      }
+
+      .print-h {
+        font-size: 28pt;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.15;
+        margin-bottom: .75cm
+      }
+
+      .print-sub {
+        font-size: 11pt;
+        color: rgba(255, 255, 255, .62);
+        max-width: 14cm;
+        line-height: 1.6;
+        font-family: system-ui, sans-serif;
+        margin-bottom: .75cm
+      }
+
+      .print-url {
+        font-size: 9pt;
+        color: #00a7a9;
+        font-family: system-ui, sans-serif
+      }
+
+      .pl-card {
+        page-break-inside: avoid;
+        margin-bottom: 1cm;
+        border: 1px solid #e2e8f0;
+        border-radius: 5pt
+      }
+
+      .pl-head {
+        background: #03658c;
+        padding: .4cm .6cm;
+        border-bottom: none
+      }
+
+      .pl-num {
+        background: #00a7a9
+      }
+
+      .pl-title,
+      .pl-subtitle {
+        color: #fff
+      }
+
+      .pl-badge {
+        background: rgba(255, 255, 255, .15);
+        color: #7fdbff
+      }
+
+      .pl-body {
+        padding: .5cm .6cm
+      }
+
+      .pl-why {
+        font-size: 8.5pt;
+        font-family: system-ui, sans-serif;
+        margin-bottom: .4cm
+      }
+
+      .pl-text {
+        background: #f8fafc;
+        padding: .4cm;
+        font-size: 9.5pt;
+        white-space: pre-wrap;
+        font-family: system-ui, sans-serif;
+        border-radius: 4pt
+      }
+
+      .pl-chars,
+      .pl-note {
+        font-size: 8pt;
+        font-family: system-ui, sans-serif;
+        margin-top: .3cm
+      }
+
+      .pl-note {
+        background: #fffbeb;
+        padding: .25cm .4cm;
+        border-left: 3pt solid #f59e0b
+      }
+
+      .print-footer {
+        text-align: center;
+        padding: .75cm;
+        font-family: system-ui, sans-serif;
+        font-size: 8.5pt;
+        color: #64748b;
+        border-top: 1px solid #e2e8f0;
+        margin-top: .75cm
+      }
+
+      .print-footer strong {
+        color: #03658c
+      }
+    }
+
+    @media (max-width: 480px) {
+      .index-card {
+        flex-direction: column;
+        gap: .4rem;
+      }
+
+      .index-arrow {
+        display: none;
+      }
+
+      .pl-text {
+        font-size: .82rem;
+        padding: .9rem 2.8rem .9rem 1rem;
+      }
+
+      .btn-copy {
+        top: .5rem;
+        right: .5rem;
+        padding: .28rem .5rem;
+        font-size: .68rem;
+      }
+
+      .pl-head {
+        padding: .9rem 1rem;
+      }
+
+      .pl-body {
+        padding: 1.1rem 1rem;
+      }
+
+      .cta-btns .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display: none; visibility: hidden" class="gtm-iframe"></iframe>
+  </noscript>
+
+  <div id="site-nav"></div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="page-h1">
+      <div class="hero-grid" aria-hidden="true"></div>
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="wrap hero-inner">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="">cirujanadigital.com</a> <span aria-hidden="true">›</span>
+          <a href="recursos/">recursos</a> <span aria-hidden="true">›</span>
+          <span aria-current="page">plantillas-gbp</span>
+        </nav>
+        <div class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Recurso gratuito · Sin registro</div>
+        <h1 class="hero-h1" id="page-h1">5 textos listos para<br><em>tu perfil de Google.</em></h1>
+        <p class="hero-lead">La mayoría de los médicos tiene el GBP reclamado pero vacío. Google lee ese vacío y elige
+          mostrar al competidor que sí completó el perfil. Estos cinco textos cierran esa brecha en <strong>menos de 20
+            minutos.</strong></p>
+        <div class="hero-chips">
+          <div class="chip"><span class="chip-check" aria-hidden="true">✓</span> Sin formulario. Sin email. Sin
+            registro.</div>
+          <div class="chip"><span class="chip-check" aria-hidden="true">✓</span> Campos entre [corchetes] para
+            personalizar</div>
+          <div class="chip"><span class="chip-check" aria-hidden="true">✓</span> Copia en pantalla o descargá el PDF
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÍNDICE RÁPIDO -->
+    <section class="index-sec" aria-labelledby="index-h2">
+      <div class="wrap">
+        <h2 id="index-h2" class="sec-h2" style="margin-bottom:0">Las 5 plantillas. <em
+            style="font-style:normal;color:var(--brand-dark)">Ir directo a la que necesitás.</em></h2>
+        <p class="sec-sub" style="margin:.4rem 0 0">Clic en la que necesitás. O bajá y leelas todas.</p>
+        <div class="index-grid" role="list">
+          <a href="#pl1" class="index-card" role="listitem">
+            <div class="index-num" aria-hidden="true">1</div>
+            <div class="index-label">Descripción del consultorio</div>
+            <div class="index-tag">750 car.</div>
+            <div class="index-arrow" aria-hidden="true">↓</div>
+          </a>
+          <a href="#pl2" class="index-card" role="listitem">
+            <div class="index-num" aria-hidden="true">2</div>
+            <div class="index-label">Descripción corta / tagline</div>
+            <div class="index-tag">Mobile</div>
+            <div class="index-arrow" aria-hidden="true">↓</div>
+          </a>
+          <a href="#pl3" class="index-card" role="listitem">
+            <div class="index-num" aria-hidden="true">3</div>
+            <div class="index-label">Listado de servicios</div>
+            <div class="index-tag">SEO local</div>
+            <div class="index-arrow" aria-hidden="true">↓</div>
+          </a>
+          <a href="#pl4" class="index-card" role="listitem">
+            <div class="index-num" aria-hidden="true">4</div>
+            <div class="index-label">Respuesta reseña positiva</div>
+            <div class="index-tag">Reputación</div>
+            <div class="index-arrow" aria-hidden="true">↓</div>
+          </a>
+          <a href="#pl5" class="index-card" role="listitem">
+            <div class="index-num" aria-hidden="true">5</div>
+            <div class="index-label">Respuesta reseña negativa</div>
+            <div class="index-tag">Protocolo</div>
+            <div class="index-arrow" aria-hidden="true">↓</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANTILLAS -->
+    <section class="plantillas-sec" aria-labelledby="pl-h2">
+      <div class="wrap">
+
+        <!-- Portada para print (invisible en pantalla) -->
+        <div class="print-cover" aria-hidden="true">
+          <div class="print-logo">Cirujana Digital · cirujanadigital.com</div>
+          <div class="print-h">5 Plantillas para tu<br>Perfil de Google</div>
+          <div class="print-sub">Textos listos para copiar en tu GBP. Reemplazá los [corchetes] con tus datos.</div>
+          <div class="print-url">cirujanadigital.com/recursos/plantillas-gbp/</div>
+        </div>
+
+        <div style="margin-bottom:2rem">
+          <span class="sec-eyebrow">Pack completo · Sin registro</span>
+          <h2 class="sec-h2" id="pl-h2">Copiá, personalizá, pegá.</h2>
+          <p class="sec-sub">Los textos entre <code
+              style="background:rgba(0,167,169,.1);color:#03658c;padding:1px 5px;border-radius:4px;font-size:.85em">[corchetes]</code>
+            los reemplazás con tus datos. El resto queda tal cual.</p>
+        </div>
+
+        <div class="dl-bar" aria-label="Descargar PDF">
+          <div class="dl-msg"><strong>¿Querés guardarlas?</strong> Descargá el PDF con las 5 plantillas para usarlas
+            cuando quieras.</div>
+          <button class="btn-dl" id="btn-dl" aria-label="Descargar PDF con las 5 plantillas">
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M8 3v7M5 7l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M2 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+            </svg>
+            Descargar PDF gratis
+          </button>
+        </div>
+
+        <div class="plantillas-list" aria-label="Plantillas de texto para Google Business Profile">
+
+          <!-- 1 -->
+          <article class="pl-card" id="pl1" aria-labelledby="pl1-h">
+            <div class="pl-head">
+              <div class="pl-num" aria-hidden="true">1</div>
+              <div class="pl-meta">
+                <div class="pl-title" id="pl1-h">Descripción del consultorio</div>
+                <div class="pl-subtitle">Campo "Descripción" del GBP · hasta 750 caracteres</div>
+              </div>
+              <div class="pl-badge">Principal</div>
+            </div>
+            <div class="pl-body">
+              <p class="pl-why"><strong>Para qué sirve:</strong> Es el texto más importante del GBP. Google lo usa para
+                decidir si mostrarte cuando un paciente busca tu especialidad. Aparece debajo de tu nombre en Maps.</p>
+              <div class="pl-tabs" role="tablist" aria-label="Variantes plantilla 1">
+                <button class="pl-tab active" role="tab" aria-selected="true" data-var="1" data-key="a">Variante A —
+                  Trayectoria</button>
+                <button class="pl-tab" role="tab" aria-selected="false" data-var="1" data-key="b">Variante B — Paciente
+                  primero</button>
+              </div>
+              <div class="pl-wrap">
+                <pre class="pl-text" id="txt-1">Especialista en [ESPECIALIDAD] con más de [X] años de experiencia en [CIUDAD]. Atiendo en consultorio propio ubicado en [BARRIO O DIRECCIÓN]. Mi enfoque está centrado en el diagnóstico preciso y el acompañamiento personalizado de cada paciente.
+
+Formado/a en [UNIVERSIDAD O INSTITUCIÓN]. [MENCIONAR SUBESPECIALIDAD O ÁREA DE ENFOQUE SI CORRESPONDE].
+
+Turnos disponibles de lunes a viernes. También ofrezco consultas de seguimiento online para pacientes que ya han pasado por consultorio.
+
+Para coordinar un turno: llamar al [TELÉFONO] o escribir por WhatsApp.</pre>
+                <button class="btn-copy" data-target="txt-1" aria-label="Copiar plantilla 1"><svg width="13" height="13"
+                    viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+                      stroke="currentColor" stroke-width="1.3" />
+                  </svg>Copiar</button>
+              </div>
+              <div class="pl-chars">
+                <div class="pl-dot ok" aria-hidden="true"></div>~480 caracteres — dentro del límite de 750
+              </div>
+              <div class="pl-note"><span class="pl-note-icon" aria-hidden="true">💡</span><span><strong>Clave:</strong>
+                  Incluí el barrio, no solo la ciudad. Google Maps prioriza la relevancia geográfica específica.</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2 -->
+          <article class="pl-card" id="pl2" aria-labelledby="pl2-h">
+            <div class="pl-head">
+              <div class="pl-num" aria-hidden="true">2</div>
+              <div class="pl-meta">
+                <div class="pl-title" id="pl2-h">Descripción corta / tagline</div>
+                <div class="pl-subtitle">Búsquedas móviles · hasta 250 caracteres</div>
+              </div>
+              <div class="pl-badge">Mobile</div>
+            </div>
+            <div class="pl-body">
+              <p class="pl-why"><strong>Para qué sirve:</strong> En mobile, Google muestra solo los primeros 250
+                caracteres. Este texto tiene que funcionar solo, sin que el paciente toque "más".</p>
+              <div class="pl-tabs" role="tablist" aria-label="Variantes plantilla 2">
+                <button class="pl-tab active" role="tab" aria-selected="true" data-var="2" data-key="a">Directa</button>
+                <button class="pl-tab" role="tab" aria-selected="false" data-var="2" data-key="b">Con
+                  diferencial</button>
+                <button class="pl-tab" role="tab" aria-selected="false" data-var="2" data-key="c">Con urgencia</button>
+              </div>
+              <div class="pl-wrap">
+                <pre class="pl-text"
+                  id="txt-2">[ESPECIALIDAD] en [CIUDAD]. Consultorio en [BARRIO]. Turnos de lunes a viernes — también online. [TELÉFONO O LINK DE TURNO].</pre>
+                <button class="btn-copy" data-target="txt-2" aria-label="Copiar plantilla 2"><svg width="13" height="13"
+                    viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+                      stroke="currentColor" stroke-width="1.3" />
+                  </svg>Copiar</button>
+              </div>
+              <div class="pl-chars">
+                <div class="pl-dot ok" aria-hidden="true"></div>~110 caracteres — optimizado para mobile
+              </div>
+              <div class="pl-note"><span class="pl-note-icon"
+                  aria-hidden="true">💡</span><span><strong>Consejo:</strong> No repitas las mismas palabras de la
+                  descripción larga. Google penaliza la redundancia interna.</span></div>
+            </div>
+          </article>
+
+          <!-- 3 -->
+          <article class="pl-card" id="pl3" aria-labelledby="pl3-h">
+            <div class="pl-head">
+              <div class="pl-num" aria-hidden="true">3</div>
+              <div class="pl-meta">
+                <div class="pl-title" id="pl3-h">Listado de servicios</div>
+                <div class="pl-subtitle">Sección "Servicios" del GBP · nombre + descripción + precio</div>
+              </div>
+              <div class="pl-badge">SEO local</div>
+            </div>
+            <div class="pl-body">
+              <p class="pl-why"><strong>Para qué sirve:</strong> Cada servicio listado es una keyword indexable por
+                separado. Un médico con 5 servicios bien descritos aparece en más búsquedas que uno con el perfil vacío.
+              </p>
+              <div class="pl-wrap">
+                <pre class="pl-text" id="txt-3">SERVICIO 1
+Nombre: Consulta inicial / Primera consulta
+Descripción: Evaluación clínica completa de [X] minutos. Revisión de antecedentes, examen físico y plan diagnóstico personalizado. Incluye receta y orden de estudios si corresponde.
+Precio: Consultar (opcional: $[MONTO])
+
+---
+
+SERVICIO 2
+Nombre: Consulta de seguimiento
+Descripción: Revisión de resultados y ajuste del tratamiento. Duración [X] minutos. Para pacientes que ya realizaron consulta inicial.
+Precio: Consultar
+
+---
+
+SERVICIO 3
+Nombre: [TU SERVICIO ESPECÍFICO — ej. Ecocardiograma / Extracción / Ecografía]
+Descripción: [DESCRIPCIÓN BREVE DEL PROCEDIMIENTO, DURACIÓN Y QUÉ INCLUYE].
+Precio: Consultar
+
+---
+
+SERVICIO 4
+Nombre: Consulta online / Telemedicina
+Descripción: Videollamada de [X] minutos. Válida para seguimientos, renovación de recetas y resultados. Link por WhatsApp.
+Precio: Consultar
+
+---
+
+SERVICIO 5
+Nombre: [OTRO SERVICIO O ESPECIALIZACIÓN]
+Descripción: [QUÉ INCLUYE, A QUIÉN ESTÁ DIRIGIDO, CUÁNTO DURA].
+Precio: Consultar</pre>
+                <button class="btn-copy" data-target="txt-3" aria-label="Copiar estructura servicios"><svg width="13"
+                    height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+                      stroke="currentColor" stroke-width="1.3" />
+                  </svg>Copiar estructura</button>
+              </div>
+              <div class="pl-note"><span class="pl-note-icon"
+                  aria-hidden="true">⚠️</span><span><strong>Importante:</strong> Cargá cada servicio en un campo
+                  separado dentro del GBP. No pegues el bloque completo en un solo campo.</span></div>
+            </div>
+          </article>
+
+          <!-- 4 -->
+          <article class="pl-card" id="pl4" aria-labelledby="pl4-h">
+            <div class="pl-head">
+              <div class="pl-num" aria-hidden="true">4</div>
+              <div class="pl-meta">
+                <div class="pl-title" id="pl4-h">Respuesta a reseña positiva</div>
+                <div class="pl-subtitle">Dos variantes según el tono</div>
+              </div>
+              <div class="pl-badge">Reputación</div>
+            </div>
+            <div class="pl-body">
+              <p class="pl-why"><strong>Para qué sirve:</strong> Responder reseñas mejora el posicionamiento local.
+                Google lo interpreta como señal de negocio activo. Los pacientes nuevos leen estas respuestas antes de
+                llamar.</p>
+              <div class="pl-tabs" role="tablist" aria-label="Variantes plantilla 4">
+                <button class="pl-tab active" role="tab" aria-selected="true" data-var="4"
+                  data-key="a">Estándar</button>
+                <button class="pl-tab" role="tab" aria-selected="false" data-var="4" data-key="b">Más cálida</button>
+              </div>
+              <div class="pl-wrap">
+                <pre class="pl-text"
+                  id="txt-4">Muchas gracias, [NOMBRE o "estimado paciente"]. Su confianza es fundamental para nosotros. Trabajamos cada día para que la experiencia en el consultorio sea cómoda y el diagnóstico, preciso. Nos alegra que haya podido resolverlo. Estamos disponibles cuando lo necesite.</pre>
+                <button class="btn-copy" data-target="txt-4" aria-label="Copiar plantilla 4"><svg width="13" height="13"
+                    viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+                      stroke="currentColor" stroke-width="1.3" />
+                  </svg>Copiar</button>
+              </div>
+              <div class="pl-chars">
+                <div class="pl-dot ok" aria-hidden="true"></div>~220 caracteres
+              </div>
+              <div class="pl-note"><span class="pl-note-icon" aria-hidden="true">💡</span><span><strong>Regla de
+                    oro:</strong> Nunca incluyas especialidad ni diagnóstico en la respuesta. Por privacidad y por Ley
+                  de Datos de Salud.</span></div>
+            </div>
+          </article>
+
+          <!-- 5 -->
+          <article class="pl-card" id="pl5" aria-labelledby="pl5-h">
+            <div class="pl-head">
+              <div class="pl-num" aria-hidden="true">5</div>
+              <div class="pl-meta">
+                <div class="pl-title" id="pl5-h">Respuesta a reseña negativa</div>
+                <div class="pl-subtitle">Protocolo de 3 pasos · 2 situaciones</div>
+              </div>
+              <div class="pl-badge">Protocolo</div>
+            </div>
+            <div class="pl-body">
+              <p class="pl-why"><strong>Para qué sirve:</strong> Una mala respuesta daña más que la reseña misma. Este
+                protocolo valida al paciente, evita la defensa pública y deriva el conflicto offline.</p>
+              <div class="pl-tabs" role="tablist" aria-label="Variantes plantilla 5">
+                <button class="pl-tab active" role="tab" aria-selected="true" data-var="5" data-key="a">Queja
+                  general</button>
+                <button class="pl-tab" role="tab" aria-selected="false" data-var="5" data-key="b">Queja por
+                  espera</button>
+              </div>
+              <div class="pl-wrap">
+                <pre class="pl-text"
+                  id="txt-5">Lamentamos que su experiencia no haya cumplido sus expectativas. En nuestro consultorio trabajamos para brindar atención de calidad a cada paciente. Le invitamos a comunicarse directamente con nosotros al [TELÉFONO O EMAIL] para entender mejor lo ocurrido y encontrar una solución. Gracias por tomarse el tiempo de compartir su opinión.</pre>
+                <button class="btn-copy" data-target="txt-5" aria-label="Copiar plantilla 5"><svg width="13" height="13"
+                    viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                    <rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3" />
+                    <path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5"
+                      stroke="currentColor" stroke-width="1.3" />
+                  </svg>Copiar</button>
+              </div>
+              <div class="pl-chars">
+                <div class="pl-dot ok" aria-hidden="true"></div>~290 caracteres
+              </div>
+              <div class="pl-note"><span class="pl-note-icon" aria-hidden="true">⚠️</span><span><strong>Nunca:</strong>
+                  Defenderse en público, revelar datos del paciente, o ignorar la reseña. Las tres opciones dañan más
+                  que la reseña original.</span></div>
+            </div>
+          </article>
+
+        </div><!-- /plantillas-list -->
+
+        <!-- Footer de print -->
+        <div class="print-footer" aria-hidden="true">
+          Recurso creado por <strong>Yulia Monti — Cirujana Digital</strong> ·
+          cirujanadigital.com/recursos/plantillas-gbp/<br>
+          Consulta gratuita de 30 min: calendly.com/cirujanadigital/30min · WhatsApp: +54 9 11 7619-9680
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-sec" aria-labelledby="faq-h2">
+      <div class="wrap-narrow">
+        <h2 class="faq-h" id="faq-h2">Preguntas sobre el GBP médico</h2>
+        <div class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-btn" aria-expanded="false" itemprop="name">¿Por qué necesito texto específico en mi
+              GBP?<svg class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg></button>
+            <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Google usa el texto del GBP para decidir a quién mostrar cuando un paciente busca tu
+                especialidad. Un perfil con descripción completa, servicios listados y respuestas a reseñas tiene hasta
+                7 veces más probabilidad de aparecer en el panel de 3 resultados del mapa local. La mayoría de los
+                médicos tiene el GBP reclamado pero sin completar — ese es el error más fácil de corregir.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-btn" aria-expanded="false" itemprop="name">¿Cuánto tarda en verse el efecto?<svg
+                class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg></button>
+            <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Google indexa los cambios en 24-72 horas. El impacto en visibilidad local puede verse
+                en 2 a 4 semanas según la competencia en tu ciudad. En ciudades intermedias de LATAM, un GBP bien
+                optimizado puede pasar del puesto 8 al top 3 del mapa en menos de un mes.</p>
+            </div>
+          </div>
+          <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <button class="faq-btn" aria-expanded="false" itemprop="name">¿Estas plantillas me ayudan a aparecer en
+              ChatGPT también?<svg class="faq-chev" width="18" height="18" viewBox="0 0 20 20" fill="none"
+                aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+              </svg></button>
+            <div class="faq-body" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p itemprop="text">Parcialmente. El GBP optimizado mejora tu posición en Google Maps y búsqueda orgánica,
+                que es una fuente que usan los LLMs. Para aparecer activamente en ChatGPT, Perplexity y Google AI se
+                necesita trabajo adicional: Schema médico en tu web, NAP consistente y contenido autorizado. Eso lo
+                trabajamos en la Auditoría IA Médica.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-sec" aria-labelledby="cta-h2">
+      <div class="cta-glow" aria-hidden="true"></div>
+      <div class="wrap cta-inner">
+        <h2 class="cta-h" id="cta-h2">¿Querés que lo revisemos<br><em>juntos en 30 minutos?</em></h2>
+        <p class="cta-sub">Con el GBP actualizado y la consulta gratuita, en una semana tu consultorio puede estar
+          visible donde hoy no aparece.</p>
+        <div class="cta-btns">
+          <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-primary" target="_blank"
+            rel="noopener noreferrer">Agendar consulta gratuita <svg width="14" height="14" viewBox="0 0 16 16"
+              fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg></a>
+          <a href="https://wa.me/5491176199680?text=Hola%2C%20us%C3%A9%20las%20plantillas%20de%20GBP%20de%20cirujanadigital.com%20y%20tengo%20preguntas"
+            class="btn btn-ghost" target="_blank" rel="noopener noreferrer">Preguntar por WhatsApp</a>
+        </div>
+        <div class="cta-trust">
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Consulta 100% gratuita</span>
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Sin permanencia mínima</span>
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Garantía documentada</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+  <div id="site-footer"></div>
+
+  <script>
+    (function () {
+      'use strict';
+      var V = {
+        1: { a: 'Especialista en [ESPECIALIDAD] con más de [X] años de experiencia en [CIUDAD]. Atiendo en consultorio propio ubicado en [BARRIO O DIRECCIÓN]. Mi enfoque está centrado en el diagnóstico preciso y el acompañamiento personalizado de cada paciente.\n\nFormado/a en [UNIVERSIDAD O INSTITUCIÓN]. [MENCIONAR SUBESPECIALIDAD O ÁREA DE ENFOQUE SI CORRESPONDE].\n\nTurnos disponibles de lunes a viernes. También ofrezco consultas de seguimiento online para pacientes que ya han pasado por consultorio.\n\nPara coordinar un turno: llamar al [TELÉFONO] o escribir por WhatsApp.', b: 'Si buscás un/a especialista en [ESPECIALIDAD] en [CIUDAD] que escuche, diagnostique con precisión y explique cada paso del tratamiento — estás en el lugar correcto.\n\nAtiendo en [BARRIO O DIRECCIÓN]. Turnos de lunes a viernes, también online para seguimientos.\n\nFormación: [UNIVERSIDAD]. Más de [X] años acompañando pacientes con [CONDICIÓN O ÁREA PRINCIPAL].\n\nTurno: [TELÉFONO] / WhatsApp.' },
+        2: { a: '[ESPECIALIDAD] en [CIUDAD]. Consultorio en [BARRIO]. Turnos de lunes a viernes — también online. [TELÉFONO O LINK DE TURNO].', b: '[ESPECIALIDAD] con [X] años de experiencia · [CIUDAD] · [BARRIO]. Diagnóstico preciso, explicación clara, seguimiento real. Turnos: [TELÉFONO].', c: '¿Necesitás turno rápido con [ESPECIALIDAD] en [CIUDAD]? Atención el mismo día para consultas urgentes. Consultorio en [BARRIO]. [TELÉFONO].' },
+        4: { a: 'Muchas gracias, [NOMBRE o "estimado paciente"]. Su confianza es fundamental para nosotros. Trabajamos cada día para que la experiencia en el consultorio sea cómoda y el diagnóstico, preciso. Nos alegra que haya podido resolverlo. Estamos disponibles cuando lo necesite.', b: 'Agradecemos profundamente su tiempo para escribir esta reseña, [NOMBRE]. Saber que la atención estuvo a la altura de lo que esperaba es la mejor señal de que vamos por el camino correcto. Le esperamos cada vez que lo necesite.' },
+        5: { a: 'Lamentamos que su experiencia no haya cumplido sus expectativas. En nuestro consultorio trabajamos para brindar atención de calidad a cada paciente. Le invitamos a comunicarse directamente con nosotros al [TELÉFONO O EMAIL] para entender mejor lo ocurrido y encontrar una solución. Gracias por tomarse el tiempo de compartir su opinión.', b: 'Entendemos que los tiempos de espera pueden ser frustrantes y lo lamentamos genuinamente. Trabajamos para mejorar la gestión de turnos y su comentario nos ayuda a hacerlo. Le invitamos a contactarnos al [TELÉFONO] para coordinar una próxima consulta de forma prioritaria.' }
+      };
+
+      document.querySelectorAll('.pl-tab').forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          var n = this.getAttribute('data-var'), k = this.getAttribute('data-key');
+          this.closest('.pl-tabs').querySelectorAll('.pl-tab').forEach(function (t) { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+          this.classList.add('active'); this.setAttribute('aria-selected', 'true');
+          var el = document.getElementById('txt-' + n);
+          if (el && V[n] && V[n][k]) el.textContent = V[n][k];
+        });
+      });
+
+      document.querySelectorAll('.btn-copy').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var el = document.getElementById(this.getAttribute('data-target'));
+          if (!el) return;
+          var self = this;
+          navigator.clipboard && navigator.clipboard.writeText(el.textContent).then(function () {
+            self.classList.add('copied');
+            self.innerHTML = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> Copiado';
+            setTimeout(function () { self.classList.remove('copied'); self.innerHTML = '<svg width="13" height="13" viewBox="0 0 16 16" fill="none" aria-hidden="true"><rect x="5" y="5" width="9" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M11 5V3.5A1.5 1.5 0 009.5 2h-6A1.5 1.5 0 002 3.5v6A1.5 1.5 0 003.5 11H5" stroke="currentColor" stroke-width="1.3"/></svg> Copiar'; }, 2200);
+          });
+          if (typeof gtag !== 'undefined') gtag('event', 'copy_plantilla', { event_category: 'plantillas_gbp', event_label: this.getAttribute('data-target') });
+        });
+      });
+
+      document.querySelectorAll('.faq-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () { this.setAttribute('aria-expanded', String(this.getAttribute('aria-expanded') !== 'true')); });
+      });
+
+      document.getElementById('btn-dl').addEventListener('click', function () {
+        if (typeof gtag !== 'undefined') gtag('event', 'download_pdf_gbp', { event_category: 'plantillas_gbp' });
+        setTimeout(function () { window.print(); }, 120);
+      });
+
+      document.querySelectorAll('[href*="calendly"]').forEach(function (el) { el.addEventListener('click', function () { if (typeof gtag !== 'undefined') gtag('event', 'click_calendly', { event_category: 'plantillas_gbp' }); }); });
+      document.querySelectorAll('[href*="wa.me"]').forEach(function (el) { el.addEventListener('click', function () { if (typeof gtag !== 'undefined') gtag('event', 'click_whatsapp', { event_category: 'plantillas_gbp' }); }); });
+    }());
+  </script>
+</body>
+
+</html>

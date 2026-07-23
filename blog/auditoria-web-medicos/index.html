@@ -1,0 +1,1335 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 3500);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cómo revisar el sitio de un consultorio en 20 minutos | Cirujana Digital</title>
+  <meta name="description"
+    content="Guía práctica para médicos: revisá la velocidad, la visibilidad en Google y la capacidad de tu sitio para convertir visitas en consultas — sin conocimientos técnicos." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/auditoria-web-medicos/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/auditoria-web-medicos/" />
+  <meta property="og:title" content="Cómo revisar el sitio de un consultorio en 20 minutos" />
+  <meta property="og:description"
+    content="Velocidad, visibilidad en Google y conversión de visitas en consultas. Cuatro pasos para detectar qué está fallando en el sitio de un médico, sin conocimientos técnicos." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-auditoria-web-medicos.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <meta property="article:published_time" content="2026-03-25" />
+  <meta property="article:modified_time" content="2026-05-24" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Presencia digital médica" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cómo revisar el sitio de un consultorio en 20 minutos" />
+  <meta name="twitter:description"
+    content="Cuatro pasos para detectar qué está fallando en el sitio de un médico: velocidad, mobile, visibilidad en Google y conversión." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-auditoria-web-medicos.png" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "url": "https://cirujanadigital.com",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "jobTitle": "Especialista en infraestructura digital médica para captación de pacientes",
+          "description": "Instrumentadora quirúrgica con 15 años de experiencia en Argentina, fundadora de Cirujana Digital. Especializada en infraestructura digital para consultorios médicos en LATAM y España: posicionamiento en Google, velocidad web, presencia en IA y sitios que convierten visitas en consultas.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "knowsAbout": [
+            "Infraestructura digital médica",
+            "SEO para médicos en Argentina",
+            "SEO para médicos en México",
+            "SEO para médicos en España",
+            "Google Business Profile para profesionales de la salud",
+            "Presencia en IA generativa ChatGPT Perplexity Gemini",
+            "Páginas web médicas que convierten",
+            "Velocidad web para consultorios",
+            "Reputación digital médica",
+            "Captación de pacientes vía búsqueda local"
+          ],
+          "sameAs": [
+            "https://instagram.com/cirujanadigital",
+            "https://linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/auditoria-web-medicos/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cómo revisar el sitio de un consultorio en 20 minutos" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/auditoria-web-medicos/#article",
+          "headline": "Cómo revisar el sitio de un consultorio en 20 minutos",
+          "description": "Guía práctica para médicos: revisá la velocidad, la visibilidad en Google y la capacidad del sitio para convertir visitas en consultas, sin conocimientos técnicos.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://cirujanadigital.com/img/og-auditoria-web-medicos.png",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "2026-03-25",
+          "dateModified": "2026-05-24",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/auditoria-web-medicos/",
+          "articleSection": "Presencia digital médica",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cómo sé si el sitio de mi consultorio es suficientemente rápido?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "La herramienta más accesible es PageSpeed Insights de Google (pagespeed.web.dev). Ingresás la URL de tu sitio y en menos de un minuto obtenés un puntaje de velocidad para celular y para computadora, junto con una lista de los problemas concretos que están frenando la carga. No requiere registro ni conocimientos técnicos. El objetivo en celular es superar 80 puntos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Por qué el sitio de mi consultorio no aparece en Google aunque tenga buena información?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Las razones más frecuentes son: el título de la página no incluye la especialidad ni la ciudad, la velocidad de carga es baja y Google penaliza el posicionamiento, el perfil de Google Maps no está vinculado al sitio, o el sitio no está indexado correctamente. Una revisión básica de estos cuatro puntos permite identificar cuál es el problema principal sin necesidad de conocimientos técnicos."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Con qué frecuencia debo revisar el sitio de mi consultorio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una revisión de los puntos básicos — velocidad, formulario de contacto, información actualizada — debería hacerse cada tres meses. Además, conviene hacer una revisión inmediata de velocidad cada vez que se realizan cambios importantes en el sitio: páginas nuevas, cambio de proveedor de alojamiento o actualización del diseño."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Un médico necesita sitio web si ya tiene perfil en Doctoralia o Google Maps?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Doctoralia y Google Maps ayudan a que el médico aparezca en búsquedas locales, pero no reemplazan un sitio propio. El sitio es donde el paciente evalúa en profundidad antes de contactarse: servicios detallados, metodología, obras sociales, fotos del consultorio y formulario de turnos. Los tres canales juntos — perfil de Google Maps, Doctoralia y sitio propio — multiplican las posibilidades de que una búsqueda se convierta en una consulta agendada."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Quién ayuda a médicos a mejorar su presencia digital en LATAM y España?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yulia Monti, instrumentadora quirúrgica y fundadora de Cirujana Digital, es especialista en infraestructura digital médica para captación de pacientes en Argentina, México, Chile, Colombia y España. Trabaja exclusivamente con profesionales de la salud para mejorar la velocidad del sitio, el posicionamiento en Google y la visibilidad en ChatGPT, Gemini y Perplexity. Más información en cirujanadigital.com."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    body {
+      padding-top: 70px;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding-top: 70px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    /* ── HERO ── */
+    .article-hero {
+      padding: 4rem 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* ── BODY LAYOUT ── */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* Typography */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* Callouts */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, .07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* Author box */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-box img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* Related block */
+    .related-block {
+      background: var(--light);
+      border-radius: 14px;
+      padding: 2rem;
+      margin: 3rem 0;
+    }
+
+    .related-block h3 {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin-bottom: 1.25rem;
+      padding-bottom: .5rem;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .related-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: .75rem;
+    }
+
+    .related-list .related-icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .related-list a {
+      color: var(--primary);
+      font-weight: 600;
+      font-size: .97rem;
+      text-decoration: none;
+      line-height: 1.4;
+    }
+
+    .related-list a:hover {
+      color: var(--secondary);
+    }
+
+    /* Problems block */
+    .problems-block {
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1.75rem 2rem;
+      margin: 2.5rem 0;
+      background: #fafbfc;
+    }
+
+    .problems-block h3 {
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--cd-text-light);
+      margin-bottom: 1rem;
+    }
+
+    .problems-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .problems-list li {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      font-size: .97rem;
+      color: #4a5568;
+    }
+
+    .problems-list li::before {
+      content: "→";
+      color: #e74c3c;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* FAQ */
+    .faq-block {
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 1rem;
+      background: #fafbfc;
+    }
+
+    .faq-block h3 {
+      font-size: 1.05rem;
+      color: var(--cd-text);
+      margin: 0 0 .75rem;
+      font-weight: 700;
+    }
+
+    .faq-block p {
+      margin: 0;
+      font-size: .97rem;
+      color: #4a5568;
+      line-height: 1.8;
+    }
+
+    /* CTA box */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    /* Sidebar */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style
+    }
+
+    #site-footer {
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden
+    }
+
+    @media(max-width:768px) {
+      #site-footer {
+        min-height: 1780px
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main">
+
+    <!-- ── HERO ── -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a>
+          <span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">Cómo revisar el sitio de un consultorio en 20 minutos</span>
+        </nav>
+        <span class="article-category">Presencia digital médica</span>
+        <h1>Cómo revisar el sitio de un consultorio en 20 minutos</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-03-25">25 de marzo de 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>Actualizado: 23 de mayo de 2026</span>
+          <span aria-hidden="true">·</span>
+          <span>8 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ── BODY ── -->
+    <div class="article-body">
+      <div class="article-layout">
+        <article class="article-content">
+
+          <!-- ① PROBLEMA -->
+          <p>El sitio está publicado, tiene información sobre los servicios y se ve bien en la computadora. Pero los
+            pacientes no llegan. Antes de invertir en publicidad o rediseñar todo desde cero, vale la pena hacer una
+            revisión sistemática de los puntos que más impactan en cuántas personas encuentran el consultorio y cuántas
+            terminan agendando una consulta. Esta guía muestra cómo hacerlo en 20 minutos, sin conocimientos técnicos.
+          </p>
+
+          <!-- ② CONSECUENCIA ECONÓMICA -->
+          <h2 id="que-es">Por qué revisar el sitio antes de hacer cualquier otra cosa</h2>
+          <p>Un sitio que tarda más de 3 segundos en cargar pierde una parte importante de los visitantes antes de que
+            lean una sola línea. Un sitio sin los elementos básicos de visibilidad en Google no aparece cuando alguien
+            busca la especialidad en la ciudad. Y un sitio sin un camino claro hacia el contacto no convierte visitas en
+            consultas, aunque el médico tenga excelente reputación.</p>
+          <p>Estos tres problemas — velocidad, visibilidad y conversión — son independientes entre sí. Un sitio puede
+            cargar rápido y no aparecer en Google. Puede aparecer en Google y no generar consultas. La revisión
+            sistemática permite identificar cuál de los tres es el cuello de botella principal, para actuar sobre el
+            problema real en lugar de sobre el síntoma.</p>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">Punto de partida</span>
+            <p>Las cuatro herramientas que se usan en esta guía son gratuitas y no requieren registro. El único
+              requisito es tener la URL del sitio a mano.</p>
+          </div>
+
+          <!-- ③ QUÉ CAMBIÓ CON GOOGLE -->
+          <h2 id="velocidad">Paso 1 — Revisá la velocidad de carga</h2>
+          <p>La velocidad es el factor con mayor impacto inmediato. Google la usa como criterio de posicionamiento y los
+            pacientes la perciben de forma directa: si el sitio tarda, cierran la pestaña y eligen al siguiente
+            resultado.</p>
+
+          <h3>Cómo medirla</h3>
+          <p>Ingresá a <strong>pagespeed.web.dev</strong>, escribí la URL del sitio y hacé clic en Analizar. En menos de
+            un minuto aparecen dos puntajes: uno para celular y otro para computadora. El que más importa es el del
+            celular, porque es donde la mayoría de los pacientes busca médicos.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Interpretación del puntaje de velocidad del sitio médico">
+              <thead>
+                <tr>
+                  <th>Puntaje en celular</th>
+                  <th>Qué significa para el consultorio</th>
+                  <th>Urgencia</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>90 – 100</strong></td>
+                  <td>El sitio carga rápido. Google lo favorece y el paciente no abandona antes de leer.</td>
+                  <td class="tag-good">Sin acción urgente</td>
+                </tr>
+                <tr>
+                  <td><strong>50 – 89</strong></td>
+                  <td>Hay problemas que afectan la experiencia del paciente y el posicionamiento en Google.</td>
+                  <td class="tag-medium">Atender pronto</td>
+                </tr>
+                <tr>
+                  <td><strong>0 – 49</strong></td>
+                  <td>El sitio es lento. Los pacientes abandonan antes de ver la información del médico.</td>
+                  <td class="tag-bad">Urgente</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Qué hacer con el reporte</h3>
+          <p>Después del puntaje, la herramienta muestra una lista de los problemas concretos que frenan la carga. Los
+            más frecuentes en sitios de consultorios son fotos sin optimizar, complementos de WordPress que cargan sin
+            usarse y elementos que tardan en aparecer porque se cargan en el orden incorrecto. No hace falta entender
+            cada detalle técnico: con el puntaje y la lista ya hay suficiente información para saber si se necesita
+            intervención. Para entender por qué la velocidad afecta directamente la agenda, ver el artículo sobre <a
+              href="blog/core-web-vitals-2026/">por qué una página médica lenta hace perder pacientes</a>.</p>
+
+          <!-- ── PASO 2 ── -->
+          <h2 id="mobile">Paso 2 — Verificá que el sitio funcione bien en el celular del paciente</h2>
+          <p>Más del 70% de las búsquedas locales de salud se hacen desde un teléfono. Si el sitio no está adaptado para
+            esa pantalla, la mayoría de los visitantes potenciales tiene una mala experiencia antes de leer una sola
+            línea sobre el médico.</p>
+
+          <h3>Revisión rápida sin herramientas</h3>
+          <p>Abrí el sitio desde el celular y revisá estos cinco puntos:</p>
+          <ul>
+            <li>¿El texto se lee sin hacer zoom?</li>
+            <li>¿Los botones de llamada o WhatsApp son fáciles de tocar con el pulgar?</li>
+            <li>¿Las imágenes no se cortan ni desbordan la pantalla?</li>
+            <li>¿El menú de navegación funciona correctamente?</li>
+            <li>¿El formulario de contacto se puede completar sin dificultad?</li>
+          </ul>
+          <p>Si alguna respuesta es negativa, hay un problema de adaptación para celular que conviene corregir antes de
+            cualquier otra inversión en visibilidad o publicidad.</p>
+
+          <h3>Revisión con herramienta de Google</h3>
+          <p>La herramienta <strong>search.google.com/test/mobile-friendly</strong> muestra exactamente cómo ve Google
+            el sitio desde un celular, con capturas de pantalla y una lista de problemas detectados. Tarda menos de un
+            minuto.</p>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">Importante</span>
+            <p>Google posiciona primero la versión del sitio que ve desde un celular. Si esa versión tiene problemas, el
+              posicionamiento de todo el contenido se ve afectado — incluso para los pacientes que buscan desde una
+              computadora.</p>
+          </div>
+
+          <!-- ── PASO 3 ── -->
+          <h2 id="seo-basico">Paso 3 — Revisá si Google puede entender qué especialidad tiene el consultorio</h2>
+          <p>Un sitio puede estar publicado y funcionar bien técnicamente, y aun así no aparecer en Google cuando
+            alguien busca la especialidad del médico en su ciudad. Esto ocurre cuando el sitio no tiene los elementos
+            básicos que Google necesita para clasificar el contenido correctamente.</p>
+
+          <h3>Título de la página</h3>
+          <p>Es el texto que aparece como título azul en los resultados de Google. Para un consultorio, debe incluir la
+            especialidad y la ciudad. Podés verlo haciendo clic derecho en la página y eligiendo "Ver código fuente":
+            buscá la etiqueta <code>&lt;title&gt;</code> cerca del inicio.</p>
+          <p>Un título que ayuda a posicionar: <em>"Dra. Ramírez — Dermatóloga en Guadalajara | Consultas y
+              Tratamientos"</em>. Un título que no ayuda: <em>"Inicio"</em> o <em>"Bienvenidos"</em>.</p>
+
+          <h3>Descripción en Google</h3>
+          <p>Es el texto que aparece debajo del título en los resultados. No afecta directamente la posición en el
+            ranking, pero sí cuántos pacientes hacen clic. Si está vacía o es genérica, menos personas entran al sitio
+            aunque el médico aparezca en la primera página.</p>
+
+          <h3>Perfil de Google Maps vinculado</h3>
+          <p>Buscá en Google el nombre del consultorio. ¿Aparece el sitio? ¿Aparece en el mapa? Si el sitio no aparece
+            ni buscando el nombre exacto, puede haber un problema de indexación. Si aparece para el nombre pero no para
+            la especialidad, el problema es de contenido y visibilidad. Para entender cómo funciona la presencia local
+            en Google, ver la guía de <a href="seo-para-clinicas/">SEO para clínicas y consultorios</a>.</p>
+
+          <!-- ── PASO 4 ── -->
+          <h2 id="conversion">Paso 4 — Evaluá si el sitio convierte visitas en consultas</h2>
+          <p>Un sitio puede cargar rápido, verse bien en el celular y aparecer en Google, y aun así no generar turnos.
+            El problema entonces es de conversión: qué tan fácil es para el paciente pasar de "estoy mirando" a "quiero
+            contactarme".</p>
+
+          <h3>Cinco puntos a revisar</h3>
+          <ul>
+            <li><strong>Botón de contacto visible sin hacer scroll:</strong> ¿hay un botón de "Pedir turno" o
+              "Contactar" en la parte superior de la página, sin necesidad de bajar?</li>
+            <li><strong>Teléfono y WhatsApp que se activan al tocarlos:</strong> en celular, el número debería abrir el
+              marcador automáticamente.</li>
+            <li><strong>Formulario de contacto corto:</strong> cada campo adicional reduce las consultas. Nombre, email
+              y mensaje es suficiente para el primer contacto.</li>
+            <li><strong>Información clara en los primeros 5 segundos:</strong> ¿queda claro qué especialidad tiene el
+              médico, dónde atiende y a qué tipo de paciente está dirigido?</li>
+            <li><strong>Señales de confianza visibles:</strong> foto del médico, años de experiencia, obras sociales,
+              reseñas de pacientes — todo lo que reduce la incertidumbre antes del primer contacto.</li>
+          </ul>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">Test de los 5 segundos</span>
+            <p>Mostrá la página principal a alguien que no conoce al médico durante 5 segundos y preguntale: ¿qué hace
+              este profesional y cómo se lo contacta? Si no puede responder, hay un problema de claridad que está
+              afectando la cantidad de consultas que llegan.</p>
+          </div>
+
+          <!-- ── CTA INTERMEDIO ── -->
+          <div class="article-cta-box">
+            <h3>Diagnóstico de presencia digital médica</h3>
+            <p>Revisión de velocidad, visibilidad en Google Maps, posición en ChatGPT y reputación online. Informe en
+              PDF con pasos concretos ordenados por impacto. Entrega en 3 días hábiles.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Solicitar diagnóstico del consultorio</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+          <!-- ── ERRORES FRECUENTES ── -->
+          <h2 id="errores">Problemas más frecuentes en sitios de consultorios</h2>
+          <p>Estos son los problemas que aparecen de forma recurrente en sitios de médicos, odontólogos y psicólogos en
+            Argentina, México, Chile, España y Colombia:</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Problemas frecuentes en sitios web de consultorios médicos">
+              <thead>
+                <tr>
+                  <th>Problema</th>
+                  <th>Consecuencia para el consultorio</th>
+                  <th>Dificultad de corrección</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Fotos sin optimizar</strong></td>
+                  <td>Sitio lento. Pacientes que abandonan antes de leer.</td>
+                  <td class="tag-good">Baja</td>
+                </tr>
+                <tr>
+                  <td><strong>Título sin especialidad ni ciudad</strong></td>
+                  <td>El médico no aparece cuando buscan por especialidad.</td>
+                  <td class="tag-good">Baja</td>
+                </tr>
+                <tr>
+                  <td><strong>Formulario de contacto que no funciona</strong></td>
+                  <td>Los mensajes de pacientes no llegan al médico.</td>
+                  <td class="tag-good">Baja</td>
+                </tr>
+                <tr>
+                  <td><strong>Sin versión adaptada para celular</strong></td>
+                  <td>Mala experiencia en el dispositivo más usado para buscar médicos.</td>
+                  <td class="tag-medium">Media</td>
+                </tr>
+                <tr>
+                  <td><strong>Sin perfil de Google Maps vinculado</strong></td>
+                  <td>El consultorio no aparece en búsquedas locales ni en el mapa.</td>
+                  <td class="tag-good">Baja</td>
+                </tr>
+                <tr>
+                  <td><strong>Sin certificado de seguridad (HTTPS)</strong></td>
+                  <td>El navegador advierte "sitio no seguro". Genera desconfianza antes de leer.</td>
+                  <td class="tag-medium">Media</td>
+                </tr>
+                <tr>
+                  <td><strong>Diseño de más de 5 años sin actualizar</strong></td>
+                  <td>Genera desconfianza antes de que el paciente lea el contenido.</td>
+                  <td class="tag-bad">Alta — requiere rediseño</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- ── PRÓXIMOS PASOS ── -->
+          <h2 id="proximos-pasos">Qué hacer con los resultados</h2>
+          <p>Una vez completados los cuatro pasos, hay un mapa claro de dónde están los problemas. El orden recomendado
+            para resolverlos:</p>
+          <ol>
+            <li><strong>Primero:</strong> cualquier cosa que impida que los pacientes contacten al médico — formulario
+              que no funciona, teléfono no clickeable, botón de contacto inexistente.</li>
+            <li><strong>Segundo:</strong> velocidad de carga, especialmente en celular. La guía sobre <a
+                href="blog/core-web-vitals-2026/">por qué una página médica lenta hace perder pacientes</a> explica qué
+              mejorar primero.</li>
+            <li><strong>Tercero:</strong> visibilidad en Google — título, descripción, perfil de Google Maps. La guía de
+              <a href="seo-para-clinicas/">SEO para clínicas y consultorios</a> cubre este punto en detalle.
+            </li>
+            <li><strong>Cuarto:</strong> mejoras de contenido y diseño para aumentar la tasa de conversión de visitas a
+              consultas agendadas.</li>
+          </ol>
+          <p>Los primeros dos puntos resuelven el 80% del problema. El tercero multiplica el tráfico de pacientes
+            nuevos. El cuarto maximiza lo que ya funciona.</p>
+
+          <div class="callout callout-danger">
+            <span class="callout-label">Error frecuente</span>
+            <p>Empezar por el diseño antes de corregir los problemas de velocidad y visibilidad. Un sitio lento con
+              diseño nuevo sigue siendo lento. Un sitio bonito que no aparece en Google no atrae pacientes nuevos. La
+              base técnica primero, la estética después.</p>
+          </div>
+
+          <!-- ── SEÑALES DE ALERTA ── -->
+          <div class="problems-block">
+            <h3>Señales de que el sitio del consultorio necesita revisión</h3>
+            <ul class="problems-list">
+              <li>El sitio tarda más de 3 segundos en cargar en el celular</li>
+              <li>Los pacientes dicen que no encontraron el sitio buscando la especialidad</li>
+              <li>El formulario de contacto no envía los mensajes correctamente</li>
+              <li>El sitio no aparece en Google Maps para búsquedas locales</li>
+              <li>No hay botón de WhatsApp o llamada visible en la parte superior</li>
+              <li>El diseño tiene más de 5 años sin actualizarse</li>
+              <li>ChatGPT o Gemini no mencionan el consultorio cuando se pregunta por la especialidad</li>
+            </ul>
+          </div>
+
+          <!-- ── FAQ ── -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <div class="faq-block">
+            <h3>¿Cómo sé si el sitio de mi consultorio es suficientemente rápido?</h3>
+            <p>Con PageSpeed Insights de Google (pagespeed.web.dev): ingresás la URL y en menos de un minuto obtenés el
+              puntaje de velocidad en celular y computadora, junto con la lista de problemas concretos que frenan la
+              carga. El objetivo en celular es superar 80 puntos.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Por qué el sitio de mi consultorio no aparece en Google aunque tenga buena información?</h3>
+            <p>Las razones más frecuentes son: el título de la página no incluye la especialidad ni la ciudad, la
+              velocidad de carga es baja y Google penaliza el posicionamiento, el perfil de Google Maps no está
+              vinculado al sitio, o el sitio no está indexado correctamente. La revisión de los cuatro pasos de esta
+              guía permite identificar cuál es el problema principal.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Con qué frecuencia debo revisar el sitio del consultorio?</h3>
+            <p>Una revisión básica — velocidad, formulario de contacto, información actualizada — debería hacerse cada
+              tres meses. Además, conviene revisar la velocidad inmediatamente después de cualquier cambio importante en
+              el sitio: páginas nuevas, cambio de proveedor de alojamiento o actualización del diseño.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿Un médico necesita sitio web si ya tiene perfil en Doctoralia o Google Maps?</h3>
+            <p>Son canales complementarios. Doctoralia y Google Maps ayudan a que el médico aparezca en búsquedas
+              locales, pero no reemplazan un sitio propio. El sitio es donde el paciente evalúa en profundidad antes de
+              contactarse: servicios detallados, metodología, obras sociales y formulario de turnos. Los tres canales
+              juntos multiplican las posibilidades de convertir una búsqueda en una consulta agendada.</p>
+          </div>
+
+          <div class="faq-block">
+            <h3>¿La velocidad del sitio afecta también cómo aparece el consultorio en ChatGPT?</h3>
+            <p>De forma indirecta, sí. Un sitio rápido posiciona mejor en Google, y esa autoridad en Google es parte de
+              lo que la IA usa para decidir si recomienda un consultorio cuando un paciente pregunta por una
+              especialidad. La guía de <a href="ia-para-clinicas/">IA para clínicas</a> explica cómo funciona este
+              mecanismo.</p>
+          </div>
+
+          <!-- ── AUTOR ── -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp"
+              alt="Yulia Monti, instrumentadora quirúrgica y fundadora de Cirujana Digital, especialista en infraestructura digital médica para consultorios en LATAM y España"
+              width="80" height="80" loading="lazy" decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica con 15 años en pabellón. Fundadora de Cirujana Digital. Especialista en
+                infraestructura digital médica para captación de pacientes en LATAM y España: sitios rápidos,
+                posicionamiento en Google Maps e IA, y seguimiento de pacientes para consultorios privados.</p>
+            </div>
+          </div>
+
+          <!-- ── ARTÍCULOS RELACIONADOS ── -->
+          <div class="related-block">
+            <h3>Más sobre presencia digital médica</h3>
+            <ul class="related-list">
+              <li>
+                <span class="related-icon">⚡</span>
+                <a href="blog/core-web-vitals-2026/">Por qué una página médica lenta hace perder pacientes</a>
+              </li>
+              <li>
+                <span class="related-icon">🌐</span>
+                <a href="web-medica-que-convierte/">Página web médica que convierte: qué necesita y qué sobra</a>
+              </li>
+              <li>
+                <span class="related-icon">🔍</span>
+                <a href="seo-para-clinicas/">SEO para clínicas y consultorios: guía completa</a>
+              </li>
+              <li>
+                <span class="related-icon">🤖</span>
+                <a href="ia-para-clinicas/">IA para clínicas: cómo aparece un consultorio en ChatGPT y Gemini</a>
+              </li>
+              <li>
+                <span class="related-icon">📍</span>
+                <a href="blog/google-business-profile-medicos/">Google Business Profile para médicos: guía de
+                  configuración</a>
+              </li>
+              <li>
+                <span class="related-icon">📋</span>
+                <a href="diagnostico/">Diagnóstico de presencia digital médica — $100 USD</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── CTA FINAL ── -->
+          <div class="article-cta-box">
+            <h3>Diagnóstico de presencia digital del consultorio</h3>
+            <p>Velocidad del sitio, posicionamiento en Google, visibilidad en ChatGPT y Gemini, reputación online.
+              Informe PDF con pasos concretos ordenados por impacto. $100 USD · entrega en 3 días hábiles.</p>
+            <a href="diagnostico/" class="btn-cta-white">
+              <span>Solicitar diagnóstico de presencia digital médica</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+        </article>
+
+        <!-- ── SIDEBAR ── -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#que-es">Por qué revisar primero</a></li>
+              <li><a href="#velocidad">Paso 1 — Velocidad</a></li>
+              <li><a href="#mobile">Paso 2 — Celular</a></li>
+              <li><a href="#seo-basico">Paso 3 — Visibilidad en Google</a></li>
+              <li><a href="#conversion">Paso 4 — Conversión</a></li>
+              <li><a href="#errores">Problemas frecuentes</a></li>
+              <li><a href="#proximos-pasos">Qué hacer con los resultados</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico digital</span>
+              <p class="sb-diag__stat"><em>4 de cada 5</em> sitios de consultorios tienen al menos uno de estos
+                problemas — y el médico no lo sabe hasta que los pacientes dejan de llegar.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Carga antes de 3 segundos?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Aparece por especialidad y ciudad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                <div><strong>Presencia en la IA</strong><span>¿ChatGPT y Gemini lo mencionan?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🏅</span>
+                <div><strong>Reputación online</strong><span>¿La presencia digital genera confianza?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Solicitar diagnóstico digital
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">Informe PDF · 3 días hábiles · $100 USD</p>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>

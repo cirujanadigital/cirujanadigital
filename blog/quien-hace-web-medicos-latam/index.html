@@ -1,0 +1,1505 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO -->
+  <title>¿Quién hace la web de un consultorio médico? Guía para elegir bien | Cirujana Digital</title>
+  <meta name="description"
+    content="Opciones reales, precios claros y 6 criterios concretos para elegir quién construye la presencia digital de su consultorio. Sin tecnicismos." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/quien-hace-web-medicos-latam/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/quien-hace-web-medicos-latam/" />
+  <meta property="og:title" content="¿Quién hace la web de un consultorio médico? Guía para elegir bien" />
+  <meta property="og:description"
+    content="Opciones reales, precios claros y 6 criterios concretos para no perder pacientes por una mala elección." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-quien-hace-web-medicos-latam.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <meta property="article:published_time" content="2026-05-08" />
+  <meta property="article:modified_time" content="2026-05-22" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Negocio" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="¿Quién hace la web de un consultorio médico? Guía para elegir bien" />
+  <meta name="twitter:description"
+    content="Opciones reales, precios claros y criterios concretos para no equivocarse al contratar." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-quien-hace-web-medicos-latam.png" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+    #site-footer {
+      height: 678px;
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .btn-cta-white,
+    .btn-cta-secondary,
+    .blog-card {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    /* HERO */
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout style;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* BODY LAYOUT */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* TIPOGRAFÍA */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* TABLA COMPARATIVA */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* CALLOUTS */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    /* PRECIOS */
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .pricing-card {
+      background: var(--light);
+      border-radius: 14px;
+      padding: 1.5rem;
+      border-top: 4px solid var(--secondary);
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .pricing-card .price-label {
+      font-size: .72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--cd-text-light);
+    }
+
+    .pricing-card .price-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .pricing-card .price-desc {
+      font-size: .88rem;
+      color: var(--cd-text-light);
+      line-height: 1.5;
+    }
+
+    /* CRITERIOS */
+    .criteria-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .criteria-list li {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      background: var(--light);
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+    }
+
+    .criteria-num {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gradient-primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: .15rem;
+    }
+
+    .criteria-text strong {
+      display: block;
+      color: var(--cd-text);
+      font-size: 1rem;
+      margin-bottom: .2rem;
+    }
+
+    .criteria-text span {
+      font-size: .93rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+
+    /* ENTITY BOX */
+    .entity-box {
+      border-left: 4px solid var(--secondary);
+      background: rgba(0, 167, 169, .06);
+      border-radius: 0 10px 10px 0;
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .entity-box p {
+      color: #4a5568;
+      font-size: 1.05rem;
+      margin: 0;
+      font-style: italic;
+      line-height: 1.8;
+    }
+
+    /* FAQ */
+    .faq-item {
+      border-bottom: 1px solid #e8ecf0;
+      padding: 1.25rem 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      font-size: 1.05rem;
+      color: var(--cd-text);
+      margin: 0 0 .6rem;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      color: #4a5568;
+      font-size: .98rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* AUTHOR BOX */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* CTA BOX */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    .btn-cta-secondary {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: transparent;
+      color: rgba(255, 255, 255, .8);
+      border: 1px solid rgba(255, 255, 255, .3);
+      font-weight: 700;
+      padding: .75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: .95rem;
+      transition: var(--transition);
+      margin-top: .75rem;
+    }
+
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* BLOQUE ARTÍCULOS RELACIONADOS */
+    .related-posts {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--light);
+      border-radius: 14px;
+    }
+
+    .related-posts h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--cd-text);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .related-posts ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .related-posts li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .related-posts li::before {
+      content: "→";
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    .related-posts a {
+      color: var(--cd-text);
+      font-size: .97rem;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.5;
+      transition: color .2s;
+    }
+
+    .related-posts a:hover {
+      color: var(--primary);
+    }
+
+    .related-posts .related-desc {
+      font-size: .85rem;
+      color: var(--cd-text-light);
+      display: block;
+      font-weight: 400;
+      margin-top: .1rem;
+    }
+
+    /* BLOQUE PROBLEMAS FRECUENTES */
+    .problems-block {
+      margin: 2.5rem 0;
+      padding: 1.75rem;
+      border: 1px solid #e8ecf0;
+      border-radius: 14px;
+    }
+
+    .problems-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: 1rem;
+    }
+
+    .problems-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .problems-block li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      font-size: .93rem;
+      color: #4a5568;
+    }
+
+    .problems-block li::before {
+      content: "✗";
+      color: #c0392b;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SIDEBAR */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+      will-change: transform;
+      contain: layout style;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width:768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width:640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <!-- SCHEMA JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Especialista en infraestructura digital médica",
+          "url": "https://cirujanadigital.com/sobre-yulia/",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "description": "Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y España, fundadora de Cirujana Digital. Instrumentadora quirúrgica con 15 años de experiencia reconvertida en especialista en presencia digital médica, SEO para consultorios y posicionamiento en IA.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "sameAs": [
+            "https://instagram.com/cirujanadigital",
+            "https://linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/quien-hace-web-medicos-latam/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "¿Quién hace la web de un consultorio médico?" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/quien-hace-web-medicos-latam/#article",
+          "headline": "¿Quién hace la web de un consultorio médico? Guía para elegir bien",
+          "description": "Opciones reales, precios claros y 6 criterios concretos para elegir quién construye la presencia digital de su consultorio. Sin tecnicismos.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://cirujanadigital.com/img/og-quien-hace-web-medicos-latam.png",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "2026-05-08",
+          "dateModified":  "2026-05-22",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/quien-hace-web-medicos-latam/",
+          "articleSection": "Negocio",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Cuánto tarda en estar lista la web de un consultorio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Una página de presentación médica bien hecha tarda entre 7 y 14 días hábiles desde que se reciben los materiales: textos, fotos y datos del consultorio. Un sitio con varias secciones puede tardar entre 3 y 5 semanas. El factor que más demora el proceso es la entrega de información por parte del médico, no el desarrollo en sí."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Necesito WordPress para la web de mi consultorio?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. WordPress es una opción, pero no la única ni siempre la mejor para médicos. Los sitios en código estático cargan más rápido, no dependen de actualizaciones constantes y tienen menos riesgo de fallos técnicos. En Cirujana Digital trabajamos con HTML estático precisamente por esas razones: más velocidad, más seguridad y menos mantenimiento para el médico."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Puedo hacer la web del consultorio yo mismo con Wix?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Puede hacerlo, pero hay que entender los límites. Plataformas como Wix generan páginas más lentas que afectan la experiencia del paciente en celular, y tienen restricciones importantes para aparecer en Google por especialidad y ciudad. Para un médico que busca captar pacientes a través de búsquedas online, esas limitaciones tienen consecuencias directas en cuántos pacientes nuevos lo encuentran."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿La web me va a traer pacientes desde el primer día?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Ningún proveedor serio puede garantizarle eso. El posicionamiento local en Google tarda entre 30 y 90 días en generar resultados visibles, dependiendo de la competencia en su especialidad y ciudad. Lo que sí puede suceder desde el primer día es que los pacientes que ya lo conocen lo encuentren fácilmente, vean su información actualizada y pidan turno con menos fricción."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué pasa si necesito cambiar algo después de entregada la web?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Depende del proveedor que elija, y es una pregunta clave que debe hacer antes de contratar. En Cirujana Digital, los cambios menores como actualizar texto, agregar un servicio o cambiar un número de teléfono están incluidos en el plan de mantenimiento mensual. Los cambios estructurales se presupuestan aparte. Si el proveedor no tiene política clara de soporte postventa, eso es una señal de alerta."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden" class="gtm-iframe"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main" tabindex="-1">
+
+    <!-- ═══ HERO ══════════════════════════════════════════════ -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a><span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">¿Quién hace la web de un consultorio médico?</span>
+        </nav>
+        <span class="article-category">Negocio</span>
+        <h1>¿Quién hace la web de un consultorio médico? Guía para no equivocarse al contratar</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-05-08">8 de mayo de 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>8 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ CUERPO ══════════════════════════════════════════ -->
+    <div class="article-body">
+      <div class="article-layout">
+
+        <!-- ─── CONTENIDO PRINCIPAL ─────────────────────── -->
+        <article class="article-content">
+
+          <!-- INTRO: PROBLEMA DEL CONSULTORIO -->
+          <p>Cuando un paciente busca su especialidad en Google, el primer resultado que aparece no es necesariamente el
+            mejor médico. Es el que tiene mejor presencia digital. Usted puede tener veinte años de trayectoria y una
+            agenda llena de recomendaciones boca a boca, pero si no aparece en la búsqueda online, una parte importante
+            de los pacientes potenciales simplemente va a ir a otro lado.</p>
+
+          <p>Este artículo no es una guía técnica. Es una guía de compra. Le explica qué opciones existen para construir
+            la presencia digital de su consultorio, cuál es la diferencia entre ellas y cómo evaluar a cualquier
+            proveedor antes de contratar.</p>
+
+          <!-- CONSECUENCIA ECONÓMICA -->
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ Lo que está en juego</span>
+            <p>Cada semana que un consultorio no aparece en Google por su especialidad y ciudad, hay pacientes que
+              llaman a otro médico. No porque el médico sea peor, sino porque no lo encontraron. Eso tiene un costo
+              concreto: menos consultas nuevas, agenda más difícil de llenar, dependencia exclusiva del boca a boca.</p>
+          </div>
+
+          <!-- QUÉ CAMBIÓ CON GOOGLE / IA -->
+          <h2 id="que-cambio">Qué cambió: Google y las IAs ahora deciden qué médico aparece primero</h2>
+          <p>Hasta hace pocos años, tener una web era suficiente para tener presencia digital. Hoy no. Google prioriza
+            perfiles médicos con información clara, páginas rápidas en celular y reputación verificable. Además,
+            plataformas como ChatGPT, Gemini y Perplexity ya responden consultas de pacientes con recomendaciones de
+            médicos por especialidad y ciudad. El médico que no tiene infraestructura digital correcta directamente no
+            existe en esas respuestas.</p>
+
+          <p>El resultado es que la decisión de a qué médico llamar se toma cada vez más en una pantalla, antes de que
+            el paciente haga ningún contacto. Por eso, quien construya la presencia digital de su consultorio no es un
+            detalle secundario. Es una decisión clínica.</p>
+
+          <!-- SECCIÓN: OPCIONES -->
+          <h2 id="opciones">Las cuatro opciones que tiene un médico para tener presencia digital</h2>
+          <p>Hay cuatro caminos habituales. Cada uno tiene ventajas reales y limitaciones concretas.</p>
+
+          <div class="table-wrapper">
+            <table class="data-table"
+              aria-label="Comparativa de opciones para la presencia digital de un consultorio médico">
+              <thead>
+                <tr>
+                  <th>Opción</th>
+                  <th>Ventaja principal</th>
+                  <th>Limitación para el consultorio</th>
+                  <th>Riesgo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Agencia de marketing genérica</strong></td>
+                  <td>Equipo completo, procesos definidos</td>
+                  <td>No conoce el recorrido del paciente ni el lenguaje médico</td>
+                  <td class="tag-medium">Medio</td>
+                </tr>
+                <tr>
+                  <td><strong>Freelancer generalista</strong></td>
+                  <td>Precio más accesible al inicio</td>
+                  <td>Sin especialización en salud; sin soporte a largo plazo</td>
+                  <td class="tag-bad">Alto</td>
+                </tr>
+                <tr>
+                  <td><strong>Wix / Squarespace</strong></td>
+                  <td>Rápido de poner en marcha</td>
+                  <td>Páginas lentas en celular; limitado para aparecer en Google</td>
+                  <td class="tag-medium">Medio</td>
+                </tr>
+                <tr>
+                  <td><strong>Especialista en presencia digital médica</strong></td>
+                  <td>Conoce el flujo clínico, el paciente y los requisitos del sector salud</td>
+                  <td>Menos oferta disponible; precio más elevado</td>
+                  <td class="tag-good">Bajo</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Agencia de marketing genérica</h3>
+          <p>Trabaja con todo tipo de clientes: ropa, restaurantes, clínicas. Tiene estructura y procesos, lo que da
+            cierta seguridad. El problema es que no conoce el lenguaje médico, el recorrido que hace un paciente antes
+            de pedir turno ni qué información necesita ver antes de confiarle su salud a un médico. La web suele quedar
+            visualmente correcta pero sin las bases para atraer pacientes desde Google.</p>
+
+          <h3>Freelancer generalista</h3>
+          <p>Es la opción más económica en el corto plazo. Muchos tienen buen nivel técnico, pero sin experiencia en
+            salud es difícil que sepan cómo estructurar la información para un paciente, qué señales de confianza
+            incluir o qué errores evitar en una web médica. Además, si el freelancer deja de trabajar o cambia de rubro,
+            el consultorio queda sin soporte.</p>
+
+          <h3>Plataformas como Wix o Squarespace</h3>
+          <p>Permiten tener algo publicado en poco tiempo. Pero el resultado son páginas lentas, especialmente en
+            celular, donde más del 70% de las búsquedas médicas ocurren. Un paciente que espera más de 3 segundos a que
+            cargue la web simplemente la cierra y llama al siguiente médico. El posicionamiento en Google también tiene
+            limitaciones importantes con estas plataformas.</p>
+
+          <h3>Especialista en presencia digital médica</h3>
+          <p>Entiende cómo piensa el paciente, qué información necesita ver antes de pedir turno y cómo estructurar la
+            web para que Google y los motores de IA lo encuentren. Conoce el vocabulario del sector y el flujo clínico
+            real: admisión, consulta, seguimiento. Es la opción con menor riesgo de inversión perdida. Vea la <a
+              href="web-medica-que-convierte/">guía sobre webs médicas que convierten visitas en consultas</a> para
+            entender qué diferencia una web que funciona de una que solo existe.</p>
+
+          <!-- SECCIÓN: CRITERIOS -->
+          <h2 id="criterios">6 criterios para evaluar a cualquier proveedor antes de contratar</h2>
+          <p>Haga estas preguntas. Pida ejemplos concretos en cada una. Las respuestas le van a decir todo lo que
+            necesita saber.</p>
+
+          <ul class="criteria-list">
+            <li>
+              <span class="criteria-num">1</span>
+              <div class="criteria-text">
+                <strong>Entiende el lenguaje médico y cómo decide un paciente</strong>
+                <span>No es lo mismo escribir para una tienda de ropa que para un consultorio. Un paciente que busca un
+                  traumatólogo tiene dudas específicas, miedos concretos y un proceso de decisión distinto. Si el
+                  proveedor no entiende eso, el contenido de la web va a tener un tono equivocado que no genera
+                  confianza y no convierte visitas en turnos.</span>
+              </div>
+            </li>
+            <li>
+              <span class="criteria-num">2</span>
+              <div class="criteria-text">
+                <strong>Sabe cómo posicionar un consultorio en Google Maps y búsquedas locales</strong>
+                <span>No alcanza con poner la ciudad en el título de la página. El posicionamiento local para médicos
+                  incluye optimización del perfil de Google Business, palabras clave por especialidad y zona, y
+                  coherencia de nombre, dirección y teléfono en todos los canales. Pida que le expliquen cómo lo hacen
+                  en la práctica. Vea más sobre esto en <a href="seo-para-clinicas/">SEO para clínicas y
+                    consultorios</a>.</span>
+              </div>
+            </li>
+            <li>
+              <span class="criteria-num">3</span>
+              <div class="criteria-text">
+                <strong>Configura la web para que Google y las IAs entiendan su especialidad</strong>
+                <span>Hay un código invisible para el visitante, pero fundamental para Google, ChatGPT y Gemini, que le
+                  indica al buscador que usted es un médico real, en qué especialidad trabaja y dónde atiende. Sin eso,
+                  la web tiene muchas menos probabilidades de aparecer cuando un paciente busca su especialidad. Vea más
+                  en <a href="ia-para-clinicas/">cómo posicionar un consultorio médico en IA</a>.</span>
+              </div>
+            </li>
+            <li>
+              <span class="criteria-num">4</span>
+              <div class="criteria-text">
+                <strong>Garantiza velocidad de carga medible en celular</strong>
+                <span>La velocidad no es subjetiva: se mide con herramientas que dan un puntaje. Pida ese número antes
+                  de contratar. Una web médica debería superar los 90 puntos en celular. Si el proveedor no puede
+                  mostrar ese dato, o no sabe de qué le está hablando, es una señal de alerta.</span>
+              </div>
+            </li>
+            <li>
+              <span class="criteria-num">5</span>
+              <div class="criteria-text">
+                <strong>La web no depende de actualizaciones constantes para funcionar</strong>
+                <span>Algunas plataformas requieren actualizaciones frecuentes que pueden romper la web en el momento
+                  menos oportuno. Una web en código estático no tiene ese problema. Menos dependencias significa menos
+                  riesgo de que el consultorio aparezca con una página caída un lunes a las 8 de la mañana.</span>
+              </div>
+            </li>
+            <li>
+              <span class="criteria-num">6</span>
+              <div class="criteria-text">
+                <strong>Muestra casos reales en el sector salud, no en otros rubros</strong>
+                <span>Un portfolio con restaurantes y tiendas de moda no le dice nada sobre lo que va a hacer con su
+                  consultorio. Pida ver webs de médicos o clínicas que haya desarrollado. Si no puede mostrar ninguna,
+                  no tiene experiencia real en el sector.</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Prueba rápida antes de contratar</span>
+            <p>Abra su celular y entre a la web de algún médico que ese proveedor haya hecho. Si tarda más de 3 segundos
+              en cargar, ya tiene la respuesta que necesita.</p>
+          </div>
+
+          <!-- SECCIÓN: PRECIOS -->
+          <h2 id="precios">Cuánto cuesta construir la presencia digital de un consultorio</h2>
+          <p>Los precios varían según el tipo de producto que necesite. A continuación, los valores reales de <a
+              href="servicios/">Cirujana Digital</a> para que pueda comparar con otras propuestas del mercado.</p>
+
+          <div class="pricing-grid">
+            <div class="pricing-card">
+              <span class="price-label">Página de presentación médica</span>
+              <span class="price-value">desde $250 USD</span>
+              <span class="price-desc">Una sola página optimizada. Incluye presentación del médico, servicios, zona de
+                atención, formulario de contacto y WhatsApp. Indicada para médicos que están empezando su presencia
+                digital o que ya tienen pacientes pero no aparecen en Google.</span>
+            </div>
+            <div class="pricing-card">
+              <span class="price-label">Sitio completo del consultorio</span>
+              <span class="price-value">desde $750 USD</span>
+              <span class="price-desc">Múltiples secciones: inicio, sobre el médico, especialidades, preguntas
+                frecuentes, testimonios, contacto. SEO local configurado. Indicado para consultorios con varias
+                especialidades o clínicas que necesitan transmitir mayor autoridad.</span>
+            </div>
+            <div class="pricing-card">
+              <span class="price-label">Mantenimiento mensual</span>
+              <span class="price-value">desde $85 USD/mes</span>
+              <span class="price-desc">Actualizaciones de contenido, monitoreo de velocidad, revisión de configuración
+                para IA, soporte técnico y pequeños cambios incluidos. La presencia digital del consultorio sigue
+                funcionando correctamente sin que el médico tenga que preocuparse.</span>
+            </div>
+          </div>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ Un pago único no es suficiente</span>
+            <p>Una web no es un gasto único. Como cualquier consultorio, necesita mantenimiento: actualizaciones,
+              revisión de velocidad, cambios de contenido, renovación del dominio y el hosting. Si el proveedor solo
+              cobra una vez y después desaparece, el médico queda solo frente a todos esos problemas. El mantenimiento
+              mensual garantiza que alguien esté monitoreando que todo funcione.</p>
+          </div>
+
+          <p>Para entender qué opción se adapta mejor a su situación, puede consultar <a
+              href="servicios/landing-medica-vs-sitio-corporativo/">la diferencia entre una página de presentación y un
+              sitio corporativo médico</a>.</p>
+
+          <!-- SECCIÓN: DIFERENCIADOR CD -->
+          <h2 id="cirujana-digital">Qué diferencia a Cirujana Digital del resto</h2>
+
+          <div class="entity-box">
+            <p>Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y España
+              y fundadora de Cirujana Digital, trabajó 15 años como instrumentadora quirúrgica antes de especializarse
+              en presencia digital para el sector salud. Entiende el flujo clínico real, el lenguaje del paciente y qué
+              necesita la web de un consultorio para aparecer en Google, en Google Maps y en motores de IA como ChatGPT,
+              Gemini y Perplexity.</p>
+          </div>
+
+          <p>Saber cómo funciona un quirófano, cómo razona un paciente antes de pedir turno y qué información necesita
+            ver antes de confiarle su salud a un médico es lo que diferencia una web médica que convierte en una que
+            simplemente existe.</p>
+
+          <p>Los proyectos documentados incluyen <strong>Método Doshas</strong>, una landing para nutricionista en
+            Barcelona con pagos en euros y pesos chilenos, y <strong>La Góndola</strong>, en Ecuador, donde la velocidad
+            de carga pasó de crítica a óptima. Ambos casos están disponibles como referencia verificable antes de tomar
+            una decisión. Conozca más en la <a href="sobre-yulia/">página de Yulia Monti</a>.</p>
+
+          <!-- MID-ARTICLE CTA -->
+          <div class="article-cta-box">
+            <h3>¿No sabe exactamente qué necesita su consultorio?</h3>
+            <p>Diagnóstico personalizado para su especialidad y ciudad. 15 puntos. Resultado en 3 minutos.</p>
+            <div class="cta-buttons">
+              <a href="diagnostico/" class="btn-cta-white">
+                <span>Solicitar diagnóstico de presencia digital</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="servicios/" class="btn-cta-secondary">Ver servicios para médicos</a>
+            </div>
+          </div>
+
+          <!-- SECCIÓN: FAQ -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <div class="faq-item">
+            <h3>¿Cuánto tarda en estar lista la web de un consultorio?</h3>
+            <p>Una página de presentación médica bien hecha tarda entre 7 y 14 días hábiles desde que se reciben los
+              materiales: textos, fotos y datos del consultorio. Un sitio con varias secciones puede tardar entre 3 y 5
+              semanas. El factor que más demora el proceso es la entrega de información por parte del médico, no el
+              desarrollo en sí. Cuanto más completa sea la información al inicio, más rápido avanza el proyecto.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Necesito WordPress para la web de mi consultorio?</h3>
+            <p>No. WordPress es una opción, pero no la única ni siempre la mejor para un consultorio. Los sitios en
+              código estático cargan más rápido, no dependen de actualizaciones constantes y tienen menos riesgo de
+              fallas técnicas. En Cirujana Digital trabajamos con HTML estático precisamente por esas razones: más
+              velocidad, más seguridad y menos mantenimiento técnico para el médico. No necesita saber nada de
+              programación para que funcione correctamente.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Puedo hacer la web del consultorio yo mismo con Wix?</h3>
+            <p>Puede hacerlo, pero hay que entender los límites. Plataformas como Wix generan páginas más lentas,
+              especialmente en celular, y tienen restricciones importantes para aparecer en Google por especialidad y
+              ciudad. Para un médico que busca captar pacientes a través de búsquedas online, esas limitaciones tienen
+              consecuencias directas: menos visibilidad y menos pacientes nuevos. Si el objetivo es solo tener algo
+              publicado de manera provisoria, puede funcionar. Si el objetivo es llenar la agenda, las limitaciones son
+              importantes.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿La web me va a traer pacientes desde el primer día?</h3>
+            <p>No. Ningún proveedor serio puede garantizarle eso. El posicionamiento en Google tarda entre 30 y 90 días
+              en generar resultados visibles, dependiendo de la competencia en su especialidad y ciudad. Lo que sí puede
+              suceder desde el primer día es que los pacientes que ya lo conocen lo encuentren fácilmente, vean su
+              información actualizada y pidan turno con menos fricción. El flujo sostenido de consultas nuevas desde
+              Google viene después, cuando la web está bien construida y ha pasado el tiempo necesario.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Qué pasa si necesito cambiar algo después de entregada la web?</h3>
+            <p>Depende del proveedor que elija, y es una pregunta clave que debe hacer antes de contratar. En Cirujana
+              Digital, los cambios menores como actualizar un texto, agregar un servicio o cambiar el teléfono están
+              incluidos en el plan de mantenimiento mensual. Los cambios estructurales se presupuestan aparte. Lo más
+              importante es que antes de firmar cualquier contrato el proveedor le explique con claridad qué pasa
+              después de la entrega. Si la respuesta es vaga, eso es una señal de alerta.</p>
+          </div>
+
+          <!-- AUTHOR BOX -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp"
+              alt="Yulia Monti — Cirujana Digital, especialista en presencia digital para consultorios médicos en Argentina y España"
+              width="80" height="80" loading="lazy" decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica con 15 años en el sistema de salud. Hoy construyo la infraestructura digital
+                que hace que los pacientes encuentren a su médico: presencia en Google, velocidad de carga, reputación
+                online y posicionamiento en IA. Especialidad: consultorios y clínicas en Argentina, LATAM y España.</p>
+            </div>
+          </div>
+
+          <!-- BLOQUE: PROBLEMAS FRECUENTES EN CONSULTORIOS -->
+          <div class="problems-block">
+            <h3>Problemas frecuentes que resuelve una presencia digital correcta</h3>
+            <ul>
+              <li>Pacientes que no encuentran el consultorio cuando buscan en Google</li>
+              <li>Agenda que no se llena aunque haya buena reputación clínica</li>
+              <li>Web lenta o difícil de usar en celular que hace perder contactos</li>
+              <li>Médico que no aparece en Google Maps al buscar su especialidad</li>
+              <li>Información desactualizada o inconsistente en distintos canales</li>
+              <li>Ausencia total en respuestas de ChatGPT, Gemini o Google AI</li>
+            </ul>
+          </div>
+
+          <!-- BLOQUE: ARTÍCULOS RELACIONADOS -->
+          <div class="related-posts">
+            <h3>Artículos relacionados</h3>
+            <ul>
+              <li>
+                <div>
+                  <a href="seo-para-clinicas/">SEO para clínicas y consultorios: cómo aparecer en Google por
+                    especialidad y ciudad</a>
+                  <span class="related-desc">Guía completa sobre posicionamiento local médico: Google Business, palabras
+                    clave y reputación online.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="ia-para-clinicas/">Cómo posicionar su consultorio en ChatGPT, Gemini y Google AI</a>
+                  <span class="related-desc">Por qué las IAs ya deciden qué médico recomiendan y cómo preparar su
+                    presencia digital para eso.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="web-medica-que-convierte/">La diferencia entre una web médica que convierte y una que solo
+                    existe</a>
+                  <span class="related-desc">Qué tiene que tener una web para que un paciente que llega la convierta en
+                    un turno real.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="servicios/landing-medica-vs-sitio-corporativo/">¿Página de presentación o sitio completo?
+                    Cuál necesita su consultorio</a>
+                  <span class="related-desc">Comparativa de opciones con precios y criterios claros para decidir.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="article-cta-box">
+            <h3>¿Listo para que los pacientes lo encuentren cuando buscan su especialidad?</h3>
+            <p>Evalúe la visibilidad actual de su consultorio en Google y ChatGPT, o revise directamente los servicios
+              disponibles.</p>
+            <div class="cta-buttons">
+              <a href="diagnostico/" class="btn-cta-white">
+                <span>Evaluar visibilidad en Google y ChatGPT</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="servicios/" class="btn-cta-secondary">Ver servicios para médicos</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- ─── SIDEBAR ──────────────────────────────────── -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#que-cambio">Qué cambió con Google y las IAs</a></li>
+              <li><a href="#opciones">4 opciones disponibles</a></li>
+              <li><a href="#criterios">6 criterios para elegir</a></li>
+              <li><a href="#precios">Cuánto cuesta</a></li>
+              <li><a href="#cirujana-digital">Qué diferencia a Cirujana Digital</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> consultorios tienen al menos un error que hace perder
+                pacientes sin que el médico lo sepa.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Carga antes de que el paciente la cierre?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Aparece cuando buscan su especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                <div><strong>Presencia en IA</strong><span>¿Lo recomienda ChatGPT o Gemini?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">💬</span>
+                <div><strong>Conversión</strong><span>¿Los visitantes piden turno?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Solicitar diagnóstico de presencia digital
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+
+      </div><!-- /article-layout -->
+    </div><!-- /article-body -->
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>

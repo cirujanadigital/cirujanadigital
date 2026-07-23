@@ -1,0 +1,1694 @@
+<!doctype html>
+<html lang="es" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+
+    // Retrasar GTM hasta primera interacción o 3.5s de idle
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico Express: ¿Google te encuentra? — Cirujana Digital</title>
+  <meta name="description"
+    content="Quiz gratuito de 7 preguntas que evalúa la visibilidad de tu consultorio en Google y en IAs. Resultado inmediato con recomendación personalizada. Sin registro." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cirujanadigital.com/diagnostico/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cirujanadigital.com/diagnostico/" />
+  <meta property="og:title" content="Diagnóstico Express: ¿Google te encuentra? — Cirujana Digital" />
+  <meta property="og:description"
+    content="Quiz gratuito de 7 preguntas. Evaluá la visibilidad de tu consultorio en Google y en IAs. Resultado y recomendación inmediata." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-image.png" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+
+  <script type="application/ld+json">
+
+   {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://cirujanadigital.com/diagnostico/#quiz",
+      "name": "Diagnóstico Express de Visibilidad Digital Médica",
+      "description": "Quiz gratuito de 7 preguntas que evalúa la visibilidad de un consultorio médico en Google, Google Maps y motores de respuesta IA. Resultado inmediato con recomendación personalizada. Sin registro.",
+      "applicationCategory": "HealthcareApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "provider": {"@id": "https://cirujanadigital.com/#organization"},
+      "url": "https://cirujanadigital.com/diagnostico/",
+      "inLanguage": "es"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://cirujanadigital.com/diagnostico/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Necesito registrarme para hacer el diagnóstico?",
+          "acceptedAnswer": {"@type": "Answer", "text": "No. El diagnóstico de visibilidad digital médica de Cirujana Digital es completamente anónimo. No se pide nombre, email ni ningún dato de contacto. El resultado aparece en pantalla al terminar las 7 preguntas."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué evalúa el diagnóstico express?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Evalúa tres dimensiones de la presencia digital del consultorio: visibilidad en Google Maps y Google Business Profile, velocidad y estructura técnica del sitio web, y presencia en motores de respuesta IA como ChatGPT, Perplexity y Google AI Overviews."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa después del resultado?",
+          "acceptedAnswer": {"@type": "Answer", "text": "El resultado indica el servicio específico que aplica a la situación del consultorio: Sistema de Activación Digital, Auditoría IA Médica u Optimización WPO. Se puede contratar directamente o agendar una consulta gratuita de 30 minutos para revisar el plan."}
+        },
+        {
+          "@type": "Question",
+          "name": "¿El diagnóstico es realmente gratuito?",
+          "acceptedAnswer": {"@type": "Answer", "text": "Sí. El diagnóstico express de Cirujana Digital no tiene ningún costo. No hay registro, no hay formulario y no se pide ningún dato antes ni después de ver el resultado."}
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Recursos", "item": "https://cirujanadigital.com/recursos/"},
+        {"@type": "ListItem", "position": 3, "name": "Diagnóstico Express"}
+      ]
+    }
+  ]
+}
+  </script>
+
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+
+  <style>
+    /* ── RESET / BASE ────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --brand: #00a7a9;
+      --brand-dark: #03658c;
+      --text: #2d3748;
+      --text-light: #64748b;
+      --grad-brand: linear-gradient(135deg, #03658c, #00a7a9);
+      --grad-dark: linear-gradient(135deg, #0d1b2a, #03658c);
+      --grad-text: linear-gradient(135deg, #00a7a9, #7fdbff);
+      --surface: #f8fafc;
+      --border: #e2e8f0;
+      --radius: 12px;
+      --radius-lg: 20px;
+      --shadow: 0 4px 24px rgba(3, 101, 140, 0.10);
+      --shadow-lg: 0 12px 48px rgba(3, 101, 140, 0.18);
+      --font: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-serif: Georgia, 'Times New Roman', serif;
+    }
+
+    body {
+      font-family: var(--font);
+      color: var(--text);
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      padding-top: 70px;
+    }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .wrap-narrow {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* ── HERO ────────────────────────────────── */
+    .hero {
+      position: relative;
+      background: #0a1628;
+      padding: clamp(2.5rem, 5vw, 4rem) 0;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 65% 55% at 90% 15%, rgba(0, 167, 169, .18) 0%, transparent 65%),
+        radial-gradient(ellipse 55% 65% at 5% 85%, rgba(3, 101, 140, .20) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0, 167, 169, .04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 167, 169, .04) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .55);
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--brand);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      background: rgba(0, 167, 169, .15);
+      border: 1px solid rgba(0, 167, 169, .3);
+      color: var(--brand);
+      padding: .3rem .75rem;
+      border-radius: 100px;
+      margin-bottom: 1.25rem;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: .5;
+        transform: scale(1.3);
+      }
+    }
+
+    .hero-h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 500;
+      line-height: 1.15;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    .hero-h1 em {
+      font-style: normal;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-lead {
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, .75);
+      max-width: 560px;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .hero-lead strong {
+      color: #fff;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .hero-meta-item svg {
+      color: var(--brand);
+      flex-shrink: 0;
+    }
+
+    /* ── QUIZ SHELL ──────────────────────────── */
+    .quiz-section {
+      background: var(--surface);
+      padding: 4rem 0 5rem;
+    }
+
+    .quiz-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    /* Progress bar */
+    .quiz-progress {
+      height: 4px;
+      background: var(--border);
+      position: relative;
+    }
+
+    .quiz-progress-fill {
+      height: 100%;
+      background: var(--grad-brand);
+      border-radius: 2px;
+      transition: width .4s cubic-bezier(.4, 0, .2, 1);
+      width: 0%;
+    }
+
+    /* Header del quiz */
+    .quiz-head {
+      padding: 1.75rem 2rem 1.25rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .quiz-step-label {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--brand);
+    }
+
+    .quiz-counter {
+      font-size: .85rem;
+      color: var(--text-light);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .quiz-counter strong {
+      color: var(--text);
+    }
+
+    /* Cuerpo */
+    .quiz-body {
+      padding: 2rem;
+    }
+
+    .quiz-q {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--text);
+      margin-bottom: .5rem;
+    }
+
+    .quiz-hint {
+      font-size: .85rem;
+      color: var(--text-light);
+      margin-bottom: 1.75rem;
+    }
+
+    /* Opciones */
+    .quiz-opts {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .quiz-opt {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem 1.25rem;
+      border: 2px solid var(--border);
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: border-color .18s, background .18s, transform .12s;
+      background: #fff;
+      text-align: left;
+      width: 100%;
+      font-family: inherit;
+    }
+
+    .quiz-opt:hover {
+      border-color: var(--brand);
+      background: rgba(0, 167, 169, .04);
+      transform: translateX(3px);
+    }
+
+    .quiz-opt.selected {
+      border-color: var(--brand-dark);
+      background: rgba(3, 101, 140, .06);
+    }
+
+    .quiz-opt.correct {
+      border-color: #22c55e;
+      background: rgba(34, 197, 94, .07);
+    }
+
+    .quiz-opt-circle {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+      margin-top: 1px;
+      transition: border-color .18s, background .18s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .quiz-opt.selected .quiz-opt-circle,
+    .quiz-opt.correct .quiz-opt-circle {
+      border-color: var(--brand-dark);
+      background: var(--brand-dark);
+    }
+
+    .quiz-opt.selected .quiz-opt-circle::after,
+    .quiz-opt.correct .quiz-opt-circle::after {
+      content: '';
+      width: 7px;
+      height: 7px;
+      background: #fff;
+      border-radius: 50%;
+    }
+
+    .quiz-opt-text {
+      flex: 1;
+      font-size: .95rem;
+      line-height: 1.45;
+      color: var(--text);
+    }
+
+    .quiz-opt-score {
+      font-size: .75rem;
+      font-weight: 700;
+      color: var(--text-light);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .quiz-opt.selected .quiz-opt-score {
+      color: var(--brand-dark);
+    }
+
+    /* Navegación */
+    .quiz-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem 1.75rem;
+      gap: 1rem;
+    }
+
+    .quiz-nav-left {
+      font-size: .8rem;
+      color: var(--text-light);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .75rem 1.5rem;
+      border-radius: 8px;
+      font-size: .95rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      text-decoration: none;
+      transition: all .18s;
+      font-family: inherit;
+    }
+
+    .btn-primary {
+      background: var(--grad-brand);
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      opacity: .9;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(0, 167, 169, .35);
+    }
+
+    .btn-primary:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--text-light);
+      border: 1px solid var(--border);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    /* ── RESULTADO ───────────────────────────── */
+    .result-card {
+      display: none;
+    }
+
+    .result-card.active {
+      display: block;
+    }
+
+    .result-score-ring {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1.5rem;
+      position: relative;
+    }
+
+    .result-score-ring svg {
+      transform: rotate(-90deg);
+    }
+
+    .ring-bg {
+      fill: none;
+      stroke: var(--border);
+      stroke-width: 8;
+    }
+
+    .ring-fill {
+      fill: none;
+      stroke-width: 8;
+      stroke-linecap: round;
+      stroke-dasharray: 339.29;
+      /* 2π×54 */
+      stroke-dashoffset: 339.29;
+      transition: stroke-dashoffset 1s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .ring-fill.low {
+      stroke: #ef4444;
+    }
+
+    .ring-fill.mid {
+      stroke: #f59e0b;
+    }
+
+    .ring-fill.high {
+      stroke: #22c55e;
+    }
+
+    .ring-label {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ring-num {
+      font-family: var(--font-serif);
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--text);
+    }
+
+    .ring-max {
+      font-size: .75rem;
+      color: var(--text-light);
+    }
+
+    .result-head {
+      text-align: center;
+      padding: 2rem 2rem 1rem;
+    }
+
+    .result-badge {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      padding: .3rem .9rem;
+      border-radius: 100px;
+      margin-bottom: 1rem;
+    }
+
+    .result-badge.low {
+      background: rgba(239, 68, 68, .1);
+      color: #dc2626;
+    }
+
+    .result-badge.mid {
+      background: rgba(245, 158, 11, .1);
+      color: #d97706;
+    }
+
+    .result-badge.high {
+      background: rgba(34, 197, 94, .1);
+      color: #16a34a;
+    }
+
+    .result-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.4rem, 3vw, 1.8rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: .75rem;
+    }
+
+    .result-title em {
+      font-style: normal;
+      color: var(--brand-dark);
+    }
+
+    .result-desc {
+      font-size: 1rem;
+      color: var(--text-light);
+      max-width: 500px;
+      margin: 0 auto;
+      line-height: 1.65;
+    }
+
+    /* Breakdown por pregunta */
+    .result-breakdown {
+      padding: 1.5rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-breakdown-title {
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
+
+    .breakdown-list {
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .breakdown-item {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+    }
+
+    .breakdown-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .breakdown-dot.ok {
+      background: #22c55e;
+    }
+
+    .breakdown-dot.warn {
+      background: #f59e0b;
+    }
+
+    .breakdown-dot.bad {
+      background: #ef4444;
+    }
+
+    .breakdown-text {
+      font-size: .88rem;
+      color: var(--text);
+      flex: 1;
+    }
+
+    .breakdown-pts {
+      font-size: .8rem;
+      font-weight: 600;
+      color: var(--text-light);
+      flex-shrink: 0;
+    }
+
+    /* Recomendación + CTA */
+    .result-cta {
+      padding: 1.5rem 2rem 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-rec {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .result-rec-label {
+      font-size: .75rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: .5rem;
+    }
+
+    .result-rec-text {
+      font-size: .95rem;
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    .result-rec-text strong {
+      color: var(--brand-dark);
+    }
+
+    .result-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
+    .result-btns .btn {
+      flex: 1;
+      min-width: 200px;
+      justify-content: center;
+    }
+
+    .btn-wa {
+      background: #1e7e43;
+      color: #fff;
+    }
+
+    .btn-wa:hover {
+      background: #176334;
+      transform: translateY(-1px);
+    }
+
+    /* Reiniciar */
+    .result-restart {
+      text-align: center;
+      padding: 1rem 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .result-restart button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: .85rem;
+      color: var(--text-light);
+      font-family: inherit;
+      text-decoration: underline;
+    }
+
+    .result-restart button:hover {
+      color: var(--brand);
+    }
+
+    /* ── CONTEXTO LATERAL ────────────────────── */
+    .quiz-context {
+      margin-top: 2rem;
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    .ctx-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+    }
+
+    .ctx-icon {
+      font-size: 1.4rem;
+      margin-bottom: .5rem;
+    }
+
+    .ctx-title {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: .3rem;
+    }
+
+    .ctx-desc {
+      font-size: .82rem;
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+
+    /* ── SOCIAL PROOF ────────────────────────── */
+    .proof-sec {
+      background: #fff;
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .proof-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .proof-item {
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .proof-num {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--brand-dark);
+      line-height: 1;
+      margin-bottom: .3rem;
+    }
+
+    .proof-label {
+      font-size: .82rem;
+      color: var(--text-light);
+    }
+
+    .proof-divider {
+      width: 1px;
+      height: 48px;
+      background: var(--border);
+      flex-shrink: 0;
+    }
+
+    /* ── FAQ RÁPIDO ──────────────────────────── */
+    .faq-mini-sec {
+      background: var(--surface);
+      padding: 3.5rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-mini-title {
+      font-family: var(--font-serif);
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+
+    .faq-mini-list {
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .faq-mini-item {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .faq-mini-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.25rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      gap: .75rem;
+    }
+
+    .faq-mini-chev {
+      flex-shrink: 0;
+      transition: transform .2s;
+      color: var(--text-light);
+    }
+
+    .faq-mini-btn[aria-expanded="true"] .faq-mini-chev {
+      transform: rotate(180deg);
+    }
+
+    .faq-mini-body {
+      display: none;
+      padding: 0 1.25rem 1rem;
+      font-size: .88rem;
+      color: var(--text-light);
+      line-height: 1.6;
+    }
+
+    .faq-mini-btn[aria-expanded="true"]+.faq-mini-body {
+      display: block;
+    }
+
+    /* ── CTA FINAL ───────────────────────────── */
+    .cta-final {
+      background: var(--grad-dark);
+      padding: 4rem 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-final-glow {
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 167, 169, .15) 0%, transparent 70%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+
+    .cta-final-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta-final-h {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+
+    .cta-final-h em {
+      font-style: normal;
+      background: var(--grad-text);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .cta-final-sub {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .cta-final-btns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+    }
+
+    .cta-final-trust {
+      margin-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .trust-item {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .55);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+    }
+
+    .trust-check {
+      color: var(--brand);
+    }
+
+    /* ── ANIMACIONES DE TRANSICIÓN ───────────── */
+    .quiz-step {
+      animation: stepIn .25s ease;
+    }
+
+    @keyframes stepIn {
+      from {
+        opacity: 0;
+        transform: translateX(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .quiz-body.leaving {
+      animation: stepOut .2s ease forwards;
+    }
+
+    @keyframes stepOut {
+      to {
+        opacity: 0;
+        transform: translateX(-12px);
+      }
+    }
+
+    /* ── RESPONSIVE ──────────────────────────── */
+    @media (max-width: 600px) {
+      .quiz-head {
+        padding: 1.25rem 1.25rem 1rem;
+      }
+
+      .quiz-body {
+        padding: 1.5rem 1.25rem;
+      }
+
+      .quiz-nav {
+        padding: 1rem 1.25rem 1.5rem;
+      }
+
+      .result-head,
+      .result-breakdown,
+      .result-cta,
+      .result-restart {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+      }
+
+      .proof-divider {
+        display: none;
+      }
+
+      .hero {
+        padding: 3.5rem 0 3rem;
+      }
+
+      .hero-meta {
+        gap: 1rem;
+      }
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display: none; visibility: hidden" class="gtm-iframe"></iframe>
+  </noscript>
+
+  <div id="site-nav"></div>
+
+  <main id="main" tabindex="-1">
+
+    <!-- ══ HERO ══ -->
+    <section class="hero" aria-labelledby="diag-h1">
+      <div class="wrap hero-inner">
+        <nav class="breadcrumb" aria-label="Ruta de navegación">
+          <a href="">cirujanadigital.com</a>
+          <span aria-hidden="true">›</span>
+          <a href="recursos/">recursos</a>
+          <span aria-hidden="true">›</span>
+          <span aria-current="page">diagnóstico express</span>
+        </nav>
+        <div class="eyebrow">
+          <span class="eyebrow-dot" aria-hidden="true"></span>
+          Herramienta gratuita · Sin registro
+        </div>
+        <h1 class="hero-h1" id="diag-h1">
+          Diagnóstico Express:<br>
+          <em>¿Google te encuentra?</em>
+        </h1>
+        <p class="hero-lead">
+          7 preguntas. 3 minutos. Resultado inmediato con la recomendación exacta para tu situación.
+          <strong>Sin correo. Sin formularios. Sin venta antes de tiempo.</strong>
+        </p>
+        <div class="hero-meta" aria-label="Características del diagnóstico">
+          <div class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            7 preguntas · &lt;3 minutos
+          </div>
+          <div class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Evalúa Google, Maps e IAs
+          </div>
+          <div class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            Recomendación personalizada
+          </div>
+          <div class="hero-meta-item">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+            100% anónimo
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ QUIZ ══ -->
+    <section class="quiz-section" aria-labelledby="quiz-region-label">
+      <div class="wrap">
+        <h2 id="quiz-region-label" class="sr-only">Quiz de diagnóstico de visibilidad digital</h2>
+
+        <div class="quiz-card" role="form" aria-label="Quiz de diagnóstico express">
+
+          <!-- Barra de progreso -->
+          <div class="quiz-progress" role="progressbar" aria-label="Progreso del quiz" aria-valuenow="0"
+            aria-valuemin="0" aria-valuemax="100" id="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="progress-fill"></div>
+          </div>
+
+          <!-- Header -->
+          <div class="quiz-head">
+            <span class="quiz-step-label" id="step-label">Pregunta 1 de 7</span>
+            <span class="quiz-counter">Puntaje actual: <strong id="score-display">0</strong> / 21 pts</span>
+          </div>
+
+          <!-- Cuerpo del quiz (preguntas) -->
+          <div class="quiz-body" id="quiz-body">
+            <!-- Las preguntas se inyectan por JS -->
+          </div>
+
+          <!-- Navegación -->
+          <div class="quiz-nav" id="quiz-nav">
+            <span class="quiz-nav-left" id="nav-hint">Seleccioná una opción para continuar</span>
+            <button class="btn btn-primary" id="btn-next" disabled aria-label="Siguiente pregunta">
+              Siguiente
+              <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Resultado (oculto hasta finalizar) -->
+          <div class="result-card" id="result-card" aria-live="polite">
+            <!-- Se inyecta por JS -->
+          </div>
+
+        </div><!-- /quiz-card -->
+
+        <!-- Cards de contexto -->
+        <div class="quiz-context" aria-label="¿Qué evalúa este diagnóstico?">
+          <div class="ctx-card">
+            <div class="ctx-icon" aria-hidden="true">📍</div>
+            <div class="ctx-title">Visibilidad en Google Maps</div>
+            <div class="ctx-desc">Evaluamos si tu Google Business Profile está activo, verificado y optimizado para
+              aparecer cuando un paciente busca tu especialidad.</div>
+          </div>
+          <div class="ctx-card">
+            <div class="ctx-icon" aria-hidden="true">🌐</div>
+            <div class="ctx-title">Velocidad y presencia web</div>
+            <div class="ctx-desc">Un sitio lento pierde pacientes antes de que lean tu nombre. Chequeamos velocidad,
+              schema médico y métricas conectadas.</div>
+          </div>
+          <div class="ctx-card">
+            <div class="ctx-icon" aria-hidden="true">🤖</div>
+            <div class="ctx-title">Presencia en IAs</div>
+            <div class="ctx-desc">ChatGPT y Perplexity recomiendan médicos hoy. Evaluamos si tu consultorio existe en
+              esa dimensión o si te estás perdiendo esa demanda.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ SOCIAL PROOF ══ -->
+    <section class="proof-sec" aria-labelledby="proof-h2">
+      <h2 id="proof-h2" class="sr-only">Resultados de clientes de Cirujana Digital</h2>
+      <div class="wrap proof-inner">
+        <div class="proof-item">
+          <div class="proof-num">100</div>
+          <div class="proof-label">Lighthouse garantizado<br>en cada entrega</div>
+        </div>
+        <div class="proof-divider" aria-hidden="true"></div>
+        <div class="proof-item">
+          <div class="proof-num">48→100</div>
+          <div class="proof-label">WPO real:<br>La Góndola Ecuador</div>
+        </div>
+        <div class="proof-divider" aria-hidden="true"></div>
+        <div class="proof-item">
+          <div class="proof-num">$0</div>
+          <div class="proof-label">Sin registro para<br>usar este diagnóstico</div>
+        </div>
+        <div class="proof-divider" aria-hidden="true"></div>
+        <div class="proof-item">
+          <div class="proof-num">3 min</div>
+          <div class="proof-label">Tiempo promedio<br>para completar el quiz</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FAQ MINI ══ -->
+    <section class="faq-mini-sec" aria-labelledby="faq-mini-h2">
+      <div class="wrap-narrow">
+        <h2 class="faq-mini-title" id="faq-mini-h2">Preguntas sobre el diagnóstico</h2>
+        <div class="faq-mini-list">
+          <div class="faq-mini-item">
+            <button class="faq-mini-btn" aria-expanded="false" aria-controls="faq1-body">
+              ¿Necesito registrarme o dar mi email?
+              <svg class="faq-mini-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="faq-mini-body" id="faq1-body">No. El diagnóstico es completamente anónimo. No pedimos nombre,
+              email ni ningún dato de contacto. El resultado aparece en pantalla al terminar.</div>
+          </div>
+          <div class="faq-mini-item">
+            <button class="faq-mini-btn" aria-expanded="false" aria-controls="faq2-body">
+              ¿Qué pasa después de ver el resultado?
+              <svg class="faq-mini-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="faq-mini-body" id="faq2-body">El resultado te indica exactamente qué servicio aplica a tu
+              situación: Pack Presencia, Auditoría IA o WPO. Podés leer el detalle de ese servicio o agendar una
+              consulta gratuita de 30 minutos para revisarlo juntos.</div>
+          </div>
+          <div class="faq-mini-item">
+            <button class="faq-mini-btn" aria-expanded="false" aria-controls="faq3-body">
+              ¿El diagnóstico reemplaza la consulta gratuita?
+              <svg class="faq-mini-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="faq-mini-body" id="faq3-body">No, las complementa. El diagnóstico te da el mapa general en 3
+              minutos. La consulta de 30 minutos va al detalle de tu situación específica: revisamos el sitio, el GBP,
+              los competidores y definimos el plan exacto.</div>
+          </div>
+          <div class="faq-mini-item">
+            <button class="faq-mini-btn" aria-expanded="false" aria-controls="faq4-body">
+              ¿Puedo hacer el diagnóstico más de una vez?
+              <svg class="faq-mini-chev" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M5 7.5l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <div class="faq-mini-body" id="faq4-body">Sí. Es completamente libre. Podés repetirlo tantas veces como
+              quieras o compartirlo con colegas del área de salud.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ CTA FINAL ══ -->
+    <section class="cta-final" aria-labelledby="cta-final-h2">
+      <div class="cta-final-glow" aria-hidden="true"></div>
+      <div class="wrap cta-final-inner">
+        <h2 class="cta-final-h" id="cta-final-h2">
+          ¿Ya tenés el resultado?<br>
+          <em>Resolvámoslo juntos.</em>
+        </h2>
+        <p class="cta-final-sub">La consulta de 30 minutos es gratuita. Trae el diagnóstico y empezamos desde ahí.</p>
+        <div class="cta-final-btns">
+          <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-primary" target="_blank"
+            rel="noopener noreferrer">
+            Agendar consulta gratuita
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </a>
+          <a href="https://wa.me/5491176199680?text=Hola+Yulia%2C+hice+el+diagnóstico+express.+Mi+resultado+fue+%22Presencia+en+IA%22.+Quiero+saber+más+sobre+la+Auditoría+IA+Médica+%24100+USD."
+            class="btn btn-wa" target="_blank" rel="noopener noreferrer">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+            </svg>
+            Hablar por WhatsApp
+          </a>
+        </div>
+        <div class="cta-final-trust">
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Consulta 100% gratuita</span>
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Sin permanencia mínima</span>
+          <span class="trust-item"><span class="trust-check" aria-hidden="true">✓</span> Garantía documentada</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="site-footer"></div>
+
+  <!-- ══ QUIZ JS ══ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── PREGUNTAS ─────────────────────────────────────────────
+         Cada opción: { text, pts }
+         pts 0 = crítico / 1 = parcial / 3 = ok
+      ──────────────────────────────────────────────────────────── */
+      var QUESTIONS = [
+        {
+          q: '¿Tu consultorio aparece en Google Maps cuando alguien busca tu especialidad en tu ciudad?',
+          hint: 'Buscá "[tu especialidad] [tu ciudad]" en Google ahora mismo si no estás seguro.',
+          opts: [
+            { text: 'Sí, aparezco entre los primeros 3 resultados del mapa', pts: 3 },
+            { text: 'Aparezco, pero no en los primeros puestos', pts: 1 },
+            { text: 'No lo sé / nunca lo verifiqué', pts: 0 },
+            { text: 'No aparezco o no tengo Google Business Profile', pts: 0 }
+          ]
+        },
+        {
+          q: '¿Tu Google Business Profile tiene reseñas de pacientes y una descripción completa?',
+          hint: 'Un GBP sin reseñas ni descripción pierde frente a competidores con 10+ opiniones.',
+          opts: [
+            { text: 'Sí, tengo 10 o más reseñas y la ficha completa', pts: 3 },
+            { text: 'Tengo algunas reseñas pero la ficha está incompleta', pts: 1 },
+            { text: 'Tengo GBP pero sin reseñas ni descripción', pts: 0 },
+            { text: 'No tengo Google Business Profile', pts: 0 }
+          ]
+        },
+        {
+          q: '¿Tu sitio web carga en menos de 3 segundos en el celular?',
+          hint: 'El 53% de los usuarios abandona si la carga supera 3 segundos. Podés medirlo en pagespeed.web.dev.',
+          opts: [
+            { text: 'Sí, y tengo el score de PageSpeed para confirmarlo', pts: 3 },
+            { text: 'Creo que sí, pero nunca lo medí', pts: 1 },
+            { text: 'No, carga lento', pts: 0 },
+            { text: 'No tengo sitio web', pts: 0 }
+          ]
+        },
+        {
+          q: '¿Tu sitio web tiene datos estructurados (Schema) que identifican tu especialidad médica?',
+          hint: 'El Schema Physician le dice a Google y a las IAs exactamente quién sos y qué tratás.',
+          opts: [
+            { text: 'Sí, tengo Schema médico validado en mi web', pts: 3 },
+            { text: 'No sé qué es Schema / no lo revisé nunca', pts: 0 },
+            { text: 'Mi web está en WordPress, no sé si tiene Schema', pts: 1 },
+            { text: 'No tengo sitio web', pts: 0 }
+          ]
+        },
+        {
+          q: 'Cuando alguien busca tu nombre o especialidad en ChatGPT o Perplexity, ¿aparecés?',
+          hint: 'Escribí "¿Quién es el mejor [especialidad] en [ciudad]?" en ChatGPT y mirá si te mencionan.',
+          opts: [
+            { text: 'Sí, me mencionan con información correcta', pts: 3 },
+            { text: 'No lo sé / nunca lo probé', pts: 0 },
+            { text: 'Lo probé y no aparezco', pts: 0 },
+            { text: 'Aparezco pero con información incorrecta o incompleta', pts: 1 }
+          ]
+        },
+        {
+          q: '¿Tenés Google Analytics 4 o Search Console configurado en tu sitio web?',
+          hint: 'Sin métricas no sabés si tu web trae pacientes. Es como operar sin monitoreo.',
+          opts: [
+            { text: 'Sí, tengo GA4 y Search Console activos con datos', pts: 3 },
+            { text: 'Tengo uno de los dos pero no los dos', pts: 1 },
+            { text: 'No tengo ninguno / no sé cómo verificarlo', pts: 0 },
+            { text: 'No tengo sitio web', pts: 0 }
+          ]
+        },
+        {
+          q: 'Si un paciente busca tu especialidad en Google hoy, ¿con qué probabilidad crees que te encuentra antes que a un competidor?',
+          hint: 'Esto integra todo lo anterior. Sé objetivo.',
+          opts: [
+            { text: 'Alta — tengo GBP optimizado, web rápida y reseñas', pts: 3 },
+            { text: 'Media — tengo algo, pero sé que falta', pts: 1 },
+            { text: 'Baja — mi presencia digital es mínima o inexistente', pts: 0 },
+            { text: 'No lo sé / nunca pensé en esto', pts: 0 }
+          ]
+        }
+      ];
+
+      /* ── RESULTADOS por puntaje ──────────────── */
+      var RESULTS = [
+        {
+          min: 0, max: 6,
+          level: 'low',
+          badge: '🔴 Visibilidad crítica',
+          title: 'Tu consultorio es <em>invisible</em> para Google y para las IAs.',
+          desc: 'Con menos de 7 puntos, el problema es estructural: falta la base completa. Un paciente que busca tu especialidad hoy probablemente no te encuentra. Hay que construir desde cero con el sistema correcto.',
+          rec: 'El servicio que corresponde a tu situación es el <strong>Pack Presencia Digital Médica ($400 USD)</strong>: Google Business Profile + Landing médica + WhatsApp Business. Es el punto de entrada más eficiente — los tres canales integrados en 7 días.',
+          cta_text: 'Ver Pack Presencia — $400 USD',
+          cta_url: '/servicios/pack-presencia/',
+          wa_text: 'Hola%2C%20hice%20el%20diagn%C3%B3stico%20y%20mi%20puntaje%20es%20bajo.%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20Pack%20Presencia'
+        },
+        {
+          min: 7, max: 13,
+          level: 'mid',
+          badge: '🟡 Presencia parcial',
+          title: 'Tenés algo, pero <em>hay fugas importantes</em> en tu visibilidad.',
+          desc: 'Estás en el rango medio: existe algo de presencia, pero tiene errores técnicos, velocidad insuficiente o ausencia total en IAs. Los pacientes que buscan activamente pueden encontrarte, pero perdés a los que comparan.',
+          rec: 'El paso más efectivo según tu perfil es la <strong>Auditoría IA Médica ($100 USD)</strong>: un diagnóstico documentado de qué dicen ChatGPT, Perplexity, Google AI y Claude sobre tu consultorio. Con ese informe definimos exactamente qué arreglar.',
+          cta_text: 'Ver Auditoría IA — $100 USD',
+          cta_url: '/servicios/auditoria-ia-plan-presencia/',
+          wa_text: 'Hola%2C%20hice%20el%20diagn%C3%B3stico%20y%20tengo%20presencia%20parcial.%20Quiero%20saber%20m%C3%A1s%20sobre%20la%20Auditor%C3%ADa%20IA'
+        },
+        {
+          min: 14, max: 21,
+          level: 'high',
+          badge: '🟢 Buena base',
+          title: 'Tenés la base. Ahora se trata de <em>protegerla y escalarla.</em>',
+          desc: 'Con 14 puntos o más, la estructura está. El riesgo ahora es el deterioro: los scores bajan, las IAs cambian y la competencia mejora. El siguiente paso es sostener y escalar hacia más visibilidad en IA generativa.',
+          rec: 'El servicio que cierra la brecha es el <strong>Mantenimiento Pro + IA ($150 USD/mes)</strong>: monitoreo mensual, un artículo SEO por mes y verificación activa en ChatGPT y Perplexity. Sin permanencia mínima.',
+          cta_text: 'Ver Mantenimiento Pro + IA',
+          cta_url: '/servicios/mantenimiento-web/',
+          wa_text: 'Hola%2C%20hice%20el%20diagn%C3%B3stico%20y%20tengo%20buena%20base.%20Quiero%20saber%20m%C3%A1s%20sobre%20el%20Mantenimiento%20Pro'
+        }
+      ];
+
+      /* ── ESTADO ──────────────────────────────── */
+      var state = { current: 0, answers: [], score: 0 };
+
+      /* ── DOM ─────────────────────────────────── */
+      var $body = document.getElementById('quiz-body');
+      var $nav = document.getElementById('quiz-nav');
+      var $fill = document.getElementById('progress-fill');
+      var $bar = document.getElementById('quiz-progress-bar');
+      var $label = document.getElementById('step-label');
+      var $score = document.getElementById('score-display');
+      var $hint = document.getElementById('nav-hint');
+      var $next = document.getElementById('btn-next');
+      var $result = document.getElementById('result-card');
+
+      /* ── RENDER PREGUNTA ─────────────────────── */
+      function renderQuestion(idx) {
+        var q = QUESTIONS[idx];
+        var total = QUESTIONS.length;
+        var pct = Math.round((idx / total) * 100);
+
+        $fill.style.width = pct + '%';
+        $bar.setAttribute('aria-valuenow', pct);
+        $label.textContent = 'Pregunta ' + (idx + 1) + ' de ' + total;
+        $next.disabled = true;
+        $next.textContent = idx === total - 1 ? 'Ver resultado' : 'Siguiente';
+        $hint.textContent = 'Seleccioná una opción para continuar';
+
+        var html = '<div class="quiz-step">';
+        html += '<h3 class="quiz-q">' + escHtml(q.q) + '</h3>';
+        if (q.hint) html += '<p class="quiz-hint">' + escHtml(q.hint) + '</p>';
+        html += '<div class="quiz-opts" role="radiogroup" aria-label="' + escHtml(q.q) + '">';
+        q.opts.forEach(function (opt, i) {
+          var selected = state.answers[idx] === i ? ' selected' : '';
+          html += '<button class="quiz-opt' + selected + '" data-idx="' + i + '" data-pts="' + opt.pts + '" role="radio" aria-checked="' + (selected ? 'true' : 'false') + '">';
+          html += '<span class="quiz-opt-circle" aria-hidden="true"></span>';
+          html += '<span class="quiz-opt-text">' + escHtml(opt.text) + '</span>';
+          html += '</button>';
+        });
+        html += '</div></div>';
+
+        $body.innerHTML = html;
+
+        // Si ya había respuesta → habilitar botón
+        if (state.answers[idx] !== undefined) {
+          $next.disabled = false;
+          $hint.textContent = 'Podés cambiar tu respuesta antes de continuar';
+        }
+
+        // Eventos en opciones
+        $body.querySelectorAll('.quiz-opt').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var selected_idx = parseInt(this.getAttribute('data-idx'));
+            var pts = parseInt(this.getAttribute('data-pts'));
+
+            // Deselect all
+            $body.querySelectorAll('.quiz-opt').forEach(function (b) {
+              b.classList.remove('selected');
+              b.setAttribute('aria-checked', 'false');
+            });
+
+            this.classList.add('selected');
+            this.setAttribute('aria-checked', 'true');
+
+            state.answers[idx] = selected_idx;
+
+            // Recalcular score
+            state.score = 0;
+            state.answers.forEach(function (ansIdx, qIdx) {
+              if (ansIdx !== undefined) state.score += QUESTIONS[qIdx].opts[ansIdx].pts;
+            });
+            $score.textContent = state.score;
+
+            $next.disabled = false;
+            $hint.textContent = 'Podés cambiar tu respuesta antes de continuar';
+
+            // GA4
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'quiz_answer', {
+                event_category: 'diagnostico_express',
+                event_label: 'q' + (idx + 1) + '_opt' + selected_idx,
+                value: pts
+              });
+            }
+          });
+        });
+      }
+
+      /* ── NEXT ────────────────────────────────── */
+      $next.addEventListener('click', function () {
+        if ($next.disabled) return;
+
+        var isLast = state.current === QUESTIONS.length - 1;
+
+        if (isLast) {
+          showResult();
+          return;
+        }
+
+        // Animación salida
+        $body.classList.add('leaving');
+        setTimeout(function () {
+          $body.classList.remove('leaving');
+          state.current++;
+          renderQuestion(state.current);
+          // Scroll suave al card
+          document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 180);
+      });
+
+      /* ── RESULTADO ───────────────────────────── */
+      function showResult() {
+        var finalScore = state.score;
+        var res = RESULTS.find(function (r) { return finalScore >= r.min && finalScore <= r.max; });
+
+        // Progreso 100%
+        $fill.style.width = '100%';
+        $bar.setAttribute('aria-valuenow', 100);
+        $label.textContent = 'Diagnóstico completado';
+        $score.textContent = finalScore;
+
+        // Ocultar cuerpo + nav
+        $body.style.display = 'none';
+        $nav.style.display = 'none';
+
+        // Circumference = 2π × 54 = 339.29
+        var circ = 339.29;
+        var offset = circ - (finalScore / 21) * circ;
+        var ringClass = res.level;
+
+        // Breakdown por pregunta
+        var breakdownHtml = '';
+        QUESTIONS.forEach(function (q, i) {
+          var ansIdx = state.answers[i];
+          if (ansIdx === undefined) return;
+          var pts = q.opts[ansIdx].pts;
+          var dotClass = pts === 3 ? 'ok' : pts === 1 ? 'warn' : 'bad';
+          breakdownHtml += '<div class="breakdown-item">';
+          breakdownHtml += '<div class="breakdown-dot ' + dotClass + '" aria-hidden="true"></div>';
+          breakdownHtml += '<div class="breakdown-text">' + escHtml(q.q.substring(0, 60)) + '…</div>';
+          breakdownHtml += '<div class="breakdown-pts">' + pts + '/3</div>';
+          breakdownHtml += '</div>';
+        });
+
+        var html = '';
+
+        // Ring score
+        html += '<div class="result-head">';
+        html += '<div class="result-score-ring" aria-label="Puntaje: ' + finalScore + ' de 21">';
+        html += '<svg width="120" height="120" viewBox="0 0 120 120" aria-hidden="true">';
+        html += '<circle class="ring-bg" cx="60" cy="60" r="54"/>';
+        html += '<circle class="ring-fill ' + ringClass + '" cx="60" cy="60" r="54" id="ring-fill-el" style="stroke-dashoffset:' + circ + '"/>';
+        html += '</svg>';
+        html += '<div class="ring-label"><span class="ring-num">' + finalScore + '</span><span class="ring-max">/ 21 pts</span></div>';
+        html += '</div>';
+
+        html += '<div class="result-badge ' + res.level + '">' + res.badge + '</div>';
+        html += '<h3 class="result-title">' + res.title + '</h3>';
+        html += '<p class="result-desc">' + escHtml(res.desc) + '</p>';
+        html += '</div>';
+
+        // Breakdown
+        html += '<div class="result-breakdown">';
+        html += '<div class="result-breakdown-title">Detalle por pregunta</div>';
+        html += '<div class="breakdown-list">' + breakdownHtml + '</div>';
+        html += '</div>';
+
+        // Recomendación
+        html += '<div class="result-cta">';
+        html += '<div class="result-rec">';
+        html += '<div class="result-rec-label">Recomendación para tu situación</div>';
+        html += '<p class="result-rec-text">' + res.rec + '</p>';
+        html += '</div>';
+        html += '<div class="result-btns">';
+        html += '<a href="' + res.cta_url + '" class="btn btn-primary">' + escHtml(res.cta_text) + ' <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>';
+        html += '<a href="https://wa.me/5491176199680?text=' + res.wa_text + '" class="btn btn-wa" target="_blank" rel="noopener noreferrer"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> Hablar por WhatsApp</a>';
+        html += '</div>';
+        html += '</div>';
+
+        // Reiniciar
+        html += '<div class="result-restart">';
+        html += '<button id="btn-restart">Hacer el diagnóstico de nuevo</button>';
+        html += '</div>';
+
+        $result.innerHTML = html;
+        $result.classList.add('active');
+
+        // Animar ring después del render
+        setTimeout(function () {
+          var ring = document.getElementById('ring-fill-el');
+          if (ring) ring.style.strokeDashoffset = offset;
+        }, 100);
+
+        // Scroll al resultado
+        $result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+        // GA4
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'quiz_complete', {
+            event_category: 'diagnostico_express',
+            event_label: res.level,
+            value: finalScore
+          });
+        }
+
+        // Reiniciar
+        document.getElementById('btn-restart').addEventListener('click', function () {
+          state = { current: 0, answers: [], score: 0 };
+          $score.textContent = '0';
+          $result.classList.remove('active');
+          $result.innerHTML = '';
+          $body.style.display = '';
+          $nav.style.display = '';
+          renderQuestion(0);
+          document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+      }
+
+      /* ── FAQ MINI ────────────────────────────── */
+      document.querySelectorAll('.faq-mini-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var expanded = this.getAttribute('aria-expanded') === 'true';
+          this.setAttribute('aria-expanded', String(!expanded));
+        });
+      });
+
+      /* ── GA4 CTAs ────────────────────────────── */
+      document.querySelectorAll('[href*="calendly"]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (typeof gtag !== 'undefined') gtag('event', 'click_calendly', { event_category: 'diagnostico' });
+        });
+      });
+      document.querySelectorAll('[href*="wa.me"]').forEach(function (el) {
+        el.addEventListener('click', function () {
+          if (typeof gtag !== 'undefined') gtag('event', 'click_whatsapp', { event_category: 'diagnostico' });
+        });
+      });
+
+      /* ── UTILS ───────────────────────────────── */
+      function escHtml(str) {
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      /* ── INIT ────────────────────────────────── */
+      renderQuestion(0);
+
+    }());
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,1467 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- SEO -->
+  <title>Cómo conseguir más pacientes por internet siendo médico | Cirujana Digital</title>
+  <meta name="description"
+    content="El 76% de los pacientes busca médico en Google antes de llamar. Si su consultorio no aparece, esos pacientes van al colega de al lado. 5 pasos concretos para cambiar eso." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/conseguir-pacientes-internet-medico/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/conseguir-pacientes-internet-medico/" />
+  <meta property="og:title" content="Cómo conseguir más pacientes por internet siendo médico" />
+  <meta property="og:description"
+    content="El 76% de los pacientes busca médico en Google antes de llamar. Si su consultorio no aparece, esos pacientes van al colega de al lado. 5 pasos concretos." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-conseguir-pacientes-internet-medico.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <meta property="article:published_time" content="2026-05-08" />
+  <meta property="article:modified_time" content="2026-05-22" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Negocio" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cómo conseguir más pacientes por internet siendo médico" />
+  <meta name="twitter:description"
+    content="El 76% de los pacientes busca médico en Google antes de llamar. Descubra los 5 pasos para aparecer." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-conseguir-pacientes-internet-medico.png" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <link rel="preload" href="components.css" as="style">
+  <link rel="stylesheet" href="components.css">
+  <script src="components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, .12);
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+    #site-footer {
+      height: 678px;
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .btn-cta-white,
+    .btn-cta-secondary,
+    .blog-card {
+      will-change: transform;
+      transform: translateZ(0);
+    }
+
+    /* HERO */
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout style;
+    }
+
+    .article-breadcrumb {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      transition: color .2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 .4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, .2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, .3);
+      border-radius: 50px;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: .9rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, .85);
+    }
+
+    /* BODY LAYOUT */
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    /* TIPOGRAFÍA */
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: .5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 .6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: .5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    /* CALLOUTS */
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: .75rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      margin-bottom: .4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, .08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, .08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, .07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    /* TABLE */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, .08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: .93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: .9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: .8rem;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: .9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    /* STEPS */
+    .steps-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.5rem;
+      counter-reset: steps;
+    }
+
+    .steps-list>li {
+      counter-increment: steps;
+      padding: 1.5rem 1.5rem 1.5rem 4.5rem;
+      position: relative;
+      border-left: 3px solid var(--secondary);
+      margin-bottom: 1.5rem;
+      background: var(--light);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .steps-list>li::before {
+      content: counter(steps);
+      position: absolute;
+      left: -1.5rem;
+      top: 1.25rem;
+      width: 3rem;
+      height: 3rem;
+      background: var(--gradient-primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .steps-list>li strong {
+      display: block;
+      font-size: 1.05rem;
+      color: var(--cd-text);
+      margin-bottom: .5rem;
+    }
+
+    .steps-list>li p {
+      margin: 0;
+      font-size: 1rem;
+      color: #4a5568;
+    }
+
+    /* PLAZOS */
+    .plazos-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .plazo-card {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      padding: 1.25rem;
+      background: var(--light);
+      border-radius: 12px;
+      border-left: 4px solid var(--secondary);
+    }
+
+    .plazo-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .plazo-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .3rem;
+    }
+
+    .plazo-card p {
+      font-size: .93rem;
+      color: #4a5568;
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .plazo-tiempo {
+      display: inline-block;
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--primary);
+      background: rgba(3, 101, 140, .1);
+      padding: 2px 10px;
+      border-radius: 50px;
+      margin-bottom: .4rem;
+    }
+
+    /* ENTITY BOX */
+    .entity-box {
+      background: linear-gradient(135deg, rgba(3, 101, 140, .06) 0%, rgba(0, 167, 169, .06) 100%);
+      border: 1px solid rgba(0, 167, 169, .25);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .entity-box p {
+      font-size: .97rem;
+      color: #4a5568;
+      margin: 0;
+      line-height: 1.8;
+    }
+
+    .entity-box strong {
+      color: var(--primary);
+    }
+
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1.75rem;
+      padding-bottom: 1.75rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item h3 {
+      font-size: 1.1rem;
+      color: var(--cd-text);
+      margin-bottom: .6rem;
+      font-weight: 700;
+    }
+
+    .faq-item p {
+      font-size: 1rem;
+      color: #4a5568;
+      line-height: 1.85;
+      margin: 0;
+    }
+
+    /* AUTHOR BOX */
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-info h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: .2rem;
+    }
+
+    .author-info p {
+      font-size: .9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    /* CTA BOX */
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: .75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, .7);
+      margin-bottom: 1.5rem;
+      font-size: .95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: .875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    .btn-cta-secondary {
+      display: inline-flex;
+      gap: .75rem;
+      align-items: center;
+      background: transparent;
+      color: rgba(255, 255, 255, .8);
+      border: 1px solid rgba(255, 255, 255, .3);
+      font-weight: 700;
+      padding: .75rem 1.75rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: .95rem;
+      transition: var(--transition);
+      margin-top: .75rem;
+    }
+
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, .1);
+      color: #fff;
+    }
+
+    .cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* ARTÍCULOS RELACIONADOS */
+    .related-posts {
+      margin: 3rem 0;
+      padding: 2rem;
+      background: var(--light);
+      border-radius: 14px;
+    }
+
+    .related-posts h3 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--cd-text);
+      margin-bottom: 1.25rem;
+      font-weight: 700;
+    }
+
+    .related-posts ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .related-posts li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .related-posts li::before {
+      content: "→";
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: .05rem;
+    }
+
+    .related-posts a {
+      color: var(--cd-text);
+      font-size: .97rem;
+      text-decoration: none;
+      font-weight: 600;
+      line-height: 1.5;
+      transition: color .2s;
+    }
+
+    .related-posts a:hover {
+      color: var(--primary);
+    }
+
+    .related-posts .related-desc {
+      font-size: .85rem;
+      color: var(--cd-text-light);
+      display: block;
+      font-weight: 400;
+      margin-top: .1rem;
+    }
+
+    /* PROBLEMAS FRECUENTES */
+    .problems-block {
+      margin: 2.5rem 0;
+      padding: 1.75rem;
+      border: 1px solid #e8ecf0;
+      border-radius: 14px;
+    }
+
+    .problems-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: 1rem;
+    }
+
+    .problems-block ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: .6rem;
+    }
+
+    .problems-block li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+      font-size: .93rem;
+      color: #4a5568;
+    }
+
+    .problems-block li::before {
+      content: "✗";
+      color: #c0392b;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* SIDEBAR */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+      will-change: transform;
+      contain: layout style;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: .75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: .6rem;
+    }
+
+    .toc-box a {
+      font-size: .87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: .5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color .2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: .72rem;
+      flex-shrink: 0;
+      margin-top: .15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, .2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: #7fdbff;
+      margin-bottom: .5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: .88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, .75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: .75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: .1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: .85rem;
+      color: #fff;
+      margin-bottom: .1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem;
+      width: 100%;
+      padding: .75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: .875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow .2s, transform .2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, .28);
+      margin-bottom: .75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, .42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .4);
+      text-align: center;
+      margin: 0;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width:768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+
+      .steps-list>li {
+        padding-left: 3.5rem;
+      }
+    }
+
+    @media (max-width:640px) {
+      .article-meta {
+        gap: .6rem;
+        font-size: .82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <!-- SCHEMA JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://cirujanadigital.com/#organization",
+          "name": "Cirujana Digital",
+          "url": "https://cirujanadigital.com/"
+        },
+        {
+          "@type": "Person",
+          "@id": "https://cirujanadigital.com/#yulia-monti",
+          "name": "Yulia Monti",
+          "jobTitle": "Especialista en infraestructura digital médica",
+          "url": "https://cirujanadigital.com/sobre-yulia/",
+          "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+          "description": "Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y España, fundadora de Cirujana Digital. Instrumentadora quirúrgica con 15 años de experiencia reconvertida en especialista en presencia digital médica, SEO para consultorios y posicionamiento en IA.",
+          "worksFor": { "@id": "https://cirujanadigital.com/#organization" },
+          "sameAs": [
+            "https://instagram.com/cirujanadigital",
+            "https://linkedin.com/in/yulia-monti"
+          ]
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://cirujanadigital.com/blog/conseguir-pacientes-internet-medico/#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+            { "@type": "ListItem", "position": 3, "name": "Cómo conseguir más pacientes por internet siendo médico" }
+          ]
+        },
+        {
+          "@type": "Article",
+          "@id": "https://cirujanadigital.com/blog/conseguir-pacientes-internet-medico/#article",
+          "headline": "Cómo conseguir más pacientes por internet siendo médico",
+          "description": "El 76% de los pacientes busca médico en Google antes de llamar. Si su consultorio no aparece, esos pacientes van al colega de al lado. 5 pasos concretos para cambiar eso.",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://cirujanadigital.com/img/og-conseguir-pacientes-internet-medico.png",
+            "width": 1200,
+            "height": 630
+          },
+          "datePublished": "2026-05-08",
+          "dateModified":  "2026-05-22",
+          "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+          "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+          "mainEntityOfPage": "https://cirujanadigital.com/blog/conseguir-pacientes-internet-medico/",
+          "articleSection": "Negocio",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "¿Necesito invertir en publicidad paga para conseguir pacientes por internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. La publicidad paga puede acelerar resultados, pero no es el punto de partida. Un perfil de Google completo, reseñas reales de pacientes y un sitio web que cargue rápido generan pacientes de forma sostenida sin pagar por cada clic. La diferencia es el tiempo: la publicidad da resultados inmediatos pero se detiene cuando deja de pagar. El posicionamiento orgánico tarda más en arrancar, pero una vez instalado trabaja solo."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Sirve de algo tener perfil en Doctoralia si también tengo web propia?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Sí, sirve, pero no de la misma manera. Doctoralia posiciona su nombre en Google y facilita las reseñas. El problema es que, en Doctoralia, el paciente también ve a los colegas de al lado. Su web propia, en cambio, es el único lugar donde usted es la única opción. Lo ideal es usar Doctoralia para ganar visibilidad inicial y que su web propia sea el destino final donde el paciente agenda o consulta directamente."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Tengo que publicar en redes sociales para conseguir pacientes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No es imprescindible. Las redes no reemplazan a Google ni al perfil local, que son los canales donde el paciente busca activamente. Las redes funcionan para reforzar la confianza una vez que el paciente ya lo encontró. Si elige publicar, priorice responder preguntas frecuentes de sus pacientes: ese contenido es el que más genera consultas."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Funciona esto para médicos en ciudades pequeñas?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Funciona incluso mejor. En ciudades pequeñas hay menos competencia en Google y menos médicos con perfil completo. Eso significa que con menos esfuerzo puede estar entre los primeros resultados cuando alguien busca su especialidad en la zona. En ambos casos el punto de partida es el mismo: perfil de Google completo y reseñas reales."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "¿Qué es lo primero que debo hacer si no tengo nada en internet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Crear y verificar su perfil de Google Business Profile. Es gratuito, tarda menos de una hora en configurarse y es el canal de mayor impacto a corto plazo. Una vez hecho eso, pida reseñas a sus pacientes actuales. Con solo cinco o diez reseñas verificadas, su consultorio empieza a aparecer cuando alguien busca su especialidad cerca de su domicilio."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden" class="gtm-iframe"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main" tabindex="-1">
+
+    <!-- ═══ HERO ══════════════════════════════════════════════ -->
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="">Inicio</a><span aria-hidden="true">›</span>
+          <a href="blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">Conseguir pacientes por internet</span>
+        </nav>
+        <span class="article-category">Negocio</span>
+        <h1>Cómo conseguir más pacientes por internet siendo médico</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-05-08">Mayo 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>9 min de lectura</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ CUERPO ══════════════════════════════════════════ -->
+    <div class="article-body">
+      <div class="article-layout">
+
+        <!-- ─── CONTENIDO PRINCIPAL ─────────────────────── -->
+        <article class="article-content">
+
+          <!-- INTRO: PROBLEMA DEL CONSULTORIO -->
+          <p>El 76% de los pacientes busca médico en Google antes de llamar al consultorio. El problema no es que usted
+            no sea buen médico: es que si no aparece cuando lo buscan, ese paciente llama al colega de al lado. Este
+            artículo explica exactamente dónde están los pacientes que hoy no lo encuentran, por qué no aparece y qué
+            cinco pasos concretos puede dar para cambiar eso, sin publicidad paga y sin convertirse en experto en
+            tecnología.</p>
+
+          <!-- CONSECUENCIA ECONÓMICA -->
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ Lo que está en juego</span>
+            <p>Cada semana que un consultorio no aparece en Google, hay pacientes que buscan exactamente su especialidad
+              en su zona y llaman a otro médico. No porque ese médico sea mejor: porque apareció primero. Eso tiene un
+              costo concreto en consultas que nunca llegan.</p>
+          </div>
+
+          <!-- QUÉ CAMBIÓ CON GOOGLE / IA -->
+          <h2 id="donde-buscan">Dónde buscan médico los pacientes hoy</h2>
+          <p>En 2026, los pacientes no buscan médico de una sola manera. Usan tres canales principales, y cada uno
+            funciona de forma distinta. El consultorio que aparece en los tres tiene una ventaja real sobre el que solo
+            tiene presencia en uno o en ninguno.</p>
+
+          <h3>Google Maps y búsqueda local</h3>
+          <p>Es el canal de mayor impacto. Cuando alguien escribe "cardiólogo en Palermo" o "dermatólogo cerca", Google
+            muestra un mapa con tres consultorios. Esos tres son los que tienen el perfil de Google más completo y más
+            reseñas. Si su perfil no existe o está desactualizado, no aparece ahí. Aproximadamente el 46% de todas las
+            búsquedas en Google tienen intención local: el paciente está buscando algo cerca de donde vive.</p>
+          <p><strong>Qué necesita para aparecer ahí:</strong> un perfil de Google Business verificado, con dirección,
+            horario, fotos y especialidad completos. Vea la guía completa en <a href="seo-para-clinicas/">SEO para
+              clínicas y consultorios</a>.</p>
+
+          <h3>ChatGPT, Gemini y Google AI</h3>
+          <p>Cada vez más pacientes, especialmente menores de 45 años, le preguntan directamente a una inteligencia
+            artificial: "¿Cuál es un buen traumatólogo en Monterrey?" o "¿Qué médico me recomiendas para dolor de
+            rodilla?". Estas herramientas leen información de sitios web para dar su respuesta. Si su sitio no existe,
+            tarda en cargar o no está bien organizado, la IA simplemente no lo menciona.</p>
+          <p><strong>Qué necesita para aparecer ahí:</strong> un sitio web que cargue rápido, con información clara
+            sobre su especialidad, su nombre y su ubicación. Vea más en <a href="ia-para-clinicas/">cómo posicionar su
+              consultorio en ChatGPT, Gemini y Google AI</a>.</p>
+
+          <h3>Reseñas y recomendaciones en grupos</h3>
+          <p>Un porcentaje significativo de pacientes pregunta en grupos de Facebook o WhatsApp antes de decidir. Y
+            antes de llamar, revisan las reseñas de Google. Las reseñas son el equivalente digital de la recomendación
+            de boca en boca. Sin reseñas, el consultorio parece nuevo o desconocido, aunque lleve años atendiendo.</p>
+          <p><strong>Qué necesita:</strong> reseñas reales de pacientes satisfechos en Google, y un proceso simple para
+            pedirlas sin incomodar al paciente.</p>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Dato clave</span>
+            <p>El paciente promedio revisa entre 3 y 5 fuentes antes de elegir médico. Si no aparece en ninguna de
+              ellas, no existe digitalmente, sin importar cuántos años lleve ejerciendo.</p>
+          </div>
+
+          <!-- POR QUÉ NO APARECE -->
+          <h2 id="por-que-no-aparece">Por qué su consultorio no aparece cuando lo buscan</h2>
+          <p>Hay cuatro causas principales, y casi siempre se combinan:</p>
+
+          <h3>No tiene perfil de Google o está incompleto</h3>
+          <p>Google Maps prioriza los consultorios con más información, no los más antiguos ni los más conocidos en la
+            zona. Si su perfil no tiene dirección verificada, horario actualizado, fotos y especialidad, Google lo
+            relega. <strong>Consecuencia:</strong> cada mes sin perfil completo son pacientes que buscan exactamente su
+            especialidad en su zona y encuentran a otro.</p>
+
+          <h3>Su sitio web tarda demasiado en cargar en celular</h3>
+          <p>Google mide cuánto tarda en abrirse su sitio desde un celular con conexión normal. Si tarda más de 3
+            segundos, lo penaliza y lo muestra más abajo en los resultados. El paciente, además, cierra la página antes
+            de leer nada. <strong>Consecuencia:</strong> visitas que nunca se convierten en consultas porque el sitio no
+            carga antes de que el paciente pierda la paciencia.</p>
+
+          <h3>No tiene reseñas verificadas</h3>
+          <p>Un consultorio sin reseñas genera desconfianza, aunque tenga 20 años de trayectoria. El paciente no tiene
+            forma de saber si otros quedaron satisfechos. <strong>Consecuencia:</strong> pacientes que llegan a su
+            perfil pero eligen al colega con 40 reseñas positivas en lugar de arriesgarse con un consultorio sin
+            opiniones.</p>
+
+          <h3>Su información no está estructurada para que Google y las IAs la entiendan</h3>
+          <p>Google y las IAs necesitan encontrar su nombre, especialidad, zona de cobertura y tipo de atención en un
+            formato claro. Si esa información está enterrada en imágenes o en un texto mal organizado, no pueden leerla
+            correctamente. <strong>Consecuencia:</strong> el consultorio no aparece en búsquedas relevantes ni en las
+            respuestas de herramientas como ChatGPT. Vea más sobre esto en <a href="web-medica-que-convierte/">qué tiene
+              que tener una web médica para convertir visitas en pacientes</a>.</p>
+
+          <!-- CTA CENTRAL -->
+          <div class="article-cta-box">
+            <h3>¿Quiere saber cuál de estas causas afecta a su consultorio?</h3>
+            <p>Diagnóstico gratuito de presencia digital médica. 15 puntos. Resultado inmediato, sin registro.</p>
+            <div class="cta-buttons">
+              <a href="diagnostico/" class="btn-cta-white">
+                <span>Solicitar diagnóstico de presencia digital</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="servicios/" class="btn-cta-secondary">Ver servicios para médicos</a>
+            </div>
+          </div>
+
+          <!-- 5 PASOS -->
+          <h2 id="cinco-pasos">Los 5 pasos concretos para conseguir pacientes por internet</h2>
+
+          <ol class="steps-list">
+            <li>
+              <strong>Completar y verificar su perfil de Google</strong>
+              <p>Google tiene una herramienta gratuita llamada Google Business Profile que permite que su consultorio
+                aparezca en Google Maps cuando alguien busca su especialidad cerca. Completar este perfil significa
+                agregar dirección exacta, horario de atención, fotos del consultorio, especialidades y número de
+                contacto. Google envía un código para verificar que usted es el propietario real. Sin verificación, el
+                perfil existe pero no posiciona. Con perfil completo y verificado, su consultorio puede aparecer en el
+                mapa de resultados locales en pocas semanas.</p>
+            </li>
+            <li>
+              <strong>Pedir reseñas a sus pacientes actuales</strong>
+              <p>Sus pacientes satisfechos son su mejor argumento, pero la mayoría no deja reseñas porque nadie se las
+                pidió. El método más efectivo y menos incómodo es simple: al finalizar la consulta, muestre al paciente
+                el código QR de su perfil de Google y dígale que si le fue útil, una reseña lo ayuda a llegar a más
+                personas. También puede enviar un mensaje de WhatsApp con el link directo. No hace falta pedirle a todos
+                ni hacerlo en cada consulta: con 5 a 10 reseñas reales ya empieza a marcar diferencia frente a
+                consultorios sin ninguna.</p>
+            </li>
+            <li>
+              <strong>Tener un sitio web que cargue rápido y sea fácil de usar en celular</strong>
+              <p>Más del 70% de las búsquedas de médicos se hacen desde el celular. Si su sitio tarda más de 3 segundos
+                en abrirse o el texto es difícil de leer, el paciente lo cierra y busca otro. Un sitio optimizado para
+                celulares no requiere diseño sofisticado: requiere que cargue rápido, que el número de teléfono sea
+                tappable y que en 10 segundos el paciente entienda qué especialidad atiende y cómo contactarlo. Ese es
+                el estándar mínimo para que Google lo considere un resultado útil.</p>
+            </li>
+            <li>
+              <strong>Publicar contenido que responda las preguntas reales de sus pacientes</strong>
+              <p>Sus pacientes llegan a Google con preguntas antes de llegar al consultorio: "¿cuándo hay que operar una
+                hernia?", "¿qué hace un reumatólogo?", "síntomas de hipotiroidismo". Si su sitio web responde esas
+                preguntas, Google lo muestra a quienes las hacen. No hace falta publicar todos los días ni tener un blog
+                extenso. Tres o cuatro artículos cortos que respondan las dudas más frecuentes de su especialidad pueden
+                traerle pacientes nuevos de forma continua durante meses. El contenido más eficaz traduce su
+                conocimiento clínico al lenguaje que usa el paciente.</p>
+            </li>
+            <li>
+              <strong>Asegurarse de que ChatGPT, Gemini y Perplexity puedan encontrarlo</strong>
+              <p>Cuando alguien le pregunta a una IA por un médico de cierta especialidad en cierta ciudad, la respuesta
+                se construye a partir de lo que esas herramientas leen en los sitios web. Para que lo mencionen a usted,
+                su sitio necesita cargar en menos de 3 segundos y tener su información —nombre, especialidad, ciudad,
+                tipo de atención— escrita de forma clara y estructurada. Básicamente, hay que indicarle a Google y a las
+                IAs exactamente quién es usted y qué hace, en un formato que ellos puedan leer sin esfuerzo.</p>
+              <div class="entity-box" style="margin-top:1rem;">
+                <p><strong>Yulia Monti</strong>, especialista en infraestructura digital médica para captación de
+                  pacientes en LATAM y España y fundadora de Cirujana Digital, ayuda a profesionales de la salud a
+                  construir la presencia digital que los hace aparecer cuando un paciente busca su especialidad, tanto
+                  en Google como en herramientas de inteligencia artificial. Vea cómo funciona en <a
+                    href="servicios/auditoria-ia-plan-presencia/">diagnóstico y plan de presencia digital médica</a>.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <p>Si quiere ver exactamente qué incluye cada uno de estos pasos aplicado a su consultorio, <a
+              href="servicios/pack-presencia/">vea el Pack Presencia Digital Médica</a>.</p>
+
+          <!-- PLAZOS -->
+          <h2 id="cuanto-tiempo">¿Cuánto tiempo lleva ver resultados?</h2>
+          <p>No existe una fórmula exacta, pero hay plazos realistas según el canal:</p>
+
+          <div class="plazos-grid">
+            <div class="plazo-card">
+              <div class="plazo-icon">📍</div>
+              <div>
+                <span class="plazo-tiempo">4 a 8 semanas</span>
+                <h4>Google Maps</h4>
+                <p>Con el perfil completo y verificado y las primeras reseñas publicadas, el consultorio empieza a
+                  aparecer en el mapa local. Es el canal de impacto más rápido y el punto de partida recomendado.</p>
+              </div>
+            </div>
+            <div class="plazo-card">
+              <div class="plazo-icon">🔍</div>
+              <div>
+                <span class="plazo-tiempo">2 a 4 meses</span>
+                <h4>Resultados orgánicos de Google</h4>
+                <p>Para posicionarse en búsquedas como "dermatólogo en [su ciudad]", Google necesita tiempo para evaluar
+                  la relevancia del sitio. Este plazo puede acortarse con un sitio técnicamente sólido y contenido útil
+                  para el paciente.</p>
+              </div>
+            </div>
+            <div class="plazo-card">
+              <div class="plazo-icon">🤖</div>
+              <div>
+                <span class="plazo-tiempo">6 a 12 semanas</span>
+                <h4>Aparecer en ChatGPT, Gemini y Perplexity</h4>
+                <p>Si el sitio tiene la estructura correcta y carga rápido, las IAs pueden empezar a mencionar al médico
+                  en este plazo. Depende también de cuántos colegas de la misma especialidad ya tienen presencia digital
+                  en la zona.</p>
+              </div>
+            </div>
+          </div>
+
+          <p>La diferencia fundamental entre ambos canales: <strong>Google Maps da resultados más rápidos pero requiere
+              mantenimiento</strong> (actualizar horarios, responder reseñas, agregar fotos). <strong>El posicionamiento
+              en buscadores tarda más en construirse</strong>, pero una vez establecido trabaja de forma continua sin
+            intervención semanal. Lo más efectivo es comenzar por Google Maps y construir paralelamente el
+            posicionamiento orgánico a través del sitio web.</p>
+
+          <!-- FAQ -->
+          <h2 id="faq">Preguntas frecuentes</h2>
+
+          <div class="faq-item">
+            <h3>¿Necesito invertir en publicidad paga para conseguir pacientes por internet?</h3>
+            <p>No. La publicidad paga puede acelerar resultados, pero no es el punto de partida. Un perfil de Google
+              completo, reseñas reales y un sitio que cargue rápido generan pacientes de forma sostenida sin pagar por
+              cada clic. La diferencia clave está en el tiempo: la publicidad da resultados mientras usted paga, y se
+              detiene cuando deja de hacerlo. El posicionamiento orgánico tarda más en arrancar, pero una vez
+              establecido trabaja solo, incluso mientras usted está en consulta.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Sirve de algo tener perfil en Doctoralia si también tengo web propia?</h3>
+            <p>Sí, sirve, pero no del mismo modo. Doctoralia posiciona su nombre en Google y facilita las reseñas
+              verificadas. El problema es que dentro de Doctoralia el paciente también ve a todos los colegas de la
+              misma especialidad. Su web propia es el único lugar donde usted es la única opción que el paciente tiene
+              delante. Lo ideal es usar Doctoralia para ganar visibilidad inicial y que su web sea el destino final
+              donde el paciente agenda o consulta directamente, sin distracciones.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Tengo que publicar en redes sociales para conseguir pacientes?</h3>
+            <p>No es imprescindible. Las redes no reemplazan a Google ni al perfil local, que son los canales donde el
+              paciente busca activamente un médico. Las redes funcionan mejor para reforzar la confianza una vez que el
+              paciente ya lo encontró por otra vía. Si decide publicar, priorice responder las preguntas frecuentes de
+              sus pacientes: ese contenido es el que más genera consultas, porque llega a personas que ya tienen la duda
+              y buscan una respuesta de un profesional confiable.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Funciona esto para médicos en ciudades pequeñas?</h3>
+            <p>Funciona incluso mejor que en ciudades grandes. En ciudades pequeñas hay menos competencia en Google y
+              menos médicos con perfil digital completo. Eso significa que con menos esfuerzo puede estar entre los
+              primeros resultados cuando alguien busca su especialidad en la zona. En ciudades grandes la competencia es
+              mayor, pero el volumen de búsquedas también es más alto. En ambos casos, el punto de partida es idéntico:
+              perfil de Google verificado y primeras reseñas publicadas.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Qué es lo primero que debo hacer si no tengo nada en internet?</h3>
+            <p>Crear y verificar su perfil de Google Business Profile, el que aparece en Google Maps y en la búsqueda
+              local. Es gratuito y tarda menos de una hora en configurarse correctamente. Es el canal de mayor impacto a
+              corto plazo porque los pacientes lo usan activamente para buscar médicos cerca. Una vez hecho eso, pida
+              reseñas a sus pacientes actuales. Con tan solo cinco a diez reseñas verificadas, su consultorio empieza a
+              aparecer cuando alguien busca su especialidad en la zona.</p>
+          </div>
+
+          <!-- AUTHOR BOX -->
+          <div class="author-box">
+            <img src="img/yulia-monti.webp"
+              alt="Yulia Monti — Cirujana Digital, especialista en infraestructura digital médica para captación de pacientes en LATAM y España"
+              width="80" height="80" loading="lazy" decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica con 15 años en el sistema de salud. Hoy construyo la infraestructura digital
+                que hace que los pacientes encuentren a su médico: presencia en Google, velocidad de carga, reputación
+                online y posicionamiento en ChatGPT, Gemini y Perplexity. Especialidad: consultorios y clínicas en
+                Argentina, LATAM y España.</p>
+            </div>
+          </div>
+
+          <!-- PROBLEMAS FRECUENTES -->
+          <div class="problems-block">
+            <h3>Problemas frecuentes que resuelve una presencia digital correcta</h3>
+            <ul>
+              <li>Pacientes que no encuentran el consultorio cuando buscan la especialidad en Google</li>
+              <li>Agenda que no se llena aunque la reputación clínica sea buena</li>
+              <li>Sitio web que no carga bien en celular y hace perder contactos</li>
+              <li>Consultorio que no aparece en Google Maps al buscar la especialidad</li>
+              <li>Ausencia total en respuestas de ChatGPT, Gemini y Google AI</li>
+              <li>Dependencia exclusiva del boca a boca sin flujo de pacientes nuevos desde internet</li>
+            </ul>
+          </div>
+
+          <!-- ARTÍCULOS RELACIONADOS -->
+          <div class="related-posts">
+            <h3>Artículos relacionados</h3>
+            <ul>
+              <li>
+                <div>
+                  <a href="seo-para-clinicas/">SEO para clínicas y consultorios: cómo aparecer en Google por
+                    especialidad y ciudad</a>
+                  <span class="related-desc">Google Maps, reseñas, posicionamiento local y todo lo que necesita para que
+                    los pacientes lo encuentren.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="ia-para-clinicas/">Cómo posicionar su consultorio en ChatGPT, Gemini y Google AI</a>
+                  <span class="related-desc">Por qué las IAs ya deciden qué médico recomiendan y qué necesita hacer para
+                    aparecer en esas respuestas.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="web-medica-que-convierte/">La diferencia entre una web médica que convierte y una que solo
+                    existe</a>
+                  <span class="related-desc">Qué tiene que tener una web para que un paciente que llega se convierta en
+                    un turno real.</span>
+                </div>
+              </li>
+              <li>
+                <div>
+                  <a href="blog/quien-hace-web-medicos-latam/">¿Quién hace la web de un consultorio médico? Guía para no
+                    equivocarse al contratar</a>
+                  <span class="related-desc">Opciones reales, precios claros y 6 criterios para elegir al proveedor
+                    correcto.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- CTA FINAL -->
+          <div class="article-cta-box">
+            <h3>¿Listo para que los pacientes lo encuentren cuando buscan su especialidad?</h3>
+            <p>Evalúe la visibilidad actual de su consultorio en Google y ChatGPT, o revise los servicios disponibles.
+            </p>
+            <div class="cta-buttons">
+              <a href="diagnostico/" class="btn-cta-white">
+                <span>Evaluar visibilidad en Google y ChatGPT</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </a>
+              <a href="servicios/" class="btn-cta-secondary">Ver servicios para médicos</a>
+            </div>
+          </div>
+
+        </article>
+
+        <!-- ─── SIDEBAR ──────────────────────────────────── -->
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#donde-buscan">Dónde buscan médico los pacientes</a></li>
+              <li><a href="#por-que-no-aparece">Por qué no aparece cuando lo buscan</a></li>
+              <li><a href="#cinco-pasos">Los 5 pasos concretos</a></li>
+              <li><a href="#cuanto-tiempo">Cuánto tiempo llevan los resultados</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> consultorios tienen al menos un problema que hace perder
+                pacientes sin que el médico lo sepa.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Carga antes de que el paciente la cierre?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Aparece cuando buscan su especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">🤖</span>
+                <div><strong>Presencia en IA</strong><span>¿Lo recomienda ChatGPT o Gemini?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon" aria-hidden="true">💬</span>
+                <div><strong>Conversión</strong><span>¿Los visitantes piden turno?</span></div>
+              </li>
+            </ul>
+            <a href="diagnostico/" class="sb-diag__btn">
+              Solicitar diagnóstico de presencia digital
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+
+      </div><!-- /article-layout -->
+    </div><!-- /article-body -->
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>
