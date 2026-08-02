@@ -2,6 +2,7 @@
 <html lang="es">
 
 <head>
+  <base href="/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Desarrolladora web para médicos en Argentina | Cirujana Digital</title>
@@ -410,7 +411,7 @@
     .hero h1 {
       font-family: var(--font-display);
       font-size: clamp(1.75rem, 4vw, 2.8rem);
-      font-weight: 700;
+      font-weight: 400;
       line-height: 1.18;
       margin-bottom: 1.25rem;
       color: #fff;
@@ -459,7 +460,7 @@
     .stat-card__num {
       font-family: var(--font-display);
       font-size: 1.9rem;
-      font-weight: 700;
+      font-weight: 500;
       color: #7fdbff;
       line-height: 1;
       display: block;
@@ -652,24 +653,25 @@
     }
 
     .profile-card__avatar {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, .12);
-      border: 2px solid rgba(0, 167, 169, .5);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-display);
-      font-size: 1.8rem;
-      color: #7fdbff;
       margin: 0 auto 1rem;
+    }
+
+    .yulia-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--color-brand-border);
+      flex-shrink: 0;
     }
 
     .profile-card__name {
       font-family: var(--font-display);
       font-size: 1.15rem;
-      font-weight: 700;
+      font-weight: 500;
       margin-bottom: .3rem;
     }
 
@@ -861,7 +863,7 @@
       background: var(--gradient-brand);
       color: #fff;
       font-size: .72rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: .08em;
       text-transform: uppercase;
       padding: .3rem .8rem .4rem;
@@ -873,7 +875,7 @@
       text-transform: uppercase;
       letter-spacing: .1em;
       color: var(--color-brand-dark);
-      font-weight: 700;
+      font-weight: 600;
       margin-bottom: .5rem;
     }
 
@@ -888,7 +890,7 @@
     .pricing-card__price {
       font-family: var(--font-display);
       font-size: 2.4rem;
-      font-weight: 700;
+      font-weight: 600;
       color: var(--color-brand-dark);
       line-height: 1;
       margin-bottom: .3rem;
@@ -1364,7 +1366,11 @@
         </div>
         <aside>
           <div class="profile-card">
-            <div class="profile-card__avatar">YM</div>
+            <div class="profile-card__avatar">
+              <img src="img/yulia-monti.webp"
+                alt="Yulia Monti — instrumentadora quirúrgica con 15 años en Argentina, fundadora de Cirujana Digital"
+                width="130" height="130" loading="lazy" decoding="async" class="yulia-photo" />
+            </div>
             <div class="profile-card__name">Yulia Monti</div>
             <div class="profile-card__role">Desarrolladora web · Salud</div>
             <div class="profile-card__fact">

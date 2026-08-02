@@ -1,9 +1,7 @@
 (function () {
   'use strict';
 
-  /* ──────────────────────────────────────────────────────────
-    BLOG
-     ────────────────────────────────────────────────────────── */
+  /*    BLOG      */
   const BLOG_ARTICLES = [
     {
       href: '/blog/',
@@ -11,9 +9,7 @@
     },
   ];
 
-  /* ──────────────────────────────────────────────────────────
-     WEBS MÉDICAS — agregar cada web nueva AL PRINCIPIO.
-     ────────────────────────────────────────────────────────── */
+  /*  WEBS MÉDICAS — agregar cada web nueva AL PRINCIPIO. */
   const WEBS_MEDICAS = [
     { href: 'https://metododoshas.com', label: 'Nutricionista', external: true },
     { href: '/pagina-web-traumatologo/', label: 'Traumatólogo', external: false },
@@ -26,9 +22,7 @@
     { href: '/diseno-web-para-oftalmologo/', label: 'Oftalmólogo', external: false },
   ];
 
-  /* ──────────────────────────────────────────────────────────
-     SERVICIOS — fuente única para nav y footer
-     ────────────────────────────────────────────────────────── */
+  /*   SERVICIOS   */
   const SERVICIOS = [
     { href: '/servicios/pack-presencia/', label: 'Pack Presencia' },
     {
@@ -42,14 +36,13 @@
     { href: '/servicios/recepcionista-virtual-medica', label: 'Recepcionista Virtual' },
   ];
 
-  /* ──────────────────────────────────────────────────────────
-     RECURSOS — fuente única para nav y footer
-     ────────────────────────────────────────────────────────── */
+  /* RECURSOS       */
   const RECURSOS = [
     { href: '/recursos/', label: '⚡ Todos los recursos' },
     { href: '/diagnostico/', label: 'Diagnóstico gratuito' },
     { href: '/recursos/simulador-velocidad/', label: 'Simulador de velocidad' },
     { href: '/recursos/guia-5-errores/', label: 'Los 5 errores más comunes' },
+    { href: '/recursos/plantillas-gbp/', label: 'Plantillas para Google Maps' },
   ];
 
   /* ──────────────────────────────────────────────────────────
