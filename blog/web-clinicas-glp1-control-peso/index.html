@@ -1,0 +1,1118 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <script>
+    let gtmLoaded = false;
+    function loadGTM() {
+      if (gtmLoaded) return;
+      gtmLoaded = true;
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
+    }
+    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
+      window.addEventListener(e, loadGTM, { once: true })
+    );
+    setTimeout(loadGTM, 8000);
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web para Clínicas GLP-1: Qué Necesita tu Sitio para Captar Pacientes | Cirujana Digital</title>
+  <meta name="description"
+    content="Qué necesita la web de una clínica de tratamientos GLP-1 para calificar pacientes antes del WhatsApp: herramientas interactivas, Schema médico y velocidad." />
+  <meta name="author" content="Yulia Monti — Cirujana Digital" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://cirujanadigital.com/blog/web-clinicas-glp1-control-peso/" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://cirujanadigital.com/blog/web-clinicas-glp1-control-peso/" />
+  <meta property="og:title" content="Web para Clínicas GLP-1: Qué Necesita tu Sitio para Captar Pacientes" />
+  <meta property="og:description"
+    content="Qué necesita la web de una clínica de tratamientos GLP-1 para calificar pacientes antes del WhatsApp: herramientas interactivas, Schema médico y velocidad." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-web-clinicas-glp1-control-peso.webp" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_419" />
+  <meta property="og:site_name" content="Cirujana Digital" />
+  <!-- Article metadata -->
+  <meta property="article:published_time" content="2026-08-02" />
+  <meta property="article:modified_time" content="2026-08-02" />
+  <meta property="article:author" content="Yulia Monti" />
+  <meta property="article:section" content="Web médica y captación" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Web para Clínicas GLP-1: Qué Necesita tu Sitio para Captar Pacientes" />
+  <meta name="twitter:description"
+    content="Qué necesita la web de una clínica GLP-1 para calificar pacientes antes del WhatsApp." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-web-clinicas-glp1-control-peso.webp" />
+  <!-- Favicons — no tocar -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png" />
+  <link rel="preload" href="/components.css" as="style">
+  <link rel="stylesheet" href="/components.css">
+  <script src="/components.js" defer></script>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+    }
+
+    :root {
+      --primary: #03658c;
+      --secondary: #00a7a9;
+      --light: #f7f9fa;
+      --cd-text: #2d3748;
+      --cd-text-light: #64748b;
+      --font-display: Georgia, 'Times New Roman', serif;
+      --font-body: system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --gradient-primary: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
+      --container-padding: 2rem;
+      --transition: transform 0.2s ease, box-shadow 0.2s ease;
+      --gap: 2rem;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--cd-text);
+      background: #fff;
+      font-size: 1rem;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    main#main {
+      min-height: 100vh;
+      contain: layout;
+    }
+
+    #site-nav {
+      height: 70px;
+      min-height: 70px;
+      contain: layout style;
+    }
+
+    #site-footer {
+      height: 678px;
+      min-height: 678px;
+      contain: layout style;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      #site-footer {
+        height: 1780px;
+        min-height: 1780px;
+      }
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    [data-animate] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .article-hero {
+      padding: calc(80px + 4rem) 0 4rem;
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      isolation: isolate;
+    }
+
+    .article-hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      contain: layout;
+    }
+
+    .article-breadcrumb {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.5rem;
+    }
+
+    .article-breadcrumb a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .article-breadcrumb a:hover {
+      color: #fff;
+    }
+
+    .article-breadcrumb span {
+      margin: 0 0.4rem;
+    }
+
+    .article-category {
+      display: inline-block;
+      background: rgba(0, 167, 169, 0.2);
+      color: #7fdbff;
+      border: 1px solid rgba(0, 167, 169, 0.3);
+      border-radius: 50px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4.5vw, 3rem);
+      font-weight: 400;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .article-meta strong {
+      color: rgba(255, 255, 255, 0.85);
+    }
+
+    .article-body {
+      padding: 4rem 0 5rem;
+      background: #fff;
+    }
+
+    .article-layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 4rem;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+      align-items: start;
+    }
+
+    .article-content {
+      min-width: 0;
+    }
+
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      color: var(--cd-text);
+      margin: 2.5rem 0 1rem;
+      scroll-margin-top: 100px;
+      border-bottom: 2px solid var(--light);
+      padding-bottom: 0.5rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.2rem;
+      color: var(--cd-text);
+      margin: 1.75rem 0 0.6rem;
+      font-weight: 700;
+    }
+
+    .article-content p {
+      color: #4a5568;
+      line-height: 1.9;
+      margin-bottom: 1.4rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 0 0 1.5rem 1.5rem;
+    }
+
+    .article-content li {
+      color: #4a5568;
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+      font-size: 1.05rem;
+    }
+
+    .article-content strong {
+      color: var(--cd-text);
+    }
+
+    .article-content a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .article-content a:hover {
+      color: var(--primary);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .metric-card {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.25rem;
+      text-align: center;
+      border-top: 4px solid var(--secondary);
+    }
+
+    .metric-card .metric-name {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cd-text-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .metric-card .metric-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .metric-card .metric-desc {
+      font-size: 0.8rem;
+      color: var(--cd-text-light);
+      line-height: 1.4;
+    }
+
+    .metric-card.good {
+      border-color: #00c853;
+    }
+
+    .metric-card.good .metric-value {
+      color: #00a844;
+    }
+
+    .metric-card.medium {
+      border-color: #f59e0b;
+    }
+
+    .metric-card.medium .metric-value {
+      color: #d97706;
+    }
+
+    .metric-card.bad {
+      border-color: #e74c3c;
+    }
+
+    .metric-card.bad .metric-value {
+      color: #c0392b;
+    }
+
+    .callout {
+      padding: 1.25rem 1.5rem;
+      border-radius: 10px;
+      margin: 2rem 0;
+    }
+
+    .callout p {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    .callout-label {
+      font-weight: 800;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+      display: block;
+    }
+
+    .callout-tip {
+      background: rgba(0, 167, 169, 0.08);
+      border-left: 4px solid var(--secondary);
+    }
+
+    .callout-tip .callout-label {
+      color: #006b6d;
+    }
+
+    .callout-warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid #f59e0b;
+    }
+
+    .callout-warning .callout-label {
+      color: #92400e;
+    }
+
+    .callout-danger {
+      background: rgba(231, 76, 60, 0.07);
+      border-left: 4px solid #e74c3c;
+    }
+
+    .callout-danger .callout-label {
+      color: #991b1b;
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 2rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    }
+
+    .data-table {
+      width: 100%;
+      min-width: 520px;
+      border-collapse: collapse;
+      font-size: 0.93rem;
+    }
+
+    .data-table thead {
+      background: var(--gradient-primary);
+      color: #fff;
+    }
+
+    .data-table th {
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .data-table td {
+      padding: 0.9rem 1.2rem;
+      border-bottom: 1px solid #f1f5f9;
+      color: #4a5568;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tag-good {
+      color: #00a844;
+      font-weight: 700;
+    }
+
+    .tag-medium {
+      color: #d97706;
+      font-weight: 700;
+    }
+
+    .tag-bad {
+      color: #c0392b;
+      font-weight: 700;
+    }
+
+    .author-box {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+      padding: 1.75rem;
+      background: var(--light);
+      border-radius: 14px;
+      margin: 3rem 0;
+    }
+
+    .author-avatar {
+      width: 60px;
+      height: 60px;
+      flex-shrink: 0;
+      background: var(--gradient-primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+    }
+
+    .author-info h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--cd-text);
+      margin-bottom: 0.2rem;
+    }
+
+    .author-info p {
+      font-size: 0.9rem;
+      color: var(--cd-text-light);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .article-cta-box {
+      background: linear-gradient(135deg, #0d1b2a 0%, #03658c 100%);
+      border-radius: 16px;
+      padding: 2.5rem;
+      text-align: center;
+      margin: 3rem 0;
+    }
+
+    .article-cta-box h3 {
+      font-family: var(--font-display);
+      color: #fff;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-cta-box p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-cta-white {
+      display: inline-flex;
+      gap: 0.75rem;
+      align-items: center;
+      background: #fff;
+      color: #024e6c;
+      font-weight: 800;
+      padding: 0.875rem 2rem;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: var(--transition);
+    }
+
+    .btn-cta-white:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+      color: var(--primary);
+    }
+
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+      min-width: 0;
+    }
+
+    .toc-box {
+      background: var(--light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-box h4 {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #94a3b8;
+      margin-bottom: 1rem;
+    }
+
+    .toc-box ol {
+      list-style: none;
+      counter-reset: toc;
+      padding: 0;
+      margin: 0;
+    }
+
+    .toc-box li {
+      counter-increment: toc;
+      margin-bottom: 0.6rem;
+    }
+
+    .toc-box a {
+      font-size: 0.87rem;
+      color: var(--cd-text-light);
+      text-decoration: none;
+      display: flex;
+      gap: 0.5rem;
+      align-items: flex-start;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+
+    .toc-box a::before {
+      content: counter(toc);
+      color: var(--secondary);
+      font-weight: 700;
+      font-size: 0.72rem;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .toc-box a:hover {
+      color: var(--primary);
+    }
+
+    .sidebar-cta {
+      background: var(--gradient-primary);
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+
+    .sidebar-cta p {
+      font-size: 0.88rem;
+      opacity: 0.9;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .sidebar-cta a {
+      display: block;
+      background: #fff;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 0.7rem 1rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .sidebar-cta a:hover {
+      background: #e0f7f7;
+      transform: translateY(-2px);
+    }
+
+    .sb-diag {
+      background: #0d1b2a;
+      border: 1px solid rgba(0, 167, 169, 0.2);
+      border-radius: 12px;
+      padding: 1.5rem;
+      color: #fff;
+    }
+
+    .sb-diag__head {
+      margin-bottom: 1.25rem;
+    }
+
+    .sb-diag__label {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #7fdbff;
+      margin-bottom: 0.5rem;
+    }
+
+    .sb-diag__stat {
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: rgba(255, 255, 255, 0.75);
+      margin: 0;
+    }
+
+    .sb-diag__stat em {
+      font-style: normal;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .sb-diag__list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .sb-diag__list li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+    }
+
+    .sb-diag__icon {
+      font-size: 1rem;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .sb-diag__list strong {
+      display: block;
+      font-size: 0.85rem;
+      color: #fff;
+      margin-bottom: 0.1rem;
+    }
+
+    .sb-diag__list span {
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+    .sb-diag__btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.875rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(0, 167, 169, 0.28);
+      margin-bottom: 0.75rem;
+    }
+
+    .sb-diag__btn:hover {
+      box-shadow: 0 6px 20px rgba(0, 167, 169, 0.42);
+      transform: translateY(-1px);
+      color: #fff;
+    }
+
+    .sb-diag__nota {
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+      text-align: center;
+      margin: 0;
+    }
+
+    .blog-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(1.5rem, 5vw, 3rem);
+      width: 100%;
+    }
+
+    @media (min-width: 900px) {
+      .blog-layout {
+        grid-template-columns: 1fr 300px;
+        align-items: start;
+      }
+    }
+
+    .blog-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: sticky;
+      top: 100px;
+    }
+
+    .sb-section-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cd-text-light);
+      margin-bottom: 12px;
+    }
+
+    .sb-related-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sb-related-list a {
+      color: var(--cd-text);
+      font-size: 0.88rem;
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .sb-related-list a:hover {
+      border-color: rgba(0, 167, 169, 0.4);
+      color: #03658c;
+    }
+
+    @media (max-width: 1024px) {
+      .article-layout {
+        grid-template-columns: 1fr;
+        padding: 0 clamp(1.5rem, 5vw, 3rem);
+      }
+
+      .article-sidebar {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .article-hero {
+        padding: calc(70px + 3rem) 0 3rem;
+      }
+
+      .article-body {
+        padding: 2.5rem 0 3.5rem;
+      }
+
+      .metrics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-box {
+        flex-direction: column;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .article-meta {
+        gap: 0.6rem;
+        font-size: 0.82rem;
+      }
+
+      .article-cta-box {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cirujanadigital.com/#organization",
+        "name": "Cirujana Digital",
+        "url": "https://cirujanadigital.com/"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cirujanadigital.com/#yulia-monti",
+        "name": "Yulia Monti",
+        "jobTitle": "Desarrolladora web",
+        "url": "https://cirujanadigital.com/"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://cirujanadigital.com/blog/web-clinicas-glp1-control-peso/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://cirujanadigital.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Blog",   "item": "https://cirujanadigital.com/blog/" },
+          { "@type": "ListItem", "position": 3, "name": "Web para clínicas GLP-1" }
+        ]
+      },
+      {
+        "@type": "Article",
+        "@id": "https://cirujanadigital.com/blog/web-clinicas-glp1-control-peso/#article",
+        "headline":    "Web para Clínicas GLP-1: Qué Necesita tu Sitio para Captar Pacientes",
+        "description": "Qué necesita la web de una clínica de tratamientos GLP-1 para calificar pacientes antes del WhatsApp: herramientas interactivas, Schema médico y velocidad.",
+        "image": {
+          "@type": "ImageObject",
+          "url":    "https://cirujanadigital.com/img/og-web-clinicas-glp1-control-peso.webp",
+          "width":  1200,
+          "height": 630
+        },
+        "datePublished": "2026-08-02",
+        "dateModified":  "2026-08-02",
+        "author":    { "@id": "https://cirujanadigital.com/#yulia-monti" },
+        "publisher": { "@id": "https://cirujanadigital.com/#organization" },
+        "mainEntityOfPage": "https://cirujanadigital.com/blog/web-clinicas-glp1-control-peso/",
+        "articleSection": "Web médica y captación",
+        "inLanguage": "es"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Una landing con calculadora de IMC realmente convierte más que una landing informativa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sí, cuando el visitante ingresa sus propios datos antes del CTA, llega a WhatsApp con contexto clínico ya procesado. Esto reduce las consultas de curiosidad y aumenta la proporción de contactos que efectivamente agendan evaluación."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Qué Schema debe usar la web de una clínica de tratamientos GLP-1?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "MedicalClinic o MedicalBusiness como tipo principal, con medicalSpecialty declarada, más FAQPage si la página responde preguntas frecuentes del paciente. Esto ayuda tanto al posicionamiento en Google como a la citación en motores de respuesta IA."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display: none; visibility: hidden" class="gtm-iframe"></iframe>
+  </noscript>
+  <div id="site-nav"></div>
+  <main id="main" tabindex="-1" style="min-height: 100vh;">
+    <header class="article-hero">
+      <div class="article-hero-inner">
+        <nav class="article-breadcrumb" aria-label="Ruta de navegación">
+          <a href="/">Inicio</a><span aria-hidden="true">›</span>
+          <a href="/blog/">Blog</a><span aria-hidden="true">›</span>
+          <span aria-current="page">Web para clínicas GLP-1</span>
+        </nav>
+        <span class="article-category">Web médica y captación</span>
+        <h1>Web para Clínicas GLP-1: Qué Necesita tu Sitio para Captar Pacientes</h1>
+        <div class="article-meta">
+          <span>Por <strong>Yulia Monti</strong></span>
+          <span aria-hidden="true">·</span>
+          <time datetime="2026-08-02">2 de agosto de 2026</time>
+          <span aria-hidden="true">·</span>
+          <span>7 min de lectura</span>
+        </div>
+      </div>
+    </header>
+    <div class="article-body">
+      <div class="article-layout">
+        <article class="article-content">
+          <p>Los tratamientos con agonistas GLP-1 crecieron más rápido que la infraestructura digital pensada para
+            venderlos. La mayoría de las clínicas que los ofrecen todavía usan una landing genérica: una foto, un texto
+            motivacional y un botón de WhatsApp. El problema no es el tratamiento — es que el sitio no hace ningún
+            trabajo antes de que el paciente escriba.</p>
+
+          <h2 id="seccion-1">El problema real: leads sin calificar</h2>
+          <p>Un paciente que llega a WhatsApp sin haber pasado por ningún filtro previo obliga al equipo a hacer
+            preguntas básicas que la web debería haber respondido: peso, altura, intentos previos, comorbilidades. Cada
+            una de esas preguntas hechas por chat es tiempo administrativo perdido y una oportunidad de fuga — el
+            paciente indeciso no siempre responde al segundo mensaje.</p>
+          <p>La alternativa no es agregar más texto. Es agregar <strong>fricción positiva</strong>: herramientas que el
+            paciente completa con sus propios datos antes de decidir escribir. Cuando eso pasa, el mensaje que llega al
+            equipo ya viene con contexto clínico.</p>
+
+          <div class="callout callout-tip">
+            <span class="callout-label">💡 Dato clínico-comercial</span>
+            <p>Un visitante que calculó su propio IMC y vio su resultado clasificado en un rango específico llega al
+              WhatsApp con una pregunta concreta, no con una duda genérica. Eso cambia la conversación desde el primer
+              mensaje.</p>
+          </div>
+
+          <h2 id="seccion-2">Las tres herramientas que hacen el trabajo antes del WhatsApp</h2>
+          <p>No hace falta un desarrollo complejo. Tres componentes bien pensados cubren el recorrido completo del
+            paciente que está evaluando si es candidato:</p>
+
+          <div class="table-wrapper">
+            <table class="data-table" aria-label="Herramientas interactivas para landing de clínica GLP-1">
+              <thead>
+                <tr>
+                  <th>Herramienta</th>
+                  <th>Qué resuelve</th>
+                  <th>Impacto en el lead</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Calculadora de IMC</td>
+                  <td>Da un dato objetivo en tiempo real, sin esperar respuesta humana</td>
+                  <td class="tag-good">Alto</td>
+                </tr>
+                <tr>
+                  <td>Simulador de elegibilidad</td>
+                  <td>Preguntas clínicas básicas (comorbilidades, intentos previos, edad) antes del contacto</td>
+                  <td class="tag-good">Alto</td>
+                </tr>
+                <tr>
+                  <td>Tracker de protocolo</td>
+                  <td>Muestra qué esperar en las primeras semanas — reduce el miedo a lo desconocido</td>
+                  <td class="tag-medium">Medio</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>El objetivo de estas tres piezas no es reemplazar la consulta médica — ninguna herramienta web decide un
+            tratamiento. El objetivo es que la persona llegue a esa consulta con una pregunta específica en vez de una
+            duda genérica.</p>
+
+          <h2 id="seccion-3">Schema médico: sin esto, Google no entiende qué ofrece la clínica</h2>
+          <p>Una landing de tratamientos GLP-1 no es una landing de médico individual — es una clínica con especialidad
+            metabólica. El tipo de Schema correcto es <code>MedicalClinic</code> o <code>MedicalBusiness</code>, con
+            <code>medicalSpecialty</code> declarada explícitamente. Sin este dato estructurado, Google y los motores de
+            respuesta IA (ChatGPT, Perplexity, Gemini) no tienen forma de asociar el sitio a la búsqueda "clínica GLP-1"
+            o "tratamiento para bajar de peso" en la ciudad correspondiente.
+          </p>
+
+          <div class="callout callout-warning">
+            <span class="callout-label">⚠️ Error frecuente</span>
+            <p>Usar Schema de <code>Organization</code> genérico en vez de <code>MedicalClinic</code>. Google indexa
+              igual la página, pero pierde la señal de especialidad médica que sí capturan los competidores con Schema
+              correcto.</p>
+          </div>
+
+          <h2 id="seccion-4">Velocidad: el paciente que busca esto no espera</h2>
+          <p>Quien busca "tratamiento GLP-1" suele estar comparando 3 o 4 clínicas en la misma sesión de búsqueda, desde
+            el celular. Si la landing tarda más de 3 segundos en mostrar el hero, ya está mirando la siguiente pestaña.
+            Esto no es una particularidad de este nicho — es el comportamiento estándar del paciente digital — pero se
+            agrava cuando la decisión involucra comparar precios y protocolos entre varias opciones a la vez.</p>
+
+          <div class="metrics-grid">
+            <div class="metric-card good">
+              <p class="metric-name">Lighthouse mobile objetivo</p>
+              <p class="metric-value">90+</p>
+              <p class="metric-desc">Mínimo para no perder posicionamiento por velocidad</p>
+            </div>
+            <div class="metric-card medium">
+              <p class="metric-name">Tiempo de carga aceptable</p>
+              <p class="metric-value">&lt;3s</p>
+              <p class="metric-desc">En conexión móvil 4G estándar</p>
+            </div>
+            <div class="metric-card bad">
+              <p class="metric-name">Abandono con carga lenta</p>
+              <p class="metric-value">53%</p>
+              <p class="metric-desc">De usuarios móviles abandona pasado ese umbral</p>
+            </div>
+          </div>
+
+          <div class="article-cta-box">
+            <h3>¿Querés ver cómo se ve esto aplicado?</h3>
+            <p>Tenemos una demo completa de landing para clínica de control de peso GLP-1, con las tres herramientas
+              interactivas funcionando.</p>
+            <a href="/clinica-control-peso-glp1/" class="btn-cta-white">
+              <span>Ver demo GLP-1</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+
+          <h2 id="faq">Preguntas frecuentes</h2>
+          <h3>¿Una landing con calculadora de IMC realmente convierte más que una landing informativa?</h3>
+          <p>Sí. Cuando el visitante ingresa sus propios datos antes del CTA, llega a WhatsApp con contexto clínico ya
+            procesado. Esto reduce las consultas de curiosidad y aumenta la proporción de contactos que efectivamente
+            agendan evaluación.</p>
+          <h3>¿Qué Schema debe usar la web de una clínica de tratamientos GLP-1?</h3>
+          <p><code>MedicalClinic</code> o <code>MedicalBusiness</code> como tipo principal, con
+            <code>medicalSpecialty</code> declarada, más <code>FAQPage</code> si la página responde preguntas frecuentes
+            del paciente. Esto ayuda tanto al posicionamiento en Google como a la citación en motores de respuesta IA.
+          </p>
+
+          <div class="author-box">
+            <img src="/img/yulia-monti.webp" alt="Yulia Monti — Cirujana Digital" width="80" height="80" loading="lazy"
+              decoding="async" />
+            <div class="author-info">
+              <h4>Yulia Monti — Cirujana Digital</h4>
+              <p>Instrumentadora quirúrgica reconvertida en desarrolladora web. 15 años en pabellón, ahora construyo
+                sitios que cargan rápido, posicionan en Google y convierten visitantes en clientes. Especialidad:
+                negocios de salud y profesionales independientes.</p>
+            </div>
+          </div>
+
+          <div class="article-cta-box">
+            <h3>¿Querés saber exactamente qué está fallando en tu sitio?</h3>
+            <p>Diagnóstico personalizado por especialidad y ciudad. 15 puntos. Resultado en 3 minutos.</p>
+            <a href="/diagnostico/" class="btn-cta-white">
+              <span>Hacer mi diagnóstico gratis</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <aside class="article-sidebar" aria-label="Tabla de contenidos y diagnóstico">
+          <nav class="toc-box" aria-label="Tabla de contenidos">
+            <h4>En este artículo</h4>
+            <ol>
+              <li><a href="#seccion-1">El problema: leads sin calificar</a></li>
+              <li><a href="#seccion-2">Las tres herramientas clave</a></li>
+              <li><a href="#seccion-3">Schema médico correcto</a></li>
+              <li><a href="#seccion-4">Velocidad y abandono móvil</a></li>
+              <li><a href="#faq">Preguntas frecuentes</a></li>
+            </ol>
+          </nav>
+          <div class="sb-diag">
+            <div class="sb-diag__head">
+              <span class="sb-diag__label">Diagnóstico gratuito</span>
+              <p class="sb-diag__stat"><em>7 de cada 10</em> sitios médicos tienen al menos un error crítico que espanta
+                pacientes.</p>
+            </div>
+            <ul class="sb-diag__list" aria-label="Qué cubre el diagnóstico">
+              <li>
+                <span class="sb-diag__icon sb-diag__icon--vel" aria-hidden="true">⚡</span>
+                <div><strong>Velocidad en celular</strong><span>¿Cargás antes de 3 seg?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon sb-diag__icon--seo" aria-hidden="true">🔍</span>
+                <div><strong>Visibilidad en Google</strong><span>¿Te encuentran por especialidad?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon sb-diag__icon--conv" aria-hidden="true">💬</span>
+                <div><strong>Conversión</strong><span>¿Los visitantes te contactan?</span></div>
+              </li>
+              <li>
+                <span class="sb-diag__icon sb-diag__icon--cred" aria-hidden="true">🏅</span>
+                <div><strong>Credibilidad</strong><span>¿Tu sitio genera confianza?</span></div>
+              </li>
+            </ul>
+            <a href="/diagnostico/" class="sb-diag__btn">
+              Hacer mi diagnóstico gratis
+              <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+            </a>
+            <p class="sb-diag__nota">3 minutos · resultado inmediato · sin registro</p>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+</body>
+
+</html>
