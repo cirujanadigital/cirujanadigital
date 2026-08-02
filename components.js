@@ -12,6 +12,7 @@
   /*  WEBS MÉDICAS — agregar cada web nueva AL PRINCIPIO. */
   const WEBS_MEDICAS = [
     { href: 'https://metododoshas.com', label: 'Nutricionista', external: true },
+    { href: 'clinica-control-peso-glp1/', label: 'GLP1', external: false },
     { href: '/pagina-web-traumatologo/', label: 'Traumatólogo', external: false },
     { href: '/pagina-web-para-doula/', label: 'Doula', external: false },
     { href: '/pagina-web-medico-anestesiologo/', label: 'Anestesiólogo', external: false },
@@ -45,9 +46,7 @@
     { href: '/recursos/plantillas-gbp/', label: 'Plantillas para Google Maps' },
   ];
 
-  /* ──────────────────────────────────────────────────────────
-     HELPER: marcar link activo según URL actual
-     ────────────────────────────────────────────────────────── */
+  /*  HELPER: marcar link activo según URL actual     */
   function isActive(href) {
     const path = window.location.pathname;
     if (href === '/') return path === '/';

@@ -16,7 +16,7 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://cirujanadigital.com/" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://cirujanadigital.com/" />
   </url>
-  
+
     <url>
   <loc>https://cirujanadigital.com/landing-page-medicos/</loc>
   <lastmod>2026-04-25</lastmod>
@@ -104,6 +104,12 @@
        WEBS MÉDICAS
   ════════════════════════════════════════ -->
     <url>
+    <loc>https://cirujanadigital.com/clinica-control-peso-glp1/</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+    <url>
     <loc>https://cirujanadigital.com/pagina-web-traumatologo/</loc>
     <lastmod>2026-05-05</lastmod>
     <changefreq>monthly</changefreq>
@@ -162,7 +168,7 @@
   </url>
 
   <!-- ═══════════════════════════════════════
-       RECURSOS 
+       RECURSOS
   ════════════════════════════════════════ -->
 <url>
   <loc>https://cirujanadigital.com/recursos/</loc>
