@@ -2085,8 +2085,8 @@
 
             </div>
             <div class="about__photo-accent" aria-hidden="true">
-              <img src="img/img-about.webp" loading="lazy" style="width:100%;height:100%;object-fit:cover;" width="400"
-                height="400">
+              <img src="img/img-about.webp" loading="lazy" alt="Dra. Valentina Ríos, dermatóloga en Panamá"
+                style="width:100%;height:100%;object-fit:cover;" width="400" height="400">
             </div>
             <div class="about__badge">
               <div class="about__badge-name">Dra. Valentina Ríos M.</div>
@@ -2819,12 +2819,23 @@
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           const btn = form.querySelector('.form-submit');
-          btn.textContent = '✓ Recibido — te contactamos pronto';
+          if (!btn) return;
+
+          const textoOriginal = btn.textContent;
+
+          btn.textContent = 'Demo — formulario no funcional';
           btn.disabled = true;
           btn.style.background = '#7A8C6E';
+
+          // Restaurar el botón después de unos segundos,
+          // por si alguien quiere ver el estado original o probar de nuevo
+          setTimeout(function () {
+            btn.textContent = textoOriginal;
+            btn.disabled = false;
+            btn.style.background = '';
+          }, 4000);
         });
       }
-
     })();
   </script>
 </body>

@@ -27,7 +27,7 @@
   # ==========================================
 
   # Páginas legales
-  RewriteRule ^aviso-legal/?$                           /legales.html   [R=301,L]
+  RewriteRule ^aviso-legal/?$                           /terminos.html   [R=301,L]
   RewriteRule ^terminos-y-condiciones/?$                /terminos.html  [R=301,L]
   RewriteRule ^politica-privacidad/?$                   /politicas.html [R=301,L]
 
