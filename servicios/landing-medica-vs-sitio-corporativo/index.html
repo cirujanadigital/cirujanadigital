@@ -4,132 +4,166 @@
 <head>
   <base href="/">
   <meta charset="UTF-8" />
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-    }
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
-      window.addEventListener(e, loadGTM, { once: true })
-    );
-    setTimeout(loadGTM, 8000);
-  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');</script>
+  <!-- End Google Tag Manager -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Páginas Web para Médicos que Consiguen Pacientes | Cirujana Digital</title>
+  <title>Landing Médica o Sitio Corporativo: ¿Cuál Necesita Tu Consultorio? | Cirujana Digital</title>
   <meta name="description"
-    content="Páginas web para médicos en HTML estático. Lighthouse 90+ garantizado, Schema Physician validado, entrega en 7 días. Sin WordPress. Sin plantillas. Desde $250 USD." />
+    content="Compará landing page médica (desde $250 USD) y sitio web corporativo (desde $750 USD). Criterios técnicos claros para decidir sin adivinar. Lighthouse 90+ garantizado." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://cirujanadigital.com/landing-page-medicos/" />
+  <link rel="canonical" href="https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/" />
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://cirujanadigital.com/landing-page-medicos/" />
-  <meta property="og:title" content="Páginas Web para Médicos que Consiguen Pacientes | Cirujana Digital" />
+  <meta property="og:url" content="https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/" />
+  <meta property="og:title" content="Landing Médica o Sitio Corporativo: ¿Cuál Necesita Tu Consultorio?" />
   <meta property="og:description"
-    content="HTML estático, Lighthouse 90+, Schema médico y GA4 desde el día 1. Desde $250 USD." />
-  <meta property="og:image" content="https://cirujanadigital.com/img/og-image.png" />
+    content="Compará ambas opciones con criterios técnicos. Lighthouse 90+ garantizado. Desde $250 USD." />
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-landing-vs-corporativo.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/" />
+  <meta name="twitter:title" content="Landing Médica o Sitio Corporativo: ¿Cuál Necesita Tu Consultorio?" />
+  <meta name="twitter:description"
+    content="Compará ambas opciones con criterios técnicos. Lighthouse 90+ garantizado. Desde $250 USD." />
+  <meta name="twitter:image" content="https://cirujanadigital.com/img/og-image.webp" />
+
+  <!-- Schema JSON-LD -->
   <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": ["LocalBusiness","MedicalBusiness","ProfessionalService"],
-      "@id": "https://cirujanadigital.com/#organization",
-      "name": "Cirujana Digital",
-      "url": "https://cirujanadigital.com",
-      "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
-      "description": "Infraestructura digital médica para consultorios privados en LATAM y España. HTML estático, Lighthouse 90+, Schema Physician, presencia en IA generativa.",
-      "telephone": "+54-9-11-7619-9680",
-      "address": {"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},
-      "areaServed": [
-        {"@type":"Country","name":"Argentina"},{"@type":"Country","name":"México"},
-        {"@type":"Country","name":"Chile"},{"@type":"Country","name":"España"},
-        {"@type":"Country","name":"Colombia"}
-      ],
-      "sameAs": ["https://instagram.com/cirujanadigital","https://linkedin.com/in/yulia-monti"]
-    },
-    {
-      "@type": "Person",
-      "@id": "https://cirujanadigital.com/#yulia-monti",
-      "name": "Yulia Monti",
-      "jobTitle": "Especialista en infraestructura digital médica",
-      "description": "Instrumentadora quirúrgica con 15 años de experiencia. Especialista en infraestructura digital para médicos: páginas web, SEO médico local, Schema Physician y presencia en motores de IA.",
-      "worksFor": {"@id":"https://cirujanadigital.com/#organization"},
-      "sameAs": ["https://instagram.com/cirujanadigital","https://linkedin.com/in/yulia-monti"]
-    },
-    {
-      "@type": "Service",
-      "@id": "https://cirujanadigital.com/#landing-page-medicos",
-      "name": "Landing Page para Médicos",
-      "serviceType": "Medical Web Development",
-      "provider": {"@id":"https://cirujanadigital.com/#organization"},
-      "description": "Página web médica en HTML estático. Lighthouse 90+ garantizado, Schema Physician + MedicalBusiness, GA4, entrega en 7 días.",
-      "offers": {"@type":"Offer","price":"250","priceCurrency":"USD","availability":"https://schema.org/InStock"}
-    },
-    {
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type":"Question","name":"¿Cuánto cuesta una landing page para médico?",
-          "acceptedAnswer":{"@type":"Answer","text":"Desde $250 USD para una landing page individual. El Sistema de Activación Digital (web + Google Maps + WhatsApp Business) cuesta $400 USD. Precio fijo, sin sorpresas."}
-        },
-        {
-          "@type":"Question","name":"¿En cuánto tiempo me entregan la web médica?",
-          "acceptedAnswer":{"@type":"Answer","text":"7 días hábiles garantizados para el Sistema de Activación Digital. Una landing individual tarda 7 a 10 días. Si no cumplimos el plazo, se emite reembolso completo."}
-        },
-        {
-          "@type":"Question","name":"¿Por qué HTML estático y no WordPress para webs médicas?",
-          "acceptedAnswer":{"@type":"Answer","text":"WordPress genera puntajes de Lighthouse de 50–65 por defecto. El HTML estático alcanza 90–100 sin trucos, es más seguro, más barato de mantener y no depende de plugins que se rompan."}
-        }
-      ]
-    }
-  ]
-}
-</script>
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness","ProfessionalService"],
+        "@id": "https://cirujanadigital.com/#organization",
+        "name": "Cirujana Digital",
+        "url": "https://cirujanadigital.com",
+        "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
+        "description": "Infraestructura digital médica para captación de pacientes. HTML estático, Lighthouse 90+, Schema Physician validado.",
+        "telephone": "+54-9-11-7619-9680",
+        "email": "info@cirujanadigital.com",
+        "address": {"@type":"PostalAddress","addressCountry":"AR"},
+        "areaServed": [
+          {"@type":"Country","name":"Argentina"},
+          {"@type":"Country","name":"México"},
+          {"@type":"Country","name":"Chile"},
+          {"@type":"Country","name":"España"},
+          {"@type":"Country","name":"Colombia"}
+        ],
+        "sameAs": [
+          "https://instagram.com/cirujanadigital",
+          "https://linkedin.com/in/yulia-monti"
+        ],
+        "founder": {"@id":"https://cirujanadigital.com/#yulia-monti"}
+      },
+      {
+        "@type": "Person",
+        "@id": "https://cirujanadigital.com/#yulia-monti",
+        "name": "Yulia Monti",
+        "jobTitle": "Desarrolladora Web para el Sector Salud",
+        "description": "Yulia Monti, especialista en infraestructura digital médica para captación de pacientes en LATAM y España, fundadora de Cirujana Digital. Instrumentadora quirúrgica con 15 años de experiencia.",
+        "worksFor": {"@id":"https://cirujanadigital.com/#organization"},
+        "sameAs": ["https://instagram.com/cirujanadigital","https://linkedin.com/in/yulia-monti"]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/#landing",
+        "name": "Landing Page Médica",
+        "serviceType": "Desarrollo Web Médico",
+        "provider": {"@id":"https://cirujanadigital.com/#organization"},
+        "description": "Una página en HTML estático diseñada para convertir búsquedas en consultas. Schema Physician, GA4, Lighthouse 90+.",
+        "offers": {"@type":"Offer","price":"250","priceCurrency":"USD","availability":"https://schema.org/InStock","priceSpecification":{"@type":"PriceSpecification","price":"250","priceCurrency":"USD","description":"Precio desde"}}
+      },
+      {
+        "@type": "Service",
+        "@id": "https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/#corporativo",
+        "name": "Sitio Web Corporativo Médico",
+        "serviceType": "Desarrollo Web Médico",
+        "provider": {"@id":"https://cirujanadigital.com/#organization"},
+        "description": "Arquitectura multipágina con blog SEO, hreflang, sitemap y Cloudflare CDN. Para clínicas y grupos médicos.",
+        "offers": {"@type":"Offer","price":"750","priceCurrency":"USD","availability":"https://schema.org/InStock","priceSpecification":{"@type":"PriceSpecification","price":"750","priceCurrency":"USD","description":"Precio desde"}}
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type":"ListItem","position":1,"name":"Inicio","item":"https://cirujanadigital.com/"},
+          {"@type":"ListItem","position":2,"name":"Servicios","item":"https://cirujanadigital.com/servicios/"},
+          {"@type":"ListItem","position":3,"name":"Landing Médica vs Sitio Corporativo","item":"https://cirujanadigital.com/servicios/landing-medica-vs-sitio-corporativo/"}
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Cuál es la diferencia entre una landing page médica y un sitio corporativo?",
+            "acceptedAnswer": {"@type":"Answer","text":"La landing page es una sola página optimizada para una acción: que el paciente pida turno. El sitio corporativo es multipágina, incluye blog, arquitectura de contenidos y es adecuado para clínicas o grupos médicos que necesitan posicionarse en varias especialidades o ciudades."}
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta una landing page médica?",
+            "acceptedAnswer": {"@type":"Answer","text":"Desde $250 USD. Precio fijo, sin cobro por hora. Incluye HTML/CSS/JS, Schema Physician, GA4, Lighthouse 90+ garantizado y 30 días de soporte."}
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuánto cuesta un sitio web corporativo médico?",
+            "acceptedAnswer": {"@type":"Answer","text":"Desde $750 USD. Incluye arquitectura multipágina, blog SEO, sitemap.xml, hreflang para mercados internacionales, Cloudflare CDN y 60 días de soporte."}
+          },
+          {
+            "@type": "Question",
+            "name": "¿Necesito landing page o sitio completo si soy médico independiente?",
+            "acceptedAnswer": {"@type":"Answer","text":"Un médico independiente que quiere captar pacientes en una ciudad necesita una landing page. Es más rápida, más barata y convierte mejor que un sitio de varias páginas sin tráfico. El sitio corporativo tiene sentido cuando hay múltiples especialidades, médicos o ciudades."}
+          },
+          {
+            "@type": "Question",
+            "name": "¿En cuánto tiempo entregan la web médica?",
+            "acceptedAnswer": {"@type":"Answer","text":"La landing page se entrega en 7 a 10 días hábiles. El sitio corporativo tarda 3 a 5 semanas según la cantidad de páginas y contenido."}
+          },
+          {
+            "@type": "Question",
+            "name": "¿El precio incluye hosting y dominio?",
+            "acceptedAnswer": {"@type":"Answer","text":"No. El hosting y dominio son costos separados que el cliente paga directamente al proveedor (desde $5 a $20 USD/mes). El sitio queda en propiedad del médico, no de la agencia. Se asesora en la elección sin costo adicional."}
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="components.css" />
   <style>
+    /* ── TOKENS ── */
     :root {
-      --teal: #00a7a9;
-      --teal-d: #007e80;
-      --navy: #03658c;
-      --navy-d: #024a68;
+      --brand: #00A7A9;
+      --brand-d: #03658C;
+      --brand-dd: #024a68;
       --dark: #0a1628;
       --dark-2: #0d1f3c;
       --ink: #1a2332;
-      --body: #2d3748;
-      --muted: #64748b;
+      --text: #2D3748;
+      --muted: #64748B;
       --ghost: #94a3b8;
-      --light: #f0f7ff;
-      --white: #ffffff;
       --surface: #f7f9fb;
       --border: #e2e8f0;
-      --success: #059669;
-      --grad-a: linear-gradient(135deg, #03658c 0%, #00a7a9 100%);
-      --grad-b: linear-gradient(135deg, #0a1628 0%, #03658c 60%, #00a7a9 100%);
-      --grad-text: linear-gradient(120deg, #00c4c6 0%, #7fdbff 50%, #00a7a9 100%);
-      --grad-mesh: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(0, 167, 169, .18) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 80% at 20% 80%, rgba(3, 101, 140, .22) 0%, transparent 55%),
-        radial-gradient(ellipse 60% 40% at 90% 10%, rgba(0, 196, 198, .12) 0%, transparent 50%);
-      --shadow-sm: 0 2px 8px rgba(3, 101, 140, .10);
-      --shadow-md: 0 6px 24px rgba(3, 101, 140, .14);
-      --shadow-lg: 0 16px 48px rgba(3, 101, 140, .18);
-      --r-sm: 8px;
-      --r-md: 12px;
-      --r-lg: 18px;
-      --r-xl: 24px;
+      --white: #ffffff;
+      --green: #1e7e43;
+      --green-d: #176334;
+      --green-ok: #047857;
+      --r-sm: 6px;
+      --r-md: 10px;
+      --r-lg: 16px;
+      --r-xl: 22px;
       --r-pill: 100px;
       --ease: cubic-bezier(.4, 0, .2, 1);
-      --font-ui: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      --sh-sm: 0 2px 8px rgba(3, 101, 140, .09);
+      --sh-md: 0 6px 24px rgba(3, 101, 140, .13);
+      --sh-lg: 0 16px 48px rgba(3, 101, 140, .17);
     }
 
+    /* ── RESET ── */
     *,
     *::before,
     *::after {
@@ -145,12 +179,12 @@
     }
 
     body {
-      font-family: var(--font-ui);
-      padding-top: 70px;
-      color: var(--body);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--text);
       background: var(--white);
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
+      padding-top: 70px;
     }
 
     img {
@@ -163,13 +197,6 @@
       color: inherit;
     }
 
-    button {
-      border: none;
-      background: none;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
     ul {
       list-style: none;
     }
@@ -179,46 +206,49 @@
     }
 
     :focus-visible {
-      outline: 2.5px solid var(--teal);
+      outline: 2.5px solid var(--brand);
       outline-offset: 3px;
       border-radius: var(--r-sm);
     }
 
-    .container {
-      max-width: 1240px;
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: 1200px;
       margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
     }
 
-    .container-sm {
-      max-width: 760px;
+    .wrap-sm {
+      max-width: 740px;
       margin: 0 auto;
-      padding: 0 clamp(1.25rem, 4vw, 3rem);
+      padding: 0 clamp(1.25rem, 4vw, 2.5rem);
     }
 
-    .text-grad {
-      background: var(--navy);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      display: inline;
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
     }
 
-    /* BUTTONS */
+    /* ── BUTTONS ── */
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: .6rem;
-      padding: .875rem 1.875rem;
-      font-family: var(--font-ui);
-      font-size: .95rem;
-      font-weight: 700;
+      gap: .55rem;
+      padding: .85rem 1.75rem;
+      font-size: .93rem;
+      font-weight: 600;
       border-radius: var(--r-pill);
       border: 2px solid transparent;
       cursor: pointer;
-      transition: transform .25s var(--ease), box-shadow .25s var(--ease), background .25s;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .2s;
+      white-space: nowrap;
       text-decoration: none;
+      font-family: inherit;
     }
 
     .btn:hover {
@@ -230,31 +260,41 @@
     }
 
     .btn-primary {
-      background: var(--grad-a);
+      background: var(--brand-dd);
       color: var(--white);
-      box-shadow: 0 6px 20px rgba(0, 167, 169, .35);
+      box-shadow: 0 5px 18px rgba(0, 167, 169, .3);
     }
 
     .btn-primary:hover {
-      box-shadow: 0 10px 32px rgba(0, 167, 169, .5);
+      box-shadow: 0 9px 28px rgba(0, 167, 169, .45);
+    }
+
+    .btn-wa {
+      background: var(--green);
       color: var(--white);
+      box-shadow: 0 5px 18px rgba(30, 126, 67, .28);
+    }
+
+    .btn-wa:hover {
+      background: var(--green-d);
+      box-shadow: 0 9px 28px rgba(30, 126, 67, .42);
     }
 
     .btn-ghost {
       background: transparent;
       color: var(--white);
-      border-color: rgba(255, 255, 255, .35);
+      border-color: rgba(255, 255, 255, .32);
     }
 
     .btn-ghost:hover {
-      background: rgba(255, 255, 255, .08);
-      border-color: rgba(255, 255, 255, .7);
+      background: rgba(255, 255, 255, .07);
+      border-color: rgba(255, 255, 255, .65);
     }
 
     .btn-outline {
       background: transparent;
-      color: var(--navy);
-      border-color: var(--teal);
+      color: var(--brand-d);
+      border-color: var(--brand);
     }
 
     .btn-outline:hover {
@@ -265,12 +305,12 @@
       width: 100%;
     }
 
-    /* HERO */
+    /* ── HERO ── */
     .hero {
-      position: relative;
       background: #0a1628;
       padding: clamp(2.5rem, 5vw, 4rem) clamp(1.25rem, 5vw, 3rem);
       overflow: hidden;
+      position: relative;
     }
 
     .hero::before {
@@ -278,8 +318,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 65% 55% at 90% 15%, rgba(0, 167, 169, .18) 0%, transparent 65%),
-        radial-gradient(ellipse 55% 65% at 5% 85%, rgba(3, 101, 140, .20) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 60% at 75% 35%, rgba(0, 167, 169, .17) 0%, transparent 60%),
+        radial-gradient(ellipse 45% 70% at 15% 80%, rgba(3, 101, 140, .2) 0%, transparent 55%);
       pointer-events: none;
     }
 
@@ -291,85 +331,103 @@
         linear-gradient(rgba(0, 167, 169, .04) 1px, transparent 1px),
         linear-gradient(90deg, rgba(0, 167, 169, .04) 1px, transparent 1px);
       background-size: 52px 52px;
+      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 30%, transparent 100%);
       pointer-events: none;
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 100%);
     }
 
-    .hero-wrap {
+    .hero-inner {
       position: relative;
-      z-index: 1;
-      max-width: 1240px;
-      margin: 0 auto;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 4rem;
-      align-items: center;
+      z-index: 2;
+      max-width: 720px;
     }
 
-    .urgency-pill {
+    .breadcrumb {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      gap: .4rem;
+      flex-wrap: wrap;
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .42);
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, .45);
+      transition: color .2s;
+    }
+
+    .breadcrumb a:hover {
+      color: rgba(255, 255, 255, .8);
+    }
+
+    .breadcrumb-sep {
+      color: rgba(255, 255, 255, .25);
+    }
+
+    .breadcrumb span[aria-current] {
+      color: rgba(255, 255, 255, .65);
+    }
+
+    .hero-label {
       display: inline-flex;
       align-items: center;
-      gap: .5rem;
-      padding: .5rem 1.125rem;
+      gap: .45rem;
+      padding: .42rem 1rem;
       background: rgba(0, 167, 169, .12);
-      border: 1px solid rgba(0, 167, 169, .3);
+      border: 1px solid rgba(0, 167, 169, .28);
       border-radius: var(--r-pill);
-      font-size: .8rem;
-      font-weight: 700;
+      font-size: .75rem;
+      font-weight: 600;
       color: #7fdbff;
       text-transform: uppercase;
       letter-spacing: .08em;
-      margin-bottom: 1.75rem;
-      width: fit-content;
-    }
-
-    .urgency-dot {
-      width: 7px;
-      height: 7px;
-      background: #00e5e8;
-      border-radius: 50%;
-      animation: pulse-dot 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse-dot {
-
-      0%,
-      100% {
-        opacity: 1;
-        transform: scale(1);
-      }
-
-      50% {
-        opacity: .4;
-        transform: scale(.7);
-      }
-    }
-
-    .hero-h1 {
-      font-family: var(--font-ui);
-      font-size: clamp(2.25rem, 4.5vw, 3.75rem);
-      line-height: 1.08;
-      font-weight: 400;
-      color: var(--white);
-      letter-spacing: -.025em;
       margin-bottom: 1.5rem;
     }
 
-    .hero-h1 em {
+    .hero-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--brand);
+    }
+
+    @keyframes blink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 4.2vw, 3.5rem);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -.028em;
+      color: var(--white);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero h1 em {
       font-style: normal;
-      background: var(--grad-text);
+      background: var(--brand);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
     .hero-sub {
-      font-size: clamp(1rem, 1.8vw, 1.2rem);
-      color: rgba(255, 255, 255, .72);
+      font-size: clamp(1rem, 1.7vw, 1.15rem);
+      color: rgba(255, 255, 255, .68);
       line-height: 1.75;
-      max-width: 560px;
+      max-width: 580px;
       margin-bottom: 2.25rem;
     }
 
@@ -377,204 +435,74 @@
       color: var(--white);
     }
 
-    .hero-price {
+    /* Precios hero */
+    .hero-prices {
       display: flex;
-      align-items: center;
-      gap: 1.25rem;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      margin-bottom: 2.5rem;
-      padding: 1rem 1.375rem;
-      background: rgba(255, 255, 255, .05);
-      border: 1px solid rgba(255, 255, 255, .1);
+      margin-bottom: 2.25rem;
+      padding: .875rem 1.25rem;
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .09);
       border-radius: var(--r-lg);
       width: fit-content;
     }
 
-    .hero-price-item {
+    .hp-item {
       display: flex;
       flex-direction: column;
-      gap: .125rem;
+      gap: .1rem;
     }
 
-    .hero-price-label {
-      font-size: .72rem;
-      color: rgba(255, 255, 255, .5);
+    .hp-label {
+      font-size: .68rem;
+      color: rgba(255, 255, 255, .42);
       text-transform: uppercase;
       letter-spacing: .06em;
     }
 
-    .hero-price-amount {
-      font-size: 1.35rem;
-      font-weight: 500;
+    .hp-amount {
+      font-size: 1.25rem;
+      font-weight: 600;
       color: var(--white);
     }
 
-    .hero-price-divider {
+    .hp-div {
       width: 1px;
-      height: 32px;
-      background: rgba(255, 255, 255, .15);
+      background: rgba(255, 255, 255, .12);
+      align-self: stretch;
     }
 
     .hero-cta {
       display: flex;
-      gap: .875rem;
+      gap: .75rem;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
     }
 
-    .trust-bar {
+    .trust-row {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.25rem;
       flex-wrap: wrap;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: .45rem;
-      font-size: .8rem;
-      color: rgba(255, 255, 255, .55);
-      font-weight: 500;
-    }
-
-    /* HERO CARD */
-    .hero-card {
-      background: rgba(255, 255, 255, .04);
-      border: 1px solid rgba(255, 255, 255, .1);
-      border-radius: var(--r-xl);
-      padding: 2rem;
-      backdrop-filter: blur(8px);
-    }
-
-    .hero-card-top {
-      display: flex;
-      align-items: center;
-      gap: .75rem;
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.25rem;
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .avatar-wrap {
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: var(--grad-a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.5rem;
-      flex-shrink: 0;
-      overflow: hidden;
-    }
-
-    .avatar-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-
-    .hero-card-name strong {
-      display: block;
-      font-size: .95rem;
-      color: var(--white);
-    }
-
-    .hero-card-name span {
+      gap: .38rem;
       font-size: .78rem;
-      color: rgba(255, 255, 255, .5);
-    }
-
-    .lh-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: .75rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .lh-item {
-      background: rgba(255, 255, 255, .03);
-      border: 1px solid rgba(255, 255, 255, .07);
-      border-radius: var(--r-md);
-      padding: .875rem;
-    }
-
-    .lh-label {
-      font-size: .68rem;
-      color: rgba(255, 255, 255, .45);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      margin-bottom: .5rem;
-    }
-
-    .lh-bar-wrap {
-      height: 5px;
-      background: rgba(255, 255, 255, .08);
-      border-radius: var(--r-pill);
-      overflow: hidden;
-      margin-bottom: .375rem;
-    }
-
-    .lh-bar {
-      height: 100%;
-      border-radius: var(--r-pill);
-      background: linear-gradient(90deg, #00a7a9, #7fdbff);
-      transform-origin: left;
-      transform: scaleX(0);
-      animation: grow-bar .9s var(--ease) .4s forwards;
-    }
-
-    @keyframes grow-bar {
-      to {
-        transform: scaleX(1);
-      }
-    }
-
-    .lh-score {
-      font-size: 1.125rem;
-      font-weight: 500;
-      color: #00e5e8;
-    }
-
-    .lh-tag {
-      font-size: .65rem;
-      color: rgba(0, 229, 232, .7);
+      color: rgba(255, 255, 255, .48);
       font-weight: 500;
     }
 
-    .hero-card-list {
-      display: flex;
-      flex-direction: column;
-      gap: .625rem;
+    .trust-ico {
+      color: var(--brand);
+      font-style: normal;
     }
 
-    .hero-card-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: .5rem;
-      font-size: .83rem;
-      color: rgba(255, 255, 255, .68);
-    }
-
-    .chk {
-      width: 16px;
-      height: 16px;
-      background: rgba(0, 167, 169, .2);
-      border: 1px solid rgba(0, 167, 169, .4);
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      margin-top: .15rem;
-      color: #00e5e8;
-      font-size: .7rem;
-    }
-
-    /* SECTIONS */
+    /* ── SECTION BASE ── */
     .section {
-      padding: clamp(5rem, 9vw, 8rem) 0;
+      padding: clamp(4rem, 8vw, 7rem) 0;
     }
 
     .section--alt {
@@ -585,210 +513,362 @@
       background: var(--dark-2);
     }
 
-    .section-label {
+    .sec-label {
       display: inline-flex;
       align-items: center;
-      gap: .375rem;
-      padding: .45rem 1.125rem;
-      background: rgba(3, 101, 140, .1);
-      color: var(--navy);
+      gap: .35rem;
+      padding: .4rem 1rem;
+      background: rgba(3, 101, 140, .09);
+      color: var(--brand-d);
       border-radius: var(--r-pill);
-      font-size: .75rem;
-      font-weight: 500;
+      font-size: .73rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: .1em;
+      margin-bottom: .875rem;
+    }
+
+    .sec-label--white {
+      background: rgba(255, 255, 255, .08);
+      color: #7fdbff;
+      border: 1px solid rgba(127, 219, 255, .18);
+    }
+
+    .sec-title {
+      font-size: clamp(1.65rem, 2.8vw, 2.6rem);
+      font-weight: 500;
+      line-height: 1.13;
+      letter-spacing: -.022em;
+      color: var(--ink);
       margin-bottom: 1rem;
     }
 
-    .section-label--white {
-      background: rgba(255, 255, 255, .1);
-      color: #7fdbff;
-      border: 1px solid rgba(127, 219, 255, .2);
-    }
-
-    .section-title {
-      font-family: var(--font-ui);
-      font-size: clamp(1.75rem, 3vw, 2.75rem);
-      font-weight: 500;
-      line-height: 1.12;
-      letter-spacing: -.02em;
-      color: var(--ink);
-      margin-bottom: 1.25rem;
-    }
-
-    .section-title--white {
+    .sec-title--white {
       color: var(--white);
     }
 
-    .section-sub {
-      font-size: 1.1rem;
+    .sec-sub {
+      font-size: 1.05rem;
       color: var(--muted);
-      max-width: 640px;
+      max-width: 620px;
+      line-height: 1.75;
     }
 
-    .section-header {
-      margin-bottom: 3.5rem;
+    .sec-head {
+      margin-bottom: 3rem;
     }
 
-    .section-header--center {
+    .sec-head--center {
       text-align: center;
     }
 
-    .section-header--center .section-sub {
+    .sec-head--center .sec-sub {
       margin: 0 auto;
     }
 
-    /* COMPARE */
-    .compare-grid {
+    /* ── DECISOR — tabla comparativa ── */
+    .decisor {
+      display: grid;
+      grid-template-columns: 200px 1fr 1fr;
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-xl);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--sh-md);
+    }
+
+    /* Cabecera */
+    .dec-hd-blank {
+      background: var(--surface);
+      border-bottom: 1.5px solid var(--border);
+    }
+
+    .dec-hd {
+      padding: 1.5rem 1.75rem;
+      border-bottom: 1.5px solid var(--border);
+      border-left: 1.5px solid var(--border);
+    }
+
+    .dec-hd--landing {
+      background: rgba(0, 167, 169, .04);
+    }
+
+    .dec-hd--corp {
+      background: rgba(3, 101, 140, .04);
+    }
+
+    .dec-hd-badge {
+      display: inline-block;
+      padding: .28rem .75rem;
+      border-radius: var(--r-pill);
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      margin-bottom: .75rem;
+    }
+
+    .badge-landing {
+      background: rgba(0, 167, 169, .15);
+      color: var(--brand-d);
+    }
+
+    .badge-corp {
+      background: rgba(3, 101, 140, .12);
+      color: var(--brand-dd);
+    }
+
+    .dec-hd-price {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--ink);
+      line-height: 1;
+      margin-bottom: .25rem;
+    }
+
+    .dec-hd-name {
+      font-size: .82rem;
+      color: var(--muted);
+    }
+
+    /* Filas */
+    .dec-row-label {
+      padding: .9rem 1.25rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+    }
+
+    .dec-cell {
+      padding: .9rem 1.75rem;
+      border-top: 1px solid var(--border);
+      border-left: 1.5px solid var(--border);
+      font-size: .85rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+    }
+
+    .dec-cell--landing {
+      background: rgba(0, 167, 169, .02);
+    }
+
+    .dec-cell--corp {
+      background: rgba(3, 101, 140, .02);
+    }
+
+    .dec-yes {
+      color: var(--green-ok);
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .dec-no {
+      color: #dc2626;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .dec-partial {
+      color: #b45309;
+      font-weight: 600;
+      font-size: .85rem;
+    }
+
+    /* Fila de acción final */
+    .dec-row-cta .dec-hd-blank {
+      border-top: 1.5px solid var(--border);
+      padding: 1.5rem 1.25rem;
+    }
+
+    .dec-cell-cta {
+      padding: 1.5rem 1.75rem;
+      border-top: 1.5px solid var(--border);
+      border-left: 1.5px solid var(--border);
+    }
+
+    /* ── QUIÉN NECESITA QUÉ — tarjetas ── */
+    .need-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
     }
 
-    .compare-card {
+    .need-card {
       border-radius: var(--r-xl);
-      padding: 2rem;
+      padding: 2rem 1.875rem;
+      border: 1.5px solid var(--border);
+      transition: border-color .25s, box-shadow .25s, transform .25s var(--ease);
     }
 
-    .compare-card--bad {
-      background: #fff5f5;
-      border: 1.5px solid #fecaca;
+    .need-card:hover {
+      box-shadow: var(--sh-lg);
+      transform: translateY(-3px);
     }
 
-    .compare-card--good {
-      background: linear-gradient(135deg, rgba(3, 101, 140, .04), rgba(0, 167, 169, .06));
-      border: 1.5px solid rgba(0, 167, 169, .3);
+    .need-card--landing {
+      background: linear-gradient(155deg, rgba(0, 167, 169, .04) 0%, rgba(0, 167, 169, .09) 100%);
+      border-color: rgba(0, 167, 169, .3);
     }
 
-    .compare-card__label {
-      font-weight: 500;
-      font-size: .9rem;
+    .need-card--corp {
+      background: linear-gradient(155deg, rgba(3, 101, 140, .03) 0%, rgba(3, 101, 140, .08) 100%);
+      border-color: rgba(3, 101, 140, .25);
+    }
+
+    .need-tag {
+      display: inline-block;
+      padding: .28rem .875rem;
+      border-radius: var(--r-pill);
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
       margin-bottom: 1.25rem;
-      color: var(--ink);
     }
 
-    .compare-list {
+    .need-tag--landing {
+      background: rgba(0, 167, 169, .15);
+      color: var(--brand-d);
+    }
+
+    .need-tag--corp {
+      background: rgba(3, 101, 140, .12);
+      color: var(--brand-dd);
+    }
+
+    .need-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--ink);
+      margin-bottom: .625rem;
+      line-height: 1.3;
+    }
+
+    .need-card>p {
+      font-size: .875rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 1.375rem;
+    }
+
+    .need-list {
       display: flex;
       flex-direction: column;
-      gap: .75rem;
+      gap: .6rem;
     }
 
-    .compare-list li {
+    .need-list li {
       display: flex;
       align-items: flex-start;
-      gap: .625rem;
-      font-size: .9rem;
-      color: var(--body);
+      gap: .55rem;
+      font-size: .855rem;
+      color: var(--text);
       line-height: 1.5;
     }
 
-    .compare-list li .ico {
+    .need-ico {
+      width: 18px;
+      height: 18px;
       flex-shrink: 0;
-      width: 20px;
-      height: 20px;
-      border-radius: 50%;
+      border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: .7rem;
-      font-weight: 500;
-      margin-top: .15rem;
+      font-size: .68rem;
+      font-weight: 700;
+      margin-top: .1rem;
     }
 
-    .compare-card--bad .ico {
-      background: #fee2e2;
-      color: #dc2626;
+    .ico-landing {
+      background: rgba(0, 167, 169, .13);
+      color: var(--brand-d);
     }
 
-    .compare-card--good .ico {
-      background: rgba(5, 150, 105, .12);
-      color: #059669;
+    .ico-corp {
+      background: rgba(3, 101, 140, .12);
+      color: var(--brand-dd);
     }
 
-    /* SERVICES */
-    .pricing-grid {
+    /* ── DETALLE SERVICIOS ── */
+    .detail-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 1.5rem;
+      align-items: start;
     }
 
-    .pricing-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
+    .detail-card {
       border-radius: var(--r-xl);
-      padding: 2rem 1.75rem;
+      padding: 2.25rem 2rem;
+      border: 1.5px solid var(--border);
+      background: var(--white);
       display: flex;
       flex-direction: column;
-      transition: border-color .3s, box-shadow .3s, transform .3s var(--ease);
     }
 
-    .pricing-card:hover {
-      border-color: var(--teal);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-4px);
+    .detail-card--featured {
+      border-color: var(--brand);
+      background: linear-gradient(160deg, rgba(0, 167, 169, .03) 0%, rgba(3, 101, 140, .05) 100%);
     }
 
-    .pricing-card--featured {
-      border-color: var(--teal);
-      background: linear-gradient(160deg, rgba(3, 101, 140, .03) 0%, rgba(0, 167, 169, .05) 100%);
-      position: relative;
-    }
-
-    .featured-badge {
-      position: absolute;
-      top: -13px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: var(--grad-a);
-      color: var(--white);
-      font-size: .72rem;
-      font-weight: 500;
-      padding: .3rem 1rem;
-      border-radius: var(--r-pill);
-      white-space: nowrap;
-      letter-spacing: .05em;
-    }
-
-    .card-icon {
-      font-size: 2.25rem;
-      margin-bottom: 1rem;
-    }
-
-    .card-price {
+    .detail-price {
       display: flex;
       align-items: baseline;
-      gap: .35rem;
+      gap: .3rem;
       margin-bottom: .25rem;
     }
 
-    .card-amount {
-      font-size: 2rem;
-      font-weight: 500;
+    .detail-amount {
+      font-size: 2.25rem;
+      font-weight: 600;
       color: var(--ink);
+      line-height: 1;
     }
 
-    .card-cur {
-      font-size: .85rem;
-      font-weight: 500;
+    .detail-cur {
+      font-size: .82rem;
       color: var(--muted);
+      font-weight: 600;
     }
 
-    .card-title {
-      font-size: 1.05rem;
-      font-weight: 500;
+    .detail-from {
+      font-size: .75rem;
+      color: var(--muted);
+      align-self: center;
+      margin-left: .1rem;
+    }
+
+    .detail-name {
+      font-size: 1.15rem;
+      font-weight: 600;
       color: var(--ink);
       margin-bottom: .625rem;
-      line-height: 1.35;
+      line-height: 1.3;
     }
 
-    .card-desc {
+    .detail-desc {
       font-size: .875rem;
       color: var(--muted);
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
+      line-height: 1.65;
+      margin-bottom: 1.5rem;
     }
 
-    .card-features {
+    .detail-includes {
+      font-size: .72rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .875rem;
+    }
+
+    .detail-list {
       display: flex;
       flex-direction: column;
       gap: .55rem;
@@ -796,248 +876,104 @@
       flex: 1;
     }
 
-    .card-features li {
+    .detail-list li {
       display: flex;
       align-items: flex-start;
       gap: .5rem;
-      font-size: .85rem;
-      color: var(--body);
+      font-size: .855rem;
+      color: var(--text);
+      line-height: 1.5;
     }
 
-    .card-features .f-dot {
+    .dl-dot {
       width: 18px;
       height: 18px;
+      flex-shrink: 0;
       background: rgba(0, 167, 169, .1);
       border-radius: 4px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
-      color: var(--teal-d);
+      color: var(--brand-d);
       font-size: .65rem;
-      font-weight: 500;
+      font-weight: 700;
       margin-top: .1rem;
     }
 
-    .card-guarantee {
+    .detail-guarantee {
       display: flex;
       align-items: center;
       gap: .4rem;
       font-size: .78rem;
       font-weight: 600;
-      color: var(--success);
-      background: rgba(5, 150, 105, .07);
-      border: 1px solid rgba(5, 150, 105, .2);
+      color: var(--green-ok);
+      background: rgba(4, 120, 87, .07);
+      border: 1px solid rgba(4, 120, 87, .18);
       border-radius: var(--r-md);
-      padding: .625rem .875rem;
-      margin-bottom: 1rem;
+      padding: .6rem .875rem;
+      margin-bottom: 1.125rem;
     }
 
-    /* PROCESS */
-    .process-track {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1rem;
-      position: relative;
-    }
-
-    .process-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 1.75rem 1.5rem;
-      transition: border-color .3s, box-shadow .3s;
-    }
-
-    .process-card:hover {
-      border-color: var(--teal);
-      box-shadow: var(--shadow-md);
-    }
-
-    .process-num {
-      width: 56px;
-      height: 56px;
-      background: var(--grad-a);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 1.25rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .process-card h4 {
-      font-size: .975rem;
-      font-weight: 700;
-      color: var(--ink);
-      margin-bottom: .5rem;
-    }
-
-    .process-card p {
-      font-size: .83rem;
+    .detail-plazo {
+      font-size: .78rem;
       color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* TESTIMONIAL */
-    .testimonial-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--r-xl);
-      padding: 2.5rem;
-      position: relative;
-      max-width: 720px;
-      margin: 0 auto;
-      box-shadow: var(--shadow-lg);
-    }
-
-    .testimonial-card::before {
-      content: '"';
-      position: absolute;
-      top: -1rem;
-      left: 2rem;
-      font-size: 5rem;
-      line-height: 1;
-      color: var(--teal);
-      opacity: .2;
-      font-family: Georgia, serif;
-    }
-
-    .stars {
-      color: #f59e0b;
-      font-size: 1.1rem;
-      letter-spacing: .1em;
+      padding: .5rem .875rem;
+      background: var(--surface);
+      border-radius: var(--r-md);
       margin-bottom: 1.25rem;
     }
 
-    .testimonial-text {
-      font-size: 1.05rem;
-      line-height: 1.8;
-      color: var(--body);
-      margin-bottom: 1.5rem;
-      font-style: italic;
-    }
-
-    .testimonial-author {
-      display: flex;
-      align-items: center;
-      gap: .875rem;
-    }
-
-    .avatar-sm {
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .avatar-sm img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .author-name {
-      font-weight: 700;
-      font-size: .9rem;
+    .detail-plazo strong {
       color: var(--ink);
     }
 
-    .author-role {
-      font-size: .8rem;
-      color: var(--muted);
-    }
-
-    .verified-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: .3rem;
-      font-size: .72rem;
-      font-weight: 600;
-      color: var(--success);
-      background: rgba(5, 150, 105, .07);
-      border: 1px solid rgba(5, 150, 105, .2);
-      border-radius: var(--r-pill);
-      padding: .2rem .625rem;
-      margin-top: .375rem;
-    }
-
-    /* ROI STRIP */
-    .roi-strip {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
-      padding: 2.5rem;
-      background: var(--grad-a);
-      border-radius: var(--r-xl);
-    }
-
-    .roi-item {
-      text-align: center;
-      padding: 1.5rem;
-    }
-
-    .roi-item .val {
-      display: block;
-      font-size: 2.5rem;
-      font-weight: 600;
-      color: var(--white);
-      line-height: 1;
-      margin-bottom: .375rem;
-    }
-
-    .roi-item .lbl {
-      font-size: .82rem;
-      color: rgba(255, 255, 255, .7);
-      font-weight: 500;
-    }
-
-    /* GUARANTEE */
-    .guarantee-box {
+    /* ── GARANTÍAS ── */
+    .garantias-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.25rem;
     }
 
-    .guarantee-card {
-      background: var(--surface);
+    .gar-card {
+      background: var(--white);
       border: 1.5px solid var(--border);
       border-radius: var(--r-xl);
       padding: 1.75rem;
       display: flex;
       align-items: flex-start;
       gap: 1rem;
+      transition: border-color .25s, box-shadow .25s;
     }
 
-    .guarantee-card .g-icon {
-      font-size: 1.75rem;
+    .gar-card:hover {
+      border-color: var(--brand);
+      box-shadow: var(--sh-md);
+    }
+
+    .gar-icon {
+      font-size: 1.6rem;
       flex-shrink: 0;
     }
 
-    .guarantee-card h4 {
+    .gar-card h3 {
       font-size: .9rem;
       font-weight: 700;
       color: var(--ink);
-      margin-bottom: .375rem;
+      margin-bottom: .35rem;
     }
 
-    .guarantee-card p {
-      font-size: .83rem;
+    .gar-card p {
+      font-size: .825rem;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    /* FAQ */
+    /* ── FAQ ── */
     .faq-list {
       display: flex;
       flex-direction: column;
-      gap: .75rem;
-      max-width: 760px;
+      gap: .6rem;
+      max-width: 720px;
       margin: 0 auto;
     }
 
@@ -1050,27 +986,29 @@
     }
 
     .faq-item[open] {
-      border-color: var(--teal);
+      border-color: var(--brand);
     }
 
     .faq-item summary {
-      padding: 1.25rem 1.5rem;
+      padding: 1.125rem 1.375rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       gap: 1rem;
       font-weight: 600;
-      font-size: .95rem;
+      font-size: .92rem;
       color: var(--ink);
       cursor: pointer;
       list-style: none;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .faq-item summary::-webkit-details-marker {
       display: none;
     }
 
-    .faq-chevron {
+    .faq-chev {
       width: 20px;
       height: 20px;
       flex-shrink: 0;
@@ -1079,28 +1017,28 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: .7rem;
+      font-size: .68rem;
       color: var(--muted);
       transition: transform .3s var(--ease), background .2s, border-color .2s;
     }
 
-    .faq-item[open] .faq-chevron {
+    .faq-item[open] .faq-chev {
       transform: rotate(180deg);
-      background: var(--teal);
-      border-color: var(--teal);
+      background: var(--brand);
+      border-color: var(--brand);
       color: var(--white);
     }
 
     .faq-body {
-      padding: 0 1.5rem 1.25rem;
-      font-size: .9rem;
+      padding: 0 1.375rem 1.125rem;
+      font-size: .88rem;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.72;
     }
 
-    /* CTA */
+    /* ── CTA FINAL ── */
     .cta-block {
-      background: var(--grad-b);
+      background: linear-gradient(135deg, #0D1B2A, #03658C);
       border-radius: var(--r-xl);
       padding: clamp(2.5rem, 5vw, 4rem);
       text-align: center;
@@ -1111,51 +1049,75 @@
     .cta-block::before {
       content: '';
       position: absolute;
-      top: -80px;
-      right: -80px;
-      width: 320px;
-      height: 320px;
-      background: radial-gradient(circle, rgba(0, 167, 169, .25) 0%, transparent 70%);
+      top: -70px;
+      right: -70px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(0, 167, 169, .22) 0%, transparent 70%);
       pointer-events: none;
     }
 
     .cta-block h2 {
-      font-size: clamp(1.6rem, 3vw, 2.5rem);
-      font-weight: 800;
+      font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+      font-weight: 500;
       color: var(--white);
-      margin-bottom: 1rem;
+      margin-bottom: .875rem;
       letter-spacing: -.02em;
       line-height: 1.2;
     }
 
-    .cta-block p {
-      font-size: 1rem;
-      color: rgba(255, 255, 255, .7);
+    .cta-block>p {
+      font-size: .98rem;
+      color: rgba(255, 255, 255, .68);
       margin-bottom: 2rem;
-      max-width: 520px;
+      max-width: 500px;
       margin-left: auto;
       margin-right: auto;
+      line-height: 1.7;
     }
 
-    .cta-block .cta-btns {
+    .cta-btns {
       display: flex;
-      gap: 1rem;
+      gap: .875rem;
       justify-content: center;
       flex-wrap: wrap;
     }
 
-    /* SCROLL TOP */
+    /* ── FLOATING WA ── */
+    .wa-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 200;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--green);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(30, 126, 67, .4);
+      transition: background .2s, transform .2s;
+    }
+
+    .wa-float:hover {
+      background: var(--green-d);
+      transform: scale(1.06);
+    }
+
+    /* ── SCROLL TOP ── */
     .scroll-top {
       position: fixed;
-      bottom: 5.5rem;
+      bottom: 5rem;
       right: 1.75rem;
       z-index: 199;
-      width: 42px;
-      height: 42px;
-      background: rgba(10, 22, 40, .7);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: rgba(10, 22, 40, .75);
       backdrop-filter: blur(8px);
       border: 1px solid rgba(255, 255, 255, .1);
-      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1175,107 +1137,80 @@
       transform: translateY(-2px);
     }
 
-    /* FADE UP */
-    .fade-up {
+    /* ── FADE-UP ── */
+    .fu {
       opacity: 0;
-      transform: translateY(28px);
-      transition: opacity .7s var(--ease), transform .7s var(--ease);
+      transform: translateY(24px);
+      transition: opacity .65s var(--ease), transform .65s var(--ease);
     }
 
-    .fade-up.visible {
+    .fu.vis {
       opacity: 1;
       transform: none;
     }
 
-    .fade-up:nth-child(1) {
-      transition-delay: .05s;
+    .fu:nth-child(1) {
+      transition-delay: .05s
     }
 
-    .fade-up:nth-child(2) {
-      transition-delay: .12s;
+    .fu:nth-child(2) {
+      transition-delay: .12s
     }
 
-    .fade-up:nth-child(3) {
-      transition-delay: .19s;
+    .fu:nth-child(3) {
+      transition-delay: .19s
     }
 
-    .fade-up:nth-child(4) {
-      transition-delay: .26s;
-    }
+    /* ── RESPONSIVE ── */
+    @media(max-width:900px) {
+      .decisor {
+        grid-template-columns: 140px 1fr 1fr;
+      }
 
-    /* RESPONSIVE */
-    @media (max-width:1024px) {
-      .hero-wrap {
+      .need-grid {
         grid-template-columns: 1fr;
       }
 
-      .hero-card {
-        max-width: 520px;
+      .detail-grid {
+        grid-template-columns: 1fr;
       }
 
-      .pricing-grid {
+      .garantias-grid {
         grid-template-columns: 1fr 1fr;
       }
-
-      .pack-featured {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .process-track {
-        grid-template-columns: 1fr 1fr;
-      }
-
     }
 
-    @media (max-width:768px) {
-      .compare-grid {
+    @media(max-width:680px) {
+      .decisor {
         grid-template-columns: 1fr;
       }
 
-      .pricing-grid {
-        grid-template-columns: 1fr;
+      .dec-hd-blank,
+      .dec-row-label {
+        display: none;
       }
 
-      .roi-strip {
-        grid-template-columns: 1fr;
-        padding: 1.75rem;
+      .dec-hd,
+      .dec-cell,
+      .dec-cell-cta {
+        border-left: none !important;
+        border-top: 1px solid var(--border);
       }
 
-      .guarantee-box {
-        grid-template-columns: 1fr;
+      .dec-hd:first-of-type {
+        border-top: none;
       }
 
-      .process-track {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-price {
+      .hero-prices {
         flex-direction: column;
         gap: .75rem;
       }
 
-      .hero-price-divider {
+      .hp-div {
         width: 40px;
         height: 1px;
       }
 
-      .lh-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .cta-block .cta-btns {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .pack-meta {
-        flex-direction: column;
-        gap: .5rem;
-      }
-    }
-
-    @media (max-width:480px) {
       .hero-cta {
         flex-direction: column;
       }
@@ -1284,21 +1219,22 @@
         width: 100%;
       }
 
-      .lh-grid {
+      .trust-row {
+        flex-direction: column;
+        gap: .6rem;
+      }
+
+      .garantias-grid {
         grid-template-columns: 1fr;
       }
 
-      .trust-bar {
+      .cta-btns {
         flex-direction: column;
-        gap: .75rem;
-      }
-
-      .testimonial-card {
-        padding: 1.75rem;
+        align-items: center;
       }
     }
 
-    @media (prefers-reduced-motion:reduce) {
+    @media(prefers-reduced-motion:reduce) {
 
       *,
       *::before,
@@ -1312,510 +1248,498 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="components.css">
-  <script src="components.js" defer></script>
+  <script defer src="components.js"></script>
 </head>
 
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
-  </noscript>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+
   <div id="site-nav"></div>
-  <main id="main" tabindex="-1" style="min-height:100vh;">
 
-    <!-- HERO -->
+  <main id="main" tabindex="-1">
+
+    <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" aria-labelledby="hero-h1">
-      <div class="hero-wrap container">
-        <div class="hero-text">
-          <div class="urgency-pill" role="status">
-            <span class="urgency-dot" aria-hidden="true"></span>
-            Por una instrumentadora quirúrgica · 15 años en salud · LATAM &amp; España
+      <div class="wrap">
+
+        <nav class="breadcrumb" aria-label="Miga de pan">
+          <a href="/">Inicio</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <a href="servicios/">Servicios</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+          <span aria-current="page">Landing vs Sitio Corporativo</span>
+        </nav>
+
+        <div class="hero-inner">
+          <div class="hero-label">
+            <span class="hero-dot" aria-hidden="true"></span>
+            Servicios · Web médica
           </div>
-          <h1 class="hero-h1" id="hero-h1">
-            Tu web médica que<br>
-            <em>aparece en Google</em><br>
-            y convierte visitas<br>en turnos reales.
+
+          <h1 id="hero-h1">
+            ¿Landing page o<br>
+            sitio corporativo?<br>
+            <em>La decisión correcta</em><br>desde el día uno.
           </h1>
+
           <p class="hero-sub">
-            HTML estático puro · <strong>Lighthouse 90+ garantizado</strong> · Schema Physician validado.<br>
-            Sin WordPress. Sin plugins. Sin que tengas que aprender nada técnico.
-            <strong>Entrega en 7 días o reembolso completo.</strong>
+            El error más común: pagar por más páginas cuando lo que falta es <strong>una sola página que
+              convierta</strong>. O al revés: quedarse corto cuando el consultorio ya creció. Acá tiene los criterios
+            técnicos para decidir sin adivinar.
           </p>
-          <div class="hero-price" aria-label="Precios de referencia">
-            <div class="hero-price-item">
-              <span class="hero-price-label">Sistema de Activación Digital</span>
-              <span class="hero-price-amount">$400 USD</span>
+
+          <div class="hero-prices" aria-label="Precios de referencia">
+            <div class="hp-item">
+              <span class="hp-label">Landing médica</span>
+              <span class="hp-amount">desde $250 USD</span>
             </div>
-            <div class="hero-price-divider" aria-hidden="true"></div>
-            <div class="hero-price-item">
-              <span class="hero-price-label">Landing page</span>
-              <span class="hero-price-amount">desde $250 USD</span>
+            <div class="hp-div" aria-hidden="true"></div>
+            <div class="hp-item">
+              <span class="hp-label">Sitio corporativo</span>
+              <span class="hp-amount">desde $750 USD</span>
             </div>
           </div>
+
           <div class="hero-cta">
-            <a href="diagnostico/" class="btn btn-primary" aria-label="Solicitar diagnóstico digital gratuito">
-              Diagnóstico gratuito →
-            </a>
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
-              class="btn btn-ghost" target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20no%20s%C3%A9%20si%20necesito%20landing%20o%20sitio%20corporativo.%20%C2%BFMe%20ayud%C3%A1s%20a%20decidir%3F"
+              class="btn btn-wa" target="_blank" rel="noopener noreferrer"
+              aria-label="Consultar por WhatsApp qué opción necesita mi consultorio">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                 <path
                   d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
               </svg>
-              Consultar por WhatsApp
+              "¿Cuál necesito?" — consultar gratis
+            </a>
+            <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-ghost" target="_blank"
+              rel="noopener noreferrer">
+              Diagnóstico gratuito — 30 min →
             </a>
           </div>
-          <div class="trust-bar" aria-label="Garantías">
-            <span class="trust-item"><span aria-hidden="true">✓</span> Sin WordPress</span>
-            <span class="trust-item"><span aria-hidden="true">✓</span> Lighthouse 90+ garantizado</span>
-            <span class="trust-item"><span aria-hidden="true">✓</span> 30 días soporte incluido</span>
-            <span class="trust-item"><span aria-hidden="true">✓</span> 15 años en salud</span>
+
+          <div class="trust-row" aria-label="Garantías incluidas">
+            <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> Lighthouse 90+ garantizado</span>
+            <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> Sin WordPress</span>
+            <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> Precios fijos en USD</span>
+            <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> 15 años en salud</span>
           </div>
         </div>
-        <aside class="hero-card" aria-label="Métricas de rendimiento">
-          <div class="hero-card-top">
-            <div class="avatar-wrap" aria-hidden="true">⚕</div>
-            <div class="hero-card-name">
-              <strong>Yulia Monti</strong>
-              <span>Instrumentadora quirúrgica → Infraestructura digital médica</span>
-            </div>
-          </div>
-          <div class="lh-grid" aria-label="Puntajes Lighthouse de ejemplo">
-            <div class="lh-item">
-              <div class="lh-label">Performance</div>
-              <div class="lh-bar-wrap">
-                <div class="lh-bar" style="width:100%" aria-hidden="true"></div>
-              </div>
-              <div class="lh-score">100</div>
-              <div class="lh-tag">● Rápido</div>
-            </div>
-            <div class="lh-item">
-              <div class="lh-label">Accessibility</div>
-              <div class="lh-bar-wrap">
-                <div class="lh-bar" style="width:100%;animation-delay:.6s" aria-hidden="true"></div>
-              </div>
-              <div class="lh-score">100</div>
-              <div class="lh-tag">● Accesible</div>
-            </div>
-            <div class="lh-item">
-              <div class="lh-label">Best Practices</div>
-              <div class="lh-bar-wrap">
-                <div class="lh-bar" style="width:100%;animation-delay:.8s" aria-hidden="true"></div>
-              </div>
-              <div class="lh-score">100</div>
-              <div class="lh-tag">● Seguro</div>
-            </div>
-            <div class="lh-item">
-              <div class="lh-label">SEO</div>
-              <div class="lh-bar-wrap">
-                <div class="lh-bar" style="width:100%;animation-delay:1s" aria-hidden="true"></div>
-              </div>
-              <div class="lh-score">100</div>
-              <div class="lh-tag">● Indexable</div>
-            </div>
-          </div>
-          <ul class="hero-card-list" aria-label="Incluye">
-            <li>
-              <div class="chk" aria-hidden="true">✓</div>Schema Physician + MedicalBusiness
-            </li>
-            <li>
-              <div class="chk" aria-hidden="true">✓</div>GA4 configurado desde el día 1
-            </li>
-            <li>
-              <div class="chk" aria-hidden="true">✓</div>Core Web Vitals en verde
-            </li>
-            <li>
-              <div class="chk" aria-hidden="true">✓</div>Entrega en 7 días o reembolso
-            </li>
-            <li>
-              <div class="chk" aria-hidden="true">✓</div>Sin plugins · Sin actualizaciones
-            </li>
-          </ul>
-        </aside>
       </div>
     </section>
 
-    <!-- PROBLEMA / COMPARE -->
-    <section class="section" aria-labelledby="compare-title">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">¿Por qué importa la calidad técnica?</span>
-          <h2 class="section-title" id="compare-title">Una web que solo existe<br><em class="text-grad">vs. una web que
-              trabaja para ti</em></h2>
-          <p class="section-sub">Esta diferencia determina quién aparece primero en Google cuando un paciente busca tu
-            especialidad a las 11 de la noche desde su celular.</p>
+
+    <!-- ═══════════ TABLA DECISORA ═══════════ -->
+    <section class="section" aria-labelledby="comparativa-title">
+      <div class="wrap">
+
+        <div class="sec-head">
+          <span class="sec-label">Comparativa técnica</span>
+          <h2 class="sec-title" id="comparativa-title">Diferencias concretas.<br>Sin interpretación.</h2>
+          <p class="sec-sub">Cada fila representa una decisión técnica real. No hay opción universalmente mejor: depende
+            de dónde está su consultorio hoy.</p>
         </div>
-        <div class="compare-grid">
-          <div class="compare-card compare-card--bad fade-up">
-            <p class="compare-card__label">❌ Web que solo "existe"</p>
-            <ul class="compare-list">
-              <li><span class="ico" aria-hidden="true">✕</span>Carga en +5 segundos — el paciente ya se fue</li>
-              <li><span class="ico" aria-hidden="true">✕</span>Diseño genérico igual al de miles de webs médicas</li>
-              <li><span class="ico" aria-hidden="true">✕</span>Sin Schema médico — Google no sabe que eres médico</li>
-              <li><span class="ico" aria-hidden="true">✕</span>Sin tracking — no sabes si alguien llegó</li>
-              <li><span class="ico" aria-hidden="true">✕</span>Plugins y actualizaciones que rompen todo</li>
-              <li><span class="ico" aria-hidden="true">✕</span>Desarrollador que no entiende el lenguaje médico</li>
-            </ul>
+
+        <div class="decisor" role="table" aria-label="Comparativa Landing Page vs Sitio Corporativo">
+
+          <!-- Cabecera -->
+          <div class="dec-hd-blank" role="columnheader" aria-label="Criterio"></div>
+
+          <div class="dec-hd dec-hd--landing" role="columnheader">
+            <span class="dec-hd-badge badge-landing">Landing</span>
+            <div class="dec-hd-price">desde $250</div>
+            <div class="dec-hd-name">Landing Page Médica</div>
           </div>
-          <div class="compare-card compare-card--good fade-up">
-            <p class="compare-card__label">✅ Web que trabaja para ti</p>
-            <ul class="compare-list">
-              <li><span class="ico" aria-hidden="true">✓</span>Sub-2 segundos garantizados o reembolso</li>
-              <li><span class="ico" aria-hidden="true">✓</span>Diseño 100% a medida — única como tu especialidad</li>
-              <li><span class="ico" aria-hidden="true">✓</span>Schema Physician + MedicalBusiness — Google te entiende
+
+          <div class="dec-hd dec-hd--corp" role="columnheader">
+            <span class="dec-hd-badge badge-corp">Corporativo</span>
+            <div class="dec-hd-price">desde $750</div>
+            <div class="dec-hd-name">Sitio Corporativo</div>
+          </div>
+
+          <!-- Fila 1 -->
+          <div class="dec-row-label" role="rowheader">Páginas</div>
+          <div class="dec-cell dec-cell--landing" role="cell">1 página optimizada</div>
+          <div class="dec-cell dec-cell--corp" role="cell">Multipágina (Inicio, Servicios, Nosotros, Blog…)</div>
+
+          <!-- Fila 2 -->
+          <div class="dec-row-label" role="rowheader">Blog SEO</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-no">✕</span> No incluye</div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Blog optimizado con Schema
+            Article</div>
+
+          <!-- Fila 3 -->
+          <div class="dec-row-label" role="rowheader">Schema médico</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> Physician + MedicalBusiness
+          </div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Physician + Article + FAQPage
+          </div>
+
+          <!-- Fila 4 -->
+          <div class="dec-row-label" role="rowheader">Sitemap.xml</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-partial">Básico</span></div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Completo, enviado a Google
+          </div>
+
+          <!-- Fila 5 -->
+          <div class="dec-row-label" role="rowheader">Multi-país (hreflang)</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-no">✕</span> No incluye</div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Para LATAM y España</div>
+
+          <!-- Fila 6 -->
+          <div class="dec-row-label" role="rowheader">CDN Cloudflare</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-partial">Opcional</span></div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Incluido y configurado</div>
+
+          <!-- Fila 7 -->
+          <div class="dec-row-label" role="rowheader">GA4 + Search Console</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> Configurado desde el día 1
+          </div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Configurado desde el día 1
+          </div>
+
+          <!-- Fila 8 -->
+          <div class="dec-row-label" role="rowheader">Lighthouse garantizado</div>
+          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> 90+ mobile y desktop</div>
+          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> 90+ mobile y desktop</div>
+
+          <!-- Fila 9 -->
+          <div class="dec-row-label" role="rowheader">Plazo de entrega</div>
+          <div class="dec-cell dec-cell--landing" role="cell">7–10 días hábiles</div>
+          <div class="dec-cell dec-cell--corp" role="cell">3–5 semanas</div>
+
+          <!-- Fila 10 -->
+          <div class="dec-row-label" role="rowheader">Soporte post-entrega</div>
+          <div class="dec-cell dec-cell--landing" role="cell">30 días incluidos</div>
+          <div class="dec-cell dec-cell--corp" role="cell">60 días incluidos</div>
+
+          <!-- Fila CTA -->
+          <div class="dec-row-label dec-row-cta" role="cell"></div>
+          <div class="dec-cell-cta dec-cell--landing" role="cell">
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Landing%20Page%20M%C3%A9dica%20%28desde%20%24250%20USD%29"
+              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+              Quiero esta opción →
+            </a>
+          </div>
+          <div class="dec-cell-cta dec-cell--corp" role="cell">
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sitio%20Corporativo%20M%C3%A9dico%20%28desde%20%24750%20USD%29"
+              class="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
+              Quiero esta opción →
+            </a>
+          </div>
+
+        </div><!-- /decisor -->
+      </div>
+    </section>
+
+
+    <!-- ═══════════ QUIÉN NECESITA QUÉ ═══════════ -->
+    <section class="section section--alt" aria-labelledby="quien-title">
+      <div class="wrap">
+
+        <div class="sec-head sec-head--center">
+          <span class="sec-label">Criterio de selección</span>
+          <h2 class="sec-title" id="quien-title">Cómo saber cuál corresponde<br>sin dudar.</h2>
+          <p class="sec-sub">No es cuestión de presupuesto. Es cuestión de etapa. Estas son las señales objetivas.</p>
+        </div>
+
+        <div class="need-grid">
+
+          <article class="need-card need-card--landing fu">
+            <span class="need-tag need-tag--landing">Landing Page Médica — desde $250 USD</span>
+            <h3>Para el médico que quiere convertir búsquedas en turnos. Ahora.</h3>
+            <p>Una sola página, un solo objetivo: que el paciente que busca su especialidad en Google llegue, entienda y
+              reserve turno en menos de 60 segundos.</p>
+            <ul class="need-list" aria-label="Cuándo elegir landing page">
+              <li><span class="need-ico ico-landing" aria-hidden="true">✓</span>Médico independiente con una
+                especialidad y una ciudad</li>
+              <li><span class="need-ico ico-landing" aria-hidden="true">✓</span>Necesita presencia online esta semana,
+                no en dos meses</li>
+              <li><span class="need-ico ico-landing" aria-hidden="true">✓</span>No tiene tiempo ni intención de
+                gestionar contenido</li>
+              <li><span class="need-ico ico-landing" aria-hidden="true">✓</span>Quiere medir resultados concretos
+                (turnos, llamadas)</li>
+              <li><span class="need-ico ico-landing" aria-hidden="true">✓</span>Presupuesto inicial o primera web médica
               </li>
-              <li><span class="ico" aria-hidden="true">✓</span>GA4 configurado — métricas de conversión reales</li>
-              <li><span class="ico" aria-hidden="true">✓</span>Sin plugins, sin actualizaciones que rompen</li>
-              <li><span class="ico" aria-hidden="true">✓</span>15 años en salud — hablo el idioma de tus pacientes</li>
             </ul>
-          </div>
+          </article>
+
+          <article class="need-card need-card--corp fu">
+            <span class="need-tag need-tag--corp">Sitio Corporativo — desde $750 USD</span>
+            <h3>Para la clínica o grupo médico que necesita arquitectura de contenidos.</h3>
+            <p>Cuando hay más de una especialidad, más de un médico o más de una ciudad, la landing ya no alcanza. El
+              sitio corporativo construye autoridad de dominio a largo plazo.</p>
+            <ul class="need-list" aria-label="Cuándo elegir sitio corporativo">
+              <li><span class="need-ico ico-corp" aria-hidden="true">✓</span>Clínica, grupo médico o consultorio
+                multiprofesional</li>
+              <li><span class="need-ico ico-corp" aria-hidden="true">✓</span>Opera en más de una ciudad o país</li>
+              <li><span class="need-ico ico-corp" aria-hidden="true">✓</span>Quiere posicionarse por varias
+                especialidades en Google</li>
+              <li><span class="need-ico ico-corp" aria-hidden="true">✓</span>Planea publicar contenido educativo para
+                pacientes</li>
+              <li><span class="need-ico ico-corp" aria-hidden="true">✓</span>Ya tiene tráfico y necesita una estructura
+                que escale</li>
+            </ul>
+          </article>
+
         </div>
       </div>
     </section>
 
-    <!-- SERVICES -->
-    <section class="section section--alt" id="servicios" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <span class="section-label">Servicios</span>
-          <h2 class="section-title" id="services-title">Tres maneras de conseguir<br><em class="text-grad">pacientes
-              desde Google</em></h2>
-          <p class="section-sub">Precios fijos en USD · Sin horas facturadas · 30 días de soporte incluidos</p>
+
+    <!-- ═══════════ DETALLE DE CADA SERVICIO ═══════════ -->
+    <section class="section" id="servicios" aria-labelledby="detalle-title">
+      <div class="wrap">
+
+        <div class="sec-head sec-head--center">
+          <span class="sec-label">Detalle técnico</span>
+          <h2 class="sec-title" id="detalle-title">Qué incluye cada servicio.<br>Sin letra chica.</h2>
+          <p class="sec-sub">Precio fijo en USD. Sin cobro por hora. Sin sorpresas al momento de la entrega.</p>
         </div>
 
+        <div class="detail-grid">
 
-        <!-- CARDS INDIVIDUALES -->
-        <div class="pricing-grid" aria-label="Servicios individuales">
-          <article class="pricing-card fade-up">
-            <div class="card-icon" aria-hidden="true">🚀</div>
-            <div class="card-price">
-              <span class="card-amount">desde $250</span>
-              <span class="card-cur">USD</span>
+          <!-- LANDING -->
+          <article class="detail-card detail-card--featured fu" aria-label="Landing Page Médica">
+            <div class="detail-price">
+              <span class="detail-from">desde</span>
+              <span class="detail-amount">$250</span>
+              <span class="detail-cur">USD</span>
             </div>
-            <h3 class="card-title">Tu primera web médica, lista para conseguir pacientes</h3>
-            <p class="card-desc">Para el médico que quiere existir online esta semana sin aprender nada técnico.</p>
-            <ul class="card-features">
-              <li><span class="f-dot" aria-hidden="true">✓</span>Diseño único para tu especialidad</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Textos optimizados para SEO</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>WhatsApp + formulario integrados</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Carga en menos de 2 segundos</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Schema Physician + MedicalBusiness</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>2 rondas de ajustes incluidas</li>
+            <h3 class="detail-name">Landing Page Médica</h3>
+            <p class="detail-desc">Una página diseñada para transformar búsquedas en consultas. Sin WordPress, sin
+              plugins, sin actualizaciones que rompan todo a las 2 AM.</p>
+
+            <div class="detail-includes">Incluye</div>
+            <ul class="detail-list">
+              <li><span class="dl-dot" aria-hidden="true">✓</span>HTML, CSS y JavaScript sin dependencias pesadas</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Diseño responsive único para su especialidad</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Schema Physician + MedicalBusiness validado</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Metaetiquetas optimizadas (title, description, OG)
+              </li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>GA4 y Search Console vinculados desde el día 1</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Microsoft Clarity para análisis de comportamiento</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Optimización de velocidad mobile-first</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>WebP + lazy load en todas las imágenes</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Formulario de contacto funcional</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Botón de WhatsApp integrado</li>
             </ul>
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20p%C3%A1gina%20web%20m%C3%A9dica%20%28%24250%20USD%29"
-              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
-              </svg>
-              Consultar por WhatsApp
-            </a>
-          </article>
-          <article class="pricing-card pricing-card--featured fade-up" aria-label="Servicio destacado">
-            <span class="featured-badge" aria-label="Sistema de entrada">Sistema de entrada</span>
-            <div class="card-icon" aria-hidden="true">🏥</div>
-            <div class="card-price">
-              <span class="card-amount">$400</span>
-              <span class="card-cur">USD</span>
-            </div>
-            <h3 class="card-title">Sistema de Activación Digital — los 4 componentes juntos</h3>
-            <p class="card-desc">Los 4 canales que usa un paciente para encontrar médico, funcionando juntos.</p>
-            <ul class="card-features">
-              <li><span class="f-dot" aria-hidden="true">✓</span>Google Maps optimizado y verificado</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Landing page Lighthouse 90+</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>WhatsApp Business configurado</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>SEO por especialidad y ciudad</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>QR listo para imprimir</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Entrega en 7 días garantizados</li>
-            </ul>
-            <div class="card-guarantee">
-              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+
+            <div class="detail-guarantee">
+              <svg width="13" height="13" fill="none" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
-              Lighthouse 90+ o reembolso completo
+              Lighthouse 90+ · Schema sin errores · 30 días soporte
             </div>
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sistema%20de%20Activaci%C3%B3n%20Digital%20%28%24400%20USD%29"
-              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="detail-plazo">⏱ Entrega: <strong>7 a 10 días hábiles</strong> · Precio fijo, sin cobro por hora
+            </div>
+
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Landing%20Page%20M%C3%A9dica%20%28desde%20%24250%20USD%29"
+              class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer"
+              aria-label="Consultar por la Landing Page Médica">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                 <path
                   d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
               </svg>
-              Reservar cupo →
+              Consultar precio exacto →
             </a>
           </article>
-          <article class="pricing-card fade-up">
-            <div class="card-icon" aria-hidden="true">⚡</div>
-            <div class="card-price">
-              <span class="card-amount">desde $180</span>
-              <span class="card-cur">USD</span>
+
+          <!-- CORPORATIVO -->
+          <article class="detail-card fu" aria-label="Sitio Web Corporativo Médico">
+            <div class="detail-price">
+              <span class="detail-from">desde</span>
+              <span class="detail-amount">$750</span>
+              <span class="detail-cur">USD</span>
             </div>
-            <h3 class="card-title">Tu web existe pero los pacientes no llegan</h3>
-            <p class="card-desc">Si tenés web pero carga lento o no aparece en Google, el problema es técnico. Tiene
-              solución con garantía.</p>
-            <ul class="card-features">
-              <li><span class="f-dot" aria-hidden="true">✓</span>Diagnóstico técnico completo</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Imágenes, caché, CDN, render-blocking</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Informe antes/después verificable</li>
-              <li><span class="f-dot" aria-hidden="true">✓</span>Resultado en 3–5 días hábiles</li>
+            <h3 class="detail-name">Sitio Web Corporativo Médico</h3>
+            <p class="detail-desc">Para clínicas, grupos médicos o profesionales que requieren una presencia digital más
+              amplia. Arquitectura que escala con el crecimiento del consultorio.</p>
+
+            <div class="detail-includes">Incluye</div>
+            <ul class="detail-list">
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Arquitectura multipágina con estructura semántica</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Blog optimizado para SEO médico</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Schema Article y FAQPage por página</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>sitemap.xml completo enviado a Google</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>hreflang para mercados LATAM y España</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Cloudflare CDN configurado</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Optimización integral de rendimiento</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>GA4, Search Console y Clarity desde el día 1</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>WebP + lazy load en todas las imágenes</li>
+              <li><span class="dl-dot" aria-hidden="true">✓</span>Informe técnico de entrega documentado</li>
             </ul>
-            <div class="card-guarantee">
-              <svg width="14" height="14" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+
+            <div class="detail-guarantee">
+              <svg width="13" height="13" fill="none" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
-              Lighthouse 90+ en Performance o reembolso
+              Lighthouse 90+ · Informe técnico · 60 días soporte
             </div>
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20mi%20web%20existe%20pero%20no%20consigo%20pacientes"
-              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
-              <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path
-                  d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
-              </svg>
-              Consultar por WhatsApp
+            <div class="detail-plazo">⏱ Entrega: <strong>3 a 5 semanas</strong> según cantidad de páginas y contenido
+            </div>
+
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sitio%20Corporativo%20M%C3%A9dico%20%28desde%20%24750%20USD%29"
+              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer"
+              aria-label="Consultar por el Sitio Web Corporativo Médico">
+              Consultar precio exacto →
             </a>
           </article>
+
         </div>
       </div>
     </section>
 
-    <!-- ROI STRIP -->
-    <section class="section" aria-labelledby="roi-title">
-      <div class="container-sm">
-        <div class="section-header section-header--center">
-          <span class="section-label">Matemática real</span>
-          <h2 class="section-title" id="roi-title">Con 3 pacientes nuevos al mes desde la web<br><em
-              class="text-grad">recuperas la inversión en 7 semanas</em></h2>
-        </div>
-        <div class="roi-strip" role="list" aria-label="Retorno de inversión">
-          <div class="roi-item" role="listitem">
-            <span class="val">3</span>
-            <span class="lbl">Pacientes nuevos / mes promedio desde web optimizada</span>
-          </div>
-          <div class="roi-item" role="listitem">
-            <span class="val">7 sem</span>
-            <span class="lbl">Para recuperar $400 USD con ticket promedio de $80</span>
-          </div>
-          <div class="roi-item" role="listitem">
-            <span class="val">+$2.880</span>
-            <span class="lbl">Ingreso adicional anual con ese escenario conservador</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PROCESO -->
-    <section class="section section--alt" id="proceso" aria-labelledby="process-title">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <span class="section-label">El Método</span>
-          <h2 class="section-title" id="process-title">Metodología en 4 fases:<br><em class="text-grad">precisión
-              quirúrgica aplicada al código</em></h2>
-          <p class="section-sub">15 años en quirófano dejaron una lección: los detalles no son detalles — son decisiones
-            que salvan resultados.</p>
-        </div>
-        <div class="process-track" aria-label="Fases del proceso de desarrollo">
-          <div class="process-card fade-up">
-            <div class="process-num" aria-hidden="true">01</div>
-            <h4>Diagnóstico Integral</h4>
-            <p>Auditoría técnica completa: velocidad, SEO, seguridad, UX. Análisis de 3 competidores directos. Informe
-              con recomendaciones priorizadas.</p>
-          </div>
-          <div class="process-card fade-up">
-            <div class="process-num" aria-hidden="true">02</div>
-            <h4>Plan aprobado por ti</h4>
-            <p>Cronograma, entregables y precios fijos. Aprobás antes de escribir una sola línea de código. Sin
-              sorpresas. Sin cambios unilaterales.</p>
-          </div>
-          <div class="process-card fade-up">
-            <div class="process-num" aria-hidden="true">03</div>
-            <h4>Implementación Precisa</h4>
-            <p>Código limpio y escalable. Testing en 5+ dispositivos. Pre-lanzamiento interno para eliminar errores
-              antes de la entrega.</p>
-          </div>
-          <div class="process-card fade-up">
-            <div class="process-num" aria-hidden="true">04</div>
-            <h4>Seguimiento Post-Entrega</h4>
-            <p>30 días de soporte incluido sin costo. Optimización basada en datos reales de Analytics.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+    <!-- ═══════════ GARANTÍAS ═══════════ -->
+    <section class="section section--alt" id="garantias" aria-labelledby="garantias-title">
+      <div class="wrap">
 
-    <!-- TESTIMONIAL -->
-    <section class="section" aria-labelledby="testimonios-title">
-      <div class="container-sm">
-        <div class="section-header section-header--center">
-          <span class="section-label">Resultado real</span>
-          <h2 class="section-title" id="testimonios-title">Lo que dice quien ya<br><em class="text-grad">trabaja con
-              Cirujana Digital</em></h2>
+        <div class="sec-head sec-head--center">
+          <span class="sec-label">Garantías escritas</span>
+          <h2 class="sec-title" id="garantias-title">Compromisos verificables.<br>No promesas de posicionamiento.</h2>
+          <p class="sec-sub">Cada garantía tiene condición concreta y consecuencia concreta. Documentadas por escrito
+            antes de iniciar.</p>
         </div>
-        <div class="testimonial-card">
-          <div class="stars" aria-label="5 de 5 estrellas" role="img">★★★★★</div>
-          <p class="testimonial-text">
-            "Después de varias webs fallidas, Yulia profesionalizó mi negocio con una <strong>arquitectura a medida y
-              entrega inmediata</strong>. Su capacidad para traducir mi necesidad en un sistema funcional es única. Es
-            acompañamiento estratégico real, no un simple servicio técnico."
-          </p>
-          <div class="testimonial-author">
-            <div class="avatar-sm">
-              <img src="img/maria-jose-guerra.webp" alt="María José Guerra Valdés" width="48" height="48" loading="lazy"
-                decoding="async" />
-            </div>
+
+        <div class="garantias-grid">
+          <div class="gar-card fu">
+            <span class="gar-icon" aria-hidden="true">⚡</span>
             <div>
-              <div class="author-name">María José Guerra Valdés</div>
-              <div class="author-role">Método Doshas · <a href="https://metododoshas.com" target="_blank"
-                  rel="noopener noreferrer" style="color:var(--teal-d)">metododoshas.com</a> · Barcelona &amp; Chile
-              </div>
-              <div class="verified-badge">
-                <svg width="10" height="10" fill="none" viewBox="0 0 16 16" aria-hidden="true">
-                  <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-                Cliente verificada · sitio activo verificable
-              </div>
+              <h3>Lighthouse 90+ en mobile y desktop</h3>
+              <p>Documentado con captura de PageSpeed Insights antes de la entrega. Si no se cumple, se hacen los
+                ajustes sin costo adicional. Si tampoco se logra, reembolso completo.</p>
+            </div>
+          </div>
+          <div class="gar-card fu">
+            <span class="gar-icon" aria-hidden="true">🛡</span>
+            <div>
+              <h3>Schema sin errores en el validador</h3>
+              <p>Captura del Schema Markup Validator incluida en el informe de entrega. Schema Physician,
+                MedicalBusiness y FAQPage sin warnings ni errores críticos.</p>
+            </div>
+          </div>
+          <div class="gar-card fu">
+            <span class="gar-icon" aria-hidden="true">📅</span>
+            <div>
+              <h3>Plazo de entrega o reembolso</h3>
+              <p>Landing en 7–10 días. Corporativo en el plazo acordado. Si no se cumple la fecha pactada, se emite
+                reembolso completo. Sin excusas de "estaba con otros proyectos".</p>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- GARANTÍAS -->
-    <section class="section section--alt" id="garantias" aria-labelledby="guarantees-title">
-      <div class="container">
-        <div class="section-header section-header--center">
-          <span class="section-label">Garantías escritas</span>
-          <h2 class="section-title" id="guarantees-title">No promesas de posicionamiento.<br><em
-              class="text-grad">Garantías verificables.</em></h2>
-        </div>
-        <div class="guarantee-box">
-          <div class="guarantee-card fade-up">
-            <div class="g-icon" aria-hidden="true">⚡</div>
-            <div>
-              <h4>Lighthouse 90+ garantizado</h4>
-              <p>Documentado con captura de PageSpeed Insights. Si no se cumple, ajuste sin costo o reembolso completo.
-              </p>
-            </div>
-          </div>
-          <div class="guarantee-card fade-up">
-            <div class="g-icon" aria-hidden="true">⏱</div>
-            <div>
-              <h4>Entrega en 7 días o reembolso</h4>
-              <p>Sistema de Activación Digital entregado en 7 días hábiles garantizados. Si no se cumple el plazo,
-                reembolso completo.</p>
-            </div>
-          </div>
-          <div class="guarantee-card fade-up">
-            <div class="g-icon" aria-hidden="true">🛡</div>
-            <div>
-              <h4>30 días de soporte incluidos</h4>
-              <p>Ajustes, correcciones y consultas técnicas sin costo adicional durante 30 días post-entrega.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- FAQ -->
+    <!-- ═══════════ FAQ ═══════════ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container-sm">
-        <div class="section-header section-header--center">
-          <span class="section-label">Preguntas frecuentes</span>
-          <h2 class="section-title" id="faq-title">Todo lo que necesitas saber<br><em class="text-grad">antes de
-              decidir</em></h2>
+      <div class="wrap-sm">
+
+        <div class="sec-head sec-head--center">
+          <span class="sec-label">Preguntas frecuentes</span>
+          <h2 class="sec-title" id="faq-title">Lo que preguntan antes<br>de decidir.</h2>
         </div>
-        <div class="faq-list">
-          <details class="faq-item">
+
+        <div class="faq-list" role="list">
+
+          <details class="faq-item" role="listitem">
             <summary>
-              ¿Cuánto cuesta una página web para médico o clínica?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              ¿Cuál es la diferencia real entre landing y sitio corporativo?
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
-              Una landing page profesional cuesta desde $250 USD. El Sistema de Activación Digital (web + Google Maps +
-              WhatsApp + SEO local) cuesta $400 USD. Un sitio corporativo completo va desde $750 USD. La optimización
-              WPO está desde $180 USD. Precios fijos, sin sorpresas.
+              La landing es una sola página con un único objetivo: que el paciente pida turno. El sitio corporativo es
+              multipágina, incluye blog, arquitectura de contenidos y es adecuado para clínicas o grupos médicos que
+              necesitan posicionarse en varias especialidades o ciudades. La landing convierte mejor en el corto plazo;
+              el sitio corporativo construye autoridad en el largo plazo.
             </div>
           </details>
-          <details class="faq-item">
+
+          <details class="faq-item" role="listitem">
             <summary>
-              ¿En cuánto tiempo está lista mi web médica?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              ¿Un médico independiente necesita sitio corporativo?
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
-              El Sistema de Activación Digital se entrega en 7 días hábiles garantizados. Una landing page individual
-              tarda 7 a 10 días. Un sitio corporativo completo tarda 3 a 5 semanas. La optimización WPO se resuelve en 3
-              a 5 días hábiles.
+              En la mayoría de los casos, no. Un médico independiente con una especialidad y una ciudad obtiene mejores
+              resultados con una landing optimizada que con un sitio de cinco páginas sin tráfico. El sitio corporativo
+              tiene sentido cuando hay múltiples especialidades, varios médicos o varias ciudades.
             </div>
           </details>
-          <details class="faq-item">
+
+          <details class="faq-item" role="listitem">
             <summary>
               ¿Por qué HTML estático y no WordPress?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
               WordPress genera puntajes de Lighthouse de 50–65 por defecto. El HTML estático alcanza 90–100 sin trucos,
-              es más seguro, más barato de mantener y no tiene dependencias que se rompan. Para la mayoría de los
-              médicos es la decisión técnica correcta.
+              es más seguro, más barato de mantener y no tiene dependencias que rompan. Para la mayoría de los médicos
+              es la decisión técnica correcta. Si su situación requiere WordPress, se evalúa caso por caso.
             </div>
           </details>
-          <details class="faq-item">
+
+          <details class="faq-item" role="listitem">
             <summary>
-              ¿Qué diferencia a Cirujana Digital de otras agencias?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              ¿El precio incluye hosting y dominio?
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
-              El diferencial es el contexto clínico: 15 años como instrumentadora quirúrgica. Eso significa entender el
-              lenguaje médico, la lógica del paciente que busca especialista online y la importancia de la credibilidad
-              en salud. Todos los sitios se construyen en HTML estático puro, con Schema Physician validado y GA4 desde
-              el día 1. Cirujana Digital trabaja exclusivamente con profesionales de la salud.
+              No. El hosting y dominio son costos que el cliente paga directamente al proveedor (desde $5 a $20 USD por
+              mes). Esto garantiza que el sitio quede en propiedad del médico, no de la agencia. Se asesora en la
+              elección sin costo adicional.
             </div>
           </details>
-          <details class="faq-item">
+
+          <details class="faq-item" role="listitem">
             <summary>
-              ¿El servicio incluye hosting y dominio?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              ¿Trabajan con médicos de Argentina, México, Chile y España?
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
-              El hosting y dominio son costos separados que el cliente paga directamente al proveedor (desde $5 a $20
-              USD por mes). Eso garantiza que el sitio sea propiedad del médico, no de la agencia. Se asesora en la
-              elección del hosting sin costo adicional.
+              Sí. El proceso es 100% remoto. El SEO local se adapta al mercado específico de cada médico: palabras clave
+              locales, entidad geográfica correcta, formato de datos estructurados para el país. Se trabaja con médicos
+              en Argentina, México, Chile, España y Colombia.
             </div>
           </details>
-          <details class="faq-item">
+
+          <details class="faq-item" role="listitem">
             <summary>
-              ¿Trabajan con médicos de Argentina, México, España?
-              <span class="faq-chevron" aria-hidden="true">▾</span>
+              ¿Puedo empezar con landing y escalar a sitio corporativo después?
+              <span class="faq-chev" aria-hidden="true">▾</span>
             </summary>
             <div class="faq-body">
-              Sí. Se trabaja con médicos y profesionales de la salud en Argentina, México, Chile, España y Colombia.
-              Todo el proceso es 100% remoto y en español. El SEO local se adapta al mercado específico de cada médico.
+              Sí. Es el camino más frecuente. La landing se construye con código limpio y estructurado, lo que facilita
+              la expansión posterior. No es un sitio descartable: es la base técnica del sistema.
             </div>
           </details>
+
         </div>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="section" aria-labelledby="cta-final-title">
-      <div class="container">
+
+    <!-- ═══════════ CTA FINAL ═══════════ -->
+    <section class="section" aria-labelledby="cta-title">
+      <div class="wrap">
         <div class="cta-block">
-          <h2 id="cta-final-title">Cada semana sin web optimizada son pacientes<br>que van al consultorio de al lado.
-          </h2>
-          <p>Escribinos hoy. En menos de 24 horas te decimos exactamente qué está frenando tu presencia online y el
-            primer paso concreto para resolverlo.</p>
+          <h2 id="cta-title">¿Todavía no sabe cuál<br>es la opción correcta para su consultorio?</h2>
+          <p>En una llamada de 30 minutos se evalúa su situación actual y se define qué necesita exactamente — sin
+            presión de venta y sin compromiso.</p>
           <div class="cta-btns">
-            <a href="diagnostico/" class="btn btn-primary" aria-label="Solicitar diagnóstico gratuito">
-              Diagnóstico gratuito →
+            <a href="https://calendly.com/cirujanadigital/30min" class="btn btn-primary" target="_blank"
+              rel="noopener noreferrer" aria-label="Agendar diagnóstico gratuito de 30 minutos">
+              Diagnóstico gratuito — 30 min →
             </a>
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20mejorar%20mi%20presencia%20online%20como%20m%C3%A9dico"
+            <a href="https://wa.me/5491176199680?text=Hola%2C%20no%20s%C3%A9%20si%20necesito%20landing%20o%20sitio%20corporativo.%20%C2%BFMe%20ayud%C3%A1s%20a%20decidir%3F"
               class="btn btn-ghost" target="_blank" rel="noopener noreferrer">
-              <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg width="17" height="17" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
                 <path
@@ -1829,25 +1753,44 @@
     </section>
 
   </main>
+
   <div id="site-footer"></div>
-  <button class="scroll-top" id="scrollTopBtn" aria-label="Volver al inicio" type="button"
+
+  <!-- WhatsApp flotante -->
+  <a class="wa-float"
+    href="https://wa.me/5491176199680?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20web%20m%C3%A9dica"
+    target="_blank" rel="noopener noreferrer" aria-label="Consultar por WhatsApp">
+    <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+      <path
+        d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+    </svg>
+  </a>
+
+  <!-- Scroll top -->
+  <button class="scroll-top" id="scrollTopBtn" type="button" aria-label="Volver al inicio"
     onclick="window.scrollTo({top:0,behavior:'smooth'})">
-    <svg width="16" height="16" fill="none" viewBox="0 0 16 16" aria-hidden="true">
+    <svg width="15" height="15" fill="none" viewBox="0 0 16 16" aria-hidden="true">
       <path d="M8 12V4M4 8l4-4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"
         stroke-linejoin="round" />
     </svg>
   </button>
+
   <script>
+    /* fade-up */
     (function () {
-      var els = document.querySelectorAll('.fade-up');
+      var els = document.querySelectorAll('.fu');
       if (!els.length) return;
-      var obs = new IntersectionObserver(function (entries) {
+      var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (e) {
-          if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+          if (e.isIntersecting) { e.target.classList.add('vis'); io.unobserve(e.target); }
         });
-      }, { threshold: .12 });
-      els.forEach(function (el) { obs.observe(el); });
+      }, { threshold: .1 });
+      els.forEach(function (el) { io.observe(el); });
     })();
+
+    /* scroll top */
     (function () {
       var btn = document.getElementById('scrollTopBtn');
       if (!btn) return;

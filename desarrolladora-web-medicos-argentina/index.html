@@ -17,34 +17,21 @@
   <meta property="og:url" content="https://cirujanadigital.com/desarrolladora-web-medicos-argentina/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="es_AR">
-  <meta property="og:image" content="https://cirujanadigital.com\img\og-desarrollo-web-medicos-latam-guia.webp">
+  <meta property="og:image" content="https://cirujanadigital.com/img/og-desarrollo-web-medicos-latam-guia.webp">
 
 
   <link rel="preload" href="img/logo-CD-blancoSF.webp" as="image" type="image/webp">
 
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-    }
-
-    // Retrasar GTM hasta primera interacción o 3.5s de idle
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
-      window.addEventListener(e, loadGTM, { once: true })
-    );
-    setTimeout(loadGTM, 8000);
-  </script>
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');</script>
+  <!-- End Google Tag Manager -->
 
 
   <!-- Schema JSON-LD -->
