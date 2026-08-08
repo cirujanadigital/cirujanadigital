@@ -30,7 +30,6 @@
   <meta name="twitter:description"
     content="Compará ambas opciones con criterios técnicos. Lighthouse 90+ garantizado. Desde $250 USD." />
   <meta name="twitter:image" content="https://cirujanadigital.com/img/og-image.webp" />
-
   <!-- Schema JSON-LD -->
   <script type="application/ld+json">
   {
@@ -132,7 +131,6 @@
     ]
   }
   </script>
-
   <link rel="stylesheet" href="components.css" />
   <style>
     /* ── TOKENS ── */
@@ -394,18 +392,6 @@
       background: var(--brand);
     }
 
-    @keyframes blink {
-
-      0%,
-      100% {
-        opacity: 1
-      }
-
-      50% {
-        opacity: .3
-      }
-    }
-
     .hero h1 {
       font-size: clamp(2rem, 4.2vw, 3.5rem);
       font-weight: 500;
@@ -567,9 +553,11 @@
     }
 
     /* ── DECISOR — tabla comparativa ── */
-    .decisor {
-      display: grid;
-      grid-template-columns: 200px 1fr 1fr;
+    /* FIX ARIA: quitamos role="table/columnheader/rowheader/cell" de divs.
+       Usamos una tabla HTML nativa en desktop y lista en mobile. */
+    .decisor-table {
+      width: 100%;
+      border-collapse: collapse;
       border: 1.5px solid var(--border);
       border-radius: var(--r-xl);
       overflow: hidden;
@@ -577,24 +565,48 @@
       box-shadow: var(--sh-md);
     }
 
-    /* Cabecera */
-    .dec-hd-blank {
-      background: var(--surface);
-      border-bottom: 1.5px solid var(--border);
+    .decisor-table th,
+    .decisor-table td {
+      padding: .9rem 1.25rem;
+      text-align: left;
+      border-top: 1px solid var(--border);
+      font-size: .85rem;
+      color: var(--text);
+      vertical-align: middle;
     }
 
-    .dec-hd {
-      padding: 1.5rem 1.75rem;
+    .decisor-table thead th {
+      border-top: none;
       border-bottom: 1.5px solid var(--border);
+      padding: 1.5rem 1.75rem;
+    }
+
+    .decisor-table th.col-label {
+      background: var(--surface);
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--muted);
+      width: 200px;
+    }
+
+    .decisor-table td.col-landing {
+      background: rgba(0, 167, 169, .02);
       border-left: 1.5px solid var(--border);
     }
 
-    .dec-hd--landing {
-      background: rgba(0, 167, 169, .04);
+    .decisor-table td.col-corp {
+      background: rgba(3, 101, 140, .02);
+      border-left: 1.5px solid var(--border);
     }
 
-    .dec-hd--corp {
+    .decisor-table thead th.col-landing {
+      background: rgba(0, 167, 169, .04);
+      border-left: 1.5px solid var(--border);
+    }
+
+    .decisor-table thead th.col-corp {
       background: rgba(3, 101, 140, .04);
+      border-left: 1.5px solid var(--border);
     }
 
     .dec-hd-badge {
@@ -631,37 +643,6 @@
       color: var(--muted);
     }
 
-    /* Filas */
-    .dec-row-label {
-      padding: .9rem 1.25rem;
-      font-size: .82rem;
-      font-weight: 600;
-      color: var(--muted);
-      background: var(--surface);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-    }
-
-    .dec-cell {
-      padding: .9rem 1.75rem;
-      border-top: 1px solid var(--border);
-      border-left: 1.5px solid var(--border);
-      font-size: .85rem;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-    }
-
-    .dec-cell--landing {
-      background: rgba(0, 167, 169, .02);
-    }
-
-    .dec-cell--corp {
-      background: rgba(3, 101, 140, .02);
-    }
-
     .dec-yes {
       color: var(--green-ok);
       font-weight: 700;
@@ -680,16 +661,10 @@
       font-size: .85rem;
     }
 
-    /* Fila de acción final */
-    .dec-row-cta .dec-hd-blank {
-      border-top: 1.5px solid var(--border);
-      padding: 1.5rem 1.25rem;
-    }
-
-    .dec-cell-cta {
+    /* Fila CTA dentro de tabla */
+    .decisor-table td.td-cta {
       padding: 1.5rem 1.75rem;
       border-top: 1.5px solid var(--border);
-      border-left: 1.5px solid var(--border);
     }
 
     /* ── QUIÉN NECESITA QUÉ — tarjetas ── */
@@ -968,7 +943,9 @@
       line-height: 1.65;
     }
 
-    /* ── FAQ ── */
+    /* ── FAQ ──
+       FIX ARIA: quitamos role="list/listitem" del details/summary.
+       <details> no acepta role="listitem". Se usan sin rol explícito. */
     .faq-list {
       display: flex;
       flex-direction: column;
@@ -1163,8 +1140,8 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:900px) {
-      .decisor {
-        grid-template-columns: 140px 1fr 1fr;
+      .decisor-table th.col-label {
+        width: 130px;
       }
 
       .need-grid {
@@ -1181,24 +1158,32 @@
     }
 
     @media(max-width:680px) {
-      .decisor {
-        grid-template-columns: 1fr;
-      }
 
-      .dec-hd-blank,
-      .dec-row-label {
+      /* En mobile ocultamos la columna label de la tabla y apilamos */
+      .decisor-table .col-label {
         display: none;
       }
 
-      .dec-hd,
-      .dec-cell,
-      .dec-cell-cta {
-        border-left: none !important;
-        border-top: 1px solid var(--border);
+      .decisor-table thead th.col-landing,
+      .decisor-table thead th.col-corp {
+        border-left: none;
       }
 
-      .dec-hd:first-of-type {
-        border-top: none;
+      .decisor-table td.col-landing,
+      .decisor-table td.col-corp {
+        border-left: none;
+        display: block;
+        width: 100%;
+      }
+
+      /* Agrega data-label como etiqueta visible en mobile */
+      .decisor-table td[data-label]::before {
+        content: attr(data-label) ": ";
+        font-weight: 700;
+        color: var(--muted);
+        font-size: .75rem;
+        display: block;
+        margin-bottom: .25rem;
       }
 
       .hero-prices {
@@ -1255,15 +1240,12 @@
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
       style="display:none;visibility:hidden"></iframe></noscript>
-
   <div id="site-nav"></div>
-
   <main id="main" tabindex="-1">
 
     <!-- ═══════════ HERO ═══════════ -->
     <section class="hero" aria-labelledby="hero-h1">
       <div class="wrap">
-
         <nav class="breadcrumb" aria-label="Miga de pan">
           <a href="/">Inicio</a>
           <span class="breadcrumb-sep" aria-hidden="true">›</span>
@@ -1271,25 +1253,21 @@
           <span class="breadcrumb-sep" aria-hidden="true">›</span>
           <span aria-current="page">Landing vs Sitio Corporativo</span>
         </nav>
-
         <div class="hero-inner">
           <div class="hero-label">
             <span class="hero-dot" aria-hidden="true"></span>
             Servicios · Web médica
           </div>
-
           <h1 id="hero-h1">
             ¿Landing page o<br>
             sitio corporativo?<br>
             <em>La decisión correcta</em><br>desde el día uno.
           </h1>
-
           <p class="hero-sub">
             El error más común: pagar por más páginas cuando lo que falta es <strong>una sola página que
               convierta</strong>. O al revés: quedarse corto cuando el consultorio ya creció. Acá tiene los criterios
             técnicos para decidir sin adivinar.
           </p>
-
           <div class="hero-prices" aria-label="Precios de referencia">
             <div class="hp-item">
               <span class="hp-label">Landing médica</span>
@@ -1301,7 +1279,6 @@
               <span class="hp-amount">desde $750 USD</span>
             </div>
           </div>
-
           <div class="hero-cta">
             <a href="https://wa.me/5491176199680?text=Hola%2C%20no%20s%C3%A9%20si%20necesito%20landing%20o%20sitio%20corporativo.%20%C2%BFMe%20ayud%C3%A1s%20a%20decidir%3F"
               class="btn btn-wa" target="_blank" rel="noopener noreferrer"
@@ -1319,7 +1296,6 @@
               Diagnóstico gratuito — 30 min →
             </a>
           </div>
-
           <div class="trust-row" aria-label="Garantías incluidas">
             <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> Lighthouse 90+ garantizado</span>
             <span class="trust-item"><i class="trust-ico" aria-hidden="true">✓</i> Sin WordPress</span>
@@ -1330,11 +1306,9 @@
       </div>
     </section>
 
-
     <!-- ═══════════ TABLA DECISORA ═══════════ -->
     <section class="section" aria-labelledby="comparativa-title">
       <div class="wrap">
-
         <div class="sec-head">
           <span class="sec-label">Comparativa técnica</span>
           <h2 class="sec-title" id="comparativa-title">Diferencias concretas.<br>Sin interpretación.</h2>
@@ -1342,111 +1316,110 @@
             de dónde está su consultorio hoy.</p>
         </div>
 
-        <div class="decisor" role="table" aria-label="Comparativa Landing Page vs Sitio Corporativo">
+        <!-- FIX: tabla HTML nativa en lugar de divs con role="table" -->
+        <table class="decisor-table">
+          <thead>
+            <tr>
+              <th class="col-label" scope="col">Criterio</th>
+              <th class="col-landing" scope="col">
+                <span class="dec-hd-badge badge-landing">Landing</span>
+                <div class="dec-hd-price">desde $250</div>
+                <div class="dec-hd-name">Landing Page Médica</div>
+              </th>
+              <th class="col-corp" scope="col">
+                <span class="dec-hd-badge badge-corp">Corporativo</span>
+                <div class="dec-hd-price">desde $750</div>
+                <div class="dec-hd-name">Sitio Corporativo</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="col-label" scope="row">Páginas</th>
+              <td class="col-landing" data-label="Landing">1 página optimizada</td>
+              <td class="col-corp" data-label="Corporativo">Multipágina (Inicio, Servicios, Nosotros, Blog…)</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Blog SEO</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-no">✕</span> No incluye</td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Blog optimizado con Schema
+                Article</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Schema médico</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-yes">✓</span> Physician + MedicalBusiness
+              </td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Physician + Article + FAQPage
+              </td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Sitemap.xml</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-partial">Básico</span></td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Completo, enviado a Google
+              </td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Multi-país (hreflang)</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-no">✕</span> No incluye</td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Para LATAM y España</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">CDN Cloudflare</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-partial">Opcional</span></td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Incluido y configurado</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">GA4 + Search Console</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-yes">✓</span> Configurado desde el día 1
+              </td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> Configurado desde el día 1
+              </td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Lighthouse garantizado</th>
+              <td class="col-landing" data-label="Landing"><span class="dec-yes">✓</span> 90+ mobile y desktop</td>
+              <td class="col-corp" data-label="Corporativo"><span class="dec-yes">✓</span> 90+ mobile y desktop</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Plazo de entrega</th>
+              <td class="col-landing" data-label="Landing">7–10 días hábiles</td>
+              <td class="col-corp" data-label="Corporativo">3–5 semanas</td>
+            </tr>
+            <tr>
+              <th class="col-label" scope="row">Soporte post-entrega</th>
+              <td class="col-landing" data-label="Landing">30 días incluidos</td>
+              <td class="col-corp" data-label="Corporativo">60 días incluidos</td>
+            </tr>
+            <tr>
+              <td class="col-label"></td>
+              <td class="col-landing td-cta">
+                <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Landing%20Page%20M%C3%A9dica%20%28desde%20%24250%20USD%29"
+                  class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
+                  Quiero esta opción →
+                </a>
+              </td>
+              <td class="col-corp td-cta">
+                <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sitio%20Corporativo%20M%C3%A9dico%20%28desde%20%24750%20USD%29"
+                  class="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
+                  Quiero esta opción →
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-          <!-- Cabecera -->
-          <div class="dec-hd-blank" role="columnheader" aria-label="Criterio"></div>
-
-          <div class="dec-hd dec-hd--landing" role="columnheader">
-            <span class="dec-hd-badge badge-landing">Landing</span>
-            <div class="dec-hd-price">desde $250</div>
-            <div class="dec-hd-name">Landing Page Médica</div>
-          </div>
-
-          <div class="dec-hd dec-hd--corp" role="columnheader">
-            <span class="dec-hd-badge badge-corp">Corporativo</span>
-            <div class="dec-hd-price">desde $750</div>
-            <div class="dec-hd-name">Sitio Corporativo</div>
-          </div>
-
-          <!-- Fila 1 -->
-          <div class="dec-row-label" role="rowheader">Páginas</div>
-          <div class="dec-cell dec-cell--landing" role="cell">1 página optimizada</div>
-          <div class="dec-cell dec-cell--corp" role="cell">Multipágina (Inicio, Servicios, Nosotros, Blog…)</div>
-
-          <!-- Fila 2 -->
-          <div class="dec-row-label" role="rowheader">Blog SEO</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-no">✕</span> No incluye</div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Blog optimizado con Schema
-            Article</div>
-
-          <!-- Fila 3 -->
-          <div class="dec-row-label" role="rowheader">Schema médico</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> Physician + MedicalBusiness
-          </div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Physician + Article + FAQPage
-          </div>
-
-          <!-- Fila 4 -->
-          <div class="dec-row-label" role="rowheader">Sitemap.xml</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-partial">Básico</span></div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Completo, enviado a Google
-          </div>
-
-          <!-- Fila 5 -->
-          <div class="dec-row-label" role="rowheader">Multi-país (hreflang)</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-no">✕</span> No incluye</div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Para LATAM y España</div>
-
-          <!-- Fila 6 -->
-          <div class="dec-row-label" role="rowheader">CDN Cloudflare</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-partial">Opcional</span></div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Incluido y configurado</div>
-
-          <!-- Fila 7 -->
-          <div class="dec-row-label" role="rowheader">GA4 + Search Console</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> Configurado desde el día 1
-          </div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> Configurado desde el día 1
-          </div>
-
-          <!-- Fila 8 -->
-          <div class="dec-row-label" role="rowheader">Lighthouse garantizado</div>
-          <div class="dec-cell dec-cell--landing" role="cell"><span class="dec-yes">✓</span> 90+ mobile y desktop</div>
-          <div class="dec-cell dec-cell--corp" role="cell"><span class="dec-yes">✓</span> 90+ mobile y desktop</div>
-
-          <!-- Fila 9 -->
-          <div class="dec-row-label" role="rowheader">Plazo de entrega</div>
-          <div class="dec-cell dec-cell--landing" role="cell">7–10 días hábiles</div>
-          <div class="dec-cell dec-cell--corp" role="cell">3–5 semanas</div>
-
-          <!-- Fila 10 -->
-          <div class="dec-row-label" role="rowheader">Soporte post-entrega</div>
-          <div class="dec-cell dec-cell--landing" role="cell">30 días incluidos</div>
-          <div class="dec-cell dec-cell--corp" role="cell">60 días incluidos</div>
-
-          <!-- Fila CTA -->
-          <div class="dec-row-label dec-row-cta" role="cell"></div>
-          <div class="dec-cell-cta dec-cell--landing" role="cell">
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Landing%20Page%20M%C3%A9dica%20%28desde%20%24250%20USD%29"
-              class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer">
-              Quiero esta opción →
-            </a>
-          </div>
-          <div class="dec-cell-cta dec-cell--corp" role="cell">
-            <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sitio%20Corporativo%20M%C3%A9dico%20%28desde%20%24750%20USD%29"
-              class="btn btn-outline btn-full" target="_blank" rel="noopener noreferrer">
-              Quiero esta opción →
-            </a>
-          </div>
-
-        </div><!-- /decisor -->
       </div>
     </section>
-
 
     <!-- ═══════════ QUIÉN NECESITA QUÉ ═══════════ -->
     <section class="section section--alt" aria-labelledby="quien-title">
       <div class="wrap">
-
         <div class="sec-head sec-head--center">
           <span class="sec-label">Criterio de selección</span>
           <h2 class="sec-title" id="quien-title">Cómo saber cuál corresponde<br>sin dudar.</h2>
           <p class="sec-sub">No es cuestión de presupuesto. Es cuestión de etapa. Estas son las señales objetivas.</p>
         </div>
-
         <div class="need-grid">
-
           <article class="need-card need-card--landing fu">
             <span class="need-tag need-tag--landing">Landing Page Médica — desde $250 USD</span>
             <h3>Para el médico que quiere convertir búsquedas en turnos. Ahora.</h3>
@@ -1465,7 +1438,6 @@
               </li>
             </ul>
           </article>
-
           <article class="need-card need-card--corp fu">
             <span class="need-tag need-tag--corp">Sitio Corporativo — desde $750 USD</span>
             <h3>Para la clínica o grupo médico que necesita arquitectura de contenidos.</h3>
@@ -1483,24 +1455,19 @@
                 que escale</li>
             </ul>
           </article>
-
         </div>
       </div>
     </section>
 
-
     <!-- ═══════════ DETALLE DE CADA SERVICIO ═══════════ -->
     <section class="section" id="servicios" aria-labelledby="detalle-title">
       <div class="wrap">
-
         <div class="sec-head sec-head--center">
           <span class="sec-label">Detalle técnico</span>
           <h2 class="sec-title" id="detalle-title">Qué incluye cada servicio.<br>Sin letra chica.</h2>
           <p class="sec-sub">Precio fijo en USD. Sin cobro por hora. Sin sorpresas al momento de la entrega.</p>
         </div>
-
         <div class="detail-grid">
-
           <!-- LANDING -->
           <article class="detail-card detail-card--featured fu" aria-label="Landing Page Médica">
             <div class="detail-price">
@@ -1511,7 +1478,6 @@
             <h3 class="detail-name">Landing Page Médica</h3>
             <p class="detail-desc">Una página diseñada para transformar búsquedas en consultas. Sin WordPress, sin
               plugins, sin actualizaciones que rompan todo a las 2 AM.</p>
-
             <div class="detail-includes">Incluye</div>
             <ul class="detail-list">
               <li><span class="dl-dot" aria-hidden="true">✓</span>HTML, CSS y JavaScript sin dependencias pesadas</li>
@@ -1526,7 +1492,6 @@
               <li><span class="dl-dot" aria-hidden="true">✓</span>Formulario de contacto funcional</li>
               <li><span class="dl-dot" aria-hidden="true">✓</span>Botón de WhatsApp integrado</li>
             </ul>
-
             <div class="detail-guarantee">
               <svg width="13" height="13" fill="none" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -1535,7 +1500,6 @@
             </div>
             <div class="detail-plazo">⏱ Entrega: <strong>7 a 10 días hábiles</strong> · Precio fijo, sin cobro por hora
             </div>
-
             <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20la%20Landing%20Page%20M%C3%A9dica%20%28desde%20%24250%20USD%29"
               class="btn btn-wa btn-full" target="_blank" rel="noopener noreferrer"
               aria-label="Consultar por la Landing Page Médica">
@@ -1548,7 +1512,6 @@
               Consultar precio exacto →
             </a>
           </article>
-
           <!-- CORPORATIVO -->
           <article class="detail-card fu" aria-label="Sitio Web Corporativo Médico">
             <div class="detail-price">
@@ -1559,7 +1522,6 @@
             <h3 class="detail-name">Sitio Web Corporativo Médico</h3>
             <p class="detail-desc">Para clínicas, grupos médicos o profesionales que requieren una presencia digital más
               amplia. Arquitectura que escala con el crecimiento del consultorio.</p>
-
             <div class="detail-includes">Incluye</div>
             <ul class="detail-list">
               <li><span class="dl-dot" aria-hidden="true">✓</span>Arquitectura multipágina con estructura semántica</li>
@@ -1573,7 +1535,6 @@
               <li><span class="dl-dot" aria-hidden="true">✓</span>WebP + lazy load en todas las imágenes</li>
               <li><span class="dl-dot" aria-hidden="true">✓</span>Informe técnico de entrega documentado</li>
             </ul>
-
             <div class="detail-guarantee">
               <svg width="13" height="13" fill="none" viewBox="0 0 16 16" aria-hidden="true">
                 <path d="M3 8l3.5 3.5L13 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
@@ -1582,30 +1543,25 @@
             </div>
             <div class="detail-plazo">⏱ Entrega: <strong>3 a 5 semanas</strong> según cantidad de páginas y contenido
             </div>
-
             <a href="https://wa.me/5491176199680?text=Hola%2C%20me%20interesa%20el%20Sitio%20Corporativo%20M%C3%A9dico%20%28desde%20%24750%20USD%29"
               class="btn btn-primary btn-full" target="_blank" rel="noopener noreferrer"
               aria-label="Consultar por el Sitio Web Corporativo Médico">
               Consultar precio exacto →
             </a>
           </article>
-
         </div>
       </div>
     </section>
 
-
     <!-- ═══════════ GARANTÍAS ═══════════ -->
     <section class="section section--alt" id="garantias" aria-labelledby="garantias-title">
       <div class="wrap">
-
         <div class="sec-head sec-head--center">
           <span class="sec-label">Garantías escritas</span>
           <h2 class="sec-title" id="garantias-title">Compromisos verificables.<br>No promesas de posicionamiento.</h2>
           <p class="sec-sub">Cada garantía tiene condición concreta y consecuencia concreta. Documentadas por escrito
             antes de iniciar.</p>
         </div>
-
         <div class="garantias-grid">
           <div class="gar-card fu">
             <span class="gar-icon" aria-hidden="true">⚡</span>
@@ -1632,23 +1588,19 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
-
 
     <!-- ═══════════ FAQ ═══════════ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="wrap-sm">
-
         <div class="sec-head sec-head--center">
           <span class="sec-label">Preguntas frecuentes</span>
           <h2 class="sec-title" id="faq-title">Lo que preguntan antes<br>de decidir.</h2>
         </div>
-
-        <div class="faq-list" role="list">
-
-          <details class="faq-item" role="listitem">
+        <!-- FIX: eliminados role="list" y role="listitem" del details/summary -->
+        <div class="faq-list">
+          <details class="faq-item">
             <summary>
               ¿Cuál es la diferencia real entre landing y sitio corporativo?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1660,8 +1612,7 @@
               el sitio corporativo construye autoridad en el largo plazo.
             </div>
           </details>
-
-          <details class="faq-item" role="listitem">
+          <details class="faq-item">
             <summary>
               ¿Un médico independiente necesita sitio corporativo?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1672,8 +1623,7 @@
               tiene sentido cuando hay múltiples especialidades, varios médicos o varias ciudades.
             </div>
           </details>
-
-          <details class="faq-item" role="listitem">
+          <details class="faq-item">
             <summary>
               ¿Por qué HTML estático y no WordPress?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1684,8 +1634,7 @@
               es la decisión técnica correcta. Si su situación requiere WordPress, se evalúa caso por caso.
             </div>
           </details>
-
-          <details class="faq-item" role="listitem">
+          <details class="faq-item">
             <summary>
               ¿El precio incluye hosting y dominio?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1696,8 +1645,7 @@
               elección sin costo adicional.
             </div>
           </details>
-
-          <details class="faq-item" role="listitem">
+          <details class="faq-item">
             <summary>
               ¿Trabajan con médicos de Argentina, México, Chile y España?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1708,8 +1656,7 @@
               en Argentina, México, Chile, España y Colombia.
             </div>
           </details>
-
-          <details class="faq-item" role="listitem">
+          <details class="faq-item">
             <summary>
               ¿Puedo empezar con landing y escalar a sitio corporativo después?
               <span class="faq-chev" aria-hidden="true">▾</span>
@@ -1719,11 +1666,9 @@
               la expansión posterior. No es un sitio descartable: es la base técnica del sistema.
             </div>
           </details>
-
         </div>
       </div>
     </section>
-
 
     <!-- ═══════════ CTA FINAL ═══════════ -->
     <section class="section" aria-labelledby="cta-title">
@@ -1751,7 +1696,6 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <div id="site-footer"></div>
@@ -1789,7 +1733,6 @@
       }, { threshold: .1 });
       els.forEach(function (el) { io.observe(el); });
     })();
-
     /* scroll top */
     (function () {
       var btn = document.getElementById('scrollTopBtn');

@@ -331,7 +331,7 @@
       align-items: baseline;
     }
 
-    .slider-label span:first-child {
+    .slider-label label:first-child {
       font-size: 0.82rem;
       font-weight: 500;
       color: var(--slate);
@@ -1298,7 +1298,7 @@
       <div class="sliders">
         <div class="slider-group">
           <div class="slider-label">
-            <span>Tiempo de carga actual (segundos)</span>
+            <label for="slCarga">Tiempo de carga actual (segundos)</label>
             <span class="slider-val" id="valCarga">5.0s</span>
           </div>
           <input type="range" id="slCarga" min="1" max="12" step="0.5" value="5" />
@@ -1311,7 +1311,7 @@
         </div>
         <div class="slider-group">
           <div class="slider-label">
-            <span>Visitas mensuales estimadas</span>
+            <label for="slVisitas">Visitas mensuales estimadas</label>
             <span class="slider-val" id="valVisitas">300</span>
           </div>
           <input type="range" id="slVisitas" min="50" max="2000" step="50" value="300" />
@@ -1324,7 +1324,7 @@
         </div>
         <div class="slider-group">
           <div class="slider-label">
-            <span>Ticket promedio por consulta (USD)</span>
+            <label for="slTicket">Ticket promedio por consulta (USD)</label>
             <span class="slider-val" id="valTicket">$80</span>
           </div>
           <input type="range" id="slTicket" min="20" max="400" step="10" value="80" />
@@ -1337,7 +1337,7 @@
         </div>
         <div class="slider-group">
           <div class="slider-label">
-            <span>Tasa de conversión web actual (%)</span>
+            <label for="slConversion">Tasa de conversión web actual (%)</label>
             <span class="slider-val" id="valConversion">2%</span>
           </div>
           <input type="range" id="slConversion" min="1" max="15" step="0.5" value="2" />
