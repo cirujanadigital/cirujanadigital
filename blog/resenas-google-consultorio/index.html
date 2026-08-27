@@ -4,38 +4,17 @@
 <head>
   <base href="/">
   <meta charset="UTF-8" />
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-    }
-
-    // Retrasar GTM hasta primera interacción o 3.5s de idle
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach(e =>
-      window.addEventListener(e, loadGTM, { once: true })
-    );
-    setTimeout(loadGTM, 8000);
-  </script>
-
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Reseñas Google para Médicos: Más Pacientes desde Maps | Cirujana Digital</title>
   <meta name="description"
     content="Sin reseñas, tu consultorio no aparece. Guía práctica para que médicos consigan reseñas reales en Google, suban en Maps y reciban más llamadas esta semana." />
   <meta name="author" content="Yulia Monti — Cirujana Digital" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <link rel="canonical" href="https://cirujanadigital.com/blog/resenas-google-consultorio/" />
+  <link rel="alternate" hreflang="es" href="https://cirujanadigital.com/blog/resenas-google-consultorio/" />
+  <link rel="alternate" hreflang="x-default" href="https://cirujanadigital.com/blog/resenas-google-consultorio/" />
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://cirujanadigital.com/blog/resenas-google-consultorio/" />
@@ -1022,10 +1001,7 @@
 </head>
 
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
-      style="display: none; visibility: hidden" class="gtm-iframe"></iframe>
-  </noscript>
+
 
   <div id="site-nav"></div>
 

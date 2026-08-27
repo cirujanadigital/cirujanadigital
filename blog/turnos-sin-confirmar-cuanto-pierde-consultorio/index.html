@@ -4,35 +4,20 @@
 <head>
   <base href="/">
   <meta charset="UTF-8" />
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-    }
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
-      window.addEventListener(e, loadGTM, { once: true })
-    );
-    setTimeout(loadGTM, 8000);
-  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- SEO -->
   <title>Turnos sin confirmar: cuánto pierde su consultorio cada mes y cómo evitarlo | Cirujana Digital</title>
   <meta name="description"
     content="Un consultorio con 20 turnos semanales puede perder hasta $1.440 USD al mes por ausencias sin aviso. Esto no es un problema de conducta del paciente. Es un problema de sistema." />
   <meta name="author" content="Yulia Monti — Cirujana Digital" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <link rel="canonical" href="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
+  <link rel="alternate" hreflang="es"
+    href="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
+  <link rel="alternate" hreflang="x-default"
+    href="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://cirujanadigital.com/blog/turnos-sin-confirmar-cuanto-pierde-consultorio/" />
@@ -1060,10 +1045,7 @@
 </head>
 
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
-      style="display:none;visibility:hidden" class="gtm-iframe"></iframe>
-  </noscript>
+
   <div id="site-nav"></div>
   <main id="main" tabindex="-1" style="min-height: 100vh;">
 

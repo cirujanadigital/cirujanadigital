@@ -4,34 +4,19 @@
 <head>
   <base href="/">
   <meta charset="UTF-8" />
-  <script>
-    let gtmLoaded = false;
-    function loadGTM() {
-      if (gtmLoaded) return;
-      gtmLoaded = true;
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-PW5H3VRM');
-    }
-    ['click', 'scroll', 'keydown', 'touchstart'].forEach((e) =>
-      window.addEventListener(e, loadGTM, { once: true })
-    );
-    setTimeout(loadGTM, 8000);
-  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>5 estrellas en Doctoralia y ChatGPT no sabe que ese médico existe | Cirujana Digital</title>
   <meta name="description"
     content="Las reseñas en Doctoralia no generan visibilidad en ChatGPT. Descubra por qué los directorios médicos no alcanzan y qué sí funciona para que la IA recomiende un consultorio." />
   <meta name="author" content="Yulia Monti — Cirujana Digital" />
-  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
   <link rel="canonical" href="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
+  <link rel="alternate" hreflang="es"
+    href="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
+  <link rel="alternate" hreflang="x-default"
+    href="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://cirujanadigital.com/blog/doctoralia-no-es-suficiente-para-chatgpt/" />
@@ -976,10 +961,7 @@
 </head>
 
 <body>
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW5H3VRM" height="0" width="0"
-      style="display:none;visibility:hidden"></iframe>
-  </noscript>
+
 
   <div id="site-nav"></div>
 
