@@ -416,4 +416,32 @@
     requestAnimationFrame(initHamburger);
   }
   inject();
+
+  /* ──────────────────────────────────────────────────────────
+     ANCLAS INTERNAS
+     Con <base href="/"> un enlace "#id" se resuelve como "/#id"
+     y lleva al index. Se interceptan y se hace scroll en la
+     página actual. Respeta handlers propios (defaultPrevented).
+     ────────────────────────────────────────────────────────── */
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)
+      return;
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = decodeURIComponent(a.getAttribute('href').slice(1));
+    if (!id) return;
+    var el = document.getElementById(id);
+    if (!el) return;
+    e.preventDefault();
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({
+      top: el.getBoundingClientRect().top + window.scrollY - 84,
+      behavior: reduce ? 'auto' : 'smooth',
+    });
+    try {
+      history.pushState(null, '', location.pathname + location.search + '#' + id);
+    } catch (_) {}
+    if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+    el.focus({ preventScroll: true });
+  });
 })();
