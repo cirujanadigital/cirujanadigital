@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>Aurora — Panel de ejemplo | Cirujana Digital</title>
+<style>
+:root{--b:#00a7a9;--bd:#03658c;--n:#0d1b2a;--t:#1e293b;--m:#5b6b7e;--l:#dde5ec;--bg:#f3f6f8;--w:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--t);display:flex;min-height:100vh;line-height:1.5}
+aside{width:232px;flex:none;background:linear-gradient(180deg,var(--n),#05506f);color:#fff;padding:1.4rem 1rem;display:flex;flex-direction:column;position:sticky;top:0;height:100vh}
+.logo{font-family:Georgia,serif;font-size:1.35rem}.sub{font-size:.78rem;color:#b9d3e0;margin:.15rem 0 1.5rem}
+nav{display:grid;gap:.25rem}
+nav button{all:unset;cursor:pointer;padding:.65rem .8rem;border-radius:8px;font-size:.9rem;color:#d4e6ef}
+nav button:hover{background:rgb(255 255 255/.08)}nav button:focus-visible{outline:2px solid #7fdbff}
+nav button[aria-current=true]{background:rgb(255 255 255/.16);color:#fff;font-weight:600}
+.legal:first-of-type{margin-top:auto}.legal{font-size:.72rem;color:#d4e6ef;line-height:1.5}
+main{flex:1;min-width:0;padding:1.5rem clamp(1rem,3vw,2.5rem) 3rem}
+.banner{background:#fff7e0;border:1px solid #f0d58a;color:#6b4e00;border-radius:8px;padding:.5rem .8rem;font-size:.8rem;margin-bottom:1.25rem}
+h1{font-family:Georgia,serif;font-weight:400;font-size:1.7rem;margin-bottom:.2rem}.lead{color:var(--m);font-size:.9rem;margin-bottom:1.25rem;max-width:62ch}
+section{display:none}section.on{display:block}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.9rem;margin-bottom:1.25rem}
+.card{background:var(--w);border:1px solid var(--l);border-radius:12px;padding:1rem 1.1rem}
+.kpi b{display:block;font-size:2rem;font-weight:700;line-height:1.1}.kpi span{font-size:.8rem;color:var(--m)}
+.kpi.u b{color:#b42318}
+h2{font-size:.95rem;margin-bottom:.7rem}
+.bars{display:flex;align-items:flex-end;gap:.6rem;height:120px}
+.bars div{flex:1;text-align:center;font-size:.7rem;color:var(--m)}.bars i{display:block;background:var(--bd);border-radius:4px 4px 0 0;margin-bottom:.25rem}
+.bars em{font-style:normal;display:block;font-size:.72rem;color:var(--t)}
+table{width:100%;border-collapse:collapse;font-size:.85rem}th{text-align:left;color:var(--m);font-weight:500;padding:.4rem .5rem;border-bottom:1px solid var(--l)}td{padding:.55rem .5rem;border-bottom:1px solid var(--l)}
+.tbl{overflow-x:auto}.tag{display:inline-block;padding:.12rem .55rem;border-radius:99px;font-size:.72rem;font-weight:600;background:#e0f4f4;color:#04585a}.tag.y{background:#fdf0d5;color:#7a4b00}.tag.g{background:#e3f5e8;color:#15603a}
+.inbox{display:grid;grid-template-columns:280px 1fr;gap:1rem;align-items:start}
+.list{display:grid;gap:.4rem}.list button{all:unset;cursor:pointer;background:var(--w);border:1px solid var(--l);border-radius:10px;padding:.65rem .8rem}
+.list button[aria-current=true]{border-color:var(--bd);box-shadow:0 0 0 1px var(--bd)}.list button:focus-visible{outline:2px solid var(--bd)}
+.list b{font-size:.88rem;display:flex;justify-content:space-between;gap:.5rem}.list b small{font-weight:400;color:var(--m)}.list span{font-size:.78rem;color:var(--m);display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat{background:#efeae2;border:1px solid var(--l);border-radius:12px;overflow:hidden}
+.chat header{background:#f0f2f5;padding:.65rem .9rem;font-size:.86rem;border-bottom:1px solid var(--l)}.chat header small{display:block;color:var(--m)}
+.msgs{display:flex;flex-direction:column;gap:.35rem;padding:.9rem;min-height:260px}
+.m{max-width:82%;padding:.4rem .65rem .25rem;border-radius:8px;font-size:.85rem;box-shadow:0 1px .5px rgb(11 20 26/.13);white-space:pre-line}
+.m.in{background:#fff;align-self:flex-start;border-top-left-radius:0}.m.out{background:#d9fdd3;align-self:flex-end;border-top-right-radius:0}
+.m .tm{display:block;text-align:right;font-size:.65rem;color:#54656f}
+.note{margin:0 .9rem .9rem;background:var(--w);border-left:4px solid var(--b);border-radius:6px;padding:.55rem .75rem;font-size:.8rem}.note.u{border-color:#d92d20;background:#fff4f2}
+.kan{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:.9rem;overflow-x:auto;padding-bottom:.5rem}
+.col{background:#e7edf2;border-radius:12px;padding:.7rem}.col h2{font-size:.84rem;display:flex;justify-content:space-between;margin-bottom:.15rem}.col p{font-size:.72rem;color:var(--m);margin-bottom:.6rem}
+.k{background:var(--w);border:1px solid var(--l);border-radius:9px;padding:.55rem .7rem;margin-bottom:.45rem;font-size:.82rem}.k small{display:block;color:var(--m)}
+.try{display:grid;grid-template-columns:230px 1fr;gap:1rem;align-items:start}
+.cases{display:grid;gap:.4rem}.cases button{all:unset;cursor:pointer;background:var(--w);border:1px solid var(--l);border-radius:10px;padding:.6rem .8rem;font-size:.84rem}
+.cases button:hover{border-color:var(--bd)}.cases button:focus-visible{outline:2px solid var(--bd)}.cases button[aria-current=true]{background:#e0f4f4;border-color:var(--bd)}
+.cta{display:block;margin-top:1rem;background:#fff;color:var(--bd);text-align:center;font-weight:700;font-size:.82rem;padding:.65rem .8rem;border-radius:8px;text-decoration:none}.cta:hover{background:#e0f4f4}.cta:focus-visible{outline:2px solid #7fdbff}
+.back{display:block;margin-top:1rem;color:#d4e6ef;font-size:.82rem;text-decoration:underline}.back:hover{color:#fff}.back:focus-visible{outline:2px solid #7fdbff}
+.empty{color:var(--m);font-size:.85rem;padding:1.5rem;text-align:center}
+@media(max-width:800px){body{flex-direction:column}aside{width:auto;height:auto;position:static;padding:1rem}nav{grid-template-columns:repeat(2,1fr)}.legal{display:none}.inbox,.try{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<aside>
+  <div class="logo">Aurora</div><div class="sub">Panel de ejemplo · Consultorio ficticio</div>
+  <nav id="nav" aria-label="Secciones">
+    <button data-v="resumen">Resumen</button><button data-v="conversaciones">Conversaciones</button><button data-v="oportunidades">Pacientes en proceso</button><button data-v="probar">Probar el agente</button>
+  </nav>
+  <p class="legal">Datos de ejemplo con fines ilustrativos. Demo sin conexión real: no usa WhatsApp, no guarda datos y no depende de ningún servidor.</p><a class="back" href="/servicios/recepcionista-virtual-medica/">← Volver al servicio</a><a class="cta" href="https://calendly.com/cirujanadigital/30min" target="_blank" rel="noopener">Agendar videollamada de 30 min</a><p class="legal" style="margin-top:.8rem">Cirujana Digital</p>
+</aside>
+<main>
+<noscript><p class="banner">Las secciones Conversaciones, Pacientes en proceso y Probar el agente necesitan JavaScript.</p></noscript>
+<p class="banner" role="note"><b>Vista previa de diseño con datos de ejemplo.</b> Pacientes y conversaciones inventados; demo sin conexión real. Las secciones Conversaciones, gráfico por día y Probar el agente están en desarrollo y se definen en el alcance de cada implementación.</p>
+
+<section id="resumen" class="on">
+  <h1>Resumen</h1><p class="lead">Lo que Aurora atendió en los últimos 7 días en el WhatsApp del consultorio.</p>
+  <div class="kpis">
+    <div class="card kpi"><b>128</b><span>Conversaciones</span></div>
+    <div class="card kpi"><b>47</b><span>Pacientes con datos completos y enlace de agenda enviado</span></div>
+    <div class="card kpi"><b>18</b><span>Quedaron a mitad de camino (faltan datos)</span></div>
+    <div class="card kpi u"><b>2</b><span>Mensajes prioritarios avisados al equipo</span></div>
+  </div>
+  <div class="card" style="margin-bottom:1.25rem"><h2>Conversaciones por día</h2><div class="bars" id="bars" role="img" aria-label="Conversaciones por día: 14, 19, 16, 22, 18, 25 y 14"></div></div>
+  <div class="card tbl"><h2>Llegaron fuera de horario</h2>
+    <table><thead><tr><th>Paciente</th><th>Motivo</th><th>Llegó</th><th>Estado</th></tr></thead><tbody>
+      <tr><td>Marcela Ruiz</td><td>Dolor de rodilla</td><td>Ayer 23:12</td><td><span class="tag y">Enlace enviado</span></td></tr>
+      <tr><td>Hugo Paz</td><td>Dolor de pecho</td><td>Hoy 02:31</td><td><span class="tag y">Prioritario · avisado</span></td></tr>
+      <tr><td>Julián Costa</td><td>Dolor lumbar</td><td>Ayer 21:40</td><td><span class="tag y">Enlace enviado</span></td></tr>
+      <tr><td>Carolina Díaz</td><td>Control anual</td><td>Dom 22:05</td><td><span class="tag">Falta el motivo</span></td></tr>
+    </tbody></table></div>
+</section>
+
+<section id="conversaciones">
+  <h1>Conversaciones</h1><p class="lead">Cada conversación queda ordenada: el equipo ve quién escribió, qué cobertura tiene y por qué consulta.</p>
+  <div class="inbox"><div class="list" id="list"></div><div class="chat" id="chat"></div></div>
+</section>
+
+<section id="oportunidades">
+  <h1>Pacientes en proceso</h1><p class="lead">En qué punto del camino está cada paciente que escribió.</p>
+  <div class="kan" id="kan"></div>
+</section>
+
+<section id="probar">
+  <h1>Probar el agente</h1><p class="lead">Elija un mensaje de paciente y vea cómo responde Aurora y qué recibe el equipo. Las respuestas son guionadas: salen siempre iguales. Nada se envía ni se guarda.</p>
+  <div class="try"><div class="cases" id="cases"></div><div class="chat"><header>Aurora · Consultorio del Dr. Ejemplo<small>Simulación</small></header><div class="msgs" id="tmsgs" aria-live="polite"><p class="empty">Elija un caso a la izquierda.</p></div><div id="tnote" aria-live="polite"></div></div></div>
+</section>
+</main>
+<script>
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const bubble=(d,t,h)=>`<div class="m ${d}">${esc(t)}<span class="tm">${h}</span></div>`;
+const LINK='[enlace de agenda del consultorio]';
+const convs=[
+ {n:'Marcela Ruiz',h:'Ayer 23:12',p:'Me duele la rodilla hace un mes',c:'OSDE · Dolor de rodilla',m:[
+  ['in','Hola, buenas noches! ¿Atienden OSDE? Quería sacar turno para esta semana','23:12'],
+  ['out','Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.','23:12'],['in','Marcela Ruiz','23:13'],
+  ['out','Gracias Marcela Ruiz. Su obra social o prepaga (o escriba particular si abona directo).','23:13'],['in','OSDE','23:13'],
+  ['out','Perfecto. En pocas palabras, motivo de consulta.','23:13'],['in','Me duele la rodilla hace un mes','23:14'],
+  ['out','Listo Marcela Ruiz. Reserve su turno acá:\n'+LINK+'\n\nElija día y horario. Le llega confirmación por email.\n\nCualquier duda, estoy acá.','23:14']],
+  nota:'Equipo notificado: nuevo paciente · OSDE · dolor de rodilla · puntaje 75/100. Sin alerta de urgencia.'},
+ {n:'Hugo Paz',h:'Hoy 02:31',p:'Dolor en el pecho y me cuesta respirar',c:'Mensaje prioritario',u:1,m:[
+  ['in','Tengo dolor en el pecho desde hace una hora y me cuesta respirar','02:31'],
+  ['out','Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nPara urgencias menores puede comunicarse directamente:\n[teléfono del consultorio]\n\nVoy a notificar al consultorio ahora mismo.','02:31']],
+  nota:'ALERTA enviada al médico: nombre, teléfono, mensaje original y hora.'},
+ {n:'Silvia Benítez',h:'Dom 10:20',p:'¿Cuánto sale la teleconsulta?',c:'Consulta de precios',m:[
+  ['in','¿Cuánto sale la teleconsulta?','10:20'],
+  ['out','Honorarios del Dr. Ejemplo:\n\n- Consulta presencial: $60.000 ARS\n- Teleconsulta: $50.000 ARS\n\nFormas de pago: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?','10:20'],['in','Quiero sacar un turno','10:22'],
+  ['out','Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.','10:22']],
+  nota:'Todavía sin datos: no se avisa al equipo hasta que la paciente complete el motivo de consulta.'},
+ {n:'Julián Costa',h:'Ayer 21:40',p:'Particular, dolor lumbar',c:'Particular · Dolor lumbar',m:[
+  ['in','Hola, quiero sacar turno','21:36'],
+  ['out','Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.','21:36'],['in','Julián Costa','21:37'],
+  ['out','Gracias Julián Costa. Su obra social o prepaga (o escriba particular si abona directo).','21:37'],['in','Prevención Salud','21:38'],
+  ['out','No trabajamos con esa obra social.\n\nPuede atenderse como particular ($60.000 ARS presencial).\n\n¿Continuamos como particular?','21:38'],['in','Sí, particular','21:39'],
+  ['out','Perfecto. En pocas palabras, motivo de consulta.','21:39'],['in','Dolor lumbar','21:40'],
+  ['out','Listo Julián Costa. Reserve su turno acá:\n'+LINK+'\n\nElija día y horario. Le llega confirmación por email.\n\nCualquier duda, estoy acá.','21:40']],
+  nota:'Registrado como particular. Equipo notificado: nuevo paciente · puntaje 75/100.'}];
+let cur=0;
+function drawList(){ $('#list').innerHTML=convs.map((c,i)=>`<button data-i="${i}" aria-current="${i===cur}"><b>${esc(c.n)}<small>${esc(c.h)}</small></b><span>${esc(c.p)}</span></button>`).join('');
+ const c=convs[cur];$('#chat').innerHTML=`<header>${esc(c.n)}<small>WhatsApp · ${esc(c.c)}</small></header><div class="msgs">${c.m.map(x=>bubble(x[0],x[1],x[2])).join('')}</div><div class="note ${c.u?'u':''}">${esc(c.nota)}</div>`}
+$('#list').onclick=e=>{const b=e.target.closest('button');if(b){cur=+b.dataset.i;drawList();$('#list [aria-current=true]').focus()}};
+const day=[['L',14],['M',19],['X',16],['J',22],['V',18],['S',25],['D',14]];
+$('#bars').innerHTML=day.map(d=>`<div><em>${d[1]}</em><i style="height:${d[1]*3}px"></i>${d[0]}</div>`).join('');
+const cols=[['Completando datos','Aurora está pidiendo nombre, cobertura o motivo',[['Silvia Benítez','Pidió turno · falta el nombre','Dom 10:22'],['Carolina Díaz','Galeno · falta el motivo','Dom 22:05']]],
+ ['Enlace de agenda enviado','El paciente elige día y horario',[['Julián Costa','Particular · dolor lumbar','Ayer 21:40'],['Marcela Ruiz','OSDE · dolor de rodilla','Ayer 23:14'],['Tomás Giménez','Swiss Medical · certificado','Ayer 18:02']]],
+ ['Seguimiento a las 24 h','Aurora recuerda el enlace una sola vez',[['Elena Ríos','OSDE · control','Sáb 11:30'],['Raúl Sosa','Galeno · dolor de hombro','Mié 20:15']]]];
+$('#kan').innerHTML=cols.map(c=>`<div class="col"><h2>${esc(c[0])}<span>${c[2].length}</span></h2><p>${esc(c[1])}</p>${c[2].map(k=>`<div class="k"><b>${esc(k[0])}</b><small>${esc(k[1])}</small><small>${esc(k[2])}</small></div>`).join('')}</div>`).join('');
+const cases=[
+ {t:'Quiero un turno',u:'Quiero sacar un turno',r:'Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.',n:'Aurora inicia el pedido de datos. Todavía no se avisa al consultorio.'},
+ {t:'Dolor de espalda al pedir turno',pre:[['in','Quiero sacar un turno'],['out','Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.'],['in','Ana Pérez'],['out','Gracias Ana Pérez. Su obra social o prepaga (o escriba particular si abona directo).'],['in','particular'],['out','Perfecto. En pocas palabras, motivo de consulta.']],u:'dolor de espalda',r:'Listo Ana Pérez. Reserve su turno acá:\n'+LINK+'\n\nElija día y horario. Le llega confirmación por email.\n\nCualquier duda, estoy acá.',n:'Dentro del pedido de turno, "dolor de espalda" se registra como motivo. Sin alerta de urgencia. El equipo recibe un aviso de nuevo paciente (puntaje 75/100).'},
+ {t:'Dolor de pecho y falta de aire',u:'Tengo dolor de pecho y me falta el aire',r:'Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nPara urgencias menores puede comunicarse directamente:\n[teléfono del consultorio]\n\nVoy a notificar al consultorio ahora mismo.',n:'ALERTA enviada al médico con el mensaje original y la hora.',x:1},
+ {t:'¿Atienden OSDE?',u:'¿Atienden OSDE?',r:'El Dr. Ejemplo atiende con:\n\n- OSDE\n- Swiss Medical\n- Galeno\n\nOtra prepaga: consultar cobertura antes de sacar turno.\nParticulares: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?',n:'Respuesta con los datos cargados para el consultorio. Sin aviso al equipo.'},
+ {t:'¿Cuánto cuesta la consulta?',u:'¿Cuánto cuesta la consulta?',r:'Honorarios del Dr. Ejemplo:\n\n- Consulta presencial: $60.000 ARS\n- Teleconsulta: $50.000 ARS\n\nFormas de pago: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?',n:'Valores de ejemplo. Cada consultorio carga los suyos.'},
+ {t:'Quiero hablar con una persona',u:'Quiero hablar con una persona',r:'Entendido. Voy a avisarle al consultorio que quiere hablar con alguien.\n\nLe responden lo antes posible en horario de atención.',n:'Aviso al equipo: el paciente pidió atención humana.'}];
+$('#cases').innerHTML=cases.map((c,i)=>`<button data-i="${i}">${esc(c.t)}</button>`).join('');
+let tmr;
+$('#cases').onclick=e=>{const b=e.target.closest('button');if(!b)return;const c=cases[+b.dataset.i];clearTimeout(tmr);
+ document.querySelectorAll('#cases button').forEach(x=>x.setAttribute('aria-current',x===b));
+ $('#tmsgs').innerHTML=(c.pre||[]).map(x=>bubble(x[0],x[1],'')).join('')+bubble('in',c.u,'ahora');$('#tnote').innerHTML='';
+ tmr=setTimeout(()=>{$('#tmsgs').insertAdjacentHTML('beforeend',bubble('out',c.r,'ahora'));$('#tnote').innerHTML=`<div class="note ${c.x?'u':''}"><b>Qué ve el equipo:</b> ${esc(c.n)}</div>`},450)};
+function go(v){document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===v));document.querySelectorAll('#nav button').forEach(b=>b.setAttribute('aria-current',b.dataset.v===v));history.replaceState(null,'','#'+v)}
+$('#nav').onclick=e=>{const b=e.target.closest('button');if(b)go(b.dataset.v)};
+drawList();const h=location.hash.slice(1);go(['resumen','conversaciones','oportunidades','probar'].includes(h)?h:'resumen');
+</script>
+</body>
+</html>
