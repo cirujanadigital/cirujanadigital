@@ -62,7 +62,7 @@ No hago webs bonitas. Construyo el sistema que un médico necesita para que un p
 
 ## Sistemas en producción
 
-**cirujanadigital.com** — sitio propio, estático, sin CMS. Lighthouse 90+, Schema completo, blog técnico y demos por especialidad médica.
+**cirujanadigital.com** — sitio propio, estático, sin CMS. Lighthouse 90+, Schema completo y demos por especialidad médica.
 
 **[doshasnutricion.com](https://doshasnutricion.com)** — Nutricionista, Barcelona/Chile. Lighthouse 100/100. Stripe multi-moneda. Schema `MedicalBusiness` + `FAQPage`.
 

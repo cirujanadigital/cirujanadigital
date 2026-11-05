@@ -5,37 +5,36 @@
   <meta charset="UTF-8" />
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infraestructura Digital para Consultorios Médicos | Cirujana Digital</title>
+  <title>Infraestructura digital, desarrollo web e IA | Cirujana Digital</title>
   <meta name="description"
-    content="Diseñamos e implementamos la infraestructura digital que hace funcionar un consultorio privado: captación de pacientes, automatización de recepción con Aurora y gestión de agenda. LATAM y España." />
+    content="Infraestructura digital: integraciones, automatización, IA y desarrollo web para profesionales, clínicas y empresas en LATAM y España." />
   <meta name="author" content="Cirujana Digital" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
-  
+
   <link rel="canonical" href="https://cirujanadigital.com/" />
   <link rel="alternate" hreflang="es" href="https://cirujanadigital.com/" />
   <link rel="alternate" hreflang="x-default" href="https://cirujanadigital.com/" />
   <link rel="sitemap" href="sitemap.xml" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://cirujanadigital.com/" />
-  <meta property="og:title" content="Infraestructura Digital para Consultorios Médicos | Cirujana Digital" />
+  <meta property="og:title" content="Infraestructura digital, desarrollo web e IA | Cirujana Digital" />
   <meta property="og:description"
-    content="Diseñamos e implementamos la infraestructura digital que hace funcionar un consultorio privado: captación, automatización de recepción y gestión de agenda. LATAM y España." />
+    content="Infraestructura digital: integraciones, automatización, IA y desarrollo web para profesionales, clínicas y empresas en LATAM y España." />
   <meta property="og:image" content="https://cirujanadigital.com/img/og-image.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt"
-    content="Cirujana Digital — Infraestructura Digital para Consultorios Médicos Privados" />
+  <meta property="og:image:type" content="image/webp" />
+  <meta property="og:image:alt" content="Cirujana Digital — Infraestructura digital, desarrollo web e IA" />
   <meta property="og:locale" content="es_419" />
   <meta property="og:site_name" content="Cirujana Digital" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@cirujanadigital" />
   <meta name="twitter:creator" content="@cirujanadigital" />
-  <meta name="twitter:title" content="Infraestructura Digital para Consultorios Médicos | Cirujana Digital" />
+  <meta name="twitter:title" content="Infraestructura digital, desarrollo web e IA | Cirujana Digital" />
   <meta name="twitter:description"
-    content="Diseñamos e implementamos la infraestructura digital que hace funcionar un consultorio privado. LATAM y España." />
+    content="Infraestructura digital, desarrollo web, automatización e inteligencia artificial. LATAM y España." />
   <meta name="twitter:image" content="https://cirujanadigital.com/img/og-image.webp" />
-  <meta name="twitter:image:alt" content="Cirujana Digital — Infraestructura Digital Médica" />
+  <meta name="twitter:image:alt" content="Cirujana Digital — Infraestructura digital, desarrollo web e IA" />
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png" />
@@ -186,10 +185,7 @@
     .eyebrow {
       display: inline-block;
       padding: 0.35rem 0.875rem;
-      background: var(--color-brand-light);
       color: var(--color-brand-dark);
-      border: 1px solid var(--color-brand-border);
-      border-radius: var(--radius-pill);
       font-size: 0.8rem;
       text-transform: uppercase;
       letter-spacing: 0.12em;
@@ -546,6 +542,62 @@
         transition-duration: 0.01ms !important;
       }
     }
+
+    /* ── Home v2: hero CTA secundario y textos de apoyo ── */
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .hero-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      border: 2px solid rgb(255 255 255 / 70%);
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+    }
+
+    .hero-cta-secondary:hover,
+    .hero-cta-secondary:focus-visible {
+      background: rgb(255 255 255 / 12%);
+      border-color: #fff;
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero-cta-secondary {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .prob-card .svc-detail {
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+
+    .demos .sys-card {
+      background: #fff;
+    }
+
+    .yulia-bio {
+      margin: 0 0 0.9rem;
+      color: var(--color-text);
+      line-height: 1.65;
+    }
+
+    .final-cta .section-sub+.section-sub {
+      margin-top: 0;
+    }
   </style>
   <link rel="preload" href="style-v2.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
@@ -561,7 +613,10 @@
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["LocalBusiness","MedicalBusiness","ProfessionalService"],
+        "@type": [
+          "LocalBusiness",
+          "ProfessionalService"
+        ],
         "@id": "https://cirujanadigital.com/#organization",
         "name": "Cirujana Digital",
         "alternateName": "CirujanaDigital",
@@ -569,13 +624,13 @@
         "logo": {
           "@type": "ImageObject",
           "url": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
-          "width": 300, "height": 80
+          "width": 300,
+          "height": 80
         },
         "image": "https://cirujanadigital.com/img/og-image.webp",
-        "description": "Cirujana Digital diseña e implementa infraestructura digital médica para consultorios privados y clínicas en LATAM y España. Incluye captación de pacientes mediante SEO y Google Business Profile, automatización de recepción con Aurora para WhatsApp, sistema de reducción de ausencias y presencia en motores de respuesta con inteligencia artificial.",
-        "slogan": "Infraestructura digital para que su consultorio funcione.",
-        "foundingDate": "2020",
-        "priceRange": "$$$",
+        "description": "Cirujana Digital diseña e implementa infraestructura digital: integraciones, automatización con inteligencia artificial, desarrollo web, SEO técnico y GEO/AEO, para profesionales, clínicas y empresas en LATAM y España.",
+        "slogan": "Tecnología que trabaja como un sistema.",
+        "foundingDate": "2026",
         "telephone": "+54-9-11-7619-9680",
         "email": "info@cirujanadigital.com",
         "address": {
@@ -584,37 +639,67 @@
           "addressCountry": "AR"
         },
         "areaServed": [
-          {"@type":"Country","name":"Argentina"},
-          {"@type":"Country","name":"México"},
-          {"@type":"Country","name":"Chile"},
-          {"@type":"Country","name":"España"},
-          {"@type":"Country","name":"Colombia"},
-          {"@type":"Country","name":"Ecuador"},
-          {"@type":"Country","name":"Uruguay"},
-          {"@type":"Country","name":"Panamá"}
+          {
+            "@type": "Country",
+            "name": "Argentina"
+          },
+          {
+            "@type": "Country",
+            "name": "México"
+          },
+          {
+            "@type": "Country",
+            "name": "Chile"
+          },
+          {
+            "@type": "Country",
+            "name": "España"
+          },
+          {
+            "@type": "Country",
+            "name": "Colombia"
+          },
+          {
+            "@type": "Country",
+            "name": "Ecuador"
+          },
+          {
+            "@type": "Country",
+            "name": "Uruguay"
+          },
+          {
+            "@type": "Country",
+            "name": "Panamá"
+          }
         ],
-        "contactPoint": [{
-          "@type": "ContactPoint",
-          "contactType": "customer support",
-          "telephone": "+54-9-11-7619-9680",
-          "availableLanguage": "Spanish"
-        }],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "telephone": "+54-9-11-7619-9680",
+            "availableLanguage": "Spanish"
+          }
+        ],
         "sameAs": [
           "https://instagram.com/cirujanadigital",
           "https://web.facebook.com/cirujanadigital",
           "https://linkedin.com/in/yulia-monti"
         ],
-        "founder": {"@id":"https://cirujanadigital.com/#yulia-monti"}
+        "founder": {
+          "@id": "https://cirujanadigital.com/#yulia-monti"
+        }
       },
       {
         "@type": "Person",
         "@id": "https://cirujanadigital.com/#yulia-monti",
         "name": "Yulia Monti",
-        "jobTitle": "Especialista en infraestructura digital médica para consultorios privados en LATAM y España",
-        "description": "Yulia Monti es instrumentadora quirúrgica con 15 años de experiencia clínica en Argentina y fundadora de Cirujana Digital.",
+        "jobTitle": "Desarrolladora full-stack especializada en infraestructura digital, automatización e inteligencia artificial",
+        "description": "Yulia Monti es desarrolladora full-stack y fundadora de Cirujana Digital. Tiene 15 años de experiencia como instrumentadora quirúrgica en Argentina.",
         "url": "https://cirujanadigital.com/sobre-yulia/",
         "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
-        "worksFor": {"@id":"https://cirujanadigital.com/#organization"},
+        "worksFor": {
+          "@id": "https://cirujanadigital.com/#organization"
+        },
         "sameAs": [
           "https://www.instagram.com/cirujanadigital",
           "https://web.facebook.com/cirujanadigital",
@@ -626,73 +711,11 @@
         "@id": "https://cirujanadigital.com/#website",
         "url": "https://cirujanadigital.com",
         "name": "Cirujana Digital",
-        "description": "Infraestructura digital médica para consultorios privados en LATAM y España.",
-        "publisher": {"@id":"https://cirujanadigital.com/#organization"},
+        "description": "Infraestructura digital, desarrollo web, automatización e inteligencia artificial para profesionales, clínicas y empresas en LATAM y España.",
+        "publisher": {
+          "@id": "https://cirujanadigital.com/#organization"
+        },
         "inLanguage": "es"
-      }
-    ]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Qué es la infraestructura digital médica?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "La infraestructura digital médica es el conjunto de sistemas que permiten a un consultorio privado captar pacientes en línea, responder consultas de forma automática, confirmar turnos y reducir ausencias. Incluye la página web médica, el perfil de Google Maps, la automatización de WhatsApp, el SEO local y la presencia en motores de respuesta con inteligencia artificial como ChatGPT, Gemini y Perplexity."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué hace Cirujana Digital?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Cirujana Digital diseña e implementa sistemas digitales orientados a los problemas específicos del consultorio médico privado: que los pacientes encuentren al médico cuando buscan su especialidad, que las consultas entrantes reciban respuesta aunque el médico esté en consulta, que los turnos agendados se confirmen y que las ausencias se reduzcan. Yulia Monti, su fundadora, tiene 15 años de experiencia como instrumentadora quirúrgica."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué incluye el Sistema de Activación Digital?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El Sistema de Activación Digital incluye página web médica optimizada para velocidad y SEO local, Google Business Profile configurado y verificado, WhatsApp Business con automatización básica de recepción, y SEO local activado para la especialidad y ciudad del médico. Se entrega en 7 días hábiles o se reembolsa el total. Precio: USD 400."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué hace Aurora?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Aurora es la primera capa de automatización operativa del consultorio en WhatsApp. Responde consultas frecuentes de pacientes, captura solicitudes de turno, clasifica conversaciones según su urgencia, detecta situaciones que requieren atención humana y deriva al médico o su equipo cuando es necesario. Funciona de forma continua sin intervención del médico."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué hace el Sistema Anti Ausencias?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El Sistema Anti Ausencias reduce las ausencias no justificadas en la agenda del consultorio. Detecta cancelaciones con anticipación suficiente para que el médico pueda reasignar el horario, confirma asistencia automáticamente y protege la facturación de cada turno agendado."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿El diagnóstico de presencia digital tiene costo?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El diagnóstico de presencia digital es gratuito. Revisa los cinco puntos críticos de la infraestructura digital del consultorio y entrega recomendaciones concretas. No implica ninguna contratación. Responde Yulia directamente."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Necesito tener página web para trabajar con Cirujana Digital?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. Se puede comenzar desde cero con el Sistema de Activación Digital. Si ya existe una página web, el diagnóstico identifica qué está fallando y qué puede mejorarse. El primer paso recomendado es siempre el diagnóstico gratuito."
-        }
       }
     ]
   }
@@ -716,28 +739,29 @@
       <canvas id="particleCanvas" aria-hidden="true" role="presentation"></canvas>
       <div class="hero-inner">
         <div class="hero-text">
-          <div class="hero-badge" aria-label="Especialización en salud digital para LATAM y España">
-            Salud digital · LATAM &amp; España
+          <div class="hero-badge" aria-label="Infraestructura digital para LATAM y España">
+            Infraestructura digital · LATAM &amp; España
           </div>
           <h1 id="hero-title" class="hero-title">
-            Sus pacientes lo buscan en Google
-            <span class="hl">y encuentran a otro médico.</span>
+            Tecnología que trabaja
+            <span class="hl">como un sistema.</span>
           </h1>
           <div class="hero-sub">
-            <p>Diseñamos e implementamos la infraestructura digital que hace funcionar un consultorio privado moderno:
-              que sus pacientes lo encuentren, reciban respuesta, confirmen su turno y regresen.</p>
+            <p>Diseñamos, desarrollamos y optimizamos sistemas digitales para profesionales, clínicas y empresas. Desde
+              sitios web de alto rendimiento y posicionamiento en buscadores e IA hasta automatizaciones, integraciones
+              y soluciones inteligentes para optimizar procesos.</p>
+            <p>Tecnología a medida, arquitectura definida y rigor técnico en cada implementación.</p>
           </div>
           <div class="hero-cta">
-            <a href="diagnostico/" class="hero-cta-primary"
-              aria-label="Ver si Google encuentra su consultorio — diagnóstico gratuito">
-              Ver si Google lo encuentra →
+            <a href="https://calendly.com/cirujanadigital/30min" class="hero-cta-primary" target="_blank"
+              rel="noopener noreferrer">
+              Evaluar mi proyecto
             </a>
-            <p class="hero-cta-microcopy">7 preguntas · 3 min · sin email, sin registro</p>
+            <a href="#demos" class="hero-cta-secondary">Ver demostraciones</a>
           </div>
-          <div class="hero-trust" aria-label="Credenciales verificables">
-            <span class="hero-trust-item">15 años en quirófanos · exclusiva salud</span>
-            <span class="hero-trust-item">Sistema activo en 7 días</span>
-            <span class="hero-trust-item">Mencionada por ChatGPT, Gemini y Google AI</span>
+          <div class="hero-trust" aria-label="Credenciales">
+            <span class="hero-trust-item">15 años en quirófanos · rigor de protocolo</span>
+            <span class="hero-trust-item">Desarrollo, infraestructura digital, automatización e IA</span>
           </div>
         </div>
         <div class="hero-visual" aria-hidden="true">
@@ -746,268 +770,223 @@
             width="400" height="500" loading="eager" fetchpriority="high" decoding="sync" />
           <div class="hero-caption">
             <strong>Yulia Monti</strong>
-            15 años en quirófano <br> Presencia digital exclusiva para el sector salud
+            Fundadora · Cirujana Digital <br> Infraestructura digital con rigor de quirófano
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 2. PROBLEMAS -->
-    <section class="problems" aria-labelledby="problems-title">
+    <!-- 2. QUÉ PODEMOS RESOLVER -->
+    <section class="problems" id="soluciones" aria-labelledby="solutions-title">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">¿Le resulta familiar?</span>
-          <h2 id="problems-title" class="title-cd">
-            Problemas que el consultorio privado
-            <span class="accent">resuelve con dificultad</span>
+          <span class="section-label">Soluciones</span>
+          <h2 id="solutions-title" class="title-cd">
+            Un problema digital requiere
+            <span class="accent">algo más que una herramienta.</span>
           </h2>
           <p class="section-sub">
-            Son problemas operativos concretos. Cada uno tiene solución. El diagnóstico identifica cuáles aplican en su
-            caso.
+            Cada organización tiene necesidades diferentes. Diseñamos soluciones que conectan tecnología, visibilidad y
+            procesos para construir una infraestructura digital coherente, eficiente y sostenible.
           </p>
         </div>
         <div class="problems-grid">
           <div class="prob-card">
-            <h3>No aparece cuando lo buscan</h3>
-            <p>Un paciente escribe su especialidad y ciudad en Google. Aparecen tres médicos. Usted no es uno de ellos.
-              Ese paciente no va a llamarlo.</p>
+            <h3>01. Integraciones e inteligencia artificial aplicada</h3>
+            <p>Conectamos plataformas, bases de datos y canales de comunicación. Desarrollamos soluciones con IA para
+              clasificar consultas, procesar información, asistir operaciones y derivar tareas a personas cuando
+              corresponde.</p>
+            <p class="svc-detail">Arquitectura de integraciones, validación, control de errores y trazabilidad.</p>
           </div>
           <div class="prob-card">
-            <h3>Los mensajes se acumulan sin respuesta</h3>
-            <p>Los pacientes escriben por WhatsApp fuera del horario de consulta. Cuando usted puede responder, varios
-              ya eligieron otra opción.</p>
+            <h3>02. Automatización de procesos</h3>
+            <p>Diseñamos flujos que reducen tareas manuales, conectan operaciones y optimizan procesos administrativos
+              y comerciales.</p>
+            <p class="svc-detail">Automatizaciones con n8n, APIs, webhooks y herramientas de integración.</p>
           </div>
           <div class="prob-card">
-            <h3>Turnos que no se presentan</h3>
-            <p>Huecos en la agenda que estaban ocupados. Pacientes que olvidaron, que no confirmaron, que nadie recordó.
-              Tiempo clínico perdido sin recuperación posible.</p>
+            <h3>03. Desarrollo web e infraestructura digital</h3>
+            <p>Sitios web corporativos, landing pages y plataformas digitales diseñadas para ofrecer velocidad,
+              accesibilidad, seguridad y una experiencia de usuario optimizada.</p>
+            <p class="svc-detail">Arquitectura técnica, desarrollo a medida, WPO y optimización continua.</p>
           </div>
           <div class="prob-card">
-            <h3>Presencia digital fragmentada</h3>
-            <p>Una web que no carga, un perfil de Google incompleto, un WhatsApp sin configurar. Cada punto roto es un
-              paciente que no avanza hacia el turno.</p>
-          </div>
-          <div class="prob-card">
-            <h3>Pacientes que abandonan por lentitud</h3>
-            <p>Si su web tarda más de 3 segundos en cargar desde el celular, la mitad de los visitantes se va antes de
-              leer una palabra.</p>
+            <h3>04. SEO técnico y posicionamiento en buscadores e IA (GEO/AEO)</h3>
+            <p>Optimizamos la estructura, el contenido y el rendimiento de los sitios para facilitar su rastreo,
+              comprensión e indexación en buscadores. Preparamos la presencia digital de marcas y profesionales para
+              mejorar su comprensión y visibilidad en motores de respuesta basados en inteligencia artificial.</p>
+            <p class="svc-detail">SEO técnico, datos estructurados, SEO local, entidades y contenido semántico.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- 3. RECORRIDO DEL PACIENTE -->
+    <!-- 3. EJEMPLOS DE APLICACIÓN -->
+    <section class="systems" aria-labelledby="systems-title">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Ejemplos de aplicación</span>
+          <h2 id="systems-title" class="title-cd">
+            Tecnología aplicada
+            <span class="accent">a problemas concretos.</span>
+          </h2>
+          <p class="section-sub">
+            No implementamos tecnología por tendencia. Evaluamos cada necesidad, definimos una arquitectura y
+            desarrollamos la solución adecuada para el proceso que se busca mejorar.
+          </p>
+        </div>
+        <div class="systems-grid">
+          <div class="sys-card">
+            <h3>Atención y gestión de consultas por WhatsApp</h3>
+            <p class="sys-problem">Sistemas de recepción que responden preguntas frecuentes, recopilan información,
+              clasifican consultas y derivan a una persona cuando corresponde.</p>
+            <a href="servicios/recepcionista-virtual-medica/" class="sys-card__link">
+              <svg width="12" height="12" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+              Ver demostración
+            </a>
+          </div>
+          <div class="sys-card">
+            <h3>Automatización e integración de procesos</h3>
+            <p class="sys-problem">Flujos que conectan herramientas y plataformas, automatizan tareas administrativas y
+              reducen operaciones manuales repetitivas.</p>
+            <a href="servicios/" class="sys-card__link">
+              <svg width="12" height="12" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+              Conocer soluciones
+            </a>
+          </div>
+          <div class="sys-card">
+            <h3>Desarrollo web y posicionamiento digital</h3>
+            <p class="sys-problem">Sitios web optimizados para velocidad, experiencia de usuario, SEO técnico y
+              posicionamiento en motores de búsqueda y respuesta con IA.</p>
+            <a href="servicios/" class="sys-card__link">
+              <svg width="12" height="12" aria-hidden="true">
+                <use href="#icon-arrow" />
+              </svg>
+              Ver servicios
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MID CTA eliminado-->
+
+
+    <!-- 4. MÉTODO DE TRABAJO -->
     <section class="what-section" aria-labelledby="how-title">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">El recorrido del paciente</span>
+          <span class="section-label">Metodología</span>
           <h2 id="how-title" class="title-cd">
-            Cómo un paciente encuentra a su médico
-            <span class="accent">y decide contactarlo</span>
+            Protocolo antes
+            <span class="accent">que código.</span>
           </h2>
           <p class="section-sub">
-            El paciente no llama directamente. Primero busca, evalúa y solo entonces contacta. Cada paso necesita
-            funcionar.
+            El rigor del quirófano aplicado al desarrollo tecnológico: cada etapa tiene un alcance definido, criterios
+            de aceptación y un registro de lo verificado.
           </p>
         </div>
         <div class="what-grid">
           <div class="what-item">
             <div class="what-item__num" aria-hidden="true">01</div>
-            <h3>Busca en Google</h3>
-            <p>Escribe su especialidad y ciudad. Si el perfil de Google Maps no está configurado correctamente, usted no
-              aparece en ese resultado.</p>
+            <h3>Especificación</h3>
+            <p>Definimos el problema, alcance, exclusiones, entradas, salidas y criterios de aceptación antes de
+              comenzar.</p>
           </div>
           <div class="what-item">
             <div class="what-item__num" aria-hidden="true">02</div>
-            <h3>Evalúa el perfil</h3>
-            <p>Revisa horarios, reseñas, dirección y foto. Un perfil incompleto o sin actividad reciente genera
-              desconfianza antes de que el paciente llegue a su web.</p>
+            <h3>Diseño</h3>
+            <p>Establecemos la arquitectura, los componentes, los datos, las integraciones, los permisos y el manejo de
+              errores.</p>
           </div>
           <div class="what-item">
             <div class="what-item__num" aria-hidden="true">03</div>
-            <h3>Entra a la web</h3>
-            <p>Si carga lento o no comunica qué hace usted y por qué elegirlo, el paciente vuelve atrás. No hay segunda
-              oportunidad en ese momento.</p>
+            <h3>Implementación y pruebas</h3>
+            <p>Construimos lo especificado y verificamos su funcionamiento mediante pruebas técnicas y funcionales.</p>
           </div>
           <div class="what-item">
             <div class="what-item__num" aria-hidden="true">04</div>
-            <h3>Escribe por WhatsApp</h3>
-            <p>Es el canal de primer contacto en LATAM. Si no hay respuesta en los primeros minutos, el paciente escribe
-              al siguiente médico en la lista.</p>
+            <h3>Documentación y entrega</h3>
+            <p>Documentamos qué se implementó, qué se probó, cómo funciona, qué riesgos quedan y cuáles son los próximos
+              pasos.</p>
           </div>
-        </div>
-        <div class="what-cta">
-          <a href="diagnostico/" class="what-cta__link">
-            ¿Cuál de estos 4 puntos está fallando en su caso? Ver diagnóstico →
-          </a>
         </div>
       </div>
     </section>
 
-    <!-- 4. SISTEMAS DISPONIBLES  -->
-    <section class="systems" aria-labelledby="systems-title">
+    <!-- 5. DEMOSTRACIONES -->
+    <section class="demos" id="demos" aria-labelledby="demos-title">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Sistemas disponibles</span>
-          <h2 id="systems-title" class="title-cd">
-            Qué resuelve cada sistema
+          <span class="section-label">Laboratorio digital</span>
+          <h2 id="demos-title" class="title-cd">
+            Vea cómo funciona
+            <span class="accent">la tecnología.</span>
           </h2>
           <p class="section-sub">
-            Cada sistema responde a un problema operativo concreto del consultorio. Se pueden contratar de forma
-            independiente o como parte de la infraestructura completa.
+            Desarrollamos demostraciones para mostrar nuestra metodología, arquitectura y capacidad de implementación.
+            Los ejemplos utilizan datos y perfiles ficticios y no representan necesariamente instalaciones productivas.
           </p>
         </div>
-        <!-- SERVICIO ESTRELLA: Presencia en IA -->
-        <div class="systems-featured" aria-labelledby="featured-ia-title">
-          <div class="systems-featured__content">
-            <span class="systems-featured__badge">Visibilidad en Inteligencia Artificial</span>
-            <h3 id="featured-ia-title" class="systems-featured__title">
-              Hoy Google responde <span class="accent">antes de que el paciente visite una web.</span>
-            </h3>
-            <p class="systems-featured__lead">
-              Cuando alguien busca un médico, una especialidad o una clínica, cada vez es más frecuente que la
-              respuesta aparezca generada por inteligencia artificial antes de los resultados tradicionales.
-              Lo mismo ocurre en <strong>ChatGPT, Gemini y Perplexity</strong>.
-            </p>
-            <p class="systems-featured__lead">
-              Cirujana Digital aparece en consultas relacionadas con presencia digital médica en LATAM —
-              no por ser la empresa más grande, sino por haber construido una presencia que los motores de
-              inteligencia artificial pueden entender, interpretar y citar como referencia.
-            </p>
-            <p class="systems-featured__note">
-              La persona que aparece primero no siempre es la mejor. Muchas veces es quien construyó mejor
-              su presencia digital. La pregunta es: cuando alguien busque su especialidad, ¿la inteligencia
-              artificial lo mencionará a usted o a otro profesional?
-            </p>
-            <a href="servicios/auditoria-ia-plan-presencia/" class="systems-featured__cta">
-              Ver qué incluye la auditoría
-              <svg width="13" height="13" aria-hidden="true">
-                <use href="#icon-arrow" />
-              </svg>
-            </a>
-          </div>
-          <div class="systems-featured__panel">
-            <p class="systems-featured__panel-label">La auditoría revisa</p>
-            <div class="systems-featured__row">
-              <span class="systems-featured__row-mark">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <use href="#icon-check" />
-                </svg>
-              </span>
-              <span class="systems-featured__row-text">
-                <strong>Cómo aparece su consultorio</strong> en ChatGPT, Gemini y Perplexity hoy
-              </span>
-            </div>
-            <div class="systems-featured__row">
-              <span class="systems-featured__row-mark">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <use href="#icon-check" />
-                </svg>
-              </span>
-              <span class="systems-featured__row-text">
-                <strong>Presencia en Google AI Overviews</strong> para su especialidad y ciudad
-              </span>
-            </div>
-            <div class="systems-featured__row">
-              <span class="systems-featured__row-mark">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <use href="#icon-check" />
-                </svg>
-              </span>
-              <span class="systems-featured__row-text">
-                <strong>Informe de problemas encontrados</strong> con prioridad de corrección
-              </span>
-            </div>
-            <div class="systems-featured__row">
-              <span class="systems-featured__row-mark">
-                <svg viewBox="0 0 16 16" fill="none">
-                  <use href="#icon-check" />
-                </svg>
-              </span>
-              <span class="systems-featured__row-text">
-                <strong>Plan de corrección concreto</strong> para ser citado como referencia
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div class="systems-divider">Sistemas complementarios</div>
-
         <div class="systems-grid">
           <div class="sys-card">
-            <span class="sys-card__tag">Captación</span>
-            <h3>Sistema de Activación Digital</h3>
-            <p class="sys-problem">Sus pacientes no lo encuentran online.<br>Activa los cuatro puntos del recorrido del
-              paciente: perfil de Google Maps, página web médica, WhatsApp Business y SEO local. Todo configurado y
-              funcionando en 7 días hábiles.</p>
-            <p class="sys-card__price">Desde USD 400 · único pago</p>
-            <a href="servicios/pack-presencia/" class="sys-card__link">
-              <svg width="12" height="12" aria-hidden="true">
-                <use href="#icon-arrow" />
-              </svg>
-              Ver qué incluye
-            </a>
-          </div>
-          <div class="sys-card">
-            <span class="sys-card__tag">Recepción</span>
-            <h3>Aurora — Automatización Clínica para WhatsApp</h3>
-            <p class="sys-problem">Los mensajes se acumulan sin respuesta.<br>Aurora es la primera capa de
-              automatización operativa del consultorio en WhatsApp. Responde consultas frecuentes, captura solicitudes
-              de turno, clasifica conversaciones, detecta situaciones prioritarias y deriva a la persona adecuada.
-              Funciona sin intervención del médico.</p>
-            <p class="sys-card__price">Desde USD 250 instalación + USD 50/mes</p>
+            <h3>Recepción por WhatsApp con IA</h3>
+            <p class="sys-problem">Una conversación de ejemplo que muestra el recorrido desde la consulta inicial hasta
+              la clasificación y derivación a una persona.</p>
             <a href="servicios/recepcionista-virtual-medica/" class="sys-card__link">
               <svg width="12" height="12" aria-hidden="true">
                 <use href="#icon-arrow" />
               </svg>
-              Ver cómo funciona Aurora
+              Ver demostración
             </a>
           </div>
           <div class="sys-card">
-            <span class="sys-card__tag">Agenda</span>
-            <h3>Sistema Anti Ausencias</h3>
-            <p class="sys-problem">Huecos en la agenda que deberían estar ocupados.<br>Detecta cancelaciones con
-              anticipación suficiente para que el médico pueda reasignar el horario. Confirma asistencia, reduce
-              ausencias no justificadas y protege el valor de cada turno agendado.</p>
-            <p class="sys-card__price">Desde USD 250 instalación + USD 85/mes</p>
-            <a href="servicios/sistema-anti-no-shows-clinicas/" class="sys-card__link">
+            <h3>Sitios web de ejemplo</h3>
+            <p class="sys-problem">Proyectos que muestran desarrollo web, rendimiento, arquitectura SEO y datos
+              estructurados.</p>
+            <a href="demos-medicas/" class="sys-card__link">
               <svg width="12" height="12" aria-hidden="true">
                 <use href="#icon-arrow" />
               </svg>
-              Ver cómo funciona
+              Ver sitios de ejemplo
             </a>
           </div>
         </div>
       </div>
     </section>
-    <!-- MID CTA -->
-    <div class="mid-cta" aria-label="Diagnóstico de presencia digital gratuito">
-      <div class="container">
-        <p>Ver todos los servicios</p>
-        <a href="servicios/" class="btn btn-primary">
-          AQUÍ →
-        </a>
-      </div>
-    </div>
+
     <!-- 6. SOBRE YULIA -->
     <section class="yulia" aria-labelledby="yulia-title">
       <div class="container">
+        <div class="section-header">
+          <span class="section-label">Dirección y experiencia</span>
+          <h2 id="yulia-title" class="title-cd">
+            Tecnología con criterio clínico
+            <span class="accent">y visión técnica.</span>
+          </h2>
+        </div>
         <div class="yulia-inner">
           <img src="img/yulia-monti.webp"
             alt="Yulia Monti — instrumentadora quirúrgica con 15 años en Argentina, fundadora de Cirujana Digital"
             width="130" height="130" loading="lazy" decoding="async" class="yulia-photo" />
           <div class="yulia-text">
-            <p class="yulia-name" id="yulia-title">Yulia Monti</p>
+            <p class="yulia-name">Yulia Monti</p>
             <p class="yulia-role">Fundadora · Cirujana Digital</p>
+            <p class="yulia-bio">Desarrolladora full-stack especializada en infraestructura digital, automatización e
+              integraciones con inteligencia artificial, SEO técnico y posicionamiento GEO/AEO.</p>
             <div class="yulia-facts">
-              <span class="yulia-fact">15 años como instrumentadora quirúrgica en Argentina</span>
-              <span class="yulia-fact">Trabaja exclusivamente con profesionales de la salud</span>
-              <span class="yulia-fact">Atiende Argentina, Chile, Colombia, México, Panamá, Uruguay España</span>
-              <span class="yulia-fact">Mencionada por ChatGPT, Gemini y Google AI</span>
+              <span class="yulia-fact">15 años de experiencia como instrumentadora quirúrgica en Argentina</span>
+              <span class="yulia-fact">Trabajo con profesionales, clínicas y empresas de Latinoamérica y España</span>
             </div>
+            <p class="yulia-bio">Combino conocimiento de los entornos clínicos con desarrollo tecnológico para diseñar
+              sistemas digitales donde la precisión, la eficiencia y la confianza son fundamentales.</p>
             <p class="yulia-quote">
-              "Pasé 15 años adentro del sistema de salud. Conozco el flujo real del consultorio: cómo entra un paciente,
-              qué le genera confianza, cuándo decide no volver. Eso informa cada decisión de diseño del sistema."
+              “Pasé 15 años en quirófano, donde cada paso tiene un protocolo y cada error deja registro. Aplico esa
+              disciplina al software: especificar antes de construir, probar antes de entregar y documentar lo que se
+              hizo.”
             </p>
             <a href="sobre-yulia/" class="yulia-link">
               <svg width="12" height="12" aria-hidden="true">
@@ -1025,10 +1004,10 @@
       <div class="container--md">
 
         <div class="section-header">
-          <span class="section-label">Trabajo real documentado</span>
+          <span class="section-label">Experiencia documentada</span>
           <h2 id="cases-title" class="title-cd">
             Lo que dicen quienes trabajaron
-            <span class="accent">con Cirujana Digital</span>
+            <span class="accent">con Cirujana Digital.</span>
           </h2>
         </div>
 
@@ -1094,144 +1073,44 @@
           </div>
 
         </div><!-- /cases-grid -->
-        <div class="cases-mini-row" aria-label="Otros clientes reales, fuera del sector salud">
+        <div class="cases-mini-row" aria-label="Otros clientes">
           <div class="cases-mini">
             <p class="cases-mini__text">"De 48 a 100 en Lighthouse. La web ahora carga en segundos, no en minutos."</p>
-            <p class="cases-mini__author">La Góndola Hostería · Ecuador <span class="cases-mini__tag">Otro rubro</span>
-            </p>
+            <p class="cases-mini__author">La Góndola Hostería · Ecuador · Optimización de un sitio WordPress</p>
           </div>
           <div class="cases-mini">
             <p class="cases-mini__text">"Migramos de WordPress a un sitio estático bilingüe, 90+ en Lighthouse mobile y
-              schema sin errores. Reseñas reales: 4.5★ con 370 opiniones."</p>
-            <p class="cases-mini__author">Hostería Oceanic · Puerto López, Ecuador <span class="cases-mini__tag">Otro
-                rubro</span></p>
+              schema sin errores. Reseñas reales: 4.5★ con más de 370 opinionen en Google."</p>
+            <p class="cases-mini__author">Hostería Oceanic · Puerto López, Ecuador</p>
           </div>
         </div>
+        <!-- TESTIMONIOS PENDIENTES: cuando La Góndola y Hostería Oceanic entreguen su testimonio y la autorización,
+             reemplazar cada .cases-mini por una .testimonial-card--featured (igual que la de María José Guerra Valdés). -->
       </div>
     </section>
 
-    <!-- 8. DEMOS -->
-    <section class="demos" id="demos" aria-labelledby="demos-title">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-label">Ejemplos por especialidad</span>
-          <h2 id="demos-title" class="title-cd">
-            Así funciona el sistema
-            <span class="accent">en su especialidad</span>
-          </h2>
-          <p class="section-sub">
-            Cada demo está construida para la lógica de búsqueda del paciente de esa especialidad.
-          </p>
-        </div>
-        <div class="demos-grid">
-          <article class="demo-card">
-            <a href="pagina-web-para-cardiologo/" class="demo-card__img-wrap"
-              aria-label="Ver demo: Sistema para Cardiólogo">
-              <img src="img/mockups/cardiologia.webp"
-                alt="Sistema de captación para consultorio de cardiología — demo funcional" width="720" height="450"
-                loading="lazy" decoding="async" class="demo-card__img" />
-              <div class="demo-card__overlay" aria-hidden="true">
-                <span>
-                  <svg width="14" height="14" aria-hidden="true">
-                    <use href="#icon-arrow" />
-                  </svg>
-                  Ver demo
-                </span>
-              </div>
-            </a>
-            <div class="demo-card__body">
-              <span class="demo-card__spec">Cardiología</span>
-              <h3 class="demo-card__title">Sistema para Cardiólogo</h3>
-              <p class="demo-card__desc">Perfil de Google configurado para búsquedas de cardiología local. Web orientada
-                a generar confianza antes del primer contacto.</p>
-              <a href="pagina-web-para-cardiologo/" class="demo-card__cta">
-                <svg width="12" height="12" aria-hidden="true">
-                  <use href="#icon-arrow" />
-                </svg>
-                Ver cómo funciona para mi especialidad
-              </a>
-            </div>
-          </article>
-          <article class="demo-card">
-            <a href="pagina-web-dermatologa/" class="demo-card__img-wrap"
-              aria-label="Ver demo: Sistema para Dermatóloga">
-              <img src="img/mockups/dermatologia.webp"
-                alt="Sistema de captación para consultorio de dermatología — demo funcional" width="720" height="450"
-                loading="lazy" decoding="async" class="demo-card__img" />
-              <div class="demo-card__overlay" aria-hidden="true">
-                <span>
-                  <svg width="14" height="14" aria-hidden="true">
-                    <use href="#icon-arrow" />
-                  </svg>
-                  Ver demo
-                </span>
-              </div>
-            </a>
-            <div class="demo-card__body">
-              <span class="demo-card__spec">Dermatología</span>
-              <h3 class="demo-card__title">Sistema para Dermatóloga</h3>
-              <p class="demo-card__desc">Diferenciación entre consultas clínicas y estéticas desde el primer contacto.
-                WhatsApp configurado para filtrar correctamente.</p>
-              <a href="pagina-web-dermatologa/" class="demo-card__cta">
-                <svg width="12" height="12" aria-hidden="true">
-                  <use href="#icon-arrow" />
-                </svg>
-                Ver cómo funciona para mi especialidad
-              </a>
-            </div>
-          </article>
-          <article class="demo-card">
-            <a href="pagina-web-para-obstetra/" class="demo-card__img-wrap"
-              aria-label="Ver demo: Sistema para Obstetra">
-              <img src="img/mockups/obstetricia.webp"
-                alt="Sistema de captación para consultorio de obstetricia — demo funcional" width="720" height="450"
-                loading="lazy" decoding="async" class="demo-card__img" />
-              <div class="demo-card__overlay" aria-hidden="true">
-                <span>
-                  <svg width="14" height="14" aria-hidden="true">
-                    <use href="#icon-arrow" />
-                  </svg>
-                  Ver demo
-                </span>
-              </div>
-            </a>
-            <div class="demo-card__body">
-              <span class="demo-card__spec">Obstetricia</span>
-              <h3 class="demo-card__title">Sistema para Obstetra</h3>
-              <p class="demo-card__desc">Comunicación orientada al seguimiento del embarazo. Mapa del consultorio
-                integrado, WhatsApp directo.</p>
-              <a href="pagina-web-para-obstetra/" class="demo-card__cta">
-                <svg width="12" height="12" aria-hidden="true">
-                  <use href="#icon-arrow" />
-                </svg>
-                Ver cómo funciona para mi especialidad
-              </a>
-            </div>
-          </article>
-        </div>
-        <div class="demos-more">
-          <a href="demos-medicas/">Ver todos los ejemplos por especialidad →</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- 10. CTA FINAL -->
+    <!-- 7. CTA FINAL -->
     <section class="final-cta" id="contacto" aria-labelledby="final-cta-title">
       <div class="container--sm">
         <h2 id="final-cta-title" class="title-cd">
-          El primer paso es entender
-          <span class="accent">qué está fallando hoy.</span>
+          El primer paso es
+          <span class="accent">definir qué resolver.</span>
         </h2>
+        <p class="section-sub" style="margin-bottom:1rem">
+          Antes de implementar una tecnología, evaluamos el problema, analizamos el proceso e identificamos qué solución
+          tiene sentido.
+        </p>
         <p class="section-sub" style="margin-bottom:2rem">
-          El diagnóstico revisa los cinco puntos críticos de su presencia digital. Entrega un informe con los problemas
-          encontrados y el primer paso concreto para resolverlos.
+          Cuéntenos qué necesita desarrollar, integrar, automatizar u optimizar. Evaluamos juntos la viabilidad técnica
+          y los próximos pasos.
         </p>
         <div class="final-cta-actions">
-          <a href="diagnostico/" class="final-cta-btn">
-            Empezar mi diagnóstico gratuito →
+          <a href="https://calendly.com/cirujanadigital/30min" class="final-cta-btn" target="_blank"
+            rel="noopener noreferrer">
+            Evaluar mi proyecto
           </a>
           <a href="servicios/" class="final-cta-secondary">
-            Ver todos los servicios
+            Explorar soluciones
           </a>
         </div>
       </div>

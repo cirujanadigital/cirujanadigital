@@ -24,19 +24,7 @@
   RewriteRule ^aviso-legal/?$                /terminos.html  [R=301,L]
   RewriteRule ^terminos-y-condiciones/?$     /terminos.html  [R=301,L]
   RewriteRule ^politica-privacidad/?$        /politicas.html [R=301,L]
-  # Blog: artículo viejo en raíz -> nuevo en /blog/
-  RewriteRule ^cuanto-cuesta-pagina-web-argentina/?$         /blog/cuanto-cuesta-pagina-web-argentina/ [R=301,L]
-  RewriteRule ^landing-page-vs-sitio-web-completo-necesitas/?$ /blog/ [R=301,L]
-  # Blog sin slash -> con slash
-  RewriteRule ^blog$                                         /blog/ [R=301,L]
-  # Páginas de servicios: forzar trailing slash
-  RewriteRule ^pagina-web-para-cardiologo$                   /pagina-web-para-cardiologo/ [R=301,L]
-  RewriteRule ^pagina-web-para-doula$                        /pagina-web-para-doula/      [R=301,L]
-  RewriteRule ^pagina-web-medico-anestesiologo$              /pagina-web-medico-anestesiologo/ [R=301,L]
-  RewriteRule ^pagina-web-para-odontologo$                   /pagina-web-para-odontologo/ [R=301,L]
-  RewriteRule ^pagina-web-para-obstetra$                     /pagina-web-para-obstetra/   [R=301,L]
-  RewriteRule ^diseno-web-para-oftalmologo$                  /diseno-web-para-oftalmologo/ [R=301,L]
-  RewriteRule ^pagina-web-dermatologa$                       /pagina-web-dermatologa/     [R=301,L]
+  
 </IfModule>
 # ==========================================
 # BLOQUEAR CARPETA .git Y SUS CONTENIDOS

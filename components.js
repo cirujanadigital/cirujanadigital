@@ -1,27 +1,6 @@
 (function () {
   'use strict';
 
-  /*    BLOG      */
-  const BLOG_ARTICLES = [
-    {
-      href: '/blog/',
-      label: 'Visitar todos los artículos',
-    },
-  ];
-
-  /*  WEBS MÉDICAS — agregar cada web nueva AL PRINCIPIO. */
-  const WEBS_MEDICAS = [
-    { href: 'https://metododoshas.com', label: 'Nutricionista', external: true },
-    { href: 'clinica-control-peso-glp1/', label: 'GLP1', external: false },
-    { href: '/pagina-web-traumatologo/', label: 'Traumatólogo', external: false },
-    { href: '/pagina-web-para-doula/', label: 'Doula', external: false },
-    { href: '/pagina-web-medico-anestesiologo/', label: 'Anestesiólogo', external: false },
-    { href: '/pagina-web-para-cardiologo/', label: 'Cardiólogo', external: false },
-    { href: '/pagina-web-dermatologa/', label: 'Dermatóloga', external: false },
-    { href: '/pagina-web-para-obstetra/', label: 'Obstetra', external: false },
-    { href: '/pagina-web-para-odontologo/', label: 'Odontólogo', external: false },
-    { href: '/diseno-web-para-oftalmologo/', label: 'Oftalmólogo', external: false },
-  ];
 
   /*   SERVICIOS   */
   const SERVICIOS = [
@@ -127,10 +106,6 @@
         </ul>
       </li>
 
-      <!-- Blog (link directo) -->
-      <li class="nav-item">
-        <a href="blog/" class="nav-link nav-link--blog${blogActive}">Blog</a>
-      </li>
 
       <!-- Recursos ▾ -->
       <li class="nav-item nav-item--dropdown" id="dropResources">
@@ -166,7 +141,6 @@
   function buildFooter() {
     const year = new Date().getFullYear();
 
-    const blogLinks = footerItems(BLOG_ARTICLES.slice(0, 5));
     const serviciosLinks = footerItems(SERVICIOS);
     const websMedLinks = footerItems(WEBS_MEDICAS);
     const recursosLinks = footerItems(RECURSOS);
@@ -250,10 +224,7 @@
           <ul>${websMedLinks}
           </ul>
         </nav>
-        <nav class="footer-column" aria-label="Blog, recursos y contacto">
-          <p class="footer-column-title">Blog</p>
-          <ul>${blogLinks}
-          </ul>
+        <nav class="footer-column" aria-label="Recursos y contacto">
           <p class="footer-column-title footer-column-title--spaced">Recursos gratuitos</p>
           <ul>${recursosLinks}
           </ul>

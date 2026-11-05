@@ -42,7 +42,7 @@ table{width:100%;border-collapse:collapse;font-size:.85rem}th{text-align:left;co
 .m.in{background:#fff;align-self:flex-start;border-top-left-radius:0}.m.out{background:#d9fdd3;align-self:flex-end;border-top-right-radius:0}
 .m .tm{display:block;text-align:right;font-size:.65rem;color:#54656f}
 .note{margin:0 .9rem .9rem;background:var(--w);border-left:4px solid var(--b);border-radius:6px;padding:.55rem .75rem;font-size:.8rem}.note.u{border-color:#d92d20;background:#fff4f2}
-.kan{display:grid;grid-template-columns:repeat(3,minmax(220px,1fr));gap:.9rem;overflow-x:auto;padding-bottom:.5rem}
+.kan{display:grid;grid-template-columns:repeat(2,minmax(220px,1fr));gap:.9rem;overflow-x:auto;padding-bottom:.5rem}
 .col{background:#e7edf2;border-radius:12px;padding:.7rem}.col h2{font-size:.84rem;display:flex;justify-content:space-between;margin-bottom:.15rem}.col p{font-size:.72rem;color:var(--m);margin-bottom:.6rem}
 .k{background:var(--w);border:1px solid var(--l);border-radius:9px;padding:.55rem .7rem;margin-bottom:.45rem;font-size:.82rem}.k small{display:block;color:var(--m)}
 .try{display:grid;grid-template-columns:230px 1fr;gap:1rem;align-items:start}
@@ -60,22 +60,22 @@ table{width:100%;border-collapse:collapse;font-size:.85rem}th{text-align:left;co
   <nav id="nav" aria-label="Secciones">
     <button data-v="resumen">Resumen</button><button data-v="conversaciones">Conversaciones</button><button data-v="oportunidades">Pacientes en proceso</button><button data-v="probar">Probar el agente</button>
   </nav>
-  <p class="legal">Datos de ejemplo con fines ilustrativos. Demo sin conexión real: no usa WhatsApp, no guarda datos y no depende de ningún servidor.</p><a class="back" href="/servicios/recepcionista-virtual-medica/">← Volver al servicio</a><a class="cta" href="https://calendly.com/cirujanadigital/30min" target="_blank" rel="noopener">Agendar videollamada de 30 min</a><p class="legal" style="margin-top:.8rem">Cirujana Digital</p>
+  <p class="legal">Datos de ejemplo con fines ilustrativos. Demo sin conexión real: no usa WhatsApp, no guarda datos y no depende de ningún servidor.</p><a class="back" href="/servicios/recepcionista-virtual-medica/">← Volver al servicio</a><a class="cta" href="https://calendly.com/cirujanadigital/30min" target="_blank" rel="noopener">Evaluar mi proyecto</a><p class="legal" style="margin-top:.8rem">Cirujana Digital</p>
 </aside>
 <main>
 <noscript><p class="banner">Las secciones Conversaciones, Pacientes en proceso y Probar el agente necesitan JavaScript.</p></noscript>
-<p class="banner" role="note"><b>Vista previa de diseño con datos de ejemplo.</b> Pacientes y conversaciones inventados; demo sin conexión real. Las secciones Conversaciones, gráfico por día y Probar el agente están en desarrollo y se definen en el alcance de cada implementación.</p>
+<p class="banner" role="note"><b>Vista previa de diseño con datos de ejemplo.</b> Pacientes y conversaciones inventados; demo sin conexión real. Hoy el panel real incluye Resumen, el listado de pacientes completos y los que quedaron a mitad de camino. Conversaciones, el seguimiento por estados y Probar el agente son diseños en desarrollo y se definen en el alcance de cada implementación.</p>
 
 <section id="resumen" class="on">
-  <h1>Resumen</h1><p class="lead">Lo que Aurora atendió en los últimos 7 días en el WhatsApp del consultorio.</p>
+  <h1>Resumen</h1><p class="lead">Resumen de una semana de ejemplo en el WhatsApp de un consultorio ficticio.</p>
   <div class="kpis">
-    <div class="card kpi"><b>128</b><span>Conversaciones</span></div>
+    <div class="card kpi"><b>65</b><span>Pacientes nuevos</span></div>
     <div class="card kpi"><b>47</b><span>Pacientes con datos completos y enlace de agenda enviado</span></div>
     <div class="card kpi"><b>18</b><span>Quedaron a mitad de camino (faltan datos)</span></div>
     <div class="card kpi u"><b>2</b><span>Mensajes prioritarios avisados al equipo</span></div>
   </div>
-  <div class="card" style="margin-bottom:1.25rem"><h2>Conversaciones por día</h2><div class="bars" id="bars" role="img" aria-label="Conversaciones por día: 14, 19, 16, 22, 18, 25 y 14"></div></div>
-  <div class="card tbl"><h2>Llegaron fuera de horario</h2>
+  <div class="card" style="margin-bottom:1.25rem"><h2>Pacientes nuevos por día</h2><div class="bars" id="bars" role="img" aria-label="Pacientes nuevos por día: 7, 10, 8, 11, 9, 13 y 7"></div></div>
+  <div class="card tbl"><h2>Últimos pacientes</h2>
     <table><thead><tr><th>Paciente</th><th>Motivo</th><th>Llegó</th><th>Estado</th></tr></thead><tbody>
       <tr><td>Marcela Ruiz</td><td>Dolor de rodilla</td><td>Ayer 23:12</td><td><span class="tag y">Enlace enviado</span></td></tr>
       <tr><td>Hugo Paz</td><td>Dolor de pecho</td><td>Hoy 02:31</td><td><span class="tag y">Prioritario · avisado</span></td></tr>
@@ -85,7 +85,7 @@ table{width:100%;border-collapse:collapse;font-size:.85rem}th{text-align:left;co
 </section>
 
 <section id="conversaciones">
-  <h1>Conversaciones</h1><p class="lead">Cada conversación queda ordenada: el equipo ve quién escribió, qué cobertura tiene y por qué consulta.</p>
+  <h1>Conversaciones</h1><p class="lead">Cada conversación queda ordenada: el equipo ve quién escribió, qué cobertura tiene y por qué consulta. Vista en desarrollo: hoy Aurora no guarda el historial de conversaciones; guardarlo requiere definir antes el consentimiento y el criterio legal.</p>
   <div class="inbox"><div class="list" id="list"></div><div class="chat" id="chat"></div></div>
 </section>
 
@@ -95,7 +95,7 @@ table{width:100%;border-collapse:collapse;font-size:.85rem}th{text-align:left;co
 </section>
 
 <section id="probar">
-  <h1>Probar el agente</h1><p class="lead">Elija un mensaje de paciente y vea cómo responde Aurora y qué recibe el equipo. Las respuestas son guionadas: salen siempre iguales. Nada se envía ni se guarda.</p>
+  <h1>Probar el agente</h1><p class="lead">Elija un mensaje de paciente y vea cómo responde Aurora y qué recibe el equipo. Las respuestas son guionadas: salen siempre iguales. Nada se envía ni se guarda. Para probar el agente real, escríbale a la demo de WhatsApp: <a href="https://wa.me/5491178292702?text=hola" target="_blank" rel="noopener" style="color:var(--bd);font-weight:700">Probar Aurora en WhatsApp</a>.</p>
   <div class="try"><div class="cases" id="cases"></div><div class="chat"><header>Aurora · Consultorio del Dr. Ejemplo<small>Simulación</small></header><div class="msgs" id="tmsgs" aria-live="polite"><p class="empty">Elija un caso a la izquierda.</p></div><div id="tnote" aria-live="polite"></div></div></div>
 </section>
 </main>
@@ -114,8 +114,8 @@ const convs=[
   nota:'Equipo notificado: nuevo paciente · OSDE · dolor de rodilla · puntaje 75/100. Sin alerta de urgencia.'},
  {n:'Hugo Paz',h:'Hoy 02:31',p:'Dolor en el pecho y me cuesta respirar',c:'Mensaje prioritario',u:1,m:[
   ['in','Tengo dolor en el pecho desde hace una hora y me cuesta respirar','02:31'],
-  ['out','Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nPara urgencias menores puede comunicarse directamente:\n[teléfono del consultorio]\n\nVoy a notificar al consultorio ahora mismo.','02:31']],
-  nota:'ALERTA enviada al médico: nombre, teléfono, mensaje original y hora.'},
+  ['out','Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nVoy a notificar al consultorio ahora mismo.','02:31']],
+  nota:'ALERTA enviada al médico con nombre, teléfono y hora. Si la ventana de 24 h de WhatsApp está abierta, llega también el mensaje original.'},
  {n:'Silvia Benítez',h:'Dom 10:20',p:'¿Cuánto sale la teleconsulta?',c:'Consulta de precios',m:[
   ['in','¿Cuánto sale la teleconsulta?','10:20'],
   ['out','Honorarios del Dr. Ejemplo:\n\n- Consulta presencial: $60.000 ARS\n- Teleconsulta: $50.000 ARS\n\nFormas de pago: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?','10:20'],['in','Quiero sacar un turno','10:22'],
@@ -133,16 +133,15 @@ let cur=0;
 function drawList(){ $('#list').innerHTML=convs.map((c,i)=>`<button data-i="${i}" aria-current="${i===cur}"><b>${esc(c.n)}<small>${esc(c.h)}</small></b><span>${esc(c.p)}</span></button>`).join('');
  const c=convs[cur];$('#chat').innerHTML=`<header>${esc(c.n)}<small>WhatsApp · ${esc(c.c)}</small></header><div class="msgs">${c.m.map(x=>bubble(x[0],x[1],x[2])).join('')}</div><div class="note ${c.u?'u':''}">${esc(c.nota)}</div>`}
 $('#list').onclick=e=>{const b=e.target.closest('button');if(b){cur=+b.dataset.i;drawList();$('#list [aria-current=true]').focus()}};
-const day=[['L',14],['M',19],['X',16],['J',22],['V',18],['S',25],['D',14]];
-$('#bars').innerHTML=day.map(d=>`<div><em>${d[1]}</em><i style="height:${d[1]*3}px"></i>${d[0]}</div>`).join('');
+const day=[['L',7],['M',10],['X',8],['J',11],['V',9],['S',13],['D',7]];
+$('#bars').innerHTML=day.map(d=>`<div><em>${d[1]}</em><i style="height:${d[1]*6}px"></i>${d[0]}</div>`).join('');
 const cols=[['Completando datos','Aurora está pidiendo nombre, cobertura o motivo',[['Silvia Benítez','Pidió turno · falta el nombre','Dom 10:22'],['Carolina Díaz','Galeno · falta el motivo','Dom 22:05']]],
- ['Enlace de agenda enviado','El paciente elige día y horario',[['Julián Costa','Particular · dolor lumbar','Ayer 21:40'],['Marcela Ruiz','OSDE · dolor de rodilla','Ayer 23:14'],['Tomás Giménez','Swiss Medical · certificado','Ayer 18:02']]],
- ['Seguimiento a las 24 h','Aurora recuerda el enlace una sola vez',[['Elena Ríos','OSDE · control','Sáb 11:30'],['Raúl Sosa','Galeno · dolor de hombro','Mié 20:15']]]];
+ ['Enlace de agenda enviado','El paciente elige día y horario',[['Julián Costa','Particular · dolor lumbar','Ayer 21:40'],['Marcela Ruiz','OSDE · dolor de rodilla','Ayer 23:14'],['Tomás Giménez','Swiss Medical · certificado','Ayer 18:02']]]];
 $('#kan').innerHTML=cols.map(c=>`<div class="col"><h2>${esc(c[0])}<span>${c[2].length}</span></h2><p>${esc(c[1])}</p>${c[2].map(k=>`<div class="k"><b>${esc(k[0])}</b><small>${esc(k[1])}</small><small>${esc(k[2])}</small></div>`).join('')}</div>`).join('');
 const cases=[
  {t:'Quiero un turno',u:'Quiero sacar un turno',r:'Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.',n:'Aurora inicia el pedido de datos. Todavía no se avisa al consultorio.'},
  {t:'Dolor de espalda al pedir turno',pre:[['in','Quiero sacar un turno'],['out','Para agendar su turno con el Dr. Ejemplo necesito algunos datos.\n\nPrimero: su nombre completo.'],['in','Ana Pérez'],['out','Gracias Ana Pérez. Su obra social o prepaga (o escriba particular si abona directo).'],['in','particular'],['out','Perfecto. En pocas palabras, motivo de consulta.']],u:'dolor de espalda',r:'Listo Ana Pérez. Reserve su turno acá:\n'+LINK+'\n\nElija día y horario. Le llega confirmación por email.\n\nCualquier duda, estoy acá.',n:'Dentro del pedido de turno, "dolor de espalda" se registra como motivo. Sin alerta de urgencia. El equipo recibe un aviso de nuevo paciente (puntaje 75/100).'},
- {t:'Dolor de pecho y falta de aire',u:'Tengo dolor de pecho y me falta el aire',r:'Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nPara urgencias menores puede comunicarse directamente:\n[teléfono del consultorio]\n\nVoy a notificar al consultorio ahora mismo.',n:'ALERTA enviada al médico con el mensaje original y la hora.',x:1},
+ {t:'Dolor de pecho y falta de aire',u:'Tengo dolor de pecho y me falta el aire',r:'Entiendo que es urgente.\n\nSi presenta dificultad respiratoria, dolor intenso en el pecho, pérdida de conocimiento o síntomas graves:\n\nLlame al SAME ahora: 107\n\nVoy a notificar al consultorio ahora mismo.',n:'ALERTA enviada al médico con nombre, teléfono y hora. Si la ventana de 24 h de WhatsApp está abierta, llega también el mensaje original.',x:1},
  {t:'¿Atienden OSDE?',u:'¿Atienden OSDE?',r:'El Dr. Ejemplo atiende con:\n\n- OSDE\n- Swiss Medical\n- Galeno\n\nOtra prepaga: consultar cobertura antes de sacar turno.\nParticulares: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?',n:'Respuesta con los datos cargados para el consultorio. Sin aviso al equipo.'},
  {t:'¿Cuánto cuesta la consulta?',u:'¿Cuánto cuesta la consulta?',r:'Honorarios del Dr. Ejemplo:\n\n- Consulta presencial: $60.000 ARS\n- Teleconsulta: $50.000 ARS\n\nFormas de pago: efectivo, transferencia o MercadoPago.\n\n¿Quiere sacar un turno?',n:'Valores de ejemplo. Cada consultorio carga los suyos.'},
  {t:'Quiero hablar con una persona',u:'Quiero hablar con una persona',r:'Entendido. Voy a avisarle al consultorio que quiere hablar con alguien.\n\nLe responden lo antes posible en horario de atención.',n:'Aviso al equipo: el paciente pidió atención humana.'}];
