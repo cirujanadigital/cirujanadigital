@@ -6,15 +6,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Simulador de velocidad web: estime el impacto | Cirujana Digital</title>
-  <meta name="description" content="Simulación orientativa del efecto de la velocidad de su web en las visitas y los contactos. Usted define los supuestos. No es una medición." />
+  <meta name="description"
+    content="Simulación orientativa del efecto de la velocidad de su web en las visitas y los contactos. Usted define los supuestos. No es una medición." />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 
   <link rel="canonical" href="https://cirujanadigital.com/recursos/simulador-velocidad/" />
   <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_AR" />
+  <meta property="og:locale" content="es_LA" />
   <meta property="og:url" content="https://cirujanadigital.com/recursos/simulador-velocidad/" />
   <meta property="og:title" content="Simulador de velocidad web: estime el impacto | Cirujana Digital" />
-  <meta property="og:description" content="Simulación orientativa del efecto de la velocidad de su web en las visitas y los contactos. Usted define los supuestos. No es una medición." />
+  <meta property="og:description"
+    content="Simulación orientativa del efecto de la velocidad de su web en las visitas y los contactos. Usted define los supuestos. No es una medición." />
   <meta property="og:image" content="https://cirujanadigital.com/img/og-simulador-velocidad.webp" />
   <meta property="og:site_name" content="Cirujana Digital" />
 
@@ -490,7 +492,6 @@
         width: 100%;
       }
     }
-
   </style>
 </head>
 
@@ -510,7 +511,8 @@
         </ol>
         <p class="sv-label">Herramienta gratuita · Simulación orientativa · Sin registro</p>
         <h1 id="page-h1">¿Cuánto puede costarle una web lenta?</h1>
-        <p class="sv-lead">Simule el efecto de la velocidad de su web en las visitas y los contactos. Usted define los supuestos y la herramienta muestra un rango, no una medición.</p>
+        <p class="sv-lead">Simule el efecto de la velocidad de su web en las visitas y los contactos. Usted define los
+          supuestos y la herramienta muestra un rango, no una medición.</p>
       </div>
     </section>
 
@@ -518,18 +520,23 @@
     <section class="sv-section sv-section--surface" id="simulador" aria-labelledby="form-h2">
       <div class="sv-wrap">
         <h2 id="form-h2">Configure su simulación</h2>
-        <p class="sv-intro">Ingrese los datos básicos de su negocio y el tiempo de carga actual de su web. No necesita conocimientos técnicos.</p>
+        <p class="sv-intro">Ingrese los datos básicos de su negocio y el tiempo de carga actual de su web. No necesita
+          conocimientos técnicos.</p>
 
         <div class="sv-form">
           <div class="sv-field">
-            <label for="slCarga"><span>Tiempo de carga actual (segundos)</span><output id="oCarga" for="slCarga"></output></label>
+            <label for="slCarga"><span>Tiempo de carga actual (segundos)</span><output id="oCarga"
+                for="slCarga"></output></label>
             <input type="range" id="slCarga" min="1" max="12" step="0.1" value="5">
-            <div class="sv-marks" aria-hidden="true"><span>1 s</span><span>2,5 s referencia</span><span>4 s</span><span>12 s</span></div>
-            <p class="sv-help">Si no lo sabe, mídalo en <a href="https://pagespeed.web.dev/" target="_blank" rel="noopener noreferrer">PageSpeed Insights (pagespeed.web.dev)</a>.</p>
+            <div class="sv-marks" aria-hidden="true"><span>1 s</span><span>2,5 s referencia</span><span>4
+                s</span><span>12 s</span></div>
+            <p class="sv-help">Si no lo sabe, mídalo en <a href="https://pagespeed.web.dev/" target="_blank"
+                rel="noopener noreferrer">PageSpeed Insights (pagespeed.web.dev)</a>.</p>
           </div>
 
           <div class="sv-field">
-            <label for="slObjetivo"><span>Tiempo de carga objetivo (segundos)</span><output id="oObjetivo" for="slObjetivo"></output></label>
+            <label for="slObjetivo"><span>Tiempo de carga objetivo (segundos)</span><output id="oObjetivo"
+                for="slObjetivo"></output></label>
             <input type="range" id="slObjetivo" min="1" max="12" step="0.1" value="2.5">
             <p class="sv-help">2,5 s es la referencia de Google para un LCP bueno.</p>
           </div>
@@ -546,14 +553,17 @@
           </div>
 
           <div class="sv-field">
-            <label for="slValor"><span>Valor promedio de cada cliente nuevo (USD)</span><output id="oValor" for="slValor"></output></label>
+            <label for="slValor"><span>Valor promedio de cada cliente nuevo (USD)</span><output id="oValor"
+                for="slValor"></output></label>
             <input type="range" id="slValor" min="20" max="1000" step="10" value="100">
             <p class="sv-help">Use la unidad que prefiera, pero la misma en todo el cálculo.</p>
           </div>
 
           <div class="sv-form-actions">
             <button type="button" class="sv-btn sv-btn--brand" id="btnCalc">Calcular escenarios</button>
-            <noscript><p class="sv-noscript">Esta herramienta necesita JavaScript activado para calcular los escenarios.</p></noscript>
+            <noscript>
+              <p class="sv-noscript">Esta herramienta necesita JavaScript activado para calcular los escenarios.</p>
+            </noscript>
           </div>
         </div>
       </div>
@@ -570,10 +580,12 @@
         <p class="sv-box" id="refMsg"></p>
 
         <p class="sv-delay" id="delayTxt"></p>
-        <p class="sv-box" id="noLoss" hidden>Su tiempo actual ya cumple el objetivo: con estos supuestos, la simulación no muestra pérdida.</p>
+        <p class="sv-box" id="noLoss" hidden>Su tiempo actual ya cumple el objetivo: con estos supuestos, la simulación
+          no muestra pérdida.</p>
         <div class="sv-table-wrap" id="tableWrap" role="region" aria-label="Escenarios de la simulación" tabindex="0">
           <table class="sv-table">
-            <caption class="sv-sr">Escenarios de pérdida mensual según el supuesto de visitas que se pierden por cada segundo de demora</caption>
+            <caption class="sv-sr">Escenarios de pérdida mensual según el supuesto de visitas que se pierden por cada
+              segundo de demora</caption>
             <thead>
               <tr>
                 <th scope="col">Escenario</th>
@@ -587,11 +599,14 @@
             <tbody id="tbody"></tbody>
           </table>
         </div>
-        <p class="sv-note"><strong>Qué mide y qué no.</strong> Es un cálculo lineal simple: visitas × demora × supuesto. No considera el dispositivo, el origen del tráfico ni el tipo de página. La relación real entre velocidad y conversión varía de un sitio a otro; para conocer la suya hace falta medirla con datos propios.</p>
+        <p class="sv-note"><strong>Qué mide y qué no.</strong> Es un cálculo lineal simple: visitas × demora × supuesto.
+          No considera el dispositivo, el origen del tráfico ni el tipo de página. La relación real entre velocidad y
+          conversión varía de un sitio a otro; para conocer la suya hace falta medirla con datos propios.</p>
 
         <div id="causes">
           <h3 class="sv-sub">Qué revisar primero</h3>
-          <p class="sv-note" style="margin-bottom:0.75rem;">Causas frecuentes de una carga lenta. Un informe de PageSpeed Insights indica cuáles aplican a su web.</p>
+          <p class="sv-note" style="margin-bottom:0.75rem;">Causas frecuentes de una carga lenta. Un informe de
+            PageSpeed Insights indica cuáles aplican a su web.</p>
           <ul class="sv-list">
             <li>Imágenes sin optimizar o demasiado pesadas.</li>
             <li>CSS y JavaScript que bloquean la carga inicial.</li>
@@ -603,11 +618,20 @@
 
         <div class="sv-dark sv-cta-card">
           <h2 id="cta-h2">¿Quiere saber qué está frenando a su web?</h2>
-          <p class="sv-lead">En la videollamada de 30 minutos, sin costo, revisamos su informe de velocidad y definimos si conviene una optimización. El alcance y el presupuesto se acuerdan a medida.</p>
+          <p class="sv-lead">En la videollamada de 30 minutos, sin costo, revisamos su informe de velocidad y definimos
+            si conviene una optimización. El alcance y el presupuesto se acuerdan a medida.</p>
           <div class="sv-actions">
-            <a class="sv-btn sv-btn--solid" href="https://calendly.com/cirujanadigital/30min" target="_blank" rel="noopener noreferrer">Evaluar mi proyecto</a>
-            <a class="sv-btn sv-btn--line" id="ctaWa" href="https://wa.me/5491176199680?text=Hola%2C%20us%C3%A9%20el%20simulador%20de%20velocidad%3A%20mi%20web%20carga%20en%205%2C0%20s.%20Quiero%20revisarla." target="_blank" rel="noopener noreferrer">
-              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"> <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" /> <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" /> </svg>
+            <a class="sv-btn sv-btn--solid" href="https://calendly.com/cirujanadigital/30min" target="_blank"
+              rel="noopener noreferrer">Evaluar mi proyecto</a>
+            <a class="sv-btn sv-btn--line" id="ctaWa"
+              href="https://wa.me/5491176199680?text=Hola%2C%20us%C3%A9%20el%20simulador%20de%20velocidad%3A%20mi%20web%20carga%20en%205%2C0%20s.%20Quiero%20revisarla."
+              target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z" />
+              </svg>
               Preguntar por WhatsApp
             </a>
           </div>
