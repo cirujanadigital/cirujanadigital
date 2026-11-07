@@ -6,13 +6,13 @@
     { href: '/servicios/pack-presencia/', label: 'Presencia local' },
     {
       href: '/servicios/landing-medica-vs-sitio-corporativo/',
-      label: 'Landing Médica vs Sitio Corporativo',
+      label: 'Landing page o sitio corporativo',
     },
     { href: '/servicios/optimizacion-wpo/', label: 'Optimización WPO' },
-    { href: '/servicios/auditoria-ia-plan-presencia/', label: 'Auditoría IA + Plan Presencia' },
+    { href: '/servicios/auditoria-ia-plan-presencia/', label: 'Auditoría de presencia en IA' },
     { href: '/servicios/mantenimiento-web/', label: 'Mantenimiento Web' },
 
-    { href: '/servicios/recepcionista-virtual-medica', label: 'Recepcionista Virtual' },
+    { href: '/servicios/recepcionista-virtual-medica/', label: 'Recepción por WhatsApp con IA' },
   ];
 
   /* RECURSOS       */

@@ -24,7 +24,7 @@
   <meta property="og:image:type" content="image/webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="es_419" />
+  <meta property="og:locale" content="es_LA" />
   <meta property="og:site_name" content="Cirujana Digital" />
   <meta property="profile:first_name" content="Yulia" />
   <meta property="profile:last_name" content="Monti" />
@@ -49,15 +49,17 @@
   {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://cirujanadigital.com/#organization",
-        "name": "Cirujana Digital",
-        "url": "https://cirujanadigital.com",
-        "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
-        "founder": { "@id": "https://cirujanadigital.com/#yulia-monti" },
-        "sameAs": ["https://instagram.com/cirujanadigital"]
-      },
+     {
+  "@type": "ProfessionalService",
+  "@id": "https://cirujanadigital.com/#organization",
+  "name": "Cirujana Digital",
+  "url": "https://cirujanadigital.com/",
+  "logo": "https://cirujanadigital.com/img/logo-CD-blancoSF.webp",
+  "founder": {"@id": "https://cirujanadigital.com/#yulia-monti"},
+  "sameAs": [
+    "https://web.facebook.com/cirujanadigital/"
+  ]
+},
       {
         "@type": "Person",
         "@id": "https://cirujanadigital.com/#yulia-monti",
@@ -83,8 +85,7 @@
           "Core Web Vitals"
         ],
         "sameAs": [
-          "https://www.linkedin.com/in/yuliamonti/",
-          "https://instagram.com/cirujanadigital"
+          "https://www.linkedin.com/in/yuliamonti/"
         ]
       },
       {

@@ -30,7 +30,7 @@
   RewriteRule ^blog/(que-es-wpo-web-lenta|core-web-vitals-2026)/?$ /servicios/optimizacion-wpo/ [R=301,L]
 
   # Páginas eliminadas sin equivalente (410)
-  RewriteRule ^(demos-medicas|clinica-control-peso-glp1|diseno-web-para-oftalmologo|landing-page-medicos|pagina-web-(dermatologa|medico-anestesiologo|para-cardiologo|para-doula|para-obstetra|para-odontologo|traumatologo)|seo-para-clinicas|seo-para-medicos-mexico|web-medica-que-convierte)(/.*)?$ - [G,L]
+  RewriteRule ^(desarrolladora-web-medicos-argentina|demos-medicas|clinica-control-peso-glp1|diseno-web-para-oftalmologo|landing-page-medicos|pagina-web-(dermatologa|medico-anestesiologo|para-cardiologo|para-doula|para-obstetra|para-odontologo|traumatologo)|seo-para-clinicas|seo-para-medicos-mexico|web-medica-que-convierte)(/.*)?$ - [G,L]
   RewriteRule ^blog(/.*)?$ - [G,L]
   RewriteRule ^sitemap-blog\.xml$ - [G,L]
 

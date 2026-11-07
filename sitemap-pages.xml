@@ -68,12 +68,12 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
-  <url>
+  <!--<url>
     <loc>https://cirujanadigital.com/servicios/sistema-anti-no-shows-clinicas/</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
-  </url>
+  </url>-->
   <url>
     <loc>https://cirujanadigital.com/servicios/recepcionista-virtual-medica/</loc>
     <lastmod>2026-06-08</lastmod>
