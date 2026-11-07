@@ -207,7 +207,6 @@
   ══════════════════════════════════════════════ */
   const navbar = document.getElementById('navbar');
 
-
   /* ══════════════════════════════════════════════
      SCROLL UNIFICADO — un solo listener, una sola
      variable ticking para navbar + scroll-top btn
@@ -390,9 +389,9 @@
       hero.addEventListener('mousemove', loadParticles, { once: true, passive: true });
       hero.addEventListener('touchstart', loadParticles, { once: true, passive: true });
     }
-'requestIdleCallback' in window
-? requestIdleCallback(loadParticles, { timeout: 15000 })
-  : setTimeout(loadParticles, 15000);
+    'requestIdleCallback' in window
+      ? requestIdleCallback(loadParticles, { timeout: 15000 })
+      : setTimeout(loadParticles, 15000);
   })();
 
   /* ══════════════════════════════════════════════
@@ -446,7 +445,6 @@
   });
 })(); /* ← CIERRE DEL IIFE EXTERNO — único 'use strict' del archivo */
 
-
 /* ══════════════════════════════════════════════════════════════
    CONTACT FORM
 ══════════════════════════════════════════════════════════════ */
@@ -496,14 +494,13 @@
         } else {
           btn.textContent = originalText;
           btn.disabled = false;
-          alert('Error al enviar. Por favor, escribinos directamente a info@cirujanadigital.com');
+          alert('Error al enviar. Por favor, escríbenos directamente a info@cirujanadigital.com');
         }
       })
       .catch(function () {
         btn.textContent = originalText;
         btn.disabled = false;
-        alert('Error de conexión. Por favor, escribinos por WhatsApp o email.');
+        alert('Error de conexión. Por favor, escríbenos por WhatsApp o email.');
       });
   });
 })();
-
