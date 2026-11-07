@@ -656,7 +656,7 @@
       "jobTitle": "Desarrolladora de automatización con IA e integraciones",
       "description": "Yulia Monti es desarrolladora full-stack y fundadora de Cirujana Digital. Tiene 15 años de experiencia como instrumentadora quirúrgica en Argentina.",
       "url": "https://cirujanadigital.com/sobre-yulia/",
-      "image": "https://cirujanadigital.com/img/yulia-monti-perfil.webp",
+      "image": "https://cirujanadigital.com/img/yulia-monti.webp",
       "worksFor": {"@id": "https://cirujanadigital.com/#organization"},
       "sameAs": ["https://www.linkedin.com/in/yuliamonti/"]
     },
@@ -709,7 +709,7 @@
               rel="noopener noreferrer">
               Evaluar mi proyecto
             </a>
-            <a href="#demos" class="hero-cta-secondary">Ver demostraciones</a>
+            <a href="#ejemplos" class="hero-cta-secondary">Ver ejemplos</a>
           </div>
           <div class="hero-trust" aria-label="Credenciales">
             <span class="hero-trust-item">15 años en quirófanos · rigor de protocolo</span>
@@ -774,7 +774,7 @@
     </section>
 
     <!-- 3. EJEMPLOS DE APLICACIÓN -->
-    <section class="systems" aria-labelledby="systems-title">
+    <section class="systems" id="ejemplos" aria-labelledby="systems-title">
       <div class="container">
         <div class="section-header">
           <span class="section-label">Ejemplos de aplicación</span>
@@ -1036,6 +1036,37 @@
     </svg>
   </button>
   <script src="script.js" defer></script>
+  <script>
+    (function () {
+      var box = document.querySelector('.yt-lite');
+      if (!box) return;
+      var id = box.getAttribute('data-videoid');
+      var warmed = false;
+      function warm() {
+        if (warmed) return;
+        warmed = true;
+        var l = document.createElement('link');
+        l.rel = 'preconnect';
+        l.href = 'https://www.youtube-nocookie.com';
+        document.head.appendChild(l);
+      }
+      function play() {
+        var f = document.createElement('iframe');
+        f.src = 'https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0&playsinline=1';
+        f.title = box.getAttribute('aria-label') || 'Video testimonio';
+        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+        f.allowFullscreen = true;
+        f.referrerPolicy = 'strict-origin-when-cross-origin';
+        f.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0';
+        box.replaceChildren(f);
+        box.style.cursor = 'auto';
+        f.focus();
+      }
+      box.addEventListener('pointerenter', warm, { once: true });
+      box.addEventListener('focusin', warm, { once: true });
+      box.addEventListener('click', play, { once: true });
+    })();
+  </script>
   <script>
     (function () {
       var c = document.getElementById('particleCanvas');
