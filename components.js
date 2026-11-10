@@ -12,13 +12,13 @@
     { href: '/servicios/auditoria-ia-plan-presencia/', label: 'Auditoría de presencia en IA' },
     { href: '/servicios/mantenimiento-web/', label: 'Mantenimiento Web' },
 
-    { href: '/servicios/recepcionista-virtual-medica/', label: 'Recepción por WhatsApp con IA' },
+    { href: '/servicios/recepcionista-virtual-medica/', label: 'Recepción por WhatsApp con IA (demo)' },
   ];
 
   /* RECURSOS       */
   const RECURSOS = [
     { href: '/recursos/', label: 'Todos los recursos' },
-    { href: '/diagnostico/', label: 'Diagnóstico gratuito' },
+    { href: '/diagnostico/', label: 'Diagnóstico Express (gratuito)' },
     { href: '/recursos/simulador-velocidad/', label: 'Simulador de velocidad' },
     { href: '/recursos/guia-5-errores/', label: 'Los 5 errores más comunes' },
     { href: '/recursos/plantillas-gbp/', label: 'Plantillas para Google Maps' },
@@ -135,7 +135,7 @@
       <div class="footer-cta-inner">
         <div class="footer-cta-text">
           <strong>¿Su sitio carga lento o no convierte?</strong>
-          <span>Diagnóstico gratuito · 7 preguntas · Sin compromiso</span>
+          <span>Diagnóstico Express gratuito · autoevaluación de 7 preguntas · no es una auditoría</span>
         </div>
         <div class="footer-cta-actions">
           <a href="diagnostico/" class="footer-btn-primary">
@@ -148,7 +148,7 @@
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
               <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.532 5.847L.057 23.882l6.196-1.623A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.679.964.982-3.588-.242-.379A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
             </svg>
-            WhatsApp directo
+            Consultar por WhatsApp
           </a>
         </div>
       </div>
@@ -163,7 +163,7 @@
           <a href="" class="footer-logo-link" aria-label="Cirujana Digital — inicio">
             <span class="logo-text-footer">CIRUJANA DIGITAL</span>
           </a>
-          <p class="footer-tagline">Desarrollo web con precisión quirúrgica. De la sala de operaciones al código que posiciona y convierte.</p>
+          <p class="footer-tagline">Infraestructura digital con rigor de protocolo: desarrollo web, automatización, integraciones y SEO técnico, con alcance definido y pruebas documentadas.</p>
           <div class="footer-badge" role="img" aria-label="Lighthouse 100 en Performance, Accesibilidad y SEO">
             <div class="footer-badge-scores">
               <div class="footer-badge-score"><span class="val">100</span><span class="lbl">Perf</span></div>
@@ -211,7 +211,7 @@
           <p class="footer-column-title footer-column-title--spaced">Contacto</p>
           <ul>
             <li><a href="mailto:info@cirujanadigital.com">info@cirujanadigital.com <span class="link-arrow" aria-hidden="true">›</span></a></li>
-            <li><a href="https://wa.me/5491176199680" target="_blank" rel="noopener noreferrer">WhatsApp directo <span class="link-arrow" aria-hidden="true">›</span></a></li>
+            <li><a href="https://wa.me/5491176199680" target="_blank" rel="noopener noreferrer">Consultar por WhatsApp <span class="link-arrow" aria-hidden="true">›</span></a></li>
           </ul>
         </nav>
 
